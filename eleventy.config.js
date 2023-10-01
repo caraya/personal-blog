@@ -1,4 +1,8 @@
+// External libraries
 const { DateTime } = require("luxon");
+// striptags?
+
+// Markdownit plugins
 const markdownItAnchor = require("markdown-it-anchor");
 const markdownItDefList = require('markdown-it-deflist');
 const markdownItFigures = require("markdown-it-image-figures")
@@ -39,10 +43,22 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 	eleventyConfig.addPlugin(pluginBundle);
 
+	// Shortcodes
+	eleventyConfig.addShortcode('excerpt', post => extractExcerpt(post));
+
+	function extractExcerpt(post) {
+		if(!post.templateContent) return '';
+		if(post.templateContent.indexOf('</p>') > 0) {
+			let end = post.templateContent.indexOf('</p>');
+			return post.templateContent.substr(0, end+4);
+		}
+		return post.templateContent;
+	}
+
 	// Filters
 	eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
 		// Formatting tokens for Luxon: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
-		return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(format || "dd LLLL yyyy");
+		return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(format || "LLLL dd yyyy");
 	});
 
 	eleventyConfig.addFilter('htmlDateString', (dateObj) => {
