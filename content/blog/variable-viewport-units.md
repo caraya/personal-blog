@@ -34,9 +34,7 @@ When we talk about UA or browser interfaces, we're talking about things like add
 
 ### Large viewport units
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2023/05/large-viewport.png)
-
-Large viewport show in the blue background. Browser address var and navigation are hidden. Source: [Interop 2022](https://github.com/web-platform-tests/interop-2022-viewport/blob/main/explainers/viewport-units.md)
+![Large viewport show in the blue background. Browser address var and navigation are hidden. Source: [Interop 2022](https://github.com/web-platform-tests/interop-2022-viewport/blob/main/explainers/viewport-units.md)](https://publishing-project.rivendellweb.net/wp-content/uploads/2023/05/large-viewport.png)
 
 The large viewport sizes assumes that any UA interfaces that are dynamically retracted are retracted.
 
@@ -51,9 +49,7 @@ Units representing the large viewport have the lv prefix. The units are:
 
 ### Small viewport units
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2023/05/small-viewport.png)
-
-Small viewport show in light green color. The image shows the browser address bar at the top and the browser navigation bar at the bottom. Source: [Interop 2022](https://github.com/web-platform-tests/interop-2022-viewport/blob/main/explainers/viewport-units.md)
+![Small viewport show in light green color. The image shows the browser address bar at the top and the browser navigation bar at the bottom. Source: [Interop 2022](https://github.com/web-platform-tests/interop-2022-viewport/blob/main/explainers/viewport-units.md)](https://publishing-project.rivendellweb.net/wp-content/uploads/2023/05/small-viewport.png)
 
 The small viewport units assume that any UA interfaces are expanded.
 
@@ -68,9 +64,7 @@ Units representing the small viewport have the sv prefix. The units are:
 
 ### Dynamic viewport units
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2023/05/dynamic-viewport.png)
-
-Dynamic viewport showing the same value in both small (left) and large (right) vieports. Source: [Interop 2022](https://github.com/web-platform-tests/interop-2022-viewport/blob/main/explainers/viewport-units.md)
+![Dynamic viewport showing the same value in both small (left) and large (right) vieports. Source: [Interop 2022](https://github.com/web-platform-tests/interop-2022-viewport/blob/main/explainers/viewport-units.md)](https://publishing-project.rivendellweb.net/wp-content/uploads/2023/05/dynamic-viewport.png)
 
 The dynamic viewport will automatically adjust itself in response to UA interface elements being shown or not. The changes to dynamic viewport units will **not** show automatically. Browsers have a different strategy to update the dynamic viewport values.
 

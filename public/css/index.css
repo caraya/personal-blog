@@ -48,6 +48,7 @@
 
 		/* --text-color is assigned to --color-gray-_ above */
 
+		--text-color: rgb(255, 255, 255);
     --text-color-link: oklch(65.47% 0.183 250.8);
 		--text-color-link-active: oklch(59.91% 0.207 278.14);
 		--text-color-link-visited: oklch(75.68% 0.117 283.25);
@@ -55,30 +56,10 @@
 		--background-color: oklch(23.85% 0.026 248.99);
 	}
 
-  main,
-	main > h1,
-  main .postlist-item-excerpt {
-    color: oklch(1 0 326);
+  article {
+    color: var(--text-color);
   }
 
-}
-
-
-/* Global stylesheet */
-* {
-	box-sizing: border-box;
-}
-
-html,
-body {
-	padding: 0;
-	margin: 0 auto;
-	font-family: var(--font-family);
-	color: var(--text-color);
-	background-color: var(--background-color);
-}
-html {
-	overflow-y: scroll;
 }
 
 /* Set the grid container dimensions */
@@ -88,7 +69,7 @@ html {
   gap: 1rem;
 }
 
-/* Place the items in the grid */
+/* Grid */
 header {
 	grid-column: 3/7;
 }
@@ -101,6 +82,7 @@ footer {
 	grid-column: 3/7;
 }
 
+/* Continue Reading */
 .continue-reading {
 	display: flex;
 	justify-content: flex-end;
@@ -118,6 +100,41 @@ footer {
 	/* Figure out why I had to add !important here */
   color: white !important;
   background-color: var(--text-color-link);
+}
+
+/* figures and images */
+img {
+	width: 600px !important;
+	height: auto;
+}
+
+article {
+	counter-reset: figures;
+}
+
+figure {
+	counter-increment: figures;
+}
+
+figure > figcaption::before {
+	margin-block-start: 0.5em;
+	content: "Figure " counter(figures) ": "
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	/* margin: 0 auto; */
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+}
+html {
+	overflow-y: scroll;
 }
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */

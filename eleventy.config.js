@@ -1,5 +1,7 @@
 const { DateTime } = require("luxon");
 const markdownItAnchor = require("markdown-it-anchor");
+const markdownItDefList = require('markdown-it-deflist');
+const markdownItFigures = require("markdown-it-image-figures")
 
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
@@ -89,6 +91,13 @@ module.exports = function(eleventyConfig) {
 			}),
 			level: [1,2,3,4],
 			slugify: eleventyConfig.getFilter("slugify")
+		});
+		mdLib.use(markdownItDefList);
+		mdLib.use(markdownItFigures, {
+			figcaption: 'alt',
+			lazy: true,
+			async: true,
+			classes: 'lazy'
 		});
 	});
 
