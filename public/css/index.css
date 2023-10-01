@@ -1,38 +1,66 @@
+/* Imports */
+@import "_colors.css";
+
+/* Font Imports */
+@font-face {
+  font-family: 'Recursive';
+  src: url('/fonts/Recursive.woff2')
+		format('woff2')
+		tech(variations);
+		display: swap;
+		font-weight: 300 1000;
+    unicode-range: U+000D, U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153,
+        U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2007-200B, U+2010, U+2012-2015,
+        U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2032-2033,
+        U+2039-203A, U+203E, U+2044, U+2052, U+2074, U+20AC, U+2122, U+2191,
+        U+2193, U+2212, U+2215;
+}
+
 /* Defaults */
 :root {
-	--font-family: -apple-system, system-ui, sans-serif;
-	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+	--font-family: Recursive, Verdana, sans-serif;
+	--font-family-system: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Recursive, Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
 }
 
 /* Theme colors */
 :root {
-	--color-gray-20: #e0e0e0;
-	--color-gray-50: #C0C0C0;
-	--color-gray-90: #333;
+	--color-gray-20: var(--oklch-color-cloud);
+	--color-gray-50: var(--oklch-color-lead);
+	--color-gray-90: var(--oklch-color-pebble);
 
-	--background-color: #fff;
+	--background-color: var(--oklch-color-white);
 
-	--text-color: var(--color-gray-90);
-	--text-color-link: #082840;
-	--text-color-link-active: #5f2b48;
-	--text-color-link-visited: #17050F;
+	--text-color: var(--oklch-color-charcoal);
+	--text-color-link: oklch(55.69% 0.2 12.21);
+	--text-color-link-active: oklch(55.69% 0.2 12.21);
+	/* --text-color-link-active: oklch(37.01% 0.085 347.43); */
+	--text-color-link-visited: var(--text-color);
 
 	--syntax-tab-size: 2;
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--color-gray-20: #e0e0e0;
-		--color-gray-50: #C0C0C0;
-		--color-gray-90: #dad8d8;
+		--color-gray-20: oklch(90.67% 0 0);
+		--color-gray-50: oklch(80.78% 0 0);
+		--color-gray-90: oklch(88.38% 0.002 17.2);
 
 		/* --text-color is assigned to --color-gray-_ above */
-		--text-color-link: #1493fb;
-		--text-color-link-active: #6969f7;
-		--text-color-link-visited: #a6a6f8;
 
-		--background-color: #15202b;
+    --text-color-link: oklch(65.47% 0.183 250.8);
+		--text-color-link-active: oklch(59.91% 0.207 278.14);
+		--text-color-link-visited: oklch(75.68% 0.117 283.25);
+
+		--background-color: oklch(23.85% 0.026 248.99);
 	}
+
+  main,
+	main > h1,
+  main .postlist-item-excerpt {
+    color: oklch(1 0 326);
+  }
+
 }
 
 
@@ -52,8 +80,44 @@ body {
 html {
 	overflow-y: scroll;
 }
-body {
-	max-width: 40em;
+
+/* Set the grid container dimensions */
+.grid-container {
+	display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr 2fr 1fr 1fr 2fr;
+  gap: 1rem;
+}
+
+/* Place the items in the grid */
+header {
+	grid-column: 3/7;
+}
+
+main {
+	grid-column: 3/7;
+}
+
+footer {
+	grid-column: 3/7;
+}
+
+.continue-reading {
+	display: flex;
+	justify-content: flex-end;
+
+}
+
+.continue-reading a {
+  padding: 1em;
+  font-size: 90%;
+  text-decoration: none;
+}
+
+.continue-reading a:focus,
+.continue-reading a:hover {
+	/* Figure out why I had to add !important here */
+  color: white !important;
+  background-color: var(--text-color-link);
 }
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
@@ -99,6 +163,7 @@ main :first-child {
 header {
 	border-bottom: 1px dashed var(--color-gray-20);
 }
+
 header:after {
 	content: "";
 	display: table;
@@ -122,8 +187,12 @@ table th {
 pre,
 code {
 	font-family: var(--font-family-monospace);
+	font-variation-settings: "MONO" 1, "CASL" 0, "wght" 500, "slnt" 0,
+	"CRSV" 0.501;
+
 }
 pre:not([class*="language-"]) {
+	"CRSV" 0.501;
 	margin: .5em 0;
 	line-height: 1.375; /* 22px /16 */
 	-moz-tab-size: var(--syntax-tab-size);
@@ -138,6 +207,7 @@ pre:not([class*="language-"]) {
 	word-spacing: normal;
 	word-break: normal;
 }
+
 code {
 	word-break: break-all;
 }
@@ -178,26 +248,26 @@ header {
 }
 
 /* Posts list */
-.postlist {
+/* .postlist {
 	list-style: none;
 	padding: 0;
 	padding-left: 1.5rem;
-}
+} */
 .postlist-item {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: baseline;
-	counter-increment: start-from -1;
+	/* counter-increment: start-from -1; */
 	margin-bottom: 1em;
 }
-.postlist-item:before {
+/* .postlist-item:before {
 	display: inline-block;
 	pointer-events: none;
 	content: "" counter(start-from, decimal-leading-zero) ". ";
 	line-height: 100%;
 	text-align: right;
 	margin-left: -1.5rem;
-}
+} */
 .postlist-date,
 .postlist-item:before {
 	font-size: 0.8125em; /* 13px /16 */
