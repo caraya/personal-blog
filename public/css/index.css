@@ -117,7 +117,7 @@ small,
   gap: 1rem;
 }
 
-/* Grid */
+/* Grid placement */
 header {
 	grid-column: 3/7;
 }
@@ -251,12 +251,26 @@ header:after {
 }
 
 table {
-	margin: 1em 0;
+  table-layout: fixed;
+  border-collapse: collapse;
 }
-table td,
-table th {
-	padding-right: 1em;
+
+tr th,
+tr:nth-child(even) {
+	background-color: oklch(24.69% 0.006 314.7 / .125)
 }
+
+tr {
+	padding-inline-start: 1.25rem;
+	padding-inline-end: 0.25rem;
+}
+
+th,
+td {
+	border: 3px solid black;
+}
+
+
 
 pre,
 code {
@@ -385,6 +399,7 @@ header {
 	padding: 0;
 	margin: 0;
 }
+
 .post-metadata time {
 	margin-right: 1em;
 }
