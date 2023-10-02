@@ -26,13 +26,15 @@
 	--color-gray-50: oklch(37.46% 0.025 288.16)
 	--color-gray-90: oklch(32.11% 0 0);
 
-	--background-color: oklch(100% 0 0);
+	--color-white: oklch(99.72% 0.002847056028263826 84.5587270007485);
+	--color-black: oklch(24.69% 0.006 314.7);
 
-	--text-color: oklch(24.69% 0.006 314.7)
-	--text-color-link: oklch(55.69% 0.2 12.21);
-	--text-color-link-active: oklch(55.69% 0.2 12.21);
-	/* --text-color-link-active: oklch(37.01% 0.085 347.43); */
-	--text-color-link-visited: var(--text-color);
+	--link-color: oklch(55.69% 0.2 12.21);
+	--background-color: var(--color-white);
+
+	--text-color: var(--color-black)
+	--link-color-active: var(--link-color);
+	--link-color-visited: var(--text-color);
 
 	--syntax-tab-size: 2;
 }
@@ -102,9 +104,9 @@ small,
 		/* --text-color is assigned to --color-gray-_ above */
 
 		--text-color: rgb(255,255,255);
-    --text-color-link: oklch(65.47% 0.183 250.8);
-		--text-color-link-active: oklch(59.91% 0.207 278.14);
-		--text-color-link-visited: oklch(75.68% 0.117 283.25);
+    --link-color: oklch(65.47% 0.183 250.8);
+		--link-color-active: oklch(59.91% 0.207 278.14);
+		--link-color-visited: oklch(75.68% 0.117 283.25);
 
 		--background-color: oklch(23.85% 0.026 248.99);
 	}
@@ -146,22 +148,24 @@ dd {
 
 /* Continue Reading */
 .continue-reading {
-	display: flex;
-	justify-content: flex-end;
-
+	align-self: flex-end;
+	/* display: flex;
+	flex-direction: row;
+	justify-content: flex-end !important; */
 }
 
 .continue-reading a {
   padding: 1em;
   font-size: 90%;
   text-decoration: none;
+	color: var(--color-black);
 }
 
 .continue-reading a:focus,
 .continue-reading a:hover {
 	/* Figure out why I had to add !important here */
-  color: white !important;
-  background-color: var(--text-color-link);
+  color: var(--color-white) !important;
+  background-color: var(--link-color) !important;
 }
 
 /* figures and images */
@@ -217,14 +221,14 @@ p {
 }
 
 a[href] {
-	color: var(--text-color-link);
+	color: var(--link-color);
 }
 a[href]:visited {
-	color: var(--text-color-link-visited);
+	color: var(--link-color-visited);
 }
 a[href]:hover,
 a[href]:active {
-	color: var(--text-color-link-active);
+	color: var(--link-color-active);
 }
 
 main {
@@ -280,7 +284,6 @@ code {
 
 }
 pre:not([class*="language-"]) {
-	"CRSV" 0.501;
 	margin: .5em 0;
 	line-height: 1.375; /* 22px /16 */
 	-moz-tab-size: var(--syntax-tab-size);
@@ -304,12 +307,12 @@ code {
 header {
 	display: flex;
 	gap: 1em .5em;
-	flex-wrap: wrap;
+	flex-flow: row wrap;
 	align-items: center;
 	padding: 1em;
 }
 .home-link {
-	font-size: 1em; /* 16px /16 */
+	font-size: 1em; /* 18px /16 */
 	font-weight: 700;
 	margin-right: 2em;
 }
@@ -343,7 +346,8 @@ header {
 } */
 .postlist-item {
 	display: flex;
-	flex-wrap: wrap;
+	flex-flow: column;
+	/* flex-wrap: wrap; */
 	align-items: baseline;
 	/* counter-increment: start-from -1; */
 	margin-bottom: 1em;
