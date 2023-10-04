@@ -4,7 +4,7 @@
 	<div class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
 		<a href="{{ post.url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
 		<time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("LLLL dd yyyy") }}</time>
-		{% excerpt post %}
+		<p>{{ post.templateContent | excerpt }}
 		<div class="continue-reading">
 			<a href="{{ post.url }}">Read More...</a>
 		</div>

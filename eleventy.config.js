@@ -44,18 +44,14 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginBundle);
 
 	// Shortcodes
-	eleventyConfig.addShortcode('excerpt', post => extractExcerpt(post));
-
-	function extractExcerpt(post) {
-		if(!post.templateContent) return '';
-		if(post.templateContent.indexOf('</p>') > 0) {
-			let end = post.templateContent.indexOf('</p>');
-			return post.templateContent.substr(0, end+4);
-		}
-		return post.templateContent;
-	}
 
 	// Filters
+	// Credit: https://11ty.rocks/eleventyjs/content/#excerpt-filter
+	eleventyConfig.addFilter("excerpt", (post) => {
+		const content = post.replace(/(<([^>]+)>)/gi, "");
+		return content.substr(0, content.lastIndexOf(" ", 200)) + "...";
+	});
+
 	eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
 		// Formatting tokens for Luxon: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
 		return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(format || "LLLL dd yyyy");
