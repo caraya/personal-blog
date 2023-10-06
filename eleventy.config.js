@@ -1,12 +1,13 @@
 // External libraries
 const { DateTime } = require("luxon");
-// striptags?
 
 // Markdownit plugins
 const markdownItAnchor = require("markdown-it-anchor");
 const markdownItDefList = require('markdown-it-deflist');
-const markdownItFigures = require("markdown-it-image-figures")
+const markdownItFigures = require("markdown-it-image-figures");
+// added by Carlos
 
+// 11ty plugins
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginBundle = require("@11ty/eleventy-plugin-bundle");
@@ -15,6 +16,9 @@ const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
 const pluginDrafts = require("./eleventy.config.drafts.js");
 const pluginImages = require("./eleventy.config.images.js");
+
+// Added by Carlos
+const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
 
 module.exports = function(eleventyConfig) {
 	// Copy the contents of the `public` folder to the output folder
@@ -36,14 +40,13 @@ module.exports = function(eleventyConfig) {
 
 	// Official plugins
 	eleventyConfig.addPlugin(pluginRss);
-	eleventyConfig.addPlugin(pluginSyntaxHighlight, {
-		preAttributes: { tabindex: 0 }
-	});
+	eleventyConfig.addPlugin(pluginSyntaxHighlight);
 	eleventyConfig.addPlugin(pluginNavigation);
 	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 	eleventyConfig.addPlugin(pluginBundle);
 
-	// Shortcodes
+	// Local additions
+	eleventyConfig.addPlugin(pluginMermaid);
 
 	// Filters
 	// Credit: https://11ty.rocks/eleventyjs/content/#excerpt-filter
