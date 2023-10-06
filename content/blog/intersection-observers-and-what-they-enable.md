@@ -30,26 +30,18 @@ This example will use a few of the intersection observer options. There are a fe
 The available options are:
 
 `root`
-
-The element that is used as the viewport for checking the visibility of the target.
-
-Must be the ancestor of the target.
-
-Defaults to the browser viewport if not specified or if null.
+: The element that is used as the viewport for checking the visibility of the target.
+: Must be the ancestor of the target.
+: Defaults to the browser viewport if not specified or if null.
 
 `rootMargin`
-
-Margin around the root
-
-Can have 1 to 4 values, similar to the [CSS margin property](https://developer.mozilla.org/en-US/docs/Web/CSS/margin)
-
-This set of values grows or shrinks each side of the root element's bounding box before computing intersections
-
-Defaults to zero (0).
+: Margin around the root
+: Can have 1 to 4 values, similar to the [CSS margin property](https://developer.mozilla.org/en-US/docs/Web/CSS/margin)
+: This set of values grows or shrinks each side of the root element's bounding box before computing intersections
+: Defaults to zero (0).
 
 `threshold`
-
-Either a single number or an array of numbers that indicate at what percentage of the target's visibility the observer's callback should be executed
+: Either a single number or an array of numbers that indicate at what percentage of the target's visibility the observer's callback should be executed
 
 If you use `threshold` and `rootMargin` together, test your code carefully as it may not do what you want it to.
 
