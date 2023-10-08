@@ -33,6 +33,7 @@
 		{#- Renders the CSS bundle using a separate file, if you can't set CSP directive style-src: 'unsafe-inline' #}
 		{#- <link rel="stylesheet" href="{% getBundleFileUrl "css" %}"> #}
 
+		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 	</head>
 	<body>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
@@ -62,5 +63,17 @@
 		<!-- Current page: {{ page.url | htmlBaseUrl }} -->
 		<!-- Added for Mermaid block support -->
 		{% mermaid_js %}
+		<!-- added for Netlify CMS -->
+		<script>
+		if (window.netlifyIdentity) {
+			window.netlifyIdentity.on("init", user => {
+				if (!user) {
+					window.netlifyIdentity.on("login", () => {
+						document.location.href = "/admin/";
+					});
+				}
+			});
+		}
+		</script>
 	</body>
 </html>
