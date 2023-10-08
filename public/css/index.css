@@ -339,11 +339,6 @@ header {
 }
 
 /* Posts list */
-/* .postlist {
-	list-style: none;
-	padding: 0;
-	padding-left: 1.5rem;
-} */
 .postlist-item {
 	display: flex;
 	flex-flow: column;
@@ -352,14 +347,7 @@ header {
 	/* counter-increment: start-from -1; */
 	margin-bottom: 1em;
 }
-/* .postlist-item:before {
-	display: inline-block;
-	pointer-events: none;
-	content: "" counter(start-from, decimal-leading-zero) ". ";
-	line-height: 100%;
-	text-align: right;
-	margin-left: -1.5rem;
-} */
+
 .postlist-date,
 .postlist-item:before {
 	font-size: 0.8125em; /* 13px /16 */
@@ -489,6 +477,7 @@ article {
 .nav-next a:hover {
 	color: var(--link-color)
 }
+
 @media screen and (min-width: 43.75em) {
   .nav-links {
     display: flex;
@@ -509,7 +498,7 @@ article {
     float: right;
     text-align: right;
   }
-  .nav-previous {
+  .post-navigation .nav-previous {
     padding-bottom: 0;
   }
 }

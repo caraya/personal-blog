@@ -4,7 +4,7 @@ date: "2023-10-06"
 ---
 
 ```mermaid
-  graph TD;
+  graph LR;
   A[Want graphs in 11ty] -->|Search Plugin| B(Found plugin);
   B --> C{Use plugin?};
   C -->|Yes| D[NICE GRAPHS];
