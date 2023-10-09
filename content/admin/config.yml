@@ -10,10 +10,10 @@ collections:
     create: true
     slug: "---"
     fields:
-      - { label: "title", name: "title", widget: "string" }
-      - { label: "date", name: "date", widget: "date", format: 'YYYY-MM-DD' }
-      - { label: "updated", name: "updated", widget: "date", format: 'YYYY-MM-DD', required: false}
-      # - { label: "intro", name: "intro", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "date", format: 'YYYY-MM-DD' }
+      - { label: "Updated", name: "updated", widget: "date", format: 'YYYY-MM-DD', required: false}
+			- { label: "Draft", name: "draft", widget: "boolean", default: true}
       - { label: "canonical", name: "canonical", widget: "string", required: false }
       - { label: "publication", name: "publication", widget: "string", required: false }
       - { label: "permalink", name: "permalink", widget: "string", required: false}
