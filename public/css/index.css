@@ -1,3 +1,11 @@
+/*
+TODO: and FIXME:
+
+1. Decide how much of the Wakamaifondue code to keep
+2. Move the code to @layers
+3. Work on a decent dark mode
+*/
+
 /* Font Imports */
 @font-face {
   font-family: 'Recursive';
@@ -11,6 +19,364 @@
         U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2032-2033,
         U+2039-203A, U+203E, U+2044, U+2052, U+2074, U+20AC, U+2122, U+2191,
         U+2193, U+2212, U+2215;
+}
+
+/* Set custom properties for each layout feature */
+:root {
+	--recursive-sans-linear-light-dnom: "dnom" off;
+	--recursive-sans-linear-light-frac: "frac" off;
+	--recursive-sans-linear-light-numr: "numr" off;
+}
+
+/* If class is applied, update custom property and
+ apply modern font-variant-* when supported */
+.recursive-sans-linear-light-dnom {
+	--recursive-sans-linear-light-dnom: "dnom" on;
+}
+
+.recursive-sans-linear-light-frac {
+	--recursive-sans-linear-light-frac: "frac" on;
+}
+
+@supports (font-variant-numeric: diagonal-fractions) {
+	.recursive-sans-linear-light-frac {
+			--recursive-sans-linear-light-frac: "____";
+			font-variant-numeric: diagonal-fractions;
+	}
+}
+
+.recursive-sans-linear-light-numr {
+	--recursive-sans-linear-light-numr: "numr" on;
+}
+
+/* Apply current state of all custom properties
+ whenever a class is being applied */
+.recursive-sans-linear-light-dnom,
+.recursive-sans-linear-light-frac,
+.recursive-sans-linear-light-numr {
+	font-feature-settings: var(--recursive-sans-linear-light-dnom), var(--recursive-sans-linear-light-frac),
+			var(--recursive-sans-linear-light-numr);
+}
+
+/* Variable instances */
+.recursive-sans-linear-light-mono-linear-light {
+	font-variation-settings: "MONO" 1, "CASL" 0, "wght" 300, "slnt" 0,
+			"CRSV" 0.501;
+}
+
+.recursive-sans-linear-light-mono-linear-light-italic {
+	font-variation-settings: "MONO" 1, "CASL" 0, "wght" 300, "slnt" -15,
+			"CRSV" 1;
+}
+
+.recursive-sans-linear-light-mono-casual-light {
+	font-variation-settings: "MONO" 1, "CASL" 1, "wght" 300, "slnt" 0,
+			"CRSV" 0.501;
+}
+
+.recursive-sans-linear-light-mono-casual-light-italic {
+	font-variation-settings: "MONO" 1, "CASL" 1, "wght" 300, "slnt" -15,
+			"CRSV" 1;
+}
+
+.recursive-sans-linear-light-mono-linear {
+	font-variation-settings: "MONO" 1, "CASL" 0, "wght" 400, "slnt" 0,
+			"CRSV" 0.501;
+}
+
+.recursive-sans-linear-light-mono-linear-italic {
+	font-variation-settings: "MONO" 1, "CASL" 0, "wght" 400, "slnt" -15,
+			"CRSV" 1;
+}
+
+.recursive-sans-linear-light-mono-casual {
+	font-variation-settings: "MONO" 1, "CASL" 1, "wght" 400, "slnt" 0,
+			"CRSV" 0.501;
+}
+
+.recursive-sans-linear-light-mono-casual-italic {
+	font-variation-settings: "MONO" 1, "CASL" 1, "wght" 400, "slnt" -15,
+			"CRSV" 1;
+}
+
+.recursive-sans-linear-light-mono-linear-medium {
+	font-variation-settings: "MONO" 1, "CASL" 0, "wght" 500, "slnt" 0,
+			"CRSV" 0.501;
+}
+
+.recursive-sans-linear-light-mono-linear-medium-italic {
+	font-variation-settings: "MONO" 1, "CASL" 0, "wght" 500, "slnt" -15,
+			"CRSV" 1;
+}
+
+.recursive-sans-linear-light-mono-casual-medium {
+	font-variation-settings: "MONO" 1, "CASL" 1, "wght" 500, "slnt" 0,
+			"CRSV" 0.501;
+}
+
+.recursive-sans-linear-light-mono-casual-medium-italic {
+	font-variation-settings: "MONO" 1, "CASL" 1, "wght" 500, "slnt" -15,
+			"CRSV" 1;
+}
+
+.recursive-sans-linear-light-mono-linear-semibold {
+	font-variation-settings: "MONO" 1, "CASL" 0, "wght" 600, "slnt" 0,
+			"CRSV" 0.501;
+}
+
+.recursive-sans-linear-light-mono-linear-semibold-italic {
+	font-variation-settings: "MONO" 1, "CASL" 0, "wght" 600, "slnt" -15,
+			"CRSV" 1;
+}
+
+.recursive-sans-linear-light-mono-casual-semibold {
+	font-variation-settings: "MONO" 1, "CASL" 1, "wght" 600, "slnt" 0,
+			"CRSV" 0.501;
+}
+
+.recursive-sans-linear-light-mono-casual-semibold-italic {
+	font-variation-settings: "MONO" 1, "CASL" 1, "wght" 600, "slnt" -15,
+			"CRSV" 1;
+}
+
+.recursive-sans-linear-light-mono-linear-bold {
+	font-variation-settings: "MONO" 1, "CASL" 0, "wght" 700, "slnt" 0,
+			"CRSV" 0.501;
+}
+
+.recursive-sans-linear-light-mono-linear-bold-italic {
+	font-variation-settings: "MONO" 1, "CASL" 0, "wght" 700, "slnt" -15,
+			"CRSV" 1;
+}
+
+.recursive-sans-linear-light-mono-casual-bold {
+	font-variation-settings: "MONO" 1, "CASL" 1, "wght" 700, "slnt" 0,
+			"CRSV" 0.501;
+}
+
+.recursive-sans-linear-light-mono-casual-bold-italic {
+	font-variation-settings: "MONO" 1, "CASL" 1, "wght" 700, "slnt" -15,
+			"CRSV" 1;
+}
+
+.recursive-sans-linear-light-mono-linear-extrabold {
+	font-variation-settings: "MONO" 1, "CASL" 0, "wght" 800, "slnt" 0,
+			"CRSV" 0.501;
+}
+
+.recursive-sans-linear-light-mono-linear-extrabold-italic {
+	font-variation-settings: "MONO" 1, "CASL" 0, "wght" 800, "slnt" -15,
+			"CRSV" 1;
+}
+
+.recursive-sans-linear-light-mono-casual-extrabold {
+	font-variation-settings: "MONO" 1, "CASL" 1, "wght" 800, "slnt" 0,
+			"CRSV" 0.501;
+}
+
+.recursive-sans-linear-light-mono-casual-extrabold-italic {
+	font-variation-settings: "MONO" 1, "CASL" 1, "wght" 800, "slnt" -15,
+			"CRSV" 1;
+}
+
+.recursive-sans-linear-light-mono-linear-black {
+	font-variation-settings: "MONO" 1, "CASL" 0, "wght" 900, "slnt" 0,
+			"CRSV" 0.501;
+}
+
+.recursive-sans-linear-light-mono-linear-black-italic {
+	font-variation-settings: "MONO" 1, "CASL" 0, "wght" 900, "slnt" -15,
+			"CRSV" 1;
+}
+
+.recursive-sans-linear-light-mono-casual-black {
+	font-variation-settings: "MONO" 1, "CASL" 1, "wght" 900, "slnt" 0,
+			"CRSV" 0.501;
+}
+
+.recursive-sans-linear-light-mono-casual-black-italic {
+	font-variation-settings: "MONO" 1, "CASL" 1, "wght" 900, "slnt" -15,
+			"CRSV" 1;
+}
+
+.recursive-sans-linear-light-mono-linear-extrablack {
+	font-variation-settings: "MONO" 1, "CASL" 0, "wght" 1000, "slnt" 0,
+			"CRSV" 0.501;
+}
+
+.recursive-sans-linear-light-mono-linear-extrablack-italic {
+	font-variation-settings: "MONO" 1, "CASL" 0, "wght" 1000, "slnt" -15,
+			"CRSV" 1;
+}
+
+.recursive-sans-linear-light-mono-casual-extrablack {
+	font-variation-settings: "MONO" 1, "CASL" 1, "wght" 1000, "slnt" 0,
+			"CRSV" 0.501;
+}
+
+.recursive-sans-linear-light-mono-casual-extrablack-italic {
+	font-variation-settings: "MONO" 1, "CASL" 1, "wght" 1000, "slnt" -15,
+			"CRSV" 1;
+}
+
+.recursive-sans-linear-light-sans-linear-light {
+	font-variation-settings: "MONO" 0, "CASL" 0, "wght" 300, "slnt" 0,
+			"CRSV" 0.501;
+}
+
+.recursive-sans-linear-light-sans-linear-light-italic {
+	font-variation-settings: "MONO" 0, "CASL" 0, "wght" 300, "slnt" -15,
+			"CRSV" 1;
+}
+
+.recursive-sans-linear-light-sans-casual-light {
+	font-variation-settings: "MONO" 0, "CASL" 1, "wght" 300, "slnt" 0,
+			"CRSV" 0.501;
+}
+
+.recursive-sans-linear-light-sans-casual-light-italic {
+	font-variation-settings: "MONO" 0, "CASL" 1, "wght" 300, "slnt" -15,
+			"CRSV" 1;
+}
+
+.recursive-sans-linear-light-sans-linear {
+	font-variation-settings: "MONO" 0, "CASL" 0, "wght" 400, "slnt" 0,
+			"CRSV" 0.501;
+}
+
+.recursive-sans-linear-light-sans-linear-italic {
+	font-variation-settings: "MONO" 0, "CASL" 0, "wght" 400, "slnt" -15,
+			"CRSV" 1;
+}
+
+.recursive-sans-linear-light-sans-casual {
+	font-variation-settings: "MONO" 0, "CASL" 1, "wght" 400, "slnt" 0,
+			"CRSV" 0.501;
+}
+
+.recursive-sans-linear-light-sans-casual-italic {
+	font-variation-settings: "MONO" 0, "CASL" 1, "wght" 400, "slnt" -15,
+			"CRSV" 1;
+}
+
+.recursive-sans-linear-light-sans-linear-medium {
+	font-variation-settings: "MONO" 0, "CASL" 0, "wght" 500, "slnt" 0,
+			"CRSV" 0.501;
+}
+
+.recursive-sans-linear-light-sans-linear-medium-italic {
+	font-variation-settings: "MONO" 0, "CASL" 0, "wght" 500, "slnt" -15,
+			"CRSV" 1;
+}
+
+.recursive-sans-linear-light-sans-casual-medium {
+	font-variation-settings: "MONO" 0, "CASL" 1, "wght" 500, "slnt" 0,
+			"CRSV" 0.501;
+}
+
+.recursive-sans-linear-light-sans-casual-medium-italic {
+	font-variation-settings: "MONO" 0, "CASL" 1, "wght" 500, "slnt" -15,
+			"CRSV" 1;
+}
+
+.recursive-sans-linear-light-sans-linear-semibold {
+	font-variation-settings: "MONO" 0, "CASL" 0, "wght" 600, "slnt" 0,
+			"CRSV" 0.501;
+}
+
+.recursive-sans-linear-light-sans-linear-semibold-italic {
+	font-variation-settings: "MONO" 0, "CASL" 0, "wght" 600, "slnt" -15,
+			"CRSV" 1;
+}
+
+.recursive-sans-linear-light-sans-casual-semibold {
+	font-variation-settings: "MONO" 0, "CASL" 1, "wght" 600, "slnt" 0,
+			"CRSV" 0.501;
+}
+
+.recursive-sans-linear-light-sans-casual-semibold-italic {
+	font-variation-settings: "MONO" 0, "CASL" 1, "wght" 600, "slnt" -15,
+			"CRSV" 1;
+}
+
+.recursive-sans-linear-light-sans-linear-bold {
+	font-variation-settings: "MONO" 0, "CASL" 0, "wght" 700, "slnt" 0,
+			"CRSV" 0.501;
+}
+
+.recursive-sans-linear-light-sans-linear-bold-italic {
+	font-variation-settings: "MONO" 0, "CASL" 0, "wght" 700, "slnt" -15,
+			"CRSV" 1;
+}
+
+.recursive-sans-linear-light-sans-casual-bold {
+	font-variation-settings: "MONO" 0, "CASL" 1, "wght" 700, "slnt" 0,
+			"CRSV" 0.501;
+}
+
+.recursive-sans-linear-light-sans-casual-bold-italic {
+	font-variation-settings: "MONO" 0, "CASL" 1, "wght" 700, "slnt" -15,
+			"CRSV" 1;
+}
+
+.recursive-sans-linear-light-sans-linear-extrabold {
+	font-variation-settings: "MONO" 0, "CASL" 0, "wght" 800, "slnt" 0,
+			"CRSV" 0.501;
+}
+
+.recursive-sans-linear-light-sans-linear-extrabold-italic {
+	font-variation-settings: "MONO" 0, "CASL" 0, "wght" 800, "slnt" -15,
+			"CRSV" 1;
+}
+
+.recursive-sans-linear-light-sans-casual-extrabold {
+	font-variation-settings: "MONO" 0, "CASL" 1, "wght" 800, "slnt" 0,
+			"CRSV" 0.501;
+}
+
+.recursive-sans-linear-light-sans-casual-extrabold-italic {
+	font-variation-settings: "MONO" 0, "CASL" 1, "wght" 800, "slnt" -15,
+			"CRSV" 1;
+}
+
+.recursive-sans-linear-light-sans-linear-black {
+	font-variation-settings: "MONO" 0, "CASL" 0, "wght" 900, "slnt" 0,
+			"CRSV" 0.501;
+}
+
+.recursive-sans-linear-light-sans-linear-black-italic {
+	font-variation-settings: "MONO" 0, "CASL" 0, "wght" 900, "slnt" -15,
+			"CRSV" 1;
+}
+
+.recursive-sans-linear-light-sans-casual-black {
+	font-variation-settings: "MONO" 0, "CASL" 1, "wght" 900, "slnt" 0,
+			"CRSV" 0.501;
+}
+
+.recursive-sans-linear-light-sans-casual-black-italic {
+	font-variation-settings: "MONO" 0, "CASL" 1, "wght" 900, "slnt" -15,
+			"CRSV" 1;
+}
+
+.recursive-sans-linear-light-sans-linear-extrablack {
+	font-variation-settings: "MONO" 0, "CASL" 0, "wght" 1000, "slnt" 0,
+			"CRSV" 0.501;
+}
+
+.recursive-sans-linear-light-sans-linear-extrablack-italic {
+	font-variation-settings: "MONO" 0, "CASL" 0, "wght" 1000, "slnt" -15,
+			"CRSV" 1;
+}
+
+.recursive-sans-linear-light-sans-casual-extrablack {
+	font-variation-settings: "MONO" 0, "CASL" 1, "wght" 1000, "slnt" 0,
+			"CRSV" 0.501;
+}
+
+.recursive-sans-linear-light-sans-casual-extrablack-italic {
+	font-variation-settings: "MONO" 0, "CASL" 1, "wght" 1000, "slnt" -15,
+			"CRSV" 1;
 }
 
 /* Defaults */
@@ -95,22 +461,6 @@ small,
 	font-size: calc(var(--small-size) * 1rem);
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--color-gray-20: oklch(90.67% 0 0);
-		--color-gray-50: oklch(80.78% 0 0);
-		--color-gray-90: oklch(88.38% 0.002 17.2);
-
-		/* --text-color is assigned to --color-gray-_ above */
-
-		--text-color: rgb(255,255,255);
-    --link-color: oklch(65.47% 0.183 250.8);
-		--link-color-active: oklch(59.91% 0.207 278.14);
-		--link-color-visited: oklch(75.68% 0.117 283.25);
-
-		--background-color: oklch(23.85% 0.026 248.99);
-	}
-}
 
 /* Set the grid container dimensions */
 .grid-container {
@@ -176,6 +526,7 @@ img {
 
 article {
 	counter-reset: figures;
+	content-visibility: auto;
 }
 
 figure {
@@ -523,3 +874,58 @@ article {
 .post-navigation a:focus .post-title {
   border-bottom-color: var(--link-color);
 }
+
+/* Message blocks */
+.message {
+  border: 1px solid var(--text-color);
+  border-radius: 10px;
+  display: block;
+  padding: .5em;
+}
+
+.info {
+  background-color: oklch(85.62% 0.049 219.65 / 20%);
+}
+
+.warning {
+  background-color: oklch(99.2% 0.04 107.11 / 20%);
+}
+
+.danger {
+  background-color: oklch(67.59% 0.217 38.8 / 20%);
+}
+
+.kbd, kbd {
+  font-size: .9em;
+  padding: .0625rem .5rem;
+  border-radius: .125rem;
+  border: 1px solid oklch(32.58% 0.084 249.05);
+  box-shadow: 1px 1px 0 oklch(32.58% 0.084 249.05), 2px 2px 0 oklch(32.58% 0.084 249.05);
+  margin: 0 .25rem;
+  color: oklch(32.58% 0.084 249.05);
+}
+
+blockquote {
+  border-left: 4px solid oklch(27.12% 0.19 264.052);
+  padding-left: 1rem;
+}
+
+code, kbd, tt, var {
+  --recursive-mono: 1;
+  font-size: 1rem;
+}
+
+abbr, acronym {
+  border-bottom: 1px dotted oklch(51.03% 0 0);
+  cursor: help;
+}
+
+mark, ins {
+  background: oklch(97.31% 0.073 102.63);
+  text-decoration: none;
+}
+
+big {
+  font-size: 125%;
+}
+

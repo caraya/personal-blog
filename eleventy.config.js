@@ -1,11 +1,16 @@
 // External libraries
 const { DateTime } = require("luxon");
 
+// Custom markdown-it installation to customize it
+const markdownIt = require("markdown-it");
 // Markdownit plugins
 const markdownItAnchor = require("markdown-it-anchor");
 const markdownItDefList = require('markdown-it-deflist');
 const markdownItFigures = require("markdown-it-image-figures");
 // added by Carlos
+const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
+const emojiReadTime = require("@11tyrocks/eleventy-plugin-emoji-readtime");
+const pluginPWA = require("eleventy-plugin-pwa-v2");
 
 // 11ty plugins
 const pluginRss = require("@11ty/eleventy-plugin-rss");
@@ -18,7 +23,6 @@ const pluginDrafts = require("./eleventy.config.drafts.js");
 const pluginImages = require("./eleventy.config.images.js");
 
 // Added by Carlos
-const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
 
 module.exports = function(eleventyConfig) {
 	// Copy the contents of the `public` folder to the output folder
@@ -49,6 +53,34 @@ module.exports = function(eleventyConfig) {
 
 	// Local additions
 	eleventyConfig.addPlugin(pluginMermaid);
+	eleventyConfig.addPlugin(emojiReadTime, {
+		showEmoji: false,
+	});
+  eleventyConfig.addPlugin(pluginPWA, {
+    cacheId: "pub-project",
+    globIgnores: [
+      // any files you don't want service worker to cache go here
+      "share-*.jpg",
+    ],
+    runtimeCaching: [
+      {
+        // we always want fresh copy of the index page
+        urlPattern: /\/$/,
+        handler: "NetworkFirst",
+      },
+      {
+        urlPattern: /\.html$/,
+        handler: "CacheFirst",
+      },
+      {
+        // Serve assets from cache first
+        urlPattern:
+          /^.*\.(jpg|png|mp4|gif|webp|ico|svg|woff2|woff|eot|ttf|otf|ttc|json)$/,
+        handler: "CacheFirst",
+      },
+    ],
+  });
+
 
 	// Filters
 	// Credit: https://11ty.rocks/eleventyjs/content/#excerpt-filter
@@ -97,7 +129,18 @@ module.exports = function(eleventyConfig) {
 		return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
 	});
 
-	// Customize Markdown library settings:
+	// MARKDOWN CUSTOMIZATIONS
+	// 1. Markdown Options
+	let options = {
+    html: true,
+    // breaks: true,
+    // linkify: true
+  };
+
+	// 2. Use the custom library
+  eleventyConfig.setLibrary("md", markdownIt(options));
+
+	// 3. Configure Markdown-It plugins
 	eleventyConfig.amendLibrary("md", mdLib => {
 		mdLib.use(markdownItAnchor, {
 			permalink: markdownItAnchor.permalink.ariaHidden({
