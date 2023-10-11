@@ -1,0 +1,9 @@
+---
+layout: layouts/home.njk
+eleventyNavigation:
+  key: Archive
+  order: 2
+---
+
+{% set postslist = collections.posts %}
+{% include "postslist.njk" %}

@@ -10,7 +10,7 @@ const markdownItFigures = require("markdown-it-image-figures");
 // added by Carlos
 const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
 const emojiReadTime = require("@11tyrocks/eleventy-plugin-emoji-readtime");
-const pluginPWA = require("eleventy-plugin-pwa-v2");
+// const pluginPWA = require("eleventy-plugin-pwa-v2");
 
 // 11ty plugins
 const pluginRss = require("@11ty/eleventy-plugin-rss");
@@ -56,30 +56,30 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(emojiReadTime, {
 		showEmoji: false,
 	});
-  eleventyConfig.addPlugin(pluginPWA, {
-    cacheId: "pub-project",
-    globIgnores: [
-      // any files you don't want service worker to cache go here
-      "share-*.jpg",
-    ],
-    runtimeCaching: [
-      {
-        // we always want fresh copy of the index page
-        urlPattern: /\/$/,
-        handler: "NetworkFirst",
-      },
-      {
-        urlPattern: /\.html$/,
-        handler: "CacheFirst",
-      },
-      {
-        // Serve assets from cache first
-        urlPattern:
-          /^.*\.(jpg|png|mp4|gif|webp|ico|svg|woff2|woff|eot|ttf|otf|ttc|json)$/,
-        handler: "CacheFirst",
-      },
-    ],
-  });
+  // eleventyConfig.addPlugin(pluginPWA, {
+  //   cacheId: "pub-project",
+  //   globIgnores: [
+  //     // any files you don't want service worker to cache go here
+  //     "share-*.jpg",
+  //   ],
+  //   runtimeCaching: [
+  //     {
+  //       // we always want fresh copy of the index page
+  //       urlPattern: /\/$/,
+  //       handler: "NetworkFirst",
+  //     },
+  //     {
+  //       urlPattern: /\.html$/,
+  //       handler: "CacheFirst",
+  //     },
+  //     {
+  //       // Serve assets from cache first
+  //       urlPattern:
+  //         /^.*\.(jpg|png|mp4|gif|webp|ico|svg|woff2|woff|eot|ttf|otf|ttc|json)$/,
+  //       handler: "CacheFirst",
+  //     },
+  //   ],
+  // });
 
 
 	// Filters

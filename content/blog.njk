@@ -3,7 +3,44 @@ layout: layouts/home.njk
 eleventyNavigation:
   key: Archive
   order: 2
+	url: http://localhost:8080/blog/page-1/
+pagination:
+  data: collections.posts
+  size: 10
+  reverse: true
+permalink: "blog/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber }}/{% endif %}index.html"
 ---
 
-{% set postslist = collections.posts %}
-{% include "postslist.njk" %}
+<div class="postlist">
+  {%- for post in pagination.items -%}
+    <article class="postlist-item">
+      <h3>
+        <a href="{{ post.url }}" class="postlist-link">
+          {% if post.data.title %}
+            {{ post.data.title }}
+          {% else %}
+            <code>{{ post.url }}</code>
+          {% endif %}
+        </a>
+      </h3>
+      <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("LLLL dd yyyy") }}</time>
+      <p>{{ post.templateContent | excerpt }}
+        <div class="continue-reading">
+          <a href="{{ post.url }}">Read More...</a>
+        </div>
+      </article>
+    {%- endfor -%}
+  </div>
+
+  {% if pagination.pageLinks.length > 1 %}
+    <h2 class="visually-hidden">Archive Navigation</h2>
+		<nav class="archive-pagination">
+      {% if pagination.href.previous %}
+        <a class="archive-pagination__item" href="{{ pagination.previousPageHref | url }}">Newer Articles</a>
+      {% endif %}
+      <a class="archive-pagination__item" href="/">Home</a>
+      {% if pagination.href.next %}
+        <a class="archive-pagination__item" href="{{ pagination.nextPageHref | url }}">Older Articles</a>
+      {% endif %}
+    </nav>
+  {% endif %}

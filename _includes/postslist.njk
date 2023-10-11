@@ -1,13 +1,24 @@
 {%- css %}.postlist { counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }} }{% endcss %}
 <div class="postlist">
-{% for post in postslist | reverse %}
-	<div class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
-		<a href="{{ post.url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
-		<time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("LLLL dd yyyy") }}</time>
-		<p>{{ post.templateContent | excerpt }}
-		<div class="continue-reading">
-			<a href="{{ post.url }}">Read More...</a>
-		</div>
-	</div>
-{% endfor %}
-</div>
+  {% for post in postslist | reverse %}
+    <div class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
+      <a href="{{ post.url }}" class="postlist-link">
+        {% if post.data.title %}
+          {{ post.data.title }}
+        {% else %}
+          <code>{{ post.url }}</code>
+        {% endif %}
+      </a>
+      <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("LLLL dd yyyy") }}</time>
+      <p>{{ post.templateContent | excerpt }}
+        <div class="continue-reading">
+          <a href="{{ post.url }}">Read More...</a>
+        </div>
+      </div>
+    {% endfor %}
+    <div class="archive-pagination">
+      <p>
+        <a class="archive-pagination__item" href="/blog/">Older Posts</a>
+      </p>
+    </div>
+  </div>
