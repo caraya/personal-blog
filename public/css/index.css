@@ -875,6 +875,14 @@ article {
   border-bottom-color: var(--link-color);
 }
 
+/* Archive pagination */
+nav.archive-pagination {
+  border: 2px solid var(--text-color);
+	display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 /* Message blocks */
 .message {
   border: 1px solid var(--text-color);

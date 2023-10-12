@@ -30,7 +30,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy({
 		"./public/": "/",
 		"./content/admin/": "/admin",
-		"./content/admin/config.yml": "admin/config.yml",
+		"./content/manifest.json": "/manifest.json",
 		"./node_modules/prismjs/themes/prism-solarizedlight.css": "/css/prism-solarizedlight.css"
 	});
 

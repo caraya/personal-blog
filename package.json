@@ -32,6 +32,7 @@
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
 		"@11tyrocks/eleventy-plugin-emoji-readtime": "^1.0.1",
 		"@kevingimbel/eleventy-plugin-mermaid": "^2.1.1",
+		"@netlify/plugin-lighthouse": "^5.0.0",
 		"eleventy-plugin-pwa-v2": "^1.0.1",
 		"luxon": "^3.3.0",
 		"markdown-it": "^13.0.2",

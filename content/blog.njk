@@ -28,15 +28,19 @@ permalink: "blog/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber
         <div class="continue-reading">
           <a href="{{ post.url }}">Read More...</a>
         </div>
-      </article>
+      </article> <!-- End Post article-->
     {%- endfor -%}
-  </div>
+  </div> <!-- End post list -->
 
   {% if pagination.pageLinks.length > 1 %}
     <h2 class="visually-hidden">Archive Navigation</h2>
 		<nav class="archive-pagination">
-      {% if pagination.href.previous %}
-        <a class="archive-pagination__item" href="{{ pagination.previousPageHref | url }}">Newer Articles</a>
+			{% if pagination.pageNumber + 1 < 2 %}
+				<p>&nbsp;</p>
+			{% else %}
+				{% if pagination.href.previous %}
+					<a class="archive-pagination__item" href="{{ pagination.previousPageHref | url }}">Newer Articles</a>
+				{% endif %}
       {% endif %}
       <a class="archive-pagination__item" href="/">Home</a>
       {% if pagination.href.next %}

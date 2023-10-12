@@ -1,12 +1,12 @@
 {
-	"theme_color": "#1438bd",
-	"background_color": "#ffffff",
-	"display": "browser",
-	"scope": "/",
-	"start_url": "/",
 	"name": "The Publishing Project",
 	"short_name": "Project",
 	"description": "Blog about web development and publishing",
+	"theme_color": "#1438bd",
+	"background_color": "#ffffff",
+	"display": "minimal-ui",
+	"scope": "/",
+	"start_url": "/",
 	"icons": [
 			{
 					"src": "/images/icon-192x192.png",
