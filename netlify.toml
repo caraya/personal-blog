@@ -23,10 +23,10 @@
 	[plugins.inputs]
 		output_path = "reports/lighthouse/index.html"
 
-package = "@algolia/netlify-plugin-crawler"
-  [plugins.inputs]
-  branches = ['main']
-  disabled = true
-  pathPrefix = "/blog"
-  customDomain = "example.com"
-  renderJavaScript = true
+# package = "@algolia/netlify-plugin-crawler"
+#   [plugins.inputs]
+#   branches = ['main']
+#   disabled = true
+#   pathPrefix = "/blog"
+#   customDomain = "example.com"
+#   renderJavaScript = true
