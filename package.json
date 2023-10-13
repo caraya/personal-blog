@@ -31,6 +31,7 @@
 		"@11ty/eleventy-plugin-rss": "^1.2.0",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
 		"@11tyrocks/eleventy-plugin-emoji-readtime": "^1.0.1",
+		"@algolia/netlify-plugin-crawler": "^1.0.15",
 		"@kevingimbel/eleventy-plugin-mermaid": "^2.1.1",
 		"@netlify/plugin-lighthouse": "^5.0.0",
 		"eleventy-plugin-pwa-v2": "^1.0.1",

@@ -43,8 +43,12 @@ permalink: "blog/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber
 				{% endif %}
       {% endif %}
       <a class="archive-pagination__item" href="/">Home</a>
-      {% if pagination.href.next %}
-        <a class="archive-pagination__item" href="{{ pagination.nextPageHref | url }}">Older Articles</a>
-      {% endif %}
+			{% if pagination.pageNumber + 1 > pagination.length %}
+				<p>&nbsp;</p>
+			{% else%}
+				{% if pagination.href.next %}
+					<a class="archive-pagination__item" href="{{ pagination.nextPageHref | url }}">Older Articles</a>
+				{% endif %}
+			{% endif %}
     </nav>
   {% endif %}
