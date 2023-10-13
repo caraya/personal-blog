@@ -1,20 +1,44 @@
+---
 backend:
-	name: git-gateway
-	branch: main
-media_folder: "public/images"
-public_folder: "/images"
+  name: git-gateway
+  branch: main
+media_folder: public/images
+public_folder: /images
 collections:
-	- name: "blog"
-		label: "Blog"
-		folder: "content/blog"
-		create: true
-		slug: "---"
-		fields:
-			- { label: "Date", name: "date", widget: "date", format: 'YYYY-MM-DD' }
-			- { label: "Updated", name: "updated", widget: "date", format: 'YYYY-MM-DD', required: false}
-			- { label: "Draft", name: "draft", widget: "boolean", default: true}
-			- { label: "canonical", name: "canonical", widget: "string", required: false }
-			- { label: "publication", name: "publication", widget: "string", required: false }
-			- { label: "permalink", name: "permalink", widget: "string", required: false}
-			- { label: "tags", name: "tags", widget: "list" }
-			- { label: "body", name: "body", widget: "markdown" }
+  - name: blog
+    label: Blog
+    folder: content/blog
+    create: true
+    slug: ---
+    fields:
+      - label: Date
+        name: date
+        widget: date
+        format: YYYY-MM-DD
+      - label: Updated
+        name: updated
+        widget: date
+        format: YYYY-MM-DD
+        required: false
+      - label: Draft
+        name: draft
+        widget: boolean
+        default: true
+      - label: canonical
+        name: canonical
+        widget: string
+        required: false
+      - label: publication
+        name: publication
+        widget: string
+        required: false
+      - label: permalink
+        name: permalink
+        widget: string
+        required: false
+      - label: tags
+        name: tags
+        widget: list
+      - label: body
+        name: body
+        widget: markdown
