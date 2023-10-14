@@ -12,6 +12,40 @@ Unclassified or commercial satellite imagery is not good enough for you to be ab
 
 Google doesn’t provide satellite imagery in real-time so, even if they haven’t disabled the service, it won’t do you much good to analyze what’s going on in the conflict. [^2]
 
+!!! bug
+It works so much better when you do your research before engaging in arguments
+!!!
+
+!!! note
+It works so much better when you do your research before engaging in arguments
+!!!
+
+!!! danger
+It works so much better when you do your research before engaging in arguments
+!!!
+
+!!! warning
+It works so much better when you do your research before engaging in arguments
+!!!
+
+!!! info
+It works so much better when you do your research before engaging in arguments
+!!!
+
+!!! tip
+Let's see how fast she can go...
+
+Punch it
+!!!
+
+!!! success
+It works so much better when you do your research before engaging in arguments
+!!!
+
+!!! failure
+It works so much better when you do your research before engaging in arguments
+!!!
+
 Even their Pro service, Google Earth Pro doesn’t provide real-time images:
 
 > You can see a large collection of imagery in Google Earth, including satellite, aerial, 3D, and Street View images. Images are collected over time from providers and platforms. Images aren't in real time, so you won't see live changes.

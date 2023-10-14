@@ -1,9 +1,10 @@
 /*
-TODO: and FIXME:
+TODO:
 
 1. Decide how much of the Wakamaifondue code to keep
 2. Move the code to @layers
 3. Work on a decent dark mode
+4. Remove code duplication
 */
 
 /* Font Imports */
@@ -895,25 +896,60 @@ nav.archive-pagination {
   justify-content: space-between;
 }
 
-/* Message blocks */
-.message {
-  border: 1px solid var(--text-color);
-  border-radius: 10px;
-  display: block;
-  padding: .5em;
+/* admonition blocks */
+p.admonition-title {
+	font-weight: 700;
+	font-size: 125%;
 }
 
-.info {
-  background-color: oklch(85.62% 0.049 219.65 / 20%);
+.admonition.info,
+.admonition.note {
+	border: 1px solid var(--text-color);
+  border-radius: 20px;
+  padding: 1rem;
+	background-color: oklch(85.62% 0.049 219.65 / 40%);
 }
 
-.warning {
-  background-color: oklch(99.2% 0.04 107.11 / 20%);
+.admonition.info,
+.admonition.note {
+	border: 1px solid var(--text-color);
+  border-radius: 20px;
+  padding: 1rem;
+	background-color: oklch(0.42 0.22 269 / .4);
 }
 
-.danger {
-  background-color: oklch(67.59% 0.217 38.8 / 20%);
+.admonition.tip {
+	border: 1px solid var(--text-color);
+  border-radius: 20px;
+  padding: 1rem;
+	background-color: oklch(0.45 0.25 294 / .4);
 }
+
+.admonition.warning,
+.admonition.bug {
+	border: 1px solid var(--text-color);
+  border-radius: 20px;
+  padding: 1rem;
+	background-color: oklch(0.9 0.19 97.4 / 50%);
+}
+
+.admonition.danger,
+.admonition.failure {
+	border: 1px solid var(--text-color);
+  border-radius: 20px;
+  padding: 1rem;
+	background-color: oklch(67.59% 0.217 38.8 / .4);
+}
+
+
+
+.admonition.success {
+	border: 1px solid var(--text-color);
+  border-radius: 20px;
+  padding: 1rem;
+	background-color: oklch(0.55 0.18 143 / .4);
+}
+
 
 .kbd, kbd {
   font-size: .9em;

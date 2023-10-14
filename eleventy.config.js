@@ -11,7 +11,7 @@ const markdownItFigures = require("markdown-it-image-figures");
 const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
 const emojiReadTime = require("@11tyrocks/eleventy-plugin-emoji-readtime");
 const markdownItFootnotes = require("markdown-it-footnote");
-// const pluginPWA = require("eleventy-plugin-pwa-v2");
+const admonitions = require("markdown-it-admonition");
 
 // 11ty plugins
 const pluginRss = require("@11ty/eleventy-plugin-rss");
@@ -24,6 +24,7 @@ const pluginDrafts = require("./eleventy.config.drafts.js");
 const pluginImages = require("./eleventy.config.images.js");
 
 // Added by Carlos
+// const pluginPWA = require("eleventy-plugin-pwa-v2");
 
 module.exports = function(eleventyConfig) {
 	// Copy the contents of the `public` folder to the output folder
@@ -135,8 +136,8 @@ module.exports = function(eleventyConfig) {
 	// 1. Markdown Options
 	let options = {
     html: true,
-    // breaks: true,
-    // linkify: true
+    breaks: false,
+    linkify: false,
   };
 
 	// 2. Use the custom library
@@ -162,6 +163,7 @@ module.exports = function(eleventyConfig) {
 			classes: 'lazy'
 		});
 		mdLib.use(markdownItFootnotes);
+		mdLib.use(admonitions);
 	});
 
 	// Features to make your build faster (when you need them)
