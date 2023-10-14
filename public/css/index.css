@@ -478,7 +478,7 @@ main {
 	grid-column: 3/7;
 }
 
-footer {
+er {
 	grid-column: 3/7;
 }
 
@@ -673,7 +673,7 @@ header {
 
 /* Nav */
 .nav-top-menu-container {
-	grid-column: -2/-2;
+	grid-column: 1/1;
 	grid-row: 2/2;
 }
 
@@ -682,10 +682,14 @@ header {
 	margin: 0;
 
 	list-style: none;
+
+  display: flex;
+
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .nav-item {
-	display: inline-block;
 	margin-inline-end: 1em;
 }
 
@@ -945,3 +949,12 @@ big {
   font-size: 125%;
 }
 
+/* Footnotes */
+.footnotes-list::before {
+	content: 'Notes: \A\A';
+	font-size: 1.25em;
+	font-weight: 700;
+	margin-right: 1em;
+	white-space: pre;
+	color: var(--text-color);
+}

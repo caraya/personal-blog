@@ -10,6 +10,7 @@ const markdownItFigures = require("markdown-it-image-figures");
 // added by Carlos
 const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
 const emojiReadTime = require("@11tyrocks/eleventy-plugin-emoji-readtime");
+const markdownItFootnotes = require("markdown-it-footnote");
 // const pluginPWA = require("eleventy-plugin-pwa-v2");
 
 // 11ty plugins
@@ -62,6 +63,7 @@ module.exports = function(eleventyConfig) {
   //     // any files you don't want service worker to cache go here
   //     "share-*.jpg",
   //   ],
+	//
   //   runtimeCaching: [
   //     {
   //       // we always want fresh copy of the index page
@@ -159,6 +161,7 @@ module.exports = function(eleventyConfig) {
 			async: true,
 			classes: 'lazy'
 		});
+		mdLib.use(markdownItFootnotes);
 	});
 
 	// Features to make your build faster (when you need them)
