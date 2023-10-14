@@ -1,9 +1,9 @@
 ---
 layout: layouts/home.njk
-eleventyNavigation:
-  key: Archive
-  order: 2
-	url: http://localhost:8080/blog/page-1/
+# eleventyNavigation:
+#  key: Archive
+#  order: 2
+# url: http://localhost:8080/blog/page-1/
 pagination:
   data: collections.posts
   size: 10
@@ -38,10 +38,14 @@ permalink: "blog/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber
 			{% if pagination.pageNumber + 1 < 2 %}
 				<p>&nbsp;</p>
 			{% else %}
-				{% if pagination.href.previous %}
-					<a class="archive-pagination__item" href="{{ pagination.previousPageHref | url }}">Newer Articles</a>
+				{% if pagination.pageNumber == 1 %}
+					<a class="archive-pagination__item" href="/">Previous Posts</a>
+				{% else %}
+					{% if pagination.href.previous %}
+						<a class="archive-pagination__item" href="{{ pagination.previousPageHref | url }}">Newer Articles</a>
+					{% endif %}
 				{% endif %}
-      {% endif %}
+			{% endif %}
       <a class="archive-pagination__item" href="/">Home</a>
 			{% if pagination.pageNumber + 1 > pagination.length %}
 				<p>&nbsp;</p>

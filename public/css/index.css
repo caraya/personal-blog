@@ -672,22 +672,30 @@ header {
 }
 
 /* Nav */
-.nav {
-	display: flex;
+.nav-top-menu-container {
+	grid-column: -2/-2;
+	grid-row: 2/2;
+}
+
+.nav-top-menu {
 	padding: 0;
 	margin: 0;
+
 	list-style: none;
 }
+
 .nav-item {
 	display: inline-block;
-	margin-right: 1em;
+	margin-inline-end: 1em;
 }
+
 .nav-item a[href]:not(:hover) {
 	text-decoration: none;
 }
-.nav a[href][aria-current="page"] {
+
+/* .nav a[href][aria-current="page"] {
 	text-decoration: underline;
-}
+} */
 
 /* Posts list */
 .postlist-item {
