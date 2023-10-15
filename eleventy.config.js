@@ -5,13 +5,14 @@ const { DateTime } = require("luxon");
 const markdownIt = require("markdown-it");
 // Markdownit plugins
 const markdownItAnchor = require("markdown-it-anchor");
+// added by Carlos
 const markdownItDefList = require('markdown-it-deflist');
 const markdownItFigures = require("markdown-it-image-figures");
-// added by Carlos
 const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
 const emojiReadTime = require("@11tyrocks/eleventy-plugin-emoji-readtime");
 const markdownItFootnotes = require("markdown-it-footnote");
 const admonitions = require("markdown-it-admonition");
+const markdownItKbd = require('markdown-it-kbd-better');
 
 // 11ty plugins
 const pluginRss = require("@11ty/eleventy-plugin-rss");
@@ -28,7 +29,7 @@ const pluginImages = require("./eleventy.config.images.js");
 const posthtml = require('posthtml');
 const { posthtml: automaticNoopener, parser } = require('eleventy-plugin-automatic-noopener');
 const NoOpOptions = parser({noreferrer: true});
-// PWA
+// PWA, commented out until I figure out caching strategies
 // const pluginPWA = require("eleventy-plugin-pwa-v2");
 
 module.exports = function(eleventyConfig) {
@@ -181,6 +182,11 @@ module.exports = function(eleventyConfig) {
 		});
 		mdLib.use(markdownItFootnotes);
 		mdLib.use(admonitions);
+		mdLib.use(markdownItKbd, {
+			presets: [{
+					name: 'icons'
+			}]
+		});
 	});
 
 	// Features to make your build faster (when you need them)

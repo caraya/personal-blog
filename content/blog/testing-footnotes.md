@@ -10,6 +10,8 @@ If it has been disabled, do you know who asked Google to disable satellite image
 
 Unclassified or commercial satellite imagery is not good enough for you to be able to see what’s going on in the ground, it is also very expensive. You’d need aircraft-generated imagery to get to high-resolution images. The reasons why that is not possible in a war zone should be obvious
 
+[[cmd]] + [[C]] to copy on mac and [[ctrl]] + [[C]] to copy on windows
+
 Google doesn’t provide satellite imagery in real-time so, even if they haven’t disabled the service, it won’t do you much good to analyze what’s going on in the conflict. [^2]
 
 !!! bug
