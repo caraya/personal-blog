@@ -24,6 +24,11 @@ const pluginDrafts = require("./eleventy.config.drafts.js");
 const pluginImages = require("./eleventy.config.images.js");
 
 // Added by Carlos
+// AutomaticNoOpener
+const posthtml = require('posthtml');
+const { posthtml: automaticNoopener, parser } = require('eleventy-plugin-automatic-noopener');
+const NoOpOptions = parser({noreferrer: true});
+// PWA
 // const pluginPWA = require("eleventy-plugin-pwa-v2");
 
 module.exports = function(eleventyConfig) {
@@ -84,6 +89,18 @@ module.exports = function(eleventyConfig) {
   //   ],
   // });
 
+	// Transforms
+	eleventyConfig.addTransform('posthtml', function(HTMLString, outputPath) {
+		if(outputPath && outputPath.endsWith('.html')) {
+			return posthtml([
+				automaticNoopener(NoOpOptions),
+			])
+				.process(HTMLString)
+				.then(result => result.html);
+		} else {
+			return HTMLString;
+		}
+	});
 
 	// Filters
 	// Credit: https://11ty.rocks/eleventyjs/content/#excerpt-filter
