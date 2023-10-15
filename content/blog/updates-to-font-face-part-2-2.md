@@ -9,7 +9,7 @@ date: "2023-10-11"
 
 We will discuss each of these in turn.
 
-## `format()`
+## format()
 
 This attribute specifies the font format of the font it is attached to.
 
@@ -57,16 +57,16 @@ Loading a font and explicitly stating that it's a WOFF2 variable font would look
 ```css
 @font-face {
   font-family: "Recursive";
-  src: url("/path/to/recursive.woff2") 
+  src: url("/path/to/recursive.woff2")
     format(woff2)
     tech(variations),
-  url("/path/to/recursive.woff") 
+  url("/path/to/recursive.woff")
     format(woff)
     tech(variations);
 }
 ```
 
-## `tech()`
+## tech()
 
 `tech()` is an optional descriptor that indicates the technologies that the font supports. This is particularly useful when working with color fonts since there different browsers support different color font formats.
 

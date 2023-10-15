@@ -9,6 +9,13 @@ TODO:
 6. Decide if you want to do unicode icons for admonitions!
 */
 
+/* Custom OL style declaration */
+@counter-style circled-decimal {
+  system: fixed 0;
+  symbols: "\24EA""\2460""\2461""\2462""\2463""\2464""\2465""\2466""\2467""\2468""\2469""\246A""\246B""\246C""\246D""\246E""\246F""\2470""\2471""\2472""\2473""\3251""\3252""\3253""\3254""\3255""\3256""\3257""\3258""\3259""\325a""\325b""\325c""\325d""\325e""\325f""\32b1""\32b2""\32b3""\32b4""\32b5""\32b6""\32b7""\32b8""\32b9""\32ba""\32bb""\32bc""\32bd""\32be""\32bf";
+
+  suffix: " ";
+}
 /* Font Imports */
 @font-face {
   font-family: 'Recursive';
@@ -59,327 +66,6 @@ TODO:
 .recursive-sans-linear-light-numr {
 	font-feature-settings: var(--recursive-sans-linear-light-dnom), var(--recursive-sans-linear-light-frac),
 			var(--recursive-sans-linear-light-numr);
-}
-
-/* Variable instances */
-.recursive-sans-linear-light-mono-linear-light {
-	font-variation-settings: "MONO" 1, "CASL" 0, "wght" 300, "slnt" 0,
-			"CRSV" 0.501;
-}
-
-.recursive-sans-linear-light-mono-linear-light-italic {
-	font-variation-settings: "MONO" 1, "CASL" 0, "wght" 300, "slnt" -15,
-			"CRSV" 1;
-}
-
-.recursive-sans-linear-light-mono-casual-light {
-	font-variation-settings: "MONO" 1, "CASL" 1, "wght" 300, "slnt" 0,
-			"CRSV" 0.501;
-}
-
-.recursive-sans-linear-light-mono-casual-light-italic {
-	font-variation-settings: "MONO" 1, "CASL" 1, "wght" 300, "slnt" -15,
-			"CRSV" 1;
-}
-
-.recursive-sans-linear-light-mono-linear {
-	font-variation-settings: "MONO" 1, "CASL" 0, "wght" 400, "slnt" 0,
-			"CRSV" 0.501;
-}
-
-.recursive-sans-linear-light-mono-linear-italic {
-	font-variation-settings: "MONO" 1, "CASL" 0, "wght" 400, "slnt" -15,
-			"CRSV" 1;
-}
-
-.recursive-sans-linear-light-mono-casual {
-	font-variation-settings: "MONO" 1, "CASL" 1, "wght" 400, "slnt" 0,
-			"CRSV" 0.501;
-}
-
-.recursive-sans-linear-light-mono-casual-italic {
-	font-variation-settings: "MONO" 1, "CASL" 1, "wght" 400, "slnt" -15,
-			"CRSV" 1;
-}
-
-.recursive-sans-linear-light-mono-linear-medium {
-	font-variation-settings: "MONO" 1, "CASL" 0, "wght" 500, "slnt" 0,
-			"CRSV" 0.501;
-}
-
-.recursive-sans-linear-light-mono-linear-medium-italic {
-	font-variation-settings: "MONO" 1, "CASL" 0, "wght" 500, "slnt" -15,
-			"CRSV" 1;
-}
-
-.recursive-sans-linear-light-mono-casual-medium {
-	font-variation-settings: "MONO" 1, "CASL" 1, "wght" 500, "slnt" 0,
-			"CRSV" 0.501;
-}
-
-.recursive-sans-linear-light-mono-casual-medium-italic {
-	font-variation-settings: "MONO" 1, "CASL" 1, "wght" 500, "slnt" -15,
-			"CRSV" 1;
-}
-
-.recursive-sans-linear-light-mono-linear-semibold {
-	font-variation-settings: "MONO" 1, "CASL" 0, "wght" 600, "slnt" 0,
-			"CRSV" 0.501;
-}
-
-.recursive-sans-linear-light-mono-linear-semibold-italic {
-	font-variation-settings: "MONO" 1, "CASL" 0, "wght" 600, "slnt" -15,
-			"CRSV" 1;
-}
-
-.recursive-sans-linear-light-mono-casual-semibold {
-	font-variation-settings: "MONO" 1, "CASL" 1, "wght" 600, "slnt" 0,
-			"CRSV" 0.501;
-}
-
-.recursive-sans-linear-light-mono-casual-semibold-italic {
-	font-variation-settings: "MONO" 1, "CASL" 1, "wght" 600, "slnt" -15,
-			"CRSV" 1;
-}
-
-.recursive-sans-linear-light-mono-linear-bold {
-	font-variation-settings: "MONO" 1, "CASL" 0, "wght" 700, "slnt" 0,
-			"CRSV" 0.501;
-}
-
-.recursive-sans-linear-light-mono-linear-bold-italic {
-	font-variation-settings: "MONO" 1, "CASL" 0, "wght" 700, "slnt" -15,
-			"CRSV" 1;
-}
-
-.recursive-sans-linear-light-mono-casual-bold {
-	font-variation-settings: "MONO" 1, "CASL" 1, "wght" 700, "slnt" 0,
-			"CRSV" 0.501;
-}
-
-.recursive-sans-linear-light-mono-casual-bold-italic {
-	font-variation-settings: "MONO" 1, "CASL" 1, "wght" 700, "slnt" -15,
-			"CRSV" 1;
-}
-
-.recursive-sans-linear-light-mono-linear-extrabold {
-	font-variation-settings: "MONO" 1, "CASL" 0, "wght" 800, "slnt" 0,
-			"CRSV" 0.501;
-}
-
-.recursive-sans-linear-light-mono-linear-extrabold-italic {
-	font-variation-settings: "MONO" 1, "CASL" 0, "wght" 800, "slnt" -15,
-			"CRSV" 1;
-}
-
-.recursive-sans-linear-light-mono-casual-extrabold {
-	font-variation-settings: "MONO" 1, "CASL" 1, "wght" 800, "slnt" 0,
-			"CRSV" 0.501;
-}
-
-.recursive-sans-linear-light-mono-casual-extrabold-italic {
-	font-variation-settings: "MONO" 1, "CASL" 1, "wght" 800, "slnt" -15,
-			"CRSV" 1;
-}
-
-.recursive-sans-linear-light-mono-linear-black {
-	font-variation-settings: "MONO" 1, "CASL" 0, "wght" 900, "slnt" 0,
-			"CRSV" 0.501;
-}
-
-.recursive-sans-linear-light-mono-linear-black-italic {
-	font-variation-settings: "MONO" 1, "CASL" 0, "wght" 900, "slnt" -15,
-			"CRSV" 1;
-}
-
-.recursive-sans-linear-light-mono-casual-black {
-	font-variation-settings: "MONO" 1, "CASL" 1, "wght" 900, "slnt" 0,
-			"CRSV" 0.501;
-}
-
-.recursive-sans-linear-light-mono-casual-black-italic {
-	font-variation-settings: "MONO" 1, "CASL" 1, "wght" 900, "slnt" -15,
-			"CRSV" 1;
-}
-
-.recursive-sans-linear-light-mono-linear-extrablack {
-	font-variation-settings: "MONO" 1, "CASL" 0, "wght" 1000, "slnt" 0,
-			"CRSV" 0.501;
-}
-
-.recursive-sans-linear-light-mono-linear-extrablack-italic {
-	font-variation-settings: "MONO" 1, "CASL" 0, "wght" 1000, "slnt" -15,
-			"CRSV" 1;
-}
-
-.recursive-sans-linear-light-mono-casual-extrablack {
-	font-variation-settings: "MONO" 1, "CASL" 1, "wght" 1000, "slnt" 0,
-			"CRSV" 0.501;
-}
-
-.recursive-sans-linear-light-mono-casual-extrablack-italic {
-	font-variation-settings: "MONO" 1, "CASL" 1, "wght" 1000, "slnt" -15,
-			"CRSV" 1;
-}
-
-.recursive-sans-linear-light-sans-linear-light {
-	font-variation-settings: "MONO" 0, "CASL" 0, "wght" 300, "slnt" 0,
-			"CRSV" 0.501;
-}
-
-.recursive-sans-linear-light-sans-linear-light-italic {
-	font-variation-settings: "MONO" 0, "CASL" 0, "wght" 300, "slnt" -15,
-			"CRSV" 1;
-}
-
-.recursive-sans-linear-light-sans-casual-light {
-	font-variation-settings: "MONO" 0, "CASL" 1, "wght" 300, "slnt" 0,
-			"CRSV" 0.501;
-}
-
-.recursive-sans-linear-light-sans-casual-light-italic {
-	font-variation-settings: "MONO" 0, "CASL" 1, "wght" 300, "slnt" -15,
-			"CRSV" 1;
-}
-
-.recursive-sans-linear-light-sans-linear {
-	font-variation-settings: "MONO" 0, "CASL" 0, "wght" 400, "slnt" 0,
-			"CRSV" 0.501;
-}
-
-.recursive-sans-linear-light-sans-linear-italic {
-	font-variation-settings: "MONO" 0, "CASL" 0, "wght" 400, "slnt" -15,
-			"CRSV" 1;
-}
-
-.recursive-sans-linear-light-sans-casual {
-	font-variation-settings: "MONO" 0, "CASL" 1, "wght" 400, "slnt" 0,
-			"CRSV" 0.501;
-}
-
-.recursive-sans-linear-light-sans-casual-italic {
-	font-variation-settings: "MONO" 0, "CASL" 1, "wght" 400, "slnt" -15,
-			"CRSV" 1;
-}
-
-.recursive-sans-linear-light-sans-linear-medium {
-	font-variation-settings: "MONO" 0, "CASL" 0, "wght" 500, "slnt" 0,
-			"CRSV" 0.501;
-}
-
-.recursive-sans-linear-light-sans-linear-medium-italic {
-	font-variation-settings: "MONO" 0, "CASL" 0, "wght" 500, "slnt" -15,
-			"CRSV" 1;
-}
-
-.recursive-sans-linear-light-sans-casual-medium {
-	font-variation-settings: "MONO" 0, "CASL" 1, "wght" 500, "slnt" 0,
-			"CRSV" 0.501;
-}
-
-.recursive-sans-linear-light-sans-casual-medium-italic {
-	font-variation-settings: "MONO" 0, "CASL" 1, "wght" 500, "slnt" -15,
-			"CRSV" 1;
-}
-
-.recursive-sans-linear-light-sans-linear-semibold {
-	font-variation-settings: "MONO" 0, "CASL" 0, "wght" 600, "slnt" 0,
-			"CRSV" 0.501;
-}
-
-.recursive-sans-linear-light-sans-linear-semibold-italic {
-	font-variation-settings: "MONO" 0, "CASL" 0, "wght" 600, "slnt" -15,
-			"CRSV" 1;
-}
-
-.recursive-sans-linear-light-sans-casual-semibold {
-	font-variation-settings: "MONO" 0, "CASL" 1, "wght" 600, "slnt" 0,
-			"CRSV" 0.501;
-}
-
-.recursive-sans-linear-light-sans-casual-semibold-italic {
-	font-variation-settings: "MONO" 0, "CASL" 1, "wght" 600, "slnt" -15,
-			"CRSV" 1;
-}
-
-.recursive-sans-linear-light-sans-linear-bold {
-	font-variation-settings: "MONO" 0, "CASL" 0, "wght" 700, "slnt" 0,
-			"CRSV" 0.501;
-}
-
-.recursive-sans-linear-light-sans-linear-bold-italic {
-	font-variation-settings: "MONO" 0, "CASL" 0, "wght" 700, "slnt" -15,
-			"CRSV" 1;
-}
-
-.recursive-sans-linear-light-sans-casual-bold {
-	font-variation-settings: "MONO" 0, "CASL" 1, "wght" 700, "slnt" 0,
-			"CRSV" 0.501;
-}
-
-.recursive-sans-linear-light-sans-casual-bold-italic {
-	font-variation-settings: "MONO" 0, "CASL" 1, "wght" 700, "slnt" -15,
-			"CRSV" 1;
-}
-
-.recursive-sans-linear-light-sans-linear-extrabold {
-	font-variation-settings: "MONO" 0, "CASL" 0, "wght" 800, "slnt" 0,
-			"CRSV" 0.501;
-}
-
-.recursive-sans-linear-light-sans-linear-extrabold-italic {
-	font-variation-settings: "MONO" 0, "CASL" 0, "wght" 800, "slnt" -15,
-			"CRSV" 1;
-}
-
-.recursive-sans-linear-light-sans-casual-extrabold {
-	font-variation-settings: "MONO" 0, "CASL" 1, "wght" 800, "slnt" 0,
-			"CRSV" 0.501;
-}
-
-.recursive-sans-linear-light-sans-casual-extrabold-italic {
-	font-variation-settings: "MONO" 0, "CASL" 1, "wght" 800, "slnt" -15,
-			"CRSV" 1;
-}
-
-.recursive-sans-linear-light-sans-linear-black {
-	font-variation-settings: "MONO" 0, "CASL" 0, "wght" 900, "slnt" 0,
-			"CRSV" 0.501;
-}
-
-.recursive-sans-linear-light-sans-linear-black-italic {
-	font-variation-settings: "MONO" 0, "CASL" 0, "wght" 900, "slnt" -15,
-			"CRSV" 1;
-}
-
-.recursive-sans-linear-light-sans-casual-black {
-	font-variation-settings: "MONO" 0, "CASL" 1, "wght" 900, "slnt" 0,
-			"CRSV" 0.501;
-}
-
-.recursive-sans-linear-light-sans-casual-black-italic {
-	font-variation-settings: "MONO" 0, "CASL" 1, "wght" 900, "slnt" -15,
-			"CRSV" 1;
-}
-
-.recursive-sans-linear-light-sans-linear-extrablack {
-	font-variation-settings: "MONO" 0, "CASL" 0, "wght" 1000, "slnt" 0,
-			"CRSV" 0.501;
-}
-
-.recursive-sans-linear-light-sans-linear-extrablack-italic {
-	font-variation-settings: "MONO" 0, "CASL" 0, "wght" 1000, "slnt" -15,
-			"CRSV" 1;
-}
-
-.recursive-sans-linear-light-sans-casual-extrablack {
-	font-variation-settings: "MONO" 0, "CASL" 1, "wght" 1000, "slnt" 0,
-			"CRSV" 0.501;
-}
-
-.recursive-sans-linear-light-sans-casual-extrablack-italic {
-	font-variation-settings: "MONO" 0, "CASL" 1, "wght" 1000, "slnt" -15,
-			"CRSV" 1;
 }
 
 /* Defaults */
@@ -611,10 +297,15 @@ header:after {
 table {
   table-layout: fixed;
   border-collapse: collapse;
+	margin-block-end: 2rem;
 }
 
-tr th,
-tr:nth-child(even) {
+thead tr {
+  background: var(--color-black);
+  color: var(--background-color);
+}
+
+tbody tr:nth-child(even) {
 	background-color: oklch(24.69% 0.006 314.7 / .125)
 }
 
@@ -995,4 +686,36 @@ big {
 	margin-right: 1em;
 	white-space: pre;
 	color: var(--text-color);
+}
+
+/* Override default UL styles*/
+ul {
+  list-style-type: disclosure-closed;
+}
+
+ul li::marker {
+  font-size: 1.5rem;
+  color: var(--link-color);
+}
+
+/* Override default OL styles */
+ol li {
+  list-style-type: decimal-leading-zero;
+  margin-inline-start: 1rem;
+}
+
+ol li::marker {
+  font-size: 1rem;
+  color: var(--link-color);
+}
+
+/* custom OL styles using declaration at the top of the file */
+.custom-ordered li {
+  list-style-type: circled-decimal;
+  margin-block-end: 0.5rem;
+}
+
+.custom-ordered li::marker {
+  font-size: 1rem;
+  color: var(--link-color);
 }
