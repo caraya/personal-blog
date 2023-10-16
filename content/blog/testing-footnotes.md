@@ -14,6 +14,10 @@ Unclassified or commercial satellite imagery is not good enough for you to be ab
 
 Google doesn’t provide satellite imagery in real-time so, even if they haven’t disabled the service, it won’t do you much good to analyze what’s going on in the conflict. [^2]
 
+1. Number 1
+2. Number 2
+3. Number 3
+
 !!! bug
 It works so much better when you do your research before engaging in arguments
 !!!
