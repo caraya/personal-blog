@@ -38,6 +38,8 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy({
 		"./public/": "/",
 		"./content/admin/": "/admin",
+		"./node_modules/lite-youtube-embed/src/lite-yt-embed.css": "/css/lite-yt-emnbed.css",
+		"./node_modules/lite-youtube-embed/src/lite-yt-embed.js": "/js/lite-yt-emnbed.js",
 		"./content/manifest.json": "/manifest.json",
 		"./node_modules/prismjs/themes/prism-solarizedlight.css": "/css/prism-solarizedlight.css"
 	});

@@ -10,6 +10,8 @@
     <link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}"> {#- Uncomment this if you’d like folks to know that you used Eleventy to build your site!  #}
 		<!-- Link to manifest -->
 		<link rel="manifest" href="/manifest.json" />
+		<!-- lite-yt-embed styles -->
+		<link rel="stylesheet" href="/css/lite-yt-emnbed.css" />
     {#- <meta name="generator" content="{{ eleventy.generator }}"> #}
     {#-
     		CSS bundles are provided via the `eleventy-plugin-bundle` plugin:
@@ -69,6 +71,8 @@
     <!-- Current page: {{ page.url | htmlBaseUrl }} -->
     <!-- Added for Mermaid block support -->
     {% mermaid_js %}
+		<!-- Added for lite-youtube-embed -->
+		<script src="/js/lite-yt-emnbed.js"></script>
     <!-- added for Netlify CMS -->
     <script>
       if (window.netlifyIdentity) {

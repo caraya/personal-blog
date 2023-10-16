@@ -35,6 +35,7 @@
 		"@netlify/plugin-lighthouse": "^5.0.0",
 		"eleventy-plugin-automatic-noopener": "^2.0.2",
 		"eleventy-plugin-pwa-v2": "^1.0.1",
+		"lite-youtube-embed": "^0.3.0",
 		"luxon": "^3.3.0",
 		"markdown-it": "^13.0.2",
 		"markdown-it-admonition": "^1.0.4",

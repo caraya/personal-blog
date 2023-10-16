@@ -414,14 +414,14 @@ header {
 	word-spacing: -0.5px;
 }
 .postlist-link {
-	font-size: 1.1875em; /* 19px /16 */
+	font-size: calc(var(--h2-size) * 1rem);
 	font-weight: 700;
 	flex-basis: calc(100% - 1.5rem);
-	padding-left: .25em;
-	padding-right: .5em;
-	text-underline-position: from-font;
-	text-underline-offset: 0;
-	text-decoration-thickness: 1px;
+	/* padding-left: .25em;
+	padding-right: .5em; */
+	text-decoration-skip-ink: auto;
+	text-underline-offset: 8px;
+	text-decoration-thickness: 2px;
 }
 .postlist-item-active .postlist-link {
 	font-weight: bold;
@@ -473,10 +473,6 @@ a[href].header-anchor:hover {
 a[href].header-anchor:focus,
 :hover > a[href].header-anchor {
 	color: #aaa;
-}
-
-h2 + .header-anchor {
-	font-size: 1.5em;
 }
 
 article {
