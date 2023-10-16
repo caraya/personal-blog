@@ -11,7 +11,7 @@
 		<!-- Link to manifest -->
 		<link rel="manifest" href="/manifest.json" />
 		<!-- lite-yt-embed styles -->
-		<link rel="stylesheet" href="/css/lite-yt-emnbed.css" />
+		<link rel="stylesheet" href="/css/lite-yt-embed.css" />
     {#- <meta name="generator" content="{{ eleventy.generator }}"> #}
     {#-
     		CSS bundles are provided via the `eleventy-plugin-bundle` plugin:
@@ -30,7 +30,10 @@
     {% getBundle "css" %}</style>
     {#- Renders the CSS bundle using a separate file, if you can't set CSP directive style-src: 'unsafe-inline' #}
     {#- <link rel="stylesheet" href="{% getBundleFileUrl "css" %}"> #}<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"> </script>
-    {# <script>
+		<!-- Added for lite-vimeo -->
+		<script defer type="module" src="https://cdn.jsdelivr.net/npm/@slightlyoff/lite-vimeo@0.1.1/lite-vimeo.js"></script>
+		<!-- Added for lite-youtube-embed -->
+		<script defer src="/js/lite-yt-embed.js"></script>    {# <script>
       if ("serviceWorker" in navigator) {
         navigator
           .serviceWorker
@@ -71,8 +74,6 @@
     <!-- Current page: {{ page.url | htmlBaseUrl }} -->
     <!-- Added for Mermaid block support -->
     {% mermaid_js %}
-		<!-- Added for lite-youtube-embed -->
-		<script src="/js/lite-yt-emnbed.js"></script>
     <!-- added for Netlify CMS -->
     <script>
       if (window.netlifyIdentity) {

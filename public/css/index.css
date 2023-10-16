@@ -596,14 +596,6 @@ p.admonition-title {
 	border: 1px solid var(--text-color);
   border-radius: 20px;
   padding: 1rem;
-	background-color: oklch(85.62% 0.049 219.65 / 40%);
-}
-
-.admonition.info,
-.admonition.note {
-	border: 1px solid var(--text-color);
-  border-radius: 20px;
-  padding: 1rem;
 	background-color: oklch(0.42 0.22 269 / .4);
 }
 
@@ -714,4 +706,10 @@ ol li::marker {
 .custom-ordered li::marker {
   font-size: 1rem;
   color: var(--link-color);
+}
+
+lite-vimeo {
+	width: 720px;
+	max-width: 720px;
+	height: auto;
 }
