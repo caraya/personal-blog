@@ -20,10 +20,11 @@ Google doesnâ€™t provide satellite imagery in real-time so, even if they havenâ€
 
 Run [[cmd]] + [[shift]] + [[R]] on macOS or [[ctrl]] + [[shift]] + [[R]] on Windows to reload the browser window.
 
-<lite-youtube
-	videoid="Gv0Az2HvEDs" params="autoplay=0"></lite-youtube>
+<lite-youtube videoid="Gv0Az2HvEDs"></lite-youtube>
 
-<lite-youtube videoid="uBqvL0Oee-8" params="autoplay=0"></lite-youtube>
+<lite-youtube videoid="uBqvL0Oee-8"></lite-youtube>
+
+<lite-youtube videoid="dlFA0Zq1k2A"></lite-youtube>
 
 <lite-vimeo videoid="364402896"></lite-vimeo>
 
