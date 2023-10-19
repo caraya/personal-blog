@@ -158,6 +158,12 @@ small,
   gap: 1rem;
 }
 
+img.full-bleed-header {
+	grid-column: 1/-1;
+	width: 100% !important;
+	height: auto;
+}
+
 /* Grid placement */
 header {
 	grid-column: 3/7;
@@ -208,10 +214,7 @@ dd {
 }
 
 /* figures and images */
-img {
-	max-width: 600px !important;
-	height: auto;
-}
+
 
 article {
 	counter-reset: figures;
@@ -220,13 +223,19 @@ article {
 
 figure {
 	counter-increment: figures;
-}
 
-figure > figcaption::before {
-	margin-block-start: 0.5em;
-	content: "Figure " counter(figures) ": "
-}
+	& > figcaption::before {
+		margin-block-start: 0.5em;
+		content: "Figure " counter(figures) ": ";
+		width: max-content;
+	}
 
+	& > img {
+		width: 600px;
+		max-width: 600px;
+		height: auto;
+	}
+}
 * {
 	box-sizing: border-box;
 }
@@ -234,7 +243,7 @@ figure > figcaption::before {
 html,
 body {
 	padding: 0;
-	/* margin: 0 auto; */
+	margin: 0 auto;
 	font-weight: var(--base-font-weight);
   line-height: var(--base-line-height);
 	font-family: var(--font-family);
@@ -682,7 +691,7 @@ ul {
 }
 
 ul li::marker {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   color: var(--link-color);
 }
 
@@ -693,7 +702,7 @@ ol li {
 }
 
 ol li::marker {
-  font-size: 1rem;
+  font-size: .7rem;
   color: var(--link-color);
 }
 

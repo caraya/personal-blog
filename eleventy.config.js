@@ -13,6 +13,7 @@ const emojiReadTime = require("@11tyrocks/eleventy-plugin-emoji-readtime");
 const markdownItFootnotes = require("markdown-it-footnote");
 const admonitions = require("markdown-it-admonition");
 const markdownItKbd = require('markdown-it-kbd-better');
+const markdownItAttrs = require('markdown-it-attrs');
 
 // 11ty plugins
 const pluginRss = require("@11ty/eleventy-plugin-rss");
@@ -29,8 +30,7 @@ const pluginImages = require("./eleventy.config.images.js");
 const posthtml = require('posthtml');
 const { posthtml: automaticNoopener, parser } = require('eleventy-plugin-automatic-noopener');
 const NoOpOptions = parser({noreferrer: true});
-// PWA, commented out until I figure out caching strategies
-// const pluginPWA = require("eleventy-plugin-pwa-v2");
+const pluginTOC = require('eleventy-plugin-toc');
 
 module.exports = function(eleventyConfig) {
 	// Copy the contents of the `public` folder to the output folder
@@ -66,31 +66,11 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(emojiReadTime, {
 		showEmoji: false,
 	});
-  // eleventyConfig.addPlugin(pluginPWA, {
-  //   cacheId: "pub-project",
-  //   globIgnores: [
-  //     // any files you don't want service worker to cache go here
-  //     "share-*.jpg",
-  //   ],
-	//
-  //   runtimeCaching: [
-  //     {
-  //       // we always want fresh copy of the index page
-  //       urlPattern: /\/$/,
-  //       handler: "NetworkFirst",
-  //     },
-  //     {
-  //       urlPattern: /\.html$/,
-  //       handler: "CacheFirst",
-  //     },
-  //     {
-  //       // Serve assets from cache first
-  //       urlPattern:
-  //         /^.*\.(jpg|png|mp4|gif|webp|ico|svg|woff2|woff|eot|ttf|otf|ttc|json)$/,
-  //       handler: "CacheFirst",
-  //     },
-  //   ],
-  // });
+	eleventyConfig.addPlugin(pluginTOC, {
+		tags: ['h2', 'h3'],
+		ul: true,
+		ol: false,
+	})
 
 	// Transforms
 	eleventyConfig.addTransform('posthtml', function(HTMLString, outputPath) {
@@ -189,6 +169,13 @@ module.exports = function(eleventyConfig) {
 					name: 'icons'
 			}]
 		});
+		mdLib.use(markdownItAttrs, {
+				// Default options
+				leftDelimiter: '{',
+				rightDelimiter: '}',
+				// All attributes are allowed
+				allowedAttributes: []
+			});
 	});
 
 	// Features to make your build faster (when you need them)

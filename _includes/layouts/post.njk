@@ -7,6 +7,7 @@ layout: layouts/base.njk
 <article>
 	<h1>{{ title }}</h1>
 
+
 	<ul class="post-metadata">
 		<li><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></li>
 		<li>{{ content | emojiReadTime }}</li>
@@ -15,6 +16,15 @@ layout: layouts/base.njk
 		<li><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>{%- if not loop.last %}, {% endif %}</li>
 		{%- endfor %}
 	</ul>
+
+  <p>&nbsp;</p>
+	{# Conditionally load the table of content if there are headers to render #}
+	{% if content | toc %}
+		<aside>
+			<p><strong>Table of Content</strong></p>
+			{{ content | toc | safe }}
+		</aside>
+	{% endif %}
 
 	{{ content | safe }}
 
@@ -38,11 +48,6 @@ layout: layouts/base.njk
 			{% endif %}
 		</div>
 	</nav>
-
-	{# <ul class="links-nextprev">
-		{%- if previousPost %}<li>Previous: <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></li>{% endif %}
-		{%- if nextPost %}<li>Next: <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></li>{% endif %}
-	</ul> #}
 
 	{%- endif %}
 	{%- endif %}
