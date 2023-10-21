@@ -170,11 +170,11 @@ header {
 }
 
 main {
-	grid-column: 3/7;
+	grid-column: 3/8;
 }
 
-er {
-	grid-column: 3/7;
+footer {
+	grid-column: 1/-1;
 }
 
 /* Definition Lists */
@@ -236,6 +236,7 @@ figure {
 		height: auto;
 	}
 }
+
 * {
 	box-sizing: border-box;
 }
@@ -721,4 +722,12 @@ lite-vimeo {
 	width: 720px;
 	max-width: 720px;
 	height: auto;
+}
+
+.footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	color: var(--color-white);
+	background: var(--color-black);
 }

@@ -1,0 +1,22 @@
+<footer class="footer">
+	<section class="left">
+		<p><strong>Latest Posts</strong></p>
+		<ul>
+			{% set posts = collections.posts | reverse | head(10) %}
+			{% for post in posts %}
+				<li><a href="{{ post.url }}">
+					{% if post.data.title %}
+						{{ post.data.title }}
+					{% else %}
+						<code>{{ post.url }}</code>
+					{% endif %}
+				</a></li>
+			{% endfor %}
+		</ul>
+	</section>
+
+	<section class="right">
+		<p><strong>Additional Information</strong></p>
+	</section>
+
+</footer>
