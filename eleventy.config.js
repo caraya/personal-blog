@@ -1,5 +1,8 @@
 // External libraries
 const { DateTime } = require("luxon");
+// Custom filters from https://github.com/LeaVerou/lea.verou.me/blob/main/assets/filters.cjs
+// Looking to trim the fat
+const filters = require("./assets/filters");
 
 // Custom markdown-it installation to customize it
 const markdownIt = require("markdown-it");
@@ -89,7 +92,7 @@ module.exports = function(eleventyConfig) {
 	// Credit: https://11ty.rocks/eleventyjs/content/#excerpt-filter
 	eleventyConfig.addFilter("excerpt", (post) => {
 		const content = post.replace(/(<([^>]+)>)/gi, "");
-		return content.substr(0, content.lastIndexOf(" ", 200)) + "...";
+		return content.substr(0, content.lastIndexOf(" ", 300)) + "...";
 	});
 
 	eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
@@ -131,6 +134,39 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
 		return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
 	});
+
+	// Add all the filters in assets/filters.js
+	for (let name in filters) {
+		eleventyConfig.addFilter(name, filters[name]);
+	}
+
+	// COLLECTIONS
+	eleventyConfig.addCollection("postsByMonth", (collectionApi) => {
+		const posts = collectionApi.getFilteredByTag("posts").reverse();
+		const ret = {};
+
+		for (let post of posts) {
+			let key = filters.format_date(post.date, "iso").substring(0, 7); // YYYY-MM
+			ret[key] ??= [];
+			ret[key].push(post);
+		}
+
+		return ret;
+	});
+
+	eleventyConfig.addCollection("postsByYear", (collectionApi) => {
+		const posts = collectionApi.getFilteredByTag("posts").reverse();
+		const ret = {};
+
+		for (let post of posts) {
+			let key = post.date.getFullYear();
+			ret[key] ??= [];
+			ret[key].push(post);
+		}
+
+		return ret;
+	});
+
 
 	// MARKDOWN CUSTOMIZATIONS
 	// 1. Markdown Options

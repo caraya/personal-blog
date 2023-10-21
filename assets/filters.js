@@ -1,7 +1,3 @@
-const tagNames = require("../data/tag_names.json");
-const siteSettings = require("../data/site.json");
-const capitalizations = require("../data/capitalizations.json");
-const readingTime = require("reading-time");
 const fakeTags = new Set(["blog", "all", "postsByYear", "postsByMonth"]);
 
 
@@ -36,7 +32,7 @@ const filters = {
 	},
 
 	absolutize (url, base_url) {
-		let host = siteSettings.domain;
+		let host = metadata.url;
 		let base = new URL(base_url, host);
 		return new URL(url, base);
 	},

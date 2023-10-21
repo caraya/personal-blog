@@ -4,19 +4,6 @@ date: "2023-10-15"
 ---
 
 One of the reasons to move my blog from WordPress to Eleventy was the flexibility of convert the Markdown I write into proper HTML without using raw HTML in the Markdown files.
-
-column1 | column2
---- | --- |
-Read | Write
-
-{.special}
-
-1. 22354
-2. 54252
-3. 1231231542
-
-{.custom-ordered}
-
 But adding Markdown-it plugins mean additional syntax to remember and different ways to use established Markdown-it syntax.
 
 This document is my attempt at remembering all the things I've added so I can continue to use them.
@@ -28,6 +15,46 @@ The commands, as explained in this post, are designed for this blog and will onl
 
 If you want to get them to work in your own site contact me and I'll try to help.
 !!!
+
+## Attributes
+
+This plugin will insert the specified attributes to the element. If the class exists the look of the content may change.
+
+For example:
+
+The following Markdown code:
+
+```markdown
+column1 | column2
+--- | --- |
+Read | Write
+
+{.special}
+```
+
+Will insert the `.special` class into the table. Inspect the code to see the result.
+
+column1 | column2
+--- | --- |
+Read | Write
+
+{.special}
+
+While the Markdown below will change the markers to use a customized CSS list number style.
+
+```markdown
+1. 22354
+2. 54252
+3. 1231231542
+
+{.custom-ordered}
+```
+
+1. 22354
+2. 54252
+3. 1231231542
+
+{.custom-ordered}
 
 ## Figures
 
@@ -88,7 +115,15 @@ It will produce the following HTML code:
 </dl>
 ```
 
-You can have group two or more definitions together (like for British and American spelling of a word), you can have multiple definitions for a term and there is no length limit for each definition
+term1
+: First paragraph of the definition
+: Second paragraph of the definition
+
+term2
+: First paragraph of the definition
+: Second paragraph of the definition
+
+You can have multiple definitions for a term and there is no length limit for each definition
 
 ## kbd elements
 
@@ -107,6 +142,10 @@ Will produce the following HTML
 
 <p>Run <kbd>⌃</kbd> + <kbd>⇧</kbd> + <kbd>R</kbd> on Windows to reload the browser window.</p>
 ```
+
+Run [[cmd]] + [[shift]] + [[R]] on macOS
+
+Run [[ctrl]] + [[shift]] + [[R]] on
 
 The `kbd` plugin will convert some words into symbols. `cmd` is transofrmed to `⌘`, shift to `⇧` and ctrl to `^`.
 
@@ -129,6 +168,10 @@ The text that needs a footnote goes here. [^1]
 ```
 
 The punctuation is important. If you miss the colon on the footer text then the footnote will be displayed as is. This is definitely not what you want.
+
+The text that needs a footnote goes here. Look for the footnote at the bottom of the page. [^1]
+
+[^1]: This is the text of the footnote.
 
 ## Admonitions
 
@@ -167,6 +210,10 @@ You never know who'll get to read it :)
 </div>
 ```
 
+!!! warning
+You never know who'll get to read it :)
+!!!
+
 You can also add a title to the admonition by adding the title after the type of admonition.
 
 To add a title to the warning example, the modified code will look like this:
@@ -182,9 +229,13 @@ And the resulting HTML will look like this:
 ```html
 <div class="admonition warning">
   <p class="admonition-title">Do your research</p>
-  <p>It works so much better when you do your research before engaging in arguments</p>
+  <p>You never know who'll get to read it :)</p>
 </div>
 ```
+
+!!! warning Do your research
+You never know who'll get to read it :)
+!!!
 
 ## lite-youtube and lite-vimeo
 
@@ -201,9 +252,10 @@ The `lite-youtube` custom element embeds a YouTube embedded iframe.
 It takes `videoid` attribute with the ID of the video we want to play and a `params` attribute indicating any custom iframe attribute that we want to pass. In this case we want to override the default autoplay behavior and have it **not** autoplay at all.
 
 ```html
-<lite-youtube videoid="Gv0Az2HvEDs"
-params="autoplay=0"></lite-youtube>
+<lite-youtube videoid="Gv0Az2HvEDs"></lite-youtube>
 ```
+
+<lite-youtube videoid="Gv0Az2HvEDs"></lite-youtube>
 
 ### Vimeo
 
@@ -216,6 +268,10 @@ It takes a single `videoid` attribute representing the ID of the video we want t
   videoid="364402896">
 </lite-vimeo>
 ```
+
+<lite-vimeo
+  videoid="364402896">
+</lite-vimeo>
 
 Unlike `lite-youtube`, `lite-vimeo` requires CSS to size the video to what we want.
 
