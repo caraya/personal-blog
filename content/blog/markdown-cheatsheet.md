@@ -1,9 +1,14 @@
 ---
 title: "My Markdown cheatsheet"
 date: "2023-10-15"
+youtube: true
+vimeo: true
+mermaid: false
+mavo: false
 ---
 
 One of the reasons to move my blog from WordPress to Eleventy was the flexibility of convert the Markdown I write into proper HTML without using raw HTML in the Markdown files.
+
 But adding Markdown-it plugins mean additional syntax to remember and different ways to use established Markdown-it syntax.
 
 This document is my attempt at remembering all the things I've added so I can continue to use them.
@@ -15,6 +20,25 @@ The commands, as explained in this post, are designed for this blog and will onl
 
 If you want to get them to work in your own site contact me and I'll try to help.
 !!!
+
+## Front matter attributes
+
+I don't need video embeds, Mermaid or Mavo on every page so I don't load them. I use conditional nunjuck tags to only load them if there is a matching tag in the post's front matter.
+
+For example, the tags supporting `lite-youtube` video embeds will only load if the front matter for the post has a `youtube` attribute set to true
+
+A front matter declaration supporting all the conditional loads would look like this:
+
+```yaml
+---
+title: "My Markdown cheatsheet"
+date: "2023-10-15"
+youtube: true
+vimeo: true
+mermaid: true
+mavo: true
+---
+```
 
 ## Attributes
 

@@ -1,9 +1,33 @@
 ---
 layout: layouts/base.njk
 ---
-{# Only include the syntax highlighter CSS on blog posts #}
-{%- css %}{% include "node_modules/prismjs/themes/prism-solarizedlight.css" %}{% endcss %}
-{%- css %}{% include "public/css/prism-diff.css" %}{%- endcss %}
+
+{# add prism.js stylesheets unconditionally #}
+<link rel="stylesheet" href="/css/prism-solarizedlight.css" />
+<link rel="stylesheet" href="/css/prism-diff.css" />
+
+{# Only load Mavo if instructed to do so in the post's front matter #}
+{% if mavo %}
+<link rel="stylesheet" href="https://get.mavo.io/mavo.css">
+<script src="https://get.mavo.io/mavo.js"></script>
+{% endif %}
+
+{# Only load lite-vimeo if instructed to do so in the post's front matter #}
+{% if vimeo %}
+<script defer type="module" src="https://cdn.jsdelivr.net/npm/@slightlyoff/lite-vimeo@0.1.1/lite-vimeo.js"></script>
+{% endif %}
+
+{# Only load lite-youtube if instructed to do so in the post's front matter #}
+{% if youtube %}
+<link rel="stylesheet" href="/css/lite-yt-embed.css" />
+<script defer src="/js/lite-yt-embed.js"></script>
+{% endif %}
+
+{# Only load mermaid if instructed to do so in the post's front matter #}
+{% if mermaid %}
+{% mermaid_js %}
+{% endif %}
+
 <article>
 	<h1>{{ title }}</h1>
 

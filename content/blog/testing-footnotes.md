@@ -1,6 +1,8 @@
 ---
 title: "Testing Footnotes"
 date: "2023-10-14"
+youtube: true
+vimeo: true
 ---
 
 
