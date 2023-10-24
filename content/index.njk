@@ -1,25 +1,54 @@
 ---
-layout: layouts/home.njk
-numberOfLatestPostsToShow: 10
+layout: layouts/base.njk
+pagination:
+  data: collections.posts
+  size: 10
+  reverse: true
+permalink: /{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber }}/{% endif %}
 ---
-{% set postsCount = collections.posts | length %}
-{# {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-<h1>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h1> #}
 
-{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
-{% set postslistCounter = postsCount %}
-{% include "postslist.njk" %}
+<div class="postlist">
+  {%- for post in pagination.items -%}
+    <article class="postlist-item">
+      <h3>
+        <a href="{{ post.url }}" class="postlist-link">
+          {% if post.data.title %}
+            {{ post.data.title }}
+          {% else %}
+            <code>{{ post.url }}</code>
+          {% endif %}
+        </a>
+      </h3>
+      <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("LLLL dd yyyy") }}</time>
+      <p>{{ post.templateContent | excerpt }}
+        <div class="continue-reading">
+          <a href="{{ post.url }}">Read More...</a>
+        </div>
+      </article> <!-- End Post article-->
+    {%- endfor -%}
+  </div> <!-- End post list -->
 
-{# {% set morePosts = postsCount - numberOfLatestPostsToShow %} #}
-{# {% if morePosts > 0 %} #}
-{# <p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="/blog/">the archive</a>.</p> #}
-{# {% endif %} #}
-
-{# List every content page in the project #}
-{#
-<ul>
-	{%- for entry in collections.all %}
-	<li><a href="{{ entry.url }}"><code>{{ entry.url }}</code></a></li>
-	{%- endfor %}
-</ul>
-#}
+  {% if pagination.pageLinks.length > 1 %}
+    <h2 class="visually-hidden">Archive Navigation</h2>
+		<nav class="archive-pagination">
+			{% if pagination.pageNumber + 1 < 2 %}
+				<p>&nbsp;</p>
+			{% else %}
+				{% if pagination.pageNumber == 1 %}
+					<a class="archive-pagination__item" href="/">Previous Posts</a>
+				{% else %}
+					{% if pagination.href.previous %}
+						<a class="archive-pagination__item" href="{{ pagination.previousPageHref | url }}">Newer Articles</a>
+					{% endif %}
+				{% endif %}
+			{% endif %}
+      <a class="archive-pagination__item" href="/">Home</a>
+			{% if pagination.pageNumber + 1 > pagination.length %}
+				<p>&nbsp;</p>
+			{% else%}
+				{% if pagination.href.next %}
+					<a class="archive-pagination__item" href="{{ pagination.nextPageHref | url }}">Older Articles</a>
+				{% endif %}
+			{% endif %}
+    </nav>
+  {% endif %}

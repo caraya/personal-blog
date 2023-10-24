@@ -1,4 +1,3 @@
-{%- css %}.postlist { counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }} }{% endcss %}
 <div class="postlist">
   {% for post in postslist | reverse %}
     <div class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
@@ -21,6 +20,6 @@
 	<h2 class="visually-hidden">Link to Archive</h2>
 	<nav class="archive-pagination">
 		<p>&nbsp;</p>
-		<a class="archive-pagination__item" href="/blog/page-1/">Older Articles</a>
+		<a class="archive-pagination__item" href="/page-1/">Older Articles</a>
 		<p>&nbsp;</p>
 	</nav>

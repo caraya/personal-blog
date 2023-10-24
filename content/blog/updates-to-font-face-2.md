@@ -1,5 +1,5 @@
 ---
-title: "Updates to @font-face"
+title: "Updates to @font-face (2023)"
 date: "2023-10-09"
 ---
 

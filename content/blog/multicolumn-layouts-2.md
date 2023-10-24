@@ -1,5 +1,5 @@
 ---
-title: "Multicolumn Layouts"
+title: "Multicolumn Layouts Revisited"
 date: "2018-10-31"
 ---
 

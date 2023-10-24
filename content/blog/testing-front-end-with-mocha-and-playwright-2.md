@@ -1,5 +1,5 @@
 ---
-title: "Testing front end with Mocha and Playwright"
+title: "Testing front end with Mocha and Playwright (2022)"
 date: "2022-02-09"
 ---
 

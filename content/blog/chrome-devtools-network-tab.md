@@ -11,9 +11,7 @@ The idea is that using this tab we can check how our page loading and troublesho
 
 The image below shows the result of running the Network tab in Chrome 78 (Canary when the article was written).
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2019/08/devtools-network-run.png)
-
-Network Panel Showing Results of a run
+![Network Panel Showing Results of a run](https://publishing-project.rivendellweb.net/wp-content/uploads/2019/08/devtools-network-run.png)
 
 The Network panel provides the following information for every resource loaded for the page:
 
@@ -62,7 +60,7 @@ The final three numbers are indicators of speed. Going from right to left:
 Rather than try to explain in detail what each possible element is, I'll use Google Developers' Network Analysis Reference section on [Timing breakdown phases](https://developers.google.com/web/tools/chrome-devtools/network/reference#timing-explanation) as an explanation:
 
 - **Queueing**. The browser queues a request when:
-    
+
     - There are higher priority requests.
     - There are already six TCP connections open for this origin, which is the limit. Applies to HTTP/1.0 and HTTP/1.1 only.
     - The browser is briefly allocating space in the disk cache

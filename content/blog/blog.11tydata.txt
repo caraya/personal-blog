@@ -1,10 +1,10 @@
 module.exports = {
+	// Idea taken from
+	// https://illtron.net/2023/01/11ty-directory-data-filters/
 	permalink: function (data) {
-		// If there is no permalink, look for a slug in the data.
+		// Look for a slug in the data.
 		// If there is no slug, just use the slugify filter on the title
 		const slug = data.slug ?? this.slugify(data.title);
-
-		return `/${slug}/index.html`;
 	},
 		tags: [
 		"posts"
@@ -14,4 +14,5 @@ module.exports = {
 	"vimeo": true,
 	"mermaid": false,
 	"mavo": false,
+
 };

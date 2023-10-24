@@ -141,31 +141,31 @@ module.exports = function(eleventyConfig) {
 	}
 
 	// COLLECTIONS
-	eleventyConfig.addCollection("postsByMonth", (collectionApi) => {
-		const posts = collectionApi.getFilteredByTag("posts").reverse();
-		const ret = {};
+	// eleventyConfig.addCollection("postsByMonth", (collectionApi) => {
+	// 	const posts = collectionApi.getFilteredByTag("posts").reverse();
+	// 	const ret = {};
 
-		for (let post of posts) {
-			let key = filters.format_date(post.date, "iso").substring(0, 7); // YYYY-MM
-			ret[key] ??= [];
-			ret[key].push(post);
-		}
+	// 	for (let post of posts) {
+	// 		let key = filters.format_date(post.date, "iso").substring(0, 7); // YYYY-MM
+	// 		ret[key] ??= [];
+	// 		ret[key].push(post);
+	// 	}
 
-		return ret;
-	});
+	// 	return ret;
+	// });
 
-	eleventyConfig.addCollection("postsByYear", (collectionApi) => {
-		const posts = collectionApi.getFilteredByTag("posts").reverse();
-		const ret = {};
+	// eleventyConfig.addCollection("postsByYear", (collectionApi) => {
+	// 	const posts = collectionApi.getFilteredByTag("posts").reverse();
+	// 	const ret = {};
 
-		for (let post of posts) {
-			let key = post.date.getFullYear();
-			ret[key] ??= [];
-			ret[key].push(post);
-		}
+	// 	for (let post of posts) {
+	// 		let key = post.date.getFullYear();
+	// 		ret[key] ??= [];
+	// 		ret[key].push(post);
+	// 	}
 
-		return ret;
-	});
+	// 	return ret;
+	// });
 
 
 	// MARKDOWN CUSTOMIZATIONS
