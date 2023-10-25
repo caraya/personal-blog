@@ -9,6 +9,10 @@ mavo: false
 
 # Migrating from WordPress to Eleventy (part 3)
 
+
+
+## Conditionally loading assets
+
 ## Implement Archive Pagination
 
 The way I want the blog structured, the index page only has the last 10 published posts and a link to the archive.
@@ -22,7 +26,7 @@ pagination:
   data: collections.posts
   size: 10
   reverse: true
-permalink: "blog/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber }}/{% endif %}index.html"
+permalink: "{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber }}/{% endif %}index.html"
 ---
 ```
 
@@ -80,6 +84,8 @@ The WordPress version of the blog uses Algolia as the search provider. There is 
 
 We will use [Building server-rendered search for static sites with 11ty Serverless, Netlify, and Algolia](https://www.algolia.com/blog/engineering/building-server-rendered-search-for-static-sites-with-11ty-serverless-netlify-and-algolia/) as the starting point. This will tie us to Netlify since it uses Netlify functions as the serverless infrastructure, but I had already decided to use Netlify for the Netlify CMS so it's less of a roadblock.
 
+
+
 ## Maintaining the same structure than WordPress
 
 One important thing is to keep the existing flar structure of the blog in Eleventy.
@@ -104,8 +110,28 @@ This has proved more challenging than I expected. The default is to push the ind
 
 In order to fix this, we'd have to insert a permalink attribute to all the posts that already exist and those we create in the future.
 
+Eleventy provides a [directory data file](https://www.11ty.dev/docs/data-template-dir/) that will propagate to all the files in the directory. This means we don't have to add this data to each individual file.
+
+```js
+module.exports = {
+  permalink: function (data) {
+    // If there is no permalink, look for a slug in the data.
+    // If there is no slug, just use the slugify filter on the title
+    const slug = data.slug ?? this.slugify(data.title);
+
+    return `/${slug}/index.html`;
+  },
+    tags: [
+    "posts"
+  ],
+  "layout": "layouts/post.njk",
+  "youtube": true,
+  "vimeo": true,
+  "mermaid": false,
+  "mavo": false,
+  };
+  ```
+
 ## Evaluate Hosting
 
 Now that I've moved to a static site generator it makes sense to re-evaluate my hosting situation.
-
-I've chosen to take a closer look to Netlify and Firebase.

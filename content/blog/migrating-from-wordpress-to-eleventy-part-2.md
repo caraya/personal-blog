@@ -320,7 +320,9 @@ Unlike WordPress plugins, we don't need to worry about runtime performance since
 : It needs a second plugin ([PostHTML](https://posthtml.org/)) to actually insert the attributes into the links
 
 [eleventy-plugin-metagen](https://www.npmjs.com/package/eleventy-plugin-metagen)
-: This will generate all the metatags that I need to be able to post on social media. I'm still not 100% sure that this is an immediate need or a "nice to have"
+: This will generate all the metatags that I need to be able to post on social media.
+: I'm still not 100% sure that this is an immediate need or a "nice to have"
+: I'm also not sure how to best implement this
 
 [eleventy-plugin-schema](https://www.npmjs.com/package/@quasibit/eleventy-plugin-schema)
 : This plugin will generate [JSON-LD](https://json-ld.org/) structured data for different content items, theoretically making it easier for search engines to discover the content and providing richer search experiences for people who land on our site.
