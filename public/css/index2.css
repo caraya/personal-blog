@@ -381,13 +381,9 @@ header {
 }
 
 .nav-top-menu {
-	/* padding: 0;
-	margin: 0; */
-
 	list-style: none;
 
   display: flex;
-
   flex-direction: column;
   align-items: flex-end;
 }
@@ -779,7 +775,6 @@ lite-vimeo {
 
 	img.full-bleed-header {
 		grid-column: 1/-1;
-		grid-row: 1;
 		width: 100% !important;
 		height: auto;
 	}
@@ -788,22 +783,18 @@ lite-vimeo {
 	/* Grid placement */
 	header {
 		grid-column: 2/4;
-		grid-row: 2;
 	}
 
-	.nav-top-menu {
+	.nav-top-menu{
 		grid-column: 2/4;
-		grid-row: 3;
 	}
 
 	main {
 		grid-column: 2/4;
-		grid-row: 4
 	}
 
 	footer {
 		grid-column: 1/-1;
-		grid-row: -1;
 	}
 }
 
