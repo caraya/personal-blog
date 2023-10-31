@@ -142,14 +142,9 @@ module.exports = function (eleventyConfig) {
 
 	// COLLECTIONS
 
+	// EMPTY FOR NOW
 
-	// CONFIG ON
-	eleventyConfig.on("eleventy.before", ({ runMode }) => {
-		// Set the environment variable
-		if (runMode === "serve" || runMode === "watch") {
-			process.env.BUILD_DRAFTS = true
-		}
-	})
+	// COMPUTED PROPERTIES
 
 	// MARKDOWN CUSTOMIZATIONS
 	// 1. Markdown Options

@@ -40,6 +40,12 @@ mavo: true
 ---
 ```
 
+### Handling drafts and future postings
+
+One thing that has been very frustrating is to figure out how to handle drafts and future posts (posts that are complete but will not be published for a while).
+
+if you set `draft: true` in the post front matter or the date is in the future from the date you're publishing. Eleventy will set the permalink to false and exclude the post from all collections
+
 ## Attributes
 
 This plugin will insert the specified attributes to the element. If the class exists the look of the content may change.
