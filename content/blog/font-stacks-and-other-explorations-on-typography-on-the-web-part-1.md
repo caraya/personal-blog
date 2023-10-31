@@ -103,7 +103,7 @@ One problem with fallback fonts is that they may not match the web font they rep
 
 Monica Dinculescu created a [Font Style Matcher](https://meowni.ca/font-style-matcher/) to work around this issue. We match the fonts as close as possible as show in the figure below and then copy the two CSS blocks.
 
-![Font Matcher Demo of Work In Progress](https://publishing-project.rivendellweb.net/wp-content/uploads/2018/03/font-matcher-935x1024.png)
+![Font Matcher Demo of Work In Progress](/images/2018/03/font-matcher-935x1024.png)
 
 Font Matcher Demo of Work In Progress
 
@@ -183,7 +183,7 @@ Other typefaces are designed specifically to be used in large areas of smaller b
 
 Identifying fonts for your specific needs is the first step but then comes the big question: **Serif or Sans-Serif?**
 
-![Sans Serif Font](https://publishing-project.rivendellweb.net/wp-content/uploads/2018/02/418px-Serif_and_sans-serif_03.svg_.png) ![Serif font with serif lines show in red](https://publishing-project.rivendellweb.net/wp-content/uploads/2018/02/418px-Serif_and_sans-serif_02.svg_.png)
+![Sans Serif Font](/images/2018/02/418px-Serif_and_sans-serif_03.svg_.png) ![Serif font with serif lines show in red](/images/2018/02/418px-Serif_and_sans-serif_02.svg_.png)
 
 Comparison of sans-serif font (left) and serif font showing serif lines in red (right)
 
@@ -339,11 +339,11 @@ Don't use color as the only way to procide information or eliciting a response (
 Use high contrast between text and background color, with few exception indicated in the rule.
 
 > The visual presentation of text and images of text has a contrast ratio of at least 4.5:1, except for the following: (Level AA)
-> 
+>
 > - Large Text: Large-scale text and images of large-scale text have a contrast ratio of at least 3:1;
 > - Incidental: Text or images of text that are part of an inactive user interface component, that are pure decoration, that are not visible to anyone, or that are part of a picture that contains significant other visual content, have no contrast requirement.
 > - Logotypes: Text that is part of a logo or brand name has no minimum contrast requirement.
-> 
+>
 > [Rule 1.4.3](https://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-contrast)
 
 When planning your site's color pallete (font, links, headers, additional text colors) you can use tools like Lea Verou's [Contrast Ratio](http://leaverou.github.io/contrast-ratio/) tool.
@@ -354,58 +354,58 @@ The table below (From [Creating Culturally Customized Content](http://blog.globa
 
 | COLOR | USA | China | India | Egypt | Japan |
 | --- | --- | --- | --- | --- | --- |
-| Red | Danger  
-Love  
-Stop | Good fortune  
-Luck  
-Joy | Luck  
-Fury  
-Masculine | Death | Anger  
+| Red | Danger
+Love
+Stop | Good fortune
+Luck
+Joy | Luck
+Fury
+Masculine | Death | Anger
 Danger |
-| Orange | Confident  
-Dependable  
-Corporate | Fortune  
-Luck  
-Joy | Sacred (the Color Saffron) | Virtue  
-Faith  
-Truth | Future  
-Youth  
+| Orange | Confident
+Dependable
+Corporate | Fortune
+Luck
+Joy | Sacred (the Color Saffron) | Virtue
+Faith
+Truth | Future
+Youth
 Energy |
-| Yellow | Coward  
-Joy  
-Hope | Wealth  
-Earth  
-Royal | Celebration | Mourning | Grace  
+| Yellow | Coward
+Joy
+Hope | Wealth
+Earth
+Royal | Celebration | Mourning | Grace
 Nobility |
-| Green | Spring  
-Money  
-New | Health  
-Prosperity  
-Harmony | Romance  
-New  
-Harvest | Happiness  
+| Green | Spring
+Money
+New | Health
+Prosperity
+Harmony | Romance
+New
+Harvest | Happiness
 Prosperity | Eternal life |
-| Blue | Confident  
-Dependability  
-Corporate | Heavenly  
-Clouds | Mourning  
-Disgust  
-Chilling | Virtue  
-Faith  
+| Blue | Confident
+Dependability
+Corporate | Heavenly
+Clouds | Mourning
+Disgust
+Chilling | Virtue
+Faith
 Truth | Villainy |
-| Purple | Royalty  
+| Purple | Royalty
 Imagination | Royalty | Unhappiness | Virtue | Wealth |
-| White | Purity  
-Peace  
-Holy | Mourning | Fun  
-Serenity  
-Harmony | Joy | Purity  
+| White | Purity
+Peace
+Holy | Mourning | Fun
+Serenity
+Harmony | Joy | Purity
 Holiness |
-| Black | Funeral  
-Death  
-Evil | Heaven  
-Neutral  
-High Quality | Evil | Death  
+| Black | Funeral
+Death
+Evil | Heaven
+Neutral
+High Quality | Evil | Death
 Evil |   |
 
 #### Same font for all text or combined?

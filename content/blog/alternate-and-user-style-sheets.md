@@ -41,7 +41,7 @@ The other two stylesheets, with `rel="alternate stylesheet"` attribute are optio
 
 Firefox (screenshot from Firefox 57.0.1) has a menu under `View` that gives you access to all alternate style sheet available for the page.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2017/12/alternate-stylesheets-firefox.png)
+![](/images/2017/12/alternate-stylesheets-firefox.png)
 
 Accessing Alternate Stylesheets In Firefox 57
 
@@ -54,9 +54,9 @@ Users who need them probably have created custom stylesheets that will override 
 Unfortunately, only Microsoft Edge supports adding reader style sheets directly but we can target other browsers, Chrome and pre-Quantum versions of Firefox with Extensions that will accomplish the same goal.
 
 - Adding User Style Sheets To Browsers
-    
+
     - [Microsoft Edge](https://mcmw.abilitynet.org.uk/microsoft-edge-using-your-own-stylesheet/)
 - Browser Extensions
-    
+
     - [Stylish - Custom themes for any website](https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe) **Chrome**
     - [User Style Manager](https://addons.mozilla.org/en-US/firefox/addon/user-style-manager/) **Firefox Before 57.0**

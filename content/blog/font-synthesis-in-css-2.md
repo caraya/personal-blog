@@ -10,20 +10,16 @@ The [font-synthesis](https://developer.mozilla.org/en-US/docs/Web/CSS/font-synth
 The possible values for the descriptor are:
 
 `none`
-
-Neither bold, italic, nor small-caps typefaces may be synthesized.
+: Neither bold, italic, nor small-caps typefaces may be synthesized.
 
 `weight`
-
-A bold typeface may be synthesized.
+: A bold typeface may be synthesized.
 
 `style`
-
-An italic typeface may be synthesized.
+: An italic typeface may be synthesized.
 
 `small-caps`
-
-A small-caps font may be synthesized
+: A small-caps font may be synthesized
 
 A combination of 1 or more values from the above list
 
@@ -62,19 +58,19 @@ Controls whether bold typefaces are synthesized. Equivalent to the `small-capts`
 
 This falls into the category of "It's nice to have but be careful how you use it". In an ideal world, we would load all the faces of the fonts we need but we don't always have that luxury since at the very least we need four different files to cover the basic variants of the font without synthesizing:
 
-- Regular (weight 400)
-- Italic (weight 400)
-- Bold (weight 700)
-- Bold Italic (weight 700)
+* Regular (weight 400)
+* Italic (weight 400)
+* Bold (weight 700)
+* Bold Italic (weight 700)
 
 Plus two additional files for each additional weight we might want to cover
 
-- Regular (weight 200)
-- Italic (weight 200)
+* Regular (weight 200)
+* Italic (weight 200)
 
 or
 
-- Extra Bold (weight 900)
-- Extra Bold Italic (weight 900)
+* Extra Bold (weight 900)
+* Extra Bold Italic (weight 900)
 
 Variable fonts reduce the need for many files at the cost of larger font files.

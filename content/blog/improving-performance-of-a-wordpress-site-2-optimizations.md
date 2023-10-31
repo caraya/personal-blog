@@ -55,15 +55,15 @@ The first step is to enable the browser cache in the general settings.
 Next we need to set expire headers and the duration in seconds for each section:
 
 - CSS & JS
-    
+
     - The duration for these items to one year (31536000 seconds)
     - We enable gzip compression for the assets
 - HTML & XML
-    
+
     - The duration for these items is 30 days (25920000 seconds)
     - We enable gzip compression for the assets
 - Media & Other Files
-    
+
     - The duration for these items to one year (31536000 seconds)
     - We enable gzip compression for the assets
 
@@ -130,7 +130,7 @@ The function takes an array of attributes that will get printed as attributes to
   <?php the_header_image_tag(
     array(
       'fetchpriority' => 'high'
-    ) 
+    )
   ); ?>
 ```
 
@@ -224,11 +224,11 @@ Although the plugin requires an annual, paid, "pro" version for things that I co
 
 The plugin allows you to remove scripts and stylesheets for individual pages or for the entire site.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2023/07/asset-cleanup-01.png)
+![](/images/2023/07/asset-cleanup-01.png)
 
 Asset Cleanup plugin example showing scripts and stylesheets blocked site-wide and how the administrator can configure exceptions to the site-wide rule
 
-![alt text](https://publishing-project.rivendellweb.net/wp-content/uploads/2023/07/asset-cleanup-02.png)
+![alt text](/images/2023/07/asset-cleanup-02.png)
 
 Asset Plugin example showing a site-wide removal with a logged-in user override
 

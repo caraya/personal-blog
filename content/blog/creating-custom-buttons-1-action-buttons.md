@@ -21,12 +21,8 @@ The first set of changes are attributes to the HTML code itself:
 
 | Role | Attribute | Element | Usage |
 | --- | --- | --- | --- |
-| button |  | div | Identifies the element as a button widget.  
-  
-Accessible name for the button is defined by the text content of the element |
-|  | tabindex="0" | div | Includes the element in the tab sequence.  
-  
-Needed on the a element because it does not have a href attribute. |
+| button |  | div | Identifies the element as a button widget.<br><br>Accessible name for the button is defined by the text content of the element |
+|  | tabindex="0" | div | Includes the element in the tab sequence. |
 
 We add the [button role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/button_role) to the `div` to tell assistive technology tools that the div represents a button.
 
@@ -35,7 +31,7 @@ The tabindex attribute represents the tab order of the current element. Using a 
 With these changes, the element now looks like this:
 
 ```html
-<div 
+<div
   role="button"
   tabindex="0"
   id="action">
@@ -47,13 +43,11 @@ Users must be able to activate the button via the keyboard. This is done via Jav
 
 We need to consider two events for each of the actions:
 
-- **pointerDown** when a pointer device is down on this element
-    
-    - We will use pointer events rather than click
-- **keydown** when a key is pressed on this element
-    
-    - The key pressed has to be the space bar or then enter key. They will both have the same effect
-    - Any other keys pressed will be ignored in this button
+* **pointerDown** when a pointer device is down on this element
+  * We will use pointer events rather than click
+* **keydown** when a key is pressed on this element
+  * The key pressed has to be the space bar or then enter key. They will both have the same effect
+  * Any other keys pressed will be ignored in this button
 
 I've broken the script into sections to make it easier to comment.
 
@@ -104,19 +98,23 @@ The second function will handle the [keydown event](https://developer.mozilla.or
 
 ```js
 button.addEventListener(
-  "pointerdown", 
+  "pointerdown",
   handlePointerDown
 );
 
 button.addEventListener(
-  "keydown", 
+  "keydown",
   handleKeyDown
 );
 ```
 
 The full working example, along with CSS styling, is in the Codepen below
 
-<iframe height="459.673583984375" style="width: 100%;" scrolling="no" title="Button Experiment" src="https://codepen.io/caraya/embed/gOzVOOO?default-tab=css%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/caraya/pen/gOzVOOO"> Button Experiment</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>) on <a href="https://codepen.io">CodePen</a>. </iframe>
+<iframe height="519" style="width: 100%;" scrolling="no" title="Button Experiment" src="https://codepen.io/caraya/embed/rNvXvmg?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/caraya/pen/rNvXvmg">
+  Button Experiment</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
  
 
@@ -130,11 +128,11 @@ The HTML of an equivalent `button` element would look like this:
 
 What we get when we use a button:
 
-- `role = "button"` is implicit for the button element so we don't need to add it
-- you can `tab` into buttons without adding `tabindex="0"`
-- both the `space` and `enter` keys activate the button
-- buttons are clickable by default
+* `role = "button"` is implicit for the button element so we don't need to add it
+* you can `tab` into buttons without adding `tabindex="0"`
+* both the `space` and `enter` keys activate the button
+* buttons are clickable by default
 
 You still have to code events that will execute actions based on these events.
 
-**_Yes, we can create buttons and other components using our own custom code but it's not trivial and it requires a lot of work that native components do for you._**
+***Yes, we can create buttons and other components using our own custom code but it's not trivial and it requires a lot of work that native components do for you.***

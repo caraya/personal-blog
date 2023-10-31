@@ -15,7 +15,7 @@ Images are the largest part of a web page, whether site or app. The median numbe
 
 The time-series below shows a time series for the number of requests for the period between December 2015 and December 2018.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2019/01/number-of-images.png)
+![](/images/2019/01/number-of-images.png)
 
 HTTP Archive timeseries of the median numer of image requested for crawled domains
 
@@ -25,7 +25,7 @@ Sadly it's not the case. While we have fewer requests per page the median for th
 
 > The sum of transfer size kilobytes of all external images requested by the page. An external image is identified as a resource with the `png`, `gif`, `jpg`, `jpeg`, `webp`, `ico`, or `svg` file extensions or a MIME type containing the word image. [HTTP Archive](https://httparchive.org/reports/state-of-images#reqImg)
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2019/01/image-weight.png)
+![](/images/2019/01/image-weight.png)
 
 HTTP Archive timeseries of the median weight of image requested for crawled domains
 
@@ -108,7 +108,7 @@ One of the things I hadn't seen before is how to lazy load images that are loade
 ```css
 .lazy-background {
   /* Placeholder image */
-  background-image: url("hero-placeholder.jpg"); 
+  background-image: url("hero-placeholder.jpg");
 }
 ```
 
@@ -182,18 +182,18 @@ When you initialize the library you can pass in an options object as the second 
 - **lazyBackgroundLoaded _(default: "lazy-bg-loaded")_**: When yall.js finds elements using the class specified by lazyBackgroundClass, it will remove that class and put this one in its place. This will be the class you use in your CSS to bring in your background image when the affected element is in the viewport
 - **throttleTime _(default: 200)_**: In cases where Intersection Observer throttleTime allows you to control how often the code standard event handlers used as replacement fire in milliseconds
 - **idlyLoad _(default: false)_**: If set to true, requestIdleCallback is used to optimize the use of browser idle time to limit monopolization of the main thread
-    
+
     - This setting is ignored if set to true in a browser that doesn't support requestIdleCallback
     - Enabling this could cause lazy loading to be delayed significantly more than you might be okay with
     - Test extensively, and consider increasing the threshold option if you set this option to true
 - **idleLoadTimeout _(default: 100)_**: This option sets a deadline in milliseconds for requestIdleCallback to kick off lazy loading for an element
 - **threshold _(default: 200)_**: The threshold (in pixels) for how far elements need to be within the viewport to begin lazy loading.
 - **observeChanges _(default: false)_**: Use a Mutation Observer to examine the DOM for changes.
-    
+
     - This is useful if you want to lazy load resources for markup injected into the page after initial page render
     - This option is ignored if set to true in a browser that doesn't support Mutation Observer
 - **observeRootSelector _(default: "body")_**: If observeChanges is set to true, the value of this string is fed into `document.querySelector` to limit the scope in which the Mutation Observer looks for DOM changes
-    
+
     - The `<body>` element is used by default, but you can confine the observer to any valid CSS selector (e.g., `#main-wrapper`)
 - **mutationObserverOptions _(default: {childList: true})_**: Options to pass to the MutationObserver instance. Read this [MDN guide](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver#MutationObserverInit) for a list of options.
 
@@ -208,11 +208,11 @@ There are a few things to consider when lazy loading images and, depending on yo
 As unlikely as it is we may still find instances where JavaScript is not enabled. To deal with these use `<noscript>` to provide an alternative that will work without JavaScript
 
 ```html
-<!-- 
+<!--
   An image that eventually gets lazy loaded by JavaScript -->
-<img  class="lazy" 
-      src="placeholder-image.jpg" 
-      data-src="image-to-lazy-load.jpg" 
+<img  class="lazy"
+      src="placeholder-image.jpg"
+      data-src="image-to-lazy-load.jpg"
       alt="I'm an image!">
 <!-- An image that is shown if JavaScript is turned off -->
 <noscript>

@@ -1,19 +1,19 @@
 ---
 title: "Flex Boxes and the Holy Grail"
 date: "2014-03-20"
-categories: 
+categories:
   - "technology"
 ---
 
 > There is an updated post [New in the CSS horizon: flexbox](https://publishing-project.rivendellweb.net/new-in-the-css-horizon-css-flexbox/) to be published shortly with updated code and better explanations. I refer you to that article for an update on how Flexbox works and better (and fully tested) working examples.
 
- 
+
 
 > Content and images taken from [Mozilla Developer Network Flexbox Page](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Flexible_boxes) and [A Complete Guide to Flexbox](http://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
 One of the hardest things to do in web design is to create a fluid 3 column layout, also known as the holy grail. I could talk for hours about how it was goo enough for the technologies available when the model was first developed, how much of a pain it is to implement correctly, how it did not support mobile and small form devices and how long have developers wanted a solution.
 
-\[caption id="attachment\_153542" align="aligncenter" width="700"\][![Example of Holy Grail Layout](https://publishing-project.rivendellweb.net/wp-content/uploads/2014/03/litesite-template.jpg)](http:https://publishing-project.rivendellweb.net/wp-content/uploads/2014/03/litesite-template.jpg) Example of Holy Grail Layout. Courtesy of [Litesite](http://litesite.org/?pg=en/holy-grail-layout-intro)\[/caption\]
+\[caption id="attachment\_153542" align="aligncenter" width="700"\][![Example of Holy Grail Layout](/images/2014/03/litesite-template.jpg)](http:/images/2014/03/litesite-template.jpg) Example of Holy Grail Layout. Courtesy of [Litesite](http://litesite.org/?pg=en/holy-grail-layout-intro)\[/caption\]
 
 Instead I will talk about a solution that has finally become widely available. With the release of Firefox 28 to wide availability, the last of the big 4 browsers now supportd the full flexible box layouts specificactions. This means we can do some awesome crazy things with layouts that, until now we could only dream about.
 
@@ -212,19 +212,19 @@ Taken from [Mozilla Developer Network Flexbox Page](https://developer.mozilla.or
 
 | Feature | Firefox (Gecko) | Chrome | Internet Explorer | Opera | Safari |
 | --- | --- | --- | --- | --- | --- |
-| Basic support (single-line flexbox) | 18.0 (18.0)\-moz(Behind a pref) \[2\]  
-22.0 (22.0) \[2\] | 21.0\-webkit  
-29.0 | 11 \[3\] | 12.10  
+| Basic support (single-line flexbox) | 18.0 (18.0)\-moz(Behind a pref) \[2\]
+22.0 (22.0) \[2\] | 21.0\-webkit
+29.0 | 11 \[3\] | 12.10
 15-19 \-webkit | 6.1\-webkit \[1\] |
-| Multi-line flexbox | 28.0 (28.0) | 21.0\-webkit  
-29.0 | 11 \[3\] | 12.10  
+| Multi-line flexbox | 28.0 (28.0) | 21.0\-webkit
+29.0 | 11 \[3\] | 12.10
 15-19 \-webkit | 6.1\-webkit \[1\] |
 
 ### Mobile Browsers
 
 | Feature | Firefox Mobile (Gecko) | Android | IE Phone | Opera Mobile | Safari Mobile |
 | --- | --- | --- | --- | --- | --- |
-| Basic support (single-line flexbox) | 18.0 (18.0)\-moz(Behind a pref) \[2\]  
+| Basic support (single-line flexbox) | 18.0 (18.0)\-moz(Behind a pref) \[2\]
 22.0 (22.0) \[2\] | ? | ? | 15-19 \-webkit | 7\-webkit \[1\] |
 | Multi-line flexbox | 28.0 (28.0) | ? | ? | 15-19 \-webkit | 7\-webkit \[1\] |
 

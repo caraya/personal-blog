@@ -2,77 +2,52 @@
 layout: layouts/base.njk
 ---
 
-{# add prism.js stylesheets unconditionally #}
-<link rel="stylesheet" href="/css/prism-solarizedlight.css" />
-<link rel="stylesheet" href="/css/prism-diff.css" />
-
-{# Only load Mavo if instructed to do so in the post's front matter #}
-{% if mavo %}
-<link rel="stylesheet" href="https://get.mavo.io/mavo.css">
-<script src="https://get.mavo.io/mavo.js"></script>
-{% endif %}
-
-{# Only load lite-vimeo if instructed to do so in the post's front matter #}
-{% if vimeo %}
-<script defer type="module" src="https://cdn.jsdelivr.net/npm/@slightlyoff/lite-vimeo@0.1.1/lite-vimeo.js"></script>
-{% endif %}
-
-{# Only load lite-youtube if instructed to do so in the post's front matter #}
-{% if youtube %}
-<link rel="stylesheet" href="/css/lite-yt-embed.css" />
-<script defer src="/js/lite-yt-embed.js"></script>
-{% endif %}
-
-{# Only load mermaid if instructed to do so in the post's front matter #}
-{% if mermaid %}
-{% mermaid_js %}
-{% endif %}
-
-<article>
-	<h1>{{ title }}</h1>
-
-
-	<ul class="post-metadata">
-		<li><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></li>
-		<li>{{ content | emojiReadTime }}</li>
-		{%- for tag in tags | filterTagList %}
-		{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-		<li><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>{%- if not loop.last %}, {% endif %}</li>
-		{%- endfor %}
-	</ul>
-
-  <p>&nbsp;</p>
-	{# Conditionally load the table of content if there are headers to render #}
-	{% if content | toc %}
-		<aside>
-			<p><strong>Table of Content</strong></p>
-			{{ content | toc | safe }}
-		</aside>
-	{% endif %}
-
-	{{ content | safe }}
-
-	{%- if collections.posts %}
-	{%- set previousPost = collections.posts | getPreviousCollectionItem %}
-	{%- set nextPost = collections.posts | getNextCollectionItem %}
-	{%- if nextPost or previousPost %}
-
-	<nav class="navigation post-navigation" aria-label="Posts">
-		<h2 class="visually-hidden">Post navigation</h2>
-		<div class="nav-links">
-			{%- if previousPost %}
-			<div class="nav-previous">
-				<a rel="prev" href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>
-			</div>
-			{% endif %}
-			{%- if nextPost %}
-			<div class="nav-next">
-				<a rel="next" href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
-			</div>
-			{% endif %}
-		</div>
-	</nav>
-
-	{%- endif %}
-	{%- endif %}
-</article>
+  <article>
+    <h1>{{ title }}</h1>
+    <ul class="post-metadata">
+      <li>
+        <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+      </li>
+      <li>{{ content | emojiReadTime }}</li>
+      {%- for tag in tags | filterTagList %}
+        {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+        <li>
+          <a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>
+          {%- if not loop.last %},
+          {% endif %}
+        </li>
+      {%- endfor %}
+    </ul>
+    <p>&nbsp;</p>
+    {# Conditionally load the table of content if there are headers to render #}
+    {% if content | toc %}
+      <aside>
+        <p>
+          <strong>Table of Content</strong>
+        </p>
+        {{ content | toc | safe }}
+      </aside>
+    {% endif %}
+    {{ content | safe }}
+    {%- if collections.posts %}
+      {%- set previousPost = collections.posts | getPreviousCollectionItem %}
+      {%- set nextPost = collections.posts | getNextCollectionItem %}
+      {%- if nextPost or previousPost %}
+        <nav class="navigation post-navigation" aria-label="Posts">
+          <h2 class="visually-hidden">Post navigation</h2>
+          <div class="nav-links">
+            {%- if previousPost %}
+              <div class="nav-previous">
+                <a rel="next" href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
+              </div>
+            {% endif %}
+            {%- if nextPost %}
+              <div class="nav-next">
+                <a rel="prev" href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>
+              </div>
+            {% endif %}
+          </div>
+        </nav>
+      {%- endif %}
+    {%- endif %}
+  </article>

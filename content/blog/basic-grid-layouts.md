@@ -7,9 +7,9 @@ now that CSS Grid has become better supported in all major browsers, it is time 
 
 This post will look at the following areas:
 
-- Positioning elements in a grid
-- Combining grids and flexboxes
-- Area templates
+* Positioning elements in a grid
+* Combining grids and flexboxes
+* Area templates
 
 All items should work in all browsers. According to caniuse.com, CSS Grid is supported in all major browsers.
 

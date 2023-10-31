@@ -17,20 +17,18 @@ So in this post, I will evaluate what it would take to move to PostCSS based on 
 
 Here's the feature set I want to implement if possible
 
-- A PostCSS equivalent to Babel's `preset-env`
-- Color manipulation functions equivalent to SASS @lighten and @darken
-- Nesting
-    
-    - Nested selectors
-    - Relationship notation
-- Variables
-    
-    - Houdini-style CSS Custom Properties using @property
+* A PostCSS equivalent to Babel's `preset-env`
+* Color manipulation functions equivalent to SASS @lighten and @darken
+* Nesting
+  * Nested selectors
+  * Relationship notation
+* Variables
+  * Houdini-style CSS Custom Properties using @property
 
 There is also a nice to have set of features:
 
-- function-like conditionals and iterators, similar to what we can do in SASS
-- Mixins
+* function-like conditionals and iterators, similar to what we can do in SASS
+* Mixins
 
 ## Implementation
 

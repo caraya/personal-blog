@@ -11,11 +11,11 @@ To open a file we'll use the following code.
 
 We define the following constants and variables:
 
-- Capture the button to open a file
-- Capture the button to save a file
-- Capture the text area where we'll insert the text
-- Capture the content that we'll save
-- Sets up an empty variable for the filehandle we want to work with
+* Capture the button to open a file
+* Capture the button to save a file
+* Capture the text area where we'll insert the text
+* Capture the content that we'll save
+* Sets up an empty variable for the filehandle we want to work with
 
 ```js
 const openButton = document.querySelector('.openButton');
@@ -34,6 +34,8 @@ The function runs the following steps:
 3. Open the file
 4. Read and convert the content of the file to text
 5. Insert the content of the file into the display text area
+
+{.custom-ordered}
 
 ```js
 async function openFile() {
@@ -60,6 +62,8 @@ The steps are as follows:
 4. Write the file
 5. close the file and write the contents to disk.
 
+{.custom-ordered}
+
 ```js
 async function saveFile() {
   if ('showSaveFilePicker' in window) { // 1
@@ -80,8 +84,8 @@ saveButton.addEventListener('click', saveFile);
 
 ## Links and resources
 
-- [Public explainer](https://github.com/WICG/file-system-access/blob/main/EXPLAINER.md)
-- [File System Access](https://wicg.github.io/file-system-access/) and [File](https://w3c.github.io/FileAPI/) specifications at WICG
-- [ChromeStatus.com entry](https://www.chromestatus.com/feature/6284708426022912)
-- [File System Access API](https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API) — MDN
-- [File System Access API](https://docs.google.com/document/d/1NJFd-EWdUlQ7wVzjqcgXewqC5nzv_qII4OvlDtK6SE8/edit) — Chromium Security Model
+* [Public explainer](https://github.com/WICG/file-system-access/blob/main/EXPLAINER.md)
+* [File System Access](https://wicg.github.io/file-system-access/) and [File](https://w3c.github.io/FileAPI/) specifications at WICG
+* [ChromeStatus.com entry](https://www.chromestatus.com/feature/6284708426022912)
+* [File System Access API](https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API) — MDN
+* [File System Access API](https://docs.google.com/document/d/1NJFd-EWdUlQ7wVzjqcgXewqC5nzv_qII4OvlDtK6SE8/edit) — Chromium Security Model

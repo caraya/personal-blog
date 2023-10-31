@@ -19,7 +19,7 @@ If you've done work in print you'd probably seen the OpenType features in applic
 
 There is no way for the browser to tell you what OpenType features the font supports so you'll have to do it the old fashioned way, either by using the specimen you got with the font, or sites like [Wakamaifondue](https://wakamaifondue) or [Axis Praxis](https://www.axis-praxis.org) to get a list of the OpenType features of your font.
 
-![Example of Wakamaifondue's display of OpenType layout features](https://publishing-project.rivendellweb.net/wp-content/uploads/2020/08/wakamaifondue-ot-features.png)
+![Example of Wakamaifondue's display of OpenType layout features](/images/2020/08/wakamaifondue-ot-features.png)
 
 Example of Wakamaifondue's display of OpenType layout features
 

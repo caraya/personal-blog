@@ -27,10 +27,7 @@ Not all APIs are gated behing the permissions API. The list of available APIs an
 | [Notifications API](https://developer.mozilla.orghttps://developer.mozilla.orgWeb/API/Notifications_API) | `notifications` |
 | [Payment Handler API](https://developer.mozilla.orghttps://developer.mozilla.orgWeb/API/Payment_Handler_API) | `payment-handler` |
 | [Push API](https://developer.mozilla.orghttps://developer.mozilla.orgWeb/API/Push_API) | `push` |
-| [Sensor APIs](https://developer.mozilla.orghttps://developer.mozilla.orgWeb/API/Sensor_APIs) | `accelerometer`,  
-`gyroscope`,  
-`magnetometer`,  
-`ambient-light-sensor` |
+| [Sensor APIs](https://developer.mozilla.orghttps://developer.mozilla.orgWeb/API/Sensor_APIs) | `accelerometer`, <br>`gyroscope`,<br>`magnetometer`,<br>  `ambient-light-sensor` |
 | [Storage Access API](https://developer.mozilla.orghttps://developer.mozilla.orgWeb/API/Storage_Access_API) | `storage-access` |
 | [Storage API](https://developer.mozilla.orghttps://developer.mozilla.orgWeb/API/Storage_API) | `persistent-storage` |
 | [Web Audio Output Devices API](https://developer.mozilla.orghttps://developer.mozilla.orgWeb/API/Audio_Output_Devices_API) | `speaker-selection` |
@@ -95,7 +92,7 @@ const permissionsNames = [
   "clipboard-write",
   "local-fonts",
   "payment-handler",
-  "storage-access", 
+  "storage-access",
   "speaker-selection",
 ]
 ```
@@ -128,14 +125,14 @@ async function getAllPermissions() {
         }
         console.log(permission)
         allPermissions.push({
-          permissionName, state: 
+          permissionName, state:
           permission.state
         })
       }
       catch(e){
         allPermissions.push({
-          permissionName, 
-          state: 'error', 
+          permissionName,
+          state: 'error',
           errorMessage: e.toString()
         })
       }
@@ -208,15 +205,15 @@ The following example, taken from YouTube, shows how the `allow` attribute works
 ```html
 <iframe
   width="560" height="315"
-  src="https://www.youtube.com/embed/rZJgedd2Fk4" 
+  src="https://www.youtube.com/embed/rZJgedd2Fk4"
   title="YouTube video player"
-  frameborder="0" 
+  frameborder="0"
   allow="accelerometer;
-    autoplay; 
-    clipboard-write; 
-    encrypted-media; 
-    gyroscope; 
-    picture-in-picture; 
+    autoplay;
+    clipboard-write;
+    encrypted-media;
+    gyroscope;
+    picture-in-picture;
     web-share" allowfullscreen>
 </iframe>
 ```

@@ -9,13 +9,13 @@ There are multiple ways to achieve the desired goal. I've chose to use the [colo
 
 According to the spec:
 
-> This function takes two [<color>](https://drafts.csswg.org/css-color-4/#typedef-color) specifications and returns the result of mixing them, in a given [<color-space>](https://www.w3.org/TR/css-color-5/#typedef-color-space), by a specified amount.
+> This function takes two [<color>](https://drafts.csswg.org/css-color-4/#typedef-color) specifications and returns the result of mixing them, in a given [&lt;color-space>](https://www.w3.org/TR/css-color-5/#typedef-color-space), by a specified amount.
 
 So basically, to use `color-mix()` you need three things:
 
-- The color space you want to work in, most of the time this will be `sRGB` but it can be any color space supported in CSS
-- The colors that you want to mix
-- The percentage that you want to mix them by
+* The color space you want to work in, most of the time this will be `sRGB` but it can be any color space supported in CSS
+* The colors that you want to mix
+* The percentage that you want to mix them by
 
 Right now (as of 11/25/2021) the examples below only work in Firefox Nightly. There is an entry in Chromestatus dashboard for the API, but there's no clear timeframe for when it'll be available for testing or production.
 

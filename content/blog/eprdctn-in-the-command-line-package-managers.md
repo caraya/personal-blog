@@ -33,7 +33,7 @@ brew install akamai
 
 The command will also install any dependencies needed for the package to run. Akamai has no dependencies.
 
-![Screenshot showing the install process for a homebrew package](https://publishing-project.rivendellweb.net/wp-content/uploads/2018/04/homebrew-install-1024x203.png)
+![Screenshot showing the install process for a homebrew package](/images/2018/04/homebrew-install-1024x203.png)
 
 Screenshot showing the install process for a homebrew package
 
@@ -47,7 +47,7 @@ brew upgrade akamai
 
 If the package you're upgrading individually is already up to date, Homebrew will present you with this 'error' message. It's not an error at all, just Homebrew's way of telling you it's not needed.
 
-![alt-text](https://publishing-project.rivendellweb.net/wp-content/uploads/2018/04/homebrew-upgrade-package-already-installed-1024x82.png)
+![alt-text](/images/2018/04/homebrew-upgrade-package-already-installed-1024x82.png)
 
 alt-text
 
@@ -57,7 +57,7 @@ The other option is to upgrade all installed packages at the same time by just u
 brew upgrade
 ```
 
-![Homebrew upgrade process for all packages](https://publishing-project.rivendellweb.net/wp-content/uploads/2018/04/homebrew-upgrade-all-1024x232.png)
+![Homebrew upgrade process for all packages](/images/2018/04/homebrew-upgrade-all-1024x232.png)
 
 Homebrew upgrade process for all packages
 

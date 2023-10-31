@@ -11,36 +11,31 @@ Web Components allow developers to create their own elements along with the styl
 
 The early version of the web components family of specifications included the following specifications:
 
-- Custom Elements
-- HTML Imports
-- Shadow DOM
-- HTML Templates
+* Custom Elements
+* HTML Imports
+* Shadow DOM
+* HTML Templates
 
 The initial proposals from Google had a lot of pushback from Apple and Mozilla, particularly the concept of HTML Imports. They wanted to wait for what would ECMAScript modules would look like and how they would work with non-HTML resources. We're still waiting...
 
 This has changed considerably since the first introduction of the concept.
 
-- Shadow DOM
-    
-    - Most of the parts are now maintained in [DOM Standard](https://dom.spec.whatwg.org/), and are called shadow trees
-- Custom Elements
-    
-    - Custom elements were upstreamed into the [HTML Standard](https://html.spec.whatwg.org/multipage/scripting.html#custom-elements) (and bits in the DOM Standard) and are maintained there
-- HTML Templates
-    
-    - HTML Templates were upstreamed into the [HTML Standard](https://html.spec.whatwg.org/multipage/scripting.html#the-template-element)
-- JSON, [CSS](https://github.com/WICG/webcomponents/blob/gh-pages/proposals/css-modules-v1-explainer.md), [HTML](https://github.com/WICG/webcomponents/blob/gh-pages/proposals/html-modules-explainer.md) Modules
-    
-    - Successor to the abandoned HTML Imports, allows JSON, CSS, and HTML markup to be requested by a component
-    - HTML Modules Spec work is being incubated in the whatwg/html repository (see [PR](https://github.com/whatwg/html/pull/4505))
-    - See the following docs:
-    - [HTML Modules explainer](https://github.com/WICG/webcomponents/blob/gh-pages/proposals/html-modules-explainer.md)
-    - [initial proposal](https://github.com/WICG/webcomponents/blob/gh-pages/proposals/html-modules-proposal.md)
-    - [earlier design ideas](https://github.com/WICG/webcomponents/blob/gh-pages/proposals/HTML-Imports-and-ES-Modules.md)
-- CSS changes
-    
-    - The CSS WG works on [CSS Scoping](https://drafts.csswg.org/css-scoping/) and [CSS Shadow Parts](https://drafts.csswg.org/css-shadow-parts/), which help dealing with shadow trees with various selectors
-    - Various other parts of CSS and its object model are also impacted by shadow trees and directly worked on in the various CSS specificaions
+* Shadow DOM
+  * Most of the parts are now maintained in [DOM Standard](https://dom.spec.whatwg.org/), and are called shadow trees
+* Custom Elements
+  * Custom elements were upstreamed into the [HTML Standard](https://html.spec.whatwg.org/multipage/scripting.html#custom-elements) (and bits in the DOM Standard) and are maintained there
+* HTML Templates
+  * HTML Templates were upstreamed into the [HTML Standard](https://html.spec.whatwg.org/multipage/scripting.html#the-template-element)
+* JSON, [CSS](https://github.com/WICG/webcomponents/blob/gh-pages/proposals/css-modules-v1-explainer.md), [HTML](https://github.com/WICG/webcomponents/blob/gh-pages/proposals/html-modules-explainer.md) Modules
+  * Successor to the abandoned HTML Imports, allows JSON, CSS, and HTML markup to be requested by a component
+  * HTML Modules Spec work is being incubated in the whatwg/html repository (see [PR](https://github.com/whatwg/html/pull/4505))
+  * See the following docs:
+    * [HTML Modules explainer](https://github.com/WICG/webcomponents/blob/gh-pages/proposals/html-modules-explainer.md)
+    * [initial proposal](https://github.com/WICG/webcomponents/blob/gh-pages/proposals/html-modules-proposal.md)
+    * [earlier design ideas](https://github.com/WICG/webcomponents/blob/gh-pages/proposals/HTML-Imports-and-ES-Modules.md)
+* CSS changes
+  * The CSS WG works on [CSS Scoping](https://drafts.csswg.org/css-scoping/) and [CSS Shadow Parts](https://drafts.csswg.org/css-shadow-parts/), which help dealing with shadow trees with various selectors
+  * Various other parts of CSS and its object model are also impacted by shadow trees and directly worked on in the various CSS specificaions
 
 There have also been two versions of the web components specifications.
 
@@ -56,15 +51,15 @@ import {PolymerElement, html} from '@polymer/polymer/polymer-element.js';
 class XCustom extends PolymerElement {
 
   // Optional Shadow DOM template
-  static get template() { 
+  static get template() {
     return html`
       <style>
         /* CSS rules for your element */
       </style>
 
-        <!-- shadow DOM for your element -->
+        <!-* shadow DOM for your element -->
 
-      <div>[[greeting]]</div> <!-- data bindings in shadow DOM -->
+      <div>[[greeting]]</div> <!-* data bindings in shadow DOM -->
     `;
   }
 
@@ -197,8 +192,8 @@ In the code below, the shadow DOM provides the slots' destination using the name
 ```html
 <template id="element-details-template">
   <style>
-    /* 
-      Private styles to the component go here 
+    /*
+      Private styles to the component go here
     */
   </style>
   <details>
@@ -226,7 +221,7 @@ The instance of the custom element fills the slot in the template using the valu
 ```html
 <element-details>
   <span slot="element-name">slot</span>
-  <span slot="description">A placeholder 
+  <span slot="description">A placeholder
   inside a web component that users
   can fill with their own markup,
   with the effect of composing
@@ -299,7 +294,7 @@ The criticisms for web components come from several angles. I've chosen to summa
 
 ### Jeremy Keith
 
-In [Evaluating Technology](https://adactio.com/articles/12839), Jeremy Keith asks a very interesting question: **_[How do web components fail?](https://adactio.com/articles/12839#webcomponents)_** His answer to the question is illustrative of one of the problems with web components.
+In [Evaluating Technology](https://adactio.com/articles/12839), Jeremy Keith asks a very interesting question: ***[How do web components fail?](https://adactio.com/articles/12839#webcomponents)*** His answer to the question is illustrative of one of the problems with web components.
 
 Until declarative shadow DOM came into the picture, web components were tied to Javascript to do anything.
 
@@ -337,7 +332,7 @@ Her first point is reliance on Javascript makes it much harder it makes it to wr
 
 Traditional web components rely on Javascript but that doesn't mean we need a massive amount of Javascript to make them work, or as Lea puts it:
 
-> Even when JS is unavoidable, it’s not black and white. A well designed HTML element can reduce the amount and complexity of JS needed to a minimum. Think of the `<dialog>` element: it usually does require **_some_** JS, but it’s usually rather simple JS. Similarly, the `<video>` element is perfectly usable just by writing HTML, and has a comprehensive JS API for anyone who wants to do fancy custom things. Lea Verou — [The failed promise of web components](https://lea.verou.me/2020/09/the-failed-promise-of-web-components/)
+> Even when JS is unavoidable, it’s not black and white. A well designed HTML element can reduce the amount and complexity of JS needed to a minimum. Think of the `<dialog>` element: it usually does require ***some*** JS, but it’s usually rather simple JS. Similarly, the `<video>` element is perfectly usable just by writing HTML, and has a comprehensive JS API for anyone who wants to do fancy custom things. Lea Verou — [The failed promise of web components](https://lea.verou.me/2020/09/the-failed-promise-of-web-components/)
 
 So, if we consider, these criticisms, where are we in the Web Components journey?
 
@@ -347,27 +342,22 @@ Things have evolved since I last looked at web components but some things remain
 
 It would be nice to have a resource where we can do a best-of-breed set of components as Lea outlines in her post, particularly [when she discusses possible solutions: Can we fix this?](https://lea.verou.me/2020/09/the-failed-promise-of-web-components/#can-we-fix-this). I will paraphrase some of her solutions and add some of my own
 
-- **Plug and play**. No dependencies, no setup beyond including one `<script>` tag
-    
-    - Include any essential dependency automatically (like a map library for a map custom element)
-- Syntax and APIs follow the same design patterns that we see in HTML elements
-    
-    - See [HTML APIs: What They Are And How To Design A Good One](https://www.smashingmagazine.com/2017/02/designing-html-apis/)
-    - You should be honest when deciding if your element needs an API at all
-- **Anything that can be done without the component user writing JS, is doable without JS**, per the [W3C principle of least power](https://www.w3.org/2001/tag/doc/leastPower.html)
-    
-    - We should explore if declarative shadow DOM is a solution
-- **Accessible by default** via sensible ARIA defaults, just like normal HTML elements
-    
-    - Since we have to add our own ARIA attributes we should teach people how to use ARIA properly
-    - No ARIA is better than bad ARIA
-    - See [To ARIA! The Cause of, and Solution to, All Our Accessibility Problems](https://webaim.org/blog/aria-cause-solution/)
-- **Themable** via [::part()](https://developer.mozilla.org/en-US/docs/Web/CSS/::part), and regular CSS properties as much as possible
-- Individual elements should be **Composable** using [slots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots)
-    
-    - Component users should be able to add content to the custom element without having to edit the component itself
-    - This user-side content becomes the full content of the element when the browser doesn't support custom elements or Javascript fails for some reason
-    - Custom elements should provide sensible default for when no content is added to the light DOM.
+* **Plug and play**. No dependencies, no setup beyond including one `<script>` tag
+  * Include any essential dependency automatically (like a map library for a map custom element)
+* Syntax and APIs follow the same design patterns that we see in HTML elements
+  * See [HTML APIs: What They Are And How To Design A Good One](https://www.smashingmagazine.com/2017/02/designing-html-apis/)
+  * You should be honest when deciding if your element needs an API at all
+* **Anything that can be done without the component user writing JS, is doable without JS**, per the [W3C principle of least power](https://www.w3.org/2001/tag/doc/leastPower.html)
+  * We should explore if declarative shadow DOM is a solution
+* **Accessible by default** via sensible ARIA defaults, just like normal HTML elements
+  * Since we have to add our own ARIA attributes we should teach people how to use ARIA properly
+  * No ARIA is better than bad ARIA
+  * See [To ARIA! The Cause of, and Solution to, All Our Accessibility Problems](https://webaim.org/blog/aria-cause-solution/)
+* **Themable** via [::part()](https://developer.mozilla.org/en-US/docs/Web/CSS/::part), and regular CSS properties as much as possible
+* Individual elements should be **Composable** using [slots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots)
+  * Component users should be able to add content to the custom element without having to edit the component itself
+  * This user-side content becomes the full content of the element when the browser doesn't support custom elements or Javascript fails for some reason
+  * Custom elements should provide sensible default for when no content is added to the light DOM.
 
 While these are all sensible solutions, they only solve part of the problem dealing with web components.
 

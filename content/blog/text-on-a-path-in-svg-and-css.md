@@ -11,9 +11,7 @@ We will also look at how to animate text on a path.
 
 ## Text in a path
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2023/01/text-on-a-path-svg.png)
-
-Example of text on a path
+![Example of text on a path](/images/2023/01/text-on-a-path-svg.png)
 
 Figure 1 shows a basic example of text on a path.
 
@@ -29,8 +27,8 @@ The basic code, placing the text on a rectangular path looks like this:
 
 ```xml
 <svg
-  width="660" 
-  height="220" 
+  width="660"
+  height="220"
   style="outline: 1px solid red;
   font-size: 2em;
   overflow: visible;">
@@ -54,7 +52,7 @@ The next example will place text in a circle, created with a `path` element
 ```xml
 <svg viewBox="0 0 500 500" width="500" height="500">
   <defs>
-    <path id="myPath" d="M243.2, 382.4c-74.8, 
+    <path id="myPath" d="M243.2, 382.4c-74.8,
     0-135.5-60.7-135.5-135.5s60.7-135.5,135.5-135.5s135.5, 60.7, 135.5,
     135.5 S318, 382.4, 243.2, 382.4z" />
 
@@ -155,7 +153,7 @@ h1 {
 
 ## Conclusions
 
-Starting with the fact that neither option is _easy_ the question becomes which one to use?
+Starting with the fact that neither option is *easy* the question becomes which one to use?
 
 Where possible I would stick with SVG.
 
@@ -167,14 +165,12 @@ If you're not comfortable with XML or don't want to add another tool to your too
 
 ## Links and resources
 
-- SVG
-    
-    - [SVG Basics](https://vanseodesign.com/?s=svg+basics&submit=Search) — vanseo design
-    - [SVG Basics—Creating Paths With Line Commands](https://vanseodesign.com/web-design/svg-paths-line-commands/)
-    - [SVG Basics—Creating Paths With Curve Commands](https://vanseodesign.com/web-design/svg-paths-curve-commands/)
-    - [SVG Text On Path—Part 1](https://vanseodesign.com/web-design/svg-text-on-a-path-part-1/)
-    - [SVG Text On Path—Part 2](https://vanseodesign.com/web-design/svg-text-on-pathpart-2/)
-- CSS
-    
-    - [Positioning Text Along a Path with CSS](https://css-irl.info/positioning-text-along-a-path-with-css/) — CSS IRL
-- [SVG Path Editor](https://yqnn.github.io/svg-path-editor/)
+* SVG
+  * [SVG Basics](https://vanseodesign.com/?s=svg+basics&submit=Search) — vanseo design
+  * [SVG Basics—Creating Paths With Line Commands](https://vanseodesign.com/web-design/svg-paths-line-commands/)
+  * [SVG Basics—Creating Paths With Curve Commands](https://vanseodesign.com/web-design/svg-paths-curve-commands/)
+  * [SVG Text On Path—Part 1](https://vanseodesign.com/web-design/svg-text-on-a-path-part-1/)
+  * [SVG Text On Path—Part 2](https://vanseodesign.com/web-design/svg-text-on-pathpart-2/)
+* CSS
+  * [Positioning Text Along a Path with CSS](https://css-irl.info/positioning-text-along-a-path-with-css/) — CSS IRL
+* [SVG Path Editor](https://yqnn.github.io/svg-path-editor/)

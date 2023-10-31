@@ -1,7 +1,7 @@
 ---
 title: "Creating a Github publishing workflow"
 date: "2015-01-13"
-categories: 
+categories:
   - "technology"
 ---
 
@@ -25,7 +25,7 @@ All the skill requirements listed above can be handled through training and supp
 
 The outline below shows the workflow from both a Github and content perspectives.
 
-[![workflow](https://publishing-project.rivendellweb.net/wp-content/uploads/2015/01/workflow.png)](http:https://publishing-project.rivendellweb.net/wp-content/uploads/2015/01/workflow.png)
+[![workflow](/images/2015/01/workflow.png)](http:/images/2015/01/workflow.png)
 
 ### Setting up the project
 

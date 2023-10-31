@@ -3,16 +3,16 @@ title: "Building a stylesheet using cascade layers"
 date: "2022-09-12"
 ---
 
-Note:
-
+!!! note Note:
 Credit for a lot of information and ideas on this post goes to Miriam Zuzanne's [A Complete Guide to CSS Cascade Layers](https://css-tricks.com/css-cascade-layers/) publlished in CSS Tricks.
+!!!
 
 CSS layers present an interesting design paradigm. They allow developers to group styles based on the criteria we define.
 
 For the example, we'll define four layers.
 
 ```css
-@layer 
+@layer
   base
   layout
   utilities
@@ -93,7 +93,7 @@ In this example, we add a local copy of [normalize.css](https://necolas.github.i
 we can also nest layers:
 
 ```css
-@layer defaults {  
+@layer defaults {
   /* Ordering the sublayers */
   @layer reset, typography;
 
@@ -141,7 +141,7 @@ h1 {
 We can get around this limitation by adding layers before the layers we create for the framework. The example below uses a lower layer to override `!important` styles from the framework, and a higher layer to override normal styles.
 
 ```css
-@layer 
+@layer
   bootstrap.important,
   bootstrap.bootstrap,
   bootstrap.local;
@@ -153,10 +153,10 @@ We can get around this limitation by adding layers before the layers we create f
 }
 
 @layer bootstrap.important {
-  /* 
-    add !important styles in a lower layer 
-    to override any !important bootstrap 
-    styles 
+  /*
+    add !important styles in a lower layer
+    to override any !important bootstrap
+    styles
   */
 }
 ```
@@ -170,7 +170,6 @@ Layers have some interesting use cases. We've discussed some already so I'll cov
 I think I finally came to understand the way that `@layer`s work and, in the process, I built my own structure based on my project's needs. Something like this from generic to specific:
 
 1. default styles (these could be nested or not)
-    
     1. reset or normalize scripts
     2. base styles for components if no design system is applied
     3. typography
@@ -182,7 +181,7 @@ In the end, how you structure your layers is up to you and what makes the most s
 
 ## Links and resources
 
-- [@layer](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer) — MDN
-- [Cascade Layers](https://developer.chrome.com/blog/cascade-layers/) — Chrome Developers
-- [A Complete Guide to CSS Cascade Layers](https://css-tricks.com/css-cascade-layers/)
-- [Hello, CSS Cascade Layers](https://ishadeed.com/article/cascade-layers/)
+* [@layer](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer) — MDN
+* [Cascade Layers](https://developer.chrome.com/blog/cascade-layers/) — Chrome Developers
+* [A Complete Guide to CSS Cascade Layers](https://css-tricks.com/css-cascade-layers/)
+* [Hello, CSS Cascade Layers](https://ishadeed.com/article/cascade-layers/)

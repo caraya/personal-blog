@@ -17,27 +17,27 @@ The `title` attribute is what Firefox will use to display the stylesheet in the 
 
 ```html
 <!-- default stylesheet -->
-<link media="screen" 
-  rel="stylesheet" 
-  href="./style/default.css" 
+<link media="screen"
+  rel="stylesheet"
+  href="./style/default.css"
   type="text/css">
 
 <!-- Alternate stylesheets -->
-<link media="screen" 
-  rel="stylesheet alternate" 
-  href="./style/alternates/Ultramarine" 
-  title="Ultramarine" 
+<link media="screen"
+  rel="stylesheet alternate"
+  href="./style/alternates/Ultramarine"
+  title="Ultramarine"
   type="text/css">
 
-<link media="screen" 
-  rel="stylesheet alternate" 
-  href="./style/alternates/Steely" 
+<link media="screen"
+  rel="stylesheet alternate"
+  href="./style/alternates/Steely"
   title="Steely"
   type="text/css">
 
-<link media="screen" 
-  rel="stylesheet alternate" 
-  href="./style/alternates/Oldstyle" 
+<link media="screen"
+  rel="stylesheet alternate"
+  href="./style/alternates/Oldstyle"
   title="Oldstyle"
   type="text/css">
 ```
@@ -50,15 +50,11 @@ Using David Baron's website as an example (one of the few sites that have multip
 
 When visiting the site, go to `view > page style` and then select the style that you want to use.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2022/05/alternate-stylesheets-firefox1.png)
+![David Baron's website using one possible alternate stylesheet](/images/2022/05/alternate-stylesheets-firefox1.png)
 
-David Baron's website using one possible alternate stylesheet
-
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2022/05/alternate-stylesheets-firefox2.png)
-
-David Baron's website using one possible alternate stylesheet
+![David Baron's website using a different alternate stylesheet](/images/2022/05/alternate-stylesheets-firefox2.png)
 
 ## Additional resources
 
-- [https://developer.mozilla.org/en-US/docs/Web/CSS/Alternative\_style\_sheets](https://developer.mozilla.org/en-US/docs/Web/CSS/Alternative_style_sheets)
-- [https://alistapart.com/article/alternate/](https://alistapart.com/article/alternate/)
+* [https://developer.mozilla.org/en-US/docs/Web/CSS/Alternative\_style\_sheets](https://developer.mozilla.org/en-US/docs/Web/CSS/Alternative_style_sheets)
+* [https://alistapart.com/article/alternate/](https://alistapart.com/article/alternate/)

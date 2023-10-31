@@ -7,8 +7,8 @@ Building the Core Web Vitals measurement into WordPress is a bit more involved a
 
 This function depends on Google's [Sitekit plugin](https://sitekit.withgoogle.com/) and relies on values set there. We can run a function that checks if the `gtag` script has already been enqueued on your site:
 
-- If it's hasn't been enqueued, then you add it and configure it
-- If it's already been enqueued, then do nothing, as it's ready to use
+* If it's hasn't been enqueued, then you add it and configure it
+* If it's already been enqueued, then do nothing, as it's ready to use
 
 If you use a different tool to set up your Google Analytics or use a different analytics solution, you'll need to set it up and configure it yourself.
 
@@ -42,7 +42,7 @@ So, instead, I'm using [wp\_footer](https://developer.wordpress.org/reference/fu
 <?php
 // Enqueue the web vitals script
 wp_enqueue_script(
-    'web-vitals', 
+    'web-vitals',
     'https://unpkg.com/web-vitals?module',
     array(),
     null,

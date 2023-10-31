@@ -1,7 +1,7 @@
 ---
 title: "CSS regions, exclusions, shapes and new publishing paradigms"
 date: "2013-10-22"
-categories: 
+categories:
   - "design"
   - "technology"
   - "tools-projects"
@@ -28,11 +28,11 @@ These technologies are still experimental and subject to change. Best place to k
 - iOS (-webkit- flag)
 - Fully supported on iOS 7
 - Chrome Canary
-    
+
     - Enable with Enable CSS Regions flag
     - For Chrome 23 and later enable with: Enable experimental WebKit features)
     - Latest Chrome Nightly uses Enable Experimental Web Platform Features to enable regions
-    
+
 
 ## Can we use this for publishing projects now?
 
@@ -172,7 +172,7 @@ So we'll change the CSS to make the code more responsive while keeping the HTML 
 
 ```
 html, body {
-  width: 100%;  
+  width: 100%;
 }
 
 #source {
@@ -218,9 +218,9 @@ This is where polyfills and resource loaders come into play. While no browser su
 Modernizr.load([
   {
     // List of things we need
-    test : 
-            Modernizr.regions 
-            && Modernizr.shapes 
+    test :
+            Modernizr.regions
+            && Modernizr.shapes
             && Modernizr.columns,
     // Modernizr.load loads css and javascript as needed
     nope : ['css-regions-polyfill.js', 'css-regions-polyfill.css']
@@ -238,7 +238,7 @@ Adobe has created a [CSS regions polyfill](https://github.com/adobe-webplatform/
 
 We will take one of our example images from the top newspapers and convert it into a fluid web layout that uses regions and shapes to layout multiple flows of content in the same page.
 
-![dmn7](https://publishing-project.rivendellweb.net/wp-content/uploads/2013/11/dmn7.jpg)
+![dmn7](/images/2013/11/dmn7.jpg)
 
 I know that you can do some of the same things that you use regions for. It is true that the CSS uses a combination of flexbox and regions. The looks of the example are a limitation of my skills with CSS and not necessarily a reflection of the recomendations and their implementations.
 
@@ -259,15 +259,15 @@ The CSS shapes recommendations are like Drop Caps or floated images on steroids.
 For the unintiated drop caps are the large letters used in the first paragraph of a chapter or a page. The CSS code for a drop cap may look something like this:
 
 ```
-p:first-child:first-letter { 
-    float: left; 
-    color: #903; 
-    font-size: 75px; 
-    line-height: 60px; 
-    padding-top: 4px; 
-    padding-right: 8px; 
-    padding-left: 3px; 
-    font-family: Georgia; 
+p:first-child:first-letter {
+    float: left;
+    color: #903;
+    font-size: 75px;
+    line-height: 60px;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
+    font-family: Georgia;
 }
 ```
 
@@ -372,9 +372,9 @@ The first example we'll look at is text wrapping around a straight image. We wil
 
 ```
 Big Example Title
-    
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tempor ipsum, tempor placerat nisi. Cras feugiat est et turpis scelerisque auctor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tempor ipsum, tempor placerat nisi. Etiam vehicula lectus vel leo pharetra malesuada. Nulla risus magna, vulputate id elit quis, luctus ullamcorper ligula. Nam at faucibus massa, sed elementum tellus. Proin et dictum ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tempor ipsum, tempor placerat nisi. Cras feugiat est et turpis scelerisque auctor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tempor ipsum, tempor placerat nisi. Etiam vehicula lectus 
-      
+
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tempor ipsum, tempor placerat nisi. Cras feugiat est et turpis scelerisque auctor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tempor ipsum, tempor placerat nisi. Etiam vehicula lectus vel leo pharetra malesuada. Nulla risus magna, vulputate id elit quis, luctus ullamcorper ligula. Nam at faucibus massa, sed elementum tellus. Proin et dictum ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tempor ipsum, tempor placerat nisi. Cras feugiat est et turpis scelerisque auctor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tempor ipsum, tempor placerat nisi. Etiam vehicula lectus
+
         This is a test
 ```
 

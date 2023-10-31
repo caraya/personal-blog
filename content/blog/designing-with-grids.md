@@ -96,10 +96,10 @@ We can also name the lines that define the grids in the cell.
 ```css
 .container {
   grid-template-column:
-    [line1-start] 100px 
-    [line2-start] 100px  
-    [line3-start] 100px 
-    [line4-start] 100px 
+    [line1-start] 100px
+    [line2-start] 100px
+    [line3-start] 100px
+    [line4-start] 100px
     [line5-start] 100px
     [line6-start] 100px
     [end];
@@ -149,8 +149,8 @@ Since you have to describe the content of each cell on the grid, the syntax of t
 
 The possible values here are:
 
-- A string, indicating the name of the area
-- A period (`.`) to indicate an empty or null cell
+* A string, indicating the name of the area
+* A period (`.`) to indicate an empty or null cell
 
 If the name repeats itself in concurrent areas, these cells will form an area that can be referenced.
 
@@ -197,7 +197,7 @@ The example continues by placing the direct children of `.container` into their 
 }
 ```
 
-### Compoud grids
+### Compound grids
 
 According to Andy Clarke in [Inspired Design Decisions: Pressing Matters](https://www.smashingmagazine.com/2019/07/inspired-design-decisions-pressing-matters/):
 
@@ -211,9 +211,7 @@ According to Andy Clarke in [Inspired Design Decisions: Pressing Matters](https:
 }
 ```
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2023/02/compound-grid-2x3-1.png)
-
-Example of a 2 x 3 compound grid
+![Example of a 2 x 3 compound grid](/images/2023/02/compound-grid-2x3-1.png)
 
 ```css
 .container {
@@ -223,11 +221,9 @@ Example of a 2 x 3 compound grid
 }
 ```
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2023/02/compound-grid-4x6-1.png)
+![example of a 4 x 6 compound grid](/images/2023/02/compound-grid-4x6-1.png)
 
-example of a 4 x 6 compound grid
-
-Creating compound grids is not easy. Rather than spend time doing it manually (and getting it wrong) I use the [Compount Grid Generator](https://codepen.io/michellebarker/full/zYOMYWv) from [Michelle Barker](https://twitter.com/MicheBarks)
+Creating compound grids is not easy. Rather than spend time doing it manually (and getting it wrong) I use the [Compound Grid Generator](https://codepen.io/michellebarker/full/zYOMYWv) from [Michelle Barker](https://twitter.com/MicheBarks)
 
 ## Placing items
 
@@ -290,13 +286,13 @@ Work with your designer in creating these layouts. We got a much larger toolbox 
 
 ## Links and References
 
-- [Using Grids in Interface Designs](https://www.nngroup.com/articles/using-grids-in-interface-designs/)
-- [A Complete Guide to CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
-- [Exploring CSS Grid’s Implicit Grid and Auto-Placement Powers](https://css-tricks.com/exploring-css-grids-implicit-grid-and-auto-placement-powers/)
-- [How To Build A Magazine Layout With CSS Grid Areas](https://www.smashingmagazine.com/2023/02/build-magazine-layout-css-grid-areas/)
-- [Compount Grid Generator](https://codepen.io/michellebarker/full/zYOMYWv) — [Michelle Barker](https://twitter.com/MicheBarks)
-- [Grid by Example](https://gridbyexample.com/)
-- [Art Direction for the Web](https://www.youtube.com/watch?v=R8JES-jufPs) — Smashing Magazine
-- [Inspired by CSS Grid](https://www.youtube.com/watch?v=eUeoLUjOUHw) — London Web Standards
-- [Learn CSS Subgrid](https://ishadeed.com/article/learn-css-subgrid/)
-- [Subgrid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Subgrid#using_subgrids) — \[MDN\]
+* [Using Grids in Interface Designs](https://www.nngroup.com/articles/using-grids-in-interface-designs/)
+* [A Complete Guide to CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
+* [Exploring CSS Grid’s Implicit Grid and Auto-Placement Powers](https://css-tricks.com/exploring-css-grids-implicit-grid-and-auto-placement-powers/)
+* [How To Build A Magazine Layout With CSS Grid Areas](https://www.smashingmagazine.com/2023/02/build-magazine-layout-css-grid-areas/)
+* [Compount Grid Generator](https://codepen.io/michellebarker/full/zYOMYWv) — [Michelle Barker](https://twitter.com/MicheBarks)
+* [Grid by Example](https://gridbyexample.com/)
+* [Art Direction for the Web](https://www.youtube.com/watch?v=R8JES-jufPs) — Smashing Magazine
+* [Inspired by CSS Grid](https://www.youtube.com/watch?v=eUeoLUjOUHw) — London Web Standards
+* [Learn CSS Subgrid](https://ishadeed.com/article/learn-css-subgrid/)
+* [Subgrid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Subgrid#using_subgrids) — \[MDN\]

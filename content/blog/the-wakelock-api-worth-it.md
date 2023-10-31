@@ -19,8 +19,8 @@ We use a function expression as the outermost container for our code.
 
 Inside the function expression, we use an async arrow function where we use a try/catch block:
 
-- The try block awaits for the navigator lock and adds an event listener to trigger the release before logging the success to console
-- The catch block reports the error to the console
+* The try block awaits for the navigator lock and adds an event listener to trigger the release before logging the success to console
+* The catch block reports the error to the console
 
 ```js
 let wakeLock = null;
@@ -51,9 +51,9 @@ const handleVisibilityChange = async () => {
   }
 };
 
-document. 
+document.
   addEventListener(
-    'visibilitychange', 
+    'visibilitychange',
     handleVisibilityChange
   );
 

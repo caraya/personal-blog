@@ -65,7 +65,7 @@ WordPress uses [GNU Gettext](https://www.gnu.org/software/gettext/) to manage th
 
 I downloaded [Poedit](https://poedit.net) and chose to upgrade to the Pro version because it allows you to automatically create the translation files for a WordPress theme or plugin without having to do the work manually.
 
-![Opening screen for Poedit application](https://publishing-project.rivendellweb.net/wp-content/uploads/2020/03/poedit-01.png)
+![Opening screen for Poedit application](/images/2020/03/poedit-01.png)
 
 Opening screen for Poedit application
 
@@ -74,13 +74,13 @@ In this case we'll select `Translate WordPress theme or plugin` and move on to t
 When we choose to work with a WordPress theme or plugin we're prompted for the following information
 
 - If we want to work with a remote server or locally
-    
+
     - If we want to work locally then enter the location of the theme or plugin we want to work with
 - If we want to create a new translation or a POT template to use as the basis for further transalations
 
 For this post, we'll create a POT template for our theme.
 
-![POT Screen in Poedit](https://publishing-project.rivendellweb.net/wp-content/uploads/2020/03/poedit-03.png)
+![POT Screen in Poedit](/images/2020/03/poedit-03.png)
 
 POT Screen in Poedit
 
@@ -88,7 +88,7 @@ When we click on create POT, we see all the translated strings available on the 
 
 You will be prompted to save the POT file and when you do, you will be asked what language are you translating for.
 
-![Poedit language selection](https://publishing-project.rivendellweb.net/wp-content/uploads/2020/03/poedit-04.png)
+![Poedit language selection](/images/2020/03/poedit-04.png)
 
 Poedit Language Selection
 
@@ -96,7 +96,7 @@ We can then enter translations for each of the strings we chose to translate in 
 
 The Pro version allows you to pull translation from online sources. But, even without the online sources, you can translate the content yourself or you can handle the POT file to a commercial translator to work with.
 
-![Poedit language selection](https://publishing-project.rivendellweb.net/wp-content/uploads/2020/03/poedit-05.png)
+![Poedit language selection](/images/2020/03/poedit-05.png)
 
 Poedit Translation Screen
 

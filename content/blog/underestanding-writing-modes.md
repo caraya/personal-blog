@@ -15,17 +15,13 @@ Writing modes are tricky because they vary from language to language.
 
 The most common writing mode is "horizontal, left to right", expressed as `horizontal-tb` with the direction attribute set to `ltr`. In the case of English and other western languages `direction` is optional since `ltr` is the default.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2022/08/writing-modes-02.png)
-
-BBC homepage in English, a top to bottom and left to right language
+![BBC homepage in English, a top to bottom and left to right language](/images/2022/08/writing-modes-02.png)
 
 Languages like Arabic and Hebrew are read from top to bottom but horizontally they are read from right to left.
 
 In CSS this is also expressed as `horizontal-tb` but the `direction` attribute is expressed as `rtl`. In the case of right-to-left languages, the `direction` attribute is mandatory since it's not the default.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2022/08/writing-modes-01.png)
-
-The Arabic version of the BBC home page, a top to bottom, right to left language
+![The Arabic version of the BBC home page, a top to bottom, right to left language](/images/2022/08/writing-modes-01.png)
 
 We can write Japanese text vertically, in which case the text is read from right to left or they can be used horizontally in which case it's read from left to right. It can also be combined with parts of a page being laid out vertically and others horizontally.
 
@@ -33,15 +29,13 @@ When writing Japanese text vertically we use the `vertical-rl` value for writing
 
 When written horizontally, we use the same attributes as for western languages: `horizontal-tb` and `ltr` direction.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2022/08/02-japanese-02.jpg)
-
-When Japanese text is set vertically (right) it’s read from top to bottom and the lines go from right to left. When it is set horizontally (left), it is read from left to right, like in European languages.
+![When Japanese text is set vertically (right) it’s read from top to bottom and the lines go from right to left. When it is set horizontally (left), it is read from left to right, like in European languages.](/images/2022/08/02-japanese-02.jpg)
 
 ## Cosmetical uses
 
-### Warning:
-
+!!! warning Warning:
 This feature is only supported in Firefox.
+!!!
 
 There are two additional values for `writing-mode`: `sideways-rl` and `sideways-lr`.
 
@@ -63,8 +57,8 @@ The [direction](https://developer.mozilla.org/en-US/docs/Web/CSS/direction) HTML
 
 The possible values are:
 
-- `ltr` for left to right languages like English and most Latin languages
-- `rtl` for right to left languages like Arab and Hebrew
+* `ltr` for left to right languages like English and most Latin languages
+* `rtl` for right to left languages like Arab and Hebrew
 
 The CSS [:dir()](https://developer.mozilla.org/en-US/docs/Web/CSS/:dir) pseudo-class matches based on the direction indicated in the parameter to the class.
 
@@ -85,6 +79,6 @@ You can see the result of using `:dir()` in the following pen.
 
 Here are additional CSS tools that you can use to change the direction of text on the screen.
 
-- [text-combine-upright](https://developer.mozilla.org/en-US/docs/Web/CSS/text-combine-upright)
-- [text-orientation](https://developer.mozilla.org/en-US/docs/Web/CSS/text-orientation)
-- [unicode-bidi](https://developer.mozilla.org/en-US/docs/Web/CSS/unicode-bidi)
+* [text-combine-upright](https://developer.mozilla.org/en-US/docs/Web/CSS/text-combine-upright)
+* [text-orientation](https://developer.mozilla.org/en-US/docs/Web/CSS/text-orientation)
+* [unicode-bidi](https://developer.mozilla.org/en-US/docs/Web/CSS/unicode-bidi)

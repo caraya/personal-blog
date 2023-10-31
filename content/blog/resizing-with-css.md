@@ -20,32 +20,28 @@ The most basic example of a resizable element looks like this:
 
 The possible values for resize are:
 
-**`none`**
+**none**
+: The element offers no user-controllable method for resizing it. This is the default value if it's not present
 
-The element offers no user-controllable method for resizing it. This is the default value if it's not present
+**both**
+: The element displays a mechanism for allowing the user to resize it, which may be resized both horizontally and vertically.
 
-**`both`**
+**horizontal**
+: The element displays a mechanism for allowing the user to resize it in the horizontal direction.
 
-The element displays a mechanism for allowing the user to resize it, which may be resized both horizontally and vertically.
+**vertical**
+: The element displays a mechanism for allowing the user to resize it in the vertical direction.
 
-**`horizontal`**
+**block**
+: The element displays a mechanism for allowing the user to resize it in the block direction (either horizontally or vertically, depending on the `writing-mode` and `direction` value).
 
-The element displays a mechanism for allowing the user to resize it in the horizontal direction.
-
-**`vertical`**
-
-The element displays a mechanism for allowing the user to resize it in the vertical direction.
-
-**`block`**
-
-The element displays a mechanism for allowing the user to resize it in the block direction (either horizontally or vertically, depending on the `writing-mode` and `direction` value).
-
-**`inline`** The element displays a mechanism for allowing the user to resize it in the inline direction (either horizontally or vertically, depending on the `writing-mode` and `direction` value).
+**inline**
+: The element displays a mechanism for allowing the user to resize it in the inline direction (either horizontally or vertically, depending on the `writing-mode` and `direction` value).
 
 A few examples of where resize would work well
 
-- Creating demos for container queries
-- Using textarea boxes for data entry or as the UI for an editor
+* Creating demos for container queries
+* Using textarea boxes for data entry or as the UI for an editor
 
 ## Controlling minimum and maximum sizes
 
@@ -74,6 +70,8 @@ A constrained exaple of a resizable box looks like this:
 
 A full working example of a constrained resizable element:
 
-<p class="codepen" data-height="600" data-theme-id="dark" data-default-tab="result" data-slug-hash="bGrOqgb" data-user="caraya" style="height: 600px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"><span>See the Pen <a href="https://codepen.io/caraya/pen/bGrOqgb">Resize example</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>) on <a href="https://codepen.io">CodePen</a>.</span></p>
-
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<iframe height="662.9675903320312" style="width: 100%;" scrolling="no" title="Resize example" src="https://codepen.io/caraya/embed/bGrOqgb?default-tab=css%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/caraya/pen/bGrOqgb">
+  Resize example</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>

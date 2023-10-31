@@ -15,25 +15,25 @@ To describe the features, the API provides a [registry](https://w3c.github.io/pe
 
 The powerful features gated with this API are:
 
-- accelerometer
-- ambient-light-sensor
-- background-fetch
-- background-sync
-- bluetooth
-- camera
-- clipboard-write
-- device-info
-- display-capture
-- geolocation
-- gyroscope
-- magnetometer
-- microphone
-- midi
-- nfc
-- notifications
-- persistent-storage
-- push
-- speaker-selection
+* accelerometer
+* ambient-light-sensor
+* background-fetch
+* background-sync
+* bluetooth
+* camera
+* clipboard-write
+* device-info
+* display-capture
+* geolocation
+* gyroscope
+* magnetometer
+* microphone
+* midi
+* nfc
+* notifications
+* persistent-storage
+* push
+* speaker-selection
 
 ## Working with permissions
 

@@ -5,8 +5,8 @@ date: "2019-03-18"
 
 SVG is a powerful vector graphics format that works particularly well for icons and other line artwork in web pages. This is my attempt at documenting what I understand of SVG and its component elements and children.
 
-  
-It is important for me to know how SVG works, even if there are tools that will generate the SVG for me.  
+
+It is important for me to know how SVG works, even if there are tools that will generate the SVG for me.
 
 The W3C began development of SVG in 1999 and released as a W3C specification in 2001. It is an XML-based vector image format for two-dimensional graphics and supports interactivity and animation.
 
@@ -32,7 +32,7 @@ To create an 800px by 600px SVG element use the following code:
 
 It will produce an SVG element like the one below, captured from Sara Soueidan's [Interactive SVG Coordinate System demo](https://www.sarasoueidan.com/demos/interactive-svg-coordinate-system/)
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2019/03/svg-viewport-measurements-1024x778.png)
+![](/images/2019/03/svg-viewport-measurements-1024x778.png)
 
 SVG viewport with only height and width
 
@@ -82,12 +82,12 @@ Test for compatibility with your target browsers and that the result will work a
 ### Links and resources
 
 - Specifications
-    
+
     - [SVG 1.1 (second edition)](https://www.w3.org/TR/SVG11/)
     - [SVG 2](https://css-tricks.com/svg-2-conundrum/)
 - [The SVG 2 Conundrum](https://css-tricks.com/svg-2-conundrum/)
 - The difference between size and viewport
-    
+
     - [Understanding SVG Coordinate Systems and Transformations (Part 1) — The viewport, viewBox, and preserveAspectRatio](https://www.sarasoueidan.com/blog/svg-coordinate-systems/)
     - [Understanding SVG Coordinate Systems and Transformations (Part 2) — The transform Attribute](https://www.sarasoueidan.com/blog/svg-transformations/)
     - [Understanding SVG Coordinate Systems and Transformations (Part 3) — Establishing New Viewports](https://www.sarasoueidan.com/blog/nesting-svgs/)

@@ -165,10 +165,10 @@ md.use(cb, {
 
 The Markdown for the image is more complicated. It is a list of four attributes separated by `#` characters representing:
 
-- The index (position of the image on the page)
-- The alt text displayed when the image is not loaded and also used as the figure caption
-- The width of the image
-- The full path to the image file
+* The index (position of the image on the page)
+* The alt text displayed when the image is not loaded and also used as the figure caption
+* The width of the image
+* The full path to the image file
 
 ```markdown
 @[img](1#Sample alt content will also be used for captions#400px#./images/demo.webp)

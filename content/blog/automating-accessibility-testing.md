@@ -19,35 +19,25 @@ While the extension will only work on single pages, it is far easier to run.
 
 To start, download the extension from the [Chrome Store](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd).
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2022/06/axe-browser-ext-01.png)
-
-Axe browser extension in the chrome store.
+![Axe browser extension in the chrome store.](/images/2022/06/axe-browser-ext-01.png)
 
 The extension will add a menu option to the browser's DevTools. To get to the menu, activate DevTools either by pressing `CMD/CTRL + Shift + I` or right-clicking on the window and selecting `Inspect`.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2022/06/axe-browser-ext-02.png)
-
-Inspect menu item in the right click menu.
+![Inspect menu item in the right click menu.](/images/2022/06/axe-browser-ext-02.png)
 
 In the DevTools window, the axe DevTools will be at the far right of the menu as shown in the following image:
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2022/06/axe-browser-ext-03.png)
-
-Axe DevTools menu item in DevTools.
+![Axe DevTools menu item in DevTools.](/images/2022/06/axe-browser-ext-03.png)
 
 When you click on the menu item you will see the Axe extension main window.
 
 **The extension, as downloaded, will only run full-page basic scans. To run the partial scan or any of the specialized scans you must register for the paid version of Axe**. There is also a 14-day trial for you to test the tool and see if it meets your needs.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2022/06/axe-browser-ext-04.png)
-
-Axe DevTools Extension main screen
+![Axe DevTools Extension main screen](/images/2022/06/axe-browser-ext-04.png)
 
 Once you click on the left-side `Scan ALL of my page` button the extension will scan your page for accessibility issues and present them on the right side of the screen as shown in the following image:
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2022/06/axe-browser-ext-05.png)
-
-Axe DevTools Extension results page
+![Axe DevTools Extension results page](/images/2022/06/axe-browser-ext-05.png)
 
 Alongside the automated problems, the extension will suggest how to fix them.
 
@@ -57,13 +47,10 @@ These tools will work with full websites, not individual pages but they require 
 
 The accessibility evaluator tool has one special characteristic: It can use the accessibility standards from multiple countries and regions; these standards may be different from US-based standards.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2022/06/wave-accessibility-checker.png)
+![WAVE evaluator homepage.](/images/2022/06/wave-accessibility-checker.png)
 
-WAVE evaluator homepage.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2022/06/accessibility-checker.png)
-
-Accessibility checker homepage.
+![Accessibility checker homepage.](/images/2022/06/accessibility-checker.png)
 
 ## Manually accessibility testing
 
@@ -97,9 +84,9 @@ This will allow us to test for accessibility any time we push new content or the
 
 The Axe action makes the following assumptions
 
-- The project uses a Node.js build system
-- There is an `npm build` command that will build
-- The project runs a server when you run `npm start`
+* The project uses a Node.js build system
+* There is an `npm build` command that will build
+* The project runs a server when you run `npm start`
 
 With these assumptions, the action does the following:
 
@@ -107,21 +94,17 @@ With these assumptions, the action does the following:
 2. `jobs` defines the tasks that this action will run and the order the tasks will run on
 3. We set up the agent to run the tests in `macOS 11`, also presented as `macos-latest`
 4. The `strategy` section presents the different versions of Node that we will use for the action.
-    
-    1. The `matrix` element controls the different combinations of Node versions that we will use
-    2. `node-version` is an array of one or more versions of Node.js we want to use
+   1. The `matrix` element controls the different combinations of Node versions that we will use
+   2. `node-version` is an array of one or more versions of Node.js we want to use
 5. Next we use the `actions/checkout` action to checkout the code from the repository
 6. We use the Node.js version specified in the `matrix.node-version` to run the tests
-    
-    1. We then configure the version of Node that we'll use
+   1. We then configure the version of Node that we'll use
 7. This step performs the following tasks
-    
-    1. The `npm ci` command performs a clean installation of the files in `package.json`
-    2. it then runs the build command with the [\--if-present](https://docs.npmjs.com/cli/v8/commands/npm-run-script#if-present) flag. The `--if-present` flag will error out if the build command is not present
-8. It then runs the Axe commands
-    
-    1. It installs `@axe-core/cli` as a global NPM package
-    2. It runs the Axe binary on the server (\`https://localhost:3000\`)
+   1. The `npm ci` command performs a clean installation of the files in `package.json`
+   2. it then runs the build command with the [\--if-present](https://docs.npmjs.com/cli/v8/commands/npm-run-script#if-present) flag. The `--if-present` flag will error out if the build command is not present
+8.  It then runs the Axe commands
+    1.  It installs `@axe-core/cli` as a global NPM package
+    2.  It runs the Axe binary on the server (`https://localhost:3000`)
 
 ```yaml
 name: Axe
@@ -146,19 +129,19 @@ jobs:
 
     steps:
       # 5
-      - uses: actions/checkout@v3
+      * uses: actions/checkout@v3
       # 6
-      - name: Use Node.js ${{ matrix.node-version }}
+      * name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
       # 7
-      - run: npm ci
-      - run: npm run build --if-present
-      - run: npm start & npx wait-on http://localhost:3000
+      * run: npm ci
+      * run: npm run build --if-present
+      * run: npm start & npx wait-on http://localhost:3000
       # 8
-      - name: Run axe
+      * name: Run axe
         run: |
           npm install -g @axe-core/cli
           axe http://localhost:3000 --exit

@@ -7,8 +7,8 @@ One of the biggest pains of working with Node is when either a library you're wo
 
 This can happen in one of two ways.
 
-- The supported versions are included in the `engines` section of the `package.json` file as an advisory
-- are included in a `.nvmrc` file
+* The supported versions are included in the `engines` section of the `package.json` file as an advisory
+* are included in a `.nvmrc` file
 
 Even though neither of these options will stop you from running the package with an unsupported version, then it's on you to fix any potential problems.
 
@@ -32,15 +32,16 @@ If the `.nvmrc` file is not present then the script will switch to the Node vers
 The script will do the following:
 
 1. Capture local variables
-    
-    - Capture the current version of Node running in nvm
-    - Capture the path to the `.nvmrc` file if one exists
+    * Capture the current version of Node running in nvm
+    * Capture the path to the `.nvmrc` file if one exists
 2. If there is a `.nvmrc` file in the current directory, set the local `nvmrc_node_version` to the Node version specified in `.nvmrc`
 3. If the required version is not installed, then use nvm to install it
 4. If it is installed then use `nvm use` to run that specific version
 5. If there is no `.nvmrc` file in the current directory then use the default installed Node version
 6. Add the `load-nvmrc` function to the `chpwd` hook
 7. Run the function to initialize it
+
+{.custom-ordered}
 
 The script looks like this:
 

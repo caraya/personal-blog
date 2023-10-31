@@ -1,7 +1,7 @@
 ---
 title: "Who are the next billion users and how do we accommodate them"
 date: "2016-07-06"
-categories: 
+categories:
   - "design"
   - "ebook-publishing"
   - "thoughts-and-ideas"
@@ -40,7 +40,7 @@ Aaron Gustafson’s [Understanding Progressive Enhancement](http://alistapart.co
 
 > THE GRACEFUL DEGRADATION PERSPECTIVE Graceful degradation focuses on building the website for the most advanced/capable browsers. Testing in browsers deemed “older” or less capable usually takes place during the last quarter of the development cycle and is often restricted to the previous release of the major browsers (IE, Mozilla, etc.). Under this paradigm, older browsers are expected to have a poor, but passable experience. Small fixes may be made to accommodate a particular browser. Because they are not the focus, little attention is paid beyond fixing the most egregious errors.
 
- 
+
 
 > THE PROGRESSIVE ENHANCEMENT PERSPECTIVE Progressive enhancement focuses on the content. Note the difference: I didn’t even mention browsers. Content is the reason we create websites to begin with. Some sites disseminate it, some collect it, some request it, some manipulate it, and some even do all of the above, but they all require it. That’s what makes progressive enhancement a more appropriate paradigm. It’s why Yahoo! swiftly adopted it and used it to create their Graded Browser Support strategy.
 
@@ -52,11 +52,11 @@ One of the biggest surprises when researching this article was the difference br
 
 The tables below are taken from [stat counter](http://gs.statcounter.com/) and reflect data from June 2015 to June 2016.
 
-![StatCounter-browser-IN-monthly-201506-201606-bar](https://publishing-project.rivendellweb.net/wp-content/uploads/2016/07/StatCounter-browser-IN-monthly-201506-201606-bar.png)
+![StatCounter-browser-IN-monthly-201506-201606-bar](/images/2016/07/StatCounter-browser-IN-monthly-201506-201606-bar.png)
 
-![Top 9 Mobile & Tablet Browsers in China from June 2015 to June 2016](https://publishing-project.rivendellweb.net/wp-content/uploads/2016/07/StatCounter-browser-CN-monthly-201506-201606-bar.png)
+![Top 9 Mobile & Tablet Browsers in China from June 2015 to June 2016](/images/2016/07/StatCounter-browser-CN-monthly-201506-201606-bar.png)
 
-![StatCounter-browser-US-monthly-201506-201606-bar](https://publishing-project.rivendellweb.net/wp-content/uploads/2016/07/StatCounter-browser-US-monthly-201506-201606-bar.png)
+![StatCounter-browser-US-monthly-201506-201606-bar](/images/2016/07/StatCounter-browser-US-monthly-201506-201606-bar.png)
 
 > **_I’m making the assumption that the version of Opera used in India and China is Opera Mini and that UC Browser is also a proxy browser_**
 
@@ -83,58 +83,58 @@ Colors can have different meaning depending on the user’s cultural background.
 
 | COLOR | USA | China | India | Egypt | Japan |
 | --- | --- | --- | --- | --- | --- |
-| Red | Danger  
-Love  
-Stop | Good fortune  
-Luck  
-Joy | Luck  
-Fury  
-Masculine | Death | Anger  
+| Red | Danger
+Love
+Stop | Good fortune
+Luck
+Joy | Luck
+Fury
+Masculine | Death | Anger
 Danger |
-| Orange | Confident  
-Dependable  
-Corporate | Fortune  
-Luck  
-Joy | Sacred (the Color Saffron) | Virtue  
-Faith  
-Truth | Future  
-Youth  
+| Orange | Confident
+Dependable
+Corporate | Fortune
+Luck
+Joy | Sacred (the Color Saffron) | Virtue
+Faith
+Truth | Future
+Youth
 Energy |
-| Yellow | Coward  
-Joy  
-Hope | Wealth  
-Earth  
-Royal | Celebration | Mourning | Grace  
+| Yellow | Coward
+Joy
+Hope | Wealth
+Earth
+Royal | Celebration | Mourning | Grace
 Nobility |
-| Green | Spring  
-Money  
-New | Health  
-Prosperity  
-Harmony | Romance  
-New  
-Harvest | Happiness  
+| Green | Spring
+Money
+New | Health
+Prosperity
+Harmony | Romance
+New
+Harvest | Happiness
 Prosperity | Eternal life |
-| Blue | Confident  
-Dependability  
-Corporate | Heavenly  
-Clouds | Mourning  
-Disgust  
-Chilling | Virtue  
-Faith  
+| Blue | Confident
+Dependability
+Corporate | Heavenly
+Clouds | Mourning
+Disgust
+Chilling | Virtue
+Faith
 Truth | Villainy |
-| Purple | Royalty  
+| Purple | Royalty
 Imagination | Royalty | Unhappiness | Virtue | Wealth |
-| White | Purity  
-Peace  
-Holy | Mourning | Fun  
-Serenity  
-Harmony | Joy | Purity  
+| White | Purity
+Peace
+Holy | Mourning | Fun
+Serenity
+Harmony | Joy | Purity
 Holiness |
-| Black | Funeral  
-Death  
-Evil | Heaven  
-Neutral  
-High Quality | Evil | Death  
+| Black | Funeral
+Death
+Evil | Heaven
+Neutral
+High Quality | Evil | Death
 Evil |   |
 
 ### Working with the constraints of users’ devices
@@ -155,13 +155,13 @@ It’s a good approximation to what the experience is for users in that type of 
 
 We should also test on actual devices mirroring, as close as possible, the devices we expect our users to have
 
-\[caption id="attachment\_787426" align="aligncenter" width="640"\]![Device pile by Adactio on Flicker (cc by 2.0)](https://publishing-project.rivendellweb.net/wp-content/uploads/2016/07/6153522068_0437d550f7_z.jpg) Device pile by Adactio on Flicker (cc by 2.0)\[/caption\]
+\[caption id="attachment\_787426" align="aligncenter" width="640"\]![Device pile by Adactio on Flicker (cc by 2.0)](/images/2016/07/6153522068_0437d550f7_z.jpg) Device pile by Adactio on Flicker (cc by 2.0)\[/caption\]
 
 In addition to the variety of devices that we have in western countries (some of them shown in the image above) we have many other devices specific to regions or countries.
 
 Do you recognize any of these phones?
 
-- [Nokia X2 \_01-3610](http://www.gsmarena.com/nokia_x2_01-3610.php) 
+- [Nokia X2 \_01-3610](http://www.gsmarena.com/nokia_x2_01-3610.php)
 - [Samsung E1282T](http://www.gsmarena.com/samsung_e1282t-5362.php)
 - [Nokia 2690](http://www.gsmarena.com/nokia_2690-3004.php) These are the top three mobile phones used in India in 2015 based on Opera agregate data and presented by Bruce Lawson at Velocity. Look at the specs and form factors of these phones. How does it affect the design and development process?
 

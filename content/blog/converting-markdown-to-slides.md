@@ -26,17 +26,17 @@ The task is simple. It takes all the Markdown files from the `src/slides` direct
 gulp.task('build-slides', () => {
   let options = {
     // default = false, true means don't emit error event
-    continueOnError: false, 
+    continueOnError: false,
     // default = false, true means stdout is written to file.contents
-    pipeStdout: false, 
+    pipeStdout: false,
   };
   let reportOptions = {
     // default = true, false means don't write err
-    err: true, 
+    err: true,
     // default = true, false means don't write stderr
-    stderr: true, 
+    stderr: true,
     // default = true, false means don't write stdout
-    stdout: true 
+    stdout: true
   };
   return gulp.src('./src/slides/*.md')
   .pipe($.exec('md2gslides --style github <%= file.path %> ', options))
@@ -59,7 +59,7 @@ The following examples show how to create slides of various layouts:
     # This is a title slide
     ## Your name here
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2017/03/title_slide.png)
+![](/images/2017/03/title_slide.png)
 
 Title Slide
 
@@ -83,7 +83,7 @@ Section title slide
 
     This is the body
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2017/03/section_title_body_slide.png)
+![](/images/2017/03/section_title_body_slide.png)
 
 Section title & body slide
 
@@ -95,7 +95,7 @@ Section title & body slide
 
     This is the slide body.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2017/03/title_body_slide.png)
+![](/images/2017/03/title_body_slide.png)
 
 Title & body slide
 
@@ -107,7 +107,7 @@ Add `{.big}` to the title to make a slide with one big point
 
     # This is the main point {.big}
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2017/03/main_point_slide.png)
+![](/images/2017/03/main_point_slide.png)
 
 Main point slide
 
@@ -121,7 +121,7 @@ Use `{.big}` on a header in combination with a body too.
 
     This is the body
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2017/03/big_number_slide.png)
+![](/images/2017/03/big_number_slide.png)
 
 Big number slide
 
@@ -139,7 +139,7 @@ Separate columns with `{.column}`. The marker must appear on its own line with a
 
     This is the right column
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2017/03/two_column_slide.png)
+![](/images/2017/03/two_column_slide.png)
 
 Two Column Slide
 
@@ -157,7 +157,7 @@ Note: Images are currently scaled and centered to fit the slide template.
 
     !\[\](https://placekitten.com/900/900)
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2017/03/image_slide.png)
+![](/images/2017/03/image_slide.png)
 
 Image Slide
 
@@ -171,7 +171,7 @@ Set the background image of a slide by adding `{.background}` to the end of an i
 
     !\[\](https://placekitten.com/1600/900){.background}
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2017/03/background_image_slide.png)
+![](/images/2017/03/background_image_slide.png)
 
 Slide with background image
 
@@ -185,7 +185,7 @@ Include YouTube videos with a modified image tag.
 
     @\[youtube\](MG8KADiRbOU)
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2017/03/video_slide.png)
+![](/images/2017/03/video_slide.png)
 
 Slide with video
 

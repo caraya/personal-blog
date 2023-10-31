@@ -45,32 +45,22 @@ Using [Rocher Color](https://www.harbortype.com/fonts/rocher-color/), a variable
 The possible values for font-palette are:
 
 normal
-
-Specifies the default color palette or the default glyph colorization (set by the font maker) to be used for the font.
-
-With this setting, the palette in the font at index 0 is rendered.
+: Specifies the default color palette or the default glyph colorization (set by the font maker) to be used for the font.
+: With this setting, the palette in the font at index 0 is rendered.
 
 light
-
-Specifies the first palette in the font that matches 'light' to be used for the font
-
-Some fonts contain metadata that identify a palette as applicable for a light (close to white) background
-
-If a font does not have this metadata, the light value behaves as normal.
+: Specifies the first palette in the font that matches 'light' to be used for the font
+: Some fonts contain metadata that identify a palette as applicable for a light (close to white) background
+: If a font does not have this metadata, the light value behaves as normal.
 
 dark
+: Specifies the first palette in the font that matches 'dark' to be used for the font.
+: Some fonts contain metadata that identify a palette as applicable for a dark (close to black) background.
+: If a font does not have this metadata, the value behaves as normal.
 
-Specifies the first palette in the font that matches 'dark' to be used for the font.
-
-Some fonts contain metadata that identify a palette as applicable for a dark (close to black) background.
-
-If a font does not have this metadata, the value behaves as normal.
-
-<palette-identifier>
-
-Allows you to specify your own values for the font palette by using the `@font-palette-values` at-rule
-
-This value is specified using the <dashed-ident> format starting with two dashes, `--`. This is done to prevent name colisions.
+&lt;palette-identifier>
+: Allows you to specify your own values for the font palette by using the `@font-palette-values` at-rule
+: This value is specified using the &lt;dashed-ident> format starting with two dashes, `--`. This is done to prevent name colisions.
 
 ```css
 @font-palette-values --Grays {
@@ -147,14 +137,14 @@ First: add the `animation` shorthand property or any of its component rules to t
 
 The individual animation properties are:
 
-- [animation-name](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-name)
-- [animation-duration](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-duration)
-- [animation-timing-function](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function)
-- [animation-delay](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-delay)
-- [animation-iteration-count](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-iteration-count)
-- [animation-direction](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-direction)
-- [animation-fill-mode](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-fill-mode)
-- [animation-play-state](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-play-state)
+* [animation-name](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-name)
+* [animation-duration](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-duration)
+* [animation-timing-function](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function)
+* [animation-delay](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-delay)
+* [animation-iteration-count](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-iteration-count)
+* [animation-direction](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-direction)
+* [animation-fill-mode](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-fill-mode)
+* [animation-play-state](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-play-state)
 
 ```css
 .appears {

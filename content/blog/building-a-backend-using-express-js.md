@@ -21,9 +21,9 @@ We will use [Express](https://expressjs.com/) and [Mongoose](https://mongoosejs.
 
 The post is broken up into three sections:
 
-- The server
-- The model
-- The routes
+* The server
+* The model
+* The routes
 
 We will also do a quick setup of the tools that we need to build the API.
 
@@ -31,9 +31,9 @@ We will also do a quick setup of the tools that we need to build the API.
 
 The project requires the following tools:
 
-- Node.js
-- MongoDB
-- Postman
+* Node.js
+* MongoDB
+* Postman
 
 ### Install Node.js
 
@@ -42,7 +42,7 @@ My preferred way to install Node is to use [NVM](https://github.com/nvm-sh/nvm).
 Using wget, run the following command to install NVM:
 
 ```bash
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+wget -qO* https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 ```
 
 Running the above command downloads a script and runs it. The script clones the nvm repository to `~/.nvm`, and attempts to add the startup code snippet to the correct profile file (`~/.bash_profile`, `~/.zshrc`, `~/.profile`, or `~/.bashrc`).

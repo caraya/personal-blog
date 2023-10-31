@@ -24,16 +24,16 @@ Both C/C++ and Rust use the Emcscripten compiler toolchain, a drop-in replacemen
 The process is broken in three
 
 - Download and prepare Emscripten
-    
+
     - Clone the repository
     - Change to the directory you downloaded Emscripten to
     - Update the repository if it's not the first time you're using the software
 - Update and activate the code
-    
+
     - Use `emsdk install` to install the latest version of the SDK
     - Run `emsdk activate` to activate the version you just installed
 - Activate the installation
-    
+
     - Run the `source` command to add the `emsdk` you installed. The command is `source ./emsdk_env.sh`
 
 ```bash
@@ -97,7 +97,7 @@ The compilation will produce the following files:
 
 In order to test the project, start a web server and open `hello.html` in your favorite web browser. They will produce results similar to this:
 
-![Emscripten HTML page show results of the code](https://publishing-project.rivendellweb.net/wp-content/uploads/2019/05/emscripten-result.png)
+![Emscripten HTML page show results of the code](/images/2019/05/emscripten-result.png)
 
 Emscripten HTML page show results of the code
 
@@ -162,7 +162,7 @@ The important part of the HTML file is the following block. In it we do the foll
 
 The image below shows the result along with a warning.
 
-![Chrome console showing warning and the results of the code](https://publishing-project.rivendellweb.net/wp-content/uploads/2019/05/emscripten-compilations-and-warning-3.png)
+![Chrome console showing warning and the results of the code](/images/2019/05/emscripten-compilations-and-warning-3.png)
 
 Chrome console showing warning and the results of the code
 
@@ -330,14 +330,14 @@ Don't feel like everything you do on the web now has to be coded in C, Rust or G
 - [How WebAssembly is Accelerating the Future of Web Development](https://zendev.com/2018/06/26/webassembly-accelerating-future-web-development.html)
 - [Awesome WebAssembly Languages](https://github.com/appcypher/awesome-wasm-langs)
 - C/C++
-    
+
     - [Emscripting a C library to Wasm](https://developers.google.com/web/updates/2018/03/emscripting-a-c-library)
 - Go
-    
+
     - [Go and WebAssembly: running Go programs in your browser](https://blog.gopheracademy.com/advent-2018/go-in-the-browser/)
     - [WebAssembly](https://github.com/golang/go/wiki/WebAssembly)
     - [Compiling Go to WebAssembly](https://www.sitepen.com/blog/compiling-go-to-webassembly/)
 - Rust
-    
+
     - [Why Rust and WebAssembly?](https://rustwasm.github.io/docs/book/why-rust-and-webassembly.html)
     - [Tutorial: Conway's Game of Life](https://rustwasm.github.io/docs/book/game-of-life/introduction.html)

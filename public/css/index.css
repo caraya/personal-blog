@@ -7,9 +7,6 @@ TODO:
 4. Pick better admonition colors
 */
 
-/* import Bootstrap icons and fonts */
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
-
 /* Custom OL style declaration */
 @counter-style circled-decimal {
   system: fixed 0;
@@ -852,15 +849,22 @@ lite-vimeo {
 		color: var(--color-white);
 	}
 
+	thead tr {
+		background: var(--color-white);
+		color: var(--color-black);
+	}
+
+	.kbd, kbd {
+		/* font-size: .9em;
+		padding: .0625rem .5rem;
+		border-radius: .125rem; */
+		border: 1px solid rgb(205, 38, 83);
+		/* box-shadow: 1px 1px 0 rgb(6, 54, 93), 2px 2px 0 rgb(6, 54, 93);
+		margin: 0 .25rem; */
+		color: rgb(205, 38, 83);
+	}
+
 }
-
-/*
-30rem = 480px (assuming 16px base)
-3. 75rem = 1200px (current layout)
-2. 50rem = 800px
-1. 34rem = 544px
-*/
-
 
 @media (min-width: 34.001rem) and (max-width: 50rem) {
 	/* Set the grid container dimensions */

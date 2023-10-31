@@ -11,16 +11,16 @@ I've worked with a two different CSS Paged Media processors: [PrinceXML](https:/
 
 The new products I want to review are:
 
-- [PDFreactor](https://www.pdfreactor.com/)
-- [Weasyprint](https://weasyprint.org/)
-- [typeset.sh](https://typeset.sh/en)
+* [PDFreactor](https://www.pdfreactor.com/)
+* [Weasyprint](https://weasyprint.org/)
+* [typeset.sh](https://typeset.sh/en)
 
 When I discuss individual products I will look at the following:
 
-- Can they create a PDF from the combination of HTML and CSS Paged Media?
-- Do they support Javascript?
-- Do they support equivalent features to PrinceXML for what the stylesheet already does?
-- What license do they use and what limits does it impose on production use?
+* Can they create a PDF from the combination of HTML and CSS Paged Media?
+* Do they support Javascript?
+* Do they support equivalent features to PrinceXML for what the stylesheet already does?
+* What license do they use and what limits does it impose on production use?
 
 ## The CSS
 
@@ -30,15 +30,15 @@ We should start by pointing out that this only deals with the structure of the p
 
 Use the following links for quick references to Paged Media CSS and Generated Content for CSS:
 
-- [CSS Paged Media Module Level 3](https://www.w3.org/TR/css-page-3/)
-- [CSS Generated Content Module Level 3](https://www.w3.org/TR/css-content-3/)
+* [CSS Paged Media Module Level 3](https://www.w3.org/TR/css-page-3/)
+* [CSS Generated Content Module Level 3](https://www.w3.org/TR/css-content-3/)
 
 Now, let's dive into the code.
 
 In order to understand the CSS that comes next we need to understand a few terms:
 
-- [Page Selectors](https://www.w3.org/TR/css-page-3/#page-selectors), particularly [Spread pseudo-classes](https://www.w3.org/TR/css-page-3/#spread-pseudos) to better understand the different values of @page that we use
-- [Page-Margin Boxes](https://www.w3.org/TR/css-page-3/#margin-boxes) to understand the boxes you have available to work with and what layout possibilities they open for you.
+* [Page Selectors](https://www.w3.org/TR/css-page-3/#page-selectors), particularly [Spread pseudo-classes](https://www.w3.org/TR/css-page-3/#spread-pseudos) to better understand the different values of @page that we use
+* [Page-Margin Boxes](https://www.w3.org/TR/css-page-3/#margin-boxes) to understand the boxes you have available to work with and what layout possibilities they open for you.
 
 The table below shows the different page boxes available per the Paged Media Specification.
 
@@ -118,7 +118,7 @@ We then define items specific to left and right pages. We want to alternate page
 We don't want page numbering on the title page so we make sure we reset both left and right bottom corners to be empty. Not putting the page number on a page doesn't change the page count, the page counter will increase for each page regardless.
 
 ```css
-@page titlepage { 
+@page titlepage {
   @bottom-right-corner { content: normal }
   @bottom-left-corner { content: normal }
 }
@@ -208,7 +208,7 @@ Some page types (toc, foreword, and preface) further customize the page numberin
     content: counter(page, lower-roman)
   }
   @bottom-left-corner {
-    content: normal 
+    content: normal
   }
 }
 
@@ -217,7 +217,7 @@ Some page types (toc, foreword, and preface) further customize the page numberin
     content: counter(page, lower-roman)
   }
   @bottom-right-corner {
-    content: normal 
+    content: normal
   }
 }
 
@@ -226,7 +226,7 @@ Some page types (toc, foreword, and preface) further customize the page numberin
     content: counter(page, lower-roman)
   }
   @bottom-left-corner {
-    content: normal 
+    content: normal
   }
 }
 
@@ -235,7 +235,7 @@ Some page types (toc, foreword, and preface) further customize the page numberin
     content: counter(page, lower-roman)
   }
   @bottom-right-corner {
-    content: normal 
+    content: normal
   }
 }
 
@@ -244,7 +244,7 @@ Some page types (toc, foreword, and preface) further customize the page numberin
     content: counter(page, lower-roman)
   }
   @bottom-left-corner {
-    content: normal 
+    content: normal
   }
 }
 
@@ -253,7 +253,7 @@ Some page types (toc, foreword, and preface) further customize the page numberin
     content: counter(page, lower-roman)
   }
   @bottom-right-corner {
-    content: normal 
+    content: normal
   }
 }
 ```
@@ -276,9 +276,9 @@ Next, we look at counters. To me, this is the trickiest part of creating paged m
 
 We look at the title page next. This will follow a similar pattern to other parts of the book in that we first tell it what `@page` we want to use and then if needed, add any custom settings. For the title page the custom settings are:
 
-- The `h1` element with the `bookTitle` class 200% larger
-- Center everything
-- Make the `h2` element or elements with the class `author` 150% of the default size and italicized.
+* The `h1` element with the `bookTitle` class 200% larger
+* Center everything
+* Make the `h2` element or elements with the class `author` 150% of the default size and italicized.
 
 ```css
 /* Title Page*/
@@ -494,7 +494,7 @@ This code will be used to generate cross-references to the specified link destin
 
 ```css
 a[href].xref::after {
-  content: " [See page " 
+  content: " [See page "
   target-counter(attr(href), page) "]"
 }
 ```
@@ -503,15 +503,12 @@ The final section is PDF-specific and deals with bookmarks. These are the links 
 
 There are three parts to a PDF bookmark:
 
-- The bookmark level (in our case an integer from 1 to 6)
-    
-    - Lower numbered bookmark levels can contain higher levels bookmarks
-- The bookmark state (open or close)
-    
-    - Hides (if closed) or shows (if open) any child bookmarks
-- The bookmark label
-    
-    - What the PDF reader will display when showing the bookmark
+* The bookmark level (in our case an integer from 1 to 6)
+  * Lower numbered bookmark levels can contain higher levels bookmarks
+  * The bookmark state (open or close)
+    * Hides (if closed) or shows (if open) any child bookmarks
+  * The bookmark label
+    * What the PDF reader will display when showing the bookmark
 
 Yes, there is a lot of repetition in the code. Prince and AntennaHouse have their own vendor prefixes for bookmarks so, in order to remain as compatible as possible, we use the vendor-prefixed versions and an unprefixed. The hope is that all vendors will eventually move to the unprefixed version.
 

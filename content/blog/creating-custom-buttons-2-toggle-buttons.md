@@ -15,18 +15,10 @@ The biggest difference is the `aria-pressed` attribute we will add programmatica
 
 | Role | Attribute | Element | Usage |
 | --- | --- | --- | --- |
-| button |  | div | Identifies the element as a button widget.  
-  
-Accessible name for the button is defined by the text content of the element. |
-|  | tabindex="0" | div, a | Includes the element in the tab sequence.  
-  
-Needed on the a element because it does not have an href attribute |
-|  | aria-pressed="false" | a | Identifies the button as a toggle button.  
-  
-Indicates the toggle button is not pressed |
-|  | aria-pressed="true" | a | Identifies the button as a toggle button.  
-  
-Indicates the toggle button is pressed. |
+| button |  | div | Identifies the element as a button widget.<br><br>Accessible name for the button is defined by the text content of the element. |
+|  | tabindex="0" | div, a | Includes the element in the tab sequence.<br><br>Needed on the a element because it does not have an href attribute |
+|  | aria-pressed="false" | a | Identifies the button as a toggle button.<br><br>Indicates the toggle button is not pressed |
+|  | aria-pressed="true" | a | Identifies the button as a toggle button.<br><br>Indicates the toggle button is pressed. |
 
 With that in mind, the structure of the HTML we will use for this example is almost identical to the action button from the previous post.
 

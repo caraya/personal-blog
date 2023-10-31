@@ -1,13 +1,13 @@
 ---
 title: "Getting fancy: CSS Transformations"
 date: "2015-08-19"
-categories: 
+categories:
   - "typography"
 ---
 
 One of the most intriguing things we can do with text is change its position and the way it looks on the screen with nothing but CSS in browsers that support it. The good news is that [all browsers except IE8 and Opera Mini support transformations](http://caniuse.com/#feat=transforms2d) so we won't have to do workarounds.
 
-\[caption id="attachment\_786436" align="aligncenter" width="438"\][![Example of what you can do with transitions and shapes](https://publishing-project.rivendellweb.net/wp-content/uploads/2015/06/rhombic.jpg)](http:https://publishing-project.rivendellweb.net/wp-content/uploads/2015/06/rhombic.jpg) An example of what is possible with CSS shapes and transformations (taken from A List Apart's article [CSS Shapes 101](http://alistapart.com/article/css-shapes-101) by [Sara Soueidan](http://sarasoueidan.com/).)\[/caption\]
+\[caption id="attachment\_786436" align="aligncenter" width="438"\][![Example of what you can do with transitions and shapes](/images/2015/06/rhombic.jpg)](http:/images/2015/06/rhombic.jpg) An example of what is possible with CSS shapes and transformations (taken from A List Apart's article [CSS Shapes 101](http://alistapart.com/article/css-shapes-101) by [Sara Soueidan](http://sarasoueidan.com/).)\[/caption\]
 
 We'll start with rotating the header of our content 90 degrees and move it down the column.
 
@@ -23,7 +23,7 @@ Transformations are very dependent on the dimensions of the content you're worki
 
 But if you look at a screenshot below, you'll see what the code work when you set the screen as wide as possible.
 
-\[caption width="800" align="aligncenter"\][![https://publishing-project.rivendellweb.net/wp-content/uploads/2015/06/full-width-translated-object.png](//publishing-project.rivendellweb.net/wp-content/uploads/2015/06/full-width-translated-object.png)](https://publishing-project.rivendellweb.net/wp-content/uploads/2015/06/full-width-translated-object.png) https://publishing-project.rivendellweb.net/wp-content/uploads/2015/06/full-width-translated-object.png \[/caption\]
+\[caption width="800" align="aligncenter"\][![/images/2015/06/full-width-translated-object.png](//publishing-project.rivendellweb.net/wp-content/uploads/2015/06/full-width-translated-object.png)](/images/2015/06/full-width-translated-object.png) /images/2015/06/full-width-translated-object.png \[/caption\]
 
 Media queries would be the best solution to accommodate for all screen sizes. You will have to decide if Media Queries and Vendor prefixes is worth the effort and how many media queries you would have to create for your code to look good in your target device(s). It's not a perfect solution, it requires tons of work and needs to be adjusted for all your target breakpoints and devices.
 

@@ -85,13 +85,13 @@ Yes, we can tell people to download the code from the tag we created but release
 
 When you log in to your projectin Github, choose tags. You will see a list of all available tags.
 
-<img src="https://publishing-project.rivendellweb.net/wp-content/uploads/2021/04/tag-release-github1.png" '/>
+<img src="/images/2021/04/tag-release-github1.png" '/>
 
 List of tags on a Github project
 
 When you switch to releases you will se a list of available relelases on the right of that screen there is a _draft a new release_ button. When you click it the following screen will appear.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2021/04/tag-release-github2-1.png)
+![](/images/2021/04/tag-release-github2-1.png)
 
 Github release preparation screen
 

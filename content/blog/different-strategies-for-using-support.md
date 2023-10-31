@@ -9,7 +9,7 @@ The version of `@supports` that we see most often is testing for a rule inside a
 
 ```css
 @supports (display: grid) {
-  /* 
+  /*
     Styles for when grid is supported
   */
 }
@@ -20,8 +20,8 @@ We also have three logical operators: `and`, `or` and `not` that enable more com
 We can use `and` to test for more than one property. For example, we can test for grid and subgrid support.
 
 ```css
-@supports 
-  (display: grid) and 
+@supports
+  (display: grid) and
   (display: subgrid) {
     /* code goes here */
   }
@@ -44,18 +44,18 @@ The `not` operator negates the parameter that follows. In essence, we're telling
 
 ```css
 @supports not (display: table) {
-  /* 
+  /*
     code for browsers that don't
     support display: table
   */
 }
 ```
 
-## Selector list argument of `:nth-child` pseudo-classes
+## Selector list argument of :nth-child pseudo-classes
 
-**Note:**
-
+!!! note **Note:**
 As of this writing, the feature is only supported in Safari
+!!!
 
 All our examples work with properties and values like `(perspective: 10px)`. Most of the time this is all that we will need.
 

@@ -40,15 +40,15 @@ if supportsGeolocation() {
 
 Sometimes, during development, vendors would prefix a feature to differentiate it from the standard finalized version. Different vendors used different prefixes:
 
-- Mozilla used `mozObject`
-- Chromium browsers and Safari used `webkitObject`
-- Microsoft used `msObject`
+* Mozilla used `mozObject`
+* Chromium browsers and Safari used `webkitObject`
+* Microsoft used `msObject`
 
 In this example, we define Audio context to be either the standard (unprefixed) version or the WebKit prefixed one using a logical `or` operator.
 
 ```js
 function supportsAudioContext() {
-  return window.AudioContext 
+  return window.AudioContext
     || window.webkitAudioContext;
 }
 
@@ -62,7 +62,7 @@ The next way to test support for an HTML feature is to create an element in memo
 
 ```js
 function supports_canvas() {
-return 
+return
 !!document.createElement('canvas').getContext;
 }
 
@@ -99,7 +99,7 @@ function supportsOggTheora() {
 }
 
 function supportsWebm() {
-  if (!supports_video()) { 
+  if (!supports_video()) {
     return false;
   }
 
@@ -117,11 +117,11 @@ if (supports_video) {
   // If so let's look at which formats
   if (supportsH264) {
     console.log('supports h264 baseline');
-  } 
+  }
 
   if (supportsOggTheora) {
-    console.log('supports Ogg');    
-  } 
+    console.log('supports Ogg');
+  }
 
   if (supportsWebm) {
     console.log('supports WebM');
@@ -141,10 +141,10 @@ if (Modernizr.video) {
   if (Modernizr.video.webm) {
     // try WebM
   } else if (Modernizr.video.ogg) {
-    // try Ogg Theora + Vorbis 
+    // try Ogg Theora + Vorbis
     // in an Ogg container
   } else if (Modernizr.video.h264){
-    // try H.264 video + AAC audio 
+    // try H.264 video + AAC audio
     // in an MP4 container
    }
 }

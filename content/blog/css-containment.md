@@ -3,7 +3,7 @@ title: "CSS Containment"
 date: "2019-04-17"
 ---
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2019/03/css-is-awesome.jpg)
+![](/images/2019/03/css-is-awesome.jpg)
 
 Containment may help prevent this and make CSS even more awesome :)
 

@@ -1,7 +1,7 @@
 ---
 title: "Typography Part I: Designing Text on the page"
 date: "2014-01-04"
-categories: 
+categories:
   - "design"
   - "technology"
 ---
@@ -14,25 +14,25 @@ Over the years I've developed a sensibility to the way text lies on the page, ho
 
 - Read the text you'll be working with (if possible)
 - What does the text tell you?
-    
+
     - What is the text about?
 - Make notes of the fonts you look at
 
 Some questions that will guide the research process:
 
 - Who is our target audience?
-    
+
     - Demographics
     - Devices / Platforms
 - What kind of content are we creating?
-    
+
     - One page app
     - website
     - etc
 - What is the purpose of the content we're creating
-    
+
     - Kind of content
-        
+
         - Persuasion
         - Informative
         - Entertainment
@@ -47,24 +47,24 @@ We can use words as well as images when developing our content. In searching for
 As Tim Brown suggests:
 
 > "In much the same way as we gather visual inspiration at the outset of our process, we might also begin to consider gathering verbal inspiration when we embark on a project. These verbal palettes or wordboards can help us define a design’s tone and voice and, as we’ll see shortly, are every bit as important as look and feel".
-> 
+>
 > Tim Brown - [Combining Typefaces](http://www.fivesimplesteps.com/products/the-craft-of-words)
 
 There are multiple sources on information when it comes to researching fonts. Designers may not always have the time to do all this but the more you can do the better your design will be for it.
 
 - Check the publisher's site for the font
-    
+
     - What does it tell you?
     - Does it give you the information you need to decide whether the font is good for what you want it for?
-        
+
         - See what the designer say about the font
         - Subscribe to newsletters like [Creative Characters](http://www.myfonts.com/newsletters/cc/) where type designers discuss their work and their inspiration
     - See what other people are saying about the font
-        
+
         - [Typographica](http://typographica.org/category/typeface-reviews/) reviews fonts and type face related books
         - [Typedia](http://typedia.com/)
     - See how it's being used in the wild
-        
+
         - [Fonts in Use](http://fontsinuse.com/) is a good resource to see how fonts are used in real life situations
 
 Based on the answers and the questions above we can now go ahead and select the anchor font for your document. In my experience this has always been the main body font as it is the one that will appear the most often in your content.
@@ -86,10 +86,10 @@ So, if we put Verdana (mostly Windows) with Helvetica (mostly Macs), we’ve met
 So when developing font stacks:
 
 - Make sure you account for the different operating systems
-    
+
     - The same font looks slightly different in Windows, Mac, and Linux
 - Be consistent in the type of fonts you use throughout your document
-    
+
     - Make sure that bold, italics and bold/italic fonts are available for all your selected fonts
 - Make sure the fonts in the stack have similar aspect ratios, both your external fonts (downloaded using @font-face rules) and fonts local to your system
 - Use appropriate generic fonts for the primary fonts you use (see [Generic Font Families](#generic-fonts))
@@ -133,7 +133,7 @@ In order to achieve a good rhythm we have to calculate these three factors and a
 
 For the first image below, we have only set up a default font size:
 
-[![Text without vertical rhythm](https://publishing-project.rivendellweb.net/wp-content/uploads/2014/01/no-rhythm.png)](http:https://publishing-project.rivendellweb.net/wp-content/uploads/2014/01/no-rhythm.png)
+[![Text without vertical rhythm](/images/2014/01/no-rhythm.png)](http:/images/2014/01/no-rhythm.png)
 
 As you can see, the rhythm is off. After the first line the baseline does not remain constant. The further down you go in the paragraph the harder it gets and, consciously or not, reading the text gets harder.
 
@@ -147,7 +147,7 @@ The CSS looks like below:
 
 The text now looks like this:
 
-[![Text in vertical rhythm](https://publishing-project.rivendellweb.net/wp-content/uploads/2014/01/in-rhythm.png)](http:https://publishing-project.rivendellweb.net/wp-content/uploads/2014/01/in-rhythm.png)
+[![Text in vertical rhythm](/images/2014/01/in-rhythm.png)](http:/images/2014/01/in-rhythm.png)
 
 ### Rhythm on a page
 
@@ -172,13 +172,13 @@ We will look at what makes text flow with good rhythm, explore the typographical
 Robert Bringhurst defines this approach to typography is all about:
 
 > A modular scale, like a musical scale, is a prearranged set of harmonious proportions.
-> 
+>
 > Robert Bringhurst - The Elements of Typographic Style
 
 Tim Brown further clarifies:
 
 > A modular scale is a sequence of numbers that relate to one another in a meaningful way. Using the golden ratio, for example, we can produce values for a modular scale by multiplying by 1.618 to arrive at the next highest number, or dividing by 1.618 to arrive at the next number down.
-> 
+>
 > Tim Brown - More Modern Typography
 
 It's fairly easy but until I started looking more systematically at what typography it wasn't something that even crossed my mind. Yet it is one of the keys to making typography work online and use type as the basis of our online decisions.
@@ -188,7 +188,7 @@ It's fairly easy but until I started looking more systematically at what typogra
 As Tim Brown suggests:
 
 > Recognizing type as the atomic element in web design affords us the opportunity to make better design decisions that resonate upward and outward into the experience. But it also challenges us to eschew conventions like the use of prefabricated frameworks and reusable templates, and to accept a new balance in our schedules—that we put forth greater investment and effort for the sake of more meaningful typography.
-> 
+>
 > [Tim Brown - More Meaningful Typography](http://alistapart.com/article/more-meaningful-typography)
 
 ### The modular scale: What I like working with
@@ -223,7 +223,7 @@ The [Frontfriend](http://somadesign.ca/projects/fontfriend/) bookmarklet let you
 
 Take the fonts you've chosen and build a portion of your website using them. This will give you one final opportunity to check the fonts in the layout and flow you've developed so far... if it doesn't work then this is a good point to look at alternatives.
 
-[![Example of a font specimen page](https://publishing-project.rivendellweb.net/wp-content/uploads/2014/01/font-specimen-example-1024x530.png)](https://publishing-project.rivendellweb.net/wp-content/uploads/2014/01/font-specimen-example.png)
+[![Example of a font specimen page](/images/2014/01/font-specimen-example-1024x530.png)](/images/2014/01/font-specimen-example.png)
 
 ### Test on multiple devices
 

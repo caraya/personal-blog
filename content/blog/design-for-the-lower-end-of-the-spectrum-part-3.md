@@ -35,7 +35,7 @@ Problems with Javascript size and download time can be solved by bundling conten
 
 If we send large bundles down to the users, it'll take a while to parse the code we send. This will not hurt our high-end devices but it will be much longer for mid and lower-end phones we're likely to see in rural areas or for people who can't afford the latest and greatest.
 
-[![](https://publishing-project.rivendellweb.net/wp-content/uploads/2018/09/time-to-download-1mb-js.jpg)](https://publishing-project.rivendellweb.net/wp-content/uploads/2018/09/time-to-download-1mb-js.jpg)
+[![](/images/2018/09/time-to-download-1mb-js.jpg)](/images/2018/09/time-to-download-1mb-js.jpg)
 
 [Parse times](https://docs.google.com/spreadsheets/d/1wHcNNQea28LhwQ_amFamT33d5woVrJfJy53Z1k6V090/edit?usp=sharing) for a 1MB bundle of JavaScript across desktop & mobile devices of differing classes. From [JavaScript Start-up Performance](https://medium.com/reloading/javascript-start-up-performance-69200f43b201) by Addy Osmani.
 
@@ -168,21 +168,21 @@ And, whether you decide the web is best for your project or not, you owe it to y
 ## Links, References, Tools
 
 - Mobile connectivity, devices, and chipsets
-    
+
     - [The Mobile Economy 2018](https://www.gsma.com/mobileeconomy/)
     - [The all-mighty chipset](https://www.gsmarena.com/mobile_chipset_guide-review-1561p2.php)
     - [Chipset performance charts](https://www.gsmarena.com/mobile_chipset_guide-review-1561p4.php)
     - [What’s Inside My Smartphone? — An In-Depth Look At Different Components Of A Smartphone](https://fossbytes.com/whats-inside-smartphone-depth-look-parts-powering-everyday-gadget/)
     - [Why smartphones overheat, and how to stop it](https://www.androidpit.com/phone-overheating)
 - Social aspects
-    
+
     - [World Wide Web, Not Wealthy Western Web (Part 1)](https://www.smashingmagazine.com/2017/03/world-wide-web-not-wealthy-western-web-part-1/)
     - [World Wide Web, Not Wealthy Western Web (Part 2)](https://www.smashingmagazine.com/2017/03/world-wide-web-not-wealthy-western-web-part-2/)
     - [New Broadband Pricing Data: What does it cost to purchase 1GB of mobile data?](https://a4ai.org/broadband-pricing-data-2017/)
     - [Mobile Broadband Data Costs (2016)](https://a4ai.org/mobile-broadband-pricing-data/)
     - [Understanding Low Bandwidth and High Latency](https://developers.google.com/web/fundamentals/performance/poor-connectivity)
 - Design
-    
+
     - [Beyond Desktop Research: The Immersion Trip](https://design.google/library/beyond-desktop-research-immersion-trip/)
     - [Global UX Speaker Series](https://www.youtube.com/playlist?list=PLJ21zHI2TNh8UjaNYMR4BP98t26NBT2VL) Youtube playlist
     - [Why mobile page speed is a Visual Designer's problem](https://www.thinkwithgoogle.com/intl/en-154/insights-inspiration/industry-perspectives/why-mobile-page-speed-is-visual-designers-problem/)
@@ -190,14 +190,14 @@ And, whether you decide the web is best for your project or not, you owe it to y
     - Internationalization
     - [Better together: Displaying Japanese and English text on the web](http://www.nobadmemories.com/blog/2017/04/better-together-displaying-japanese-and-english-text-on-the-web/)
     - [W3C Internationalization (I18n) Activity](https://www.w3.org/International/)
-        
+
         - [Internationalization techniques: Authoring HTML & CSS](https://www.w3.org/International/techniques/authoring-html.en?open=style&open=langstyle)
         - [Text Layout Requirements for the Arabic Script](https://www.w3.org/TR/2018/WD-alreq-20180222/)
         - [Language tags in HTML and XML](https://www.w3.org/International/articles/language-tags/)
         - [Introducing Character Sets and Encodings](https://www.w3.org/International/getting-started/characters)
         - [Character encodings: Essential concepts](https://www.w3.org/International/articles/definitions-characters/)
 - Tools
-    
+
     - Code bundling and tree shaking
     - [Webpack](https://webpack.js.org/)
     - [Rollup](https://webpack.js.org/)
@@ -209,7 +209,7 @@ And, whether you decide the web is best for your project or not, you owe it to y
     - Service Worker
     - [Workbox.js](https://developers.google.com/web/tools/workbox/)
 - So what do we do?
-    
+
     - [Why Performance Matters](https://developers.google.com/web/fundamentals/performance/why-performance-matters/)
     - Google [PWA Case Studies](https://developers.google.com/web/showcase/tags/progressive-web-apps)
     - Google PWA Checklist

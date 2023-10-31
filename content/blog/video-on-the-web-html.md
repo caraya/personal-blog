@@ -14,75 +14,70 @@ This post will cover the HTML necessary to embed a set of (theoretical) videos t
 
 ## Building the element
 
-The basic `&lt;video>` element embeds and plays video a single version of the video.
+The basic `<video>` element embeds and plays video a single version of the video.
 
 It also provides attributes that will dictate what elements of the player the users will see and the dimensions of the player.
 
 The attributes are:
 
 controls
+: Wether the browser shows default controls (play, pause, seek) for the video
 
-Wether the browser shows default controls (play, pause, seek) for the video
-
-playsinline :whether a mobile browser should play the video embedded on the page or play it full screen (the default)
+playsinline
+:whether a mobile browser should play the video embedded on the page or play it full screen (the default)
 
 autoplay
-
-Whether the video will start playing as soon as the page loads
+: Whether the video will start playing as soon as the page loads
 
 poster
-
-Path to an image that will be used as a placeholder before
+: Path to an image that will be used as a placeholder before
 
 width, height
-
-The dimensions for the player
-
-This will prevent content from shifting around the page
+: The dimensions for the player
+: This will prevent content from shifting around the page
 
 src
-
-URL or path to the local path to the file
+: URL or path to the local path to the file
 
 We also provide textual content in case the browser can't play the video.
 
 ```html
-<video controls 
-  playsinline 
+<video controls
+  playsinline
   autoplay='false'
   poster="path/to/poster/image"
   width="250"
   src="path/to/video.mp4">
 
-  <p>Your browser doesn't support the video tag or doesn't support for format the video is encoded in</p>
+  <p>Your browser doesn't support the video tag or doesn't support the format the video is encoded in</p>
 
   <p>Download the <a href="path/to/video.mp4">MP4 Version</a>
 </video>
 ```
 
-Rather than provide a single element in the `src` attribute of the `&lt;video>` element, we can provide one or more versions of the video in separate `source` child elements.
+Rather than provide a single element in the `src` attribute of the `<video>` element, we can provide one or more versions of the video in separate `source` child elements.
 
 ```html
-<video  controls 
-  playsinline 
+<video  controls
+  playsinline
   autoplay='false'
   poster="path/to/poster/image"
   width="250">
 
   <source
-    src="video/video-av1.mp4" 
+    src="video/video-av1.mp4"
     type="video/mp4" />
 
   <source
-    src="video/video-vp9.webm" 
+    src="video/video-vp9.webm"
     type="video/webm" />
 
-  <source 
-    src="video/video-mp4.mp4" 
+  <source
+    src="video/video-mp4.mp4"
     type="video/mp4" />
 
   <source
-    src="video/video-ogg.webm" 
+    src="video/video-ogg.webm"
     type="video/webm" />
 
   <p>Your browser doesn't suport the video tag or doesn't support for format the video is encoded in</p>
@@ -124,9 +119,9 @@ In the case of `avc1.4D401E`, `avc1` indicates H.264 video, and this is followed
 
 Some examples:
 
-- `avc1.42E01E`: H.264 Constrained Baseline Profile Level 3
-- `avc1.4D401E`: H.264 Main Profile Level 3
-- `avc1.64001E`: H.264 High Profile Level 3
+* `avc1.42E01E`: H.264 Constrained Baseline Profile Level 3
+* `avc1.4D401E`: H.264 Main Profile Level 3
+* `avc1.64001E`: H.264 High Profile Level 3
 
 To get this data, run the following command:
 
@@ -163,26 +158,26 @@ Building the `codecs` string for AV1 video is the most complex so far. As outlin
 So now that we have the values for the `codecs` string, we can add it to the `type` attribute, like so:
 
 ```html
-<video  controls 
-  playsinline 
+<video  controls
+  playsinline
   autoplay='false'
   poster="path/to/poster/image"
   width="250">
 
   <source
-    src="video/video-av1.mp4" 
+    src="video/video-av1.mp4"
     type="video/mp4" />
 
   <source
-    src="video/video-vp9.webm" 
+    src="video/video-vp9.webm"
     type="video/webm;codecs=vp9,opus" />
 
-  <source 
-    src="video/video-mp4.mp4" 
+  <source
+    src="video/video-mp4.mp4"
     type="video/mp4,codec=avc1.4D401E,m4a.40.2" />
 
   <source
-    src="video/video-ogg.ogg" 
+    src="video/video-ogg.ogg"
     type="video/ogg" />
 
   <p>Your browser doesn't support the video tag or doesn't support for format the video is encoded in</p>
@@ -200,33 +195,33 @@ In the previous example. If the browser can play AV1 video in an MP4 container, 
 Although we don't see them often, we should always consider adding subtitles and captions to the videos we put online.
 
 ```html
-<video id="video" 
+<video id="video"
   controls
   laysinline autoplay="false">
 
-  <source 
-    src="video/video-mp4.mp4" 
+  <source
+    src="video/video-mp4.mp4"
     type="video/mp4">
   <source
-    src="video/video-webm.webm" 
+    src="video/video-webm.webm"
     type="video/webm">
 
-  <track 
-    label="English" 
-    kind="subtitles" 
-    srclang="en" 
+  <track
+    label="English"
+    kind="subtitles"
+    srclang="en"
     src="subtitles/video-subtitles-en.vtt" default>
 
-  <track 
-    label="Deutsch" 
-    kind="subtitles" 
-    srclang="de" 
+  <track
+    label="Deutsch"
+    kind="subtitles"
+    srclang="de"
     src="subtitles/video-subtitles-de.vtt">
 
-  <track 
-    label="Español" 
-    kind="subtitles" 
-    srclang="es" 
+  <track
+    label="Español"
+    kind="subtitles"
+    srclang="es"
     src="subtitles/video-subtitles-es.vtt">
 </video>
 ```
@@ -243,13 +238,13 @@ Captions are primarily used to provide additional information for deaf users or 
 
 ## Links and Resources
 
-- [<video>: The Video Embed element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)
-- [The codecs parameter in common media types](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/codecs_parameter)
-- [<source>: The Media or Image Source element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source)
-- [<track>: The Embed Text Track element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/track)
-- [The `codecs` parameter in common media types](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/codecs_parameter)
-- [Getting the correct HTML codecs parameter for an AV1 video](https://jakearchibald.com/2022/html-codecs-parameter-for-av1/)
-- [Web audio codec guide](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs)
-- [Web video codec guide](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs)
-- [How to Encode with FFmpeg 5.0](https://www.streamingmedia.com/Articles/ReadArticle.aspx?ArticleID=152090)
-- [Produce Videos with FFmpeg: The Beginner's Course](https://jan-s-school-e088.thinkific.com/courses/produce-videos-with-ffmpeg-the-beginner-s-course) — Paid Course
+* [&lt;video>: The Video Embed element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)
+* [The codecs parameter in common media types](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/codecs_parameter)
+* [<source>: The Media or Image Source element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source)
+* [<track>: The Embed Text Track element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/track)
+* [The `codecs` parameter in common media types](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/codecs_parameter)
+* [Getting the correct HTML codecs parameter for an AV1 video](https://jakearchibald.com/2022/html-codecs-parameter-for-av1/)
+* [Web audio codec guide](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs)
+* [Web video codec guide](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs)
+* [How to Encode with FFmpeg 5.0](https://www.streamingmedia.com/Articles/ReadArticle.aspx?ArticleID=152090)
+* [Produce Videos with FFmpeg: The Beginner's Course](https://jan-s-school-e088.thinkific.com/courses/produce-videos-with-ffmpeg-the-beginner-s-course) — Paid Course

@@ -1,7 +1,7 @@
 ---
 title: "Who is a publisher and How do you define publishing?"
 date: "2013-10-14"
-categories: 
+categories:
   - "ebook-publishing"
   - "technology"
 ---
@@ -10,7 +10,7 @@ What happens when a publisher has a tight, direct connection with readers, is ab
 
 Seth Godin [About the Domino project](http://bit.ly/1eO1w1h)
 
-[![From western4ul @ Flickr](https://publishing-project.rivendellweb.net/wp-content/uploads/2013/10/library-300x200.jpg)](https://publishing-project.rivendellweb.net/wp-content/uploads/2013/10/library.jpg)
+[![From western4ul @ Flickr](/images/2013/10/library-300x200.jpg)](/images/2013/10/library.jpg)
 
 Digital tools have expanded the definition of publishing to something I would have never thought possible 10 or even 5 years ago. For every author that makes a big publishing deal (like those mentioned in this [Mashable 2009 article](http://on.mash.to/1bO4hhE)) there are hundreds if not thousands of niche authors selling their books directly to interested audiences either through their websites, through an aggregator or through the big vendors like Apple's iBookstore and Amazon's Kindle Direct Publishing program.
 
@@ -38,7 +38,7 @@ The interface produces web content (hosted in the Pressbook platform), epub and 
 
 The Atavist is as close as I've found to what I envision a future publishing enterprise. It is clean, multi format and it's never a cookie cutter exercise; not all stories are available in all formats but when they use a format they take full advantage of available capabilities.
 
-[![Formats supported by the Atavist application for given article ](https://publishing-project.rivendellweb.net/wp-content/uploads/2013/10/Atavist-177x300.png)](https://publishing-project.rivendellweb.net/wp-content/uploads/2013/10/Atavist.png)
+[![Formats supported by the Atavist application for given article ](/images/2013/10/Atavist-177x300.png)](/images/2013/10/Atavist.png)
 
 ## Hi
 

@@ -17,7 +17,7 @@ Example Geocities Pages
 
 Then some of us moved to private commercial hosting. I went through IO.com mostly because I could get free access to Steve Jackson's game at the time. The page below is an experiment from that era
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2017/02/homepage-circa-1994-95.png)
+![](/images/2017/02/homepage-circa-1994-95.png)
 
 Author's home page circa 1995 via the Wayback machine
 
@@ -66,7 +66,7 @@ Adding the header with express is fairly simple. We create a an `app.use` block 
 ```javascript
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", 
+  res.header("Access-Control-Allow-Headers",
              "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
@@ -132,10 +132,10 @@ location / {
     add_header 'Access-Control-Allow-Credentials' 'true';
     add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
     #
-    # Custom headers and headers various browsers **should** be OK 
+    # Custom headers and headers various browsers **should** be OK
     # with but aren't
     #
-    add_header 'Access-Control-Allow-Headers' 
+    add_header 'Access-Control-Allow-Headers'
       'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,
       If-Modified-Since,Cache-Control,Content-Type';
     #
@@ -158,7 +158,7 @@ location / {
     add_header 'Access-Control-Allow-Origin' '*';
     add_header 'Access-Control-Allow-Credentials' 'true';
     add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
-    add_header 'Access-Control-Allow-Headers' 
+    add_header 'Access-Control-Allow-Headers'
     'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,
     If-Modified-Since,Cache-Control,Content-Type';
   }
@@ -198,7 +198,7 @@ Google Photos images are stored in the cloud and indexed by Google using their t
 
 When I first started using it I chose it because of its simplicity and, back then, because it had features that were unique to the platform... and for the longest time they worked well.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2017/02/codepen-embed-dialogue.png)
+![](/images/2017/02/codepen-embed-dialogue.png)
 
 Embed preview/creation dialogue
 

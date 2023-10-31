@@ -81,7 +81,7 @@ Glotpress dialog to create a new translation set
 
 Once we complete the creation of a new dialogue set we'll see it presented on the home screen.
 
-![page displaying a list of available translation projects](https://publishing-project.rivendellweb.net/wp-content/uploads/2020/09/glotpress-04.png)
+![page displaying a list of available translation projects](/images/2020/09/glotpress-04.png)
 
 'alt text'
 

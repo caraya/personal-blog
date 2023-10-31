@@ -16,7 +16,7 @@ Going back to writing modes. Different languages use different writing modes. So
 - Most Latin and Cyrillic languages run the text from left to right and top to bottom
 - Arabic and Hebrew run the text from right to left and top to bottom
 - Japanese is a special case
-    
+
     - Japanese can run the text from right to left, top to bottom (tategaki (縦書き) style)
     - Japanese can also run from top to bottom **and** left to right (yokogaki (横書き) style)
     - Both writing modes for Japanese can be used in the same page
@@ -44,7 +44,7 @@ h2 {
 
 It's the `writing-mode: vertical-rl;` attribute that makes the text rotate while still allowing us to highlight it and keeping it in the document to be read by assistive technology.
 
-![UN Website in Eglish](https://publishing-project.rivendellweb.net/wp-content/uploads/2018/02/un-site-ar-1024x557.png) ![UN Website in Arabic](https://publishing-project.rivendellweb.net/wp-content/uploads/2018/02/un-site-english-1024x541.png)
+![UN Website in Eglish](/images/2018/02/un-site-ar-1024x557.png) ![UN Website in Arabic](/images/2018/02/un-site-english-1024x541.png)
 
 United Nations Website in English (top) and Arabic (bottom). Notice how they are mirrors of each other.
 
@@ -445,44 +445,44 @@ For more information, check Workbox 3 [documentation](https://developers.google.
 ## Links and Resources
 
 - General Information
-    
+
     - [What Is Beautiful Typography](https://helenvholmes.com/writing/type-is-your-right)
     - [The Experimental Layout Lab of Jen Simmons](http://labs.jensimmons.com/)
     - [Fonts and Layout for Global Scripts](https://simoncozens.github.io/fonts-and-layout/)
 - Typography
-    
+
     - [How to use @font-face to avoid faux-italic and bold browser styles](https://spaceninja.com/2010/11/29/font-face-faux-styles/)
     - [Say No to Faux Bold](http://alistapart.com/article/say-no-to-faux-bold)
 - System Fonts
-    
+
     - [Shipping system fonts to GitHub.com](http://markdotto.com/2018/02/07/github-system-fonts/)
     - [Using UI System Fonts In Web Design: A Quick Practical Guide](https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/)
     - [OS Specific Fonts in CSS](https://css-tricks.com/os-specific-fonts-css/)
     - [System Font Stack](https://css-tricks.com/snippets/css/system-font-stack/)
     - [Implementing system fonts on Booking.com — A lesson learned](https://booking.design/implementing-system-fonts-on-booking-com-a-lesson-learned-bdc984df627f)
 - Choosing your font stack
-    
+
     - [Choosing Web Fonts: A Beginner’s Guide](https://design.google/library/choosing-web-fonts-beginners-guide/?utm_source=frontendfocus&utm_medium=email)
     - [Font Family Reunion](http://fontfamily.io/)
     - [Font style matcher](https://meowni.ca/font-style-matcher/)
 - `font-variant-*`
-    
+
     - [font-variant-\* at MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant)
 - Performance
-    
+
     - [A Comprehensive Guide to Font Loading Strategies](https://www.zachleat.com/web/comprehensive-webfonts/)
     - [3 Tips for Faster Font Loading](https://calendar.perfplanet.com/2017/3-tips-for-faster-font-loading/)
     - [https://css-tricks.com/font-display-masses/](https://css-tricks.com/font-display-masses/)
 - Media Queries
-    
+
     - [Using Media Queries For Responsive Design In 2018](https://www.smashingmagazine.com/2018/02/media-queries-responsive-design-2018/)
 - HTTP2
-    
+
     - [Specification](http://http2.github.io/http2-spec/index.html)
     - [Wikipedia Entry](https://www.wikiwand.com/en/HTTP/2)
     - [Can I Use HTTP2](https://caniuse.com/#search=http2)
 - Service Workers
-    
+
     - [The offline cookbook](https://jakearchibald.com/2014/offline-cookbook/)
     - Jeremyt Keith's [My first Service Worker](https://adactio.com/journal/9775)
     - [Making Resilient Web Design work offline](https://adactio.com/journal/11730)
@@ -490,7 +490,7 @@ For more information, check Workbox 3 [documentation](https://developers.google.
     - [Making A Service Worker: A Case Study](https://www.smashingmagazine.com/2016/02/making-a-service-worker/)
     - [Workbox 3 Beta](https://developers.google.com/web/tools/workbox/next/)
 - Variable fonts
-    
+
     - [How to use variable fonts in the real world](https://medium.com/clear-left-thinking/how-to-use-variable-fonts-in-the-real-world-e6d73065a604)
     - [Typographic Potential of Variable Fonts](http://www.alphabettes.org/responsive-variable-fonts/)
     - [Variable Fonts on the Web](https://webkit.org/blog/7051/variable-fonts-on-the-web/)
@@ -503,21 +503,21 @@ For more information, check Workbox 3 [documentation](https://developers.google.
     - Variable fonts [Codepen demos](https://codepen.io/collection/XqRLMb/) by Mandy Michael
     - [New variable fonts from Adobe Originals](https://blog.typekit.com/2017/10/19/new-variable-fonts-from-adobe-originals/)
 - Document Order and Visual Order
-    
+
     - [HTML Source Order vs CSS Display Order](http://adrianroselli.com/2015/10/html-source-order-vs-css-display-order.html)
     - [WCAG C27: Making the DOM order match the visual order](https://www.w3.org/TR/WCAG20-TECHS/C27.html)
     - [A Few Different CSS Methods for Changing Display Order](https://webdesign.tutsplus.com/tutorials/a-few-different-css-methods-for-column-ordering--cms-27079)
 - Font Subsetting
-    
+
     - [unicode-range](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/unicode-range) CSS descriptor
     - [Unicode Character Ranges](http://jrgraphix.net/r/Unicode/)
     - [How to subset fonts with unicode-range](https://www.nccgroup.trust/uk/about-us/newsroom-and-events/blogs/2015/august/how-to-subset-fonts-with-unicode-range/)
     - [Creating Custom Font Stacks with Unicode-Range](https://24ways.org/2011/creating-custom-font-stacks-with-unicode-range/)
 - Font Specimens
-    
+
     - [Real Web Type in Real Web Context](http://alistapart.com/article/real-web-type-in-real-web-context)
 - Books
-    
+
     - Tim Brown, [Combining Typefaces](https://blog.typekit.com/2016/04/29/combining-typefaces-free-guide-to-great-typography/)
     - Cyrus Highsmith, [Inside Paragraphs](http://insideparagraphs.com/)
     - Jason Santa Maria, [On Web Typography](https://abookapart.com/products/on-web-typography)

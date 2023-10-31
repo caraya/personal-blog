@@ -29,7 +29,7 @@ For testing the plugin, I'll concentrate on the configuration and weighing of te
 
 Self-hosted configuration is just adding the URL to the Elasticsearch server, since we're running everything on the same machine it's just pointing to the Docker Elasticsearch instance
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2021/07/elastic-search-0.png)
+![](/images/2021/07/elastic-search-0.png)
 
 Elastic Press Configuration Dialogue
 
@@ -39,13 +39,13 @@ I want to prioritize the content over the other searchable fields for my blog so
 
 I don't use pages on my blog so I'm OK with leaving all weights for pages equal. This may change when the site uses pages
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2021/07/elastic-search-1.png)
+![](/images/2021/07/elastic-search-1.png)
 
 Elasticpress weight configuration for WordPress posts and pages
 
 I have two custom post types in my development blog. Then we can search the books' CPT by content or taxonomy. The glossary CPT doesn't have a taxonomy so we can only weigh the content.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2021/07/elastic-search-2.png)
+![](/images/2021/07/elastic-search-2.png)
 
 Elasticpress weight configuration for WordPress custom post types
 
@@ -67,7 +67,7 @@ Algolia is a managed search service. Third-party plugins enable WordPress to use
 
 Unlike Elasticsearh, Algolia is configured mostly on the server. The only thing we configure on the WordPress plugin is the information about the server, you get the information from your Algolia server configuration.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2021/07/algolia-0.png)
+![](/images/2021/07/algolia-0.png)
 
 Algolia Search WordPress plugin configuration
 

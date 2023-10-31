@@ -38,10 +38,10 @@ Perhaps the one I find most intriguing is LCH, a better way to describe colors t
 
 LCH uses three parameters to describe colors:
 
-- **Lightness**: a percentage
-- **Chroma**: a number with a minimum of 0 and a maximum value that is theoretically unbounded but in practice seldom goes above 230
-- **Hue**: an angle value in degrees. There are some special things about the use of hue in LCH colors, I'm still trying to figure them out
-- **alpha**: optional fourth parameter represting the transparency as either a value between 0 and 1 or a percentage
+* **Lightness**: a percentage
+* **Chroma**: a number with a minimum of 0 and a maximum value that is theoretically unbounded but in practice seldom goes above 230
+* **Hue**: an angle value in degrees. There are some special things about the use of hue in LCH colors, I'm still trying to figure them out
+* **alpha**: optional fourth parameter represting the transparency as either a value between 0 and 1 or a percentage
 
 These values are not separated by commas and the alpha value is separated by a slash (`/`).
 
@@ -55,21 +55,20 @@ Mixing colors is exciting. It's a CSS native way to mix colors where before we w
 
 THe idea is that you specify a color space, a base color, a percentage of the color to mix, and the color that you want to mix.
 
-- **colorspace**: The color space that we're working with. There is no default so you must specify a value. The available color spaces are:
-    
-    - srgb
-    - srgb-linear
-    - lab
-    - oklab
-    - xyz
-    - xyz-d50
-    - xyz-d65
-    - hsl
-    - hwb
-    - lch
-    - oklch
-- **color**: Any valid color in the color space we're working with
-- **percentage**: The percentage of that color to mix
+* **colorspace**: The color space that we're working with. There is no default so you must specify a value. The available color spaces are:
+  * srgb
+  * srgb-linear
+  * lab
+  * oklab
+  * xyz
+  * xyz-d50
+  * xyz-d65
+  * hsl
+  * hwb
+  * lch
+  * oklch
+* **color**: Any valid color in the color space we're working with
+* **percentage**: The percentage of that color to mix
 
 We can use `color-mix()` to mix two colors, evenly (both at 50%) or unevenly (one at 40% and one at 60%).
 
@@ -151,15 +150,19 @@ We can then use the custom properties in any place we can use a color declaratio
 
 The full example is shown below:
 
-<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="abyeQdW" data-user="caraya" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"><span>See the Pen <a href="https://codepen.io/caraya/pen/abyeQdW">Color darkening with color-mix()</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>) on <a href="https://codepen.io">CodePen</a>.</span></p>
-
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<iframe height="580.9835205078125" style="width: 100%;" scrolling="no" title="Color darkening with color-mix()" src="https://codepen.io/caraya/embed/abyeQdW?default-tab=css%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/caraya/pen/abyeQdW">
+  Color darkening with color-mix()</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
 A similar example using `color-mix()` to lighten colors is show in the Codepen example below:
 
-<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="LYjwLEe" data-user="caraya" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"><span>See the Pen <a href="https://codepen.io/caraya/pen/LYjwLEe">Color lightening with color-mix()</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>) on <a href="https://codepen.io">CodePen</a>.</span></p>
-
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<iframe height="506.8720703125" style="width: 100%;" scrolling="no" title="Color lightening with color-mix()" src="https://codepen.io/caraya/embed/LYjwLEe?default-tab=css%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/caraya/pen/LYjwLEe">
+  Color lightening with color-mix()</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
 `color-mix()` is available behind a flag in Safari TP and Firefox. It is under development in Chromium (see [the Chromestatus entry](https://chromestatus.com/feature/5659115386830848) for more information)
 
@@ -169,15 +172,15 @@ Accent colors give you a way to simplify your color palette by giving you a sing
 
 Possible values are:
 
-- **auto**: A UA-chosen color, which should match the accent color of the platform, if any
-- **<color>**: The specific color to use
+* **auto**: A UA-chosen color, which should match the accent color of the platform, if any
+* **&lt;color>**: The specific color to use
 
 Browsers that support accent-color currently apply it to the following HTML elements:
 
-- <input type="checkbox">
-- <input type="radio">
-- <input type="range">
-- <progress>
+* &lt;input type="checkbox">
+* &lt;input type="radio">
+* &lt;input type="range">
+* &lt;progress>
 
 One possible way to use `accent-color` is to create a special class for it and then add the class to the elements we want to use it on.
 

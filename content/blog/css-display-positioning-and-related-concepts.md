@@ -7,12 +7,12 @@ One of the hardest things for me to understand in CSS is positioning: how to pos
 
 Over the years I've found out that there are multiple concepts associated with positioning:
 
-- Display
-- Box Model
-- Containing Block
-- Parent element
-- Position
-- z-index
+* Display
+* Box Model
+* Containing Block
+* Parent element
+* Position
+* z-index
 
 You can also work with `perspective` in CSS but that is not part of positioning so it will not be covered in this post
 
@@ -86,35 +86,25 @@ For more details on the `display` property check MDN's [display](https://develop
 
 All content it a web page is in a box. The [Box Model](https://web.dev/learn/css/box-model/) describes how these boxes surrounding the content behave and how it interacts with other content on the page.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2022/12/box.png)
-
-CSS Box Model
+![CSS Box Model](/images/2022/12/box.png)
 
 There are multiple boxes around the content. They are:
 
 **Content box**
-
-The area where your content is displayed
-
-size it using properties like `inline-size` and `block-size` or `width` and `height`.
+: The area where your content is displayed
+: Size it using properties like `inline-size` and `block-size` or `width` and `height`.
 
 **Padding box**
-
-The padding sits around the content as white space
-
-Size it using `padding` and related properties.
+: The padding sits around the content as white space
+: Size it using `padding` and related properties.
 
 **Border box**
-
-The border box wraps the content and any padding
-
-Size it using `border` and related properties.
+: The border box wraps the content and any padding
+: Size it using `border` and related properties.
 
 **Margin box**
-
-The margin is the outermost layer, wrapping the content, padding, and border as whitespace between this box and other elements
-
-Size it using `margin` and related properties.
+: The margin is the outermost layer, wrapping the content, padding, and border as whitespace between this box and other elements
+: Size it using `margin` and related properties.
 
 ## Position
 
@@ -125,46 +115,30 @@ The `top`, `right`, `bottom`, and `left` properties determine the final location
 The possible values are:
 
 **static**
-
-The element is positioned according to the normal flow of the document.
-
-The top, right, bottom, left, and z-index properties have no effect. **This is the default value**.
+: The element is positioned according to the normal flow of the document.
+: The top, right, bottom, left, and z-index properties have no effect. **This is the default value**.
 
 **relative**
-
-The element is positioned according to the normal flow of the document, and then offset relative to itself based on the top, right, bottom, and left values. The offset does not affect the position of any other elements.
-
-This value creates a new stacking context when the value of `z-index` is not auto.
+: The element is positioned according to the normal flow of the document, and then offset relative to itself based on the top, right, bottom, and left values. The offset does not affect the position of any other elements.
+: This value creates a new stacking context when the value of `z-index` is not auto.
 
 **absolute**
-
-The element is removed from the normal document flow, and no space is created for the element in the page layout.
-
-The element is positioned relative to its closest positioned ancestor, if any; otherwise, it is placed relative to the initial containing block.
-
-Its final position is determined by the values of top, right, bottom, and left.
-
-This value creates a new stacking context when the value of `z-index` is not auto.
-
-**The margins of absolutely positioned boxes do not collapse with other margins**.
+: The element is removed from the normal document flow, and no space is created for the element in the page layout.
+: The element is positioned relative to its closest positioned ancestor, if any; otherwise, it is placed relative to the initial containing block.
+: Its final position is determined by the values of top, right, bottom, and left.
+: This value creates a new stacking context when the value of `z-index` is not auto.
+: **The margins of absolutely positioned boxes do not collapse with other margins**.
 
 **fixed**
-
-The element is removed from the normal document flow, and no space is created for the element in the page layout.
-
-The element is positioned relative to the initial containing block established by the viewport, unless one of its ancestors has a `transform`, `perspective`, or `filter` property set to any value except none, or the `will-change` property is set to `transform`, in which case that ancestor behaves as the containing block.
-
-The final position is determined by the values of top, right, bottom, and left.
-
-This value always creates a new stacking context.
+: The element is removed from the normal document flow, and no space is created for the element in the page layout.
+: The element is positioned relative to the initial containing block established by the viewport, unless one of its ancestors has a `transform`, `perspective`, or `filter` property set to any value except none, or the `will-change` property is set to `transform`, in which case that ancestor behaves as the containing block.
+: The final position is determined by the values of top, right, bottom, and left.
+: This value always creates a new stacking context.
 
 **sticky**
-
-The element is positioned according to the normal flow of the document, and then offset relative to its nearest scrolling ancestor and containing block (nearest block level ancestor), including table-related elements, based on the values of `top`, `right`, `bottom`, and `left`.
-
-The offset does not affect the position of any other elements.
-
-`display: sticky` always creates a new stacking context. A sticky element "sticks" to its nearest ancestor that has a "scrolling mechanism" (created when [overflow](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow) is `hidden`, `scroll`, `auto`, or `overlay`), even if that ancestor isn't the nearest actually scrolling ancestor.
+: The element is positioned according to the normal flow of the document, and then offset relative to its nearest scrolling ancestor and containing block (nearest block level ancestor), including table-related elements, based on the values of `top`, `right`, `bottom`, and `left`.
+: The offset does not affect the position of any other elements.
+: `display: sticky` always creates a new stacking context. A sticky element "sticks" to its nearest ancestor that has a "scrolling mechanism" (created when [overflow](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow) is `hidden`, `scroll`, `auto`, or `overlay`), even if that ancestor isn't the nearest actually scrolling ancestor.
 
 ## Containing block
 
@@ -176,11 +150,10 @@ The size and position of an element are often impacted by its containing block. 
 2. If the position is `absolute`, the containing block is formed by the padding box of the nearest ancestor element with a position value other than `static`
 3. If the position is `fixed`, the containing block is established by the viewport (for continuous media like the browser viewport) or the page area (for paged media)
 4. If the position is `absolute` or `fixed`, the containing block may also be formed by the edge of the padding box of the nearest ancestor element that has one of the following:
-    
-    - A transform or perspective value other than `none`
-    - A will-change value of `transform` or `perspective`
-    - A contain value of `paint` (e.g. `contain: paint;`)
-    - A backdrop-filter other than `none` (e.g. `backdrop-filter: blur(10px);`)
+    * A transform or perspective value other than `none`
+    * A will-change value of `transform` or `perspective`
+    * A contain value of `paint` (e.g. `contain: paint;`)
+    * A backdrop-filter other than `none` (e.g. `backdrop-filter: blur(10px);`)
 
 ## Parent Element
 
@@ -192,9 +165,7 @@ Sometimes the parent element is the same as the containing block, but that's not
 
 The `z-index` CSS property sets the z-order of a positioned element and its children.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2023/04/zindex.webp)
-
-Graphical representation of z-index. Source: [Javascript in plain English](https://javascript.plainenglish.io/css-z-index-not-working-d5c068b6861)
+![Graphical representation of z-index. Source: [Javascript in plain English](https://javascript.plainenglish.io/css-z-index-not-working-d5c068b6861)](/images/2023/04/zindex.webp)
 
 What has helped me reason through z-index is to think of the content in the page being in layers. The `z-index` property controls how the layers interact with the higher positive values being "closer" to the user.
 

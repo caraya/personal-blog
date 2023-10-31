@@ -13,12 +13,11 @@ The post will look at the basics of building XML with `xmlbuilder` and then at h
 
 The basic routine is to use the `create()` method to create the XML document and then use one of these basic methods:
 
-- `.ele` creates an element
-- `.att` creates an attribute for the parent element
-    
-    - You can add multiple attributes by passing an array of attributes instead of a single one
-- `.txt` insert the text as the text of the parent and forces a closing tag for the parent
-- `.up` closes the current element
+* `.ele` creates an element
+* `.att` creates an attribute for the parent element
+  * You can add multiple attributes by passing an array of attributes instead of a single one
+* `.txt` insert the text as the text of the parent and forces a closing tag for the parent
+* `.up` closes the current element
 
 ```js
 const root = create()
@@ -70,11 +69,11 @@ The complete basic SVG element creates a circle with a set of dimensions, a fill
 
 It adds multiple attributes using the attribute array method to add the element attributes:
 
-- `cx`
-- `cy`
-- `r`
-- `fill`
-- `stroke`
+* `cx`
+* `cy`
+* `r`
+* `fill`
+* `stroke`
 
 ```js
 import { create } from 'xmlbuilder2';
@@ -106,11 +105,11 @@ console.log(xmlString);
 Running the code will produce the following SVG output:
 
 ```xml
-<svg xmlns="http://www.w3.org/2000/svg" 
+<svg xmlns="http://www.w3.org/2000/svg"
 xmlns:xlink="http://www.w3.org/1999/xlink">
   <circle cx="50"
           cy="50"
-          r="48" 
+          r="48"
           fill="none"
           stroke="#000"/>
 </svg>
@@ -161,7 +160,7 @@ The code will produce the following SVG code.
   <filter id="myFilter">
     <feGaussianBlur stDeviation="5"/>
   </filter>
-  <image  xlink:href="image.png" 
+  <image  xlink:href="image.png"
           width="100%"
           height="100%"
           x="0"

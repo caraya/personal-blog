@@ -23,7 +23,7 @@ if (CSS.supports("color", myColor)) {
   cssColor = myColor.toString();
 }
 
-if (CSS.supports("color", "color(display-p3 0 0 0)")) { 
+if (CSS.supports("color", "color(display-p3 0 0 0)")) {
   cssColor = myColor.to("p3").toString();
 }
 
@@ -44,20 +44,20 @@ root.style.setProperty('--color-name', `${cssColor}`);
 
 There are two issues with the code we've written so far.
 
-- There is no way to specify the name of the property that we want to create. If you have more than one property then this will be a problem.
-- The code is not DRY. As written the code would work for one color variable and overwrite the variable each time we run it with different values.
+* There is no way to specify the name of the property that we want to create. If you have more than one property then this will be a problem.
+* The code is not DRY. As written the code would work for one color variable and overwrite the variable each time we run it with different values.
 
 ## Creating a function
 
 The `processColor` function takes two parameters:
 
-- **name**: the name of the color property we're creating
-- **color**: the value for the color we want to create. This can be in any color space supported by color.js
+* **name**: the name of the color property we're creating
+* **color**: the value for the color we want to create. This can be in any color space supported by color.js
 
 Inside the function we define two variables that we'll use throughout the function:
 
-- **myColor**: creates a new color.js `Color` object from the `color` parameters
-- **cssColor**: empty for now, it will contain the final color we'll use
+* **myColor**: creates a new color.js `Color` object from the `color` parameters
+* **cssColor**: empty for now, it will contain the final color we'll use
 
 ```js
 function processColor(name, color) {
@@ -76,12 +76,12 @@ I've also changed the tests to test against a color of the appropriate color spa
     cssColor = myColor.toString();
   }
 
-  if (CSS.supports("color", "color(display-p3 0 0 0)")) { 
-    cssColor = myColor.to("p3").toString();
-  }
-
   if (CSS.supports("color", "lch(0% 0 0)")) {
     cssColor = myColor.to("lch").toString();
+  }
+
+	if (CSS.supports("color", "color(display-p3 0 0 0)")) {
+    cssColor = myColor.to("p3").toString();
   }
 ```
 
@@ -89,8 +89,8 @@ I decided to use custom properties, as defined in [CSS Custom Properties for Cas
 
 We create two Javascript variables
 
-- One to hold the path to the root element in Javascript (`document.documentElement`)
-- One to hold the name of the variable we want to create converted to a string
+* One to hold the path to the root element in Javascript (`document.documentElement`)
+* One to hold the name of the variable we want to create converted to a string
 
 With the two variables in place, we create a variable in the root element with the colorName variable as the first parameter and the `cssColor` variable as the second parameter.
 

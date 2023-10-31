@@ -17,10 +17,10 @@ The following table shows the pointer events we will work with.
 | --- | --- | --- | --- | --- | --- |
 | [pointerover](https://developer.mozilla.org//en-US/docs/Web/Events/pointerover) | [onpointerover](https://developer.mozilla.org//en-US/docs/Web/API/GlobalEventHandlers/onpointerover) | Yes | Yes | None | Fired when a pointer is moved into an element's hit test boundaries. |
 | [pointerenter](https://developer.mozilla.org//en-US/docs/Web/Events/pointerenter) | [onpointerenter](https://developer.mozilla.org//en-US/docs/Web/API/GlobalEventHandlers/onpointerenter) | No | No | None | Fired when a pointer is moved into the hit test boundaries of an element or one of its descendants, including as a result of a pointerdown event from a device that does not support hover (see pointerdown). |
-| [pointerdown](https://developer.mozilla.org//en-US/docs/Web/Events/pointerdown) | [onpointerdown](https://developer.mozilla.org//en-US/docs/Web/API/GlobalEventHandlers/onpointerdown) | Yes | Yes | Varies: when the pointer is primary, all default actions of the mousedown event.  
-Canceling this event also prevents subsequent firing of compatibility mouse events. | Fired when a pointer becomes _active_. |
+| [pointerdown](https://developer.mozilla.org//en-US/docs/Web/Events/pointerdown) | [onpointerdown](https://developer.mozilla.org//en-US/docs/Web/API/GlobalEventHandlers/onpointerdown) | Yes | Yes | Varies: when the pointer is primary, all default actions of the mousedown event.
+Canceling this event also prevents subsequent firing of compatibility mouse events. | Fired when a pointer becomes *active*. |
 | [pointermove](https://developer.mozilla.org//en-US/docs/Web/Events/pointermove) | [onpointermove](https://developer.mozilla.org//en-US/docs/Web/API/GlobalEventHandlers/onpointermove) | Yes | Yes | Varies: when the pointer is primary, all default actions of mousemove | Fired when a pointer changes coordinates. This event is also used if the change in pointer state can not be reported by other events. |
-| [pointerup](https://developer.mozilla.org//en-US/docs/Web/Events/pointerup) | [onpointerup](https://developer.mozilla.org//en-US/docs/Web/API/GlobalEventHandlers/onpointerup) | Yes | Yes | Varies: when the pointer is primary, all default actions of mouseup | Fired when a pointer is no longer _active_. |
+| [pointerup](https://developer.mozilla.org//en-US/docs/Web/Events/pointerup) | [onpointerup](https://developer.mozilla.org//en-US/docs/Web/API/GlobalEventHandlers/onpointerup) | Yes | Yes | Varies: when the pointer is primary, all default actions of mouseup | Fired when a pointer is no longer *active*. |
 | [pointercancel](https://developer.mozilla.org//en-US/docs/Web/Events/pointercancel) | [onpointercancel](https://developer.mozilla.org//en-US/docs/Web/API/GlobalEventHandlers/onpointercancel) | Yes | No | None | A browser fires this event if it concludes the pointer will no longer be able to generate events (for example the related device is deactived). |
 | [pointerout](https://developer.mozilla.org//en-US/docs/Web/Events/pointerout) | [onpointerout](https://developer.mozilla.org//en-US/docs/Web/API/GlobalEventHandlers/onpointerout) | Yes | Yes | None | Fired for several reasons including: pointer is moved out of the hit test boundaries of an element; firing the pointerup event for a device that does not support hover (see pointerup); after firing the pointercancel event (see pointercancel); when a pen stylus leaves the hover range detectable by the digitizer. |
 | [pointerleave](https://developer.mozilla.org//en-US/docs/Web/Events/pointerleave) | [onpointerleave](https://developer.mozilla.org//en-US/docs/Web/API/GlobalEventHandlers/onpointerleave) | No | No | None | Fired when a pointer is moved out of the hit test boundaries of an element. For pen devices, this event is fired when the stylus leaves the hover range detectable by the digitizer. |
@@ -75,7 +75,7 @@ The function wraps the feature query and returns true when the browser supports 
 function supportsPointerEvents() {
   if (window.PointerEvent) {
     return true;
-  } 
+  }
 
   return false;
 

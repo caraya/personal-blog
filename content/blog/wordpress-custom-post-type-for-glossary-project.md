@@ -8,19 +8,16 @@ I've been playing with the idea of creating a technical glossary for referring t
 The idea is as follows:
 
 1. Create a custom post type plugin for glossary entries
-    
-    - Create the post type
-    - Change the labels as appropriate
-    - Ensure that it will appear in the REST API and use Gutenberg if desired
+   * Create the post type
+   * Change the labels as appropriate
+   * Ensure that it will appear in the REST API and use Gutenberg if desired
 2. Create a corresponding taxonomy
-    
-    - Change the labels as appropriate
-    - Ensure that it will appear in the REST API
+   * Change the labels as appropriate
+   * Ensure that it will appear in the REST API
 3. Explore how to incorporate the CPT and taxonomy into an existing theme
-    
-    - Ensure that it will appear on the home page if needed or desired
-    - Create additional templates to work with the custom post type
-    - Flush the cache on plugin activation (and only on activation)
+   * Ensure that it will appear on the home page if needed or desired
+   * Create additional templates to work with the custom post type
+   * Flush the cache on plugin activation (and only on activation)
 
 ## Create Glossary Entry Custom Post Type
 
@@ -31,7 +28,7 @@ I first created an array of names and internationalized values for the different
 ```php
 <?php
 function rivendellweb_custom_glossary_type() {
-  $labels = array( 
+  $labels = array(
     'name' => __( 'Glossary Entries', RWPDOMAIN ),
     'singular_name' => __( 'Glossary Entry', RWPDOMAIN ),
     'featured_image' => __( 'Entry Image', RWPDOMAIN ),
@@ -48,8 +45,8 @@ The second variable holds an array of the arguments for the CPT that we will use
 
 The two important attributes in the array are:
 
-- `supports` tells WordPress what areas of the editor are available in this Custom Post Type
-- `show_in_rest` makes the CPT available through the REST API and activates the Gutenberg editor for this CPT when set to true
+* `supports` tells WordPress what areas of the editor are available in this Custom Post Type
+* `show_in_rest` makes the CPT available through the REST API and activates the Gutenberg editor for this CPT when set to true
 
 ```php
 <?php
@@ -57,16 +54,16 @@ The two important attributes in the array are:
     'labels'       => $labels,
     'public'       => true,
     'has_archive'  => 'glossary',
-    'rewrite'      => array(  
+    'rewrite'      => array(
       'has_front' => true ),
     'menu_icon'    => 'dashicons-book',
-    'supports'     => array( 
+    'supports'     => array(
       'title',
       'editor',
       'thumbnail',
      ),
     // Line below makes CPT available in rest
-    // Line below makes CPT available to 
+    // Line below makes CPT available to
     //Gutenberg/Block editor
     'show_in_rest' => true,
   );
@@ -121,9 +118,9 @@ Next, we define an array of arguments. The biggest difference between this array
     'show_in_rest' => true,
     'hierarchical' => true,
     'query_var'    => true,
-    'rewrite' => array( 
+    'rewrite' => array(
       'has_front' => true ),
-    'supports' => array( 
+    'supports' => array(
       'title',
       'editor',
       'thumbnail'

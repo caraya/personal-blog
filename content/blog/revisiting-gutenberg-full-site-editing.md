@@ -13,32 +13,31 @@ I've been reading and researching the latest improvements to the FSE experience 
 
 I've set up a brand new WordPress site to work with Gutenberg. I've documented previous work with Gutenberg in the blog posts below:
 
-- [Gutenberg full-site editing and Block-Based Themes](https://publishing-project.rivendellweb.net/gutenberg-full-site-editing-and-block-based-themes/)
-- [A New Way to Create Block Plugins](https://publishing-project.rivendellweb.net/a-new-way-to-create-block-plugins/)
-- [Gutenberg: A step forward or two steps back?](https://publishing-project.rivendellweb.net/gutenberg-a-step-forward-or-two-steps-back/)
-- [Gutenberg: How do we work with older content?](https://publishing-project.rivendellweb.net/gutenberg-how-do-we-work-with-older-content/)
-- [Gutenberg: Additional Thoughts and Conclusions](https://publishing-project.rivendellweb.net/gutenberg-random-thoughts-and-conclusions/)
-- Building Gutenberg blocks
-    
-    - [Part 1](https://publishing-project.rivendellweb.net/building-gutenberg-blocks-part-1/)
-    - [Part 2](https://publishing-project.rivendellweb.net/building-gutenberg-blocks-part-2/)
-    - [Part 3](https://publishing-project.rivendellweb.net/building-gutenberg-blocks-part-3/)
-    - [Part 4](https://publishing-project.rivendellweb.net/building-gutenberg-blocks-part-4/)
+* [Gutenberg full-site editing and Block-Based Themes](https://publishing-project.rivendellweb.net/gutenberg-full-site-editing-and-block-based-themes/)
+* [A New Way to Create Block Plugins](https://publishing-project.rivendellweb.net/a-new-way-to-create-block-plugins/)
+* [Gutenberg: A step forward or two steps back?](https://publishing-project.rivendellweb.net/gutenberg-a-step-forward-or-two-steps-back/)
+* [Gutenberg: How do we work with older content?](https://publishing-project.rivendellweb.net/gutenberg-how-do-we-work-with-older-content/)
+* [Gutenberg: Additional Thoughts and Conclusions](https://publishing-project.rivendellweb.net/gutenberg-random-thoughts-and-conclusions/)
+* Building Gutenberg blocks
+  * [Part 1](https://publishing-project.rivendellweb.net/building-gutenberg-blocks-part-1/)
+  * [Part 2](https://publishing-project.rivendellweb.net/building-gutenberg-blocks-part-2/)
+  * [Part 3](https://publishing-project.rivendellweb.net/building-gutenberg-blocks-part-3/)
+  * [Part 4](https://publishing-project.rivendellweb.net/building-gutenberg-blocks-part-4/)
 
 Linking to the above gives me a baseline for the content in this post.
 
 If you're reading this, I'm assuming can:
 
-- Build React-based Gutenberg blocks
-- Pack Gutenberg blocks into a plugin
-- Create style variations for a block
-- Style blocks with CSS
-- Create a theme.json global configuration file
+* Build React-based Gutenberg blocks
+* Pack Gutenberg blocks into a plugin
+* Create style variations for a block
+* Style blocks with CSS
+* Create a theme.json global configuration file
 
 There are still some questions to ask. Having the answers would make moving to a Gutenberg-based theme easier:
 
-- How can you load prism scripts and styles into a theme.json file?
-- How do you include third-party fonts and scripts into a Gutenberg theme? is enqueueing the font enough?
+* How can you load prism scripts and styles into a theme.json file?
+* How do you include third-party fonts and scripts into a Gutenberg theme? is enqueueing the font enough?
 
 ## Creating blocks versus the current system: React versus PHP
 

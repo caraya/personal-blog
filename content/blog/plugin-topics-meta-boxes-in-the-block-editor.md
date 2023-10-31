@@ -36,8 +36,8 @@ Meta boxes are not a good solution for providing custom text when working with G
 
 As with many things in Gutenberg, you will see multiple ways to accomplish this; some of the factors involved:
 
-- Whether you want to use ES5 or ES6+ to write Javascript
-- Whether you want to use JSX or not.
+* Whether you want to use ES5 or ES6+ to write Javascript
+* Whether you want to use JSX or not.
 
 This plugin will assume you are using ES6+ and JSX. It will also assume that you've initialized a block using the following command:
 
@@ -220,7 +220,7 @@ import {
   registerPlugin
 } from '@wordpress/plugins';
 import {
-  PluginSidebar, 
+  PluginSidebar,
   PluginSidebarMoreMenuItem
 } from '@wordpress/edit-post';
 import { __ } from '@wordpress/i18n';
@@ -314,13 +314,10 @@ registerPlugin( 'rivendellweb-sidebar', {
 
 Now we have a meta box that works in both the block and classic editors so we don't need to worry about compatibility :)
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2021/08/metabox-1.png)
+![Custom WordPress metabox viewed in the block editor](/images/2021/08/metabox-1.png)
 
-Custom WordPress metabox viewed in the block editor
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2021/08/metabox-2.png)
-
-WordPress custom metabox viewed in the classic editor
+![WordPress custom metabox viewed in the classic editor](/images/2021/08/metabox-2.png)
 
 ## Using the meta block data
 

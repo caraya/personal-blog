@@ -1,27 +1,29 @@
 ---
 title: "Revisiting Gutenberg as a design system"
 date: "2022-03-21"
+vimeo: true
 ---
 
 Gutenberg presents an interesting way to create and use design systems and present them to the user.
 
 I use the following definition of a design system:
 
-> A design system is a complete set of standards intended to manage design at scale using reusable components and patterns. [Design Systems 101](https://www.nngroup.com/articles/design-systems-101/) — Nielsen Norman Group
+> A design system is a complete set of standards intended to manage design at scale using reusable components and patterns.
+>
+> [Design Systems 101](https://www.nngroup.com/articles/design-systems-101/) — Nielsen Norman Group
 
 I wrote a series of posts on the topic of using Gutenberg as a design system and variations of those design items.
 
-- Gutenberg as a design system
-    
-    - [Part 1](https://publishing-project.rivendellweb.net/gutenberg-as-a-design-system-part-1/)
-    - [Part 2](https://publishing-project.rivendellweb.net/gutenberg-as-design-systems-part-2/)
-    - [Part 3](https://publishing-project.rivendellweb.net/gutenberg-as-design-systems-part-3/)
+* Gutenberg as a design system
+  * [Part 1](https://publishing-project.rivendellweb.net/gutenberg-as-a-design-system-part-1/)
+  * [Part 2](https://publishing-project.rivendellweb.net/gutenberg-as-design-systems-part-2/)
+  * [Part 3](https://publishing-project.rivendellweb.net/gutenberg-as-design-systems-part-3/)
 
 This post is a review and further exploration of Gutenberg-based design systems. This post will borrow some concepts from Brad Frost's [atomic design](https://bradfrost.com/blog/post/atomic-web-design/).
 
 Below is Brad's Presentation about Atomic Design, given at Beyond Tellerand in 2013
 
-<iframe title="vimeo-player" src="https://player.vimeo.com/video/67476280?h=ece7ce5c06" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+<lite-vimeo videoid="67476280"></lite-vimeo>
 
 ## Start from the beginning: Building Atoms
 
@@ -79,8 +81,8 @@ One of the most contentious things in working with WordPress overall is how to u
 
 Ideally, this would be a matter of using fonts from CDNs like [Google Fonts](https://fonts.google.com/) or [Adobe Fonts](https://fonts.adobe.com/) but it's not so easy... we need to be mindful of the following:
 
-- [German Court Rules Websites Embedding Google Fonts Violates GDPR](https://thehackernews.com/2022/01/german-court-rules-websites-embedding.html)
-- [Website fined by German court for leaking visitor's IP address via Google Fonts](https://www.theregister.com/2022/01/31/website_fine_google_fonts_gdpr/)
+* [German Court Rules Websites Embedding Google Fonts Violates GDPR](https://thehackernews.com/2022/01/german-court-rules-websites-embedding.html)
+* [Website fined by German court for leaking visitor's IP address via Google Fonts](https://www.theregister.com/2022/01/31/website_fine_google_fonts_gdpr/)
 
 So we might have to use locally hosted web fonts or use system fonts.
 
@@ -88,12 +90,12 @@ Since I'm trying to recreate an existing theme as an example, I will try to use 
 
 [Recursive](https://recursive.design) is a variable font that I've been working with since it was in beta. It provides pretty much everything that you may need:
 
-- A monospace code axis for pre-formatted and code blocks
-- Sans-serif, and casual axes for typographical work
-- Variable weight axis from light to extra black (300 to 1000 in numeric values)
-- Slant and cursive axes to control italics behavior
-- A set of presets that combine the different values from the available axes to give you control without having to drop to the low level value adjustment
-- Support for 200 Latin languages out of the box
+* A monospace code axis for pre-formatted and code blocks
+* Sans-serif, and casual axes for typographical work
+* Variable weight axis from light to extra black (300 to 1000 in numeric values)
+* Slant and cursive axes to control italics behavior
+* A set of presets that combine the different values from the available axes to give you control without having to drop to the low level value adjustment
+* Support for 200 Latin languages out of the box
 
 TO get started we add the `@font-face` declaration to our stylesheet.
 
@@ -135,7 +137,7 @@ This command will set the default font for the document (the body element and al
 ```css
 body {
   font-family: "Recursive", sans-serif;
-  font-variation-settings: 
+  font-variation-settings:
     var(--mono),
     var(--casl),
     var(--wght),
@@ -151,7 +153,7 @@ In the following example, we change the value of the casual axis from 0 (normal)
 h2 {
   --casl: "CASL" 1;
 
-  font-variation-settings: 
+  font-variation-settings:
     var(--mono),
     var(--casl),
     var(--wght),
@@ -202,7 +204,7 @@ function rivendellweb_variation_styles() {
       __FILE__ ) );
 }
 add_action(
-  'enqueue_block_assets', 
+  'enqueue_block_assets',
   'rivendellweb_variation_styles' );
 ```
 
@@ -273,12 +275,11 @@ The function takes two parameters:
 
 1. The name of the block we are creating the variations for
 2. An array of properties for the style
-    
-    1. **Name**: The name of the variation used to compute the class name (**required**)
-    2. **Label**: The human-readable label (**required**)
-    3. inline\_style: Contains inline CSS code that registers the CSS class required for the style (**optional**)
-    4. **style\_handle**: Contains the handle to an already registered style that should be enqueued in places where block styles are needed (**optional**)
-    5. **is\_default**: Boolean value. If set to true it indicates that this variation is the default variation for the block (**optional**)
+   1. **Name**: The name of the variation used to compute the class name (**required**)
+   2. **Label**: The human-readable label (**required**)
+   3. inline\_style: Contains inline CSS code that registers the CSS class required for the style (**optional**)
+   4. **style\_handle**: Contains the handle to an already registered style that should be enqueued in places where block styles are needed (**optional**)
+   5. **is\_default**: Boolean value. If set to true it indicates that this variation is the default variation for the block (**optional**)
 
 This example adds a blue quote varation to the `core/quote` block.
 
@@ -338,16 +339,16 @@ Once we install them we can then further customize and expand them
 
 The register\_block\_pattern helper function receives two arguments.
 
-- **title**: A machine-readable title with a naming convention of namespace/title
-- **properties**: An array describing properties of the pattern.
+* **title**: A machine-readable title with a naming convention of namespace/title
+* **properties**: An array describing properties of the pattern.
 
 The properties available for block patterns are:
 
-- **title**: A human-readable title for the pattern (**required**)
-- **content**: Block HTML Markup for the pattern (**required**)
-- **description**: A visually hidden text used to describe the pattern in the inserter (**optional**) categories: An array of registered pattern categories used to group block patterns. Categories are registered using `register_block_pattern_category` (**optional**)
-- **keywords**: An array of aliases or keywords that help users discover the pattern while searching (**optional**)
-- **viewportWidth**: An integer specifying the intended width of the pattern to allow for a scaled preview of the pattern in the inserter (**optional**)
+* **title**: A human-readable title for the pattern (**required**)
+* **content**: Block HTML Markup for the pattern (**required**)
+* **description**: A visually hidden text used to describe the pattern in the inserter (**optional**) categories: An array of registered pattern categories used to group block patterns. Categories are registered using `register_block_pattern_category` (**optional**)
+* **keywords**: An array of aliases or keywords that help users discover the pattern while searching (**optional**)
+* **viewportWidth**: An integer specifying the intended width of the pattern to allow for a scaled preview of the pattern in the inserter (**optional**)
 
 Make sure that you add the blocks in the init hook as shown in the example.
 
@@ -360,7 +361,7 @@ register_block_pattern(
     'description' => _x( 'Two horizontal buttons, the left button is filled in, and the right button is outlined.', 'Block pattern description', 'my-plugin' ),
     'content'     => "<!-- wp:buttons {\"align\":\"center\"} -->\n<div class=\"wp-block-buttons aligncenter\"><!-- wp:button {\"backgroundColor\":\"very-dark-gray\",\"borderRadius\":0} -->\n<div class=\"wp-block-button\"><a class=\"wp-block-button__link has-background has-very-dark-gray-background-color no-border-radius\">" . esc_html__( 'Button One', 'my-plugin' ) . "</a></div>\n<!-- /wp:button -->\n\n<!-- wp:button {\"textColor\":\"very-dark-gray\",\"borderRadius\":0,\"className\":\"is-style-outline\"} -->\n<div class=\"wp-block-button is-style-outline\"><a class=\"wp-block-button__link has-text-color has-very-dark-gray-color no-border-radius\">" . esc_html__( 'Button Two', 'my-plugin' ) . "</a></div>\n<!-- /wp:button --></div>\n<!-- /wp:buttons -->",
   )
-); 
+);
 
 add_action( 'init', 'my_plugin_register_my_patterns' );
 ```
@@ -431,14 +432,11 @@ The article also presents a tool to create patterns from posts of a custom post 
 
 ### More information
 
-- WordPress CLI
-    
-    - [wp scaffold post-type](https://developer.wordpress.org/cli/commands/scaffold/post-type/)
-- The Traditional Way
-    
-    - [Registering Custom Post Types](https://developer.wordpress.org/plugins/post-types/registering-custom-post-types/)
-- The Gutenberg Way
-    
-    - [How to Use Gutenberg with WordPress Custom Post Types](https://knowthecode.io/how-enable-gutenberg-editor-custom-post-type)
-    - [Using Block Patterns as content templates](https://mkaz.blog/wordpress/using-block-patterns-as-content-templates/)
-    - [How to Build Block Patterns for the WordPress Block Editor](https://richtabor.com/build-block-patterns/)
+* WordPress CLI
+  * [wp scaffold post-type](https://developer.wordpress.org/cli/commands/scaffold/post-type/)
+* The Traditional Way
+  * [Registering Custom Post Types](https://developer.wordpress.org/plugins/post-types/registering-custom-post-types/)
+* The Gutenberg Way
+  * [How to Use Gutenberg with WordPress Custom Post Types](https://knowthecode.io/how-enable-gutenberg-editor-custom-post-type)
+  * [Using Block Patterns as content templates](https://mkaz.blog/wordpress/using-block-patterns-as-content-templates/)
+  * [How to Build Block Patterns for the WordPress Block Editor](https://richtabor.com/build-block-patterns/)

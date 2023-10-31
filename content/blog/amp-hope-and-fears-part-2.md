@@ -73,7 +73,7 @@ The table below (also from the [AMP HTML Specification](https://www.ampproject.o
 | script | Prohibited unless the type is `application/ld+json`. (Other non-executable values may be added as needed.) Exception is the mandatory script tag to load the AMP runtime and the script tags to load extended components. |
 | noscript | Allowed. Can be used anywhere in the document. If specified, the content inside the `<noscript>` element displays if JavaScript is disabled by the user. |
 | base | Prohibited. |
-| img | Replaced with `amp-img`.  
+| img | Replaced with `amp-img`.
 Please note: `<img>` is a [Void Element according to HTML5](https://www.w3.org/TR/html5/syntax.html#void-elements), so it does not have an end tag. However, `<amp-img>` does have an end tag `</amp-img>`. |
 | video | Replaced with `amp-video`. |
 | audio | Replaced with `amp-audio`. |
@@ -117,13 +117,13 @@ Condé Nast has published information on [how they generate the AMP content](htt
 
 Their system is fairly intricate as the image below illustrates:
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2018/07/AMP-Arch.png)
+![](/images/2018/07/AMP-Arch.png)
 
 AMP Generation Process at Condé Nast. From [The Why and How of Google AMP at Condé Nast](https://technology.condenast.com/story/the-why-and-how-of-google-amp-at-conde-nast)
 
 And the AMP generation process itself looks like it's rather complex, running from Markdown to React that then converts the Markdown content into valid AMP HTML:
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2018/07/AMP-Pipeline.png)
+![](/images/2018/07/AMP-Pipeline.png)
 
 Condé Nast AMP Service Pipeline. From [The Why and How of Google AMP at Condé Nast](https://technology.condenast.com/story/the-why-and-how-of-google-amp-at-conde-nast)
 

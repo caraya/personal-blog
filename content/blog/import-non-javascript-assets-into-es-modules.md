@@ -12,7 +12,7 @@ It is now possible to import JSON and CSS into a Javascript module to have some 
 We import CSS modules like this:
 
 ```js
-import sheet from './styles.css' assert { 
+import sheet from './styles.css' assert {
   type: 'css'
 };
 ```
@@ -48,8 +48,8 @@ So why would we want to do this?
 
 CSS and JSON modules have some of the same benefits as JavaScript modules.
 
-- **Deduplication**: The file will only be fetched, instantiated, and parsed once, regardless of how many times it’s requested
-- **Consistent order of evaluation**: when the importing JavaScript is running, it can rely on the content it imports having already been fetched and parsed
-- **Security**: modules are fetched with CORS and use strict MIME-type checking
+* **Deduplication**: The file will only be fetched, instantiated, and parsed once, regardless of how many times it’s requested
+* **Consistent order of evaluation**: when the importing JavaScript is running, it can rely on the content it imports having already been fetched and parsed
+* **Security**: modules are fetched with CORS and use strict MIME-type checking
 
 JSON modules run on both Node.js and browsers (Chrome 91 and later) and CSS modules are supported in browsers (Chrome 93 and later)

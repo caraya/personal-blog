@@ -17,7 +17,7 @@ The list of plugins that I want to use shows what they are, what I expect them t
 
 The color functions in this plugin were removed from the CSS Color Module level 5 spec so they are not available in browsers at all, at least not directly.
 
-According to [Adam Argyle](https://twitter.com/argyleink), one of the [CSS Color Module Level 5 spec](https://drafts.csswg.org/css-color-5/) editors, [tweet](https://twitter.com/argyleink/status/1456301298769297408?s=20) **_"no replacements planned, rather succession via relative color syntax. they had too much overlap, so 1 was removed"_**
+According to [Adam Argyle](https://twitter.com/argyleink), one of the [CSS Color Module Level 5 spec](https://drafts.csswg.org/css-color-5/) editors, [tweet](https://twitter.com/argyleink/status/1456301298769297408?s=20) ***"no replacements planned, rather succession via relative color syntax. they had too much overlap, so 1 was removed"***
 
 See the following [Codepen](https://codepen.io/argyleink/pen/WNoWadG?editors=1100) for a demo of the [color-mix()](https://drafts.csswg.org/css-color-5/#color-mix) function
 
@@ -27,9 +27,9 @@ Conditional logic
 
 [postcss-conditionals](https://www.npmjs.com/package/postcss-conditionals) offers an if/else statement equivalent to SASS @if
 
-[postcss-each](https://www.npmjs.com/package/postcss-each) gives you the ability to loop over an array of values and act on each one
-
 [postcss-for](https://github.com/antyakushev/postcss-for) allow writing conditional logic in a way that mostly mirror SASS.
+
+[postcss-each](https://www.npmjs.com/package/postcss-each) gives you the ability to loop over an array of values and act on each one
 
 `postcss-fail-on-warn`
 

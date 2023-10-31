@@ -25,21 +25,19 @@ output-video.mp4
 
 This commands takes `video.mp4` as the input (indicated by the `-i`) flag, uses lib264 (the open source h264 encoder) and outputs the result as another `MP4` file. It also takes all the FFMPEG defaults:
 
-- Video Codec: h264
-    
-    - Data Rate: CRF=23
-    - Key Frame: 250
-    - Resolution: Same as source
-    - Frame rate: Same as source
-    - Profile: high
-    - X264 Preset: Medium
-    - B-frames: as defined in the preset (3)
-    - Reference frames: as defined in the preset (3)
-- Audio Codec: AAC
-    
-    - Audio channels: Same as source
-    - Audio samples: 40kHz
-    - Audio bitrate: 128 kbps
+* Video Codec: h264
+  * Data Rate: CRF=23
+  * Key Frame: 250
+  * Resolution: Same as source
+  * Frame rate: Same as source
+  * Profile: high
+  * X264 Preset: Medium
+  * B-frames: as defined in the preset (3)
+  * Reference frames: as defined in the preset (3)
+* Audio Codec: AAC
+  * Audio channels: Same as source
+  * Audio samples: 40kHz
+  * Audio bitrate: 128 kbps
 
 Replace `video.mp4` with the full path to the video you want to work with and `output-video.mp4` with the name you want to give to the resulting file.
 
@@ -98,7 +96,7 @@ Likewise, to convert a video to AV1 video with AAC audio in an MP4 container the
 ```bash
 ffmpeg -i video.mp4 \
 -c:v libaom-av1 \
--c:a aac \ 
+-c:a aac \
 output-video.mp4
 ```
 
@@ -129,18 +127,16 @@ The settings will be different for each audio and video codec you use.
 
 In this section we'll look at these cases.
 
-- Video
-    
-    - Changing the video resolution
-    - Changing the video size
-    - Changing the framerate
-    - Change the video profile
-    - Change the video bitrate setting
-- Audio
-    
-    - Audio bitrate
-    - Audio channels
-    - Audio sample rate
+* Video
+  * Changing the video resolution
+  * Changing the video size
+  * Changing the framerate
+  * Change the video profile
+  * Change the video bitrate setting
+* Audio
+  * Audio bitrate
+  * Audio channels
+  * Audio sample rate
 
 While most of these operations should work in all codecs, you should always test with your own content to make sure that you get the results you want.
 
@@ -227,10 +223,10 @@ These values will be different based on the video source. It's hard to come with
 
 Different codecs provide different profiles. Rather than discuss each set of profiles I've listed the Wikipedia pages where the profiles are listed:
 
-- [h264/AVC Profiles](https://en.wikipedia.org/wiki/Advanced_Video_Coding#Profiles)
-- [h265 tiers and levels](https://en.wikipedia.org/wiki/High_Efficiency_Video_Coding_tiers_and_levels)
-- [AV1 levels](https://en.wikipedia.org/wiki/AV1#Profiles_and_levels)
-- [VP9 Profiles](https://en.wikipedia.org/wiki/VP9#Profiles) and [levels](https://en.wikipedia.org/wiki/VP9#Levels)
+* [h264/AVC Profiles](https://en.wikipedia.org/wiki/Advanced_Video_Coding#Profiles)
+* [h265 tiers and levels](https://en.wikipedia.org/wiki/High_Efficiency_Video_Coding_tiers_and_levels)
+* [AV1 levels](https://en.wikipedia.org/wiki/AV1#Profiles_and_levels)
+* [VP9 Profiles](https://en.wikipedia.org/wiki/VP9#Profiles) and [levels](https://en.wikipedia.org/wiki/VP9#Levels)
 
 Note that browser may not support all levels and profiles. Test your desired profile and level combinations before you deploy.
 
@@ -238,10 +234,10 @@ Note that browser may not support all levels and profiles. Test your desired pro
 
 Audio codecs are simpler to work with. We'll cover three of the audio parameters:
 
-- Audio codec
-- Bitrate
-- Channels
-- Sample rate
+* Audio codec
+* Bitrate
+* Channels
+* Sample rate
 
 ### Audio codec
 
@@ -273,7 +269,7 @@ This example adjust the audio bitrate to 96kbps:
 ```bash
 ffmpeg -i input.mp4 \
 -c:v libx264 \
--c:a aac \ 
+-c:a aac \
 -b:a 96k \
 output-video.mp4
 ```
@@ -283,7 +279,7 @@ This example adjust the sample rate to 41lkhz down from the original value of 48
 ```bash
 ffmpeg -i input.mp4 \
 -c:v libx264 \
--c:a aac \ 
+-c:a aac \
 -b:a 96k \
 output-video.mp4
 ```

@@ -1,6 +1,7 @@
 ---
 title: "Remote debugging on mobile"
 date: "2021-11-17"
+youtube: true
 ---
 
 There are times when the mobile version of an app doesn't work but the actual version does, or we might want to run the app in an actual device to see how it works.
@@ -13,7 +14,9 @@ We need a way to run the code on a real mobile device so we can debug code issue
 
 Ideally, you'd test with a device that reflects your users' and, sadly, that's not trending up as it should. The average device is not the iPhone or high-end Android device in most developers' pockets. It's more likely to be a lower-powered multi-core device.
 
-I won't go into the details of why mobile performance in the mid and lower range of devices is not good. Alex Russell has a great [blog post](https://infrequently.org/2021/03/the-performance-inequality-gap/) and a [presentation from 2016](https://www.youtube.com/watch?v=4bZvq3nodf4) that covers this topic.
+I won't go into the details of why mobile performance in the mid and lower range of devices is not good. Alex Russell has a great [blog post](https://infrequently.org/2021/03/the-performance-inequality-gap/) and a presentation from 2016that covers this topic.
+
+<lite-youtube videoid="4bZvq3nodf4"></lite-youtube>
 
 The post will look at how to use the browser's DevTools to debug issues.
 
@@ -26,15 +29,13 @@ To get your iOS mobile device to work with Safari in macOS, follow these steps:
 1. Connect your device to your computer via USB
 2. Unlock the device
 3. In Safari, go to the `Develop` menu. You should see the device name listed
-    
-    - If the device is locked you will see a grayed-out `Unlock Device with Passcode` message
+   * If the device is locked you will see a grayed-out `Unlock Device with Passcode` message
 4. On your mobile device navigate to your app
-    
-    - Once the device is unlocked you should see the app and the associated service worker if one is running for the site/app
+   * Once the device is unlocked you should see the app and the associate
+   * worker if one is running for the site/app
 5. Click on the site name. That will open the developer tools on your desktop browser
-    
-    - You can use the elements panel to inspect and interact with the page
-    - You can use the console to modify the content of the page
+   * You can use the elements panel to inspect and interact with the page
+   * You can use the console to modify the content of the page
 
 ## Safari on macOS with Chrome
 

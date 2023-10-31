@@ -24,8 +24,8 @@ The pagination layout I ended up using on my site looks like this:
 
 There are some issues with the default navigation.
 
-- If there is no previous or next post, the remaining content will move. I would rather is remain static and the space be left empty so the navigation remains centered
-- Because the page navigation is built inside the query-loop block, and we've styles the loop to be narrower so it looks acceptable the navigation is also constrained by the styles on the loop
+* If there is no previous or next post, the remaining content will move. I would rather is remain static and the space be left empty so the navigation remains centered
+* Because the page navigation is built inside the query-loop block, and we've styles the loop to be narrower so it looks acceptable the navigation is also constrained by the styles on the loop
 
 I've made the conscious decision to let the previous and next post links overflow the parent element. However when both previous and next links are present the links are squished together and it doesn't look like the design I intended.
 
@@ -50,9 +50,9 @@ Structurally, the layout is built around a two column layout and leverages a lot
 
 Each `post-navigation-link` element has three attributes that are relevant:
 
-- `type`: This is the type of link. It can be `previous` or `next`
-- `showTitle`: This is a boolean that determines if the title of the post should be shown
-- `linkLabel`: Boolean that indicates if the link should have a label
+* `type`: This is the type of link. It can be `previous` or `next`
+* `showTitle`: This is a boolean that determines if the title of the post should be shown
+* `linkLabel`: Boolean that indicates if the link should have a label
 
 ```html
 <!-- wp:columns {"style":{"spacing":{"margin":{"top":"2.38rem","bottom":"2.38rem"}}},"className":"post-nav"} -->

@@ -1,15 +1,12 @@
 ---
 title: "Migrating from WordPress to Eleventy (part 3)"
-date: "2023-10-27"
+date: "2023-11-13"
 youtube: false
 vimeo: false
 mermaid: false
 mavo: false
+draft: true
 ---
-
-# Migrating from WordPress to Eleventy (part 3)
-
-
 
 ## Conditionally loading assets
 

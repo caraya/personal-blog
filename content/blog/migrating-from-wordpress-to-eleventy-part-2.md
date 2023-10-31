@@ -1,13 +1,12 @@
 ---
 title: "Migrating from WordPress to Eleventy (part 2)"
-date: "2023-10-26"
-youtube: true
-vimeo: true
+date: "2023-11-08"
+draft: true
+youtube: false
+vimeo: false
 mermaid: false
 mavo: false
 ---
-
-# Migrating from WordPress to Eleventy (part 2)
 
 Once I got a basic migration working how I want to, I can look at details that go beyond content and deal with styling and layout.
 
@@ -294,7 +293,7 @@ nav.archive-pagination {
 
 We may do further styling later.
 
-### Additional Plugins I'm Considering for an Eleventy Site
+## Additional Plugins I'm Considering for an Eleventy Site
 
 I'm considering the following Eleventy and Markdown-It plugins. I will add my notes next to them.
 

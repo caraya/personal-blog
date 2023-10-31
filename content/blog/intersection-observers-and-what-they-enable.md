@@ -60,9 +60,9 @@ Once the parameters are defined we can perform tasks in the result.
 
 In the example below we do the following:
 
-- Loop through all available entries
-- Skip entries outside the viewport (those that are not intersecting) by returning
-- add the `appear` class to the element or elements in the viewport and remove them from the list of items being observed by using the `unobserve` method. Once we've added the class, we don't want to add it again
+* Loop through all available entries
+* Skip entries outside the viewport (those that are not intersecting) by returning
+* add the `appear` class to the element or elements in the viewport and remove them from the list of items being observed by using the `unobserve` method. Once we've added the class, we don't want to add it again
 
 We defined the `appearOptions` object earlier in the script.
 

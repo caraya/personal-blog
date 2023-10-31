@@ -15,21 +15,19 @@ Web components are a set of technologies that enable developers to create custom
 
 The component technologies for web components are:
 
-- **Custom elements**: A set of JavaScript APIs that allow you to define custom elements and their behavior, which can then be used as desired in your user interface
-- **Shadow DOM**: A set of JavaScript APIs for attaching an encapsulated "shadow" DOM tree to an element — rendered separately from the main document DOM — and controlling associated functionality. In this way, you can keep an element's features private, so they can be scripted and styled without the fear of collision with other parts of the document.
-- **HTML templates**: The <template> and <slot> elements enable you to write markup templates that are not displayed in the rendered page. These can then be reused multiple times as the basis of a custom element's structure.
+* **Custom elements**: A set of JavaScript APIs that allow you to define custom elements and their behavior, which can then be used as desired in your user interface
+* **Shadow DOM**: A set of JavaScript APIs for attaching an encapsulated "shadow" DOM tree to an element — rendered separately from the main document DOM — and controlling associated functionality. In this way, you can keep an element's features private, so they can be scripted and styled without the fear of collision with other parts of the document.
+* **HTML templates**: The <template> and <slot> elements enable you to write markup templates that are not displayed in the rendered page. These can then be reused multiple times as the basis of a custom element's structure.
 
 The basic approach for implementing a web component generally looks something like this:
 
-- Using the ECMAScript 2015 class syntax create a class in which you specify your web component functionality
-- Register your new custom element using the `CustomElementRegistry.define()` method, passing it the element name to be defined, the class or function in which its functionality is specified
-- Attach a shadow DOM to the custom element using Element.attachShadow() method
-    
-    - Add child elements, event listeners, etc., to the shadow DOM using regular DOM methods.
-- Define an HTML template using <template> and <slot>
-    
-    - Again use regular DOM methods to clone the template and attach it to your shadow DOM.
-- Use your custom element wherever you like on your page, just like you would any regular HTML element.
+* Using the ECMAScript 2015 class syntax create a class in which you specify your web component functionality
+* Register your new custom element using the `CustomElementRegistry.define()` method, passing it the element name to be defined, the class or function in which its functionality is specified
+* Attach a shadow DOM to the custom element using Element.attachShadow() method
+  * Add child elements, event listeners, etc., to the shadow DOM using regular DOM methods.
+  * Define an HTML template using &lt;template> and &lt;slot>
+  * Again use regular DOM methods to clone the template and attach it to your shadow DOM.
+* Use your custom element wherever you like on your page, just like you would any regular HTML element.
 
 ```js
 // Create a class for the element
@@ -140,7 +138,7 @@ Using CSS modules you can import stylesheets using Javascript and then attach th
 The main advantage of this method is that you can do so with any number of custom elements on a page, as well as the root stylesheet for your page.
 
 ```js
-import sheet from './styles.css' 
+import sheet from './styles.css'
   assert {
     type: 'css'
   };
@@ -148,7 +146,7 @@ import sheet from './styles.css'
 // adds the sheet to the root document
 document.adoptedStyleSheets = [sheet];
 
-// Adds the imported styelsheet 
+// Adds the imported styelsheet
 // to a shadowroot
 shadowRoot.adoptedStyleSheets = [sheet];
 ```
@@ -183,22 +181,22 @@ c-e::part(textspan) {
 
 For more information, see
 
-- [Scoped Styles](https://drafts.csswg.org/css-cascade-6/#scoped-styles)
-- [Keeping Your CSS Small](https://www.xanthir.com/talks/2022-06-10/)
+* [Scoped Styles](https://drafts.csswg.org/css-cascade-6/#scoped-styles)
+* [Keeping Your CSS Small](https://www.xanthir.com/talks/2022-06-10/)
 
 ## What components to build?
 
 Here's a list of the minimal set of components I want to build for this project:
 
-- Show all posts
-- Show single posts
-- Show all pages
-- Show all categories
-- Show post matching a category
-- Show all tags
-- Show posts matching a tags
-- Post pagination
-- Page pagination
+* Show all posts
+* Show single posts
+* Show all pages
+* Show all categories
+* Show post matching a category
+* Show all tags
+* Show posts matching a tags
+* Post pagination
+* Page pagination
 
 For example, I will build a component to show all posts (or at least the latest 10).
 
@@ -208,8 +206,8 @@ The easiest component to get started is the `blog-posts` component. It displays 
 
 We first import the components of the Lit library that we want to use:
 
-- `LitElement` and `html` from the `lit` package
-- `unsafeHTML` from its own package in the `lit/directives` there
+* `LitElement` and `html` from the `lit` package
+* `unsafeHTML` from its own package in the `lit/directives` there
 
 We then create a class that extends the `LitElement` class. This means that we can use the features of the base class and expand it with functionality specific to the custom element we're creating.
 
@@ -312,8 +310,8 @@ Because the links point to individual pages, we need to figure out how to displa
 
 The element currently uses the default values for the number of pages and the page number where we want to start:
 
-- `per_page`: how many posts per page. The default is 10
-- `page`: what page (or group) of posts we want to see. The default is 1
+* `per_page`: how many posts per page. The default is 10
+* `page`: what page (or group) of posts we want to see. The default is 1
 
 ### Use Storybook
 

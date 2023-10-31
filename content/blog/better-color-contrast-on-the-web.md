@@ -23,22 +23,21 @@ But things change. The monitors we use, the devices we view web content on and t
 
 In [Please Stop Using Grey Text](https://tangledweb.xyz/please-stop-using-grey-text-3d3e71acfca8) Andrew Sommers identifies problems with the way WCAG 2 measures contrast. Some of the biggest issues, to me, are:
 
-- A one-size fits all approach to contrast doesn't work
-    
-    - Different font styles require different contrast levels (thinner fonts require more contrast)
-    - Different font sizes require different contrast levels
-- People may need different levels of contrast to make text readable for them
+* A one-size fits all approach to contrast doesn't work
+  * Different font styles require different contrast levels (thinner fonts require more contrast)
+  * Different font sizes require different contrast levels
+* People may need different levels of contrast to make text readable for them
 
 The [W3C Accessibility Guidelines (WCAG) 3.0](https://www.w3.org/TR/wcag-3.0/) introduces [APCA](https://github.com/Myndex/apca-w3), a new way to measure color contrast that follows modern color and mathematical theories.
 
 APCA addresses the drawbacks of the WCAG 2 contrast method.
 
 > Like color, contrast is not “real”, it is a perception and is more a result of how your brain interprets visual differences. It is not a simple measure of the distance or difference between two colors. Like all perceptions it is context sensitive, meaning what is around it and its purpose affects how you see it. Contrast is also substantially affected by **“spatial frequency”** which essentially means font size and weight, and is closely related to our brain’s lightness perception (aka luminance contrast). When it comes to color contrast, as in hue/chroma/saturation, the effect is less relevant to readability. High lightness/darkness contrast is required for fluent readability at best speed and comprehension, especially small body text in columns or blocks. Above a certain amount, **contrast constancy** may come into effect wherein further increases in a mathematical contrast value does not have an effect higher perceived contrast for readability. A high “spatial frequency” means smaller and thinner letters. Smaller, thinner letters or graphics lowers the perceived contrast. As a result, the lightness/darkness difference between text and the background color must be increased to compensate for small thin fonts.
-> 
-> - Fluent readability refers to **critical contrast** which is that needed for best reading speed and comprehension. Dr. Bailey & Lovie-Kitchin’s studies showed, along with Dr. Legge and other recent studies, contrast must be at least ten times the contrast **sensitivity threshold** (CS) which is the point of “just noticeable differences” (JND). Twenty times is preferred for adequate **contrast reserve** above the critical contrast.
-> - Spot readability means being readable without significant effort, though not necessarily at the best speed or accuracy. In this case the contrast needs to be three times that of the JND.
-> - Various forms of visual impairment include more than acuity, which is the ability to focus the eyes to a sharp clear image. Contrast sensitivity related impairments involving the eyes or brain may have an even greater effect on overall vision. These factors define the area of “supra-threshold critical contrast for readability.” We refer to this as “readability contrast” for simplicity. A similar supra-threshold exists for acuity in terms of font size, which is separate but in addition to the font sizing as related to spatial-frequency-driven contrast.
-> 
+>
+> * Fluent readability refers to **critical contrast** which is that needed for best reading speed and comprehension. Dr. Bailey & Lovie-Kitchin’s studies showed, along with Dr. Legge and other recent studies, contrast must be at least ten times the contrast **sensitivity threshold** (CS) which is the point of “just noticeable differences” (JND). Twenty times is preferred for adequate **contrast reserve** above the critical contrast.
+> * Spot readability means being readable without significant effort, though not necessarily at the best speed or accuracy. In this case the contrast needs to be three times that of the JND.
+> * Various forms of visual impairment include more than acuity, which is the ability to focus the eyes to a sharp clear image. Contrast sensitivity related impairments involving the eyes or brain may have an even greater effect on overall vision. These factors define the area of “supra-threshold critical contrast for readability.” We refer to this as “readability contrast” for simplicity. A similar supra-threshold exists for acuity in terms of font size, which is separate but in addition to the font sizing as related to spatial-frequency-driven contrast.
+>
 > Source: [Why APCA as a New Contrast Method?](https://git.apcacontrast.com/documentation/)
 
 So we have an existing contrast algorithm that has been around for 14+ years with known shortcomings and a new algorithm that will become part of the next version of the specification (WCAG 3) that will not see the light of day for a few more years still.
@@ -117,24 +116,28 @@ Dan provides a set of equivalencies between WCAG 2 and APCA
 | WCAG 2 | APCA | Meaning |
 | :-: | :-: | --- |
 | 1.25: 1 | 15 | Minimum for non-text elements |
-| 1.5: 1 | 30 | **Rough Equivalency**  
-  
+| 1.5: 1 | 30 | **Rough Equivalency**
+
 Absolute min for any text |
-| 3:1 | 45 | **Rough Equivalency**  
-  
+| 3:1 | 45 | **Rough Equivalency**
+
 Min for large text (the old 3:1) |
-| 4.5:1 | 60 | **Rough Equivalency**  
-  
+| 4.5:1 | 60 | **Rough Equivalency**
+
 Min for body text (the old 4.5:1) |
-| 7:1 | 75 | **Rough Equivalency**  
-  
+| 7:1 | 75 | **Rough Equivalency**
+
 Min for body text (the old 4.5:1) |
 | 10: 1 | 90 | Preferred level for body text |
 
 But see also the following figures that explain what the specific values mean for readability.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2022/12/apca-contrast-01.png) ![](https://publishing-project.rivendellweb.net/wp-content/uploads/2022/12/apca-contrast-02.png)
+![APCA contrast values and explanation. Original from [Dan Hollick](https://twitter.com/DanHollick/status/1468958658683805703?s=20&t=GMyDkCKNvOjTbEbrr6eGvA)](/images/2022/12/apca-contrast-01.png)
 
-APCA contrast values and explanation. Original from [Dan Hollick](https://twitter.com/DanHollick/status/1468958658683805703?s=20&t=GMyDkCKNvOjTbEbrr6eGvA)
+{style: "max-width: 600px; width: 600px;"}
+
+![APCA contrast values and explanation. Original from [Dan Hollick](https://twitter.com/DanHollick/status/1468958658683805703?s=20&t=GMyDkCKNvOjTbEbrr6eGvA)](/images/2022/12/apca-contrast-02.png)
+
+{style: "max-width: 600px; width: 600px;"}
 
 While WCAG 3 won't become a recommendation for a while, we can use APCA in our work today.

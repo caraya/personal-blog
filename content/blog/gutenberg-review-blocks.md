@@ -200,22 +200,23 @@ A block can have several deprecated versions. Deprecation will be tried if the c
 
 Deprecations do not operate as a chain of updates, like database migrations. Instead, this is how Gutenberg handles deprecations:
 
-- If the current save method does not produce a valid block, the first deprecation in the `deprecations` array is passed the original saved content
-- If its save method produces valid content this deprecation is used to parse the block attributes
-    
-    - If it has a migrate method it will also be run using the attributes the deprecation parsed
-- If the first deprecation’s save method does not produce a valid block the subsequent deprecations in the array are tried until one Gutenberg encounters one that produces a valid block
-- The attributes, and any innerBlocks, from the first deprecation to generate a valid block are passed to the current save method to generate new valid content for the block
+* If the current save method does not produce a valid block, the first deprecation in the `deprecations` array is passed the original saved content
+* If its save method produces valid content this deprecation is used to parse the block attributes
+  * If it has a migrate method it will also be run using the attributes the deprecation parsed
+* If the first deprecation’s save method does not produce a valid block the subsequent deprecations in the array are tried until one Gutenberg encounters one that produces a valid block
+* The attributes, and any innerBlocks, from the first deprecation to generate a valid block are passed to the current save method to generate new valid content for the block
 
 At this point, the current block should now be in a valid state and the deprecations workflow stops.
 
-### Note:
-
+!!! note Note:
 If a deprecation’s save method does not produce a valid block then it is skipped completely. If you have several deprecations for a block and want to perform a new migration, like moving content to `InnerBlocks`, you may need to update the migrate methods in multiple deprecations in order for the required changes to be applied to all previous versions of the block.
+!!!
 
-### Note:
+&nbsp;
 
+!!! note Note:
 If a deprecation’s save method imports additional functions from other files, changes to those files may accidentally change the behavior of the deprecation. You may want to add a snapshot copy of these functions to the deprecations file instead of importing them in order to avoid inadvertently breaking the deprecations.
+!!!
 
 For blocks with multiple deprecations, it is easier to save each deprecation to a constant with the version of the block it applies to, and then add each of these to the block’s deprecated array. The deprecations in the array should be in reverse chronological order. This allows the block editor to attempt to apply the most recent and likely deprecations first, avoiding unnecessary and expensive processing.
 
@@ -265,11 +266,9 @@ We use Object Property Value Shorthand to assign values to the save and deprecat
 ```php
 <?php
 registerBlockType('create-block/demo-block', {
-
   edit: Edit,
   save,
   deprecated
-
 })
 ```
 

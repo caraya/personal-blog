@@ -1,7 +1,7 @@
 ---
 title: "Subsetting Fonts"
 date: "2014-09-13"
-categories: 
+categories:
   - "technology"
 ---
 
@@ -27,7 +27,7 @@ Web Squirrel's [webfont generator](http://www.fontsquirrel.com/tools/webfont-gen
 
 We'll take a look at the different features of the generator, paying particular attention to subsetting.
 
-\[caption id="attachment\_324646" align="aligncenter" width="766"\][![Font Squirrel WebFont Generator Upload and Basic selections](https://publishing-project.rivendellweb.net/wp-content/uploads/2014/09/webfont-generator-01.png)](http:https://publishing-project.rivendellweb.net/wp-content/uploads/2014/09/webfont-generator-01.png) Font Squirrel WebFont Generator Upload and Basic selections\[/caption\]
+\[caption id="attachment\_324646" align="aligncenter" width="766"\][![Font Squirrel WebFont Generator Upload and Basic selections](/images/2014/09/webfont-generator-01.png)](http:/images/2014/09/webfont-generator-01.png) Font Squirrel WebFont Generator Upload and Basic selections\[/caption\]
 
 Before we can start working with the font subsetting tools, we need to tell Font Squirrel which font we want to work with. Only way to do this is to upload the font.
 
@@ -45,7 +45,7 @@ I leave the following options under `subsettings` as they are:
 
 I choose custom subsetting to get the setting shown below.
 
-\[caption id="attachment\_324701" align="aligncenter" width="721"\][![Font Squirrel Subsetting Options](https://publishing-project.rivendellweb.net/wp-content/uploads/2014/09/webfont-generator-02.png)](http:https://publishing-project.rivendellweb.net/wp-content/uploads/2014/09/webfont-generator-02.png) Font Squirrel Subsetting Options\[/caption\]
+\[caption id="attachment\_324701" align="aligncenter" width="721"\][![Font Squirrel Subsetting Options](/images/2014/09/webfont-generator-02.png)](http:/images/2014/09/webfont-generator-02.png) Font Squirrel Subsetting Options\[/caption\]
 
 You can choose to subset based on character types, languages, unicode tables, single characters or unicode ranges either individually or combined.
 
@@ -57,7 +57,7 @@ I normally select the following Unicode Tables
 
 If I'm only using a few characters to create a title, I may subset the font using the single characters option. You will be able to check what your subset will look like under Subset Preview
 
-\[caption id="attachment\_324700" align="aligncenter" width="721"\][![These characters will be available after subsetting](https://publishing-project.rivendellweb.net/wp-content/uploads/2014/09/webfont-generator-03.png)](http:https://publishing-project.rivendellweb.net/wp-content/uploads/2014/09/webfont-generator-03.png) These characters will be available after subsetting\[/caption\]
+\[caption id="attachment\_324700" align="aligncenter" width="721"\][![These characters will be available after subsetting](/images/2014/09/webfont-generator-03.png)](http:/images/2014/09/webfont-generator-03.png) These characters will be available after subsetting\[/caption\]
 
 We now move into the final settings before saving our font subset.
 
@@ -69,7 +69,7 @@ Unless you know what you're doing, you can leave these settings as they are:
 - Advanced Options
 - Shortcuts
 
-\[caption id="attachment\_324699" align="aligncenter" width="722"\][![Additional option and permission](https://publishing-project.rivendellweb.net/wp-content/uploads/2014/09/webfont-generator-04.png)](http:https://publishing-project.rivendellweb.net/wp-content/uploads/2014/09/webfont-generator-04.png) Additional option and permission\[/caption\]
+\[caption id="attachment\_324699" align="aligncenter" width="722"\][![Additional option and permission](/images/2014/09/webfont-generator-04.png)](http:/images/2014/09/webfont-generator-04.png) Additional option and permission\[/caption\]
 
 You **must** check to acknowledge that the fonts you're uploading are legal to embed. Some foundries will not allow you to use their fonts for embedding directly, prefering instead that you use their online font service (their version of TypeKit).
 
@@ -81,7 +81,7 @@ As with many things in web development land; test the resulting fonts. Make sure
 
 [FontFont Subsetter](http://www.subsetter.com/) is an online service that support subsetting fonts. I tried uploading Roboto, a TTF font from Google, and I received the result .
 
-\[caption id="attachment\_301167" align="aligncenter" width="800"\][![FontFont Subsetter result when uploading Roboto font](https://publishing-project.rivendellweb.net/wp-content/uploads/2014/08/subsetter.png)](http:https://publishing-project.rivendellweb.net/wp-content/uploads/2014/08/subsetter.png) FontFont Subsetter result when uploading Roboto font\[/caption\]
+\[caption id="attachment\_301167" align="aligncenter" width="800"\][![FontFont Subsetter result when uploading Roboto font](/images/2014/08/subsetter.png)](http:/images/2014/08/subsetter.png) FontFont Subsetter result when uploading Roboto font\[/caption\]
 
 According to the FAQ, only certain flavors of TTF fonts are supported by the service. Specifically it states:
 

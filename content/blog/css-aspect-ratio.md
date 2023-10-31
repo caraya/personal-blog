@@ -53,9 +53,9 @@ img {
 
 ## Links and Resources
 
-- [Let's Learn About Aspect Ratio In CSS](https://ishadeed.com/article/css-aspect-ratio/)
-- [Setting Height And Width On Images Is Important Again](https://www.smashingmagazine.com/2020/03/setting-height-width-images-important-again/)
-- [Designing An Aspect Ratio Unit For CSS](https://www.smashingmagazine.com/2019/03/aspect-ratio-unit-css/)
-- [Aspect ratio is great](https://css-irl.info/aspect-ratio-is-great/)
-- [Mapping the width and height attributes of media container elements to their aspect-ratio](https://developer.mozilla.org/en-US/docs/Web/Media/images/aspect_ratio_mapping)
-- [Setting Height And Width On Images Is Important Again](https://www.smashingmagazine.com/2020/03/setting-height-width-images-important-again/)
+* [Let's Learn About Aspect Ratio In CSS](https://ishadeed.com/article/css-aspect-ratio/)
+* [Setting Height And Width On Images Is Important Again](https://www.smashingmagazine.com/2020/03/setting-height-width-images-important-again/)
+* [Designing An Aspect Ratio Unit For CSS](https://www.smashingmagazine.com/2019/03/aspect-ratio-unit-css/)
+* [Aspect ratio is great](https://css-irl.info/aspect-ratio-is-great/)
+* [Mapping the width and height attributes of media container elements to their aspect-ratio](https://developer.mozilla.org/en-US/docs/Web/Media/images/aspect_ratio_mapping)
+* [Setting Height And Width On Images Is Important Again](https://www.smashingmagazine.com/2020/03/setting-height-width-images-important-again/)

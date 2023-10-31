@@ -100,7 +100,7 @@ cd
 nano .aliases
 ```
 
-![Nano editor working on aliases file](https://publishing-project.rivendellweb.net/wp-content/uploads/2018/04/nano-editing-aliases-1024x697.png)
+![Nano editor working on aliases file](/images/2018/04/nano-editing-aliases-1024x697.png)
 
 Nano editor working on aliases file
 

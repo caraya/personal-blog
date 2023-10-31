@@ -17,15 +17,17 @@ This is not the case. I've made extensive changes to the theme I'm working on an
 
 I asked the question in WordPress Slack and the answer I got was it was working as designed.
 
-> That's actually deliberate, even if it's initially confusing. The customizations that you use within the site editor are saved as CPTs. You can export the templates to get the HTML version if you want to put them into the code, but this way the user's changes are non-destructive and you can safely update the theme or even change themes and keep your templates. You can't export the theme.json file yet, but that's coming. (edited) From: [Make WordPress Slack — core-editor discussion](https://wordpress.slack.com/archives/C02QB2JS7/p1644781268400009)
+> That's actually deliberate, even if it's initially confusing. The customizations that you use within the site editor are saved as CPTs. You can export the templates to get the HTML version if you want to put them into the code, but this way the user's changes are non-destructive and you can safely update the theme or even change themes and keep your templates. You can't export the theme.json file yet, but that's coming. (edited)
+>
+> From: [Make WordPress Slack — core-editor discussion](https://wordpress.slack.com/archives/C02QB2JS7/p1644781268400009)
 
 It appears that if I want to continue creating block themes, I will have to use the full site editor as the source of truth and remember to export the files periodically and to update the editor to match the layout if I'm making changes directly to the template.
 
 See these Github Issues for context and discussion on the issue:
 
-- [How to sync edits made within a theme's HTML files to the Block Editor (Full-site editing)](https://github.com/WordPress/gutenberg/issues/22469)
-- See [this comment](https://github.com/WordPress/gutenberg/issues/22469#issuecomment-669210648) in particular for a way to potentially edit the content on the file system and have it automatically reflect on the editor and the front end
-- [On Locking and TemplateLocking](https://github.com/WordPress/gutenberg/issues/29864).
+* [How to sync edits made within a theme's HTML files to the Block Editor (Full-site editing)](https://github.com/WordPress/gutenberg/issues/22469)
+* See [this comment](https://github.com/WordPress/gutenberg/issues/22469#issuecomment-669210648) in particular for a way to potentially edit the content on the file system and have it automatically reflect on the editor and the front end
+* [On Locking and TemplateLocking](https://github.com/WordPress/gutenberg/issues/29864).
 
 ## Poor or non-existent block documentation
 
@@ -89,7 +91,7 @@ I came around with a CSS solution that kind of does what I need it to. The negat
 ```css
 div[class*="wp-container"].wp-block-query-pagination {
   width: 80vw;
-  margin-left: -250px;  
+  margin-left: -250px;
 }
 ```
 

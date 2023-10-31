@@ -192,7 +192,7 @@ $setting = get_option('rivendellweb_setting_name');
 
 ## Options API
 
-The Options API allows developers to create, read, update and delete WordPress options. **_As far as I understand it, the Settings API lays out the settings page and the Options API handles storing and retrieving the options from the database._**
+The Options API allows developers to create, read, update and delete WordPress options. ***As far as I understand it, the Settings API lays out the settings page and the Options API handles storing and retrieving the options from the database.***
 
 ### Where Options are Stored?
 
@@ -218,7 +218,7 @@ $option = get_option('rivendellweb_custom_option');
 
 When saved as an array of values, the option name refers to an array, which itself may be comprised key/value pairs.
 
-**_If you have a large number of options to set, using arrays of values is the better solution since adding an array reduced the number of computationally expensive transactions required to save the options._**
+***If you have a large number of options to set, using arrays of values is the better solution since adding an array reduced the number of computationally expensive transactions required to save the options.***
 
 ```php
 <?php
@@ -236,19 +236,15 @@ echo esc_html($options_r['title']);
 
 The following functions are available as part of the Options API. The difference between the `*_site_option` functions and their plain counterparts is that the `site` functions are meant for WordPress multi site networks where the other ones are meant for individual sites.
 
-- Add Option
-    
-    - [add\_option()](https://developer.wordpress.org/reference/functions/add_option/)
-    - [add\_site\_option](https://developer.wordpress.org/reference/functions/add_site_option/)
-- Get Option
-    
-    - [get\_ottion()](https://developer.wordpress.org/reference/functions/get_option/)
-    - [get\_site\_option()](https://developer.wordpress.org/reference/functions/get_site_option/)
-- Update Option
-    
-    - [update\_option()](https://developer.wordpress.org/reference/functions/update_option/)
-    - [update\_site\_option()](https://developer.wordpress.org/reference/functions/update_site_option/)
-- Delete Option
-    
-    - [delete\_option()](https://developer.wordpress.org/reference/functions/delete_option/)
-    - [delete\_site\_option()](https://developer.wordpress.org/reference/functions/delete_site_option/)
+* Add Option
+  * [add\_option()](https://developer.wordpress.org/reference/functions/add_option/)
+  * [add\_site\_option](https://developer.wordpress.org/reference/functions/add_site_option/)
+* Get Option
+  * [get\_ottion()](https://developer.wordpress.org/reference/functions/get_option/)
+  * [get\_site\_option()](https://developer.wordpress.org/reference/functions/get_site_option/)
+* Update Option
+  * [update\_option()](https://developer.wordpress.org/reference/functions/update_option/)
+  * [update\_site\_option()](https://developer.wordpress.org/reference/functions/update_site_option/)
+* Delete Option
+  * [delete\_option()](https://developer.wordpress.org/reference/functions/delete_option/)
+  * [delete\_site\_option()](https://developer.wordpress.org/reference/functions/delete_site_option/)

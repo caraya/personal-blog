@@ -47,9 +47,9 @@ The `clamp()` function defines an acceptable range of various values for a layou
 
 The function takes three values separated by a comma and the values may be of different types.
 
-- The first value represents the minimum value. If the preferred value is less than this value, the minimum value will be used
-- The second value represents the preferred value. The value will be used as long as it stays between the minimum and maximum values
-- The third value represents the maximum allowed value. If the preferred value is larger than this value, this value will be used
+* The first value represents the minimum value. If the preferred value is less than this value, the minimum value will be used
+* The second value represents the preferred value. The value will be used as long as it stays between the minimum and maximum values
+* The third value represents the maximum allowed value. If the preferred value is larger than this value, this value will be used
 
 It is, in essence, the combination of both `min()` and `max()` features where the value will never be smaller than the minimum value or larger than the maximum value.
 

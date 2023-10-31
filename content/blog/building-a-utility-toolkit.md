@@ -9,22 +9,18 @@ The project attempts to create a set of those scripts packed as an NPM module, m
 
 The package will contain, at a minimum, the following:
 
-- ESLint
-    
-    - Google Configuration
-- CSS Linting
-- Bundler configuration
-    
-    - Webpack
-    - Rollup
-- Prettier configuration
-    
-    - JS
-    - HTML
-- Carlos's specic tools
-    
-    - WP-env
-    - Markdown Linting
+* ESLint
+  * Google Configuration
+* CSS Linting
+* Bundler configuration
+  * Webpack
+  * Rollup
+* Prettier configuration
+  * JS
+  * HTML
+* Carlos's specic tools
+  * WP-env
+  * Markdown Linting
 
 If you have local configurations, they will override the ones provided in the package so you may not have to change the package unless you want to change the default.
 

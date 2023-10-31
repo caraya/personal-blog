@@ -46,10 +46,10 @@ The most common web font usage is to provide different font files for each style
 
 With a combination of these three attributes, we define four instances for the font:
 
-- Regular (weight 400)
-- Italics (weight 400)
-- Bold (weight 700)
-- Bold-Italics (weight 700)
+* Regular (weight 400)
+* Italics (weight 400)
+* Bold (weight 700)
+* Bold-Italics (weight 700)
 
 These are the four basic weights. Depending on the project needs we may define additional combinations that register different weights, styles, and stretch values.
 
@@ -177,11 +177,11 @@ However, I'm not sure if the style engine works with all attributes available wi
 
 Another reason to say with CSS, at least for advanced typography work, is that the current WordPress style engine doesn't support [font-variant](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant) or its constituent properties:
 
-- [font-variant-alternates](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-alternates)
-- [font-variant-caps](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-caps)
-- [font-variant-east-asian](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-east-asian)
-- [font-variant-ligatures](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-ligatures)
-- [font-variant-numeric](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric)
+* [font-variant-alternates](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-alternates)
+* [font-variant-caps](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-caps)
+* [font-variant-east-asian](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-east-asian)
+* [font-variant-ligatures](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-ligatures)
+* [font-variant-numeric](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric)
 
 Other unsupported OpenType-related features are: [font-variant-alternates](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-alternates), [font-variant-position](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-position) or the lower-level [font-feature-settings](https://developer.mozilla.org/en-US/docs/Web/CSS/font-feature-settings)
 

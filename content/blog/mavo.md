@@ -45,7 +45,7 @@ To start create an empty HTML document and insert the following code in the `hea
 
 This will get the latest stable version of Mavo. If you want to get an uncompressed version, an ES5 version for older browsers or a specific version (other than the latest) head to [get Mavo](https://mavo.io/get/) select from the options given and copy the code that will appear.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2017/12/get-mavo.png)
+![](/images/2017/12/get-mavo.png)
 
 Questions to answer and links to appropriate Mavo resources download
 
@@ -117,21 +117,21 @@ The structure of the data is like this:
 - Date Started
 - Date Ended (if applicable)
 - Type of project. One of
-    
+
     - Code
     - Writing
     - Research Report
     - Mixed
     - Other
 - Stage of the project. One of
-    
+
     - Idea
     - Draft
     - In Development
     - Completed
     - Published
 - URLs
-    
+
     - Writing
     - Code
     - Other
@@ -306,7 +306,7 @@ label {
 
 ## Conclusions And What's Next
 
-![Mavo Projects Current Version](https://publishing-project.rivendellweb.net/wp-content/uploads/2017/12/mavo-projects.png)
+![Mavo Projects Current Version](/images/2017/12/mavo-projects.png)
 
 Mavo Projects Current Version
 

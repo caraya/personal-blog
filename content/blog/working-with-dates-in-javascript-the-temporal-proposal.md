@@ -3,7 +3,9 @@ title: "Working with dates in Javascript: The Temporal proposal"
 date: "2021-05-12"
 ---
 
-**Note:** The Temporal code is not ready for production, it is still possible (but not likely) that it'll change in incompatible ways before the final version is added to the ECMAScript specification, and because of that, it shouldn't be used in production until it reaches stage 4 in the TC39 process. However, you can test how it works now and decide if you want to use it in future projects.
+!!! note **Note:**
+The Temporal code is not ready for production, it is still possible (but not likely) that it'll change in incompatible ways before the final version is added to the ECMAScript specification, and because of that, it shouldn't be used in production until it reaches stage 4 in the TC39 process. However, you can test how it works now and decide if you want to use it in future projects.
+!!!
 
 One of the most infuriating things to do in Javascript is date manipulation. The default Javascript [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) object is hard to work with. This has lead to a proliferation of third-party libraries like [Moment.js](https://momentjs.com/), [Luxon](https://moment.github.io/luxon/), [date-fns](https://date-fns.org/) and even the Javascript [Intl API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl) for some types of data manipulation.
 
@@ -12,12 +14,12 @@ For this post, we'll concentrate on the [Temporal Proposal](https://tc39.es/prop
 According to the [Temporal documentation](https://tc39.es/proposal-temporal/docs/):
 
 > Date has been a long-standing pain point in ECMAScript. This is a proposal for Temporal, a global Object that acts as a top-level namespace (like Math), that brings a modern date/time API to the ECMAScript language. For a detailed look at some of the problems with Date, and the motivations for Temporal, see [Fixing JavaScript Date](https://maggiepint.com/2017/04/09/fixing-javascript-date-getting-started/). Temporal fixes these problems by:
-> 
-> - Providing easy-to-use APIs for date and time computations
-> - First-class support for all time zones, including DST-safe arithmetic
-> - Dealing only with objects representing fixed dates and times
-> - Parsing a strictly specified string format
-> - Supporting non-Gregorian calendars
+>
+> * Providing easy-to-use APIs for date and time computations
+> * First-class support for all time zones, including DST-safe arithmetic
+> * Dealing only with objects representing fixed dates and times
+> * Parsing a strictly specified string format
+> * Supporting non-Gregorian calendars
 
 SO with all the information out of the way, let's look at some code. I wrote these demos using Node; so the first step, as usual, is to require the code or import it if you're working with ESM Imports.
 
@@ -34,7 +36,7 @@ The first step in the research is to get the date right now. Note that this will
 ```js
 const date = Temporal.now.plainDateISO();
 // returns the date in ISO 8601 date format
-date.toString(); 
+date.toString();
 
 const date2 = Temporal.now.plainDateTimeISO();
 // returns the time in ISO 8601 format
@@ -131,7 +133,7 @@ instant.toString();
 // Result = '1974-03-14'
 
 ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'][
-  instant.dayOfWeek - 1
+  instant.dayOfWeek * 1
 ];
 // Result = 'Thursday'
 ```
@@ -163,9 +165,9 @@ There is plenty more you can do with the Temporal Proposal. If you're interested
 
 ## Links and Resources
 
-- [Dates and Times in Javascript](https://blogs.igalia.com/compilers/2020/06/23/dates-and-times-in-javascript/) — Igalia
-- [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) — Wikipedia
-- Javascript [Internationalization API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl) — MDN
-- [Intl.DateTimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat) — MDN
-- [Temporal Propopsal](https://tc39.es/proposal-temporal/) — TC39
-- [Temporal Proposal Cookbook](https://tc39.es/proposal-temporal/docs/cookbook.html) — TC39
+* [Dates and Times in Javascript](https://blogs.igalia.com/compilers/2020/06/23/dates-and-times-in-javascript/) — Igalia
+* [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) — Wikipedia
+* Javascript [Internationalization API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl) — MDN
+* [Intl.DateTimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat) — MDN
+* [Temporal Propopsal](https://tc39.es/proposal-temporal/) — TC39
+* [Temporal Proposal Cookbook](https://tc39.es/proposal-temporal/docs/cookbook.html) — TC39

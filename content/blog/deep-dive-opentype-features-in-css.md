@@ -13,13 +13,13 @@ The first thing we need to do to enable OpenType features is to figure out what 
 
 If you use Adobe Fonts (FKA Typekit) you can see the OpenType features available when you edit the fonts in a kit.
 
-![Fontkit OpenType edit font dialogue](https://publishing-project.rivendellweb.net/wp-content/uploads/2020/05/webkit-font-editing-dialogue.png)
+![Fontkit OpenType edit font dialogue](/images/2020/05/webkit-font-editing-dialogue.png)
 
 Fontkit OpenType feaature dialogue, part of the font section of the kit editing screen.
 
 The next image shows the details of the font editing screen that presents the available OpenType features of a font.
 
-![Fontkit OpenType feature dialogue detail](https://publishing-project.rivendellweb.net/wp-content/uploads/2020/05/fontkit-font-features.png)
+![Fontkit OpenType feature dialogue detail](/images/2020/05/fontkit-font-features.png)
 
 Detail of the font editing dialogue showing OpenType Features
 
@@ -27,7 +27,7 @@ Unfortunately, Google Fonts doesn't provide an interface to the OpenType feature
 
 For all the fonts listed in Google Fonts [Github Repo](https://github.com/google/fonts/) it will list and provide a visual demo of the OpenType features available to each font.
 
-![Fontsinfo web interfacce](https://publishing-project.rivendellweb.net/wp-content/uploads/2020/05/fontsinfo-screenshot.png)
+![Fontsinfo web interfacce](/images/2020/05/fontsinfo-screenshot.png)
 
 Fontsinfo web interfacce
 
@@ -125,11 +125,11 @@ Because I want to make sure that we cover as many supported browsers as possible
 
 ```css
 .styled {
-  -moz-font-feature-settings: "ss01", "ss02", 
+  -moz-font-feature-settings: "ss01", "ss02",
   "ss03", "ss04", "ss05", "ss06", "ss07";
-  -webkit-font-feature-settings: "ss01", "ss02", 
+  -webkit-font-feature-settings: "ss01", "ss02",
   "ss03", "ss04", "ss05", "ss06", "ss07";
-  font-feature-settings: "ss01", "ss02","ss03", 
+  font-feature-settings: "ss01", "ss02","ss03",
   "ss04", "ss05", "ss06", "ss07";
 }
 ```

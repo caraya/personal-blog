@@ -13,8 +13,8 @@ The table below shows the earliest browser that supports module scripts and the 
 
 | Feature Supported | Chrome | Edge | Firefox | Safari |
 | --- | :-: | :-: | :-: | :-: |
-| <script type="module"> | 61+ | 16+ | 60+ | 10.1+ |
-| All ES2017 features  
+| &lt;script type="module"> | 61+ | 16+ | 60+ | 10.1+ |
+| All ES2017 features
 (minus atomics+shared memory) | 58+ | 16+ | 53+ | 10.1+ |
 
 This could be easily included in a `.browserslistrc` configuration file or as part of a `package.json` file. A `.browserslistrc` file for the browser versions that support the `<script type="module">` looks like this:
@@ -43,6 +43,6 @@ Using these settings as the compilation target we'll get a module that will work
 
 A second compilation target can address the browsers that don't support modules and that will likely not support the language features we want to use.
 
-Yes, I am aware of the small gap between full ES2017 support and \`script type="module" support. I'm OK with it; evergreen browsers will continue to update to where it becomes irrelevant.
+Yes, I am aware of the small gap between full ES2017 support and `script type="module"` support. I'm OK with it; evergreen browsers will continue to update to where it becomes irrelevant.
 
-[Publish, ship, and install modern JavaScript for faster applications](https://web.dev/publish-modern-javascript/)) provides examples of how we might do this using WebPack and other tools.
+[Publish, ship, and install modern JavaScript for faster applications](https://web.dev/publish-modern-javascript/) provides examples of how we might do this using WebPack and other tools.

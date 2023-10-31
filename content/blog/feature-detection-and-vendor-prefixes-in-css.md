@@ -28,9 +28,9 @@ The easiest way to handle different vendor prefixes is to just list them all. Br
 
 Although most vendor prefixes have been consolidated we should still be careful which ones we use and in what order:
 
-- Microsoft and Opera adopted Blink for their browsers so all the prefixed rules in Blink apply to Edge and Opera too
-- IE 11 may stay with us a while longer so we still need the `-ms-` prefix for some properties
-- Blink still uses `-webkit-` prefixed properties from before the fork
+* Microsoft and Opera adopted Blink for their browsers so all the prefixed rules in Blink apply to Edge and Opera too
+* IE 11 may stay with us a while longer so we still need the `-ms-` prefix for some properties
+* Blink still uses `-webkit-` prefixed properties from before the fork
 
 ### Automating the process
 
@@ -54,7 +54,7 @@ exports.default = () => (
 
 By default, Autoprefixer uses data from [caniuse.com](https://caniuse.com/) to determine what prefixes to use for the default set of browsers.
 
-## Test browser support for a feature using `@supports`
+## Test browser support for a feature using @supports
 
 CSS way to test if a browser supports a given feature is to use `@supports` to query if a browser supports a feature.
 

@@ -37,11 +37,11 @@ A second, and related, issue with semantic HTML is using the correct element for
 
 When you create semantic elements in your document the browser gives you affordances like:
 
-- Search engines will consider its contents as important keywords to influence the page's search rankings (see SEO)
-- Screen readers can use it as a signpost to help visually impaired users navigate a page
-- Finding blocks of meaningful code is significantly easier than searching through endless divs with or without semantic or namespaced classes
-- Suggests to the developer the type of data that will be populated
-- Semantic naming mirrors proper custom element/component naming
+* Search engines will consider its contents as important keywords to influence the page's search rankings (see SEO)
+* Screen readers can use it as a signpost to help visually impaired users navigate a page
+* Finding blocks of meaningful code is significantly easier than searching through endless divs with or without semantic or namespaced classes
+* Suggests to the developer the type of data that will be populated
+* Semantic naming mirrors proper custom element/component naming
 
 Just by looking at the element below, we know what it is and what its purpose on the page is.
 
@@ -61,19 +61,19 @@ You could also create your own element that will look like an `h1` element but y
 
 You should always use a predefined element where one is available. The `div` and `span` elements should only be used when there is no predefined element available.
 
-- [<article>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article)
-- [<aside>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside)
-- [<details>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)
-- [<figure>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure)
-- [<figcaption>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figcaption)
-- [<footer>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer)
-- [<header>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header)
-- [<main>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main)
-- [<mark>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/mark)
-- [<nav>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav)
-- [<section>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/section)
-- [<summary>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary)
-- [<time>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time)
+* [&lt;article>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article)
+* [&lt;aside>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside)
+* [&lt;details>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)
+* [&lt;figure>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure)
+* [&lt;figcaption>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figcaption)
+* [&lt;footer>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer)
+* [&lt;header>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header)
+* [&lt;main>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main)
+* [&lt;mark>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/mark)
+* [&lt;nav>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav)
+* [&lt;section>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/section)
+* [&lt;summary>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary)
+* [&lt;time>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time)
 
 Whenever you're looking at the structure of a page you should always look at where semantic elements would be the most appropriate.
 
@@ -90,7 +90,7 @@ Most of the time we will see buttons coded like this:
 But we also see people coding buttons like this:
 
 ```html
-<div 
+<div
   id="saveChanges">
   Save
 </div>
@@ -105,7 +105,7 @@ Some of the things you'd have to fix to make this "button" more accessible are.
 `div` elements are neutral, they don't represent anything in particular so, if we want to assign a given role to a `div` element you need to be explicit about it.
 
 ```html
-<div 
+<div
   id="saveChanges"
   role="button">
   Save
@@ -124,17 +124,16 @@ Since our div "button" is not an actual button then it's up to developers to mak
 
 The [tabindex](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex) attribute controls whether a user can tab through the element. It has three possible values:
 
-- `-1`: prevents navigation through the element using the keyboard. The element can still be accessed programmatically
-- `0`: Allows the element to be navigated via the keyboard
-- `> 1`: The element will be navigated after all elements with `0` value and those with lower positive values.
-    
-    - tabindex="4" is focused before tabindex="5" and tabindex="0", but after tabindex="3". If multiple elements share the same positive tabindex value, they are focused in document order
-    - Do not use values greater than `0` in `tabindex`. They will make it harder for people using assistive technologies to navigate your documents
+* `-1`: prevents navigation through the element using the keyboard. The element can still be accessed programmatically
+* `0`: Allows the element to be navigated via the keyboard
+* `> 1`: The element will be navigated after all elements with `0` value and those with lower positive values.
+  * tabindex="4" is focused before tabindex="5" and tabindex="0", but after tabindex="3". If multiple elements share the same positive tabindex value, they are focused in document order
+  * Do not use values greater than `0` in `tabindex`. They will make it harder for people using assistive technologies to navigate your documents
 
 The button now looks like this:
 
 ```html
-<div 
+<div
   id="saveChanges"
   role="button"
   tabindex="0">
@@ -180,7 +179,7 @@ In addition to the `aria-role` attribute we added earlier, there are other that 
 If the button is a [toggle button](https://inclusive-components.design/toggle-button/), the `aria-pressed` attribute tells assistive technology whether a button is pressed or not. Since we created a custom button, we need to explicitly set the attribute in the HTML element.
 
 ```html
-<div 
+<div
   id="saveChanges"
   role="button"
   tabindex="0"
@@ -193,7 +192,6 @@ We then modify the `doSomething` function to toggle the value of the property on
 
 1. set the default for the `aria-pressed` attribute to false.
 2. We the attribute we created in an [if/else](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) statement
-    
     1. If the `aria-pressed` is true we set it to false using [setAttribute](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute); otherwise, we set it to true.
 
 ```js
@@ -256,17 +254,10 @@ Describes the technical aspect of building Accessible Rich Internet Applications
 Provides definitions of ARIA roles, states, and properties, and focus management
 
 [WCAG 2 Overview](https://www.w3.org/WAI/standards-guidelines/wcag/)
-
-Introduces the [Web Content Accessibility Guidelines (WCAG) 2.1](https://www.w3.org/TR/WCAG21/) as the current version of accepted practices to create accessible content. : This is different from ARIA in that it doesn't directly define the structure of a document but it handles content, broadly defined as:
-
-Natural information such as text, images, and sounds
-
-code or markup that defines the structure, presentation, etc.
-
-There is a [WCAG 2.2 Candidate Recommendation](https://www.w3.org/TR/WCAG22/) that is expected to become a recommendation in December 2022
+: Introduces the [Web Content Accessibility Guidelines (WCAG) 2.1](https://www.w3.org/TR/WCAG21/) as the current version of accepted practices to create accessible content.
+: This is different from ARIA in that it doesn't directly define the structure of a document but it handles content, broadly defined as: Natural information such as text, images, and sounds, code or markup that defines the structure, presentation, etc.
+: There is a [WCAG 2.2 Candidate Recommendation](https://www.w3.org/TR/WCAG22/) that is expected to become a recommendation in December 2022
 
 [WCAG 3 Introduction](https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/)
-
-WCAG 3 is the next generation of the W3C accessibility guidelines
-
-The release date is uncertain
+: WCAG 3 is the next generation of the W3C accessibility guidelines
+: The release date is uncertain

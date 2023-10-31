@@ -1,7 +1,7 @@
 ---
 title: "Legal Issues"
 date: "2015-08-10"
-categories: 
+categories:
   - "typography"
 ---
 
@@ -25,7 +25,7 @@ There are also purpose specific fonts like [Adobe Source Code Pro](http://adobe-
 
 A good starting point, if you're looking for free/open source fonts is the [free font list](http://www.fontsquirrel.com/fonts/list/find_fonts) from Font Squirrel. You can look at the fonts and download them to test on your local system before you decide if you want to use the font. You can also check sites like [Fonts in Use](http://fontsinuse.com/) to see other uses of the fonts you're evaluating.
 
-\[caption id="attachment\_786428" align="aligncenter" width="600"\][![example screenshot from fontsinuse.com with samples of sites/apps using Roboto as their font](https://publishing-project.rivendellweb.net/wp-content/uploads/2015/06/fonts-in-use-example.png)](http:https://publishing-project.rivendellweb.net/wp-content/uploads/2015/06/fonts-in-use-example.png) Example screenshot from fontsinuse.com with samples of sites/apps using Roboto as their font\[/caption\]
+\[caption id="attachment\_786428" align="aligncenter" width="600"\][![example screenshot from fontsinuse.com with samples of sites/apps using Roboto as their font](/images/2015/06/fonts-in-use-example.png)](http:/images/2015/06/fonts-in-use-example.png) Example screenshot from fontsinuse.com with samples of sites/apps using Roboto as their font\[/caption\]
 
 Example from [Fonts in Use](fontsinuse.com) with samples of sites/apps using Roboto as their font
 

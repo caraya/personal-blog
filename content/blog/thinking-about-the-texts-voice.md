@@ -7,7 +7,7 @@ As I've played more and more with fonts, both in terms of trying to find good pa
 
 Reading issue 61 of [Coffee Table Typography](https://www.getrevue.co/profile/coffeetabletypography/issues/61-interpunct-for-the-future-145914) brought some display fonts for titles to my attention. It also raised some interesting questions about the voice of a text and how do we convey that voice through typography and other elements specific to the web when crafting type and reading experiences online.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2018/12/alfred-bester-covers.jpg)
+![](/images/2018/12/alfred-bester-covers.jpg)
 
 Two covers from Alfred Bester Novels using Serif Gothic
 
@@ -35,7 +35,7 @@ Example of Handlee Regular.
 
 Pacifico is the opposite, more formal and what I would expect to see in a diploma or other formal documents.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2018/12/script-fonts-Google-Pacifico.png)
+![](/images/2018/12/script-fonts-Google-Pacifico.png)
 
 Example of Pacifico font.
 

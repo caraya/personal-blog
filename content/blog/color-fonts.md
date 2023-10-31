@@ -7,11 +7,11 @@ CSS Fonts Level 4 introduces support for [color fonts](https://www.w3.org/TR/css
 
 In theory (there are no browsers that currently support this) defining a custom palette for color fonts look like this:
 
-- The `@font-paletter-values` at-rule
-- The name of the palette we are creating
-- The font family that the palette is associated with
-- The base palette that we're overriding
-- A list of one or more override colors
+* The `@font-paletter-values` at-rule
+* The name of the palette we are creating
+* The font family that the palette is associated with
+* The base palette that we're overriding
+* A list of one or more override colors
 
 ```css
 @font-palette-values Cooler {
@@ -56,5 +56,5 @@ The font I tested with renders as white letters in black background
 
 ## More information
 
-- [COLRv1 Color Gradient Vector Fonts in Chrome 98](https://developer.chrome.com/blog/colrv1-fonts/)
-- [Colorful typography on the web: get ready for multicolor fonts](https://pixelambacht.nl/2014/multicolor-fonts/)
+* [COLRv1 Color Gradient Vector Fonts in Chrome 98](https://developer.chrome.com/blog/colrv1-fonts/)
+* [Colorful typography on the web: get ready for multicolor fonts](https://pixelambacht.nl/2014/multicolor-fonts/)

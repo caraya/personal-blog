@@ -7,11 +7,11 @@ Web performance is hard. There is no one size fits all solution and the amount o
 
 The following figures show how much stuff measured by the median number of requests and size in kilobytes have grown in a 3-year period from 2016 to March 2019 (data is taken from the HTTP Archive's [state of the web](https://httparchive.org/reports/state-of-the-web) report).
 
-![Timeseries of median total requests over a 3 year period](https://publishing-project.rivendellweb.net/wp-content/uploads/2019/04/3-year-requests.png)
+![Timeseries of median total requests over a 3 year period](/images/2019/04/3-year-requests.png)
 
 Timeseries of median total requests over a 3 year period
 
-![Timeseries of median total kilobytes over a 3 year period](https://publishing-project.rivendellweb.net/wp-content/uploads/2019/04/3-year-total-kilobytes.png)
+![Timeseries of median total kilobytes over a 3 year period](/images/2019/04/3-year-total-kilobytes.png)
 
 Timeseries of total kilobytes over a 3 year period
 
@@ -45,10 +45,10 @@ Pick what it is that you want to measure based on your research then get to it. 
 Some of the things you may want to measure:
 
 - Loading speeds for different parts of the site on desktop and mobile
-    
+
     - first versus second and third visits
 - Additional measurements you can get from Webpage Test
-    
+
     - Time to first byte on mobile versus desktop
     - Load Time
     - First Byte
@@ -56,7 +56,7 @@ Some of the things you may want to measure:
     - Visually Complete
     - Speed Index
 - Additional metrics from lighthouse runs
-    
+
     - First Contentful Paint
     - Time to Interactive
     - First Meaningful Paint
@@ -173,7 +173,7 @@ Possible values for hints are:
 
 As a second warning/error stage, Webpack's [size-plugin](https://www.npmjs.com/package/size-plugin) reports on each bundle size and whether the size as changed since the last time the command was run.
 
-![Webpack size plugin in action](https://publishing-project.rivendellweb.net/wp-content/uploads/2019/05/webpack-performance.png)
+![Webpack size plugin in action](/images/2019/05/webpack-performance.png)
 
 Webpack size plugin in action
 
@@ -204,7 +204,7 @@ One possibility is that we're loading too many dependencies that we don't need. 
 
 [Webpack Bundler Analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer) produces a graphical visualization of the modules you app uses.
 
-![Webpack Analyzer Output](https://publishing-project.rivendellweb.net/wp-content/uploads/2019/05/webpack-bundle-analyzer.gif)
+![Webpack Analyzer Output](/images/2019/05/webpack-bundle-analyzer.gif)
 
 Webpack Analyzer Output
 

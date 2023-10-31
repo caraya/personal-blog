@@ -7,7 +7,7 @@ One of the things that I've always been curious about, and that didn't become an
 
 This is what we do when working with Media Queries to adapt layouts to different form factors, we change the visual order of the content without altering the order of the content in the document or the [semantics](http://html5doctor.com/lets-talk-about-semantics/) that we've assigned to elements in the content.
 
-![Example of an accessibility tree from Google Web Fundamentals](https://publishing-project.rivendellweb.net/wp-content/uploads/2018/03/treestructure.jpg)
+![Example of an accessibility tree from Google Web Fundamentals](/images/2018/03/treestructure.jpg)
 
 Example of an accessibility tree from [Google Web Fundamentals](https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree)
 

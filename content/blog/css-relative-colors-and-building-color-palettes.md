@@ -60,4 +60,8 @@ You can then use the color definition anywhere you can use a color. For example:
 
 If your browser supports relative colors (as of May 2023, only Safari), you can view a fuller example below
 
-<iframe height="977" style="width: 100%;" scrolling="no" title="Relative colors and Color contrast" src="https://codepen.io/caraya/embed/yLRExLM?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/caraya/pen/yLRExLM"> Relative colors and Color contrast</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>) on <a href="https://codepen.io">CodePen</a>. </iframe>
+<iframe height="300.93157958984375" style="width: 100%;" scrolling="no" title="Relative colors and Color contrast" src="https://codepen.io/caraya/embed/jOeKMBw?default-tab=css" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/caraya/pen/jOeKMBw">
+  Relative colors and Color contrast</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>

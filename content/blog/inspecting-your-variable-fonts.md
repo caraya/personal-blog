@@ -7,35 +7,35 @@ One of the most frustrating things of working with Variable Fonts is that we hav
 
 [Axis Praxis](https://www.axis-praxis.org/) is a good starting point. It provides you with a way to test and play with Variable Fonts but you get only one experiment at a time.
 
-![Axis Praxis App on Firefox Nightly 61.0a](https://publishing-project.rivendellweb.net/wp-content/uploads/2018/04/axis-praxis.png)
+![Axis Praxis App on Firefox Nightly 61.0a](/images/2018/04/axis-praxis.png)
 
 Axis Praxis App on Firefox Nightly 61.0a
 
 [Wakamai Fondue](https://wakamaifondue.com/) (funny way of saying what can my font do?) provides a more thorough and more fun way to test specific variable fonts that you want to use in your projects.
 
-![Wakamai Fondue on Firefox Nightly 61.0a](https://publishing-project.rivendellweb.net/wp-content/uploads/2018/04/Wakamai-Fondue.png)
+![Wakamai Fondue on Firefox Nightly 61.0a](/images/2018/04/Wakamai-Fondue.png)
 
 Wakamai Fondue on Firefox Nightly 61.0a
 
 But it does more than just show you what you can do with the font. It creates visual displays of what the selected instance (pre-configured axes combination), gives you the generated CSS and what values the instance used for the axes on the font.
 
-![Wakamai fondue VF font instance example](https://publishing-project.rivendellweb.net/wp-content/uploads/2018/04/wakamaifondue-instance.png)
+![Wakamai fondue VF font instance example](/images/2018/04/wakamaifondue-instance.png)
 
 Wakamai fondue VF font instance example
 
-![Wakamaifondue VF font instance CSS listing](https://publishing-project.rivendellweb.net/wp-content/uploads/2018/04/wakamafondue-instance-css.png)
+![Wakamaifondue VF font instance CSS listing](/images/2018/04/wakamafondue-instance-css.png)
 
 Wakamaifondue VF font instance CSS listing
 
 It also shows you all the classes it creates for the instances available on the font. If you've loaded the font using `@font-face` you can just copy the example into your document to test the font.
 
-![Wakamaifondue VF font character listing](https://publishing-project.rivendellweb.net/wp-content/uploads/2018/04/wakamaifondue-characters.png)
+![Wakamaifondue VF font character listing](/images/2018/04/wakamaifondue-characters.png)
 
 Wakamaifondue VF font character listing
 
 Wakamaifondue will also list the characters available on the font and give you a way to change the variable axes to see what individual characters will look like under different axes combinations.
 
-![Wakamaifondue display Opentype layout features available to the font. The ones enabled will be added to the generated CSS style sheet](https://publishing-project.rivendellweb.net/wp-content/uploads/2018/04/wakamaifondue-layout.png)
+![Wakamaifondue display Opentype layout features available to the font. The ones enabled will be added to the generated CSS style sheet](/images/2018/04/wakamaifondue-layout.png)
 
 Wakamaifondue display Opentype layout features available to the font. The ones enabled will be added to the generated CSS style sheet
 
@@ -43,7 +43,7 @@ If the font has Opentype layout features available they will appear here along w
 
 There may not be any features under this section. It depends on the font.
 
-![Wakamaifondue Generated CSS](https://publishing-project.rivendellweb.net/wp-content/uploads/2018/04/wakamaifondue-css.png)
+![Wakamaifondue Generated CSS](/images/2018/04/wakamaifondue-css.png)
 
 Wakamaifondue Generated CSS
 

@@ -57,20 +57,16 @@ I chose to use the [Commonmark](https://commonmark.org/) preset. Commonmark solv
 I also chose to enable the following options by setting them to true:
 
 `html`
-
-Enable HTML tags in the source
+: Enable HTML tags in the source
 
 `xhtmlOut`
-
-Uses `/` to close single tags (<br />). :This is only for full CommonMark compatibility.
+: Uses `/` to close single tags (<br />). : This is only for full CommonMark compatibility.
 
 `linkify`
-
-Autoconvert URL-like text to links
+: Autoconvert URL-like text to links
 
 `typographer`
-
-Enable some language-neutral replacement + quotes beautification
+: Enable some language-neutral replacement + quotes beautification
 
 For the full list of replacements, see [https://github.com/markdown-it/markdown-it/blob/master/lib/rules\_core/replacements.js](https://github.com/markdown-it/markdown-it/blob/master/lib/rules_core/replacements.js)
 

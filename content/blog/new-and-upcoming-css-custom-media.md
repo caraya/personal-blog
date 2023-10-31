@@ -32,22 +32,22 @@ In the same article, Adam provides examples of custom media queries from his [Op
 @custom-media --portrait      (orientation: portrait);
 @custom-media --landscape     (orientation: landscape);
 
-@custom-media --md-only       (480px <= width <= 768px);
-@custom-media --md-n-above    (width >= 768px);
-@custom-media --md-n-below    (width <= 768px);
-@custom-media --md-phone      (--md-only) and (--portrait);
+@custom-media --md-only (480px <= width <= 768px);
+@custom-media --md-n-above (width >= 768px);
+@custom-media --md-n-below (width <= 768px);
+@custom-media --md-phone (--md-only) and (--portrait);
 
-@custom-media --xxl-only      (1440px <= width <= 1920px);
-@custom-media --xxl-n-above   (width >= 1920px);
-@custom-media --xxl-n-below   (width <= 1920px);
+@custom-media --xxl-only (1440px <= width <= 1920px);
+@custom-media --xxl-n-above (width >= 1920px);
+@custom-media --xxl-n-below (width <= 1920px);
 
 /* Capability Variables */
-@custom-media --touch    (hover: none) and (pointer: coarse);
-@custom-media --stylus   (hover: none) and (pointer: fine);
-@custom-media --pointer  (hover) and (pointer: coarse);
-@custom-media --mouse    (hover) and (pointer: fine);
+@custom-media --touch (hover: none) and (pointer: coarse);
+@custom-media --stylus (hover: none) and (pointer: fine);
+@custom-media --pointer (hover) and (pointer: coarse);
+@custom-media --mouse (hover) and (pointer: fine);
 
-@custom-media --HDcolor  (dynamic-range: high);
+@custom-media --HDcolor (dynamic-range: high);
 
 /* Preference Variables */
 @custom-media --highContrast  (prefers-contrast: high);
@@ -62,6 +62,6 @@ In the same article, Adam provides examples of custom media queries from his [Op
 
 ## Links and Resources
 
-- [Custom Media Queries specification](https://www.w3.org/TR/mediaqueries-5/#custom-mq)
-- [Custom media queries PostCSS plugin](https://github.com/postcss/postcss-custom-media)
-- [Chromium Issue](https://bugs.chromium.org/p/chromium/issues/detail?id=1234172) — star the issue to improve odds of development
+* [Custom Media Queries specification](https://www.w3.org/TR/mediaqueries-5/#custom-mq)
+* [Custom media queries PostCSS plugin](https://github.com/postcss/postcss-custom-media)
+* [Chromium Issue](https://bugs.chromium.org/p/chromium/issues/detail?id=1234172) — star the issue to improve odds of development

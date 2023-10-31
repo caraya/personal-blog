@@ -13,9 +13,9 @@ However, even though it is meant for machine communication, JSON is still writte
 
 As such, I find the ideas in [Suggested improvements to JSON](http://bolinfest.com/essays/json.html) to match my thinking on the subject. They can be summarized as:
 
-- Lack of support for comments
-- All keys and string values must be quoted
-- The JSON specification is ES3 compliant and, as such, optimizations like adding trailing commas at the end of object and array literals are treated as errors
+* Lack of support for comments
+* All keys and string values must be quoted
+* The JSON specification is ES3 compliant and, as such, optimizations like adding trailing commas at the end of object and array literals are treated as errors
 
 There are extensions to JSON that address these pain points.
 
@@ -27,9 +27,9 @@ JSON5 is fully compatible with JSON, all valid JSON files are also valid JSON5. 
 
 For the purposes of this post, I will concentrate on what, to me, are developer experiences enhancements:
 
-- JSON5 allows single and multiline C-style comments
-- JSON5 allows unquoted key names
-- JSON5 allows dangling commas in objects and arrays
+* JSON5 allows single and multiline C-style comments
+* JSON5 allows unquoted key names
+* JSON5 allows dangling commas in objects and arrays
 
 The biggest drawback is that browsers or Node don't have built-in support for JSON5 so, if we want to use it, we need to load a third-party module with the corresponding overhead.
 
@@ -43,7 +43,7 @@ We can then write the conversion script.
 
 ### Creating the JSON5 file
 
-I'm using some of the features
+I'm using some of the JSON5 features that will improve the developer experience.
 
 ### Creating the conversion script
 
@@ -183,7 +183,7 @@ The `footer` element closes any CSS element that we have open.
 
 ```js
 const header = `/*
-Stylesheet with Token variables. Generated as part of an experiment 
+Stylesheet with Token variables. Generated as part of an experiment
 to convert JSON5 to CSS variables
 
 @author Carlos Araya

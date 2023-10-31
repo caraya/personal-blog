@@ -32,10 +32,10 @@ const pluginImages = require("./eleventy.config.images.js");
 // AutomaticNoOpener
 const posthtml = require('posthtml');
 const { posthtml: automaticNoopener, parser } = require('eleventy-plugin-automatic-noopener');
-const NoOpOptions = parser({noreferrer: true});
+const NoOpOptions = parser({ noreferrer: true });
 const pluginTOC = require('eleventy-plugin-toc');
 
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
 	// Copy the contents of the `public` folder to the output folder
 	// For example, `./public/css/` ends up in `_site/css/`
 	eleventyConfig.addPassthroughCopy({
@@ -54,15 +54,15 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addWatchTarget("content/**/*.{svg,webp,png,jpeg}");
 
 	// App plugins
-	eleventyConfig.addPlugin(pluginDrafts);
-	eleventyConfig.addPlugin(pluginImages);
+	// eleventyConfig.addPlugin(pluginDrafts);
+	// eleventyConfig.addPlugin(pluginImages);
 
 	// Official plugins
 	eleventyConfig.addPlugin(pluginRss);
 	eleventyConfig.addPlugin(pluginSyntaxHighlight);
 	eleventyConfig.addPlugin(pluginNavigation);
 	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
-	eleventyConfig.addPlugin(pluginBundle);
+	// eleventyConfig.addPlugin(pluginBundle);
 
 	// Local additions
 	eleventyConfig.addPlugin(pluginMermaid);
@@ -70,14 +70,14 @@ module.exports = function(eleventyConfig) {
 		showEmoji: false,
 	});
 	eleventyConfig.addPlugin(pluginTOC, {
-		tags: ['h2', 'h3'],
+		tags: [ 'h2', 'h3' ],
 		ul: true,
 		ol: false,
 	})
 
 	// Transforms
-	eleventyConfig.addTransform('posthtml', function(HTMLString, outputPath) {
-		if(outputPath && outputPath.endsWith('.html')) {
+	eleventyConfig.addTransform('posthtml', function (HTMLString, outputPath) {
+		if (outputPath && outputPath.endsWith('.html')) {
 			return posthtml([
 				automaticNoopener(NoOpOptions),
 			])
@@ -102,15 +102,15 @@ module.exports = function(eleventyConfig) {
 
 	eleventyConfig.addFilter('htmlDateString', (dateObj) => {
 		// dateObj input: https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
-		return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
+		return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('yyyy-LL-dd');
 	});
 
 	// Get the first `n` elements of a collection.
 	eleventyConfig.addFilter("head", (array, n) => {
-		if(!Array.isArray(array) || array.length === 0) {
+		if (!Array.isArray(array) || array.length === 0) {
 			return [];
 		}
-		if( n < 0 ) {
+		if (n < 0) {
 			return array.slice(n);
 		}
 
@@ -125,59 +125,42 @@ module.exports = function(eleventyConfig) {
 	// Return all the tags used in a collection
 	eleventyConfig.addFilter("getAllTags", collection => {
 		let tagSet = new Set();
-		for(let item of collection) {
+		for (let item of collection) {
 			(item.data.tags || []).forEach(tag => tagSet.add(tag));
 		}
 		return Array.from(tagSet);
 	});
 
 	eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
-		return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
+		return (tags || []).filter(tag => [ "all", "nav", "post", "posts" ].indexOf(tag) === -1);
 	});
 
 	// Add all the filters in assets/filters.js
 	for (let name in filters) {
-		eleventyConfig.addFilter(name, filters[name]);
+		eleventyConfig.addFilter(name, filters[ name ]);
 	}
 
 	// COLLECTIONS
-	// eleventyConfig.addCollection("postsByMonth", (collectionApi) => {
-	// 	const posts = collectionApi.getFilteredByTag("posts").reverse();
-	// 	const ret = {};
 
-	// 	for (let post of posts) {
-	// 		let key = filters.format_date(post.date, "iso").substring(0, 7); // YYYY-MM
-	// 		ret[key] ??= [];
-	// 		ret[key].push(post);
-	// 	}
 
-	// 	return ret;
-	// });
-
-	// eleventyConfig.addCollection("postsByYear", (collectionApi) => {
-	// 	const posts = collectionApi.getFilteredByTag("posts").reverse();
-	// 	const ret = {};
-
-	// 	for (let post of posts) {
-	// 		let key = post.date.getFullYear();
-	// 		ret[key] ??= [];
-	// 		ret[key].push(post);
-	// 	}
-
-	// 	return ret;
-	// });
-
+	// CONFIG ON
+	eleventyConfig.on("eleventy.before", ({ runMode }) => {
+		// Set the environment variable
+		if (runMode === "serve" || runMode === "watch") {
+			process.env.BUILD_DRAFTS = true
+		}
+	})
 
 	// MARKDOWN CUSTOMIZATIONS
 	// 1. Markdown Options
 	let options = {
-    html: true,
-    breaks: false,
-    linkify: false,
-  };
+		html: true,
+		breaks: false,
+		linkify: false,
+	};
 
 	// 2. Use the custom library
-  eleventyConfig.setLibrary("md", markdownIt(options));
+	eleventyConfig.setLibrary("md", markdownIt(options));
 
 	// 3. Configure Markdown-It plugins
 	eleventyConfig.amendLibrary("md", mdLib => {
@@ -188,7 +171,7 @@ module.exports = function(eleventyConfig) {
 				symbol: "#",
 				ariaHidden: false,
 			}),
-			level: [1,2,3,4],
+			level: [ 1, 2, 3, 4 ],
 			slugify: eleventyConfig.getFilter("slugify")
 		});
 		mdLib.use(markdownItDefList);
@@ -201,17 +184,17 @@ module.exports = function(eleventyConfig) {
 		mdLib.use(markdownItFootnotes);
 		mdLib.use(admonitions);
 		mdLib.use(markdownItKbd, {
-			presets: [{
-					name: 'icons'
-			}]
+			presets: [ {
+				name: 'icons'
+			} ]
 		});
 		mdLib.use(markdownItAttrs, {
-				// Default options
-				leftDelimiter: '{',
-				rightDelimiter: '}',
-				// All attributes are allowed
-				allowedAttributes: []
-			});
+			// Default options
+			leftDelimiter: '{',
+			rightDelimiter: '}',
+			// All attributes are allowed
+			allowedAttributes: []
+		});
 	});
 
 	// Features to make your build faster (when you need them)

@@ -128,7 +128,7 @@ Current work in patterns uses a very low-level Gutenberg syntax. For example, a 
 
 and looks like this:
 
-![Hero Pattern for use with Gutenberg](https://publishing-project.rivendellweb.net/wp-content/uploads/2020/04/hero01-gutenberg-pattern.png)
+![Hero Pattern for use with Gutenberg](/images/2020/04/hero01-gutenberg-pattern.png)
 
 Hero Pattern for use with Gutenberg
 

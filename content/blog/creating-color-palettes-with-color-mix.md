@@ -1,5 +1,5 @@
 ---
-title: "Creating color palettes with `color-mix()`"
+title: "Creating color palettes with color-mix()"
 date: "2023-07-26"
 ---
 
@@ -119,7 +119,7 @@ In `--color-50` we use the least amount of color and `--color-400` uses the most
       var(--oklab-base) 50%,
       white);
     --color-100: color-mix(
-      in oklab, 
+      in oklab,
       var(--oklab-base) 60%,
       white);
     --color-200: color-mix(

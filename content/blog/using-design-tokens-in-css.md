@@ -1,19 +1,20 @@
 ---
 title: "Using Design Tokens in CSS"
 date: "2023-03-13"
+youtube: true
 ---
 
 Design tokens provide a way to create representations of design assets like colors, fonts, spacing, animations, assets, etc., for styling and building cross-platform user interfaces.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/q5qIowMyVt8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<lite-youtube videoid="q5qIowMyVt8"></lite-youtube>
 
 One of the challenges with cross-platform product development is that operating systems use different style properties and formats to represent the same data. For example, the following code represents the same colors on different platforms:
 
-- HEX (CSS): FCC821
-- RGB (CSS): rgb(252, 200, 33)
-- RGBA (CSS): rgba(252, 200, 33, 1)
-- LCH (CSS): lch(83.525%, 53.373%, 83.39%)
-- Octal (Android/Flutter): 77144041
+* HEX (CSS): FCC821
+* RGB (CSS): rgb(252, 200, 33)
+* RGBA (CSS): rgba(252, 200, 33, 1)
+* LCH (CSS): lch(83.525%, 53.373%, 83.39%)
+* Octal (Android/Flutter): 77144041
 
 Instead of using these individual properties, designers and engineers reference a token like `color.palette.primary` representing all four color codes. The color will always be the same regardless of the platform or programming language.
 
@@ -216,9 +217,9 @@ In theory, we could also transform the Design Tokens files into other formats li
 
 ## Links and Resources
 
-- [Introduction to design tokens](https://specifyapp.com/blog/introduction-to-design-tokens)
-- [What Are Design Tokens? A Design Systems Tool](https://xd.adobe.com/ideas/principles/design-systems/what-are-design-tokens/)
-- [Style Dictionary](https://amzn.github.io/style-dictionary/#/examples)
-- [Style Dictionary Playground](https://www.style-dictionary-play.dev/)
-- [How to manage your Design Tokens with Style Dictionary](https://didoo.medium.com/how-to-manage-your-design-tokens-with-style-dictionary-98c795b938aa)
-- [PostCSS design tokens plugin](https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-design-tokens)
+* [Introduction to design tokens](https://specifyapp.com/blog/introduction-to-design-tokens)
+* [What Are Design Tokens? A Design Systems Tool](https://xd.adobe.com/ideas/principles/design-systems/what-are-design-tokens/)
+* [Style Dictionary](https://amzn.github.io/style-dictionary/#/examples)
+* [Style Dictionary Playground](https://www.style-dictionary-play.dev/)
+* [How to manage your Design Tokens with Style Dictionary](https://didoo.medium.com/how-to-manage-your-design-tokens-with-style-dictionary-98c795b938aa)
+* [PostCSS design tokens plugin](https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-design-tokens)

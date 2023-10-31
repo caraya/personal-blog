@@ -22,52 +22,40 @@ var f = new FontFace(
 The optional array of options mirrors the options of the CSS `@font-face` rule.
 
 `FontFace.ascentOverride`
-
-retrieves or sets the ascent metric of the font
+: retrieves or sets the ascent metric of the font
 
 `FontFace.descentOverride`
-
-retrieves or sets the descent metric of the font
+: retrieves or sets the descent metric of the font
 
 `FontFace.display`
-
-determines how a font face is displayed based on whether and when it is downloaded and ready to use.
+: determines how a font face is displayed based on whether and when it is downloaded and ready to use.
 
 `FontFace.family`
-
-retrieves or sets the family of the font.
+: retrieves or sets the family of the font.
 
 `FontFace.featureSettings`
-
-retrieves or sets infrequently used font features that are not available from a font's variant properties. It is equivalent to the font-feature-settings descriptor.
+: retrieves or sets infrequently used font features that are not available from a font's variant properties. It is equivalent to the font-feature-settings descriptor.
 
 `FontFace.lineGapOverride`
-
-retrieves or sets the line-gap metric of the font
+: retrieves or sets the line-gap metric of the font
 
 `FontFace.stretch`
-
-retrieves or sets how the font stretches
+: retrieves or sets how the font stretches
 
 `FontFace.style`
-
-retrieves or sets the style of the font. This controls the font italics or oblique values
+: retrieves or sets the style of the font. This controls the font italics or oblique values
 
 `FontFace.unicodeRange`
-
-retrieves or sets the range of unicode codepoints encompassing the font
+: retrieves or sets the range of unicode codepoints encompassing the font
 
 `FontFace.variant`
-
-retrieves or sets the variant of the font
+: retrieves or sets the variant of the font
 
 `FontFace.variationSettings`
-
-retrieves or sets the variation settings of the font.
+: retrieves or sets the variation settings of the font.
 
 `FontFace.weight`
-
-contains the weight of the font
+: contains the weight of the font
 
 Once the font has been set up we can call the `load()` method to start the font loading process. The method returns a promise that will resolve when the font finishes loading.
 
@@ -110,7 +98,7 @@ document.fonts.ready
   console.log("fonts are ready");
   console.log('There are', document.fonts.size, 'FontFaces loaded.\n');
 
-    // document.fonts has a Set-like interface. 
+    // document.fonts has a Set-like interface.
     // Here, we iterate over its values.
     for (var fontFace of document.fonts.values()) {
       console.log('FontFace:');

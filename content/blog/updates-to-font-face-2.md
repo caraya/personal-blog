@@ -113,8 +113,7 @@ fallback
 : Gives the font face an extremely small block period and a short swap period.
 
 optional
-
-Gives the font face an extremely small block period and no swap period.
+: Gives the font face an extremely small block period and no swap period.
 
 ## font-feature-settings
 
@@ -122,16 +121,16 @@ Controls advanced typographic features in OpenType fonts.
 
 Whenever possible, authors should use the [font-variant](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant) shorthand property or an associated longhand property such as:
 
-- [font-variant-ligatures](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-ligatures)
-- [font-variant-caps](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-caps)
-- [font-variant-east-asian](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-east-asian)
-- [font-variant-alternates](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-alternates)
-- [font-variant-numeric](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric)
-- [font-variant-position](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-position)
+* [font-variant-ligatures](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-ligatures)
+* [font-variant-caps](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-caps)
+* [font-variant-east-asian](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-east-asian)
+* [font-variant-alternates](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-alternates)
+* [font-variant-numeric](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric)
+* [font-variant-position](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-position)
 
-**Warning:**
-
+!!! warning Warning:
 Using `font-feature-settings` inside a `@font-face` at-rule is only supported in Firefox.
+!!!
 
 The longhand `font-variant-*` descriptors have varying level of browser support, according to [caniuse](https://caniuse.com/?search=font-variant)
 

@@ -121,7 +121,7 @@ function buildColorBlock(color, space) {
   box.appendChild(para);
 
   // 6
-  container.appendChild(box);  
+  container.appendChild(box);
 };
 ```
 
@@ -142,6 +142,6 @@ export function processInput(color) {
 
 This code will produce the following result, using magenta as an example.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2023/05/color-tool-01.png)
+![](/images/2023/05/color-tool-01.png)
 
 Color conversion tool showing results for color magenta

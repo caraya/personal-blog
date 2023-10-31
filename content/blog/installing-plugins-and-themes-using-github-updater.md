@@ -29,13 +29,13 @@ Only one of these options is necessary.
 
 To install a new item (plugin or theme) from its Git repository fill out the forms and press the installation button.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2021/04/github-updater-theme-update.png)
+![](/images/2021/04/github-updater-theme-update.png)
 
 Github Updated Install Theme Dialogue
 
 Both installations require the URI for the project, the branch of code you want to install from and the remote repository host and optionally, a GitHub access token.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2021/04/github-updater-plugin-update.png)
+![](/images/2021/04/github-updater-plugin-update.png)
 
 Github Updater Install Plugins Dialogue
 

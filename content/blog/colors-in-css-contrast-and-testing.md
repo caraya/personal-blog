@@ -42,7 +42,7 @@ The best way to test color contrast is to actually test the colors you want to u
 
 It also works with colors outside the 3 or 6-color hexadecimal values. It works with HSL, HSLA, and, RGBA. So the playground for experimentation grows even bigger.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2017/12/lea-verou-color-contrast.png)
+![](/images/2017/12/lea-verou-color-contrast.png)
 
 Lea Verou's Contrast Testing Tool
 
@@ -56,7 +56,7 @@ I put it after manual testing rather than as the first idea about how to test co
 
 I use the accessibility testing integrated into Dev Tools Audits menu. Figure 2 (below) shows the result of the accessibility testing.
 
-![Image of Lightouse testing tool in Chrome showing results for a page in ESPN.com](https://publishing-project.rivendellweb.net/wp-content/uploads/2017/12/lighthouse-accessibility-test-espn.png)
+![Image of Lightouse testing tool in Chrome showing results for a page in ESPN.com](/images/2017/12/lighthouse-accessibility-test-espn.png)
 
 Lighthouse Accessibility Testing Report
 
@@ -65,25 +65,25 @@ Automated tools are awesome but they are far from complete. There are many acces
 ## Links and Resources
 
 - About Colors on The Web
-    
+
     - [Basic Color Theory For Web Designers](http://thenewcode.com/402/Basic-Color-Theory-For-Web-Designers)
     - [Introduction to Color in CSS](http://thenewcode.com/44/Color-in-CSS)
     - [Which CSS Color System To Use Where](http://thenewcode.com/781/Which-CSS-Color-System-To-Use-Where)
     - [Understanding Gamma](http://thenewcode.com/385/Color-for-Web-Designers-Understanding-Gamma)
     - [Color for Web Designers: Understanding sRGB](http://thenewcode.com/392/Color-for-Web-Designers-Understanding-sRGB)
 - Color Contrast and Accessibility
-    
+
     - [Contrast Ratio Tool](http://leaverou.github.com/contrast-ratio)
     - [A Study In Contrasts: Font Sizes, Contrast Ratio and Accessibility](http://thenewcode.com/603/A-Study-In-Contrasts-Font-Sizes-Contrast-Ratio-and-Accessibility)
     - [Automatically Maximize Text Contrast On A Page](http://thenewcode.com/882/Automatically-Maximize-Text-Contrast-On-A-Page)
 - Color Formats in CSS
-    
+
     - [Color Keywords](http://thenewcode.com/1111/Using-CSS-Color-Keywords)
     - [Using RGB Color in CSS](http://thenewcode.com/1115/Using-RGB-Color-in-CSS)
     - [Using Hexadecimal Colors in CSS](http://thenewcode.com/1108/Using-Hexadecimal-Colors-in-CSS)
     - [An Easy Guide To HSL Color](http://thenewcode.com/61/An-Easy-Guide-To-HSL-Color)
 - Color Contrast Testing
-    
+
     - [Lea Verou's Contrast Testing Tool](http://leaverou.github.com/contrast-ratio)
     - [Snook's Testing Tool](https://snook.ca/technical/colour_contrast/colour.html#fg=33FF33,bg=333333)
     - [Juicy Studio: CSS Colour Contrast Test](http://juicystudio.com/services/csstest.php)

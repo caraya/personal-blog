@@ -44,7 +44,7 @@ CSS modules allow you to import CSS files from your Javascript modules.
 When used together with constructable stylesheets, they can be used to import and install CSS stylesheets from CSS modules both in the main document and in web components' shadow roots.
 
 ```js
-import sheet from './styles.css' assert { 
+import sheet from './styles.css' assert {
   type: 'css'
 };
 
@@ -79,6 +79,6 @@ Without these assertions, the import will fail with a type error.
 
 CSS and JSON modules have some of the same benefits as JavaScript modules.
 
-- **Deduplication**: The file will only be fetched, instantiated, and parsed once, regardless of how many times it's requested
-- **Consistent order of evaluation**: when the importing JavaScript is running, it can rely on the content it imports having already been fetched and parsed
-- **Security**: modules are fetched with `CORS` and use strict MIME-type checking
+* **Deduplication**: The file will only be fetched, instantiated, and parsed once, regardless of how many times it's requested
+* **Consistent order of evaluation**: when the importing JavaScript is running, it can rely on the content it imports having already been fetched and parsed
+* **Security**: modules are fetched with `CORS` and use strict MIME-type checking

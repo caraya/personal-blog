@@ -39,8 +39,8 @@ Every so often I've documented the status of web components and where they are i
 
 For this year, I want to work with two different Web Component libraries:
 
-- [Lit](https://lit.dev/)
-- [Lightning Components](https://lwc.dev/)
+* [Lit](https://lit.dev/)
+* [Lightning Components](https://lwc.dev/)
 
 I also want to continue working on the evolution of web components. Things like slots, shadow parts, using ESMoodules to import components and how do new things like constructible styles works in web components. I've written about some of these (modules and constructible styles) but I want to bring them together with web components.
 
@@ -50,9 +50,9 @@ As for a practical application, I want to build patterns based on web components
 
 There are three projects that still need some love to see them to completion:
 
-- My starter kit
-- The standalone HTML converter
-- My static site generator.
+* My starter kit
+* The standalone HTML converter
+* My static site generator.
 
 The starter kit and the generator need to add Markdown-it plugins to the workflow so I can do things like definition lists, figures instead of images and do it without having to type HTML.
 
@@ -70,9 +70,9 @@ One of the things I want to do is to develop and implement a [PostCSS](https://p
 
 Specific languages I want to work with.
 
-- Rust and wasm-pack
-- C/C++
-- Go
+* Rust and wasm-pack
+* C/C++
+* Go
 
 There may be others.
 
@@ -82,13 +82,12 @@ I've always been curious about functional programming and how it can be used to 
 
 Languages I would like to take a closer look at:
 
-- Common Lisp
-- Clojure
-- Racket
-- Javascript
-    
-    - [lodash/fp](https://github.com/lodash/lodash/wiki/FP-Guide) – An instance of Lodash with its methods wrapped to produce immutable, auto-curried, iteratee-first, data-last methods
-    - [functional.js](http://functionaljs.com/) – A lightweight functional JavaScript library that facilitates currying and point-free / tacit
+* Common Lisp
+* Clojure
+* Racket
+* Javascript
+  * [lodash/fp](https://github.com/lodash/lodash/wiki/FP-Guide) – An instance of Lodash with its methods wrapped to produce immutable, auto-curried, iteratee-first, data-last methods
+  * [functional.js](http://functionaljs.com/) – A lightweight functional JavaScript library that facilitates currying and point-free / tacit
 
 ## Reevaluate Gutenberg
 
@@ -96,8 +95,8 @@ As much as I hate to admit it, Gutenberg has moved faster and in better directio
 
 There are two areas I want to pay particular attention to:
 
-- Have the components improved? A few years ago I filed an issue because I couldn't insert a list inside a blockquote. Have issues like this been resolved?
-- Has the barrier to entry been lowered or removed? As a complete beginner, React it's not an easy thing to learn or master. Has this changed?
+* Have the components improved? A few years ago I filed an issue because I couldn't insert a list inside a blockquote. Have issues like this been resolved?
+* Has the barrier to entry been lowered or removed? As a complete beginner, React it's not an easy thing to learn or master. Has this changed?
 
 ### Build a block-based theme
 
@@ -145,12 +144,12 @@ It's been a while since I've been hearing about AI and Machine Learning. The cha
 
 Some things that I would like to see if they are possible:
 
-- Handwritten text recognition: Can I get a computer to recognize my handwritten notes and turn them into text?
-- OCR for scanned documents: Can I get a computer to recognize text from a scanned document?
-- Image recognition: Can an ML model recognize images? How much training does it require and how expensive does it get?
+* Handwritten text recognition: Can I get a computer to recognize my handwritten notes and turn them into text?
+* OCR for scanned documents: Can I get a computer to recognize text from a scanned document?
+* Image recognition: Can an ML model recognize images? How much training does it require and how expensive does it get?
 
 Related questions:
 
-- Will the libraries work as web assembly?
-- how much will it cost if I decide to go through Google Clour or any other cloud provider?
-- Will any of these projects run on a web browser?
+* Will the libraries work as web assembly?
+* how much will it cost if I decide to go through Google Clour or any other cloud provider?
+* Will any of these projects run on a web browser?

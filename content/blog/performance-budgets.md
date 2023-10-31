@@ -41,11 +41,11 @@ Often, a single number or series to grade your site.
 
 Some examples of a performance budget:
 
-- The home page load and get interactive in under 5 seconds in a 3G mobile connection, and under 2 seconds for subsequent loads
-- Our product page must ship less than 170KB of JavaScript on mobile
-- Our search page must include less than 1MB of images on desktop
-- Our blog must score > 80 on Lighthouse performance audits in mobile and > 90 on desktop
-- An individual blog post must make less than 25 HTTP requests
+* The home page load and get interactive in under 5 seconds in a 3G mobile connection, and under 2 seconds for subsequent loads
+* Our product page must ship less than 170KB of JavaScript on mobile
+* Our search page must include less than 1MB of images on desktop
+* Our blog must score > 80 on Lighthouse performance audits in mobile and > 90 on desktop
+* An individual blog post must make less than 25 HTTP requests
 
 ## implementing a performance budget
 
@@ -55,9 +55,9 @@ The team can then decide on what makes the most sense based on your clients' loc
 
 We'll use some of the example budget goals to get started in a performance budget
 
-- The site must score > 80 on Lighthouse performance audits in mobile and > 90 on desktop
-- An individual page's [Largest Contentful Paint (LCP)](https://web.dev/lcp/) loads in under 2.5 seconds on desktop and 3 seconds on mobile
-- The home page [time to interactive (TTI)](https://web.dev/interactive/) is under 5 seconds in a 3G mobile connection, and under 2 seconds for subsequent loads
+* The site must score > 80 on Lighthouse performance audits in mobile and > 90 on desktop
+* An individual page's [Largest Contentful Paint (LCP)](https://web.dev/lcp/) loads in under 2.5 seconds on desktop and 3 seconds on mobile
+* The home page [time to interactive (TTI)](https://web.dev/interactive/) is under 5 seconds in a 3G mobile connection, and under 2 seconds for subsequent loads
 
 ## Keeping the development team honest
 
@@ -65,11 +65,11 @@ Knowing what our targets are is one thing, to actually hit it and stay there is 
 
 During development, there are several tools we can use to run checks against new or modified assets:
 
-- [Webpack](https://webpack.js.org/) has features that will notify you or cause build errors when assets exceed specified limits at build/bundle time
-- [Bundlesize](https://github.com/siddharthkp/bundlesize), allows you to define and run file size checks in your [Continous Integration (CI)](https://www.redhat.com/en/topics/devops/what-is-ci-cd) pipeline
-- [Size Limit Github Action](https://github.com/marketplace/actions/size-limit-action) will add a comment to all new pull requests listing the size changes of the files involved in the PR
-- If you have a paid WebPageTest account, you can use their [Github Action](https://github.com/marketplace/actions/webpagetest-github-action) to run WebPageTest against all new commits and pull requests in your repository
-- Lighthouse also provides a Lighthouse CI [Github Action](https://github.com/marketplace/actions/lighthouse-ci-action) to run Lighthouse against all new Pull Requests in the project's repository
+* [Webpack](https://webpack.js.org/) has features that will notify you or cause build errors when assets exceed specified limits at build/bundle time
+* [Bundlesize](https://github.com/siddharthkp/bundlesize), allows you to define and run file size checks in your [Continous Integration (CI)](https://www.redhat.com/en/topics/devops/what-is-ci-cd) pipeline
+* [Size Limit Github Action](https://github.com/marketplace/actions/size-limit-action) will add a comment to all new pull requests listing the size changes of the files involved in the PR
+* If you have a paid WebPageTest account, you can use their [Github Action](https://github.com/marketplace/actions/webpagetest-github-action) to run WebPageTest against all new commits and pull requests in your repository
+* Lighthouse also provides a Lighthouse CI [Github Action](https://github.com/marketplace/actions/lighthouse-ci-action) to run Lighthouse against all new Pull Requests in the project's repository
 
 ## We did all this, now what?
 
@@ -83,8 +83,8 @@ Performance Budgets also allow the team to make informed decisions on changes to
 
 ## Links and resources
 
-- [Performance budgets](https://developer.mozilla.org/en-US/docs/Web/Performance/Performance_budgets) — MDN
-- [Performance Budgets 101](https://web.dev/performance-budgets-101/) — web.dev
-- [Performance Budgets](https://addyosmani.com/blog/performance-budgets/) — Addy Osmani
-- [Web Performance Budget Tracking Using Lighthouse](https://blogs.halodoc.io/web-performance-budget-tracking/) — Halodoc
-- [Webpack Performance Configuration](https://webpack.js.org/configuration/performance/)
+* [Performance budgets](https://developer.mozilla.org/en-US/docs/Web/Performance/Performance_budgets) — MDN
+* [Performance Budgets 101](https://web.dev/performance-budgets-101/) — web.dev
+* [Performance Budgets](https://addyosmani.com/blog/performance-budgets/) — Addy Osmani
+* [Web Performance Budget Tracking Using Lighthouse](https://blogs.halodoc.io/web-performance-budget-tracking/) — Halodoc
+* [Webpack Performance Configuration](https://webpack.js.org/configuration/performance/)

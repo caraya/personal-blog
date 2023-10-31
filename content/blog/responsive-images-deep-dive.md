@@ -7,7 +7,7 @@ Responsive images seek to answer the following question: **_How can we incorpora
 
 The idea is that we have images sized for each type of device and we let the browser decide which one is most appropriate for the device, resolution and screen size combination like the image below shows.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2019/02/responsive-images-overview-890631.png)
+![](/images/2019/02/responsive-images-overview-890631.png)
 
 Different versions of the same image depending on device and resolution. The problem responsive images try to solve. From [Internetting is hard](https://internetingishard.com/html-and-css/responsive-images/responsive-images-overview-890631.png)
 
@@ -185,11 +185,11 @@ do
 The script looks for images in `images/master` and for each image that it finds there it performs the following tasks:
 
 - It resizes the image to a square of the corresponding size and generates a jpg image
-    
+
     - It uses a quality of 75
     - It interlaces the images to create progressive JPGs
 - It resizes the image to a square of the corresponding size and generates a Webp image
-    
+
     - The script makes WebP use lossy compression to make the images as small as possible (`-define webp:lossless=false`)
 
 The script stores the images in subdirectories of `images/` named after the size we created them with (`100`, and so on).

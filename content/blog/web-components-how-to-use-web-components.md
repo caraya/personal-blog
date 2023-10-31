@@ -69,11 +69,11 @@ Notice that it extends: 'input' and its prototype is based on HTMLInputElement i
 
 #### Github's example
 
-\[caption id="attachment\_786599" align="aligncenter" width="272"\][![Github Relative Time on display](https://publishing-project.rivendellweb.net/wp-content/uploads/2015/06/gh-relative-time.png)](http:https://publishing-project.rivendellweb.net/wp-content/uploads/2015/06/gh-relative-time.png) Github Relative Time on display\[/caption\]
+\[caption id="attachment\_786599" align="aligncenter" width="272"\][![Github Relative Time on display](/images/2015/06/gh-relative-time.png)](http:/images/2015/06/gh-relative-time.png) Github Relative Time on display\[/caption\]
 
 GitHub has a component that displays date and time as shown above. Notice they are not absolute dates/times but relative to the browser's current time. GitHub uses a Type Extension Custom Element accomplish this. The HTML code looks like this:
 
-\[caption id="attachment\_786598" align="aligncenter" width="747"\][![HTML source for time type extension custom element](https://publishing-project.rivendellweb.net/wp-content/uploads/2015/06/gh-time-tag.png)](http:https://publishing-project.rivendellweb.net/wp-content/uploads/2015/06/gh-time-tag.png) HTML source for time type extension custom element\[/caption\]
+\[caption id="attachment\_786598" align="aligncenter" width="747"\][![HTML source for time type extension custom element](/images/2015/06/gh-time-tag.png)](http:/images/2015/06/gh-time-tag.png) HTML source for time type extension custom element\[/caption\]
 
 There some things to notice:
 

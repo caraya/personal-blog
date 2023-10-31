@@ -7,7 +7,7 @@ Talking about web font performance is more than just talking about adding the fo
 
 Because of their size fonts tend to be some of the largest components of any web pages. According to the HTTP Archive, the median of requested fonts is 98KB for Desktop and 83.4KB for mobile.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2018/11/font-bytes.png)
+![](/images/2018/11/font-bytes.png)
 
 Comparison of median font sizes from 2010 to today
 

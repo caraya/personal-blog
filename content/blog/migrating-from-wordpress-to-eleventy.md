@@ -1,13 +1,11 @@
 ---
 title: "Migrating from WordPress to Eleventy"
-date: "2023-10-25"
+date: "2023-11-06"
 youtube: true
 vimeo: true
 mermaid: false
 mavo: false
 ---
-
-# Migrating from WordPress to Eleventy
 
 For a while I've been thinking about moving my blog out of WordPress and into a static site.
 

@@ -15,19 +15,14 @@ This post will look at [CSS logical properties](https://developer.mozilla.org/en
 
 To understand how Logical Properties work, we need to understand the concepts of `Block` and `Inline` as they relate to logical properties and their relationship with writing modes.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2022/08/logical-intro-2.jpg)
+![Description of logical properties in horizontal and vertical languages. Credit: [Ahmad Shadeed](https://ishadeed.com/article/css-logical-properties/)](/images/2022/08/logical-intro-2.jpg)
 
-Description of logical properties in horizontal and vertical languages  
-  
-Credit: [Ahmad Shadeed](https://ishadeed.com/article/css-logical-properties/)
 
 Block dimension
-
-The dimension perpendicular to the flow of text within a line
+: The dimension perpendicular to the flow of text within a line
 
 Inline dimension
-
-The dimension parallel to the flow of text within a line
+: The dimension parallel to the flow of text within a line
 
 With these two properties, we can write CSS code that is generic. It will change based on the writing mode to accommodate the writing mode for the text we're working with
 
@@ -39,8 +34,8 @@ For vertical languages, we make only one change. We add the `writing-mode: verti
 
 The possible values for direction are:
 
-- `ltr` for left to right text
-- `rtl` for right to left text
+* `ltr` for left to right text
+* `rtl` for right to left text
 
 <iframe height="540.510" style="width: 100%;" scrolling="no" title="Logical styles in top-to-bottom and left-to-right language" src="https://codepen.io/caraya/embed/LYdBoQZ?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/caraya/pen/LYdBoQZ"> Logical styles in top-to-bottom and left-to-right language</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>) on <a href="https://codepen.io">CodePen</a>. </iframe>
 
@@ -50,9 +45,9 @@ So what can we use logical properties for?
 
 We've seen them used for margins and paddings but there is a long list of logical properties we'll concentrate on a few of them:
 
-**Note:**
-
+!!! note **Note:**
 All these equivalencies are for top to bottom and left to right languages.
+!!!
 
 ### dimensions
 
@@ -71,8 +66,8 @@ These control height and width-related attributes.
 
 You can use `inline` and `block` as the values for the resize attribute.
 
-- `resize: inline` is equivalent to `resize: horizontal`
-- `resize: block` is equivalent to `resize: vertical`
+* `resize: inline` is equivalent to `resize: horizontal`
+* `resize: block` is equivalent to `resize: vertical`
 
 ```css
 .logical1 {
@@ -163,20 +158,18 @@ You can write this instead:
 
 For a full list of logical properties, check the following guides at MDN:
 
-- [Basic concepts of logical properties and values](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts)
-- [Logical Properties for sizing](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Sizing)
-- [Logical Properties for margins, borders and padding](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Margins_borders_padding)
-- [Logical Properties for floating and positioning](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Floating_and_positioning)
+* [Basic concepts of logical properties and values](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts)
+* [Logical Properties for sizing](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Sizing)
+* [Logical Properties for margins, borders and padding](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Margins_borders_padding)
+* [Logical Properties for floating and positioning](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Floating_and_positioning)
 
 ## Links and resources
 
-- [Basic concepts of logical properties and values](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts)
-    
-    - [Logical Properties for sizing](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Sizing)
-    - [Logical Properties for margins, borders and padding](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Margins_borders_padding)
-    - [Logical Properties for floating and positioning](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Floating_and_positioning)
-- Writing modes
-    
-    - [CSS writing modes](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Writing_Modes)
-    - [Styling vertical Chinese, Japanese, Korean and Mongolian text](https://www.w3.org/International/articles/vertical-text/)
-    - [Japanese Writing, A Beautifully Complex System](https://www.smashingmagazine.com/2012/03/japanese-a-beautifully-complex-writing-system/)
+* [Basic concepts of logical properties and values](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Basic_concepts)
+  * [Logical Properties for sizing](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Sizing)
+  * [Logical Properties for margins, borders and padding](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Margins_borders_padding)
+  * [Logical Properties for floating and positioning](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Floating_and_positioning)
+* Writing modes
+  * [CSS writing modes](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Writing_Modes)
+  * [Styling vertical Chinese, Japanese, Korean and Mongolian text](https://www.w3.org/International/articles/vertical-text/)
+  * [Japanese Writing, A Beautifully Complex System](https://www.smashingmagazine.com/2012/03/japanese-a-beautifully-complex-writing-system/)

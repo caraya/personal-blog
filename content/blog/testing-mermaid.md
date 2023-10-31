@@ -1,6 +1,7 @@
 ---
 title: "Testing Mermaid"
 date: "2023-10-06"
+mermaid: true
 ---
 
 ```mermaid

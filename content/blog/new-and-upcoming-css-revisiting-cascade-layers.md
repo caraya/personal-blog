@@ -14,21 +14,21 @@ The idea behind layers is that you create layers as groups so that all the style
 There are three ways to create layers:
 
 1. Using the @layer block at-rule, with styles assigned immediately to it:
-    
-    ```css
-    @layer base {
-      ...
-    }
-    ```
-    
+
+		```css
+		@layer base {
+			...
+		}
+		```
+
 2. Using the @layer statement at-rule, without any styles assigned:
-    
+
     ```css
     @layer base;
     ```
-    
+
     With this system, we can also define multiple layers and append content to each later.
-    
+
     ```css
     @layer
       normalize,
@@ -36,13 +36,13 @@ There are three ways to create layers:
       theme,
       content;
     ```
-    
+
 3. Using @import with the layer keyword or layer() function:
-    
+
     ```css
     @import url(base.css) layer(base);
     ```
-    
+
 
 For simplicity's sake we'll use the firt method in the rest of this post.
 
@@ -87,7 +87,6 @@ So, taking our previous example:
 The precendce order becomes
 
 1. Important Author Origin
-    
     1. Important normalize layer
     2. Important base layer
     3. Important theme layer
@@ -95,7 +94,6 @@ The precendce order becomes
     5. Important unlayered styles
 2. Animations
 3. Normal Author Origin
-    
     1. unlayered styles
     2. content layer
     3. theme layer
@@ -112,8 +110,8 @@ From my point of view, more research is necessary to see how difficult it will b
 
 ## More information
 
-- [CSS Cascade 5 specification](https://www.w3.org/TR/css-cascade-5/#layering)
-- [Cascade layers explainer](https://css.oddbird.net/layers/explainer/)
-- [Cascade layers](https://developer.mozilla.org/docs/Web/CSS/@layer) — MDN
-- [Cascade Layers](https://developer.chrome.com/blog/cascade-layers/) — Una Kravets
-- [Hello, CSS Cascade Layers](https://ishadeed.com/article/cascade-layers/) — Ahmad Shadeed
+* [CSS Cascade 5 specification](https://www.w3.org/TR/css-cascade-5/#layering)
+* [Cascade layers explainer](https://css.oddbird.net/layers/explainer/)
+* [Cascade layers](https://developer.mozilla.org/docs/Web/CSS/@layer) — MDN
+* [Cascade Layers](https://developer.chrome.com/blog/cascade-layers/) — Una Kravets
+* [Hello, CSS Cascade Layers](https://ishadeed.com/article/cascade-layers/) — Ahmad Shadeed

@@ -22,8 +22,8 @@ The process is simple:
 
 For the CPT, we'll create two type-specific templates:
 
-- `single-book.php` for single entries of type book
-- `archive-book.php` for listings of books
+* `single-book.php` for single entries of type book
+* `archive-book.php` for listings of books
 
 We can start these files from the corresponding generic versions (`single.php` and `archive.php`) and then modify them to suit our needs. Using these customized templates we can leverage the whole set of tools available to WordPress templates.
 
@@ -42,9 +42,9 @@ Put the same function below on your theme's `functions.php` file.
 ```php
 <?php
 function rivendellweb_add_glossary_to_query( $query ) {
-    if ( $query->is_home() && 
+    if ( $query->is_home() &&
          $query->is_main_query() ) {
-        $query->set( 'post_type', array( 
+        $query->set( 'post_type', array(
           'post',
           'glossary'
         ) );

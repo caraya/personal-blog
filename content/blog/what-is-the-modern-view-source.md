@@ -68,11 +68,11 @@ See this presentation from Alex Rusell to get a better understanding of the chal
 
 The following figures show how much stuff measured by the median number of requests and size in kilobytes have grown in a 3-year period from 2016 to March 2019 (data taken from the HTTP Archive's [state of the web](https://httparchive.org/reports/state-of-the-web) report).
 
-![Timeseries of median total requests over a 3 year period](https://publishing-project.rivendellweb.net/wp-content/uploads/2019/04/3-year-requests.png)
+![Timeseries of median total requests over a 3 year period](/images/2019/04/3-year-requests.png)
 
 Timeseries of median total requests over a 3 year period
 
-![Timeseries of median total kilobytes over a 3 year period](https://publishing-project.rivendellweb.net/wp-content/uploads/2019/04/3-year-total-kilobytes.png)
+![Timeseries of median total kilobytes over a 3 year period](/images/2019/04/3-year-total-kilobytes.png)
 
 Timeseries of total kilobytes over a 3 year period
 

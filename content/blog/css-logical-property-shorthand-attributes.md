@@ -25,22 +25,18 @@ For standard English text, it is the horizontal dimension.
 
 In addition to being aware of writing modes, logical properties provide shorthand attributes that are not available with physical properties.
 
-For example, setting margins require from one to four attributes \\depending on how you set them up.
+For example, setting margins require from one to four attributesdepending on how you set them up.
 
 1. When you provide one value:
-    
     1. All margins have the same value
 2. When you provide two values
-    
     1. First value is for top and bottom margins
     2. Second value is for the left and right margins
 3. When you provide three values:
-    
     1. The first value applies to the top
     2. The second value applies to the right and left margins
     3. the third value applies to the bottom margin
 4. When you provide four values the margins apply in the following clockwise order:
-    
     1. Top
     2. Right
     3. Bottom
@@ -87,10 +83,8 @@ But there is no way to specify physical properties to only identify the right an
 However, using logical properties, we can specify block and inline margins using one or two attributes.
 
 1. If you provide one value
-    
     1. The value applies to both the start and end values
 2. If you provide two values
-    
     1. The first one applies to the start value
     2. The second one applies to the end value
 
@@ -124,14 +118,14 @@ We can do the same with [margin-inline](https://developer.mozilla.org/en-US/docs
 
 The following is a list of properties that use the behavior described in this post with links to the corresponding entry in [MDN](https://developer.mozilla.org/).
 
-- [border-block](https://developer.mozilla.org/en-US/docs/Web/CSS/border-block)
-- [border-inline](https://developer.mozilla.org/en-US/docs/Web/CSS/border-inline)
-- [margin-block](https://developer.mozilla.org/en-US/docs/Web/CSS/margin-block)
-- [margin-inline](https://developer.mozilla.org/en-US/docs/Web/CSS/margin-inline)
-- [padding-block](https://developer.mozilla.org/en-US/docs/Web/CSS/padding-block)
-- [padding-inline](https://developer.mozilla.org/en-US/docs/Web/CSS/padding-inline)
-- [inset-block](https://developer.mozilla.org/en-US/docs/Web/CSS/inset-block)
-- [inset-inline](https://developer.mozilla.org/en-US/docs/Web/CSS/inset-inline)
+* [border-block](https://developer.mozilla.org/en-US/docs/Web/CSS/border-block)
+* [border-inline](https://developer.mozilla.org/en-US/docs/Web/CSS/border-inline)
+* [margin-block](https://developer.mozilla.org/en-US/docs/Web/CSS/margin-block)
+* [margin-inline](https://developer.mozilla.org/en-US/docs/Web/CSS/margin-inline)
+* [padding-block](https://developer.mozilla.org/en-US/docs/Web/CSS/padding-block)
+* [padding-inline](https://developer.mozilla.org/en-US/docs/Web/CSS/padding-inline)
+* [inset-block](https://developer.mozilla.org/en-US/docs/Web/CSS/inset-block)
+* [inset-inline](https://developer.mozilla.org/en-US/docs/Web/CSS/inset-inline)
 
 **Note** When you provide more than one value for these properties, the first value will be for the start position based on direction and writing mode. It is always a good idea to test these properties to make sure that they are actually doing what you want them to.
 

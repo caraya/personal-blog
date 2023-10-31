@@ -11,16 +11,16 @@ If the font is not available in Google Fonts or you have the font available, you
 
 The metrics that we need are:
 
-- ascent
-- descent
-- lineGap
-- UnitsPerEm
+* ascent
+* descent
+* lineGap
+* UnitsPerEm
 
 And we use them to calculate the override values as follows:
 
-- `ascent-override` = ascent/unitsPerEm
-- `descent-override` = descent/unitsPerEm
-- `line-gap-override` = line-gap/unitsPerEm
+* `ascent-override` = ascent/unitsPerEm
+* `descent-override` = descent/unitsPerEm
+* `line-gap-override` = line-gap/unitsPerEm
 
 The rest of the post will look at one way of generating these metrics and how to use them.
 
@@ -43,9 +43,9 @@ This function will produce the values that we need to define overrides in the fa
 
 When running the code with Recursive we get the following values:
 
-- Ascent override: 0.95
-- Descent override: -0.25
-- Line-gap override: 0
+* Ascent override: 0.95
+* Descent override: -0.25
+* Line-gap override: 0
 
 Now we can create the fallback `@font-face` declarations.
 

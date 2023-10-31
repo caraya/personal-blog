@@ -15,11 +15,11 @@ If you look at the source code of any large web application you'll see that it's
 
 Gmail looks bad in the sense that the source is almost impossible to follow and understand, the class names only make sense to the people developing the application and, most likely, no one else.
 
-\[caption id="attachment\_786601" align="aligncenter" width="800"\][![Screenshot of browser showing source code for Gmail](https://publishing-project.rivendellweb.net/wp-content/uploads/2015/06/gmail-source.png)](http:https://publishing-project.rivendellweb.net/wp-content/uploads/2015/06/gmail-source.png) Source code for Gmail\[/caption\]
+\[caption id="attachment\_786601" align="aligncenter" width="800"\][![Screenshot of browser showing source code for Gmail](/images/2015/06/gmail-source.png)](http:/images/2015/06/gmail-source.png) Source code for Gmail\[/caption\]
 
 So does Facebook
 
-\[caption id="attachment\_786600" align="aligncenter" width="800"\][![Screenshot of browser view source showing Source code for Facebook](https://publishing-project.rivendellweb.net/wp-content/uploads/2015/06/facebook-source.png)](http:https://publishing-project.rivendellweb.net/wp-content/uploads/2015/06/facebook-source.png) Screenshot of browser view source showing Source code for Facebook\[/caption\]
+\[caption id="attachment\_786600" align="aligncenter" width="800"\][![Screenshot of browser view source showing Source code for Facebook](/images/2015/06/facebook-source.png)](http:/images/2015/06/facebook-source.png) Screenshot of browser view source showing Source code for Facebook\[/caption\]
 
 What if we could change all the ‘div soup’ into something that makes more sense and it's eaier to read?
 

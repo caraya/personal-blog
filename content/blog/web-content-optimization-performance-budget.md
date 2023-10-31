@@ -1,7 +1,7 @@
 ---
 title: "Web Content Optimization: Performance Budget and Page Speed Test"
 date: "2015-11-09"
-categories: 
+categories:
   - "technology"
 ---
 
@@ -29,13 +29,13 @@ Page Speed Insights gives you a coarse evaluation of your site on both mobile an
 
 As an example I did a Page Speed Test of a project I'm currently working on. It is hosted in Github which helps explain some of the results.
 
-\[caption id="attachment\_787085" align="aligncenter" width="565"\]![Page Speed Test Result](https://publishing-project.rivendellweb.net/wp-content/uploads/2015/11/page-speed-test.result.png) Page Speed Test Result\[/caption\]
+\[caption id="attachment\_787085" align="aligncenter" width="565"\]![Page Speed Test Result](/images/2015/11/page-speed-test.result.png) Page Speed Test Result\[/caption\]
 
 What I find most useful are the thubnails. They give me a timelapse representation of the site's load time. I usually set them to between 0.5 and 1 second.
 
 This has helped me realie the insane amount of "crap" I put on my web content. Granted most of that content is externa to the site such as Codepen examples and Youtube and Vimeo streaming clips. They still add up and they still make the content slower to appear on screen in a usable way which, in the end, is the only metric that really matters
 
-\[caption id="attachment\_787084" align="aligncenter" width="557"\]![Page Speed Test Results -- Thumbnails and Waterfall](https://publishing-project.rivendellweb.net/wp-content/uploads/2015/11/page-speed-test-thumbs-waterfall.png) Page Speed Test Results -- Thumbnails and Waterfall\[/caption\]
+\[caption id="attachment\_787084" align="aligncenter" width="557"\]![Page Speed Test Results -- Thumbnails and Waterfall](/images/2015/11/page-speed-test-thumbs-waterfall.png) Page Speed Test Results -- Thumbnails and Waterfall\[/caption\]
 
 ### Grunt perfbudget
 

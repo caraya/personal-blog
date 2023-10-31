@@ -30,15 +30,17 @@ footer ul li {
 
 This will only remove the bullets in lists inside the footer but will not affect list outside the footer.
 
-**A consideration**: some of these landmark elements may be nested.
+!!! note **A consideration**:
+Some of these landmark elements may be nested.
+!!!
 
 For example, the following elements can have `header` and `footer` elements as children:
 
-- article
-- aside
-- main
-- nav
-- section
+* article
+* aside
+* main
+* nav
+* section
 
 However, when these elements use `header` or `footer` the element refers to that parent element. In essence, we're saying the `header` or `footer` belongs to the element that contains it, not the document
 

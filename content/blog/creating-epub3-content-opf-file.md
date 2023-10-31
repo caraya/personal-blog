@@ -29,9 +29,9 @@ The code below shows an abbreviated `content.opf` file for the book The Charriot
 
 ```xml
 <?xml version='1.0' encoding='utf-8'?>
-<package 
+<package
   xmlns:dc="http://purl.org/dc/elements/1.1/"
-  xmlns="http://www.idpf.org/2007/opf" 
+  xmlns="http://www.idpf.org/2007/opf"
   version="2.0" unique-identifier="bookid">
 
   <metadata>
@@ -69,7 +69,7 @@ The code below shows an abbreviated `content.opf` file for the book The Charriot
     <itemref idref="preface"/>
     <itemref idref="ch1"/>
     <itemref idref="ch1-1"/>
-    <!-- more files commented out -->
+    <!-* more files commented out -->
   </spine>
 </package>
 ```
@@ -141,9 +141,9 @@ For example, the `metadata.yaml` file that I used to validate the project looks 
 ---
 title: "Chariots for Apollo: A History of Manned Lunar Spacecraft"
 creators:
-  - Courtney G. Brooks
-  - James M. Grimwood
-  - Loyd S. Swenson
+  * Courtney G. Brooks
+  * James M. Grimwood
+  * Loyd S. Swenson
 date: 1979
 publisher: "NASA History Office"
 ```
@@ -184,9 +184,9 @@ If the file matches any of the indicated 4-characters-long extensions then we pu
 
 For all other files we push information about the file to the `manifestItems` array:
 
-- `@id` is the name of the file minus its extension
-- `@mime-type` is the mime type of the file that we get by running `mime.lookup` on the file name
-- `@href` is the path to the file relative to the folder defined in the `dirPath` parameter
+* `@id` is the name of the file minus its extension
+* `@mime-type` is the mime type of the file that we get by running `mime.lookup` on the file name
+* `@href` is the path to the file relative to the folder defined in the `dirPath` parameter
 
 The `@` attribute in front of the variable names will tell the XML generator to treat these as attributes of the element we are generating.
 
@@ -297,17 +297,13 @@ The code foes the following:
 
 1. The `create` element creates the XML declaration
 2. `ele` declarations create the elements that we need
-    
-    - They can have one or two arguments, the first argument is the namespace and the second is the element name
+   * They can have one or two arguments, the first argument is the namespace and the second is the element name
 3. `att` declare the attributes for the element they are attached to.
-    
-    - They have two arguments. The first argument is the attribute name and the second is the attribute value
+   * They have two arguments. The first argument is the attribute name and the second is the attribute value
 4. `txt` represent text nodes
-    
-    - They have a single attribute, the text to be added
+   * They have a single attribute, the text to be added
 5. `up` indicate the closing of the previously created element
-    
-    - **We should have matching numbers of `ele` and `up` declarations**
+   * **We should have matching numbers of `ele` and `up` declarations**
 
 ```js
 let root = create({ version: '1.0' })
@@ -388,6 +384,8 @@ To use the generator do the following:
 2. Set NODE\_ENV to production
 3. Copy your books OEBPS directory to the root of the generator project
 4. Run the generator
+
+{.custom-ordered}
 
 ```bash
 npm i # 1

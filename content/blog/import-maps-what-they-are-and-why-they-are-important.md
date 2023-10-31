@@ -49,7 +49,7 @@ It requires some changes to our code. First, we need to load `es-module-shims` u
 
 ```html
 <script
-        defer 
+        defer
         src="es-module-shims.js">
 </script>
 ```
@@ -82,7 +82,7 @@ The order of the scripts does matter. In any other order, the scripts will not w
 
 The second issue is that not all packages in NPM are available as ESModules.
 
-Tools like Snowpack can help deal with this. In its simplest use Snowpack **_“re-installs your dependencies as single JS files to a new web\_modules/ directory”_** to be used with import commands.
+Tools like Snowpack can help deal with this. In its simplest use Snowpack ***“re-installs your dependencies as single JS files to a new web\_modules/ directory”*** to be used with import commands.
 
 You can either run Snopwack manually in your directory:
 

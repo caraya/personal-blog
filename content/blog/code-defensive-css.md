@@ -38,7 +38,7 @@ As of Chromium 85, you can now declare Houdini CSS Properties directly in CSS us
 }
 ```
 
-Browser support is almost there. The only big browser that doesn't support Houdini CSS Variables. The post will consider this when addressing fallbacks.
+Browser support is almost there. The only big browser that doesn't support Houdini CSS Variablesn is Firefox. The post will consider this when addressing fallbacks.
 
 ## Defensive Coding with Houdini Variables
 
@@ -142,7 +142,7 @@ We could do something similar with measurements, like box `--boxWidth` and `--bo
 
 Each of these `@property` declarations defines the height and the width of the object they are assigned to.
 
-Using the [](https://developer.mozilla.org/en-US/docs/Web/CSS/length-percentage)data type gives us flexibility since it allows both lengths (20px, 5rem), percentages, and [calc](https://developer.mozilla.org/en-US/docs/Web/CSS/calc) functions that use length, percentages or combinations of the two.
+Using the [length-percentage](https://developer.mozilla.org/en-US/docs/Web/CSS/length-percentage)data type gives us flexibility since it allows both lengths (20px, 5rem), percentages, and [calc](https://developer.mozilla.org/en-US/docs/Web/CSS/calc) functions that use length, percentages or combinations of the two.
 
 Because we defined height and width independent from each other we can choose not to override them, override one or both of them.
 

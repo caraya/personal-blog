@@ -15,8 +15,8 @@ pkgutil --pkgs
 
 Go macOS package is presented as `com.googlecode.go` in the result list. macOS package stores files in the predefined location. For Go version 1.12 these are the files to be deleted:
 
-- file: `/etc/paths.d/go`
-- folder `usr/local/go`
+* file: `/etc/paths.d/go`
+* folder `usr/local/go`
 
 There is a command line to check if files are moved to a different location in future Go versions:
 
@@ -34,8 +34,8 @@ sudo pkgutil --forget com.googlecode.go
 
 We need to check for and remove the following files manually
 
-- `/etc/paths.d/go` is added by macOS package
-- `/usr/local/go` is where macOS keeps Go binaries and related files
-- `$HOME/go` or `$GOPATH`, the Go Workspace. Be careful as this is where Go puts your code so back it up before removing it
+* `/etc/paths.d/go` is added by macOS package
+* `/usr/local/go` is where macOS keeps Go binaries and related files
+* `$HOME/go` or `$GOPATH`, the Go Workspace. Be careful as this is where Go puts your code so back it up before removing it
 
 Finally, check `$PATH` for `*/go/bin` and remove any mentions of Go from the path

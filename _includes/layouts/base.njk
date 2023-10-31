@@ -8,22 +8,47 @@
     name="description" content="{{ description or metadata.description }}"> {#- Atom and JSON feeds included by default #}
     <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
     <link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}"> {#- Uncomment this if you’d like folks to know that you used Eleventy to build your site!  #}
-
     {#- Learn more about bundles: https://github.com/11ty/eleventy-plugin-bundle #}
-		<link rel="stylesheet" href="/css/index.css" />
-		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"> </script>
-	</head>
+    <link rel="stylesheet" href="/css/index.css"/> <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    {# add prism.js stylesheets unconditionally #}
+    <link rel="stylesheet" href="/css/prism-solarizedlight.css"/>
+    <link
+    rel="stylesheet" href="/css/prism-diff.css"/>
+    {# Only load Mavo if instructed to do so in the post's front matter #}
+    {% if mavo %}
+      <link rel="stylesheet" href="https://get.mavo.io/mavo.css"/>
+      <script src="https://get.mavo.io/mavo.js"></script>
+    {% endif %}
+    {# Only load lite-vimeo if instructed to do so in the post's front matter #}
+    {% if vimeo %}
+      <script defer type="module" src="https://cdn.jsdelivr.net/npm/@slightlyoff/lite-vimeo@0.1.1/lite-vimeo.js"></script>
+    {% endif %}
+    {# Only load lite-youtube if instructed to do so in the post's front matter #}
+    {% if youtube %}
+      <link rel="stylesheet" href="/css/lite-yt-embed.css"/>
+      <script defer src="/js/lite-yt-embed.js"></script>
+    {% endif %}
+    {# Only load mermaid if instructed to do so in the post's front matter #}
+    {% if mermaid %}
+      {% mermaid_js %}
+    {% endif %}
+  </head>
   <body>
     <a href="#skip" class="visually-hidden">Skip to main content</a>
     <div class="grid-container">
-			<img class="full-bleed-header" decoding="async" src="/images/cropped-Long_Room_Interior_Trinity_College_Dublin_Ireland.webp" alt="" />
+      <img
+        class="full-bleed-header"
+        fetchpriority="high"
+        decoding="async"
+        src="/images/cropped-Long_Room_Interior_Trinity_College_Dublin_Ireland.webp"
+        alt=""/>
       <header>
         <h1>
           <a href="/" class="home-link">{{ metadata.title }}</a>
         </h1>
         {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
       </header>
-			{% include "nav_menu.njk" %}
+      {% include "nav_menu.njk" %}
       <main id="skip">
         {{ content | safe }}
       </main>

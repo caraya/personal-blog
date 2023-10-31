@@ -33,9 +33,9 @@ Homebrew will use the full `caraya/homebrew-rivendellweb` name under the hood.
 
 There are three possible use cases I can think of for adding a package that is not Node or Python to a tap:
 
-- I want to add a brand new package for our own use without going through approval for inclusion in homebrew/core (either because I don't expect wide usage or because I just want it for my own use)
-- I want to modify an existing package that is already in homebrew/core but I don't think the modification will be useful for other users (or it would have been done already)
-- I'm testing a package before deciding if I want to submit it to homebrew/core for inclusion
+* I want to add a brand new package for our own use without going through approval for inclusion in homebrew/core (either because I don't expect wide usage or because I just want it for my own use)
+* I want to modify an existing package that is already in homebrew/core but I don't think the modification will be useful for other users (or it would have been done already)
+* I'm testing a package before deciding if I want to submit it to homebrew/core for inclusion
 
 [Adding Software to Homebrew](https://docs.brew.sh/Adding-Software-to-Homebrew) gives a good introduction to the process of creating a Homebrew formula that is applicable to all taps, just not Homebrew core.
 
@@ -69,9 +69,9 @@ class Foo < Formula
   def install
     # ENV.deparallelize
     system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+		"--disable-dependency-tracking",
+		"--disable-silent-rules",
+		"--prefix=#{prefix}"
     # system "cmake", ".", *std_cmake_args
     system "make", "install"
   end
@@ -109,9 +109,9 @@ git commit
 
 When you run the commit command without the `-m` flag you will be taken to your default editor to write the message. The established standard for Git commit messages is:
 
-- A commit summary of 50 characters or less
-- Two (2) newlines
-- A thorough explanation of the commit (can be as long as it needs to be)
+* A commit summary of 50 characters or less
+* Two (2) newlines
+* A thorough explanation of the commit (can be as long as it needs to be)
 
 This is a personal tap but I like to keep the same discipline I need to have if I ever decide to commit to homebrew.
 
@@ -180,8 +180,8 @@ require "language/node"
 
 The two methods are:
 
-- **_std\_npm\_install\_args_** for formuls for compatible with npm’s global module format (like [azure-cli](https://github.com/Homebrew/homebrew-core/blob/0f3b27d252b8112c744e0460d871cfe1def6b993/Formula/azure-cli.rb) or [webpack](https://github.com/Homebrew/homebrew-core/blob/6282879973d569962e63da7c81ac4623e1a8336b/Formula/webpack.rb))
-- **_local\_npm\_install\_args_** for formulas where the npm install call is not the only required install step or need to also compile non-JavaScript sources (like [elixirscript](https://github.com/Homebrew/homebrew-core/blob/4bb491b7b246830aed57b97348a17e9401374978/Formula/elixirscript.rb) or [grunt-cli](https://github.com/Homebrew/homebrew-core/blob/93be1840908adb2f9ee8c48c66586ee6327480e3/Formula/grunt-cli.rb))
+* ***std\_npm\_install\_args*** for formuls for compatible with npm’s global module format (like [azure-cli](https://github.com/Homebrew/homebrew-core/blob/0f3b27d252b8112c744e0460d871cfe1def6b993/Formula/azure-cli.rb) or [webpack](https://github.com/Homebrew/homebrew-core/blob/6282879973d569962e63da7c81ac4623e1a8336b/Formula/webpack.rb))
+* ***local\_npm\_install\_args*** for formulas where the npm install call is not the only required install step or need to also compile non-JavaScript sources (like [elixirscript](https://github.com/Homebrew/homebrew-core/blob/4bb491b7b246830aed57b97348a17e9401374978/Formula/elixirscript.rb) or [grunt-cli](https://github.com/Homebrew/homebrew-core/blob/93be1840908adb2f9ee8c48c66586ee6327480e3/Formula/grunt-cli.rb))
 
 ```ruby
 system "npm", "install", *Language::Node.std_npm_install_args(libexec)
@@ -250,7 +250,7 @@ Use `brew update-python-resources` to help you write resource stanzas. To use it
 If the brew native method doesn't work, you can use [homebrew-pypi-poet](https://pypi.python.org/pypi/homebrew-pypi-poet) to help writing resource stanzas. You can do it like this:
 
 ```bash
-# Use a temporary directory for 
+# Use a temporary directory for
 # the virtual environment
 cd "$(mktemp -d)"
 

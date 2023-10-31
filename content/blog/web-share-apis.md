@@ -13,7 +13,7 @@ The basic shape of the API looks like this:
 
 ```js
 navigator.share({ title: title, url: url })
-  .then(function() { 
+  .then(function() {
     console.log("Share success!");
   })
   .catch(function() {
@@ -65,7 +65,7 @@ The script does the following:
 
 This will work in all kinds of web content when using a supported browser in a supporting operating system.
 
-**When implementing in a CMS**
+**When implementing in a CMS.**
 
 When working with WordPress or any other CMS, there is an additional consideration
 
@@ -79,8 +79,8 @@ The other sided of sharing to and from your web application is the Web Share Tar
 
 When working with Chrome, an app must meet the following criteria to become a share target:
 
-- It must meet Chrome's [installability criteria](https://developers.google.com/web/fundamentals/app-install-banners/#criteria)
-- The user must add your app to their home screen
+* It must meet Chrome's [installability criteria](https://developers.google.com/web/fundamentals/app-install-banners/#criteria)
+* The user must add your app to their home screen
 
 If these conditions are met then you have to decide what do you want users to share with your application.
 
@@ -121,14 +121,12 @@ To handle POST requests, check the Web.dev article referenced earlier.
 
 ## Links, Specs and Resources
 
-- Web Share API
-    
-    - [Integrate with the OS sharing UI with the Web Share API](https://web.dev/web-share/) — web.dev
-    - [Web Share API Explainer](https://github.com/w3c/web-share/blob/master/docs/explainer.md)
-    - [The Web Share API](https://philna.sh/blog/2017/03/14/the-web-share-api/) — Phil Nash
-    - [How to Use the Web Share API to Trigger the Native Dialog to Share Content & Pull Quotes](https://love2dev.com/blog/webshare-api/) — Chris Love
-    - [Web Share API brings the native sharing capabilities to the browser](https://hospodarets.com/web-share-api) — Serg Hospodarets
-- Web Share Target API
-    
-    - [Receiving shared data with the Web Share Target API](https://web.dev/web-share-target/) — web.dev
-    - [Web Share Target API Explainer](https://github.com/w3c/web-share-target/blob/master/docs/explainer.md)
+* Web Share API
+  * [Integrate with the OS sharing UI with the Web Share API](https://web.dev/web-share/) — web.dev
+  * [Web Share API Explainer](https://github.com/w3c/web-share/blob/master/docs/explainer.md)
+  * [The Web Share API](https://philna.sh/blog/2017/03/14/the-web-share-api/) — Phil Nash
+  * [How to Use the Web Share API to Trigger the Native Dialog to Share Content & Pull Quotes](https://love2dev.com/blog/webshare-api/) — Chris Love
+  * [Web Share API brings the native sharing capabilities to the browser](https://hospodarets.com/web-share-api) — Serg Hospodarets
+* Web Share Target API
+  * [Receiving shared data with the Web Share Target API](https://web.dev/web-share-target/) — web.dev
+  * [Web Share Target API Explainer](https://github.com/w3c/web-share-target/blob/master/docs/explainer.md)

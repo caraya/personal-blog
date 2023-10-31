@@ -1,11 +1,11 @@
 ---
 title: "Kerning"
 date: "2015-07-29"
-categories: 
+categories:
   - "typography"
 ---
 
-[![kerning](https://publishing-project.rivendellweb.net/wp-content/uploads/2015/07/kerning.png)](http://xkcd.com/1015/)
+[![kerning](/images/2015/07/kerning.png)](http://xkcd.com/1015/)
 
 > Kerning can refer to one of two things: spacing instructions that type designers put into font files to mitigate awkward character combinations, or spacing adjustments that graphic designers make as they typeset
 
@@ -77,7 +77,7 @@ Contrary to what most people tell you, I put all my script initializers and load
 If you let your content load before scripts and stylesheets are loaded then the content will flash and change as the stles modify the way the content looks and behaves. But if you put the scripts and style sheets first then they will all have to load before the content is displayed and that may take significantly long (at least in web terms) up to several seconds.
 
 > Web performance patterns advise that you put Javascripts at the bottom of your page before your `</body>` tag. There is an unfortunate side effect where you may experiences a [FOUT (Flash of Unstyled Text)](http://paulirish.com/2009/fighting-the-font-face-fout/) when you're manipulating your text after the DOM has loaded. Unfortunately, we found the best solution to avoid/minimize the FOUT caused by this plugin is to put your scripts (jQuery, Lettering.js) in the document `<head>`. On the one hand, your page will load slower. On the other hand, a flash/restyling makes your site feel slow. Users might ultimately feel the site is faster if they don't see the FOUT.
-> 
+>
 > Dave Rupert. Lettering.js [Readme](https://github.com/davatron5000/Lettering.js/blob/master/README.md)
 
 The result will appear like this:
@@ -88,7 +88,7 @@ The result will appear like this:
   <span class="char2">o</span>
   <span class="char3">m</span>
   <span class="char4">e</span>
-  
+
   <span class="char6">T</span>
   <span class="char7">i</span>
   <span class="char8">t</span>

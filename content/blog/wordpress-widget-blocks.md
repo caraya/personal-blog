@@ -15,29 +15,21 @@ For this post, I will concentrate on creating and adding widgets using the widge
 
 The Widget menu will now show a list of all the widget areas available to the theme and offer you the option to add blocks to each of those areas.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2021/07/block-widgets-1.png)
-
-Block-based Widget Admin Screen
+![Block-based Widget Admin Screen](/images/2021/07/block-widgets-1.png)
 
 In order to replicate the existing widget structure for my theme, I will work with Footer Widget Area 1 and Footer Widget Area 2.
 
 When you first load the menu, the area will be blank and you'll get a button to add blocks.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2021/07/block-widgets-2.png)
-
-Empty Widget Area
+![Empty Widget Area](/images/2021/07/block-widgets-2.png)
 
 When you click the button to add a widget WordPress will present you a list of available blocks to add and a search box if you already know what block you want. In this case, I searched for `search` and then clicked the block.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2021/07/block-widgets-3.png)
-
-Dialogue to select the widgets to add to a widget block
+![Dialogue to select the widgets to add to a widget block](/images/2021/07/block-widgets-3.png)
 
 Each block has its own configuration. In the case of the search block, we get the option of having a search button next to the search input, whether to have a label to indicate what the input does, and the choice to have placeholder text inside the search input.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2021/07/block-widgets-4.png)
-
-Result of adding the search block to a Widget Block
+![Result of adding the search block to a Widget Block](/images/2021/07/block-widgets-4.png)
 
 We need to configure each block individually and the configuration will depend on each widget block.
 

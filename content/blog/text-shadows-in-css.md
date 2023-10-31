@@ -11,10 +11,10 @@ My first approach at creating shadows in CSS was to use [box-shadow](https://dev
 
 As presented in the example below, the four values for the `text-shadow` property are:
 
-- offset-x
-- offset-y
-- blur-radius
-- color
+* offset-x
+* offset-y
+* blur-radius
+* color
 
 ```css
 h1 {
@@ -28,5 +28,5 @@ Shadows are a nice way to provide depth to content that would normally be flat. 
 
 ## Links and Resources
 
-- [text-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow) — MDN
-- [CSS Text Decoration Module Level 3](https://drafts.csswg.org/css-text-decor-3/#text-shadow-property) `text-shadow` specification
+* [text-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow) — MDN
+* [CSS Text Decoration Module Level 3](https://drafts.csswg.org/css-text-decor-3/#text-shadow-property) `text-shadow` specification

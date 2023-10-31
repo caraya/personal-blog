@@ -35,7 +35,7 @@ This also has the advantage that it's cross platform. It'll work everywhere Chro
 
 Open DevTools (`Control + Shift + I` on Windows / `Command + Option + I` on Mac) then open the command palette `Control / Command + Shift + P` and type `screenshot`. You will get something similar to the image below
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2019/08/chrome-screen-shot-capture.png)
+![](/images/2019/08/chrome-screen-shot-capture.png)
 
 `Capture area screenshot` is similar to the Macintosh `Command + Option + 4` where it lets you select the area of the screen to capture.
 

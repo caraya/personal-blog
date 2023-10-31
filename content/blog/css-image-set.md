@@ -61,14 +61,12 @@ If you can, create the different formats during your build process. Even though 
 .example {
   background-image: image-set(
     url("image1.avif") type("image/avif"),
-    url("image1.webp")
-    type("image/webp"),
+    url("image1.webp") type("image/webp"),
     url("image2.jpg") type("image/jpeg")
   );
   background-image: -webkit-image-set(
     url("image1.avif") type("image/avif"),
-    url("image1.webp")
-    type("image/webp"),
+    url("image1.webp") type("image/webp"),
     url("image2.jpg") type("image/jpeg")
   );
 }

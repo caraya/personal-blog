@@ -64,7 +64,7 @@ enhance --zoom=2 "images/*.jpg"
 
 For this example, we'll use an old black and white image I downloaded from an old article about [Simnet](https://www.wikiwand.com/en/SIMNET). Figure one shows the original image, without retouch.
 
-![Simnet Concept Base Image](https://publishing-project.rivendellweb.net/wp-content/uploads/2017/12/simnet-concept-2.jpg)
+![Simnet Concept Base Image](/images/2017/12/simnet-concept-2.jpg)
 
 Simnet Concept Base Image
 
@@ -75,7 +75,7 @@ enhance --type=photo --model=repair --zoom=1 simnet-concept.jpg
 
 Figure two shows the image with JPEG artifacts repaired but still at the same resolution as the original.
 
-![Simnet Concept Image Repaired at 1x Resolution](https://publishing-project.rivendellweb.net/wp-content/uploads/2017/12/simnet-concept_ne1x.png)
+![Simnet Concept Image Repaired at 1x Resolution](/images/2017/12/simnet-concept_ne1x.png)
 
 Simnet Concept Image Repaired at 1x Resolution
 
@@ -86,7 +86,7 @@ Figure 3 shows the image at twice the size of the original. It has eliminated th
 enhance.py --type=photo --zoom=2 simnet-concept.jpg
 ```
 
-![Simnet Concept Image Repaired at 1x Resolution](https://publishing-project.rivendellweb.net/wp-content/uploads/2017/12/simnet-concept_ne2x.png)
+![Simnet Concept Image Repaired at 1x Resolution](/images/2017/12/simnet-concept_ne2x.png)
 
 Simnet Concept Image at 2x Resolution
 

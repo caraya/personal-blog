@@ -85,13 +85,13 @@ The registed axes (with their equivalent CSS properties) are:
 
 | Axis Tag | Equivalent CSS Property |
 | --- | --- |
-| "wght" | `[font-weight](https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight)` |
-| "wdth" | `[font-stretch](https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch)` |
-| "slnt" (slant) | `[font-style](https://developer.mozilla.org/en-US/docs/Web/CSS/font-style)`: `oblique + angle` |
-| "ital" | [`font-style`](https://developer.mozilla.org/en-US/docs/Web/CSS/font-style): `italic` |
-| "opsz" | `[font-optical-sizing](https://developer.mozilla.org/en-US/docs/Web/CSS/font-optical-sizing)` |
+| "wght" | [font-weight](https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight) |
+| "wdth" | [font-stretch](https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch) |
+| "slnt" (slant) | [font-style](https://developer.mozilla.org/en-US/docs/Web/CSS/font-style): oblique + angle |
+| "ital" | [font-style](https://developer.mozilla.org/en-US/docs/Web/CSS/font-style): italic |
+| "opsz" | [font-optical-sizing](https://developer.mozilla.org/en-US/docs/Web/CSS/font-optical-sizing) |
 
-**Notes:**
+### Notes
 
 **Capitalization matters**, all registered axes are lowercase and all custom axes are uppercase.
 
@@ -101,37 +101,29 @@ Custom axes font dependent and allow font designers to to customize anything in 
 
 Any axis can be used as long as the designer gives it a unique 4-character axis. Some will end up becoming more common, and may even become registered over time.
 
-Roboto Flex defines the following custom axes (information taken from [Roboto … But Make It Flex](https://material.io/blog/roboto-flex)):
+Roboto Flex defines the following custom axes (information taken from [Roboto… But Make It Flex](https://material.io/blog/roboto-flex)):
 
 **Parametric Counter Width (`XTRA` in CSS)**
-
-The Parametric Counter Width axis alters the transparent forms inside and around glyphs in the X dimension. One application is in fine-tuning justification, as it changes the number of characters per line.
+: The Parametric Counter Width axis alters the transparent forms inside and around glyphs in the X dimension. One application is in fine-tuning justification, as it changes the number of characters per line.
 
 **Parametric Thin Stroke** (`YOPQ` in CSS)
-
-The Parametric Thin Strokes axis alters stroke widths at their thinnest parts, typically in the Y dimension for the Latin script. One use-case is to improve legibility in very small sized text, because it can lower stroke contrast.
+: The Parametric Thin Strokes axis alters stroke widths at their thinnest parts, typically in the Y dimension for the Latin script. One use-case is to improve legibility in very small sized text, because it can lower stroke contrast.
 
 **Parametric Lowercase Height** (`YTLC` in CSS)
-
-The Parametric Lowercase Height axis alters the volume of all space within the lowercase's vertical alignment zone: the vertical space inside counters of glyphs and the space in their sidebearings. (This adds more space vertically instead of changing the side bearings like tracking does).
-
-This is not truly an “x-height axis," since it only adjusts space vertically, and x-height proportions are formed by the relationships of uppercase, lowercase, ascenders and descenders, as well as horizontal forms. There are parametric axes for all of these.
+: The Parametric Lowercase Height axis alters the volume of all space within the lowercase's vertical alignment zone: the vertical space inside counters of glyphs and the space in their sidebearings. (This adds more space vertically instead of changing the side bearings like tracking does).
+: This is not truly an “x-height axis," since it only adjusts space vertically, and x-height proportions are formed by the relationships of uppercase, lowercase, ascenders and descenders, as well as horizontal forms. There are parametric axes for all of these.
 
 **Parametric Uppercase Height** (`YTUC` in CSS)
-
-Similarly, the Parametric Uppercase Height axis alters the volume of all space within the uppercase's vertical alignment.
+: Similarly, the Parametric Uppercase Height axis alters the volume of all space within the uppercase's vertical alignment.
 
 **Parametric Ascender Height** (`YTAS` in CSS)
-
-The Parametric Ascender Height axis alters the volume of all space within the ascenders’ vertical alignment zone.
+: The Parametric Ascender Height axis alters the volume of all space within the ascenders’ vertical alignment zone.
 
 **Parametric Descender Depth** (`YTDE` in CSS)
-
-The Parametric Descender Depth axis alters the depth of the space within the descenders’ vertical alignment zone, which has a negative value being below the baseline.
+: The Parametric Descender Depth axis alters the depth of the space within the descenders’ vertical alignment zone, which has a negative value being below the baseline.
 
 **Parametric Figure Height** (`YTFI` in CSS)
-
-The Parametric Figure Height axis alters the vertical space of figures. It can be used for aligning figures to other vertical zones.
+: The Parametric Figure Height axis alters the vertical space of figures. It can be used for aligning figures to other vertical zones.
 
 ## Using variation axes in CSS
 
@@ -179,7 +171,7 @@ We first use them in the [universal selector](https://developer.mozilla.org/en-U
 
 ```css
 * {
-  font-variation-settings: 
+  font-variation-settings:
     "wght" var(--roboto-wght),
     "wdth" var(--roboto-wdth),
     "opsz" var(--roboto-opsz),

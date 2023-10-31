@@ -21,11 +21,11 @@ We can control the position of a replaced element (like using float to control t
 
 These are some common replaced elements:
 
-- <iframe>
-- <video>
-- <embed>
-- <img>
-- <input type="image">
+* &lt;iframe>
+* &lt;video>
+* &lt;embed>
+* &lt;img>
+* &lt;input type="image">
 
 ## object-fit
 
@@ -36,28 +36,21 @@ This will address the problem of seeing a small part of the image when the image
 The `object-fit` property takes one of the following values:
 
 `contain`
-
-The replaced content is scaled to maintain its aspect ratio while fitting within the element's content box. The entire object is made to fill the box while preserving its aspect ratio, so the object will be "letterboxed" if its aspect ratio does not match the aspect ratio of the box.
+: The replaced content is scaled to maintain its aspect ratio while fitting within the element's content box. The entire object is made to fill the box while preserving its aspect ratio, so the object will be "letterboxed" if its aspect ratio does not match the aspect ratio of the box.
 
 `cover`
-
-The replaced content is sized to maintain its aspect ratio while filling the parent's entire content box. If the replaced content is larger than the parent's content box it will be clipped to fit.
-
-Clipping the image may drop parts of the image from the viewport.
+: The replaced content is sized to maintain its aspect ratio while filling the parent's entire content box. If the replaced content is larger than the parent's content box it will be clipped to fit.
+: Clipping the image may drop parts of the image from the viewport.
 
 `fill` (**default**)
-
-The replaced content is sized to completely fill the parent element's content box. If the object is smaller than the content box, then the object will be stretched to fit.
-
-Stretching an image may cause it to pixelate and make it hard to distinguish details on the image.
+: The replaced content is sized to completely fill the parent element's content box. If the object is smaller than the content box, then the object will be stretched to fit.
+: Stretching an image may cause it to pixelate and make it hard to distinguish details on the image.
 
 `none`
-
-The replaced content is not resized.
+: The replaced content is not resized.
 
 `scale-down`
-
-The content is sized as if `none` or `contain` were specified, whichever would result in smaller concrete object size.
+: The content is sized as if `none` or `contain` were specified, whichever would result in smaller concrete object size.
 
 ## background-size
 
@@ -67,34 +60,29 @@ Spaces not covered by a background image are filled with the element's `backgrou
 
 The `background-size` property is specified in one of the following ways:
 
-- Using the `contain` or `cover` keyword values
-- Using a `width` value only, in which case the height defaults to `auto`
-- Using both a `width` and a `height` value, in which case the first sets the width and the second sets the height
-- Each value can be a `length`, a `percentage`, or `auto`
+* Using the `contain` or `cover` keyword values
+* Using a `width` value only, in which case the height defaults to `auto`
+* Using both a `width` and a `height` value, in which case the first sets the width and the second sets the height
+* Each value can be a `length`, a `percentage`, or `auto`
 
 To specify the size of multiple background images, separate the value for each one with a comma.
 
 The possible values for background-size are:
 
 `contain`
-
-Scales the image as large as possible within its container without cropping or stretching the image. If the container is larger than the image, this will result in image tiling, unless the background-repeat property is set to no-repeat.
+: Scales the image as large as possible within its container without cropping or stretching the image. If the container is larger than the image, this will result in image tiling, unless the background-repeat property is set to no-repeat.
 
 `cover`
-
-Scales the image as large as possible to fill the container, stretching the image if necessary. If the proportions of the image differ from the element, it is cropped either vertically or horizontally so that no empty space remains.
+: Scales the image as large as possible to fill the container, stretching the image if necessary. If the proportions of the image differ from the element, it is cropped either vertically or horizontally so that no empty space remains.
 
 `auto`
-
-Scales the background image in the corresponding direction such that its intrinsic proportions are maintained.
+: Scales the background image in the corresponding direction such that its intrinsic proportions are maintained.
 
 `<length>`
-
-Stretches the image in the corresponding dimension to the specified length. Negative values are not allowed.
+: Stretches the image in the corresponding dimension to the specified length. Negative values are not allowed.
 
 `<percentage>`
-
-Stretches the image in the corresponding dimension to the specified percentage of the background positioning area.
+: Stretches the image in the corresponding dimension to the specified percentage of the background positioning area.
 
 The background positioning area is determined by the value of `background-origin` (by default, the padding box). However, if the background's `background-attachment` value is fixed, the positioning area is instead the entire viewport. Negative values are not allowed.
 
@@ -107,14 +95,11 @@ The `aspect-ratio` property sets a preferred aspect ratio for the box, which wil
 The possible values are:
 
 `auto`
-
-Replaced elements with an intrinsic aspect ratio use that aspect ratio, otherwise, the box has no preferred aspect ratio. Size calculations involving intrinsic aspect ratio always work with the content box dimensions.
+: Replaced elements with an intrinsic aspect ratio use that aspect ratio, otherwise, the box has no preferred aspect ratio. Size calculations involving intrinsic aspect ratio always work with the content box dimensions.
 
 `<ratio>`
-
-The box's preferred aspect ratio is the specified ratio of width/height
-
-If height and the preceding slash character are omitted, height defaults to 1
+: The box's preferred aspect ratio is the specified ratio of width/height
+: If height and the preceding slash character are omitted, height defaults to 1
 
 Size calculations involving preferred aspect ratio work with the dimensions of the box specified by box-sizing
 
@@ -132,7 +117,7 @@ img, input[type="image"], video, embed, iframe, marquee, object, table {
 }
 ```
 
-It appears we do need explicit `width` and `height` attributes to make sure that browsers will render the image with the correct aspect ratio.
+It appears we need explicit `width` and `height` attributes to make sure that browsers will render the image with the correct aspect ratio.
 
 Adding dimension attributes will also help better render the page and eliminate layout shift by telling the browser how much space to allocate for the image in the layout phase before it renders the image.
 
@@ -140,17 +125,15 @@ Barry Pollard goes into much more detail about this in [Setting Height And Width
 
 ## Links
 
-- [A Deep Dive Into object-fit And background-size In CSS](https://www.smashingmagazine.com/2021/10/object-fit-background-size-css/)
-- [Let's Learn About Aspect Ratio In CSS](https://ishadeed.com/article/css-aspect-ratio/)
-- [Setting Height And Width On Images Is Important Again](https://www.smashingmagazine.com/2020/03/setting-height-width-images-important-again/)
-- [Designing An Aspect Ratio Unit For CSS](https://www.smashingmagazine.com/2019/03/aspect-ratio-unit-css/)
-- MDN
-    
-    - [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit)
-    - [background-size](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size)
-    - [aspect-ratio](https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio)
-    - [Mapping the width and height attributes of media container elements to their aspect-ratio](https://developer.mozilla.org/en-US/docs/Web/Media/images/aspect_ratio_mapping)
-- Replaced Elements
-    
-    - [HTML replaced and void elements](https://catalin.red/html-replaced-void-elements/)
-    - [Replaced elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element)
+* [A Deep Dive Into object-fit And background-size In CSS](https://www.smashingmagazine.com/2021/10/object-fit-background-size-css/)
+* [Let's Learn About Aspect Ratio In CSS](https://ishadeed.com/article/css-aspect-ratio/)
+* [Setting Height And Width On Images Is Important Again](https://www.smashingmagazine.com/2020/03/setting-height-width-images-important-again/)
+* [Designing An Aspect Ratio Unit For CSS](https://www.smashingmagazine.com/2019/03/aspect-ratio-unit-css/)
+* MDN
+  * [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit)
+  * [background-size](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size)
+  * [aspect-ratio](https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio)
+  * [Mapping the width and height attributes of media container elements to their aspect-ratio](https://developer.mozilla.org/en-US/docs/Web/Media/images/aspect_ratio_mapping)
+* Replaced Elements
+  * [HTML replaced and void elements](https://catalin.red/html-replaced-void-elements/)
+  * [Replaced elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element)

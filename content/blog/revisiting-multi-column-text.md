@@ -15,9 +15,11 @@ I searched caniuse.com for `column-` knowing that all properties we'll discuss i
 
 I create the Codepen template below as a starting point for all the examples that follow. If you go to Codepen you'll be able to use the template for your own work.
 
-<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html" data-slug-hash="GRmzzqq" data-user="caraya" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"><span>See the Pen <a href="https://codepen.io/caraya/pen/GRmzzqq">Column Layout Base</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>) on <a href="https://codepen.io">CodePen</a>.</span></p>
-
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<iframe height="498.2132568359375" style="width: 100%;" scrolling="no" title="Column Layout Base" src="https://codepen.io/caraya/embed/GRmzzqq?default-tab=css%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/caraya/pen/GRmzzqq">
+  Column Layout Base</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
 ## Defining columns
 
@@ -29,9 +31,11 @@ We have two ways to define columns with CSS. We can set a specific number of col
 }
 ```
 
-<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="result" data-slug-hash="JjNxxOP" data-user="caraya" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"><span>See the Pen <a href="https://codepen.io/caraya/pen/JjNxxOP">CSS Column Count</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>) on <a href="https://codepen.io">CodePen</a>.</span></p>
-
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<iframe height="499.04034423828125" style="width: 100%;" scrolling="no" title="CSS Column Count" src="https://codepen.io/caraya/embed/JjNxxOP?default-tab=css%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/caraya/pen/JjNxxOP">
+  CSS Column Count</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
 The other way to specify columns is to set the width of the column and let the browser fit it as many columns of the given width as it can.
 
@@ -41,9 +45,11 @@ The other way to specify columns is to set the width of the column and let the b
 }
 ```
 
-<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="result" data-slug-hash="BaRMMJw" data-user="caraya" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"><span>See the Pen <a href="https://codepen.io/caraya/pen/BaRMMJw">Column Width</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>) on <a href="https://codepen.io">CodePen</a>.</span></p>
-
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<iframe height="300" style="width: 100%;" scrolling="no" title="Column Width" src="https://codepen.io/caraya/embed/BaRMMJw?default-tab=css%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/caraya/pen/BaRMMJw">
+  Column Width</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
 If both `column-count` and `column-width` are present, `column-count` takes precedence. If you use code like this:
 
@@ -70,9 +76,11 @@ figure {
 }
 ```
 
-<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="result" data-slug-hash="ExmrrRq" data-user="caraya" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"><span>See the Pen <a href="https://codepen.io/caraya/pen/ExmrrRq">column-span</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>) on <a href="https://codepen.io">CodePen</a>.</span></p>
-
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<iframe height="300" style="width: 100%;" scrolling="no" title="Column Width" src="https://codepen.io/caraya/embed/BaRMMJw?default-tab=css%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/caraya/pen/BaRMMJw">
+  Column Width</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
 Right now, we can only span across all columns or not at all. Using values other than `all` will result in the spaning content overlapping the columns.
 
@@ -88,11 +96,13 @@ The idea is that this property will fill the columns as equally as possible.
 }
 ```
 
-<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="result" data-slug-hash="jOmJymJ" data-user="caraya" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"><span>See the Pen <a href="https://codepen.io/caraya/pen/jOmJymJ"></a>by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>) on <a href="https://codepen.io">CodePen</a>.</span></p>
+<iframe height="300" style="width: 100%;" scrolling="no" title="Column fill" src="https://codepen.io/caraya/embed/jOmJymJ?default-tab=css%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/caraya/pen/jOmJymJ">
+  Column fill</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-
-**_The value `balance-all` is currently not supported on any browser._**
+***The value `balance-all` is currently not supported on any browser.***
 
 The default value for `column-fill` is balance.
 
@@ -107,9 +117,11 @@ Like Grid and Flexbox, we can control the separation between columns using the `
 }
 ```
 
-<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="result" data-slug-hash="jOmJymJ" data-user="caraya" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"><span>See the Pen <a href="https://codepen.io/caraya/pen/jOmJymJ">Column fill</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>) on <a href="https://codepen.io">CodePen</a>.</span></p>
-
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<iframe height="300" style="width: 100%;" scrolling="no" title="Column fill" src="https://codepen.io/caraya/embed/jOmJymJ?default-tab=css%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/caraya/pen/jOmJymJ">
+  Column fill</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
 Column gap works particularly well with column rules, described next.
 
@@ -117,9 +129,9 @@ Column gap works particularly well with column rules, described next.
 
 Sometimes we have to make the separation between columns explicit and clearer for the user to see. We can do it using the `column-rule` property. The way I use it, `column-rule` takes three values:
 
-- A color
-- A style for the rule
-- A length value for the width
+* A color
+* A style for the rule
+* A length value for the width
 
 This example combines the `column-gap` from the previous example with the `column-rule` property.
 
@@ -131,15 +143,17 @@ This example combines the `column-gap` from the previous example with the `colum
 }
 ```
 
-<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="result" data-slug-hash="mdmoqjL" data-user="caraya" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"><span>See the Pen <a href="https://codepen.io/caraya/pen/mdmoqjL">Column fill</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>) on <a href="https://codepen.io">CodePen</a>.</span></p>
-
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<iframe height="340.359375" style="width: 100%;" scrolling="no" title="Column fill and rule" src="https://codepen.io/caraya/embed/mdmoqjL?default-tab=css%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/caraya/pen/mdmoqjL">
+  Column fill and rule</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
 The items that make the `column-rule` property can also be expressed individually:
 
-- Color uses `column-rule-color`
-- Style uses `column-rule-style`
-- Width uses `column-rule-width`
+* Color uses `column-rule-color`
+* Style uses `column-rule-style`
+* Width uses `column-rule-width`
 
 There may be times when the individual properties work better but I find that using the `column-rule` shorthand works better and prevents user errors (like I forgot to add the width :) )
 

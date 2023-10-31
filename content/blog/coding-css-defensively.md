@@ -11,7 +11,6 @@ The idea is as follows:
 
 1. Add a message to the example HTML and style it appropriately
 2. Check if the browser supports the feature
-    
     1. If it does, hide the message
     2. If the feature is not supported then make sure the message is displayed
 

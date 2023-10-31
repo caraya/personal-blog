@@ -25,6 +25,8 @@ The first step is to create the stylesheet and add the rules we want to use on i
 2. The `replace` method provides a promise-based API
 3. `replaceSync`, as the name indicates, provides a synchronous API
 
+{.custom-ordered}
+
 ```js
 const sheet = new CSSStyleSheet(); // 1
 

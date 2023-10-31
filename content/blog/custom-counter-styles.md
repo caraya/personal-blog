@@ -43,6 +43,8 @@ Another consideration is Safari and WebKit browsers. They don't support custom c
 
 A working example can be found in this [codepen](https://codepen.io/caraya/pen/YzVQNMG)
 
-<p class="codepen" data-height="494" data-theme-id="dark" data-default-tab="css,result" data-slug-hash="YzVQNMG" data-user="caraya" style="height: 494px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"><span>See the Pen <a href="https://codepen.io/caraya/pen/YzVQNMG">Custom List Styles</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>) on <a href="https://codepen.io">CodePen</a>.</span></p>
-
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<iframe height="300" style="width: 100%;" scrolling="no" title="Custom List Styles" src="https://codepen.io/caraya/embed/YzVQNMG?default-tab=css%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/caraya/pen/YzVQNMG">
+  Custom List Styles</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>

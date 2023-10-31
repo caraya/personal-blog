@@ -281,15 +281,15 @@ Some of the themes I’ve chosen to test are:
 
 **Skinny Bones** ([Code](http://mmistakes.github.io/skinny-bones-jekyll/getting-started/) | [Demo Site](http://mmistakes.github.io/skinny-bones-jekyll/))
 
-![made-mistakes](https://publishing-project.rivendellweb.net/wp-content/uploads/2016/02/made-mistakes-1024x373.jpeg)
+![made-mistakes](/images/2016/02/made-mistakes-1024x373.jpeg)
 
  **Mediator** ([Code](https://github.com/dirkfabisch/mediator/blob/master/README.md) | [Demo Site](http://blog.base68.com/))
 
-![screenshot1](https://publishing-project.rivendellweb.net/wp-content/uploads/2016/02/screenshot1.jpg)
+![screenshot1](/images/2016/02/screenshot1.jpg)
 
 **Solarized Theme** ([Code](https://github.com/mattvh/solar-theme-jekyll/blob/master/README.md) | [Demo Site](http://mattvh.github.io/solar-theme-jekyll/))
 
-![solarized](https://publishing-project.rivendellweb.net/wp-content/uploads/2016/02/solarized.png)
+![solarized](/images/2016/02/solarized.png)
 
 Jekyll themes are not like Wordpress themes where you create a child theme in order to make changes and do further development. You work directly in the
 

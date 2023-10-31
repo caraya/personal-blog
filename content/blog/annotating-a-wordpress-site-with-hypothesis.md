@@ -25,9 +25,7 @@ Users will also need a [Hypothesis](https://hypothes.is) account. This will stor
 
 When you go to a post or page on this blog, you will see the Hypothesis UI running on the top right corner of the page. If you click on it you will see a list of other public annotations on this page and an editor for you to add more annotations to the page and interact with annotations left by others on the page.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2021/08/hypothesis-01.png)
-
-Hypothes.is running on a WordPress site
+![Hypothes.is running on a WordPress site](/images/2021/08/hypothesis-01.png)
 
 You can choose to make your annotations public, where everyone visiting the page can see them, or private which only the author can see.
 

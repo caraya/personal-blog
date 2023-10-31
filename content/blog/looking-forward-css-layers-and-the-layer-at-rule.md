@@ -3,9 +3,9 @@ title: "Looking forward: CSS Layers and the @layer at-rule"
 date: "2021-12-13"
 ---
 
-**Warning:**
-
+!!! warning **Warning:**
 This post is about CSS specifications that are still under development and, as far as I know, have no implementation in production browsers yet. Furthermore, the specification may change in the future. To keep track of the progress, please follow the `Cascade Layers` section of the [CSS Cascading and Inheritance Level 5](https://www.w3.org/TR/css-cascade-5/) specification.
+!!!
 
 Looking at some of the current draft specifications, I found something that looks very promising and, when implemented, will be a very useful feature. The feature is called CSS Layers and it's a way to group elements together so they will cascade as a unit.
 
@@ -15,9 +15,7 @@ What I find the most intriguing about this functionality is how it groups elemen
 
 Layers allow you to organize styles in groups and to specify the order in which those groups cascade and get applied to a document.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2021/11/css-cascade-cascade-layers-bramus-1120x630-1.png)
-
-Where layers sit in determining styles. Taken from [The Future of CSS: Cascade Layers (CSS @layer)](https://www.bram.us/2021/09/15/the-future-of-css-cascade-layers-css-at-layer/)
+![Where layers sit in determining styles. Taken from [The Future of CSS: Cascade Layers (CSS @layer)](https://www.bram.us/2021/09/15/the-future-of-css-cascade-layers-css-at-layer/)](/images/2021/11/css-cascade-cascade-layers-bramus-1120x630-1.png)
 
 Layers are processed before the browser looks at specificity and the order of appearance of CSS so they help reduce some of the problems that come with specificity and the order of appearance of CSS selectors. They also provide grouping for styles; you can create layers that group styles together for specific purposes. For example, you could use a layer for reset styles, one for generic theme elements, and a different layer for specific element overrides.
 
@@ -30,7 +28,7 @@ Subsequent layer declarations define each individual layer. When rule names over
 The document order becomes less relevant when working with layers because we've provided an explicit order to the layers.
 
 ```css
-/* 
+/*
   establish the layer order, so the
   "override" layer takes precedence
 */
@@ -149,17 +147,17 @@ using these layers
 
 Then the normal order would be:
 
-- Normal reset
-- Normal base
-- Normal theme
-- Normal utilities
+* Normal reset
+* Normal base
+* Normal theme
+* Normal utilities
 
 Important declarations in these layers will go in the “Important User” Origin, and will be ordered in reverse:
 
-- Important utilities
-- Important theme
-- Important base
-- Important reset
+* Important utilities
+* Important theme
+* Important base
+* Important reset
 
 Because “Normal Unlayered Styles” implicitly go last, this also means that “Important Unlayered Styles” will go first.
 
@@ -173,10 +171,10 @@ If the media query later evaluates to true the `@layer` order will be recalculat
 
 In the example below the following things may happen:
 
-- If none of the media queries match then there `@layer` array will be empty
-- If the width media query matches but the color scheme doesn't then the only the `layout` @layer will apply
-- Likewise, if the `prefers-color-scheme` query matches but the size doesn't then the `theme` @layer will apply
-- If both queries match then the @layer order will be `layout, theme`
+* If none of the media queries match then there `@layer` array will be empty
+* If the width media query matches but the color scheme doesn't then the only the `layout` @layer will apply
+* Likewise, if the `prefers-color-scheme` query matches but the size doesn't then the `theme` @layer will apply
+* If both queries match then the @layer order will be `layout, theme`
 
 ```css
 @media (min-width: 30em) {
@@ -257,8 +255,8 @@ The CSS Working Group [decided](https://github.com/w3c/csswg-drafts/issues/6522)
 @layer default;
 @import url(theme.css) layer(theme);
 @layer components; /*  This @layer statement
-here will make all subsequent @import rules 
-be ignored. In this example however 
+here will make all subsequent @import rules
+be ignored. In this example however
 there are none */
 
 @layer default {
@@ -270,9 +268,9 @@ there are none */
 
 Instead, you should do the following:
 
-- define your layers
-- group all your @import and @namespace rules
-- add your @layer rules
+* define your layers
+* group all your @import and @namespace rules
+* add your @layer rules
 
 ```css
 @layer default;
@@ -297,7 +295,7 @@ All major browsers support the @layer at-rule in their development versions and 
 | --- | --- |
 | Chromium (Blink) | Available in Chrome 96+ (current Canary) via the `#enable-cascade-layers` feature flag in `chrome://flags/`. |
 | Firefox (Gecko) | Available in Firefox 94+ (current Canary) by setting `layout.css.cascade-layers.enabled` to true via `about:config`. |
-| Safari (WebKit) | Available in Safari Technology Preview 133. To enable it, choose **_Experimental Features → CSS Cascade Layers_** from the Develop menu. |
+| Safari (WebKit) | Available in Safari Technology Preview 133. To enable it, choose ***Experimental Features → CSS Cascade Layers*** from the Develop menu. |
 
 Use this Codepen from [Miriam](https://twitter.com/TerribleMia/) to test if your browser supports Layers.
 

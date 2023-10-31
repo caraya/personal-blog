@@ -7,20 +7,18 @@ Every so often I like to look at my build process and see where I can make impro
 
 For this iteration the changes are:
 
-- Finally switched to the current recommended method of defining tasks.
-- Moved from Imagemin to gulp-libsquoosh
-- Moved to markdown-it as the Markdown parser
-- The syntax for gulp-exec changed so I moved the PDF generation code to the new syntax
-- Another major and unexpected change is that node-sass is deprecated in favor of gulp-sass and the current dart-sass version
-    
-    - As a result the `sass` task has been modified to run with the new gulp-sass in synchronous mode
-    - **dart-sass is now the normative SASS version and the first one that will receive new features, updates and fixes**
-- Dependencies
-    
-    - [Prince XML](https://www.princexml.com/) to generate PDFs from HTML
-    - Because it's a commercial product I cannot share it. You can download it for evaluation purposes from the website
-    - [libsquoosh](https://github.com/GoogleChromeLabs/squoosh/tree/dev/libsquoosh) is used internally by gulp-libssquoosh to optimize images
-    - [markdown-it](https://markdown-it.github.io/) is used to parse Markdown files
+* Finally switched to the current recommended method of defining tasks.
+* Moved from Imagemin to gulp-libsquoosh
+* Moved to markdown-it as the Markdown parser
+* The syntax for gulp-exec changed so I moved the PDF generation code to the new syntax
+* Another major and unexpected change is that node-sass is deprecated in favor of gulp-sass and the current dart-sass version
+  * As a result the `sass` task has been modified to run with the new gulp-sass in synchronous mode
+  * **dart-sass is now the normative SASS version and the first one that will receive new features, updates and fixes**
+* Dependencies
+  * [Prince XML](https://www.princexml.com/) to generate PDFs from HTML
+  * Because it's a commercial product I cannot share it. You can download it for evaluation purposes from the website
+  * [libsquoosh](https://github.com/GoogleChromeLabs/squoosh/tree/dev/libsquoosh) is used internally by gulp-libssquoosh to optimize images
+  * [markdown-it](https://markdown-it.github.io/) is used to parse Markdown files
 
 We will cover each of the top-level bullets in more detail below
 
@@ -72,13 +70,13 @@ One of the unexpected advantages of this method is that we can now create privat
 
 Right now I expose all tasks in the `gulpfile` so I can run every stage of the different workflows from Gulp, but that's not necessarily a best practice so we may change the tasks that are exported in the future.
 
-## Switch to `gulp-libsquoosh`
+## Switch to gulp-libsquoosh
 
 Imagemin is a great tool for optimizing images but, unfortunately, the Gulp plugin leaves a lot to be desired and the codec plugins need to be compiled for every platform you use them on.
 
 [LibSquoosh](https://github.com/GoogleChromeLabs/squoosh/tree/dev/libsquoosh) is the Javascript CLI for [Squoosh](https://github.com/GoogleChromeLabs/squoosh/), an image compression application. [gulp-libsquoosh](https://github.com/pekeq/gulp-libsquoosh) is a Gulp plugin for libSquoosh.
 
-It has the advantages that supported compression formats are implemented as WASM libraries so they'll work everywhere without compilation. If you're doing image manipulation work, i might be possible to use them on projects outside of gulp-libsquoosh, but I haven't tried it yet.
+It has the advantages that supported compression formats are implemented as WASM libraries so they'll work everywhere without compilation. If you're doing image manipulation work, i might be possible to use them on projects outside of Squoosh, but I haven't tried it yet.
 
 The codecs are also bundled with libsquoosh so there's a single installation to make the full set of codices work.
 
@@ -123,10 +121,10 @@ As of version 5 of [gulp-exec](https://github.com/robrich/gulp-exec), the plugin
 to the new syntax using ES6 template literals (broken into multiple lines for readability, should all be in one line):
 
 ```js
-.pipe($.exec((file) => `prince --verbose 
---input=html 
---javascript 
---style ./src/css/article-style.css 
+.pipe($.exec((file) => `prince --verbose
+--input=html
+--javascript
+--style ./src/css/article-style.css
 ${file.path}`, options))
 ```
 

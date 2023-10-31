@@ -42,8 +42,8 @@ article :is(h1,h2,h3,h4,h5,h6) {
   padding: 1em 1em 1em 0;
 }
 
-/* 
-  all the paragraphs in an article 
+/*
+  all the paragraphs in an article
   header or footer
 */
 article :is(header, footer) > p {
@@ -59,7 +59,7 @@ article :where(blockquote, .pull-quote) > p {
 }
 
 /*
-  h1 or h2 elements 
+  h1 or h2 elements
   with class header or boldest
 */
 article :is(h1,h2,:is(.header,.boldest)) {
@@ -99,8 +99,8 @@ article :where(#header, .header) > p {
 
 **TL,DR:**
 
-- :is() takes the specificity of the child with the highest specificity in the selector list passed as a parameter
-- :where() has no specificity. It removes all the specificity in the selector list passed as a parameter
+* :is() takes the specificity of the child with the highest specificity in the selector list passed as a parameter
+* :where() has no specificity. It removes all the specificity in the selector list passed as a parameter
 
 ## Browser compatibility
 

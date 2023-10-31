@@ -1,7 +1,7 @@
 ---
 title: "Unicode and multilingual support"
 date: "2015-08-05"
-categories: 
+categories:
   - "typography"
 ---
 
@@ -24,6 +24,6 @@ When I want to use font subsets my favorite tool is Font Squirrel's [Webfont gen
 
 Font Squirrel has three options for subsetting fonts. We will work with custom options because they provide the most flexible approach
 
-\[caption id="attachment\_786629" align="aligncenter" width="500"\][![Font Squirrel Font Subset Options when using custom subsetting](https://publishing-project.rivendellweb.net/wp-content/uploads/2014/09/fontsquirrel-subset-e1435901123984.png)](http:https://publishing-project.rivendellweb.net/wp-content/uploads/2014/09/fontsquirrel-subset-e1435901123984.png) Font Squirrel Font Subset Options\[/caption\]
+\[caption id="attachment\_786629" align="aligncenter" width="500"\][![Font Squirrel Font Subset Options when using custom subsetting](/images/2014/09/fontsquirrel-subset-e1435901123984.png)](http:/images/2014/09/fontsquirrel-subset-e1435901123984.png) Font Squirrel Font Subset Options\[/caption\]
 
 You can subset by character type, language, unicode table, single characters or, if you know what you're doing by Unicode Ranges. The last option is only good if you know the exact range or ranges of characters that you need to support and the preview may show you that your chose font doesn't support the characters you need.

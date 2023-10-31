@@ -65,7 +65,7 @@ Native CSS nesting provides the `&` selector and also a `@nest` at-rule that pro
 
 The post will look at both the selector and the at-rule and explain any differences that may be there.
 
-## The `&` selector
+## The & selector
 
 The `&` selector allows you to nest rules together. This is similar to, but not quite the same as, the way that SASS handles nesting.
 
@@ -162,8 +162,8 @@ The `@nest` rule functions identically to a nested style rule: it starts with a 
 
 The only difference between @nest and rule using `&` is that the selector used in a @nest rule is less constrained:
 
-- It only must contain a nesting selector in it somewhere, rather than requiring it to be at the start of each selector
-- A list of selectors is nest-containing if all of its individual complex selectors are nest-containing
+* It only must contain a nesting selector in it somewhere, rather than requiring it to be at the start of each selector
+* A list of selectors is nest-containing if all of its individual complex selectors are nest-containing
 
 ```css
 .foo {
@@ -249,7 +249,7 @@ Check [Caniuse](https://caniuse.com/css-nesting) for more information.
 
 ### Additional resources
 
-- [Specification](https://drafts.csswg.org/css-nesting/) — drafts.csswg.org
-- [Chrome support bug](https://bugs.chromium.org/p/chromium/issues/detail?id=1095675) — bugs.chromium.org
-- [Safari support bug](https://bugs.webkit.org/show_bug.cgi?id=223497) — bugs.webkit.org
-- [Firefox support bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1648037) — bugzilla.mozilla.org
+* [Specification](https://drafts.csswg.org/css-nesting/) — drafts.csswg.org
+* [Chrome support bug](https://bugs.chromium.org/p/chromium/issues/detail?id=1095675) — bugs.chromium.org
+* [Safari support bug](https://bugs.webkit.org/show_bug.cgi?id=223497) — bugs.webkit.org
+* [Firefox support bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1648037) — bugzilla.mozilla.org

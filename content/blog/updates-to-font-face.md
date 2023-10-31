@@ -21,21 +21,21 @@ The preferred value type is a keyword, with or without quotes.
 
 The following table shows the following information for each supported format that appears in the specification:
 
-- The quoted string format
-- The equivalent quoted syntax
-- The font format
-- The format name
-- Commons extensions associated with the format
+* The quoted string format
+* The equivalent quoted syntax
+* The font format
+* The format name
+* Commons extensions associated with the format
 
 Even though `format()` is not as important as it used to be since most modern browsers support WOFF and WOFF2 fonts, it is still a good habit to get into.
 
 | String Format | Equivalent Syntax | Font Format | Format Name | Common extensions |
-| --- | --- | --- | --- | --- |
+| --* | --* | --* | --* | --* |
 | format("woff2") | format(woff2) | woff2 | WOFF 2.0 | .woff2 |
 | format("woff") | format(woff) | woff | WOFF 1.0 | .woff |
 | format("truetype") | format(truetype) | truetype | TrueType | .ttf |
 | format("opentype") | format(opentype) | opentype | OpenType | .otf, .ttf |
-| format("collection" | format(collection) | collection | OpenType Collection | .otc, .ttc |
+| format("collection") | format(collection) | collection | OpenType Collection | .otc, .ttc |
 | format("woff2-variations") | format(woff2) tech(variations) | woff2 | WOFF 2.0 | .woff2 |
 | format("woff-variations") | format(woff) tech(variations) | woff | WOFF 1.0 | .woff |
 | format("truetype-variations") | format(truetype) tech(variations) | truetype | TrueType | .ttf |
@@ -48,10 +48,10 @@ Loading a font and explicitly stating that it's a WOFF2 variable font would look
 ```css
 @font-face {
   font-family: "Recursive";
-  src: url("/path/to/recursive.woff2") 
+  src: url("/path/to/recursive.woff2")
     format(woff2)
     tech(variations),
-  url("/path/to/recursive.woff") 
+  url("/path/to/recursive.woff")
     format(woff)
     tech(variations);
 }
@@ -63,22 +63,22 @@ This is an optional descriptor that indicates the technologies that the font sup
 
 The value for this property is one of the following keywords:
 
-- variations
-- palettes
-- incremental
-- features-opentype
-- features-aat
-- features-graphite
-- color-COLRv0
-- color-COLRv1
-- color-SVG
-- color-sbix
-- color-CBDT.
+* variations
+* palettes
+* incremental
+* features-opentype
+* features-aat
+* features-graphite
+* color-COLRv0
+* color-COLRv1
+* color-SVG
+* color-sbix
+* color-CBDT.
 
 The following table shows several old unnormalized format() values and their new equivalent syntax:
 
 | Old syntax | Equivalent syntax |
-| --- | --- |
+| --* | --* |
 | format("woff2-variations") | format(woff2) tech(variations) |
 | format("woff-variations") | format(woff) tech(variations) |
 | format("opentype-variations") | format(opentype) tech(variations) |
@@ -95,7 +95,7 @@ You can use `@supports` and the `tech()` attribute of the `src` descriptor to te
 The list of technologies you can test for is listed in the following table
 
 | Technology | Supports |
-| --- | --- |
+| --* | --* |
 | color-colrv0 | Color Fonts using the COLR version 0 table |
 | color-colrv1 | Color fonts using the COLR version 1 table |
 | color-svg | SVG multi-colored tables |
@@ -112,7 +112,7 @@ The syntax for the `@supports` at rule is:
 
 ```css
 @supports font-tech(name-of-tech) {
-  /* 
+  /*
   Code that supports the
   technology goes here
   */
@@ -136,7 +136,7 @@ This example imports the Bungee Spice Color V1 font from Google Fonts and will o
 We use `font-format` as the value of the feature we're testing with `@supports`. A list of valid values is show in the following table.
 
 | Format | Description | File extensions |
-| --- | --- | --- |
+| --* | --* | --* |
 | collection | OpenType Collection | .otc, .ttc |
 | embedded-opentype | Embedded OpenType | .eot |
 | opentype | OpenType | .ttf, .otf |

@@ -11,7 +11,7 @@ The idea is that using this tab we can check how our page loading and troublesho
 
 The image below shows the result of running the Network tab in Chrome 78 (Canary when the article was written).
 
-![Network Panel Showing Results of a run](https://publishing-project.rivendellweb.net/wp-content/uploads/2019/08/devtools-network-run.png)
+![Network Panel Showing Results of a run](/images/2019/08/devtools-network-run.png)
 
 The Network panel provides the following information for every resource loaded for the page:
 
@@ -35,7 +35,7 @@ Online is a pull-down menu that gives us the option to throttle our connection s
 
 The two arrows in the far right allow you to import (arrow pointing up) and export (arrow pointing down) [HAR files](https://www.keycdn.com/support/what-is-a-har-file), a cross-browser way to review performance data.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2019/08/devtools-network-what-we-can-do.png)
+![](/images/2019/08/devtools-network-what-we-can-do.png)
 
 ## The result
 
@@ -53,7 +53,7 @@ The final three numbers are indicators of speed. Going from right to left:
 - **DOMContentLoaded** shows how long did the browser take before firing the [DOMContentLoaded event](https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event). The DOMContentLoaded event fires when the initial HTML document has been completely loaded and parsed, without waiting for subresources to finish loading
 - **Load** shows how long did the browser takes to fire the [load event](https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event). This event fires when the whole page has loaded, including all dependent resources such as stylesheets images
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2019/08/devtools-network-results.png)
+![](/images/2019/08/devtools-network-results.png)
 
 ## The waterfall in detail
 
@@ -75,6 +75,6 @@ Rather than try to explain in detail what each possible element is, I'll use Goo
 - **Receiving Push**. The browser is receiving data for this response via HTTP/2 Server Push.
 - **Reading Push**. The browser is reading the local data previously received.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2019/08/devtools-network-waterfall-details.png)
+![](/images/2019/08/devtools-network-waterfall-details.png)
 
 This is not everything you can do in DevTools' network tab but it's a good starting point.

@@ -1,11 +1,12 @@
 ---
 title: "Using Gradients with border-image"
 date: "2023-07-19"
+youtube: true
 ---
 
 Thanks to Kevin Powell and his [video](https://www.youtube.com/watch?v=ypstT5UfCsk) for showing me how to do a trick that has always intrigued me.
 
-<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/ypstT5UfCsk?t=725" title="YouTube video player" frameborder="0" allow="autoplay; picture-in-picture" allowfullscreen></iframe>
+<lite-youtube videoid="ypstT5UfCsk"></lite-youtube>
 
 The idea is that we have a border color that fades to transparent or invisible.
 
@@ -57,10 +58,10 @@ With all the setup we did, creating the effect is fairly straightforward.
 We want the top and left border to start with a solid color and become invisible before the end of the border. The code does the following:
 
 1. Defines the borders we want to work with using logical properties
-    
+
     - In English and other Western languages, `block-start` is top and `inline-start` is right
 2. Use the [border image](https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-source) property to set the image to a [linear gradient](https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient)
-    
+
     - gradients can be used everywhere an image can
 3. Use the [border-image-slice](https://developer.mozilla.org/en-US/docs/Web/CSS/border-image-slice) method to make sure the image will appear in full. Otherwise, the image will only appear in the corners
 

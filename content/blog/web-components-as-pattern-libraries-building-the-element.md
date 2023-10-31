@@ -22,7 +22,7 @@ I will use a modified version of Atomic Web Design as the underlying principle a
 
 [Josh Duck’s Periodic Table of HTML Elements](http://zqsmm.qiniucdn.com/data/20110511083224/index.html) does a good job illustrating that all our web content, regardless of for factor or what framework generated it, uses the same elements.
 
-\[caption id="attachment\_787731" align="aligncenter" width="640"\][![](https://publishing-project.rivendellweb.net/wp-content/uploads/2016/12/html-periodic-table.png)](https://publishing-project.rivendellweb.net/web-components-as-pattern-libraries-part-i-building-the-element__trashed/html-periodic-table/) Periodic Table of HTML Elements shows that all HTML elements are organized around a function.\[/caption\]
+\[caption id="attachment\_787731" align="aligncenter" width="640"\][![](/images/2016/12/html-periodic-table.png)](https://publishing-project.rivendellweb.net/web-components-as-pattern-libraries-part-i-building-the-element__trashed/html-periodic-table/) Periodic Table of HTML Elements shows that all HTML elements are organized around a function.\[/caption\]
 
 Because all the content that we use for the web starts from the same basic components we can use a similar building pattern to what nature uses, going from the simplest to the most complex.
 

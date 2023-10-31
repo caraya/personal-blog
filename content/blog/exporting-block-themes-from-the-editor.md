@@ -17,16 +17,13 @@ Go to the editor under appearance. From there click the options menu (three vert
 
 Once you click on the menu you will see several options. Under the `Tools` group, the first option is `Export`.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2022/05/fse-theme-export.png)
-
-Theme editor options open. The export option is the first one under tools
+![Theme editor options open. The export option is the first one under tools](/images/2022/05/fse-theme-export.png)
 
 Click on export and choose the location to save the file to will do the following:
 
 1. It will create a zip file to place the content in
 2. Copies all files from the current theme into the zip file
 3. Extracts the template changes that are stored in the database to files and adds them to the zip file
-    
     1. If these templates have the same names as those in the theme, they will be overwritten, so that the database version takes precedence
 4. Adds the theme.json file to the zip file
 
@@ -41,23 +38,19 @@ The export process may make a few unexpected changes to your templates and theme
 Some possible gotchas that need manual editing:
 
 1. The output of template files from the database will be sanitized for security reasons
-    
-    - You will likely notice this with any CSS variables in your template files: e.g. `--wp--custom--spacing--outer` would become `\u002d\u002dwp\u002d\u002dcustom\u002d\u002dspacing\u002d\u002douter`
+   1. You will likely notice this with any CSS variables in your template files: e.g. `--wp--custom--spacing--outer` would become `\u002d\u002dwp\u002d\u002dcustom\u002d\u002dspacing\u002d\u002douter`
 2. The properties in theme.json are now sorted alphabetically, so you might notice some of the objects in your theme.json moved position in the exported file
-    
-    - This now gives us a standard order for these properties so in the future it will be easy to know where everything should go
+   1. This now gives us a standard order for these properties so in the future it will be easy to know where everything should go
 3. The schema may be automatically updated to match the version of WordPress you are using
-    
-    - Make sure that this update will not break your theme
+   1. Make sure that this update will not break your theme
 
 ## Submitting the theme to the WordPress theme repository
 
 Exporting the file doesn't mean that it's ready to submit to the WordPress.org repository. There are still some steps to complete before it's ready to submit.
 
 1. If this is the first time you're submitting the theme, make sure there's a `readme.txt` file at the root of the theme
-    
-    - This file is required if you will be submitting the theme to the WordPress.org repository
-    - For an idea of what it should look like, see the [Sample Theme Readme](https://github.com/WPTT/sample-theme-readme)
+   1. This file is required if you will be submitting the theme to the WordPress.org repository
+   2. For an idea of what it should look like, see the [Sample Theme Readme](https://github.com/WPTT/sample-theme-readme)
 2. Update the screenshot if you've made any visual changes to the homepage. They should both match
 3. Add a changelog entry to the `readme.md` file
 4. IF this is not your initial release, you must update the version number of the theme in `style.css`

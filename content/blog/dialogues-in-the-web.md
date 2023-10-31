@@ -37,11 +37,9 @@ The interactive part of the dialogue is done in Javascript.
 
 1. We capture references to the dialogue and the open and close buttons.
 2. We add a click event listener in the open button to show the dialogue using the [showModal()](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/showModal) of the dialog element to open the dialogue.
-    
-    - We can control the type of dialogue that we create. If we use `show()` instead of `showModal` we'll get a different type of dialogue displayed on the page
+   * We can control the type of dialogue that we create. If we use `show()` instead of `showModal` we'll get a different type of dialogue displayed on the page
 3. We also add a click event listener to the close button to close the dialogue using the [close](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/close) method of the dialog element
-    
-    - The close method is the same regardless of the type of dialogue we open
+   * The close method is the same regardless of the type of dialogue we open
 
 ```js
 // 1
@@ -62,8 +60,6 @@ closeModal.addEventListener("click", () => {
 
 Support for the `dialog` element is pretty good. All major desktop browsers support it as do most major mobile browsers other than Opera Mini.
 
- ![](https://caniuse.bitsofco.de/static/v1/dialog-1664931209010.jpg) 
-
-Data on support for the dialog feature across the major browsers from caniuse.com
+ ![Data on support for the dialog feature across the major browsers from caniuse.com](https://caniuse.bitsofco.de/static/v1/dialog-1664931209010.jpg)
 
 We shouldn't need a polyfill for the `dialog` element but, if you need it, one is [available](https://github.com/GoogleChrome/dialog-polyfill) from the Chrome team.

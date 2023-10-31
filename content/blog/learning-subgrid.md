@@ -60,8 +60,7 @@ Having this ability, we can now use subgrids to create patterns that were not po
 
 ## Links and Resources
 
-- [Subgrid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Subgrid) — MDN
-- Examples to help me understand
-    
-    - [Fullbleed Subgrid Items](https://codepen.io/web-dot-dev/pen/JjMQzVV)
-    - [Understanding Subgrid](https://codepen.io/caraya/pen/oNEdqRd)
+* [Subgrid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Subgrid) — MDN
+* Examples to help me understand
+  * [Fullbleed Subgrid Items](https://codepen.io/web-dot-dev/pen/JjMQzVV)
+  * [Understanding Subgrid](https://codepen.io/caraya/pen/oNEdqRd)

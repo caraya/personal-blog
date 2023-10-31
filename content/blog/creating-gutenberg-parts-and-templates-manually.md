@@ -5,8 +5,8 @@ date: "2022-03-07"
 
 When working with Gutenberg template parts and templates we have two options:
 
-- Create them in the full site editor
-- Create them manually using the appropriate markup
+* Create them in the full site editor
+* Create them manually using the appropriate markup
 
 This post will cover the latter option and will serve as an overview of the markup we need to use to create the templates.
 
@@ -18,9 +18,9 @@ Gutenberg template markup is written inside HTML comment tags. This example show
 
 The components of the element are:
 
-- The WordPress prefix, `wp:`
-- The name of the element, `query-title`
-- And any attributes as value pairs inside curly brackets, `{"type":"archive}`
+* The WordPress prefix, `wp:`
+* The name of the element, `query-title`
+* And any attributes as value pairs inside curly brackets, `{"type":"archive}`
 
 The attributes are dependent on the element and not all attributes apply to all the available elements.
 
@@ -153,7 +153,7 @@ For each `wp:template-part` element we use, the `slug` attribute indicates the n
   } /-->
 <!-- wp:spacer {"height":30} -->
 <div style="height:30px"
-  aria-hidden="true" 
+  aria-hidden="true"
   class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 <!-- wp:template-part {

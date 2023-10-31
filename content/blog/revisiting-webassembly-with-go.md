@@ -94,12 +94,10 @@ The HTML portion of the project is where the magic happens. We will discuss the 
 The code follows these steps:
 
 1. The `Go()` function provides the Go WASM runtime brought by `wasm_exec.js` (it handles all the binding between the wasm file and the JavaScript API)
-2. `instantiateStreaming` allows loading the WebAssembly module from a streamed source.  
-    
-    - This function takes two parameters: the "streamed" wasm file and an `importObject` (an object containing the values to be imported into the newly-created WebAssembly Instance)
-        
-        - The first parameter: `fetch(main.wasm)` directly streams the `main.wasm` module
-        - The Go Wasm runtime provides a ready to use importObject that we call with `go.importObject;`
+2. `instantiateStreaming` allows loading the WebAssembly module from a streamed source.
+    * This function takes two parameters: the "streamed" wasm file and an `importObject` (an object containing the values to be imported into the newly-created WebAssembly Instance)*
+    * The first parameter: `fetch(main.wasm)` directly streams the `main.wasm` module
+    * The Go Wasm runtime provides a ready to use importObject that we call with `go.importObject;`
 3. If the WebAssembly module loads successfully, we run the instance using `go.run(result.instance)`
 4. If the module fails to load we log the error to console
 
@@ -226,8 +224,7 @@ This example shows different things that you can do with the `syscall/js` packag
 4. Get the bill JavaScript object
 5. Add 2 fields with values to the bill JavaScript object
 6. `<-make(chan bool)` tells the Go application that we don’t want to exit by using a [channel](https://gobyexample.com/channels)
-    
-    - The channel waits for data and will pause the execution until it receives data.
+   * The channel waits for data and will pause the execution until it receives data.
 
 ```go
 package main
@@ -248,13 +245,13 @@ func main() {
   // 3
   js.Global().Set("message", "Hello from Go")
 
-  //4 
+  //4
   bill := js.Global().Get("bill")
 
   fmt.Println("bill (before):", bill)
 
   // 5
-  bill.Set("firstName", "Bill") 
+  bill.Set("firstName", "Bill")
   bill.Set("lastName", "Ballantine")
 
   // 6
@@ -313,7 +310,6 @@ So what's next?
 
 There are several things that we can explore from here. Some of them include
 
-- Reduce the size of the Wasm binaries by using [TinyGo](https://tinygo.org/) and understanding the tradeoffs and limitations of the TinyGo subset of the language
-- Using different abstraction layers like Wasmtime, Wasmedge and Wasmer, and WASI to create standalone applications that run WebAssembly
-    
-    - Take advantage of tools like [subo](https://github.com/suborbital/subo), part of the [Suborbital](https://github.com/suborbital/subo) family of tools
+* Reduce the size of the Wasm binaries by using [TinyGo](https://tinygo.org/) and understanding the tradeoffs and limitations of the TinyGo subset of the language
+* Using different abstraction layers like Wasmtime, Wasmedge and Wasmer, and WASI to create standalone applications that run WebAssembly
+  * Take advantage of tools like [subo](https://github.com/suborbital/subo), part of the [Suborbital](https://github.com/suborbital/subo) family of tools

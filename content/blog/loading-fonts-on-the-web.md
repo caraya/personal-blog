@@ -29,7 +29,7 @@ On September 14, 2016, Adobe, Apple, Google, and Microsoft joined forces to intr
 
 Variable fonts provide diferent axes that give you fine grained control over your site's typography. These axes can be traditional typographical elements like weight, width, optical sizing, or slant. Or they can be fully custom axes to control additional aspects of a font.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2023/07/wakamaifondue-variable-font-axes.png)
+![](/images/2023/07/wakamaifondue-variable-font-axes.png)
 
 List of Roboto Variable Font axes, both default and custom
 
@@ -419,7 +419,7 @@ This will not create a subset like we did with Glyphhanger, but control whether 
 
 Support is good. According to caniuse.com, all browsers except Opera Mini support the technology.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2023/07/caniuse-web-fonts.webp)
+![](/images/2023/07/caniuse-web-fonts.webp)
 
 Caniuse @font-face browser support
 

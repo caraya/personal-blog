@@ -13,26 +13,23 @@ The first example that came to mind is date/time manipulation and [moment.js](ht
 
 I first start by researching what others have said about the libraries and how they've compared them. There's been plenty written about the libraries and their differences:
 
-- [The 7 best JavaScript date libraries](https://blog.logrocket.com/javascript-date-libraries/)
-- [momentjs vs date-fns](https://medium.com/@k2u4yt/momentjs-vs-date-fns-6bddc7bfa21e)
-- [Why you should use Date.fns for manipulating dates with Javascript](https://javascript-conference.com/blog/why-you-should-use-date-fns-for-manipulating-dates-with-javascript/)
+* [The 7 best JavaScript date libraries](https://blog.logrocket.com/javascript-date-libraries/)
+* [momentjs vs date-fns](https://medium.com/@k2u4yt/momentjs-vs-date-fns-6bddc7bfa21e)
+* [Why you should use Date.fns for manipulating dates with Javascript](https://javascript-conference.com/blog/why-you-should-use-date-fns-for-manipulating-dates-with-javascript/)
 
 That's just a starting point, I will then run tests to validate the opinion I formed from reading other people's research. I may have constraints that are not present for the people who wrote the articles I read and vice-versa.
 
 Some of the questions I would ask, based on research and needs.
 
 1. Does the library affect performance due to size? The larger a library is the longer it'll take to download and parse before it can be used
-    
-    1. Is there a way to reduce the size of the library without using bundlers? Lo-Dash and Date.fns also provide modules for individual properties for use with common.js require statements
+   1. Is there a way to reduce the size of the library without using bundlers? Lo-Dash and Date.fns also provide modules for individual properties for use with common.js require statements
 2. How easy is it for a bundler like WebPack or Rollup to tree shake the library to remove unused code from this package?
 3. Am I required to use modules and/or transpiler to make the library work?
-    
-    1. Am I already using modules or bundlers?
-    2. Do I have to support browsers that don't support modules or imports?
+   1. Am I already using modules or bundlers?
+   2. Do I have to support browsers that don't support modules or imports?
 4. Is there an existing API in the ECMA 262 specification that does what I need?
-    
-    1. Is the proposal part of the ES262 spec? Meaning has it already been published or is at stage 4 waiting for the next version of the spec?
-    2. If it's not at stage 4 then what stage? What browsers have implemented the proposal before moving to stage 4?
+   1. Is the proposal part of the ES262 spec? Meaning has it already been published or is at stage 4 waiting for the next version of the spec?
+   2. If it's not at stage 4 then what stage? What browsers have implemented the proposal before moving to stage 4?
 
 The last point is important. As ECMAScript continues to evolve, new proposals will appear that will provide native support for the feature only in browsers that support the feature when it reaches stage 4 in the [TC39 development process](https://tc39.es/process-document/) and becomes part of the annual specification.
 

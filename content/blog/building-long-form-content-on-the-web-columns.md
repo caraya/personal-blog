@@ -5,13 +5,9 @@ date: "2022-10-10"
 
 There are layouts that are only possible with columns. Thinking about IEEE and ACM paper formats.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2022/09/acm-paper-template.png)
+![Example of a two-column paper for ACM publications](/images/2022/09/acm-paper-template.png)
 
-Example of a two-column paper for ACM publications
-
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2022/09/ieee-format-paper.jpg)
-
-Example of a paper formatted for IEEE publication
+![Example of a paper formatted for IEEE publication](/images/2022/09/ieee-format-paper.jpg)
 
 The biggest difference is that the paper formats are paginated so it's relatively easier to shift from one column to another and from page to page. Because the web is one continuous format, reading columns becomes much harder since we have to scroll to get to the bottom of one column and then scroll to the top to start the next one.
 

@@ -21,20 +21,20 @@ This means that we can have both large elements and layouts that are use media q
 <div class="card-container">
   <div class="card">
     <figure>
-      <!-- image and caption go here -->
+      <!-* image and caption go here -->
     </figure>
     <div>
       <header>
-        <!-- Header and related information -->
+        <!-* Header and related information -->
       </header>
       <div class="notes">
-        <!-- content related data -->
+        <!-* content related data -->
       </div>
       <button>Click me</button>
     </div>
   </div>
 
-  <!-- additional cards -->
+  <!-* additional cards -->
 </div>
 ```
 
@@ -57,25 +57,25 @@ The example below uses four container queries to change the way content will loo
 
 ```css
 @container (max-width: 850px) {
-  /* 
+  /*
   if the width of the parent is less than 850px
   */
 }
 
 @container (max-width: 650px) {
-  /* 
+  /*
   if the width of the parent is less than 650px
   */
 }
 
 @container (max-width: 460px) {
-  /* 
+  /*
   if the width of the parent is less than 460px
   */
 }
 
 @container (max-width: 300px) {
-  /* 
+  /*
   if the width of the parent is less than 300px
   */
 }
@@ -119,7 +119,7 @@ if (!supportsIntersectionObserver) {
   // Load Intersection Observer polyfill
 } else {
   console.log('browser supports Intersection observer. Keep going');
-  // if the browser supports 
+  // if the browser supports
   // Intersection Observer then do nothing
 }
 
@@ -136,9 +136,9 @@ els.forEach((el) => {
 
 Then add the following attribute to the HTML elements that you want to use container queries:
 
-- The `eqio` class to the element in addition to any other class you need
-- A `data-eqio-sizes` attribute whose value is a JSON-serializable array of sizes that you want to match on
-- A `data-eqio-prefix` attribute to tell eqio the prefix for your class names.
+* The `eqio` class to the element in addition to any other class you need
+* A `data-eqio-sizes` attribute whose value is a JSON-serializable array of sizes that you want to match on
+* A `data-eqio-prefix` attribute to tell eqio the prefix for your class names.
 
 ```html
 <div
@@ -152,9 +152,9 @@ Then add the following attribute to the HTML elements that you want to use conta
 
 The example component will:
 
-- be customized when its width is 400 or smaller ("<" is a synonym for `max-width`, not “less than”)
-- be customized when its width is 700 or greater (">" is a synonym for `min-width`, not “greater than”).
-- apply the following classes `media-object-eqio-&lt;400` and `media-object-eqio->700` as appropriate
+* be customized when its width is 400 or smaller ("<" is a synonym for `max-width`, not “less than”)
+* be customized when its width is 700 or greater (">" is a synonym for `min-width`, not “greater than”).
+* apply the following classes `media-object-eqio-&lt;400` and `media-object-eqio->700` as appropriate
 
 The final step is to create the CSS for each matching condition. The query is a combination of the `data-eqio-prefix` HTML attribute and the value of the query we want to match, `&lt;400` or `>700`.
 
@@ -176,14 +176,14 @@ Both solutions should be functionally identical but, as with everything on the w
 
 ## Links and resources
 
-- [An introduction to CSS Containment](https://blogs.igalia.com/mrego/2019/01/11/an-introduction-to-css-containment/)
-- [The new responsive: Web design in a component-driven world](https://web.dev/new-responsive/)
-- [Next Gen CSS: @container](https://css-tricks.com/next-gen-css-container/)
-- [CSS Container Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Container_Queries) — MDN
-- [CSS Podcast, Episode 43: Containment](https://thecsspodcast.libsyn.com/043-containment)
-- [CSS Containment Module Level 1](https://www.w3.org/TR/css-contain-1/)
-- [Can I use: CSS containment](https://caniuse.com/#feat=css-containment)
-- [CSS Triggers](https://csstriggers.com/) — What gets triggered by mutating a given property
-- [CSS Containment in Chrome 52](https://developers.google.com/web/updates/2016/06/css-containment)
-- [Avoid Large, Complex Layouts and Layout Thrashing](https://developers.google.com/web/fundamentals/performance/rendering/avoid-large-complex-layouts-and-layout-thrashing)
-- [CSS Contain](https://developer.mozilla.org/en-US/docs/Web/CSS/contain)
+* [An introduction to CSS Containment](https://blogs.igalia.com/mrego/2019/01/11/an-introduction-to-css-containment/)
+* [The new responsive: Web design in a component-driven world](https://web.dev/new-responsive/)
+* [Next Gen CSS: @container](https://css-tricks.com/next-gen-css-container/)
+* [CSS Container Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Container_Queries) — MDN
+* [CSS Podcast, Episode 43: Containment](https://thecsspodcast.libsyn.com/043-containment)
+* [CSS Containment Module Level 1](https://www.w3.org/TR/css-contain-1/)
+* [Can I use: CSS containment](https://caniuse.com/#feat=css-containment)
+* [CSS Triggers](https://csstriggers.com/) — What gets triggered by mutating a given property
+* [CSS Containment in Chrome 52](https://developers.google.com/web/updates/2016/06/css-containment)
+* [Avoid Large, Complex Layouts and Layout Thrashing](https://developers.google.com/web/fundamentals/performance/rendering/avoid-large-complex-layouts-and-layout-thrashing)
+* [CSS Contain](https://developer.mozilla.org/en-US/docs/Web/CSS/contain)

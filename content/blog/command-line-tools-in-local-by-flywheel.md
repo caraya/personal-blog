@@ -11,25 +11,21 @@ Local by Flywheel (Local) is a WordPress-specific local development environment.
 
 Some of these features include:
 
-- Multiple hosting options
-    
-    - Ngnix and Apache servers
-    - Multiple versions of PHP (5.6, 7.3, 7.4, and 8.0) and MySQL (5.7 and 8.0)
-    - The ability to swap between versions of PHP and MySQL
-    - The ability to switch between Nginx and Apache
-- Import and Export sites
-    
-    - Export and Import all relevant files from a WordPress site, including the database
-- Create blueprints, templates for new sites
-- Share your site during development
-    
-    - [Ngrok](https://ngrok.com/) tunneling
-    - [Live Links](https://localwp.com/live-links/) provide an enhanced tool to share your development site with other
-- Headless WordPress
-    
-    - Create headless-optimized WordPress sites (Available in a plugin)
-    - Automatically create and configure a Node.js frontend connected to a WordPress backend
-- Extensibility via Local plugins
+* Multiple hosting options
+  * Ngnix and Apache servers
+  * Multiple versions of PHP (5.6, 7.3, 7.4, and 8.0) and MySQL (5.7 and 8.0)
+  * The ability to swap between versions of PHP and MySQL
+  * The ability to switch between Nginx and Apache
+* Import and Export sites
+  * Export and Import all relevant files from a WordPress site, including the database
+* Create blueprints, templates for new sites
+* Share your site during development
+  * [Ngrok](https://ngrok.com/) tunneling
+  * [Live Links](https://localwp.com/live-links/) provide an enhanced tool to share your development site with other
+* Headless WordPress
+  * Create headless-optimized WordPress sites (Available in a plugin)
+  * Automatically create and configure a Node.js frontend connected to a WordPress backend
+* Extensibility via Local plugins
 
 This post will concentrate on the command line features available in Local.
 
@@ -43,17 +39,13 @@ To access the features we'll discuss below, follow these steps:
 
 1. Start the site you want to work with
 2. Right Click the name of the site
-3. Select **_Open Site Shell_**
+3. Select ***Open Site Shell***
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2021/09/local-ssh-01.png)
-
-selection of site shell for a local application
+![Selection of site shell for a local application](/images/2021/09/local-ssh-01.png)
 
 You will see a new terminal shell that looks like this:
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2021/09/local-ssh-02.png)
-
-Shell opening for Local site
+![Shell opening for Local site](/images/2021/09/local-ssh-02.png)
 
 The shell comes preconfigured with the WordPress CLI and PHP Composer
 
@@ -67,10 +59,10 @@ I will look at two examples of things that can be done with the CLI.
 
 The i18n in the CLI handles workloads for Javascript/React blocks, as documented in [New! JavaScript i18n support in WordPress 5.0](https://make.wordpress.org/core/2018/11/09/new-javascript-i18n-support-in-wordpress/), and for PHP workloads.
 
-- [wp i18n make-json](https://developer.wordpress.org/cli/commands/i18n/make-json/) — Extract JavaScript strings from PO files and add them to individual JSON files
-- [wp i18n make-mo](https://developer.wordpress.org/cli/commands/i18n/make-mo/) — Create MO files from PO files
-- [wp i18n make-pot](https://developer.wordpress.org/cli/commands/i18n/make-pot/) — Create a POT file for a WordPress project
-    
+* [wp i18n make-json](https://developer.wordpress.org/cli/commands/i18n/make-json/) — Extract JavaScript strings from PO files and add them to individual JSON files
+* [wp i18n make-mo](https://developer.wordpress.org/cli/commands/i18n/make-mo/) — Create MO files from PO files
+* [wp i18n make-pot](https://developer.wordpress.org/cli/commands/i18n/make-pot/) — Create a POT file for a WordPress project
+
 
 These commands work together with tools like [POEdit](https://poedit.net/) to create language packs for your site.
 
@@ -78,15 +70,15 @@ Another thing that I like a lot is the set of [scaffold](https://developer.wordp
 
 The following commands are available:
 
-- [wp scaffold block](https://developer.wordpress.org/cli/commands/scaffold/block/) — Generates PHP, JS and CSS code for registering a Gutenberg block for a plugin or theme
-- [wp scaffold child-theme](https://developer.wordpress.org/cli/commands/scaffold/child-theme/) — Generates child theme based on an existing theme
-- [wp scaffold plugin](https://developer.wordpress.org/cli/commands/scaffold/plugin/) — Generates starter code for a plugin
-- [wp scaffold plugin-tests](https://developer.wordpress.org/cli/commands/scaffold/plugin-tests/) — Generates files needed for running PHPUnit tests in a plugin
-- [wp scaffold post-type](https://developer.wordpress.org/cli/commands/scaffold/post-type/) — Generates PHP code for registering a custom post type
-- [wp scaffold taxonomy](https://developer.wordpress.org/cli/commands/scaffold/taxonomy/) — Generates PHP code for registering a custom taxonomy
-- [wp scaffold theme-tests](https://developer.wordpress.org/cli/commands/scaffold/theme-tests/) — Generates files needed for running PHPUnit tests in a theme
-- [wp scaffold underscores](https://developer.wordpress.org/cli/commands/scaffold/underscores/) — Generates starter code for a theme based on the [Underscores](https://underscores.me/) (\_s) starter theme
-- [wp scaffold \_s](https://developer.wordpress.org/cli/commands/scaffold/_s/) — Generates starter code for a theme based on the [Underscores](https://underscores.me/) (\_s) starter theme
+* [wp scaffold block](https://developer.wordpress.org/cli/commands/scaffold/block/) — Generates PHP, JS and CSS code for registering a Gutenberg block for a plugin or theme
+* [wp scaffold child-theme](https://developer.wordpress.org/cli/commands/scaffold/child-theme/) — Generates child theme based on an existing theme
+* [wp scaffold plugin](https://developer.wordpress.org/cli/commands/scaffold/plugin/) — Generates starter code for a plugin
+* [wp scaffold plugin-tests](https://developer.wordpress.org/cli/commands/scaffold/plugin-tests/) — Generates files needed for running PHPUnit tests in a plugin
+* [wp scaffold post-type](https://developer.wordpress.org/cli/commands/scaffold/post-type/) — Generates PHP code for registering a custom post type
+* [wp scaffold taxonomy](https://developer.wordpress.org/cli/commands/scaffold/taxonomy/) — Generates PHP code for registering a custom taxonomy
+* [wp scaffold theme-tests](https://developer.wordpress.org/cli/commands/scaffold/theme-tests/) — Generates files needed for running PHPUnit tests in a theme
+* [wp scaffold underscores](https://developer.wordpress.org/cli/commands/scaffold/underscores/) — Generates starter code for a theme based on the [Underscores](https://underscores.me/) (\_s) starter theme
+* [wp scaffold \_s](https://developer.wordpress.org/cli/commands/scaffold/_s/) — Generates starter code for a theme based on the [Underscores](https://underscores.me/) (\_s) starter theme
 
 ### PHP Composer
 

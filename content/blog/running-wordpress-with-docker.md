@@ -5,8 +5,8 @@ date: "2022-05-23"
 
 There are many ways to run WordPress locally on your development machine.
 
-- You can install MAMP/WAMP/XAMP or any other bundled LAMP stack, configure a database and install WordPress
-- You can install Local by Flywheel, start it up and get a WordPress instance
+* You can install MAMP/WAMP/XAMP or any other bundled LAMP stack, configure a database and install WordPress
+* You can install Local by Flywheel, start it up and get a WordPress instance
 
 There is one more way to do it: You can use Docker.
 
@@ -14,8 +14,8 @@ Docker provides a way to run container-based applications on your local system. 
 
 As a quick introduction: Our WordPress installation using Docker requires two images:
 
-- A WordPress image containing both Apache properly configured and the WordPress code ready to install
-- A MySQL or MariaDB image to store the site's data
+* A WordPress image containing both Apache properly configured and the WordPress code ready to install
+* A MySQL or MariaDB image to store the site's data
 
 You can optionally add a phpMyAdmin image to manage the database via a GUI
 
@@ -52,7 +52,7 @@ services:
   db:
     image: mysql:latest
     volumes:
-      - ./mysql:/var/lib/mysql
+      * ./mysql:/var/lib/mysql
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: somewordpress
@@ -65,31 +65,31 @@ The WordPress service is the core of the application. This container will host W
 
 [depends\_on](https://docs.docker.com/compose/compose-file/compose-file-v3/#depends_on) explicitly tells Docker Compose that `wordpress` depends on the `db` service. This will cause the following to happen:
 
-- `docker-compose up` starts services in dependency order. `db` will start before `wordpress`
-- If you start a specific service using `docker-compose up SERVICE`, docker automatically includes SERVICE’s dependencies. In our case, docker-compose up wordpress also creates and starts `db`
-- `docker-compose stop` stops services in dependency order. `wordpress` will stop before `db`
+* `docker-compose up` starts services in dependency order. `db` will start before `wordpress`
+* If you start a specific service using `docker-compose up SERVICE`, docker automatically includes SERVICE’s dependencies. In our case, docker-compose up wordpress also creates and starts `db`
+* `docker-compose stop` stops services in dependency order. `wordpress` will stop before `db`
 
 using the [volumes](https://docs.docker.com/compose/compose-file/compose-file-v3/#volumes) directive, we create a volume associating a directory on the host with the directory inside the container hosting the WordPress application. This will make the code available even if the container is not running.
 
-The [ports](https://docs.docker.com/compose/compose-file/compose-file-v3/#ports) directive maps a port on the container to a port on the host. WordPress maps port 80 in the container to port 8000 on the host. To access WordPress, just point your browser to \`http://localhost:8000\`.
+The [ports](https://docs.docker.com/compose/compose-file/compose-file-v3/#ports) directive maps a port on the container to a port on the host. WordPress maps port 80 in the container to port 8000 on the host. To access WordPress, just point your browser to `http://localhost:8000\`.
 
 [restart](https://docs.docker.com/compose/compose-file/compose-file-v3/#restart) indicates the restart policy for the container. The possible values are:
 
-- **always**: The container always restarts
-- **on-failure**: Restart a container if the exit code indicates an on-failure error
-- **unless-stopped** Restarts a container, unless the container is stopped (manually or otherwise)
+* **always**: The container always restarts
+* **on-failure**: Restart a container if the exit code indicates an on-failure error
+* **unless-stopped** Restarts a container, unless the container is stopped (manually or otherwise)
 
 The [environment](https://docs.docker.com/compose/compose-file/compose-file-v3/#environment) directive holds environment variables that will be passed to the container.
 
 ```yaml
   wordpress:
     depends_on:
-      - db
+      * db
     image: wordpress:latest
     volumes:
-      - ./wordpress_data:/var/www/html
+      * ./wordpress_data:/var/www/html
     ports:
-      - "8000:80"
+      * "8000:80"
     restart: unless-stopped
     environment:
       WORDPRESS_DB_HOST: db
@@ -102,20 +102,20 @@ The `phpMyAdmin` container is similar to the `wordpress` container but it's not 
 
 The only differences are:
 
-- The container name (`phpmyadmin`)
-- The image that we use (`phpmyadmin:latest`)
-- The port we expose (phpmyadmin will use port 8181)
-- The values under `environment`
+* The container name (`phpmyadmin`)
+* The image that we use (`phpmyadmin:latest`)
+* The port we expose (phpmyadmin will use port 8181)
+* The values under `environment`
 
 ```yaml
   phpmyadmin:
     container_name: phpmyadmin
     image: phpmyadmin:latest
     depends_on:
-      - db
+      * db
     restart: unless-stopped
     ports:
-      - 8181:80
+      * 8181:80
     environment:
       PMA_HOST: db
       MYSQL_ROOT_PASSWORD: wordpress
@@ -127,12 +127,12 @@ The final image we'll work with is one for the [WordPress CLI](https://wp-cli.or
   wpcli:
     image: wordpress:cli
     depends_on:
-      - db
-      - wordpress
+      * db
+      * wordpress
     restart: unless-stopped
     user: xfs
     volumes:
-      - wordpress_data:/var/www/html
+      * wordpress_data:/var/www/html
 ```
 
 The top-level `volumes` directive makes the specified volumes available to other containers. We don't need the functionality but it is still good to have in case our project grows.
@@ -166,8 +166,8 @@ The Dockerfile will do the following tasks:
 FROM wordpress:beta-6.0-beta2-php8.1-apache
 
 # 2
-RUN apt update && 
-    apt upgrade -y && 
+RUN apt update &&
+    apt upgrade -y &&
     apt autoremove
 
 # 3
@@ -182,11 +182,11 @@ Assuming that the files for the custom image are in a subdirectory of the curren
   wordpress:
     build: ./custom/wordpress
     depends_on:
-      - db
+      * db
     volumes:
-      - ./wordpress_data:/var/www/html
+      * ./wordpress_data:/var/www/html
     ports:
-      - "8000:80"
+      * "8000:80"
     restart: unless-stopped
     environment:
       WORDPRESS_DB_HOST: db
@@ -195,7 +195,7 @@ Assuming that the files for the custom image are in a subdirectory of the curren
       WORDPRESS_DB_NAME: wordpress
 ```
 
-## `docker` and `docker-compose` commands
+## docker and docker-compose commands
 
 Here are some commands that will be necessary to build and use the project.
 
@@ -203,9 +203,9 @@ Here are some commands that will be necessary to build and use the project.
 
 The first thing to do is to build the containers. `docker-compose up` will build the containers and start them.
 
-- **docker-compose**: the command to run
-- **up**: Creates the networks and containers specified in the docker-compose.yml file. It then runs the application
-- **\-d**: Run in detached mode. This means the containers will spin up and `docker-compose` will return you to the shell. Otherwise, the terminal will wait until you kill the `docker-compose` process with `ctrl + C`
+* **docker-compose**: the command to run
+* **up**: Creates the networks and containers specified in the docker-compose.yml file. It then runs the application
+* **\-d**: Run in detached mode. This means the containers will spin up and `docker-compose` will return you to the shell. Otherwise, the terminal will wait until you kill the `docker-compose` process with `ctrl + C`
 
 ```bash
 docker-compose up -d
@@ -235,8 +235,8 @@ The final command to run is `docker exec`. This will run the specified command i
 
 The command uses two flags:
 
-- **\-t**: Attach to STDIN, STDOUT and STDERR of specified container
-- **\-i**: Run in interactive mode
+* **\-t**: Attach to STDIN, STDOUT and STDERR of specified container
+* **\-i**: Run in interactive mode
 
 You can combine the two flags into one, `-ti`.
 

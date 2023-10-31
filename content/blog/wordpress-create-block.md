@@ -53,9 +53,9 @@ You can also create your own base templates and use them with `create-block` and
 
 The template contains at minimum the following files:
 
-- An `index.js` file to run the template creation
-- One or more `mustache` templates that will be processed when we create a block based on the template. These templates include SCSS style
-- Optional `package.json` with the template metadata. We are not installing any modules from the template.
+* An `index.js` file to run the template creation
+* One or more `mustache` templates that will be processed when we create a block based on the template. These templates include SCSS style
+* Optional `package.json` with the template metadata. We are not installing any modules from the template.
 
 Once you have the template ready to go you can run the code locally
 

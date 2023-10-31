@@ -17,8 +17,8 @@ But what happens to people new to frontend, backend, or full-stack development o
 
 If you're starting your own project, research all the alternatives and pick the ones you think may work best (and accept that the level of complexity will increase as the project grows) or learn the new tools the project has implemented (if you're joining an existing project), whether you agree with them or not.
 
-- [Everything Easy is Hard Again](https://frankchimero.com/blog/2018/everything-easy/) — Frank Chimero
-- [What Screens Want](https://frankchimero.com/blog/2013/what-screens-want/) — Frank Chimero
-- [The Web’s Grain](https://frankchimero.com/blog/2015/the-webs-grain/) — Frank Chimero
-- [The web is too damn complex](https://www.robinrendle.com/essays/systems-mistakes-and-the-sea) — Robin Rendle
-- [The arc of design](https://www.robinrendle.com/essays/arc-of-design/) — Robin Rendle
+* [Everything Easy is Hard Again](https://frankchimero.com/blog/2018/everything-easy/) — Frank Chimero
+* [What Screens Want](https://frankchimero.com/blog/2013/what-screens-want/) — Frank Chimero
+* [The Web’s Grain](https://frankchimero.com/blog/2015/the-webs-grain/) — Frank Chimero
+* [The web is too damn complex](https://www.robinrendle.com/essays/systems-mistakes-and-the-sea) — Robin Rendle
+* [The arc of design](https://www.robinrendle.com/essays/arc-of-design/) — Robin Rendle

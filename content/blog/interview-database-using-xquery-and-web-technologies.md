@@ -15,14 +15,12 @@ These are preliminary notes and ideas, where possible I will try to incorporate 
 
 There are two or three technologies that would make the project as envisioned possible:
 
-- A NoSQL or [xQuery](https://en.wikipedia.org/wiki/XQuery) database
-- A storage bucket for the audio files
-    
-    - This depends on what database and speech-to-text technologies I choose
-- A speech-to-text engine/technology stack
-- A server to run the content from
-    
-    - This is also dependent on the xQuery or NoSQL database we choose
+* A NoSQL or [xQuery](https://en.wikipedia.org/wiki/XQuery) database
+* A storage bucket for the audio files
+  * This depends on what database and speech-to-text technologies I choose
+* A speech-to-text engine/technology stack
+* A server to run the content from
+  * This is also dependent on the xQuery or NoSQL database we choose
 
 ### Speech to text options
 
@@ -31,11 +29,7 @@ There are two or three technologies that would make the project as envisioned po
 | [Google speech-to-text](https://cloud.google.com/speech-to-text/) | Google | [Pricing](https://cloud.google.com/speech-to-text/pricing) |   |   |
 | [Microsoft speech-to-text](https://www.microsoft.com/cognitive-services/en-us/speech-api) | Microsoft | [Pricing](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-api/) |   |   |
 | [Amazon Transcribe](https://aws.amazon.com/transcribe/) | Amazon | [Pricing](https://aws.amazon.com/transcribe/pricing/) |   |   |
-| [Deep Speech](https://github.com/mozilla/DeepSpeech) | Mozilla | Open Source | N/A | Released under the [Mozilla Public License 2.0](https://www.mozilla.org/en-US/MPL/2.0/)  
-  
-Also see [Use Mozilla DeepSpeech to enable speech to text in your application](https://opensource.com/article/22/1/voice-text-mozilla-deepspeech)  
-  
-Python only, doesn't appear to have a javascript or Node version or wrapper |
+| [Deep Speech](https://github.com/mozilla/DeepSpeech) | Mozilla | Open Source | N/A | Released under the [Mozilla Public License 2.0](https://www.mozilla.org/en-US/MPL/2.0/)<br><br>Also see [Use Mozilla DeepSpeech to enable speech to text in your application](https://opensource.com/article/22/1/voice-text-mozilla-deepspeech)<br><br>Python only, doesn't appear to have a javascript or Node version or wrapper |
 
 I realize that it won't be long before the APIs start incurring costs, but as an experiment, any of the APIs would work.
 
@@ -43,25 +37,14 @@ I realize that it won't be long before the APIs start incurring costs, but as an
 
 The other area worth researching is whether xQuery is the right solution for this type of project. Other XML/NoSQL databases are also a possibility.
 
-| Product | Vendor | Pricing URL | Free Tier | Notes |
-| --- | --- | --- | --- | --- |
-| [Google speech-to-text](https://cloud.google.com/speech-to-text/) | Google | [Pricing](https://cloud.google.com/speech-to-text/pricing) |   |   |
-| [Microsoft speech-to-text](https://www.microsoft.com/cognitive-services/en-us/speech-api) | Microsoft | [Pricing](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-api/) |   |   |
-| [Amazon Transcribe](https://aws.amazon.com/transcribe/) | Amazon | [Pricing](https://aws.amazon.com/transcribe/pricing/) |   |   |
-| [Deep Speech](https://github.com/mozilla/DeepSpeech) | Mozilla | Open Source | N/A | Released under the [Mozilla Public License 2.0](https://www.mozilla.org/en-US/MPL/2.0/)  
-  
-Also see [Use Mozilla DeepSpeech to enable speech to text in your application](https://opensource.com/article/22/1/voice-text-mozilla-deepspeech)  
-  
-Python only, doesn't appear to have a javascript or Node version or wrapper |
-
 Even if xQuery is the right solution, then what is the best server to work with and how do we store the data? How expensive is it to host such a development solution in the cloud (either on-premise or in the vendor's cloud)?
 
 ### Creating a JSON schema for the data
 
 [JSON Schemas](https://json-schema.org/) allows us to create a schema for JSON-based data. This ensures two things:
 
-- Provides a way to validate the data
-- Ensures data completeness and accuracy
+* Provides a way to validate the data
+* Ensures data completeness and accuracy
 
 I've validated the schema below using the [JSON Schema Validator](https://www.jsonschemavalidator.net/)
 

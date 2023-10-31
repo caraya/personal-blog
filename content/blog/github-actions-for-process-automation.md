@@ -27,14 +27,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    * uses: actions/checkout@v2
 
-    - name: Use Node.js 14.x
+    * name: Use Node.js 14.x
       uses: actions/setup-node@v1
-      with: 
-        node-version: 14.x 
+      with:
+        node-version: 14.x
 
-    - name: Build
+    * name: Build
       run: |
         npm install
         gulp
@@ -46,8 +46,8 @@ We run the build process using the `ubuntu-latest` runner available from Github.
 
 We use two actions to run the process:
 
-- [Checkout](https://github.com/actions/checkout) will check out the code from the repository's `main` branch
-- [Setup Node](https://github.com/actions/setup-node) will set up one or more versions of Node.js to run the actions with.
+* [Checkout](https://github.com/actions/checkout) will check out the code from the repository's `main` branch
+* [Setup Node](https://github.com/actions/setup-node) will set up one or more versions of Node.js to run the actions with.
 
 We then create a run action to install the packages and run the default Gulp build task.
 
@@ -68,7 +68,7 @@ Otherwise, we commit the changes and set the `push` flag to true.
 The second action checks if the `push` flag is set to true. If it is it uses the [GitHub Action for GitHub Push](https://github.com/ad-m/github-push-action) action to push the changes to the `main` branch using Github Tokens generated as part of the Actions workflow.
 
 ```yaml
-    - name: Commit files
+    * name: Commit files
       id: commit
       run: |
         git config --local user.email "action@github.com"
@@ -82,7 +82,7 @@ The second action checks if the `push` flag is set to true. If it is it uses the
         fi
       shell: bash
 
-    - name: Push changes
+    * name: Push changes
       if: steps.commit.outputs.push == 'true'
       uses: ad-m/github-push-action@master
       with:
@@ -102,7 +102,7 @@ Rather than deploy it to the `docs` folder in `main`. I've chosen to deploy it t
 I was able to fix it by force pushing the content back into main. Yes, there are many posts telling you that what I did is not safe and I shouldn't do it; but I'm the only one working on the project and I know I'm not losing any work, so it's OK in this case, but I wouldn't do it in a team setting.
 
 ```yaml
-    - name: Deploy to Github Pages
+    * name: Deploy to Github Pages
       uses: JamesIves/github-pages-deploy-action@4.1.5
       with:
         branch: gh-pages

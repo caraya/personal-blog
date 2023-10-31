@@ -52,7 +52,7 @@ section h2::before {
 }
 ```
 
-For the first chapter, this will insert the string: **_Chapter 1:_** before the text in the `h2` element.
+For the first chapter, this will insert the string: ***Chapter 1:*** before the text in the `h2` element.
 
 As with any application of generated content, we need to keep accessibility in mind. The generated content may not work well with assistive technology. It may not work well with some screen readers or it may not work at all.
 
@@ -60,6 +60,8 @@ See [Accessible CSS Generated Content](https://yatil.net/blog/accessible-css-gen
 
 ## Full example
 
-<p class="codepen" data-height="498.11138916015625" data-default-tab="html,result" data-slug-hash="oNqEbvY" data-user="caraya" style="height: 498.11138916015625px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"><span>See the Pen <a href="https://codepen.io/caraya/pen/oNqEbvY">Untitled</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>) on <a href="https://codepen.io">CodePen</a>.</span></p>
-
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<iframe height="639.18017578125" style="width: 100%;" scrolling="no" title="Numbering Chapters" src="https://codepen.io/caraya/embed/oNqEbvY?default-tab=css%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/caraya/pen/oNqEbvY">
+  Numbering Chapters</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>

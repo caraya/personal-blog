@@ -35,7 +35,7 @@ When the cascading rules in the prior section refer to specificity they mean the
 
 Whenever I have to explain this I've fallen back to Estelle Weyl's [CSS SpeciFISHity](http://www.standardista.com/css3/css-specificity/) chart. It has helped me figure out specificity issues many times and it's a fun way to look at the values for different element combinations.
 
-![specificity chart indicating css specificity for different combinations](https://publishing-project.rivendellweb.net/wp-content/uploads/2017/12/specificityimg.png)
+![specificity chart indicating css specificity for different combinations](/images/2017/12/specificityimg.png)
 
 [CSS Specifishity](http://www.standardista.com/css3/css-specificity/) chart from Estelle Weyl
 

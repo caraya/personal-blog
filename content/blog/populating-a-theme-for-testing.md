@@ -20,21 +20,19 @@ The easiest way to get data for your development system is to take the data from
 Doing this is a two-step process.
 
 1. In the production server:
-    
     1. Go to Tools => Export => WordPress
     2. Select `All content`
-    
-    - Alternatively you can select the specific type of content that you want to export. This will allow you to create export files for each type of content you have available
-        
-        1. Click `Download Export File`
+	    * Alternatively you can select the specific type of content that you want to export. This will allow you to create export files for each type of content you have available
+    3. Click `Download Export File`
 2. In the development server:
-    
     1. Go to Tools => Import => WordPress
     2. Select the XML file from your computer
     3. Click on `Upload file and import`
     4. Under `Import Attachments`, check the `Download and import file attachments` box and click submit
 
-**Note:** You may have to repeat the Import step until you see "All Done" to obtain the full list of Posts and Media.
+!!! note **Note:**
+You may have to repeat the Import step until you see "All Done" to obtain the full list of Posts and Media.
+!!!
 
 Downloading and importing file attachments means that the production server must be up and running when you import the data.
 
@@ -42,7 +40,7 @@ This backup will also backup the data for custom post types but will not create 
 
 ## Using WordPress Theme Data
 
-The WordPress Theme Data project (formerly known as [WordPress Theme Unit Test](https://codex.wordpress.org/Theme_Unit_Test) provides a ready-made backup file that you can upload to your development server to validate your theme.
+The WordPress Theme Data project (formerly known as [WordPress Theme Unit Test](https://codex.wordpress.org/Theme_Unit_Test)) provides a ready-made backup file that you can upload to your development server to validate your theme.
 
 You can download the backup file from the WordPress Theme Team's [Github Repository](https://github.com/WPTT/theme-test-data)
 
@@ -62,6 +60,6 @@ This will give you Gutenberg-specific posts to experiment with using things that
 
 ## Links
 
-- [WordPress Theme Data](https://github.com/WPTT/theme-test-data)
-- [Gutenberg Test Data](https://github.com/Automattic/theme-tools/tree/master/gutenberg-test-data)
-- [a11y Theme Unit Test](https://github.com/wpaccessibility/a11y-theme-unit-test)
+* [WordPress Theme Data](https://github.com/WPTT/theme-test-data)
+* [Gutenberg Test Data](https://github.com/Automattic/theme-tools/tree/master/gutenberg-test-data)
+* [a11y Theme Unit Test](https://github.com/wpaccessibility/a11y-theme-unit-test)

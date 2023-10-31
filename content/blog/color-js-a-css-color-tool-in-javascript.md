@@ -39,13 +39,15 @@ let color4srgb = color4.to("srgb");
 let color4p3 = color4.to("p3");
 ```
 
-Note:
+&nbsp;
 
+!!! note **Note:**
 These examples purposefully ignore the issues of color gamut mapping and the possibility that, after conversion from a larger color space to a smaller one like sRGB, the resulting colors may be outside the smaller colorspace visible colors. Color.js provides tools and functions to deal with this; check [gamut mapping](https://colorjs.io/docs/gamut-mapping.html) for more information.
+!!!
 
 Once we define the color we can adjust different properties of the color that will change the color in place or will change it to a different color.
 
-The first color just gets a lightness adjustment. and will remain mostly the same.
+The first color gets converted to display-p3 and a lightness adjustment. and will remain mostly the same.
 
 ```js
 let color1Mod1 = new Color("rebeccapurple");
@@ -77,7 +79,7 @@ I could have chosen to start from a color space other than sRGB but I am not fam
 ```js
 let color = new Color("rebeccapurple");
 let cssColor = color.to("p3").toString();
-if (!CSS.supports("color", cssColor)) { 
+if (!CSS.supports("color", cssColor)) {
   cssColor = color.to("lch").toString();
 }
 if (!CSS.supports("color", cssColor)) {

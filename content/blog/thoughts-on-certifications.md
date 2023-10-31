@@ -17,11 +17,11 @@ For example:
 
 If you're certified as a Google Associate Cloud Engineer, you will not be evaluated on whether you have the certification or not, most employers will assume that you can perform the following tasks:
 
-- Set up a cloud solution environment
-- Plan and configure a cloud solution
-- Deploy and implement a cloud solution
-- Ensure successful operation of a cloud solution
-- Configure access and security
+* Set up a cloud solution environment
+* Plan and configure a cloud solution
+* Deploy and implement a cloud solution
+* Ensure successful operation of a cloud solution
+* Configure access and security
 
 For more details, see the [Associate Cloud Engineer Certification Exam Guide](https://cloud.google.com/certification/guides/cloud-engineer).
 
@@ -59,23 +59,20 @@ What levels of certification to offer is an interesting question. Is a Sr. Theme
 
 Breaking down skill sets is important so as to not overwhelm students. Some ideas as to how to break :
 
-- Jr. theme developer
-    
-    - Blocks
-    - Plugins
-    - Block themes
-    - Basic PHP to cover the above
-- Sr. theme developer
-    
-    - Assumes the skills of a Jr. Theme dev
-    - Classic theme development
-    - Headless WordPress
-    - Collaborative development
-- WordPress admin
-    
-    - Manage single and multisite WordPress installations
-    - Interfaces with IT to acquire more resources (horizontal scaling or bandwidth)
-    - Application Security as it relates to WordPress
+* Jr. theme developer
+  * Blocks
+  * Plugins
+  * Block themes
+  * Basic PHP to cover the above
+* Sr. theme developer
+  * Assumes the skills of a Jr. Theme dev
+  * Classic theme development
+  * Headless WordPress
+  * Collaborative development
+* WordPress admin
+  * Manage single and multisite WordPress installations
+  * Interfaces with IT to acquire more resources (horizontal scaling or bandwidth)
+  * Application Security as it relates to WordPress
 
 ### How long do certificates last
 

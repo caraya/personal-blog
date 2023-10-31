@@ -36,7 +36,7 @@ Most of our content doesn't care what form factor we are in and what's the size 
 Before we talk about affordances let's define some terms so we start from a common base.
 
 > The word "affordance" was originally invented by the perceptual psychologist J. J. Gibson (1977, 1979) to refer to the actionable properties between the world and an actor (a person or animal). To Gibson, affordances are a relationship. They are a part of nature: they do not have to be visible, known, or desirable.
-> 
+>
 > From [Affordances and Design](https://jnd.org/affordances_and_design/) — Don Norman
 
 When planning a new interface or product some of the questions I ask are:
@@ -50,7 +50,7 @@ The first affordance that I look for is navigation... How do we move between pag
 But apps and the web are different. From any point in a document we can navigate in any direction or we can keep the navigation metaphor we bring along from physical books. Craig Mod asks the question about the iPad but I consider it equally valid for desktop and other mobile browsers:
 
 > _Do we embrace the physicality of the device — a spineless page with a central axis of symmetry? Or do we embrace the device’s virtual physicality — an invisible spine defined by every edge of the device, signaling the potential of additional content just a swipe \[or click or key press\] away?_
-> 
+>
 > Craig Mod [A Simpler Page](https://alistapart.com/article/a-simpler-page)
 
 Most e-reader applications work on their own implementations of a given metaphor and you have to learn the way the different affordances work for the different combinations of devices and platforms.
@@ -92,7 +92,7 @@ As with Pointer Events, lack of uniform support means that we need a [CSS Scroll
 From the Bubblin site:
 
 > Here's a website (they call it a book) on Essentials of Image Optimizations by Addy Osmani.
-> 
+>
 > Excellent write-up but it takes about ~90 (+/- 5) scroll actions using a mousewheel to reach the bottom of the essay while also maintaining the reading direction i.e. making sure I "saw" all of the content (am emulating experience of committing to and reading the book for real here) sequentially. The same website takes close to ~194 swipes to scroll down to the bottom on an iPhone X Safari and ~244 swipes on the Android Galaxy Express 3 while also ensuring that all of the content was seen by me. I don't know about others, but I'd never scroll deeper than seven times for even the best blogpost of this decade on my mobile. A maximum of ten swipes if it's really interesting content or an important one.
 
 The criticism of Ady Osmani's [Essential Image Optimization book](https://images.guide/) is poorly thought out and disrespectful. The book is laid out as a single page application but the critique makes the assumption that scrolling is the only way in which we navigate content. When I read the book I navigate to the table of contents swiping down twice or using keyboard navigation (built into the browser experience when HTML is coded properly) where I begin my exploration of the book which requires less scrolling. To return to the top I can either tap the top of the browser window or use command/control + up arrow to return me to the top of the document. So how is this inaccessible?
@@ -108,7 +108,7 @@ Does it need pagination? I don't think it does but perhaps it would have benefit
 Where I have a strong issue is on the position the Bubblin author takes about people, who happen to work in technology, choosing to read a technical book as a paper book rather than using an online version. User preferences seem to not matter as much as the perceived shortcomings of the competing technology.
 
 > Readers of Sarah Drasner's book on SVG Animations, however, we might be compelled to think, will prefer an e-book? Her fans are developers and tech evangelists who yap about digital coolness all day— about open web!— and it is clear that technology advances faster than a physical book could be doled out, so her book doesn't even make sense in atomic form, but does PDF or DOC file with faux pagination or an ePub file or an HTML page with reflowable content fulfill the perception of books held by the developer community?
-> 
+>
 > [https://bubblin.io/concerns](https://bubblin.io/concerns)
 
 I would say the answer is neither. I choose paperback technical books because they are easier to scan and the indexes are easier to navigate than a list of hyperlinks.
@@ -158,13 +158,13 @@ In [The Reading Brain in the Digital Age: The Science of Paper versus Screens](h
 So while researching further implications of the difference between reading online and reading physical books I came across this [interview with Anne Mangen](https://phys.org/news/2017-09-differently-paper-screen.html), chair of a research project about reading in an age of digital transformation.
 
 > **How much time do we spend reading on screen and what are we reading?**
-> 
+>
 > The answer to this depends on how "reading" is defined. The research and statistics in this area vary depending on how the term is defined. Are we referring solely to the reading of textual material, or are we also including pictures, social media and hypertext containing links? If the latter definition is used, we can say that we are reading as never before and that the Internet has brought about an explosion of reading.\[...\]
 
 The interviewer asks a followup question which, I think, is essential to this discussion:
 
 > **When do we prefer a printed medium, such as a book?**
-> 
+>
 > There are many components, factors, and conditions that can come into play here, such as the reader, the material, the purpose, and the technology. Not only the reader's proficiency, background, and expectations must be kept in mind, but also the type of material that is being referred to and the kind of screen that is being used. It is not a case of "one size fits all," but patterns are beginning to emerge from empirical research into the subject. The length of the text seems to be the most critical factor. If the text is long, needs to be read carefully and perhaps involves making notes, then studies show that many people, including young people such as students, still often prefer a printed book, even if it is available as both an e-book and in electronic formats with options for making notes, enabling the user to search for and highlight the text digitally. This is not the case when it comes to shorter texts.
 
 So is it really the technology that makes reading online less useful than reading a physical book or is it the user's preferences themselves that make one more appealing over the other?
@@ -193,13 +193,13 @@ I have seen good reading experiences on the web. They all move away from a strai
 
 Art Space Tokyo is not meant to be a replacement for the physical books but provides the same reference material in a way that is easier to engage with online. There is no physical equivalent to the Google Map, you'd have to list all the information for the locations which would make it longer and more tedious to read.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2019/03/arts-space-tokyo-1.png)
+![](/images/2019/03/arts-space-tokyo-1.png)
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2019/03/arts-space-tokyo-2.png)
+![](/images/2019/03/arts-space-tokyo-2.png)
 
 The Shape of Design, on the other hand, seeks to reproduce the text and the images of the book into an online environment. Each chapter in the physical book.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2019/03/shape-of-design-1.png)
+![](/images/2019/03/shape-of-design-1.png)
 
 Whichever way you choose to read it's beyond the book metaphor.
 

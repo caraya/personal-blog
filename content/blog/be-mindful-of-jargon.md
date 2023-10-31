@@ -9,9 +9,7 @@ In [Dealing with Technical or Professional Jargon](https://www.nngroup.com/artic
 
 The first consideration that I find interesting is that jargon is defined by the audience reading the document. In other words, do they understand the term?
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2023/05/should-we-use-jargon-1.png)
-
-Should we use Jargon diagram. Taken from [Dealing with Technical or Professional Jargon](https://www.nngroup.com/articles/technical-jargon/))
+![Should we use Jargon diagram. Taken from [Dealing with Technical or Professional Jargon](https://www.nngroup.com/articles/technical-jargon/))](/images/2023/05/should-we-use-jargon-1.png)
 
 So how do we address jargon on our pages?
 
@@ -23,9 +21,9 @@ But most sites don't have the advantage of a narrow audience or an audience with
 
 So let your users help you:
 
-- Look at your analytics data. It is safe to assume that terms that people search for often are familiar to them
-- If you do surveys and interviews pay attention to how users communicate with you.
-- If you do user research, pay attention to how your users read your content and what words may be difficult or unclear for them
+* Look at your analytics data. It is safe to assume that terms that people search for often are familiar to them
+* If you do surveys and interviews pay attention to how users communicate with you.
+* If you do user research, pay attention to how your users read your content and what words may be difficult or unclear for them
 
 You then have to determine how important the jargon is for your audience to learn.
 

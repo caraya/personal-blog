@@ -23,13 +23,13 @@ This also means that, even if you upload a 4k video, it will only be encoded and
 
 The first thing to look at is what format the current browser is playing.
 
-When you right-click on a Youtube video you will get a list of options. The one we're interested in is the one at the bottom of the menu, _stuff for nerds_
+When you right-click on a Youtube video you will get a list of options. The one we're interested in is the one at the bottom of the menu, *stuff for nerds*
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2022/11/youtube-stuff-for-nerds.png)
+![YouTube contextual menu, showing stuff for nerds at the bottom](/images/2022/11/youtube-stuff-for-nerds.png)
 
 When you right-click on a YouTube video currently playing you will get a window similar to the one in image 2. The information includes both video and audio codecs.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2022/11/youtube-stuff-for-nerds-dialogue-codec-highlight.png)
+![Stuff for nerds menu. Codec highlighted](/images/2022/11/youtube-stuff-for-nerds-dialogue-codec-highlight.png)
 
 `stuff for nerds` will only tell you what audio and video codecs the current browser is playing, in this case using the AV1 video and the Opus audio codecs. However, it won't tell you all the formats that are available for the video.
 

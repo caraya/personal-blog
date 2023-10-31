@@ -11,17 +11,17 @@ In the beginning, web browsers relied on locally installed fonts both for perfor
 
 We could use any of the pre-defined fonts:
 
-- Andale Mono
-- Arial
-- Arial Black
-- Comic Sans MS
-- Courier New
-- Georgia
-- Impact
-- Times New Roman
-- Trebuchet MS
-- Verdana
-- Webdings (Webdings)
+* Andale Mono
+* Arial
+* Arial Black
+* Comic Sans MS
+* Courier New
+* Georgia
+* Impact
+* Times New Roman
+* Trebuchet MS
+* Verdana
+* Webdings (Webdings)
 
 There were several methods for embedding fonts that didn't catch on like TrueDoc in 1996, an outline font standard developed by Bitstream, or Embedded OpenType (EOT) in 1997.
 
@@ -29,8 +29,8 @@ CSS 2.0, introduced in 1998, included support for @font-face in pretty much the 
 
 It wasn't until 2008 that browsers (re)introduced `@font-face` with support for different formats:
 
-- The beta version of Safari 4 implemented @font-face support for TrueType fonts
-- The beta version of Firefox 3.1 implemented support for both TrueType and OpenType
+* The beta version of Safari 4 implemented @font-face support for TrueType fonts
+* The beta version of Firefox 3.1 implemented support for both TrueType and OpenType
 
 Other browsers continued to support separate formats which eventually led to the "bulletproof @font-face syntax", dating back to 2009 in Paul Irish's [Bulletproof @font-face Syntax](https://www.paulirish.com/2009/bulletproof-font-face-implementation-syntax/)
 
@@ -42,10 +42,10 @@ Things have improved in terms of common support. All modern browsers except IE a
 
 The four most used formats for fonts are:
 
-- [TTF](https://en.wikipedia.org/wiki/TrueType) (True Type Fonts)
-- [OTF](https://en.wikipedia.org/wiki/OpenType) (Open Type Fonts)
-- [WOFF](https://www.w3.org/TR/WOFF/) (Web Open Font Format 1.0)
-- [WOFF2](https://www.w3.org/TR/WOFF2/) (Web Open Font Format 2.0)
+* [TTF](https://en.wikipedia.org/wiki/TrueType) (True Type Fonts)
+* [OTF](https://en.wikipedia.org/wiki/OpenType) (Open Type Fonts)
+* [WOFF](https://www.w3.org/TR/WOFF/) (Web Open Font Format 1.0)
+* [WOFF2](https://www.w3.org/TR/WOFF2/) (Web Open Font Format 2.0)
 
 What format you use depends on the browsers you must support.
 
@@ -116,7 +116,7 @@ OpenSans-Italic-VariableFont_wdth,wght.ttf
 These are the results of compressing our regular variable font with the different formats:
 
 | Font | Format | Size |
-| --- | --- | --- |
+| --* | --* | --* |
 | OpenSans-VariableFont\_wdth,wght | TTF | 530KB |
 | OpenSans-VariableFont\_wdth,wght | WOFF | 345KB |
 | OpenSans-VariableFont\_wdth,wght | WOFF2 | 280KB |
@@ -124,7 +124,7 @@ These are the results of compressing our regular variable font with the differen
 And these are the results for the italic variable font. Note how the values for all formats are slightly larger in this example.
 
 | Font | Format | Size |
-| --- | --- | --- |
+| --* | --* | --* |
 | OpenSans-Italic-VariableFont\_wdth,wght | TTF | 580 KB |
 | OpenSans-Italic-VariableFont\_wdth,wght | WOFF | 389KB |
 | OpenSans-Italic-VariableFont\_wdth,wght | WOFF2 | 310KB |
@@ -180,7 +180,7 @@ glyphhanger --US_ASCII \
 This produces the smallest font size by a large margin as shown in the following table
 
 | Font | Subset | Format | Size |
-| --- | --- | --- | --- |
+| --* | --* | --* | --* |
 | OpenSans-VariableFont | Latin | WOFF + Zopfli | 330KB |
 | OpenSans-VariableFont | Latin | WOFF2 | 276KB |
 | OpenSans-VariableFont | ASCII | WOFF + Zopfli | 74KB |

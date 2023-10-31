@@ -25,7 +25,7 @@ To launch the Lighthouse audit
 
 You will see something similar to the image below.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2019/08/devtools-audit-lighhouse-run.png)
+![](/images/2019/08/devtools-audit-lighhouse-run.png)
 
 Getting ready to launch Lighthouse from DevTools Audit Panel
 
@@ -33,7 +33,7 @@ Lighthouse offers 4 areas of configuration:
 
 1. **Device**: Either mobile or desktop
 2. **Audits**: What audits to run. You can run one or more of these at the same times. The audits are:
-    
+
     - _Performance_ measures different performance aspects of the page you're testing
     - _PWA_ checks if different components of a PWA
     - _Best Practices_ evaluates different best practices in front end web development
@@ -57,7 +57,7 @@ Lighthouse rates every category but PWA on a scale of 0 to 100 with higher value
 
 The top of the performance section repeats the score and it gives you basic metrics for the run on your page.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2019/08/performance-lighthouse-run-1.png)
+![](/images/2019/08/performance-lighthouse-run-1.png)
 
 Top of the Lighthouse Results Run Performance section
 
@@ -70,7 +70,7 @@ The performance metrics Lighthouse reports are:
 - [First CPU Idle](https://developers.google.com/web/tools/lighthouse/audits/first-cpu-idle) marks the first time at which the page's main thread is quiet enough to handle input
 - [Max Potential First Input Delay](https://developers.google.com/web/updates/2018/05/first-input-delay) that your users could experience is the duration, in milliseconds, of the longest task
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2019/08/performance-lighthouse-run-2.png)
+![](/images/2019/08/performance-lighthouse-run-2.png)
 
 Bottom of the Lighthouse Results Run Performance section
 

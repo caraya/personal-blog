@@ -24,7 +24,7 @@ and this query checks if the screen is smaller than 768px
 You can also combine tests to determine if the value you're testing is within two values.
 
 ```css
-@media 
+@media
   (min-width: 800px)
   and
   (max-width: 1024px) {
@@ -62,7 +62,7 @@ The new syntax makes it cleaner and, to me, makes the meaning of the query clear
 
 ## Notes and links
 
-- [Media query ranges specification](https://www.w3.org/TR/mediaqueries-5/#mq-range-context)
-- [Media query range syntax](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#syntax_improvements_in_level_4) — MDN
-- [New syntax for range media queries in Chrome 104](https://developer.chrome.com/blog/media-query-range-syntax/) — Chrome Developer blog
-- [Media queries range syntax](https://github.com/postcss/postcss-media-minmax) PostCSS plugin
+* [Media query ranges specification](https://www.w3.org/TR/mediaqueries-5/#mq-range-context)
+* [Media query range syntax](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#syntax_improvements_in_level_4) — MDN
+* [New syntax for range media queries in Chrome 104](https://developer.chrome.com/blog/media-query-range-syntax/) — Chrome Developer blog
+* [Media queries range syntax](https://github.com/postcss/postcss-media-minmax) PostCSS plugin

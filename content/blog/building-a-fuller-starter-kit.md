@@ -9,28 +9,22 @@ I saw Adam Argyle's [Shortstack](https://github.com/argyleink/shortstack) starte
 
 This experiment will look at the following areas:
 
-- Browserslist
-    
-    - A sensible [browserslist](https://browsersl.ist/#q=defaults) default
-- CSS
-    
-    - [PostCSS](https://postcss.org/) for the following:
-        
-        - bundle all CSS into one file
-        - import from NPM, local or remote URLs
-        - [postcss-preset-env](https://preset-env.cssdb.org/) for latest CSS features
-- JS
-    
-    - [Rollup](https://rollupjs.org/) to do the following:
-        
-        - bundle code
-        - treeshake
-        - import from NPM, local or remote URLs
-    - [babel-preset-env](https://babeljs.io/docs/en/babel-preset-env) for latest JS features.
-- Servers
-    
-    - [Browsersync](https://www.browsersync.io/)
-    - A static Browsersync server for the production code
+* Browserslist
+  * A sensible [browserslist](https://browsersl.ist/#q=defaults) default
+* CSS
+  * [PostCSS](https://postcss.org/) for the following:
+    * bundle all CSS into one file
+    * import from NPM, local or remote URLs
+    * [postcss-preset-env](https://preset-env.cssdb.org/) for latest CSS features
+* JS
+  * [Rollup](https://rollupjs.org/) to do the following:
+    * bundle code*
+    * treeshake
+    * import from NPM, local or remote URLs
+  * [babel-preset-env](https://babeljs.io/docs/en/babel-preset-env) for latest JS features.
+* Servers
+  * [Browsersync](https://www.browsersync.io/)
+    * A static Browsersync server for the production code
 
 This is also an exercise for me as a developer to trust the defaults and only change them when it's absolutely necessary. I will explain why as we go.
 
@@ -48,10 +42,10 @@ The default browserslist configuration is equivalent to the following string:
 
 It took me a little while to parse what theis means but it boils down to these requirements:
 
-- The last two versions of a browser
-- Has at least 0.5% market share
-- Includes Firefox ESR
-- Is actively developed
+* The last two versions of a browser
+* Has at least 0.5% market share
+* Includes Firefox ESR
+* Is actively developed
 
 This will give you 88.7% global browser support.
 
@@ -105,9 +99,9 @@ The full list of features supported by `postcss-preset-env` is [in their website
 
 I decided not to polyfill some features since they are not supported across browsers. These properties are:
 
-- Logical properties and values
-- prefers color scheme media query
-- gap
+* Logical properties and values
+* prefers color scheme media query
+* gap
 
 You can skip additional polyfills by adding the PostCSS feature name to the `features` array with a value of false.
 
@@ -121,8 +115,8 @@ const dev = {
     postcssPresetEnv({
       stage: 0,
       features: {
-        'logical-properties-and-values': false, 
-        'prefers-color-scheme-query': false, 
+        'logical-properties-and-values': false,
+        'prefers-color-scheme-query': false,
         'gap-properties': false,
       }
     }),
@@ -144,8 +138,8 @@ const prod = {
     postcssPresetEnv({
       stage: 0,
       features: {
-        'logical-properties-and-values': false, 
-        'prefers-color-scheme-query': false, 
+        'logical-properties-and-values': false,
+        'prefers-color-scheme-query': false,
         'gap-properties': false,
       }
     }),
@@ -158,9 +152,9 @@ const prod = {
 
 We then do a little trickery to import the right module for use. If the `process.env.NODE_ENV` variable is set to production then we export the `prod` configuration and if not we export `dev`.
 
-```css
-module.exports = process.env.NODE_ENV === 'production' 
-  ? prod 
+```js
+module.exports = process.env.NODE_ENV === 'production'
+  ? prod
   : dev
 ```
 
@@ -174,8 +168,7 @@ Installing PostCSS plugins is fairly straightforward:
 
 1. Install the plugin via NPM
 2. Add the plugin to the configuration file under the plugins section
-    
-    1. Some plugins may need to be run in a certain order for them to work. Make sure to read the plugin's `readme` file and test with your setup
+   1. Some plugins may need to be run in a certain order for them to work. Make sure to read the plugin's `readme` file and test with your setup
 
 ## Babel and Bundling with Rollup
 
@@ -290,23 +283,23 @@ The defaults query is equivalent to this:
 
 It means that we support all browsers that meet any of these requirements:
 
-- Have more than a 5% market share
-- Are the last two versions of the browser
-- Is [Firefox ESR](https://www.mozilla.org/en-US/firefox/enterprise/) that gets updated once a year
-- Is not dead according to their definition. These are browsers without official support or updates for more than 24 months
+* Have more than a 5% market share
+* Are the last two versions of the browser
+* Is [Firefox ESR](https://www.mozilla.org/en-US/firefox/enterprise/) that gets updated once a year
+* Is not dead according to their definition. These are browsers without official support or updates for more than 24 months
 
 The problem I see is that we can't rely on "the last 2 versions" to cover the features that we want.
 
 Yes, all browsers that pass the Browserslist test meet our baseline requirements:
 
-- Classes (ES2015)
-- Arrow functions (ES2015)
-- Generators (ES2015)
-- Block scoping (ES2015)
-- Destructuring (ES2015)
-- Rest and spread parameters (ES2015)
-- Object shorthand (ES2015)
-- Async/await (ES2017)
+* Classes (ES2015)
+* Arrow functions (ES2015)
+* Generators (ES2015)
+* Block scoping (ES2015)
+* Destructuring (ES2015)
+* Rest and spread parameters (ES2015)
+* Object shorthand (ES2015)
+* Async/await (ES2017)
 
 So the biggest question becomes what browser combinations, or what ECMAScript versions to package for.
 

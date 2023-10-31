@@ -18,7 +18,7 @@ If you set a container, then you can choose to size the components based on the 
 The following table shows the different values for the `contain` property. Some of these values were defined in the level 2 CSS containment module so I indicate the spec version they were defined in.
 
 | Types of Containment | Spec Introduced in | Description |
-| --- | --- | --- |
+| --* | --* | --* |
 | **Size** | Level 2 | size: The size of the element can be computed without checking its children, the element dimensions are independent of its contents. |
 | **Layout** | Level 2 | The internal layout of the element is totally isolated from the rest of the page, it’s not affected by anything outside and its contents cannot have any effect on the ancestors. |
 | **Style** | Level 2 | The effects of counters and quotes cannot escape this element, so they are isolated from the rest of the page. |
@@ -28,8 +28,8 @@ The following table shows the different values for the `contain` property. Some 
 
 There are also two compound values that you can use as shorthand for defining multiple types of containment.
 
-- **content**: Which is equivalent to contain: layout paint style.
-- **strict**: This is equivalent to contain: layout paint size style.
+* **content**: Which is equivalent to contain: layout paint style.
+* **strict**: This is equivalent to contain: layout paint size style.
 
 An example of a container ready to handle container relative sizes could look like this:
 
@@ -137,47 +137,42 @@ In the near future, we will have to change the code above to accommodate the new
 
 ### Container type
 
-**Note:** The properties described below are different than the contain properties in the CSS Containment Module Level 2. You can use `container-type` without using `contain`.
+!!! note **Note:**
+The properties described below are different than the contain properties in the CSS Containment Module Level 2. You can use `container-type` without using `contain`.
+!!!
 
 The `container-type` property establishes the element as a query container for the purpose of container queries, allowing style rules styling its descendants to query various aspects of its sizing, layout, and style and respond accordingly.
 
 The available values are:
 
 `size`
-
-Establishes a query container for size queries on both the inline and block axis. Applies layout, style, and size containment to the principal box.
+: Establishes a query container for size queries on both the inline and block axis. Applies layout, style, and size containment to the principal box.
 
 `inline-size`
-
-Establishes a query container for size queries on the container’s own inline axis. Applies layout, style, and inline-size containment to the principal box.
+: Establishes a query container for size queries on the container’s own inline axis. Applies layout, style, and inline-size containment to the principal box.
 
 `block-size`
-
-Establishes a query container for size queries on the container’s own block axis. Applies layout, style, and block-size containment to the principal box.
+: Establishes a query container for size queries on the container’s own block axis. Applies layout, style, and block-size containment to the principal box.
 
 `style`
-
-Establishes a query container for style queries.
+: Establishes a query container for style queries.
 
 `state`
-
-Establishes a query container for state queries. They have been pushed to the next level of the CSS containment specification
+: Establishes a query container for state queries.
+: They have been pushed to the next level of the CSS containment specification
 
 ### Container name
 
 The container-name property specifies a list of query container names. These names can be used by `@container` rules to filter which query containers are targeted.
 
 `none`
-
-The query container has no query container name.
+: The query container has no query container name.
 
 `<custom-ident>`
-
-Specifies a query container name as an identifier.
+: Specifies a query container name as an identifier.
 
 `<string>`
-
-Specifies a query container name as a `</string><string>` value; this computes to an identifier with the same value as the given `</string><string>`.
+: Specifies a query container name as a `</string><string>` value; this computes to an identifier with the same value as the given `</string><string>`.
 
 With `container-name` developers can specify which containers they want to target with `@container` queries and use the same container for multiple child elements.
 
@@ -268,35 +263,32 @@ If there is no container that is defined for the `<h2>` or parents, the browser 
 
 Use the following links to track support on your browser:
 
-- [Chrome](https://bugs.chromium.org/p/chromium/issues/list)
-- [Firefox](https://bugzilla.mozilla.org/home)
-- [Safari](https://bugs.webkit.org/query.cgi?format=specific&product=WebKit)
+* [Chrome](https://bugs.chromium.org/p/chromium/issues/list)
+* [Firefox](https://bugzilla.mozilla.org/home)
+* [Safari](https://bugs.webkit.org/query.cgi?format=specific&product=WebKit)
 
 **Currently, you cannot use height-based container queries, using only the block axis**. In order to make grid children work with @container, you’ll need to add a wrapper element. Despite this, adding a wrapper lets you still get the effects you want.
 
 ## Links and resources
 
-- Container Queries
-    
-    - [Next Gen CSS: @container](https://css-tricks.com/next-gen-css-container/)
-    - [Container Queries are actually coming](https://piccalil.li/blog/container-queries-are-actually-coming/)
-    - [Container Query Solutions with CSS Grid and Flexbox](https://moderncss.dev/container-query-solutions-with-css-grid-and-flexbox/)
-    - [Container Query Spec](https://goo.gle/3ok42pw)
-    - [CSS Tricks post on @container](https://goo.gle/3rvGkIB)
-    - [Web.dev article on containment](https://goo.gle/3wBMB52)
-- Container Relative Lengths
-    
-    - Container Relative Lengths in the [CSS Containment Level 3 specification](https://drafts.csswg.org/css-contain-3/#container-lengths)
-    - [Container Units Should Be Pretty Handy](https://css-tricks.com/container-units-should-be-pretty-handy/) — CSS Tricks
-    - [CSS Container Query Units](https://ishadeed.com/article/container-query-units/) — Ahmad Shadeed
-- Demos
-    
-    - [Codepen](https://codepen.io/miriamsuzanne/pen/MWopXRW) — Miriam Suzanne
-    - [(forked) Codepen](https://codepen.io/caraya/pen/eYELoZV?editors=1100) — Original Pen by Chris Coyier
-    - [Query Units - Card](https://codepen.io/shadeed/pen/yLXKBqN?editors=0100) – Ahmad Shadeed
-    - [Query Units - Importance](https://codepen.io/shadeed/pen/oNwqvap?editors=0100) – Ahmad Shadeed
-    - [Query Units - Bio](https://codepen.io/shadeed/pen/wvemwNb?editors=0100) – Ahmad Shadeed
-    - [Simplified Container Query Demo](https://codepen.io/una/pen/MWvzQdR) — Una
-    - [Podcast Card Demo](https://codepen.io/una/pen/LYbvKpK) — Una
-    - [Plant Store Demo](https://codepen.io/una/pen/mdOgyVL) — Una
-    - [Baby Clothes Demo](https://goo.gle/3GdVYwB) — Una
+* Container Queries
+  * [Next Gen CSS: @container](https://css-tricks.com/next-gen-css-container/)
+  * [Container Queries are actually coming](https://piccalil.li/blog/container-queries-are-actually-coming/)
+  * [Container Query Solutions with CSS Grid and Flexbox](https://moderncss.dev/container-query-solutions-with-css-grid-and-flexbox/)
+  * [Container Query Spec](https://goo.gle/3ok42pw)
+  * [CSS Tricks post on @container](https://goo.gle/3rvGkIB)
+  * [Web.dev article on containment](https://goo.gle/3wBMB52)
+* Container Relative Lengths
+  * Container Relative Lengths in the [CSS Containment Level 3 specification](https://drafts.csswg.org/css-contain-3/#container-lengths)
+  * [Container Units Should Be Pretty Handy](https://css-tricks.com/container-units-should-be-pretty-handy/) — CSS Tricks
+  * [CSS Container Query Units](https://ishadeed.com/article/container-query-units/) — Ahmad Shadeed
+* Demos
+  * [Codepen](https://codepen.io/miriamsuzanne/pen/MWopXRW) — Miriam Suzanne
+  * [(forked) Codepen](https://codepen.io/caraya/pen/eYELoZV?editors=1100) — Original Pen by Chris Coyier
+  * [Query Units * Card](https://codepen.io/shadeed/pen/yLXKBqN?editors=0100) – Ahmad Shadeed
+  * [Query Units * Importance](https://codepen.io/shadeed/pen/oNwqvap?editors=0100) – Ahmad Shadeed
+  * [Query Units * Bio](https://codepen.io/shadeed/pen/wvemwNb?editors=0100) – Ahmad Shadeed
+  * [Simplified Container Query Demo](https://codepen.io/una/pen/MWvzQdR) — Una
+  * [Podcast Card Demo](https://codepen.io/una/pen/LYbvKpK) — Una
+  * [Plant Store Demo](https://codepen.io/una/pen/mdOgyVL) — Una
+  * [Baby Clothes Demo](https://goo.gle/3GdVYwB) — Una

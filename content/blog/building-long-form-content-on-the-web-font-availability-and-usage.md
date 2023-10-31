@@ -18,7 +18,7 @@ Generic font families are best used as the last element in a `font-family` decla
 The following table shows the most commonly used generic font families
 
 | Font | Description |
-| --- | --- |
+| --* | --* |
 | **Serif** | Serif fonts represent the formal text style for a script. This often means, but is not limited to, glyphs that have finishing strokes, flared or tapering ends, or actual serifed endings (including slab serifs). Serif fonts are typically proportionately spaced. |
 | **Sans-Serif** | Glyphs in sans-serif fonts, as the term is used in CSS, are generally low contrast (vertical and horizontal stems have the close to the same thickness) and have stroke endings that are plain (without any flaring, cross stroke, or other ornamentation). Sans-serif fonts are typically proportionately spaced. They often have little variation between thick and thin strokes, compared to fonts from the serif family. |
 | **Monospace** | The sole criterion of a monospace font is that all glyphs have the same fixed width. This is often used to render samples of computer code. |
@@ -34,17 +34,17 @@ The first set of fonts designed to work on the web are the [Core fonts for the W
 
 The included fonts are:
 
-- Andalé Mono
-- Arial
-- Arial Black
-- Comic Sans MS
-- Courier New
-- Georgia
-- Impact
-- Times New Roman
-- Trebuchet MS
-- Verdana
-- Webdings
+* Andalé Mono
+* Arial
+* Arial Black
+* Comic Sans MS
+* Courier New
+* Georgia
+* Impact
+* Times New Roman
+* Trebuchet MS
+* Verdana
+* Webdings
 
 The program released these fonts are freeware with some distribution restrictions until 2002.
 
@@ -144,11 +144,11 @@ The final declaration is [font-display](https://developer.mozilla.org/en-US/docs
 
 You will have to load each font separately with its own `@font-face`. There should be at least four different `@font-face` declarations per font that you want to use.
 
-- Regular font (regular weight, non-italic)
-- Italic (regular weight)
-- Bold (non-italic)
-- Bold Italic
-- Any additional weight that you'd want to use and associated italic and bold italic files
+* Regular font (regular weight, non-italic)
+* Italic (regular weight)
+* Bold (non-italic)
+* Bold Italic
+* Any additional weight that you'd want to use and associated italic and bold italic files
 
 This will prevent [faux bold](https://alistapart.com/article/say-no-to-faux-bold/) and italics if there is no font available in the weight or style you want to use. The browser will then fake the bold or italic in order to show what it thinks the designer wants.
 
@@ -176,15 +176,9 @@ The table below, is taken from [System Font Stack](https://css-tricks.com/snippe
 
 | OS | Version | System Font |
 | --- | --- | --- |
-| macOS | Big Sur  
-Monterey  
-Ventura (currently in Beta) | [San Francisco Pro](https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts) (variable) |
-| macOS | El Capitan  
-Sierra  
-High Sierra  
-Mojave | San Francisco |
-| Windows | 11  
-10 | [Segoe UI Variable](https://aka.ms/SegoeUIVariable) (variable) |
+| macOS | Big Sur<br><br>Monterey<br><br>Ventura (currently in Beta) | [San Francisco Pro](https://github.com/sahibjotsaggu/San-Francisco-Pro-Fonts) (variable) |
+| macOS | El Capitan<br><br>Sierra<br><br>High Sierra<br><br>Mojave | San Francisco |
+| Windows | 10<br><br>11 | [Segoe UI Variable](https://aka.ms/SegoeUIVariable) (variable) |
 | Windows | 8.1 | [Segoe UI](https://docs.microsoft.com/en-us/typography/font-list/segoe-ui) |
 | Android | Ice Cream Sandwich (4.0) and later | [Roboto](https://fonts.google.com/specimen/Roboto) |
 | Ubuntu | All versions | [Ubuntu](http://font.ubuntu.com/) |
@@ -197,7 +191,7 @@ For long-form text system fonts may not be the best solution since the system is
 
 ```css
 :root {
-  --system-ui: 
+  --system-ui:
     system-ui,
     -apple-system,
     BlinkMacSystemFont,

@@ -13,13 +13,11 @@ The process below assumes that you already have a browserslist file or section i
 
 To get this baseline level of module support, we can use [babel](https://babeljs.io/) and different plugins depending to achieve our different levels of support:
 
-- [@babel/preset-env](https://babeljs.io/docs/en/babel-preset-env) to transpile out code for older browsers down to ES5 using a list of target browsers using a [browserslist](https://github.com/browserslist/browserslist) compatible file
-    
-    - It leverages multiple data sources to maintain mappings of which version of the supported target environments gained the support of a JavaScript syntax or browser feature, as well as a mapping of those syntaxes and features to Babel transform plugins and core-js polyfills
-- [@babel/preset-modules](https://github.com/babel/preset-modules/) plugin to smooth out the features we want to use in browsers that support some of our target features but not others
-    
-    - Here's the problem that `preset-modules` addresses: if any version of any browser in that the target list contains a bug triggered by modern syntax, the only solution is to enable the corresponding transform group that fixes that bug. In other words, `preset-env` converts code to ES5 in order to get around syntax bugs in ES2017
-    - `preset-modules` compiles the problem code to the closest functioning syntax that is supported by the target browsers
+* [@babel/preset-env](https://babeljs.io/docs/en/babel-preset-env) to transpile out code for older browsers down to ES5 using a list of target browsers using a [browserslist](https://github.com/browserslist/browserslist) compatible file
+  * It leverages multiple data sources to maintain mappings of which version of the supported target environments gained the support of a JavaScript syntax or browser feature, as well as a mapping of those syntaxes and features to Babel transform plugins and core-js polyfills
+* [@babel/preset-modules](https://github.com/babel/preset-modules/) plugin to smooth out the features we want to use in browsers that support some of our target features but not others
+  * Here's the problem that `preset-modules` addresses: if any version of any browser in that the target list contains a bug triggered by modern syntax, the only solution is to enable the corresponding transform group that fixes that bug. In other words, `preset-env` converts code to ES5 in order to get around syntax bugs in ES2017
+  * `preset-modules` compiles the problem code to the closest functioning syntax that is supported by the target browsers
 
 We can make both `preset-env` and `preset-modules` work together in the same [Babel configuration](https://babeljs.io/docs/en/configuration).
 

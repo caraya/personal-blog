@@ -1,7 +1,7 @@
 ---
 title: "HTML is the final product, not the initial source"
 date: "2014-07-31"
-categories: 
+categories:
   - "technology"
 ---
 
@@ -96,7 +96,7 @@ The issues with xml are similar to those involved in creating HTML. The markup v
 
 The screenshot below shows OxygenXML Author working in a Docbook 5 document using visual mode.
 
-\[caption id="attachment\_275067" align="aligncenter" width="800"\][![Visual editing using OxygenXML Author](https://publishing-project.rivendellweb.net/wp-content/uploads/2014/08/visual-editing-mode-small.png)](http:https://publishing-project.rivendellweb.net/wp-content/uploads/2014/08/visual-editing-mode-small.png) Visual editing using OxygenXML Author\[/caption\]
+\[caption id="attachment\_275067" align="aligncenter" width="800"\][![Visual editing using OxygenXML Author](/images/2014/08/visual-editing-mode-small.png)](http:/images/2014/08/visual-editing-mode-small.png) Visual editing using OxygenXML Author\[/caption\]
 
 The positive side is that using XSLT there is no limit to what we can do with our XML content.
 

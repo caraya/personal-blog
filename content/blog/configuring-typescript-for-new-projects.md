@@ -7,9 +7,9 @@ I've finally given in to working with TypeScript despite some of my misgivings a
 
 My misgivings include:
 
-- The need to set up a transpiler toolchain
-- You can't run the code directly in the browser
-- You have to decide on what version of Javascript to transpile the code to. This decision will be hardcoded in the Typescript configuration file
+* The need to set up a transpiler toolchain
+* You can't run the code directly in the browser
+* You have to decide on what version of Javascript to transpile the code to. This decision will be hardcoded in the Typescript configuration file
 
 We'll look at the setup and configuration of a Typescript project, along with some gotchas I've learned along the way.
 
@@ -86,16 +86,16 @@ I chose ES2017 my target because it provides a sane set of features that work in
 According to Houssein Djirdeh and Jason Miller's [Publish, ship, and install modern JavaScript for faster applications](https://web.dev/publish-modern-javascript/)
 
 > This means that 95% of global web traffic comes from browsers that support the most widely used JavaScript language features from the past 10 years, including:
-> 
-> - Classes (ES2015)
-> - Arrow functions (ES2015)
-> - Generators (ES2015)
-> - Block scoping (ES2015)
-> - Destructuring (ES2015)
-> - Rest and spread parameters (ES2015)
-> - Object shorthand (ES2015)
-> - Async/await (ES2017)
-> 
+>
+> * Classes (ES2015)
+> * Arrow functions (ES2015)
+> * Generators (ES2015)
+> * Block scoping (ES2015)
+> * Destructuring (ES2015)
+> * Rest and spread parameters (ES2015)
+> * Object shorthand (ES2015)
+> * Async/await (ES2017)
+>
 > Features in newer versions of the language specification generally have less consistent support across modern browsers. For example, many ES2020 and ES2021 features are only supported in 70% of the browser market—still the majority of browsers, but not enough that it's safe to rely on those features directly. This means that although "modern" JavaScript is a moving target, ES2017 has the widest range of browser compatibility while including most of the commonly used modern syntax features. In other words, ES2017 is the closest to modern syntax today.
 
 ES2017 is the earliest version of the Javascript standard that supports modules. This enables the `module/nomodule` pattern as an imperfect solution to supporting older browsers.

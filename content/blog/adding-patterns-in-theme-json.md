@@ -1,6 +1,7 @@
 ---
 title: "Adding patterns in theme.json"
 date: "2022-06-01"
+tag: ["wordpress"]
 ---
 
 With WordPress 6.0 themes can also use local patterns stored in the `patterns` top-level directory of the theme. These will be picked up automatically by WordPress and used in your theme.
@@ -30,46 +31,33 @@ The patterns in the theme's `patterns` directory use the PHP plugin syntax. You 
 The following fields are available in the pattern comment:
 
 Title (`required`)
-
-**implicitly translatable**
-
-The human-reaadable title of the pattern
+: **implicitly translatable**
+: The human-reaadable title of the pattern
 
 Slug (`required`)
-
-The machine-readable slug of the pattern
-
-No spaces allowed, replace them with hypens (`-`) or underscores (`_`)
+: The machine-readable slug of the pattern
+: No spaces allowed, replace them with hypens (`-`) or underscores (`_`)
 
 Description
-
-**implicitly translatable**
-
-Description of the pattern
+: **implicitly translatable**
+: Description of the pattern
 
 Viewport Width
-
-The viewport width that this pattern should be displayed at
+: The viewport width that this pattern should be displayed at
 
 Categories
-
-One or more comma-separated values
-
-The block will appear under these categories in the pattern inserter
+: One or more comma-separated values
+: The block will appear under these categories in the pattern inserter
 
 Keywords
-
-A list of one or more comma-separated values
-
-The block will appear under these keywords in the pattern inserter
+: A list of one or more comma-separated values
+: The block will appear under these keywords in the pattern inserter
 
 Block Types
-
-One or more comma-separated values
+: One or more comma-separated values
 
 Inserter
-
-Boolean indicating whether the block is available on the inserter or not
+: Boolean indicating whether the block is available on the inserter or not
 
 You also need the code for the pattern. This can be simple HTML or it can be HTML mixed with Gutenberg specific comments.
 

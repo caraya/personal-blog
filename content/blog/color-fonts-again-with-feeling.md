@@ -11,15 +11,13 @@ This post will discuss the COLRV1 color font format and the currently supported 
 
 The beta version of [Wakamaifondue](https://wakamaifondue.com/beta/) gives you a list of the available color palettes for the font we're working with. This will become important when it comes to figuring out if we want to use the built-in palettes or if we want to change the colors individually.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2022/10/wakamaifondue-color-font-palettes.png)
-
-Wakamaifondue color font palette selection
+![Wakamaifondue color font palette selection](/images/2022/10/wakamaifondue-color-font-palettes.png)
 
 ## The new features
 
 There are a few new CSS elements that we need to work on with COLRv1 fonts.
 
-## `@font-palette-values`
+## @font-palette-values
 
 [@font-palette-values](https://drafts.csswg.org/css-fonts-4/#font-palette-values)
 
@@ -60,7 +58,7 @@ If this descriptor is not present in the `@font-palette-values`, or if the font 
 
 The [override-colors](https://drafts.csswg.org/css-fonts-4/#override-color) descriptor overrides individual colors in a given `font-palette`
 
-:The override-colors descriptor takes a comma-separated list of palette index entries and colors
+The override-colors descriptor takes a comma-separated list of palette index entries and colors
 
 Each item in the comma-separated list represents a tuple of an entry into the palette and a color to replace it with
 
@@ -99,13 +97,11 @@ Another consideration is what color space. Since the descriptors can use any CSS
 
 The final consideration is browser support.
 
-![](https://caniuse.bitsofco.de/static/v1/colr-v1-1665630575572.webp)
-
-Data on support for the colr-v1 feature across the major browsers from caniuse.com
+![Data on support for the colr-v1 feature across the major browsers from caniuse.com](https://caniuse.bitsofco.de/static/v1/colr-v1-1665630575572.webp)
 
 Just like with audio and video codecs, different browsers support different color font formats.
 
 Safari has, so far, declined to implement COLRv1 in both desktop and mobile, so developers need to address fallbacks. These fallbacks may include:
 
-- Using color fonts supported on Safari(SVG-OT) as a fallback
-- Side-stepping the issue altogether and letting the font display without colors.
+* Using color fonts supported on Safari(SVG-OT) as a fallback
+* Side-stepping the issue altogether and letting the font display without colors.

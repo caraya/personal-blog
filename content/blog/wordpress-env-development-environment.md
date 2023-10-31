@@ -5,7 +5,7 @@ date: "2021-09-27"
 
 [@wordpress/env](https://www.npmjs.com/package/@wordpress/env) allows you to create a development environment for your WordPress plugin or theme. It addresses the following use case:
 
-**_You want to test your theme or plugin without installing it on a live site, whether development or production._**
+***You want to test your theme or plugin without installing it on a live site, whether development or production.***
 
 `@wordpress/env` requires Docker to be installed on your machine.There are instructions available for installing Docker on [Windows 10 Pro](https://docs.docker.com/docker-for-windows/install/), [all other versions of Windows](https://docs.docker.com/toolbox/toolbox_install_windows/), [macOS](https://docs.docker.com/docker-for-mac/install/), and [Linux](https://docs.docker.com/v17.12/install/linux/docker-ce/ubuntu/#install-using-the-convenience-script).
 
@@ -31,8 +31,8 @@ This will start a Docker container with the WordPress environment (MySQL and Wor
 
 Navigate to [http://localhost:8888](http://localhost:8888) to see the site. Go to [http://localhost:8888/wp-admin](http://localhost:8888/wp-admin) to log in as the administrator. The default credentials are:
 
-- username: `admin`
-- password: `password`
+* username: `admin`
+* password: `password`
 
 ### Running in a different port
 
@@ -83,6 +83,6 @@ wp-env destroy
 
 You can start over if you want with `wp-env start`
 
-**_This will permanently delete any posts, pages, media, etc. in the local WordPress installation. It will also nuke any configuration changes you made to the system. Use it as a last resort!_**
+***This will permanently delete any posts, pages, media, etc. in the local WordPress installation. It will also nuke any configuration changes you made to the system. Use it as a last resort!***
 
 There are more options available to `wp-env`. Check the package's [Readme](https://www.npmjs.com/package/@wordpress/env) for more information

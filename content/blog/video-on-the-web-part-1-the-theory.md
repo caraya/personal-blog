@@ -22,7 +22,7 @@ Although things have improved in recent years, this is still a matter of trial a
 The first thing we need to find out is if our target browsers support the container we want to use. I've only looked at three container types: MP4, WebM, and OGG.
 
 | Container Format | Chrome | Edge | Safari | Firefox | Notes |
-| --- | --- | --- | --- | --- | --- |
+| --* | --* | --* | --* | --* | --* |
 | MP4 | ✅ | ✅ | ✅ | ✅ |   |
 | WebM | ✅ | ✅ | ✅ | ✅ |   |
 | OGG | ✅ | ✅ | ✅ | ✅ |   |
@@ -34,7 +34,7 @@ Now let's look at video codecs to put in the containers.
 The video table is based on data from caniuse.com and Mozilla's [Web video codec guide](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs). **It does not include codecs for [WebRTC](https://webrtc.org/), only those codecs that will work in the `&lt;video>` element or its `&lt;source>` children**.
 
 | Format | Full Codec Name | Container Support | Chrome | Edge | Safari | Firefox | Notes |
-| --- | --- | --- | --- | --- | --- | --- | --- |
+| --* | --* | --* | --* | --* | --* | --* | --* |
 | VP8 | Video Processor 8 | OGG, WebM | ✅ | ✅ | ✅ | ✅ |   |
 | VP9 | Video Processor 9 | MP4, OGG, WebM | ✅ | Partial | ❌ | ✅ |   |
 | AV1 | AOMedia Video 1 | MP4, WebM | ✅ | Partial | ❌ | ❌ |   |
@@ -45,7 +45,7 @@ The video table is based on data from caniuse.com and Mozilla's [Web video codec
 The audio codec information is taken from caniuse.com and from Mozilla's [Web audio codec guide](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs).
 
 | Format | Full Name | Container Support | Chrome | Edge | Safari | Firefox | Notes |
-| --- | --- | --- | --- | --- | --- | --- | --- |
+| --* | --* | --* | --* | --* | --* | --* | --* |
 | AAC | Advanced Audio Coding | MP4 | ✅ | ✅ | ❌ | ✅ |   |
 | FLAC | Free Lossless Audio Codec | MP4, OGG | ✅ | ✅ | ✅ | ✅ |   |
 | MP3 | MPEG-1 Audio Layer III | MP4 | ✅ | ✅ | ✅ | ✅ | MP3 are MPEG files with no video tracks |
@@ -56,9 +56,9 @@ When looking at the available codecs there are many questions to ask before deci
 
 The final choice is a balance between several factors. The most important ones to me are:
 
-- audio quality
-- video quality
-- file size
+* audio quality
+* video quality
+* file size
 
 You also should consider target devices (different devices may support different container/audio/video combinations) and network connectivity or how long will it take to download the video.
 
@@ -66,12 +66,11 @@ You also should consider target devices (different devices may support different
 
 Choosing a video codec requires many decisions and compromises I've found that these questions (adapted from MDN's video codec guide) have helped me make decisions.
 
-- Do you wish to use an open format, or are proprietary formats also to be considered?
-- Do you have the resources to produce more than one format for each of your videos?
-    
-    - If you can create more than one version of the video you have more flexibility in what you make available and how browsers will play the content
-- Are there any browsers you're willing to sacrifice compatibility with?
-- How old is the oldest version of the web browser you need to support?
+* Do you wish to use an open format, or are proprietary formats also to be considered?
+* Do you have the resources to produce more than one format for each of your videos?
+  * If you can create more than one version of the video you have more flexibility in what you make available and how browsers will play the content
+* Are there any browsers you're willing to sacrifice compatibility with?
+* How old is the oldest version of the web browser you need to support?
 
 ## Choosing an audio codec
 
@@ -79,17 +78,14 @@ Typically any audio codec will work for all projects unless it's designed for a 
 
 When choosing a codec to use for your audio, you should first consider the following questions:
 
-- If the audio needs to go into a specific container, make sure that the codec you choose is supported in the desired container
-- What kind of audio content will the codec be handling?
-    
-    - Certain codecs are specifically designed for voice-only content
-- What bit rates and other configurable properties does each codec have that may make it a good (or poor) choice?
-- To what extent does latency matter for your needs?
-    
-    - If you need a sound that is very precisely timed, the lower the latency the better
-- How important is the audio quality?
-    
-    - If the quality is important you may want to consider a lossless codec (and pay the price of a large file size)
-- How much compression do you need to achieve?
+* If the audio needs to go into a specific container, make sure that the codec you choose is supported in the desired container
+* What kind of audio content will the codec be handling?
+  * Certain codecs are specifically designed for voice-only content
+* What bit rates and other configurable properties does each codec have that may make it a good (or poor) choice?
+* To what extent does latency matter for your needs?
+  * If you need a sound that is very precisely timed, the lower the latency the better
+* How important is the audio quality?
+  * If the quality is important you may want to consider a lossless codec (and pay the price of a large file size)
+* How much compression do you need to achieve?
 
 Once you have chosen the codec or codecs that you want to use, we can create the videos and add them to web pages using the `&lt;video>` element.

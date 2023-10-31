@@ -38,10 +38,6 @@ And this will work perfectly as long as Raleway loads successfully and it's prop
 
 But what happens if it doesn't load or the browser times out waiting for Raleway to load? What happens a fallback font is significantly different than the primary font we specify for our stack?
 
-Before we move forward, a little reminder. According to the [CSS Values and Units Module Level 3](https://www.w3.org/TR/css-values-3/) specifications, the [ch unit](https://www.w3.org/TR/css-values-3/#font-relative-lengths):
-
-> Represents the typical advance measure of European alphanumeric characters, and measured as the used advance measure of the “0” (ZERO, U+0030) glyph in the font used to render it. (The advance measure of a glyph is its advance width or height, whichever is in the inline axis of the element.)
-
 As Silvestar Bistrović outlines in [Be careful with ch units](https://www.silvestar.codes/articles/be-careful-with-ch-units/), the size of the ch unit is based on the font.
 
 Since not all fonts are designed the same, a measure of 66 characters can look narrower or wider depending on the typefaces you choose for your primary and fallback fonts.
@@ -52,9 +48,8 @@ Unless you're careful in planning your site's font stack, this will cause your l
 
 Monica Dinculescu created a [font style matcher](https://meowni.ca/font-style-matcher/) to create font-related styles to make fonts more closely match each other.
 
-![](https://publishing-project.rivendellweb.net/wp-content/uploads/2023/07/font-matcher-dinculescu.png)
+![Monica Dinculescu's [Font style matcher](https://meowni.ca/font-style-matcher/)](/images/2023/07/font-matcher-dinculescu.png)
 
-Monica Dinculescu's [Font style matcher](https://meowni.ca/font-style-matcher/)
 
 A more modern approach involves attributes of the `@font-face` at-rule.
 

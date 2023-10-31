@@ -76,5 +76,5 @@ Finally, to answer the specific question on the title of this post: You can use 
 
 ## Links and Resources
 
-- [Async functions: making promises friendly](https://web.dev/async-functions/) — web.dev
-- [async function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) — MDN
+* [Async functions: making promises friendly](https://web.dev/async-functions/) — web.dev
+* [async function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) — MDN

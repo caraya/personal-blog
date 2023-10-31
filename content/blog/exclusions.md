@@ -1,7 +1,7 @@
 ---
 title: "Exclusions"
 date: "2014-10-08"
-categories: 
+categories:
   - "technology"
 ---
 
@@ -23,39 +23,39 @@ I based each attribute definition on the how the [specification](http://www.w3.o
 
 This will **not** create an exclusion for floated elements. It has no effect on other, not floated, elements. This is the default value for `wrap-flow`
 
-[![exclusion_wrap_side_auto](https://publishing-project.rivendellweb.net/wp-content/uploads/2014/10/exclusion_wrap_side_auto.png)](http:https://publishing-project.rivendellweb.net/wp-content/uploads/2014/10/exclusion_wrap_side_auto.png)
+[![exclusion_wrap_side_auto](/images/2014/10/exclusion_wrap_side_auto.png)](http:/images/2014/10/exclusion_wrap_side_auto.png)
 
 - wrap-flow: both;
 
 Flows content on both sides of the element
 
-[![exclusion_wrap_side_both](https://publishing-project.rivendellweb.net/wp-content/uploads/2014/10/exclusion_wrap_side_both2.png)](http:https://publishing-project.rivendellweb.net/wp-content/uploads/2014/10/exclusion_wrap_side_both2.png)
+[![exclusion_wrap_side_both](/images/2014/10/exclusion_wrap_side_both2.png)](http:/images/2014/10/exclusion_wrap_side_both2.png)
 
 - wrap-flow: start;
 
 Inline content can wrap on the start edge of the exclusion area (this would be the left edge for LTR languages.) It must leave the end edge clear
 
-[![exclusion_wrap_side_left](https://publishing-project.rivendellweb.net/wp-content/uploads/2014/10/exclusion_wrap_side_left.png)](http:https://publishing-project.rivendellweb.net/wp-content/uploads/2014/10/exclusion_wrap_side_left.png)
+[![exclusion_wrap_side_left](/images/2014/10/exclusion_wrap_side_left.png)](http:/images/2014/10/exclusion_wrap_side_left.png)
 
 - wrap-flow: end;
 
 Inline flow content can wrap on the end side of the exclusion area but must leave the area to the start edge of the exclusion area empty. This is the reverse of the start value.
 
-[![exclusion_wrap_side_right](https://publishing-project.rivendellweb.net/wp-content/uploads/2014/10/exclusion_wrap_side_right.png)](http:https://publishing-project.rivendellweb.net/wp-content/uploads/2014/10/exclusion_wrap_side_right.png)
+[![exclusion_wrap_side_right](/images/2014/10/exclusion_wrap_side_right.png)](http:/images/2014/10/exclusion_wrap_side_right.png)
 
 - wrap-flow: maximum;
 
 Inline flow content wraps on the side of the exclusion with the largest available space for the given line, and must leave the other side of the exclusion empty. The space can happen on either side of the content, as shown in the examples below:
 
-\[caption id="attachment\_353541" align="aligncenter" width="427"\][![Example of wrap-flow: maximum wrapped from the left side](https://publishing-project.rivendellweb.net/wp-content/uploads/2014/10/exclusion_wrap_side_maximum_R.png)](http:https://publishing-project.rivendellweb.net/wp-content/uploads/2014/10/exclusion_wrap_side_maximum_R.png) Example of wrap-flow: maximum wrapped from the right side\[/caption\]
+\[caption id="attachment\_353541" align="aligncenter" width="427"\][![Example of wrap-flow: maximum wrapped from the left side](/images/2014/10/exclusion_wrap_side_maximum_R.png)](http:/images/2014/10/exclusion_wrap_side_maximum_R.png) Example of wrap-flow: maximum wrapped from the right side\[/caption\]
 
-\[caption id="attachment\_353540" align="aligncenter" width="426"\][![Example of wrap-flow: maximum wrapped from the left side](https://publishing-project.rivendellweb.net/wp-content/uploads/2014/10/exclusion_wrap_side_maximum_L.png)](http:https://publishing-project.rivendellweb.net/wp-content/uploads/2014/10/exclusion_wrap_side_maximum_L.png) Example of wrap-flow: maximum wrapped from the left side\[/caption\]
+\[caption id="attachment\_353540" align="aligncenter" width="426"\][![Example of wrap-flow: maximum wrapped from the left side](/images/2014/10/exclusion_wrap_side_maximum_L.png)](http:/images/2014/10/exclusion_wrap_side_maximum_L.png) Example of wrap-flow: maximum wrapped from the left side\[/caption\]
 
 - wrap-flow: clear;
 
 Inline content flows top and bottom of the exclusion, leaving the start and end sides clear.
 
-[![exclusion_wrap_side_clear](https://publishing-project.rivendellweb.net/wp-content/uploads/2014/10/exclusion_wrap_side_clear1.png)](http:https://publishing-project.rivendellweb.net/wp-content/uploads/2014/10/exclusion_wrap_side_clear1.png)
+[![exclusion_wrap_side_clear](/images/2014/10/exclusion_wrap_side_clear1.png)](http:/images/2014/10/exclusion_wrap_side_clear1.png)
 
 ## wrap-through
 
@@ -77,17 +77,17 @@ I still chose to include the examples as an illustration of what, I hope, is to 
 
 ### Basic shaped exclusion example
 
-[![csswg_exclusions_v1](https://publishing-project.rivendellweb.net/wp-content/uploads/2014/10/csswg_exclusions_v1.jpg)](http:https://publishing-project.rivendellweb.net/wp-content/uploads/2014/10/csswg_exclusions_v1.jpg)
+[![csswg_exclusions_v1](/images/2014/10/csswg_exclusions_v1.jpg)](http:/images/2014/10/csswg_exclusions_v1.jpg)
 
 In a two column text frame we create a circle shape at the center and use the shape as an exclusion where we flow the content around both sides using `wrap-flow: both;`
 
 ### Padding and margins in exclusions
 
-[![csswg_exclusions_v7](https://publishing-project.rivendellweb.net/wp-content/uploads/2014/10/csswg_exclusions_v7.jpg)](http:https://publishing-project.rivendellweb.net/wp-content/uploads/2014/10/csswg_exclusions_v7.jpg)
+[![csswg_exclusions_v7](/images/2014/10/csswg_exclusions_v7.jpg)](http:/images/2014/10/csswg_exclusions_v7.jpg)
 
 ### Adding background to a shaped exclusion
 
-[![csswg_exclusions_v8](https://publishing-project.rivendellweb.net/wp-content/uploads/2014/10/csswg_exclusions_v8.jpg)](http:https://publishing-project.rivendellweb.net/wp-content/uploads/2014/10/csswg_exclusions_v8.jpg)
+[![csswg_exclusions_v8](/images/2014/10/csswg_exclusions_v8.jpg)](http:/images/2014/10/csswg_exclusions_v8.jpg)
 
 ## Tutorials and Examples
 

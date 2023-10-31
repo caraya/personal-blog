@@ -11,10 +11,17 @@ The idea of the generator, just like its [downloadble sibling](https://wppb.io/)
 
 There are other generators available, some of which may be better suited to smaller, single-purpose tasks like what I have in mind:
 
-- [WordPress Plugin Boilerplate](https://github.com/DevinVinson/WordPress-Plugin-Boilerplate): A foundation for WordPress Plugin Development that aims to provide a clear and consistent guide for building your plugins
-- [WordPress Plugin Bootstrap](https://github.com/claudiosmweb/wordpress-plugin-boilerplate): Basic bootstrap to develop WordPress plugins using Grunt, Compass, GIT, and SVN
-- [WP Skeleton Plugin](https://github.com/ptahdunbar/wp-skeleton-plugin): Skeleton plugin that focuses on unit tests and use of composer for development
-- [WP CLI Scaffold](https://developer.wordpress.org/cli/commands/scaffold/plugin/): The Scaffold command of WP CLI creates a skeleton plugin with options such as CI configuration files
+[WordPress Plugin Boilerplate](https://github.com/DevinVinson/WordPress-Plugin-Boilerplate)
+: A foundation for WordPress Plugin Development that aims to provide a clear and consistent guide for building your plugins
+
+[WordPress Plugin Bootstrap](https://github.com/claudiosmweb/wordpress-plugin-boilerplate)
+: Basic bootstrap to develop WordPress plugins using Grunt, Compass, GIT, and SVN
+
+[WP Skeleton Plugin](https://github.com/ptahdunbar/wp-skeleton-plugin)
+: Skeleton plugin that focuses on unit tests and use of composer for development
+
+[WP CLI Scaffold](https://developer.wordpress.org/cli/commands/scaffold/plugin/)
+: The Scaffold command of WP CLI creates a skeleton plugin with options such as CI configuration files
 
 Yet generators and boilerplates are not the only ways to create a plugin. Code Generators, by their very nature, are overwhelming. They give you every single tool you might need and then they let you de-clutter your code, assuming you know how the code is supposed to work and whether your plugin will need all the pieces they give you. They also lock you into the way the boilerplate authors think things should be done, even if one size doesn't fit all.
 
@@ -46,12 +53,12 @@ The architecture, or code organization, you choose for your plugin will likely d
 
 For small, single-purpose plugins that have limited interaction with WordPress core, themes, or other plugins, there’s little benefit in engineering complex multi-file solutions. In that case, you can use one of the following models:
 
-- [Single plugin file, containing functions](https://github.com/GaryJones/move-floating-social-bar-in-genesis/blob/master/move-floating-social-bar-in-genesis.php)
-- [Single plugin file, containing a class, instantiated object and optionally functions](https://github.com/norcross/wp-comment-notes/blob/master/wp-comment-notes.php)
+* [Single plugin file, containing functions](https://github.com/GaryJones/move-floating-social-bar-in-genesis/blob/master/move-floating-social-bar-in-genesis.php)
+* [Single plugin file, containing a class, instantiated object and optionally functions](https://github.com/norcross/wp-comment-notes/blob/master/wp-comment-notes.php)
 
 For large plugins with lots of code, start off with classes in mind. Separate style and scripts files, and even build-related files. This will help code organization and long-term maintenance of the plugin.
 
-- [Main plugin file, then one or more class files](https://github.com/DevinVinson/WordPress-Plugin-Boilerplate)
+* [Main plugin file, then one or more class files](https://github.com/DevinVinson/WordPress-Plugin-Boilerplate)
 
 ## Activation / Deactivation Hooks
 
@@ -66,10 +73,10 @@ When the plugin containing Custom Post Types (CPTs) is first activated we want t
 /**
  * Activate the plugin.
  */
-function rivendellweb_cpt_activate() { 
+function rivendellweb_cpt_activate() {
   // function defined elsewhere
   rivendellweb_cpt_setup_book();
-  flush_rewrite_rules(); 
+  flush_rewrite_rules();
 }
 
 register_activation_hook( __FILE__, 'rivendellweb_cpt_activate' );
@@ -155,19 +162,15 @@ I take two approaches to avoid conflicts: I prefix all functions, classes, and v
 
 If I'm using an item from another plugin or a function I will always check if they exist. How to check if an item exists depends on what we're looking for:
 
-- **Variables**
-    
-    - [isset()](http://php.net/manual/en/function.isset.php) (includes arrays, objects, etc.)
-- **Functions**
-    
-    - [function\_exists()](http://php.net/manual/en/function.function-exists.php)
-- **Classes**
-    
-    - [get\_declared\_classes()](https://php.net/manual/en/function.get-declared-classes.php) lists all classes known to the current PHP script (both builtin and loaded)
-    - [class\_exists()](http://php.net/manual/en/function.class-exists.php) checks if a class exists in the declared classes array
-- **Constants**
-    
-    - [defined()](http://php.net/manual/en/function.defined.php)
+* **Variables**
+  * [isset()](http://php.net/manual/en/function.isset.php) (includes arrays, objects, etc.)
+* **Functions**
+  * [function\_exists()](http://php.net/manual/en/function.function-exists.php)
+* **Classes**
+  * [get\_declared\_classes()](https://php.net/manual/en/function.get-declared-classes.php) lists all classes known to the current PHP script (both builtin and loaded)
+  * [class\_exists()](http://php.net/manual/en/function.class-exists.php) checks if a class exists in the declared classes array
+* **Constants**
+  * [defined()](http://php.net/manual/en/function.defined.php)
 
 ## Plugin Security
 
@@ -177,10 +180,9 @@ Because we can't fully trust the content that we get from our users, we should a
 
 The most important step in creating an efficient security layer is having a user permission system in place. WordPress provides this in the form of [User Roles and Capabilities](https://developer.wordpress.org/plugins/security/checking-user-capabilities/).
 
-- **User roles** is just a fancy way of saying which group the user belongs to. Each group has a specific set of predefined capabilities
-- **User capabilities** are the specific permissions that you assign to each user role
-    
-    - Every user logged into WordPress is automatically assigned a set of capabilities based on their role
+* **User roles** is just a fancy way of saying which group the user belongs to. Each group has a specific set of predefined capabilities
+* **User capabilities** are the specific permissions that you assign to each user role
+  * Every user logged into WordPress is automatically assigned a set of capabilities based on their role
 
 As you build a plugin, you can check what role the user has and whether their role is allowed to perform the task you want them to perform.
 
@@ -203,8 +205,8 @@ and then call it in your code like this:
 
 ```php
 <?php
-if ( 
-  rivendellweb_user_has_role( 'administrator' ) 
+if (
+  rivendellweb_user_has_role( 'administrator' )
 ) {
   echo 'User is an administrator';
 } else {
@@ -231,25 +233,25 @@ Not that we don't trust users but it's always better to trust but verify that th
 
 WordPress provides functions to sanitize user input. The functions are:
 
-- [sanitize\_email()](https://developer.wordpress.org/reference/functions/sanitize_email/)
-- [sanitize\_file\_name()](https://developer.wordpress.org/reference/functions/sanitize_file_name/)
-- [sanitize\_hex\_color()](https://developer.wordpress.org/reference/functions/sanitize_hex_color/)
-- [sanitize\_hex\_color\_no\_hash()](https://developer.wordpress.org/reference/functions/sanitize_hex_color_no_hash/)
-- [sanitize\_html\_class()](https://developer.wordpress.org/reference/functions/sanitize_html_class/)
-- [sanitize\_key()](https://developer.wordpress.org/reference/functions/sanitize_key/)
-- [sanitize\_meta()](https://developer.wordpress.org/reference/functions/sanitize_meta/)
-- [sanitize\_mime\_type()](https://developer.wordpress.org/reference/functions/sanitize_mime_type/)
-- [sanitize\_option()](https://developer.wordpress.org/reference/functions/sanitize_option/)
-- [sanitize\_sql\_orderby()](https://developer.wordpress.org/reference/functions/sanitize_sql_orderby/)
-- [sanitize\_text\_field()](https://developer.wordpress.org/reference/functions/sanitize_text_field/)
-- [sanitize\_textarea\_field()](https://developer.wordpress.org/reference/functions/sanitize_textarea_field/)
-- [sanitize\_title()](https://developer.wordpress.org/reference/functions/sanitize_title/)
-- [sanitize\_title\_for\_query()](https://developer.wordpress.org/reference/functions/sanitize_title_for_query/)
-- [sanitize\_title\_with\_dashes()](https://developer.wordpress.org/reference/functions/sanitize_title_with_dashes/)
-- [sanitize\_user()](https://developer.wordpress.org/reference/functions/sanitize_user/)
-- [esc\_url\_raw()](https://developer.wordpress.org/reference/functions/esc_url_raw/)
-- [wp\_kses()](https://developer.wordpress.org/reference/functions/wp_kses/)
-- [wp\_kses\_post()](https://developer.wordpress.org/reference/functions/wp_kses_post/)
+* [sanitize\_email()](https://developer.wordpress.org/reference/functions/sanitize_email/)
+* [sanitize\_file\_name()](https://developer.wordpress.org/reference/functions/sanitize_file_name/)
+* [sanitize\_hex\_color()](https://developer.wordpress.org/reference/functions/sanitize_hex_color/)
+* [sanitize\_hex\_color\_no\_hash()](https://developer.wordpress.org/reference/functions/sanitize_hex_color_no_hash/)
+* [sanitize\_html\_class()](https://developer.wordpress.org/reference/functions/sanitize_html_class/)
+* [sanitize\_key()](https://developer.wordpress.org/reference/functions/sanitize_key/)
+* [sanitize\_meta()](https://developer.wordpress.org/reference/functions/sanitize_meta/)
+* [sanitize\_mime\_type()](https://developer.wordpress.org/reference/functions/sanitize_mime_type/)
+* [sanitize\_option()](https://developer.wordpress.org/reference/functions/sanitize_option/)
+* [sanitize\_sql\_orderby()](https://developer.wordpress.org/reference/functions/sanitize_sql_orderby/)
+* [sanitize\_text\_field()](https://developer.wordpress.org/reference/functions/sanitize_text_field/)
+* [sanitize\_textarea\_field()](https://developer.wordpress.org/reference/functions/sanitize_textarea_field/)
+* [sanitize\_title()](https://developer.wordpress.org/reference/functions/sanitize_title/)
+* [sanitize\_title\_for\_query()](https://developer.wordpress.org/reference/functions/sanitize_title_for_query/)
+* [sanitize\_title\_with\_dashes()](https://developer.wordpress.org/reference/functions/sanitize_title_with_dashes/)
+* [sanitize\_user()](https://developer.wordpress.org/reference/functions/sanitize_user/)
+* [esc\_url\_raw()](https://developer.wordpress.org/reference/functions/esc_url_raw/)
+* [wp\_kses()](https://developer.wordpress.org/reference/functions/wp_kses/)
+* [wp\_kses\_post()](https://developer.wordpress.org/reference/functions/wp_kses_post/)
 
 The idea is that whenever we get user input, whether a regular user or an administrator, we should make sure it won't break the system.
 

@@ -70,14 +70,15 @@ You can also create a configuration object to let some elements through the sani
 The example does the following:
 
 1. Defines the dirty text
-2. Specify a configuration directive, only <p> elements allowed
-    
-    - Note: We want to also keep <p>'s text content, so we add #text too
+2. Specify a configuration directive, only &lt;p> elements allowed
+   * Note: We want to also keep &lt;p>'s text content, so we add #text too
 3. Sanitize the input
 4. place the sanitized input in the document
 
+{.custom-ordered}
+
 ```js
-// 1 
+// 1
 const dirty = '<p>HELLO</p><style>*{x:expression(alert(1))}</style>\
 <iframe/\/src=JavScript:alert&lpar;1)></ifrAMe><br>goodbye</p><h1>not me!</h1>';
 
@@ -104,11 +105,9 @@ The most basic usage for the API does the following:
 1. Captures the element with the input
 2. Captures the user input. In this example the input is a string; in a production setting this could fetch the content from a remote source
 3. Sanitizes the content using the [setHTML](https://developer.mozilla.org/en-US/docs/Web/API/Element/setHTML) method
-    
-    - The `setHTML` method takes two arguments:
-        
-        - The user input
-        - An optional sanitizer settings object
+   * The `setHTML` method takes two arguments:
+     * The user input
+     * An optional sanitizer settings object
 
 ```js
 // 1
@@ -145,38 +144,30 @@ myDiv.setHTML(user_input, {
 The sanitizer configuration has the following attributes.
 
 **allowElements**
-
-The element allow list is a sequence of strings with elements that the sanitizer should retain in the input.
+: The element allow list is a sequence of strings with elements that the sanitizer should retain in the input.
 
 **blockElements**
-
-The element block list is a sequence of strings with elements where the sanitizer should remove the elements from the input, but retain their children.
+: The element block list is a sequence of strings with elements where the sanitizer should remove the elements from the input, but retain their children.
 
 **dropElements**
-
-The element drop list is a sequence of strings with elements that the sanitizer should remove from the input, including its children.
+: The element drop list is a sequence of strings with elements that the sanitizer should remove from the input, including its children.
 
 **allowAttributes**
-
-The attribute allow list is an attribute match list, which determines whether an attribute (on a given element) should be allowed.
+: The attribute allow list is an attribute match list, which determines whether an attribute (on a given element) should be allowed.
 
 **dropAttributes**
-
-The attribute drop list is an attribute match list, which determines whether an attribute (on a given element) should be dropped.
+: The attribute drop list is an attribute match list, which determines whether an attribute (on a given element) should be dropped.
 
 **allowCustomElements**
-
-The allow custom elements option determines whether custom elements are to be considered. The default is to drop them. If this option is true, custom elements will still be checked against all other built-in or configured checks.
+: The allow custom elements option determines whether custom elements are to be considered. The default is to drop them. If this option is true, custom elements will still be checked against all other built-in or configured checks.
 
 **allowUnknownMarkup**
-
-The allowUnknownMarkup option determines whether unknown HTML elements are to be considered. The default is to drop them. If this option is true, unkown HTML elements will still be checked against all other built-in or configured checks.
+: The allowUnknownMarkup option determines whether unknown HTML elements are to be considered. The default is to drop them. If this option is true, unkown HTML elements will still be checked against all other built-in or configured checks.
 
 **allowComments**
+: The allow comments option determines whether HTML comments are allowed.
 
-The allow comments option determines whether HTML comments are allowed.
-
-It is important to note the differences, like the differences between `blockElements` and `dropElements` regarding whether to keep the children elements.
+It is important to note the differences, like the differences between `blockElements` and `dropElements` regarding whether to keep the child elements.
 
 Another thing to consider is that working with [custom elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) or comments require their own permissions, separate from regular elements and attributes.
 
@@ -195,15 +186,15 @@ The `trusted-types` header enables trusted types in general or specific trusted 
 `requires-trusted-types-for` controls the data passed to DOM XSS sink functions, like Element.innerHTML setter.
 
 ```apache
-Content-Security-Policy: trusted-types; 
+Content-Security-Policy: trusted-types;
   require-trusted-types-for 'script';
 ```
 
 When testing, or if you don't have access to the server to set up HTTP headers you can use a `meta` element with equivalent values. In this case, it's enough to set up the `require-trusted-type-for` equivalent.
 
 ```html
-<meta 
-  http-equiv="Content-Security-Policy" 
+<meta
+  http-equiv="Content-Security-Policy"
   content="require-trusted-types-for 'script'">
 ```
 
@@ -216,16 +207,13 @@ We use feature detection for Trusted Types (`window.trustedTypes`) and Trusted T
 The `createPolicy` takes two parameters: the name of the policy and one or more methods for filtering content. The available methods are:
 
 [TrustedTypePolicy.createHTML()](https://developer.mozilla.org/en-US/docs/Web/API/TrustedTypePolicy/createHTML)
-
-Creates a [TrustedHTML](https://developer.mozilla.org/en-US/docs/Web/API/TrustedHTML) object.
+: Creates a [TrustedHTML](https://developer.mozilla.org/en-US/docs/Web/API/TrustedHTML) object.
 
 [TrustedTypePolicy.createScript()](https://developer.mozilla.org/en-US/docs/Web/API/TrustedTypePolicy/createScript)
-
-Creates a [TrustedScript](https://developer.mozilla.org/en-US/docs/Web/API/TrustedScript) object
+: Creates a [TrustedScript](https://developer.mozilla.org/en-US/docs/Web/API/TrustedScript) object
 
 [TrustedTypePolicy.createScriptURL()](https://developer.mozilla.org/en-US/docs/Web/API/TrustedTypePolicy/createScriptURL)
-
-Creates a [TrustedScriptURL](https://developer.mozilla.org/en-US/docs/Web/API/TrustedScriptURL) object
+: Creates a [TrustedScriptURL](https://developer.mozilla.org/en-US/docs/Web/API/TrustedScriptURL) object
 
 In this example, we create a custom Trusted Type policy and set up the type of filter that we want to use when creating HTML.
 
@@ -261,6 +249,6 @@ if (window.trustedTypes && trustedTypes.createPolicy) { // Feature testing
 
 ## Links and Resources
 
-- [Trusted Types](https://web.dev/trusted-types/)
-- [Securing SPAs with Trusted Types](https://auth0.com/blog/securing-spa-with-trusted-types/)
-- [Trusted Types API](https://developer.mozilla.org/en-US/docs/Web/API/Trusted_Types_API) — MDN
+* [Trusted Types](https://web.dev/trusted-types/)
+* [Securing SPAs with Trusted Types](https://auth0.com/blog/securing-spa-with-trusted-types/)
+* [Trusted Types API](https://developer.mozilla.org/en-US/docs/Web/API/Trusted_Types_API) — MDN

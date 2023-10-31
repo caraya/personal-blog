@@ -31,10 +31,10 @@ You can style the backdrop with the `::backdrop` pseudo-element.
 
 Using the popover API let's the browser manage the complexity of working with popups. The API will handle the following tasks for you:
 
-- **Promotion to the top layer** layer. Popovers will always appear in the top layer
-- **Light-dismiss functionality**. Clicking outside of the popover area will close the popover and return focus
-- **Default focus management**. When a popup is open, the next tab will navigate to the popup content
-- **Accessible keyboard bindings**. Pressing the esc key will close the popover and return focus Accessible component bindings. Connecting a popover element to a popover trigger semantically.
+* **Promotion to the top layer** layer. Popovers will always appear in the top layer
+* **Light-dismiss functionality**. Clicking outside of the popover area will close the popover and return focus
+* **Default focus management**. When a popup is open, the next tab will navigate to the popup content
+* **Accessible keyboard bindings**. Pressing the esc key will close the popover and return focus Accessible component bindings. Connecting a popover element to a popover trigger semantically.
 
 These tasks make it easier to work with popovers. It gives you a lot of functionality "for free", just by using the API
 
@@ -42,11 +42,10 @@ These tasks make it easier to work with popovers. It gives you a lot of function
 
 The basic popover has two components:
 
-- A `button` to trigger the popover with a `popovertarget` attributte pointing to the ID of the popover content
-- A `div` element for the popover content
-    
-    - It has an ID attribute that must match the `popovertarget` value in the button
-    - a `popover` attribute
+* A `button` to trigger the popover with a `popovertarget` attributte pointing to the ID of the popover content
+* A `div` element for the popover content
+  * It has an ID attribute that must match the `popovertarget` value in the button
+* a `popover` attribute
 
 The code looks like this:
 
@@ -56,7 +55,7 @@ The code looks like this:
 <div id="mypopover" popover>
   <h2>Popover</h2>
 
-  <p>content</p>  
+  <p>content</p>
 </div>
 ```
 
@@ -118,8 +117,8 @@ I've avoided talking about the semantics of the popover API. Hidde de Vries does
 
 ## Links and Resources
 
-- [popover](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API) — MDN
-- [MDN Popover API Exampless](https://mdn.github.io/dom-examples/popover-api/)
-- [Introducing the popover API](https://developer.chrome.com/blog/introducing-popover-api/)
-- [Dialogs and popovers seem similar. How are they different?](https://hidde.blog/dialog-modal-popover-differences/)
-- [Semantics and the popover attribute: what to use when?](https://hidde.blog/popover-semantics/)
+* [popover](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API) — MDN
+* [MDN Popover API Exampless](https://mdn.github.io/dom-examples/popover-api/)
+* [Introducing the popover API](https://developer.chrome.com/blog/introducing-popover-api/)
+* [Dialogs and popovers seem similar. How are they different?](https://hidde.blog/dialog-modal-popover-differences/)
+* [Semantics and the popover attribute: what to use when?](https://hidde.blog/popover-semantics/)

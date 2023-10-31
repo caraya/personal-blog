@@ -4,7 +4,7 @@
 	"description": "Preparing to move my blog from WordPress to 11ty",
 	"scripts": {
 		"postcss:build": "postcss public/css/index2.css -o public/css/index.css",
-		"postcss:watch": "postcss -w public/css/index2.css -o public/css/index.css",
+		"postcss:watch": "postcss -w assets/index.css -o public/css/index.css",
 		"build": "npx @11ty/eleventy",
 		"build-ghpages": "npx @11ty/eleventy --pathprefix=/eleventy-base-blog/",
 		"start": "npx @11ty/eleventy --serve --quiet",

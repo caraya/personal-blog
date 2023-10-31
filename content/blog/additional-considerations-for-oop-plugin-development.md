@@ -24,8 +24,8 @@ if ( ! class_exists( 'AwesomePlugin' ) ) {
      */
     public function setup_actions() {
         //Main plugin hooks
-        register_activation_hook(   
-          __FILE__, 
+        register_activation_hook(
+          __FILE__,
           array(
             'AwesomePlugin',
             'activate'
@@ -34,7 +34,7 @@ if ( ! class_exists( 'AwesomePlugin' ) ) {
         register_deactivation_hook(
           __FILE__,
           array(
-            'AwesomePlugin', 
+            'AwesomePlugin',
             'deactivate'
           )
         );
@@ -52,7 +52,7 @@ if ( ! class_exists( 'AwesomePlugin' ) ) {
      */
     public static function deactivate() {
         //Deactivation code in here
-    }      
+    }
 }
 
   // instantiate the plugin class
@@ -69,7 +69,7 @@ One thing that tripped me several times is the difference when working with clas
     register_activation_hook(
       __FILE__,
       array(
-        'AwesomePlugin', 
+        'AwesomePlugin',
         'activate'
       )
     );
@@ -118,11 +118,11 @@ Using composer requires a slightly different approach to writing plugins. We fir
 Then I change the location of third-party libraries in `composer.json` and run `composer install` to install the libraries in their new location.
 
 ```json
-{ 
-  "config": { 
-    "vendor-dir": "lib/" 
-  } 
-} 
+{
+  "config": {
+    "vendor-dir": "lib/"
+  }
+}
 ```
 
 The final step to get a plugin ready to use Composer autoload is to add the following statement to the main class file:
@@ -184,4 +184,6 @@ The following is a list of what should be documented in WordPress files:
 
 Where the core PHPDoc documentation and the WordPress Documentation Standards disagree, the WordPress Documentation Standards take precedence.
 
-**Note:** This conversation is only applicable to PHP. If you're working with Javascript, check the [JavaScript Documentation Standards](https://developer.wordpress.org/coding-standards/inline-documentation-standards/javascript/) and [JSDoc 3 Standard](http://usejsdoc.org/) for more information.
+!!! note **Note:**
+This conversation is only applicable to PHP. If you're working with Javascript, check the [JavaScript Documentation Standards](https://developer.wordpress.org/coding-standards/inline-documentation-standards/javascript/) and [JSDoc 3 Standard](http://usejsdoc.org/) for more information.
+!!!

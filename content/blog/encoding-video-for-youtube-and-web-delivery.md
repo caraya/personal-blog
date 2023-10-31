@@ -9,27 +9,27 @@ If you're working with the YouTube Content Manager, this [support article](https
 
 Otherwise, we can use the following media formats:
 
-- .MOV
-- .MPEG-1
-- .MPEG-2
-- .MPEG4
-- .MP4
-- .MPG
-- .AVI
-- .WMV
-- .MPEGPS
-- .FLV
-- 3GPP
-- WebM
-- DNxHR
-- ProRes
-- CineForm
-- HEVC (h265)
+* .MOV
+* .MPEG-1
+* .MPEG-2
+* .MPEG4
+* .MP4
+* .MPG
+* .AVI
+* .WMV
+* .MPEGPS
+* .FLV
+* 3GPP
+* WebM
+* DNxHR
+* ProRes
+* CineForm
+* HEVC (h265)
 
 We will discuss how to encode a video into two versions:
 
-- One that we can to YouTube
-- One that we can load directly into a server to use with the `video` element
+* One that we can to YouTube
+* One that we can load directly into a server to use with the `video` element
 
 We will use the [FFmpeg](https://ffmpeg.org/) and some of the code from Jan Ozer's Produce Videos with FFmpeg: The Beginner's Course.
 
@@ -55,8 +55,8 @@ The third issue is hardware-related. Not all devices or browsers support all the
 
 So with all these considerations, we'll pick two format/codec combinations
 
-- MP4 container with an h.264 video and m4a audio at 1080p resolution
-- WebM container with VP9 video and Opus audio at 1080p resolution
+* MP4 container with an h.264 video and m4a audio at 1080p resolution
+* WebM container with VP9 video and Opus audio at 1080p resolution
 
 ## FFmpeg commands
 
@@ -79,11 +79,11 @@ First, we will look at creating an MP4 file.
 
 The specific features of this video are:
 
-- `-c:v libx264` specifies that we want to use the x264 codec
-- `-s 352x240` indicates the size that we want for the resulting video
-- `-c:a aac` specified the `aac` codec for audio
-- `-b:a 128k` indicates that we want the resulting audio stream to have a 128kbs bitrate
-- `-ar 44100` is the sample rate that we want for the audio
+* `-c:v libx264` specifies that we want to use the x264 codec
+* `-s 352x240` indicates the size that we want for the resulting video
+* `-c:a aac` specified the `aac` codec for audio
+* `-b:a 128k` indicates that we want the resulting audio stream to have a 128kbs bitrate
+* `-ar 44100` is the sample rate that we want for the audio
 
 ```bash
 ffmpeg  -i living-years.webm \
@@ -97,8 +97,8 @@ living-years.mp4
 
 Creating a VP9 version of our video uses the same command with slightly different syntax.
 
-- `c:v libvpx-vp9` indicates that we want to use the VP9 codec available in the `libvpx` library. The distinction is important because the library also handles VP8 video
-- `c:a opus` uses the [Opus](https://opus-codec.org/) audio codec
+* `c:v libvpx-vp9` indicates that we want to use the VP9 codec available in the `libvpx` library. The distinction is important because the library also handles VP8 video
+* `c:a opus` uses the [Opus](https://opus-codec.org/) audio codec
 
 ```bash
 ffmpeg  -i living-years.webm \
@@ -161,17 +161,17 @@ The `source` attributes reference the videos we've just created. The browser wil
 
 ```html
 <video id='video'
- controls="controls" 
- width="352" 
- height="240"  
+ controls="controls"
+ width="352"
+ height="240"
  poster="https://example.com/poster.png">
-  <source 
-    id='webm' 
-    src="http://example.com/video.webm" 
+  <source
+    id='webm'
+    src="http://example.com/video.webm"
     type='video/webm' />
-  <source 
-    id='mp4' 
-    src="http://example.com/video.mp4" 
+  <source
+    id='mp4'
+    src="http://example.com/video.mp4"
     type='video/mp4' />
 </video>
 ```

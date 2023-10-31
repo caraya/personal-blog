@@ -3,7 +3,7 @@ title: "Creating a JSON schema"
 date: "2022-05-04"
 ---
 
-[JSON Schemas](https://json-schema.org/) allows us to create a schema for the data. This would allow us to validate the data and ensure that it is complete and has the correct structure. This would also address one of the drawbacks of NoSQL and, potentially, XML databases: **_how to ensure that the data is complete_**, meaning that all records contain the same data.
+[JSON Schemas](https://json-schema.org/) allows us to create a schema for JSON data. This would allow us to validate the data and ensure that it is complete and has the correct structure. This would also address one of the drawbacks of NoSQL and, potentially, XML databases: ***how to ensure that the data is complete***, meaning that all records contain the same data.
 
 We'll build a schema for interview-like content for a JSON document that we'll later convert to XML.
 
@@ -241,7 +241,7 @@ The `name` property is required.
 }
 ```
 
-I've validated the schema below using the [JSON Schema Validator](https://www.jsonschemavalidator.net/) using the document instance discussed in **_The content for the interview object_**.
+I've validated the schema below using the [JSON Schema Validator](https://www.jsonschemavalidator.net/) using the document instance discussed in ***The content for the interview object***.
 
 ## Refining the schema
 
@@ -263,9 +263,9 @@ The object now has a `kind` property to indicate the type of media. I chose `kin
 
 The possible values for `kind` are:
 
-- `audio` (default) represents an audio recording
-- `video` represents a video recording
-- `n/a` represents the lack of a recording, possibly because it's an in-person interview, the recording was removed from the project or is not available for other reasons
+* `audio` (default) represents an audio recording
+* `video` represents a video recording
+* `n/a` represents the lack of a recording, possibly because it's an in-person interview, the recording was removed from the project or is not available for other reasons
 
 We added `kind` to the list of the required fields for media objects.
 
@@ -481,14 +481,11 @@ This is the current version of the `interview` schema.
 
 ## Links and Resources
 
-- Information Repository
-    
-    - [JSON Schema](https://json-schema.org/)
-- Specifications
-    
-    - [JSON Schema Core](https://json-schema.org/draft/2020-12/json-schema-core.html)
-    - [JSON Schema Validation](https://json-schema.org/draft/2020-12/json-schema-validation.html)
-    - [Relative JSON Pointers](https://json-schema.org/draft/2020-12/relative-json-pointer.html)
-- Tools
-    
-    - Online [JSON Schema Validator](https://www.jsonschemavalidator.net/)
+* Information Repository
+  * [JSON Schema](https://json-schema.org/)
+* Specifications
+  * [JSON Schema Core](https://json-schema.org/draft/2020-12/json-schema-core.html)
+  * [JSON Schema Validation](https://json-schema.org/draft/2020-12/json-schema-validation.html)
+  * [Relative JSON Pointers](https://json-schema.org/draft/2020-12/relative-json-pointer.html)
+* Tools
+  * Online [JSON Schema Validator](https://www.jsonschemavalidator.net/)

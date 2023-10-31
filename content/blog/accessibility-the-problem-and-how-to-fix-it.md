@@ -56,7 +56,7 @@ This one is another low-hanging fruit that can easily be fixed manually just by 
 When writing the code for an image, whether it's a standalone figure or a responsive image with multiple srcsets, add the `alt` attribute to the image, whether it's the default image for a responsive set or a standalone image.
 
 ```html
-  <img 
+  <img
     src="https://assets.codepen.io/32795/santiago002.jpg"
     alt="View of the mountains from the northern part of Santiago, Chile" >
 ```
@@ -88,10 +88,10 @@ A lot of times when I see a link with no text, either because the author forgot 
 or
 
 ```html
-<a 
+<a
   href="https://facebook.com"
   id="myLink">
-    <img 
+    <img
       width="24"
       height="96"
       src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
@@ -125,13 +125,13 @@ Leaving it empty is an option if that’s the most useful alternative for the im
     <label for="email">
       Enter your email:
     </label>
-    <input type="email" 
+    <input type="email"
       name="email"
       id="email"
       required>
   </div>
   <div class="form-example">
-    <input type="submit"    
+    <input type="submit"
       value="Subscribe!">
   </div>
 </form>
@@ -149,17 +149,19 @@ The number of headings and the sequence of headings matter.
 
 According to the WebAIM
 
-> 19.6% of home pages had more than one <h1> – an increase from 18.4% in 2021. There were 1,092,097 instances of skipped heading levels (e.g., jumping from <h2> to <h4>) and 1 in every 21 headings was improperly structured. Skipped headings were present on 40.4% of all pages (up from 38.4% in 2021), and 9.9% of pages had no headings present at all (down from 10.6% in 2021). Source: [WebAIM One Million](https://webaim.org/projects/million/#headings)
+> 19.6% of home pages had more than one &lt;h1> – an increase from 18.4% in 2021. There were 1,092,097 instances of skipped heading levels (e.g., jumping from &lt;h2> to &lt;h4>) and 1 in every 21 headings was improperly structured. Skipped headings were present on 40.4% of all pages (up from 38.4% in 2021), and 9.9% of pages had no headings present at all (down from 10.6% in 2021).
+>
+> Source: [WebAIM One Million](https://webaim.org/projects/million/#headings)
 
 Here are a few tips on how to use headings in an accessible way.
 
-- Only use one <h1> element per page. This will usually be the site title
-- Use headings sequentially. If the first element is a <h1> it's children should be <h2>, its children should be a <h3> and so on
-- Don't skip levels. Don't go from <h2 to <h4>. Use the sequence as it was intended
+* Only use one &lt;h1> element per page. This will usually be the site title
+* Use headings sequentially. If the first element is a &lt;h1> it's children should be &lt;h2>, its children should be a &lt;h3> and so on
+* Don't skip levels. Don't go from &lt;h2 to &lt;h4>. Use the sequence as it was intended
 
 ### Empty buttons
 
-Just like links, not having content between the button opening and closing tags hurts accessibility. By default, a button's accessible name is the content between the opening and closing <button> tags so not having any content or having content that can't be read by assistive technology makes the button inaccessible.
+Just like links, not having content between the button opening and closing tags hurts accessibility. By default, a button's accessible name is the content between the opening and closing &lt;button> tags so not having any content or having content that can't be read by assistive technology makes the button inaccessible.
 
 Even though this button is perfectly usable as a search button for abled users, it won't work with screen readers.
 
@@ -236,10 +238,10 @@ If a page uses multiple languages you can set the `lang` attribute for each part
 
 ## Links and resources
 
-- [The WebAIM Million](https://webaim.org/projects/million/) 2022 report
-- [One million broken web sites - and a way to prevent that](https://dev.to/codepo8/one-million-broken-web-sites-and-a-way-to-prevent-that-mda)
-- [How to Fix Your Low-Contrast Text](https://benmyers.dev/blog/fix-low-contrast-text/)
-- [Common accessibility issues that you can fix today](https://hidde.blog/common-a11y-issues/)
-- [Figure and figcaption – extended alternate text for screen readers?](https://www.hassellinclusion.com/blog/figure-figcaption-extended-alternate-text-screen-readers/)
-- [How The HTML Lang Attribute Helps Accessibility](https://www.boia.org/blog/how-the-html-lang-attribute-helps-accessibility)
-- [Understanding Success Criterion 3.1.2: Language of Parts](https://www.w3.org/WAI/WCAG21/Understanding/language-of-parts)
+* [The WebAIM Million](https://webaim.org/projects/million/) 2022 report
+* [One million broken web sites - and a way to prevent that](https://dev.to/codepo8/one-million-broken-web-sites-and-a-way-to-prevent-that-mda)
+* [How to Fix Your Low-Contrast Text](https://benmyers.dev/blog/fix-low-contrast-text/)
+* [Common accessibility issues that you can fix today](https://hidde.blog/common-a11y-issues/)
+* [Figure and figcaption – extended alternate text for screen readers?](https://www.hassellinclusion.com/blog/figure-figcaption-extended-alternate-text-screen-readers/)
+* [How The HTML Lang Attribute Helps Accessibility](https://www.boia.org/blog/how-the-html-lang-attribute-helps-accessibility)
+* [Understanding Success Criterion 3.1.2: Language of Parts](https://www.w3.org/WAI/WCAG21/Understanding/language-of-parts)

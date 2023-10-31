@@ -1,7 +1,6 @@
 ---
 title: "Building a website to host Codelabs"
 date: "2022-04-11"
-templateEngineOverride: false
 ---
 
 ## Introduction
@@ -16,15 +15,15 @@ Rather than try to work around Google's Codelab website tools, I decided to buil
 
 The idea for the website is to:
 
-- Create a JSON file with information about the codelabs
-- Build a website
-- Insert the data from the JSON file into the template
+* Create a JSON file with information about the codelabs
+* Build a website
+* Insert the data from the JSON file into the template
 
 I first thought about using a templating engine like [Nunjucks](https://mozilla.github.io/nunjucks/) or [Handlebars](https://handlebarsjs.com/) to build the website, but I couldn't get it to work so I will use a simple HTML file instead and use a minimal handlebar template. This change forced a few changes to the plan
 
-- Build the page to display the Codelabs
-- Create an array of Codelab information on the script used to fill out the template
-- Insert the data from the JSON array into the template
+* Build the page to display the Codelabs
+* Create an array of Codelab information on the script used to fill out the template
+* Insert the data from the JSON array into the template
 
 ## The template
 
@@ -34,11 +33,12 @@ Since we expect more than one codelab to be hosted, we use Handlebar's [#each](h
 
 For each codelab we instantiate it and fill it out with the necessary information from the data on the script.
 
-The information inside double curly braces (like `{{url}}` or `{{title}}` is extracted from the script data section
+The information inside double curly braces is extracted from the script data section
 
+{% raw %}
 ```html
 <template id="codelab-list-template">
-  {{#each codelabs }}
+  {{# each codelabs }}
   <div class="codelab-item">
     <h3><a href="codelabs/{{url}}">{{title}}</a></h3>
     <p>{{summary}}</p>
@@ -47,6 +47,7 @@ The information inside double curly braces (like `{{url}}` or `{{title}}` is ext
   {{/each}}
 </template>
 ```
+{% endraw %}
 
 ## The script
 
@@ -68,9 +69,9 @@ const codelabs = [
 
 The template instantiation does the following:
 
-- Grabs a reference to the content of the template element
-- Grabs a reference to the Handlebars compiler with the template as a parameter
-- Inserts the rendered template into the DOM using the data from the `codelabs` array
+* Grabs a reference to the content of the template element
+* Grabs a reference to the Handlebars compiler with the template as a parameter
+* Inserts the rendered template into the DOM using the data from the `codelabs` array
 
 ```js
 const template = document.getElementById('codelab-list-template').innerHTML;

@@ -58,7 +58,7 @@ When either width or height is specified, Squoosh will resize the image to the s
 
 ```js
 const gulp = require('gulp');
-const squoosh = require ('gulp-libsquoosh');)
+const squoosh = require ('gulp-libsquoosh');
 
 gulp.task('squoosh', () => {
   retrurn gulp.src('src/original-images/**/*.{png,jpg,avif}')
@@ -125,7 +125,7 @@ gulp.task('squoosh', () => {
 });
 ```
 
-**_The code in the previous example is not working. It reports an error about the path expecting a string but receiving undefined. I've raised an issue in the gulp-squoosh repository to see the best way to fix it._**
+***The code in the previous example is not working. It reports an error about the path expecting a string but receiving undefined. I've raised an issue in the gulp-squoosh repository to see the best way to fix it.***
 
 One final piece of research is to see whether you can use the same Squoosh encoder to run multiple commands and how many commands will Squoosh run before the WASM codecs run out of memory.
 

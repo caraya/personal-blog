@@ -9,14 +9,12 @@ Container blocks like the columns blocks also support templates. This is achieve
 
 This PHP example creates a block with two items, one of them with additional nested children:
 
-- A root level paragraph with a placeholder
-- A columns block that will contain one or more children
-- A column
-    
-    - An image
-- A column
-    
-    - A paragraph
+* A root level paragraph with a placeholder
+* A columns block that will contain one or more children
+* A column
+  * An image
+* A column
+  * A paragraph
 
 ```php
 <?php
