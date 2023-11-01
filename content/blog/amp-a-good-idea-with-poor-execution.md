@@ -28,34 +28,34 @@ Each of these components provides opinionated and, somewhat, sensible defaults.
 At its most basic, an AMP HTML document looks like this:
 
 ```html
-&lt;!doctype html>
-&lt;html amp lang="en">
-  &lt;head>
-    &lt;meta charset="utf-8">
-    &lt;script async src="https://cdn.ampproject.org/v0.js">&lt;/script>
-    &lt;title>Hello, AMPs&lt;/title>
-    &lt;link rel="canonical" href="https://amp.dev/documentation/guides-and-tutorials/start/create/basic_markup/">
-    &lt;meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    &lt;style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}&lt;/style>&lt;noscript>&lt;style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}&lt;/style>&lt;/noscript>
-  &lt;/head>
-  &lt;body>
-    &lt;h1 id="hello">Hello AMPHTML World!&lt;/h1>
-  &lt;/body>
-&lt;/html>
+<!doctype html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <title>Hello, AMPs</title>
+    <link rel="canonical" href="https://amp.dev/documentation/guides-and-tutorials/start/create/basic_markup/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  </head>
+  <body>
+    <h1 id="hello">Hello AMPHTML World!</h1>
+  </body>
+</html>
 ```
 
 Each AMP HTML document must:
 
 | Rule | Description |
 |--- | --- |
-| Start with the &lt;!doctype html> doctype. | Standard for HTML.|
-| Contain a top-level &lt;html ⚡> or &lt;html amp> tag.| Identifies the page as AMP content.|
-| Contain &lt;head> and &lt;body> tags. | While optional in HTML, this is required in AMP.|
-| Contain a &lt;meta charset="utf-8"> tag right after the &lt;head> tag. | Identifies the encoding for the page.|
-| Contain a `&lt;script async src="https://cdn.ampproject.org/v0.js">&lt;/script>` tag inside the &lt;head> tag as early as possible.| Includes and loads the AMP JS library.|
-| Contain a &lt;link rel="canonical" href="$SOME_URL"> tag inside their &lt;head>. | the href attribute should point to the page itself. This section exists for legacy reasons. |
-| Contain a &lt;meta name="viewport" content="width=device-width" /> tag inside their &lt;head> tag. | Specifies a responsive viewport. |
-| Contain the AMP boilerplate code in their &lt;head> tag. |CSS boilerplate to initially hide the content until AMP JS is loaded. |
+| Start with the <!doctype html> doctype. | Standard for HTML.|
+| Contain a top-level <html ⚡> or <html amp> tag.| Identifies the page as AMP content.|
+| Contain <head> and <body> tags. | While optional in HTML, this is required in AMP.|
+| Contain a <meta charset="utf-8"> tag right after the <head> tag. | Identifies the encoding for the page.|
+| Contain a `<script async src="https://cdn.ampproject.org/v0.js"></script>` tag inside the <head> tag as early as possible.| Includes and loads the AMP JS library.|
+| Contain a <link rel="canonical" href="$SOME_URL"> tag inside their <head>. | the href attribute should point to the page itself. This section exists for legacy reasons. |
+| Contain a <meta name="viewport" content="width=device-width" /> tag inside their <head> tag. | Specifies a responsive viewport. |
+| Contain the AMP boilerplate code in their <head> tag. |CSS boilerplate to initially hide the content until AMP JS is loaded. |
 
 The body of the page doesn't show anything unusual. The "magic" of the content happens in their element library.
 
@@ -63,7 +63,7 @@ What's important in this example is the structure and the requirements AMP place
 
 The doctype tag is part of every HTML document and should be included in every document. But the requirement is not enforced.
 
-Same thing for the &lt;head> and &lt;body> elements. They are required for well-formed HTML documents but because parsers are configured in a much more forgiving way than what the HTML specification says we should do. This is known as [tag soup markup](https://en.wikipedia.org/wiki/Tag_soup)
+Same thing for the <head> and <body> elements. They are required for well-formed HTML documents but because parsers are configured in a much more forgiving way than what the HTML specification says we should do. This is known as [tag soup markup](https://en.wikipedia.org/wiki/Tag_soup)
 
 Canonical links become necessary to improve SEO when you have multiple versions of the same page; they tell some search engine crawlers (Google and Bing) which page they should crawl.
 

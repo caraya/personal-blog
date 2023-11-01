@@ -1,12 +1,13 @@
 module.exports = {
-  'globDirectory': 'docs',
+  'globDirectory': '_site',
   'globPatterns': [
     '/',
     'index.html',
-    'css/index.css',
-    'pages/404.html',
-    'pages/offline.html',
+		'fonts/Recursive.woff2',
+    '**/index.css',
+    '404.html',
+		'offline.html',
   ],
-  'swSrc': 'js/sw2.js',
-  'swDest': 'sw.js',
+  'swSrc': 'assets/sw.js',
+  'swDest': '_site/sw.js',
 };
