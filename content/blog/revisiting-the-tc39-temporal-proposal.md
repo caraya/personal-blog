@@ -5,21 +5,21 @@ date: "2023-04-24"
 
 The Javascript Temporal proposal seeks a native fix for long-standing isues with Javascript's Date object as outlined in [Fixing JavaScript Date](https://maggiepint.com/2017/04/09/fixing-javascript-date-getting-started/):
 
-- No support for time zones other than the user’s local time and UTC
-- Parser behavior so unreliable it is unusable
-- Date object is mutable
-- DST behavior is unpredictable
-- Computation APIs are unwieldy
-- No support for non-Gregorian calendars
+* No support for time zones other than the user’s local time and UTC
+* Parser behavior so unreliable it is unusable
+* Date object is mutable
+* DST behavior is unpredictable
+* Computation APIs are unwieldy
+* No support for non-Gregorian calendars
 
 Rather than patch the Date object, the proposal creates a new top-level object (Temporal) with the proposed changes Javascript now has:
 
-- First class support for all time zones
-- Support for DST-safe arithmetics
-- An easy to use API for date computations
-- Temporal objects represent fixed dates and times
-- Support for non-Gregorian calendars
-- Separate classes for date-only, time-only, and other use cases
+* First class support for all time zones
+* Support for DST-safe arithmetics
+* An easy to use API for date computations
+* Temporal objects represent fixed dates and times
+* Support for non-Gregorian calendars
+* Separate classes for date-only, time-only, and other use cases
 
 Support for Temporal is not complete on every browser so we're using a polyfill to make these examples work.
 
@@ -177,11 +177,11 @@ function englishPlural(n, singular, plural) {
 
 If the original date variable is not empty then we build our date objects. We could use one declaration for all the data that we need but I prefer to be more verbose to make it easier to debug.
 
-- **pastDate** holds a temporal object for the original past date
-- **today** contains a temporal object for the current date
-- **since** Temporal date object representing the difference between the past date and today expressed in days
-- **sinceMonths** Temporal date object representing the difference between the past date and today expressed in months
-- **sinceYears** Temporal date object representing the difference between the past date and today expressed in years
+* **pastDate** holds a temporal object for the original past date
+* **today** contains a temporal object for the current date
+* **since** Temporal date object representing the difference between the past date and today expressed in days
+* **sinceMonths** Temporal date object representing the difference between the past date and today expressed in months
+* **sinceYears** Temporal date object representing the difference between the past date and today expressed in years
 
 ```js
 if (originalPastDate !== null) {
@@ -206,7 +206,7 @@ The next block of constants creates the strings we'll present to the users. They
   const monthString =
     `${englishPlural(sinceMonths.months, 'month', 'months')}` +
     (sinceMonths.days !== 0 ? `, ${englishPlural(sinceMonths.days, 'day', 'days')}` : '');
-  const yearString = 
+  const yearString =
     `${englishPlural(sinceYears.years, 'year', 'years')}` +
     (sinceYears.months !== 0 ? `, ${englishPlural(sinceYears.months, 'month', 'months')}` : '') +
     (sinceYears.days !== 0 ? `, ${englishPlural(sinceYears.days, 'day', 'days')}` : '');

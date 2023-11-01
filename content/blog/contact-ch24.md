@@ -1,4 +1,8 @@
-# Contact by Carl Sagan
+---
+title: Contact by Carl Sagan
+date: 2040-12-31
+draft: true
+---
 
 **Chapter 24.**
 

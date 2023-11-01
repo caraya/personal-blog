@@ -1,6 +1,6 @@
 ---
 title: "Migrating from WordPress to Eleventy (part 3)"
-date: "2023-11-13"
+date: "2023-12-31"
 youtube: false
 vimeo: false
 mermaid: false
@@ -9,12 +9,6 @@ draft: true
 ---
 
 These are more random, miscelaneous, items that I'm working on to make the site look as close as possible to the WordPress version of the site.
-
-## Handling drafts and future postings
-
-One thing that has been very frustrating is to figure out how to handle drafts and future posts (posts that are complete but will not be published for a while).
-
-if you set `draft: true` in the post front matter or the date is in the future from the date you're publishing. Eleventy will set the permalink to false and exclude the post from all collections
 
 ## Conditionally loading assets
 
@@ -136,6 +130,13 @@ module.exports = {
   "mavo": false,
   };
   ```
+
+## Handling drafts and future postings
+
+One thing that has been very frustrating is to figure out how to handle drafts and future posts (posts that are complete but will not be published for a while).
+
+if you set `draft: true` in the post front matter or the date is in the future from the date you're publishing. Eleventy will set the permalink to false and exclude the post from all collections
+
 
 ## Evaluate Hosting
 
