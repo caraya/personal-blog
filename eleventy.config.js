@@ -41,9 +41,9 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy({
 		"./public/": "/",
 		"./content/admin/": "/admin",
+		"./assets/manifest.json": "/manifest.json",
 		"./node_modules/lite-youtube-embed/src/lite-yt-embed.css": "/css/lite-yt-embed.css",
 		"./node_modules/lite-youtube-embed/src/lite-yt-embed.js": "/js/lite-yt-embed.js",
-		"./content/manifest.json": "/manifest.json",
 		"./node_modules/prismjs/themes/prism-solarizedlight.css": "/css/prism-solarizedlight.css"
 	});
 

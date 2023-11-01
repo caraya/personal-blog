@@ -7,9 +7,11 @@
     <meta
     name="description" content="{{ description or metadata.description }}"> {#- Atom and JSON feeds included by default #}
     <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
-    <link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}"> {#- Uncomment this if you’d like folks to know that you used Eleventy to build your site!  #}
-    {#- Learn more about bundles: https://github.com/11ty/eleventy-plugin-bundle #}
-    <link rel="stylesheet" href="/css/index.css"/> <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}">
+    <link
+    rel="manifest" href="/manifest.json"> {#- Learn more about bundles: https://github.com/11ty/eleventy-plugin-bundle #}
+    <link rel="stylesheet" href="/css/index.css"/>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     {# add prism.js stylesheets unconditionally #}
     <link rel="stylesheet" href="/css/prism-solarizedlight.css"/>
     <link
@@ -55,6 +57,21 @@
       {% include "footer.njk" %}
     </div>
     <!-- Current page: {{ page.url | htmlBaseUrl }} -->
+    <!-- Configure and load Service Worker -->
+    <script>
+      // Test if service workers are supported
+      if ('serviceWorker' in navigator) { // Attempt to register it
+        navigator
+          .serviceWorker
+          .register('/sw.js')
+          .then(function () { // Success Message
+            console.log('ServiceWorker succesfully registered');
+          })
+          .catch(function (err) { // Error Message
+            console.log('ServiceWorker registration failed: ', err);
+          });
+      }
+    </script>
     <!-- added for Netlify CMS -->
     <script>
       if (window.netlifyIdentity) {

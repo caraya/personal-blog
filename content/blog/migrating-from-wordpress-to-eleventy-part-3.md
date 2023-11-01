@@ -1,16 +1,10 @@
 ---
 title: "Migrating from WordPress to Eleventy (part 3)"
 date: "2023-12-31"
-youtube: false
-vimeo: false
-mermaid: false
-mavo: false
 draft: true
 ---
 
 These are more random, miscelaneous, items that I'm working on to make the site look as close as possible to the WordPress version of the site.
-
-## Conditionally loading assets
 
 ## Implement Archive Pagination
 
@@ -77,14 +71,6 @@ permalink: "{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber }}/{
 
 In future iterations we'll improve the layout and the usability for the navigation.
 
-### Adding search functionality
-
-The WordPress version of the blog uses Algolia as the search provider. There is no reason we can't use the same service with Eleventy
-
-We will use [Building server-rendered search for static sites with 11ty Serverless, Netlify, and Algolia](https://www.algolia.com/blog/engineering/building-server-rendered-search-for-static-sites-with-11ty-serverless-netlify-and-algolia/) as the starting point. This will tie us to Netlify since it uses Netlify functions as the serverless infrastructure, but I had already decided to use Netlify for the Netlify CMS so it's less of a roadblock.
-
-
-
 ## Maintaining the same structure than WordPress
 
 One important thing is to keep the existing flar structure of the blog in Eleventy.
@@ -135,9 +121,12 @@ module.exports = {
 
 One thing that has been very frustrating is to figure out how to handle drafts and future posts (posts that are complete but will not be published for a while).
 
-if you set `draft: true` in the post front matter or the date is in the future from the date you're publishing. Eleventy will set the permalink to false and exclude the post from all collections
+if you set `draft: true` in the post front matter or the date is in the future from the date you're publishing Eleventy will set the permalink to false and exclude the post from all collections
 
+{% raw %}
 
-## Evaluate Hosting
+{% endraw %}
 
-Now that I've moved to a static site generator it makes sense to re-evaluate my hosting situation.
+## Conditionally loading assets
+
+Rather than load every asset in every page, whether needed, or not, I decided to load assets only on the posts they are needed

@@ -25,7 +25,7 @@ For more details, watch Brandon Jones' presentation at Google I/O this year for 
 
 <lite-youtube videoid="1t1gBVykneA"></lite-youtube>
 
-Before we jump too far let's talk about WebXR.
+Before we jump to far let's talk about WebXR.
 
 ## What is WebXR
 
@@ -43,6 +43,7 @@ If you're using phones or other devices to work with AR experiences the issue be
 
 Using the WebXR Device API we can now place virtual items in physical spaces so users have access to them either through dedicated devices or through their WebXR enabled browsers using Magic Windows. The beacons could work presenting notifications to users that will then use browsers in ARCore/ARKit powered devices or with the right applications to experience the content as designed.
 
+
 ## Can we get things other than markers to display out AR content from?
 
 ## How do we translate 2D content to a 3D environment?
@@ -56,7 +57,7 @@ Using the WebXR Device API we can now place virtual items in physical spaces so 
 * Inspiration
   * [Daemon by Daniel Suarez](https://amzn.to/2Kr6SCp)
   * [Freedom (TM) by Daniel Suarez](https://amzn.to/2Kf2RF7)
-  * [Understanding the Daemon](https://web.archive.org/web/20211205205841/https://www.faz.net/aktuell/feuilleton/medien/english-version-understanding-the-daemon-1621404.html?printPagedArticle=true#pageIndex_0) &mdash; archived copy
+  * [Understanding the Daemon](http://www.faz.net/aktuell/feuilleton/medien/english-version-understanding-the-daemon-1621404.html?printPagedArticle=true#pageIndex_0)
 * Groups
   * [Google AR](https://github.com/google-ar)
   * [Mozilla Mixed Reality Blog](https://blog.mozvr.com/)
