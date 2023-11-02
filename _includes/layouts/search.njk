@@ -10,33 +10,10 @@
     <link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}">
     <link
     rel="manifest" href="/manifest.json"> {#- Learn more about bundles: https://github.com/11ty/eleventy-plugin-bundle #}
-    <link rel="stylesheet" href="/css/index.css"/>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    {# add prism.js stylesheets unconditionally #}
-    <link rel="stylesheet" href="/css/prism-solarizedlight.css"/>
-    <link rel="stylesheet" href="/css/prism-diff.css"/>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css"/>
     <script defer src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"></script>
-    {# Only load Mavo if instructed to do so in the post's front matter #}
-    {% if mavo %}
-      <link rel="stylesheet" href="https://get.mavo.io/mavo.css"/>
-      <script src="https://get.mavo.io/mavo.js"></script>
-    {% endif %}
-    {# Only load lite-vimeo if instructed to do so in the post's front matter #}
-    {% if vimeo %}
-      <script defer type="module" src="https://cdn.jsdelivr.net/npm/@slightlyoff/lite-vimeo@0.1.1/lite-vimeo.js"></script>
-    {% endif %}
-    {# Only load lite-youtube if instructed to do so in the post's front matter #}
-    {% if youtube %}
-      <link rel="stylesheet" href="/css/lite-yt-embed.css"/>
-      <script defer src="/js/lite-yt-embed.js"></script>
-    {% endif %}
-    {# Only load mermaid if instructed to do so in the post's front matter #}
-    {% if mermaid %}
-      {% mermaid_js %}
-    {% endif %}
   </head>
   <body>
     <a href="#skip" class="visually-hidden">Skip to main content</a>
@@ -53,28 +30,10 @@
         </h1>
         {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
       </header>
-      {% include "nav_menu.njk" %}
-      <main id="skip">
-        {{ content | safe }}
-      </main>
-      {% include "footer.njk" %}
     </div>
-    <!-- Current page: {{ page.url | htmlBaseUrl }} -->
-    <!-- Configure and load Service Worker -->
-    <script>
-      // Test if service workers are supported
-      if ('serviceWorker' in navigator) { // Attempt to register it
-        navigator
-          .serviceWorker
-          .register('/sw.js')
-          .then(function () { // Success Message
-            console.log('ServiceWorker succesfully registered');
-          })
-          .catch(function (err) { // Error Message
-            console.log('ServiceWorker registration failed: ', err);
-          });
-      }
-    </script>
+
+		<div id="search"></div>
+
     <!-- added for Algolia -->
     <script type="text/javascript">
       algoliasearchNetlify({

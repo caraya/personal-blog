@@ -49,7 +49,6 @@
 		"markdown-it-footnote": "^3.0.3",
 		"markdown-it-image-figures": "^2.1.1",
 		"markdown-it-kbd-better": "^1.2.5",
-		"posthtml": "^0.16.6",
-		"workbox-cli": "^7.0.0"
+		"posthtml": "^0.16.6"
 	}
 }
