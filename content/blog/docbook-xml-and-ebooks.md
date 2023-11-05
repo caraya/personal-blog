@@ -1,7 +1,7 @@
 ---
 title: "Docbook, XML and ebooks:Creating eBooks the old fashioned way"
 date: "2012-04-06"
-categories: 
+categories:
   - "technology"
 ---
 
@@ -13,9 +13,9 @@ More information about the history of Docbook can be found in the [Docbook: The 
 
 Below is a skeleton XML file for a Docbook-based book.
 
-```markup
-<?xml version="1.0" encoding="utf-8"?> 
-<book xmlns='http://docbook.org/ns/docbook' version="5.0" xml:lang="en"> 
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<book xmlns='http://docbook.org/ns/docbook' version="5.0" xml:lang="en">
 <title>The Adventures of Sherlock Holmes</title>
 <info>
  <author>
@@ -24,7 +24,7 @@ Below is a skeleton XML file for a Docbook-based book.
      <surname>Conan Doyle</surname>
    </personname>
  </author>
-</info> 
+</info>
 <chapter>
  <title>A Chapter</title></chapter></book></p>
 
@@ -33,8 +33,8 @@ Below is a skeleton XML file for a Docbook-based book.
 
 Once we have the XML document ready (filling out the skeleton with as many chapters as we need to complete our content), we need two things:
 
-- A set of XSLT stylesheets to convert our XML into HTML and ePub
-- A processor to actually run the transformation The stylesheets are located at
+* A set of XSLT stylesheets to convert our XML into HTML and ePub
+* A processor to actually run the transformation The stylesheets are located at
 
 [http://sourceforge.net/projects/docbook/files/docbook-xsl-ns/1.76.1/](http://sourceforge.net/projects/docbook/files/docbook-xsl-ns/1.76.1/) where you can choose if you want .zip or .tag.gz compressed archives. In addition download the file at [http://sourceforge.net/projects/docbook/files/epub3/docbook-epub3-addon-b3.zip](http://sourceforge.net/projects/docbook/files/epub3/docbook-epub3-addon-b3.zip) and [http://sourceforge.net/projects/docbook/files/epub3/README.epub3](http://sourceforge.net/projects/docbook/files/epub3/README.epub3). To enable ePub3 support follow the instructions on the README.epub3 file.
 
@@ -53,19 +53,19 @@ xsltproc /Users/carlos/docbook/1.0/xslt/epub3/chunk.xsl ebook.xml
 This produces an output that should look like this:
 
 ```bash
-Writing OEBPS/bk01-toc.xhtml for book 
-Writing OEBPS/ch01.xhtml for chapter 
-Writing OEBPS/ch02.xhtml for chapter 
-Writing OEBPS/index.xhtml for book 
-Writing OEBPS/docbook-epub.css for book 
-Generating EPUB package files. 
-Generating image list ... 
-Writing OEBPS/package.opf for book 
-Writing OEBPS/../META-INF/container.xml for book 
-Writing OEBPS/../mimetype for book 
-Generating NCX file ... 
-Writing OEBPS/toc.ncx for book 
-< ?xml version="1.0" encoding="UTF-8"?> ' 
+Writing OEBPS/bk01-toc.xhtml for book
+Writing OEBPS/ch01.xhtml for chapter
+Writing OEBPS/ch02.xhtml for chapter
+Writing OEBPS/index.xhtml for book
+Writing OEBPS/docbook-epub.css for book
+Generating EPUB package files.
+Generating image list ...
+Writing OEBPS/package.opf for book
+Writing OEBPS/../META-INF/container.xml for book
+Writing OEBPS/../mimetype for book
+Generating NCX file ...
+Writing OEBPS/toc.ncx for book
+< ?xml version="1.0" encoding="UTF-8"?> '
 ```
 
 ## Final Details
@@ -76,21 +76,21 @@ We are done generating the content and the files we need in order to generate th
 
 For example, if your document contains:
 
-```markup
+```xml
 <imagedata fileref="images/caution.png"></imagedata>
 ```
 
 If the base.dir attribute is set up to the ebook1/OEBPS, you would copy the file to: ebook1/OEBPS/images/caution.png. You can get a list of image files from the manifest file (ebook1/OEBPS/package.opf in our example) that is created by the style sheet.
 
-Currently the stylesheets will \*not\* include generated image files for callouts, header/footers, and admonitions. These files have to be added manually.
+Currently the stylesheets will *not* include generated image files for callouts, header/footers, and admonitions. These files have to be added manually.
 
 **cd to the directory containing your mimetype files, which would be ebook1 in this example.**
 
 **Run the following zip commands to create the epub file**
 
 ```bash
-zip -X0 sherlock-holmes.epub mimetype 
-zip -r -X9 sherlock-holmes.epub META-INF OEBPS [/bash] 
+zip -X0 sherlock-holmes.epub mimetype
+zip -r -X9 sherlock-holmes.epub META-INF OEBPS [/bash]
 ```
 
 The first command adds the 'mimetype' file first and uncompressed. The -X option excludes extra file attributes (required by epub3). The numbers indicate the degree of compression. The -r option means recursively include all directories. The "sherlock-holmes.epub" in this example is the output file.

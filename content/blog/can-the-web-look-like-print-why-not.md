@@ -1,7 +1,7 @@
 ---
 title: "Can the web look like print? Why Not"
 date: "2016-04-27"
-categories: 
+categories:
   - "technology"
 ---
 

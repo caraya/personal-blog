@@ -5,28 +5,26 @@ date: "2017-08-28"
 
 We've looked at using beacons and we've began our discussion of digital storytelling using Augmented Reality. Now we'll look at a fully immersive experience using Virtual Reality Gear. This section is less about code and more about the possibilities inherent in telling stories in this medium using a small set of technologies:
 
-- Leap Motion to provide a set of interaction gestures
-- WebGL 3D environments to build the world we'll be interacting in
-    
-    - A-Frame
-- Possible voice interfaces to add further interfaces to the stories we tell
-    
-    - Speech Synthesis API
-- Unity 3D environment
+* Leap Motion to provide a set of interaction gestures
+* WebGL 3D environments to build the world we'll be interacting in
+  * A-Frame
+* Possible voice interfaces to add further interfaces to the stories we tell
+  * Speech Synthesis API
+* Unity 3D environment
 
 As we explore these tools we'll also look at:
 
-- Navigation and travel through digital worlds
-- Bots and other clues for the virtual tourist
+* Navigation and travel through digital worlds
+* Bots and other clues for the virtual tourist
 
 We'll start working with [A-Frame](https://aframe.io/), from Mozilla. It does an excelent job of abstracting the underlying [Three.js](https://threejs.org/) and [WebGL](https://www.khronos.org/webgl/) code into a tag-based language, similar to HTML. At its simplest an A-Frame scene looks like the code below. We link to the A-Frame library and then write tags to create the content we want:
 
-- A scene to hold our content
-- A box
-- A sphere
-- A cylinder
-- A plane to put the content in
-- A sky element with a set color
+* A scene to hold our content
+* A box
+* A sphere
+* A cylinder
+* A plane to put the content in
+* A sky element with a set color
 
 A-Frame does it all in less than 10 lines of HTML-like tags. The creator doesn't need to know what goes on "under the hood" to see the results of the code.
 
@@ -93,7 +91,7 @@ We can also drop directly to Three.js code and use it within the A-Frame code. T
 
 A-Frame gives you a declarative way to create 3D content and scenes without loosing the flexibility of Three.js and Shaders when we need to use them. We'll see whether using declarative markup or procedural code works better.
 
-Creating these environments presents another question. **_How do we navigate from one scene to another_**. For example, if our story takes place in a house, how do we navigate from one room to another and how do we restrict what places we can and cannot go to?
+Creating these environments presents another question. ***How do we navigate from one scene to another***. For example, if our story takes place in a house, how do we navigate from one room to another and how do we restrict what places we can and cannot go to?
 
 In an ideal world we'd load all the assets we need as a large application and then transition seamlessly between areas that works but puts a lot of assets in the user's computer that might or might not be neecessaary.
 

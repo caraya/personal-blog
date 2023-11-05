@@ -15,10 +15,6 @@
     {# add prism.js stylesheets unconditionally #}
     <link rel="stylesheet" href="/css/prism-solarizedlight.css"/>
     <link rel="stylesheet" href="/css/prism-diff.css"/>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css"/>
-    <script defer src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"></script>
     {# Only load Mavo if instructed to do so in the post's front matter #}
     {% if mavo %}
       <link rel="stylesheet" href="https://get.mavo.io/mavo.css"/>
@@ -74,16 +70,6 @@
             console.log('ServiceWorker registration failed: ', err);
           });
       }
-    </script>
-    <!-- added for Algolia -->
-    <script type="text/javascript">
-      algoliasearchNetlify({
-        appId: 'PG840UKK8Q',
-        apiKey: '<YOUR_ALGOLIA_SEARCH_API_KEY>',
-        siteId: '26351df2-c0d4-4526-950c-3866501cb99d',
-        branch: 'main',
-        selector: 'div#search'
-      });
     </script>
     <!-- added for Netlify CMS -->
     <script>

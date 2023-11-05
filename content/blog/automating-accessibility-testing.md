@@ -19,25 +19,25 @@ While the extension will only work on single pages, it is far easier to run.
 
 To start, download the extension from the [Chrome Store](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd).
 
-![Axe browser extension in the chrome store.](/images/2022/06/axe-browser-ext-01.png)
+![Axe browser extension in the chrome store.](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/axe-browser-ext-01)
 
 The extension will add a menu option to the browser's DevTools. To get to the menu, activate DevTools either by pressing `CMD/CTRL + Shift + I` or right-clicking on the window and selecting `Inspect`.
 
-![Inspect menu item in the right click menu.](/images/2022/06/axe-browser-ext-02.png)
+![Inspect menu item in the right click menu.](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/axe-browser-ext-02)
 
 In the DevTools window, the axe DevTools will be at the far right of the menu as shown in the following image:
 
-![Axe DevTools menu item in DevTools.](/images/2022/06/axe-browser-ext-03.png)
+![Axe DevTools menu item in DevTools.](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/axe-browser-ext-03)
 
 When you click on the menu item you will see the Axe extension main window.
 
 **The extension, as downloaded, will only run full-page basic scans. To run the partial scan or any of the specialized scans you must register for the paid version of Axe**. There is also a 14-day trial for you to test the tool and see if it meets your needs.
 
-![Axe DevTools Extension main screen](/images/2022/06/axe-browser-ext-04.png)
+![Axe DevTools Extension main screen](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/axe-browser-ext-04)
 
 Once you click on the left-side `Scan ALL of my page` button the extension will scan your page for accessibility issues and present them on the right side of the screen as shown in the following image:
 
-![Axe DevTools Extension results page](/images/2022/06/axe-browser-ext-05.png)
+![Axe DevTools Extension results page](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/axe-browser-ext-05)
 
 Alongside the automated problems, the extension will suggest how to fix them.
 
@@ -47,10 +47,10 @@ These tools will work with full websites, not individual pages but they require 
 
 The accessibility evaluator tool has one special characteristic: It can use the accessibility standards from multiple countries and regions; these standards may be different from US-based standards.
 
-![WAVE evaluator homepage.](/images/2022/06/wave-accessibility-checker.png)
+![WAVE evaluator homepage.](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/wave-accessibility-checker)
 
 
-![Accessibility checker homepage.](/images/2022/06/accessibility-checker.png)
+![Accessibility checker homepage.](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/accessibility-checker)
 
 ## Manually accessibility testing
 

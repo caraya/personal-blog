@@ -45,9 +45,7 @@ To start create an empty HTML document and insert the following code in the `hea
 
 This will get the latest stable version of Mavo. If you want to get an uncompressed version, an ES5 version for older browsers or a specific version (other than the latest) head to [get Mavo](https://mavo.io/get/) select from the options given and copy the code that will appear.
 
-![](/images/2017/12/get-mavo.png)
-
-Questions to answer and links to appropriate Mavo resources download
+![Questions to answer and links to appropriate Mavo resources download](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/get-mavo)
 
 This will load Mavo but won't do anything with it... yet.
 
@@ -112,30 +110,27 @@ I have a list of projects at different stages of completion that I would like to
 
 The structure of the data is like this:
 
-- Name of the project
-- Description
-- Date Started
-- Date Ended (if applicable)
-- Type of project. One of
-
-    - Code
-    - Writing
-    - Research Report
-    - Mixed
-    - Other
-- Stage of the project. One of
-
-    - Idea
-    - Draft
-    - In Development
-    - Completed
-    - Published
-- URLs
-
-    - Writing
-    - Code
-    - Other
-- Additional Notes
+* Name of the project
+* Description
+* Date Started
+* Date Ended (if applicable)
+* Type of project. One of
+  * Code
+  * Writing
+  * Research Report
+  * Mixed
+  * Other
+* Stage of the project. One of
+  * Idea
+  * Draft
+  * In Development
+  * Completed
+  * Published
+* URLs
+  * Writing
+  * Code
+  * Other
+* Additional Notes
 
 The project had some baffling aspects (that I'm still working on understanding) and some very easy parts of the code. The full code is shown below, broken by sections to make sure that I cover some of the more baffling aspects of it.
 
@@ -275,7 +270,7 @@ Project Notes is the last item in each individual project card before we close t
 
 I used some CSS to make the cards responsive using Flexbox. We also make some items flex horizontally to increase readability but, as you can see below, there is not that much CSS to use to tweak the Mavo-enhanced code to look the way I want it to.
 
-```
+```css
 .projects {
   display: flex;
   flex-flow: row;
@@ -306,7 +301,7 @@ label {
 
 ## Conclusions And What's Next
 
-![Mavo Projects Current Version](/images/2017/12/mavo-projects.png)
+![Mavo Projects Current Version](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/mavo-projects)
 
 Mavo Projects Current Version
 
@@ -318,7 +313,7 @@ It's not perfect, no tool is. While it's true that you don't have to learn a who
 
 There are some aspects that I'm still trying to figure out that will go into a future iteration of the project. Some of the things I'm looking at after MVP:
 
-- Pagination: Because there are many cards on the page, it would be nice to show them 6 at a time and then have a pagination system to move between the pages. According to a tweet from Mavo [there is a way to do pagination](https://twitter.com/mavoweb/status/952195286029434882). Trying to figure out if it's worth it or whether I should wait until Mavo provides an easier way to do it
-- Moving the backend to Firebase using a [plugin](https://plugins.mavo.io/plugin/firebase)
-- Test the application for accessibility
-- Hide URLs without a value... N/A works for now but it doesn't convey the fact that if we don't have a value then the link shouldn't be there. This should be possible to do with Mavo Script, still trying to figure out how
+* Pagination: Because there are many cards on the page, it would be nice to show them 6 at a time and then have a pagination system to move between the pages. According to a tweet from Mavo [there is a way to do pagination](https://twitter.com/mavoweb/status/952195286029434882). Trying to figure out if it's worth it or whether I should wait until Mavo provides an easier way to do it
+* Moving the backend to Firebase using a [plugin](https://plugins.mavo.io/plugin/firebase)
+* Test the application for accessibility
+* Hide URLs without a value... N/A works for now but it doesn't convey the fact that if we don't have a value then the link shouldn't be there. This should be possible to do with Mavo Script, still trying to figure out how

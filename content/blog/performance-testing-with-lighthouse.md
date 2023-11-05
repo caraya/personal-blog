@@ -21,9 +21,7 @@ To open DevTools hit `command+I` in Macintosh and `control+I` in Windows and Lin
 
 Lighthouse is now part of the Chrome DevTools suite of developer productivity tools. If you look at the audit menu you will see the lighthouse logo and the configuration for the tool.
 
-![](/images/2018/12/lighthouse-devtools-1024x437.png)
-
-DevTools under Audits Menu
+![DevTools Audits Menu](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/lighthouse-devtools-1024x437.png)
 
 If you haven't already navigated to the page you want to test and click the audit menu in DevTools. For the purpose of these examples, we'll leave the default settings active; these may not all be necessary for all sites but give a good idea of how will your app or site work in a mid-level mobile device under less-than-optimal conditions.
 

@@ -168,11 +168,8 @@ small,
 }
 
 img.full-bleed-header {
-	width: 100% !important;
-}
-
-img.full-bleed-header {
 	grid-column: 1/-1;
+	width: 100% !important;
 	height: auto;
 }
 
@@ -222,15 +219,11 @@ dd {
 
 .continue-reading a:focus,
 .continue-reading a:hover {
+	/* Figure out why I had to add !important here */
   color: rgb(255, 254, 252) !important;
   color: var(--color-white) !important;
   background-color: rgb(205, 38, 83) !important;
   background-color: var(--link-color) !important;
-}
-
-.continue-reading a:focus,
-.continue-reading a:hover {
-	/* Figure out why I had to add !important here */
 }
 
 /* figures and images */
@@ -554,46 +547,6 @@ article {
   border: 1px solid black;
 }
 
-.nav-links {
-  margin: 0 auto;
-  padding: 0 0.4em;
-}
-
-.nav-previous {
-  padding-bottom: 1em;
-}
-/*
-	--icon-arrow-left-circle: "\F12A";
-	--icon-arrow-right-circle: "\F134";
-*/
-
-.post-navigation .nav-previous a::before {
-  content: '\2190 Next Post \A\A';
-  font-size: 1.25em;
-  font-weight: 700;
-  margin-right: 1em;
-  white-space: pre;
-  color: rgb(34, 32, 35);
-  color: var(--color-black);
-}
-
-.post-navigation .nav-next a::before {
-  content: 'Previous Post \2192 \A\A';
-  font-size: 1.25em;
-  font-weight: 700;
-  margin-right: 1em;
-  white-space: pre;
-  color: rgb(34, 32, 35);
-  color: var(--color-black);
-}
-
-.nav-previous a,
-.nav-next a
-.nav-previous a::hover,
-.nav-next a::hover {
-	color: rgb(205, 38, 83);
-	color: var(--link-color)
-}
 
 @media screen and (min-width: 43.75em) {
   .nav-links {
@@ -646,12 +599,11 @@ article {
 
 /* Archive pagination */
 nav.archive-pagination {
-  border: 2px solid rgb(34, 32, 35)
-	--link-color-active: rgb(205, 38, 83);
-  border: 2px solid var(--text-color);
 	display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-top: 4rem;
+	margin-bottom: 2rem;
 }
 
 /* admonition blocks */
@@ -679,7 +631,7 @@ p.admonition-title {
 	background-color: rgba(102, 0, 205, 0.4);
 }
 
-@media (color-gamut: p3){
+@media (color-gamut: p3) {
 .admonition.tip {
 	background-color: color(display-p3 0.36369 0.0461 0.77452 / 0.4);
 }
@@ -695,7 +647,7 @@ p.admonition-title {
 	background-color: rgba(255, 221, 15, 0.5);
 }
 
-@media (color-gamut: p3){
+@media (color-gamut: p3) {
 .admonition.warning,
 .admonition.bug {
 	background-color: color(display-p3 0.98512 0.87141 0.26925 / 0.5);
@@ -849,22 +801,15 @@ lite-vimeo {
 		color: var(--color-white);
 	}
 
-	thead tr {
-		background: var(--color-white);
-		color: var(--color-black);
-	}
-
-	.kbd, kbd {
-		/* font-size: .9em;
-		padding: .0625rem .5rem;
-		border-radius: .125rem; */
-		border: 1px solid rgb(205, 38, 83);
-		/* box-shadow: 1px 1px 0 rgb(6, 54, 93), 2px 2px 0 rgb(6, 54, 93);
-		margin: 0 .25rem; */
-		color: rgb(205, 38, 83);
-	}
-
 }
+
+/*
+30rem = 480px (assuming 16px base)
+3. 75rem = 1200px (current layout)
+2. 50rem = 800px
+1. 34rem = 544px
+*/
+
 
 @media (min-width: 34.001rem) and (max-width: 50rem) {
 	/* Set the grid container dimensions */
@@ -876,11 +821,8 @@ lite-vimeo {
 	}
 
 	img.full-bleed-header {
-		width: 100% !important;
-	}
-
-	img.full-bleed-header {
 		grid-column: 1/-1;
+		width: 100% !important;
 		height: auto;
 	}
 
@@ -941,4 +883,41 @@ lite-vimeo {
 		background: rgb(255, 254, 252);
 		background: var(--color-white);
 	}
+}
+
+.nav-links {
+  margin: 0 auto;
+  padding: 0 0.4em;
+}
+
+.nav-previous {
+  padding-bottom: 1em;
+}
+
+.post-navigation .nav-next a::before {
+  content: 'Next Post \2190 \A\A';
+  font-size: 1.25em;
+  font-weight: 700;
+  margin-right: 1em;
+  white-space: pre;
+  color: rgb(34, 32, 35);
+  color: var(--color-black);
+}
+
+.post-navigation .nav-previous a::before {
+  content: 'Previous Post \2192 \A\A';
+  font-size: 1.25em;
+  font-weight: 700;
+  margin-right: 1em;
+  white-space: pre;
+  color: rgb(34, 32, 35);
+  color: var(--color-black);
+}
+
+.nav-previous a,
+.nav-next a
+.nav-previous a::hover,
+.nav-next a::hover {
+	color: rgb(205, 38, 83);
+	color: var(--link-color)
 }

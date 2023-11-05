@@ -13,8 +13,8 @@ HTML and XHTML both come with a [predefined set of entities](http://dev.w3.org/h
 
 I've had a discussion in the XML Content/InDesign Publishing Linked in Group and, as part of my research, discovered that:
 
-- The level of unicode glyph support depends on the fonts available in the OS
-- Specific Unicode glyphs may not be available in all platforms
+* The level of unicode glyph support depends on the fonts available in the OS
+* Specific Unicode glyphs may not be available in all platforms
 
 In my opinion he best solution is still to use web fonts you know have all the characters your text uses and you have tested with your content. This is doubly important when looking at the glyphs that appear on your document... we need to make doubly sure that whatever glyphs you use are available in the typeface you've selected.
 
@@ -24,6 +24,6 @@ When I want to use font subsets my favorite tool is Font Squirrel's [Webfont gen
 
 Font Squirrel has three options for subsetting fonts. We will work with custom options because they provide the most flexible approach
 
-\[caption id="attachment\_786629" align="aligncenter" width="500"\][![Font Squirrel Font Subset Options when using custom subsetting](/images/2014/09/fontsquirrel-subset-e1435901123984.png)](http:/images/2014/09/fontsquirrel-subset-e1435901123984.png) Font Squirrel Font Subset Options\[/caption\]
+![Font Squirrel Font Subset Options when using custom subsetting](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/fontsquirrel-subset-e1435901123984)
 
 You can subset by character type, language, unicode table, single characters or, if you know what you're doing by Unicode Ranges. The last option is only good if you know the exact range or ranges of characters that you need to support and the preview may show you that your chose font doesn't support the characters you need.

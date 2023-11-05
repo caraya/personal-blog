@@ -25,29 +25,26 @@ To launch the Lighthouse audit
 
 You will see something similar to the image below.
 
-![](/images/2019/08/devtools-audit-lighhouse-run.png)
-
-Getting ready to launch Lighthouse from DevTools Audit Panel
+![Getting ready to launch Lighthouse from DevTools Audit Panel](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/devtools-audit-lighhouse-run)
 
 Lighthouse offers 4 areas of configuration:
 
 1. **Device**: Either mobile or desktop
 2. **Audits**: What audits to run. You can run one or more of these at the same times. The audits are:
-
-    - _Performance_ measures different performance aspects of the page you're testing
-    - _PWA_ checks if different components of a PWA
-    - _Best Practices_ evaluates different best practices in front end web development
-    - _Accessibility_ uses [Axe Core](https://github.com/dequelabs/axe-core) to do automated evaluation testing. It is impossible to do complete accessibility evaluation programmatically, there will be plenty of things you will have to check manually
-    - SEO
+   1. *Performance* measures different performance aspects of the page you're testing
+   2. *PWA* checks if different components of a PWA
+   3. *Best Practices* evaluates different best practices in front end web development
+   4. *Accessibility* uses [Axe Core](https://github.com/dequelabs/axe-core) to do automated evaluation testing. It is impossible to do complete accessibility evaluation programmatically, there will be plenty of things you will have to check manually
+   5. SEO
 3. **Throttling**: Whether to throttle the connection for the tests or not
 4. There is a checkbox right above the `Run Audit` button for clearing the browser storage. It is not checked by default
 
 For this example we will run the audit with the following configuration:
 
-- Mobile Device
-- Performance
-- No Throttling
-- Clear Cache checked
+* Mobile Device
+* Performance
+* No Throttling
+* Clear Cache checked
 
 Once the configuration is set click the blue `Run Audit` button.
 
@@ -57,22 +54,18 @@ Lighthouse rates every category but PWA on a scale of 0 to 100 with higher value
 
 The top of the performance section repeats the score and it gives you basic metrics for the run on your page.
 
-![](/images/2019/08/performance-lighthouse-run-1.png)
-
-Top of the Lighthouse Results Run Performance section
+![Top of the Lighthouse Results Run Performance section](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/performance-lighthouse-run-1)
 
 The performance metrics Lighthouse reports are:
 
-- [First Contentful Paint](https://developers.google.com/web/tools/lighthouse/audits/first-contentful-paint): Marks the time at which the first text or image is painted
-- [Speed Index](https://developers.google.com/web/tools/lighthouse/audits/speed-index) shows how quickly the contents of a page are visibly populated
-- [Time to Interactive](https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive) is the amount of time it takes for the page to become fully interactive
-- [First Meaningful Paint](https://developers.google.com/web/tools/lighthouse/audits/first-meaningful-paint) measures when the primary content of a page is visible
-- [First CPU Idle](https://developers.google.com/web/tools/lighthouse/audits/first-cpu-idle) marks the first time at which the page's main thread is quiet enough to handle input
-- [Max Potential First Input Delay](https://developers.google.com/web/updates/2018/05/first-input-delay) that your users could experience is the duration, in milliseconds, of the longest task
+* [First Contentful Paint](https://developers.google.com/web/tools/lighthouse/audits/first-contentful-paint): Marks the time at which the first text or image is painted
+* [Speed Index](https://developers.google.com/web/tools/lighthouse/audits/speed-index) shows how quickly the contents of a page are visibly populated
+* [Time to Interactive](https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive) is the amount of time it takes for the page to become fully interactive
+* [First Meaningful Paint](https://developers.google.com/web/tools/lighthouse/audits/first-meaningful-paint) measures when the primary content of a page is visible
+* [First CPU Idle](https://developers.google.com/web/tools/lighthouse/audits/first-cpu-idle) marks the first time at which the page's main thread is quiet enough to handle input
+* [Max Potential First Input Delay](https://developers.google.com/web/updates/2018/05/first-input-delay) that your users could experience is the duration, in milliseconds, of the longest task
 
-![](/images/2019/08/performance-lighthouse-run-2.png)
-
-Bottom of the Lighthouse Results Run Performance section
+![Bottom of the Lighthouse Results Run Performance section](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/performance-lighthouse-run-2)
 
 The next part of the screen shows a filmstrip of the loading of the page. From left to right it'll show the different stages of the loading process. The fewer empty frames you have, the faster the page loads.
 

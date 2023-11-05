@@ -83,23 +83,19 @@ The final step in getting a new version of the project ready for publication is 
 
 Yes, we can tell people to download the code from the tag we created but releases are, or seem to be, more formal and can have a description of the release so people can decide if they want to download it or not.
 
-When you log in to your projectin Github, choose tags. You will see a list of all available tags.
+When you log in to your project in Github, choose tags. You will see a list of all available tags.
 
-<img src="/images/2021/04/tag-release-github1.png" '/>
+![List of tags on a Github project](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/tag-release-github1)
 
-List of tags on a Github project
+When you switch to releases you will se a list of available relelases on the right of that screen there is a *draft a new release* button. When you click it the following screen will appear.
 
-When you switch to releases you will se a list of available relelases on the right of that screen there is a _draft a new release_ button. When you click it the following screen will appear.
-
-![](/images/2021/04/tag-release-github2-1.png)
-
-Github release preparation screen
+![Github release preparation screen](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/tag-release-github2-1)
 
 The basic information we need is:
 
-- The tag and branch for the release. Most of the time I'm ok with releasing a tag of the master/main branch
-- A description of the release
-- Any additional packages that you want to make available as part of the release
-- Whether this is a pre release (alpha, beta or preview)
+* The tag and branch for the release. Most of the time I'm ok with releasing a tag of the master/main branch
+* A description of the release
+* Any additional packages that you want to make available as part of the release
+* Whether this is a pre release (alpha, beta or preview)
 
 You can publish the release or save it as a draft until you're ready for publishing it.

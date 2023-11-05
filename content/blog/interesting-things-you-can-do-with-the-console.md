@@ -23,11 +23,11 @@ In addition to `console.log`, you can also log info, warning, and error type mes
 
 The difference is in the output each command produces.
 
-![`console.info` and the resulting display message](/images/2022/12/console-info.png)
+![console.info and the resulting display message](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/console-info)
 
-![`console.warn` and the resulting display message](/images/2022/12/console-warn.png)
+![console.warn and the resulting display message](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/console-warn)
 
-![`console.error` and the resulting display message](/images/2022/12/console-error.png)
+![console.error and the resulting display message](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/console-error)
 
 Chrome DevTools allows you to filter the display based on levels so you could list only info, warn or error levels messages.
 
@@ -35,12 +35,12 @@ Chrome DevTools allows you to filter the display based on levels so you could li
 
 Depending on the type of content you may want to display it as a table. `console.table` will display array and array-like data in a tabular layout.
 
-![Listing data in a table using `console.table`](/images/2022/12/console-table.png)
+![Listing data in a table using `console.table`](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/console-table)
 
 ## Listing data in JSON format
 
 `console.dir` displays the given data in JSON format.
 
-![`console.dir` showing the header of a web page in JSON format](/images/2022/12/console-dir.png)
+![`console.dir` showing the header of a web page in JSON format](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/console-dir)
 
 Google Developer's [Console API reference](https://developer.chrome.com/docs/devtools/console/api/) contains additional API methods available in Chrome DevTools.

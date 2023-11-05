@@ -64,7 +64,7 @@ enhance --zoom=2 "images/*.jpg"
 
 For this example, we'll use an old black and white image I downloaded from an old article about [Simnet](https://www.wikiwand.com/en/SIMNET). Figure one shows the original image, without retouch.
 
-![Simnet Concept Base Image](/images/2017/12/simnet-concept-2.jpg)
+![Simnet Concept Base Image](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/simnet-concept-2)
 
 Simnet Concept Base Image
 
@@ -75,7 +75,7 @@ enhance --type=photo --model=repair --zoom=1 simnet-concept.jpg
 
 Figure two shows the image with JPEG artifacts repaired but still at the same resolution as the original.
 
-![Simnet Concept Image Repaired at 1x Resolution](/images/2017/12/simnet-concept_ne1x.png)
+![Simnet Concept Image Repaired at 1x Resolution](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/simnet-concept_ne1x)
 
 Simnet Concept Image Repaired at 1x Resolution
 
@@ -86,7 +86,7 @@ Figure 3 shows the image at twice the size of the original. It has eliminated th
 enhance.py --type=photo --zoom=2 simnet-concept.jpg
 ```
 
-![Simnet Concept Image Repaired at 1x Resolution](/images/2017/12/simnet-concept_ne2x.png)
+![Simnet Concept Image Repaired at 1x Resolution](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/simnet-concept_ne2x)
 
 Simnet Concept Image at 2x Resolution
 
@@ -139,24 +139,24 @@ The results look promising but to answer the questions I asked originally:
 
 ## Links and Resources
 
-- Tools and Libraries
-  - Neural Enhance
-  - [Github](https://github.com/alexjc/neural-enhance)
-  - Raisr
-  - [Google's prototype machine learning software lets you enhance low-res photos](https://www.theverge.com/2016/11/16/13649016/google-machine-learning-low-res-image-raisr)
-  - [RAISR: Rapid and Accurate Image Super Resolution](https://arxiv.org/pdf/1606.01299.pdf)
-  - [Supplementary Material for RAISR: Rapid and Accurate Image Super Resolution](https://drive.google.com/file/d/0BzCe024Ewz8ab2RKUFVFZGJ4OWc/view)
-  - [Unofficial Python implementation of RAISR](https://github.com/volvet/RAISR-1)
-  - [Google Brain super-resolution image tech makes “zoom, enhance!” real](https://arstechnica.com/information-technology/2017/02/google-brain-super-resolution-zoom-enhance/)
-  - [Website uses neural networks to enlarge small images, and the results are pretty magical](http://mashable.com/2017/11/03/lets-enhance-photo-ai/#mjbgDIU8Mgqs)
-  - [Let's Enhance](https://letsenhance.io/)
-  - [Photo Enhancement is Starting to Get Crazy](https://petapixel.com/2017/11/01/photo-enhancement-starting-get-crazy/)
-  - [EnhanceNet: Single Image Super-Resolution Through Automated Texture Synthesis](http://webdav.tuebingen.mpg.de/pixel/enhancenet/)
-  - PRSR
-  - [Pixel Recursive Super Resolution](https://arxiv.org/pdf/1702.00783v2.pdf)
-  - [Github Repository](https://github.com/nilboy/pixel-recursive-super-resolution)
-- Research Background
-  - [Perceptual Losses for Real-Time Style Transfer and Super-Resolution](https://cs.stanford.edu/people/jcjohns/papers/eccv16/JohnsonECCV16.pdf)
-  - [Real-Time Super-Resolution Using Efficient Sub-Pixel Convolution](https://arxiv.org/abs/1609.05158)
-  - [Deeply-Recursive Convolutional Network for Image Super-Resolution](https://arxiv.org/abs/1511.04491)
-  - [Photo-Realistic Super-Resolution Using a Generative Adversarial Network](https://arxiv.org/abs/1609.04802)
+* Tools and Libraries
+  * Neural Enhance
+  * [Github](https://github.com/alexjc/neural-enhance)
+  * Raisr
+  * [Google's prototype machine learning software lets you enhance low-res photos](https://www.theverge.com/2016/11/16/13649016/google-machine-learning-low-res-image-raisr)
+  * [RAISR: Rapid and Accurate Image Super Resolution](https://arxiv.org/pdf/1606.01299.pdf)
+  * [Supplementary Material for RAISR: Rapid and Accurate Image Super Resolution](https://drive.google.com/file/d/0BzCe024Ewz8ab2RKUFVFZGJ4OWc/view)
+  * [Unofficial Python implementation of RAISR](https://github.com/volvet/RAISR-1)
+  * [Google Brain super-resolution image tech makes “zoom, enhance!” real](https://arstechnica.com/information-technology/2017/02/google-brain-super-resolution-zoom-enhance/)
+  * [Website uses neural networks to enlarge small images, and the results are pretty magical](http://mashable.com/2017/11/03/lets-enhance-photo-ai/#mjbgDIU8Mgqs)
+  * [Let's Enhance](https://letsenhance.io/)
+  * [Photo Enhancement is Starting to Get Crazy](https://petapixel.com/2017/11/01/photo-enhancement-starting-get-crazy/)
+  * [EnhanceNet: Single Image Super-Resolution Through Automated Texture Synthesis](http://webdav.tuebingen.mpg.de/pixel/enhancenet/)
+  * PRSR
+  * [Pixel Recursive Super Resolution](https://arxiv.org/pdf/1702.00783v2.pdf)
+  * [Github Repository](https://github.com/nilboy/pixel-recursive-super-resolution)
+* Research Background
+  * [Perceptual Losses for Real-Time Style Transfer and Super-Resolution](https://cs.stanford.edu/people/jcjohns/papers/eccv16/JohnsonECCV16.pdf)
+  * [Real-Time Super-Resolution Using Efficient Sub-Pixel Convolution](https://arxiv.org/abs/1609.05158)
+  * [Deeply-Recursive Convolutional Network for Image Super-Resolution](https://arxiv.org/abs/1511.04491)
+  * [Photo-Realistic Super-Resolution Using a Generative Adversarial Network](https://arxiv.org/abs/1609.04802)

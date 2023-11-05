@@ -1,7 +1,7 @@
 ---
 title: "Can the web look like print? Interesting things coming down the pipeline"
 date: "2016-05-04"
-categories: 
+categories:
   - "technology"
 ---
 
@@ -9,25 +9,22 @@ Out of the many things in the CSS working group universe I’ve picked 3 to high
 
 ### Exclusions
 
-[CSS Exclusions Module Level 1](https://www.w3.org/TR/css3-exclusions/) provides a way to create exclusions in our CSS-based layouts. _Exclusions define arbitrary areas around which inline content can flow and extend the notion of content wrapping previously limited to floats._
+[CSS Exclusions Module Level 1](https://www.w3.org/TR/css3-exclusions/) provides a way to create exclusions in our CSS-based layouts. *Exclusions define arbitrary areas around which inline content can flow and extend the notion of content wrapping previously limited to floats.*
 
-Exclusions make layouts like the one below possible in CSS.
-
-![](//csswg.inkedblade.net/drafts/css-exclusions/images/alternate-example.png)
 
 We can use exclusions to create effects like those in magazines. From using it to highlight pullquotes with extra white space around or use shape inside to lay text in shapes other than boxes.
 
-![](//galjot.si/_blog/img/2012/exclusions-in-print_v6.jpg)
+![Example of using exclusions in print layouts](https://galjot.si/_blog/img/2012/exclusions-in-print_v6.jpg)
 
 ### CSS page floats and overflow
 
 [CSS Overflow Module Level 3](https://drafts.csswg.org/css-overflow-3/) is another attempt to do content fragmentation on the web, similar to what [CSS Regions](https://www.w3.org/TR/css-regions-1/) did except that unlike regions it is not implemented on any current browser. It can create different layouts by changing the way content flows within a page.
 
-![](//corlan.org/wp-content/uploads/2013/02/cssregions2.png)
+![Example of CSS Regions](https://corlan.org/wp-content/uploads/2013/02/cssregions2.png)
 
 [CSS Page Floats](https://www.w3.org/TR/css-page-floats-3/) takes care of floats that move to the top or bottom of content passages. This draft is the web equivalent to what print publications use to move which figures and photos to the top or bottom of columns or pages, along with their captions.
 
-![](https://drafts.csswg.org/css-page-floats/images/7.png)
+![Floating content as shown in the CSS Page Floats specification](https://drafts.csswg.org/css-page-floats/images/7.png)
 
 ## Ways to enrich our web layouts
 
@@ -41,7 +38,7 @@ WAAPI makes complex animations easier to handle and provides additional function
 
 ## Keeping things in perspective
 
-We can make our web content take some of the metaphors and conventions of printed media **_where it makes sense to do so._**
+We can make our web content take some of the metaphors and conventions of printed media ***where it makes sense to do so.***
 
 While I’ve always advocated for us to take advantage of the types of things we can do in print for our web content I’ll be the first one to to insist that we do not go overboard with the fancy.
 
@@ -49,10 +46,10 @@ I’m not advocating for the web to turn into a digital version of our favorite 
 
 ## Examples
 
-- [http://codepen.io/chriscoyier/full/YyxKea/](http://codepen.io/chriscoyier/full/YyxKea/)
-- [http://helenvholmes.com/the-future-of-wearables/](http://helenvholmes.com/the-future-of-wearables/)
-- [http://codepen.io/sturobson/full/gaGzKw/](http://codepen.io/sturobson/full/gaGzKw/)
-- [http://thegreatdiscontent.com/](http://thegreatdiscontent.com/)
-- [http://codepen.io/bartveneman/full/JGNmde/](http://codepen.io/bartveneman/full/JGNmde/)
-- [http://read.artspacetokyo.com/](http://read.artspacetokyo.com/)
-- [http://read.shapeofdesignbook.com/](http://read.shapeofdesignbook.com/)
+* [http://codepen.io/chriscoyier/full/YyxKea/](http://codepen.io/chriscoyier/full/YyxKea/)
+* [http://helenvholmes.com/the-future-of-wearables/](http://helenvholmes.com/the-future-of-wearables/)
+* [http://codepen.io/sturobson/full/gaGzKw/](http://codepen.io/sturobson/full/gaGzKw/)
+* [http://thegreatdiscontent.com/](http://thegreatdiscontent.com/)
+* [http://codepen.io/bartveneman/full/JGNmde/](http://codepen.io/bartveneman/full/JGNmde/)
+* [http://read.artspacetokyo.com/](http://read.artspacetokyo.com/)
+* [http://read.shapeofdesignbook.com/](http://read.shapeofdesignbook.com/)

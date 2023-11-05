@@ -15,9 +15,9 @@ The idea starts with public repositories but it should work the same for private
 
 This workflow expects a basic level of familiarity with Github and the following
 
-- All participants should understand how handle Github repositories, how to commit files (both initial commit and update) to their repositories and how to create pull requests
-- Project editors should also know how to handle pull requests and how to handle conflict merges
-- Project leaders should be Github power users or, at the very least, know where to get help
+* All participants should understand how handle Github repositories, how to commit files (both initial commit and update) to their repositories and how to create pull requests
+* Project editors should also know how to handle pull requests and how to handle conflict merges
+* Project leaders should be Github power users or, at the very least, know where to get help
 
 All the skill requirements listed above can be handled through training and support either in-house or from Github.
 
@@ -25,7 +25,7 @@ All the skill requirements listed above can be handled through training and supp
 
 The outline below shows the workflow from both a Github and content perspectives.
 
-[![workflow](/images/2015/01/workflow.png)](http:/images/2015/01/workflow.png)
+![workflow](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/workflow)
 
 ### Setting up the project
 
@@ -55,8 +55,8 @@ If you want specific people's attention you can add their username with a `@` be
 
 In addition to the initial pull request notification, the discussions in a Pull request provide notification of:
 
-- Comments left on the pull request itself.
-- Additional commits/edits pushed to the pull request's branch.
+* Comments left on the pull request itself.
+* Additional commits/edits pushed to the pull request's branch.
 
 The request can be left open until everyone agrees it's completed or until the project lead closes it as complete.
 

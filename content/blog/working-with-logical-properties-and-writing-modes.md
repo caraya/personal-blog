@@ -15,7 +15,7 @@ This post will look at [CSS logical properties](https://developer.mozilla.org/en
 
 To understand how Logical Properties work, we need to understand the concepts of `Block` and `Inline` as they relate to logical properties and their relationship with writing modes.
 
-![Description of logical properties in horizontal and vertical languages. Credit: [Ahmad Shadeed](https://ishadeed.com/article/css-logical-properties/)](/images/2022/08/logical-intro-2.jpg)
+![Description of logical properties in horizontal and vertical languages. Credit: [Ahmad Shadeed](https://ishadeed.com/article/css-logical-properties/)](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/logical-intro-2)
 
 
 Block dimension

@@ -3,9 +3,9 @@ title: "Working with OpenType Features on the web"
 date: "2020-09-14"
 ---
 
-## Warning
-
+!!! warning Warning
 The support for these features depends on the browser and not all browsers support all the features discussed below. Check the corresponding entries on [caniuse.com](https://caniuse.com/) or [MDN](https://developer.mozilla.org/) to ensure the feature will work in your target browsers.
+!!!
 
 Using a font's OpenType features on the web is possible but difficult. This post will explore what we can do and how we can do it.
 
@@ -19,7 +19,7 @@ If you've done work in print you'd probably seen the OpenType features in applic
 
 There is no way for the browser to tell you what OpenType features the font supports so you'll have to do it the old fashioned way, either by using the specimen you got with the font, or sites like [Wakamaifondue](https://wakamaifondue) or [Axis Praxis](https://www.axis-praxis.org) to get a list of the OpenType features of your font.
 
-![Example of Wakamaifondue's display of OpenType layout features](/images/2020/08/wakamaifondue-ot-features.png)
+![Example of Wakamaifondue's display of OpenType layout features](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/wakamaifondue-ot-features)
 
 Example of Wakamaifondue's display of OpenType layout features
 
@@ -29,9 +29,9 @@ When you look at the results from Wakmaifondue pay special attention to the four
 
 CSS provides the following features to handle OpenType features. There are a few things to note:
 
-- Different fonts offer different features
-- Stylistic alternates may mean different things in different fonts
-- Features have different browser support
+* Different fonts offer different features
+* Stylistic alternates may mean different things in different fonts
+* Features have different browser support
 
 The values presented in the [CSS Fonts Module Level 4](https://drafts.csswg.org/css-fonts-4/) specification are:
 
@@ -75,14 +75,14 @@ The other interesting thing is that the values include functions that can take o
 
 The list of values and functions allowed for `font-variant-alternates` are:
 
-- normal
-- historical-forms
-- stylistic()
-- styleset()
-- character-variant
-- swash()
-- ornaments()
-- annotation()
+* normal
+* historical-forms
+* stylistic()
+* styleset()
+* character-variant
+* swash()
+* ornaments()
+* annotation()
 
 This example takes the Noble Script font and, using `@font-feature-values` assigns names to the first two swash alternates, swishy to Swash alternate 1 and Flowing to Swash alternate 2.
 

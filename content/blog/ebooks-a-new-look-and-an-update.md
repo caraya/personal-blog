@@ -19,7 +19,7 @@ I think part of the problem is that the epub specs (unlike the specs from W3C) a
 
 The other part is education. While there are many professionals in the #eprdctn community there is no standard curriculum that we can point to as a requirement for people entering ebook publishing. A few years ago there was [a vendor push to create an #eprdctn certification](https://storify.com/LauraB7/eprdctn-certification). I remember I opposed the idea at the time because I doubted the need for such a credential back then and wondered if it wasn't an exercise in futility. Now I wonder if we're not in a position where the community generates requirements for a certification and we get serious about adopting it.
 
-It's also worth looking at Laura Brady's Storify of an [#eprdct discussion about professional development](https://storify.com/LauraB7/professional-development-in-eprdctn). May we get the roots of training and certification from it?
+It's also worth looking at Laura Brady's Storify of an [#eprdctn discussion about professional development](https://storify.com/LauraB7/professional-development-in-eprdctn). May we get the roots of training and certification from it?
 
 ### Why are we stuck in epub2?
 
@@ -49,13 +49,13 @@ This is what the value proposition was to the Japanese market: they can better w
 
 ## Workflows and Tools
 
-> Lisa McCloy-Kelley (Ebook VP at Penguin Random House) mentioned two future challenges she foresees as print, web, and digital publishing become integrated: - Fonts (different rights for different environments) - Image quality/optimization (some digital contexts now require better-than-print quality).
+> Lisa McCloy-Kelley (Ebook VP at Penguin Random House) mentioned two future challenges she foresees as print, web, and digital publishing become integrated: * Fonts (different rights for different environments) * Image quality/optimization (some digital contexts now require better-than-print quality).
 
 As a front-end web developer, I've always found items like these frightening and amusing at the same time. I will address image quality first and the font issues in a separate section.
 
 As long as we have an original with a high enough resolution we can create as many versions of the image, taking into consideration both resolution and Retina / High DPI versions.
 
-#### Defining Retina and Retina Displays
+### Defining Retina and Retina Displays
 
 When I say “Retina display,” I am describing device screens with a high enough pixel density that everything looks sharp to the human eye. When I say “Retina image,” I’m describing an image that has been made specifically to look sharp on a Retina display. These are two different things.
 
@@ -67,25 +67,23 @@ If you want a bitmap image that is 100px by 100px to look sharp on a Retina disp
 
 Since we don't have images at exactly double the resolution we want we have to create them based on the sizes and densities that we need.
 
-#### How to create retina images
+### How to create retina images
 
 Assuming we have a version of the image that is large enough to be a source, we can make images with enough pixels to make them look good on Retina displays.
 
 For the purpose of this post and the technique I'm using, I'm making the following assumptions:
 
-- The images are big enough to make into retina images
-- Images are set to fixed sizes
-    
-    - small: 200px
-    - large: 480px
-    - extra large: 1280px
-- To create high dpi (retina) images we make the pictures twice as big
-    
-    - We're only creating images for 2x retina displays
-- Quality is set to 80 of the original image
-- Use progressive (interlace) scan for JPEG and PNG images
-- Skip enlargement warnings when we try to make smaller images larger
-- Strip all metadata from images
+* The images are big enough to make into retina images
+* Images are set to fixed sizes
+  * small: 200px
+  * large: 480px
+  * extra large: 1280px
+* To create high dpi (retina) images we make the pictures twice as big
+  * We're only creating images for 2x retina displays
+* Quality is set to 80 of the original image
+* Use progressive (interlace) scan for JPEG and PNG images
+* Skip enlargement warnings when we try to make smaller images larger
+* Strip all metadata from images
 
 The example below uses Gulp and the [gulp-responsive plugin](https://github.com/mahnunchik/gulp-responsive) to create a series of images at different pixel densities for each JPG and PNG images placed in a given directory, except the files under the touch directory.
 
@@ -162,16 +160,16 @@ If command line or task runners are not your thing, there are ways to script Pho
 
 Here is a [tutorial for creating actions in Photoshop](http://morris-photographics.com/photoshop/tutorials/actions.html) to automate tasks like modifying images.
 
-### Font Licensing, Open Source, and Multiple Channels
+## Font Licensing, Open Source, and Multiple Channels
 
 Another thing that has always caught my attention is font selection and usage. Foundries have this insane idea that people creating ebooks can afford the fees that they charge for use in a single format, much less for multiple delivery methods.
 
 Any use of web fonts requires at least 4 weights for the font used to prevent synthetic bold and italic font faces:
 
-- Regular
-- Italics
-- Bold
-- Bold-Italics
+* Regular
+* Italics
+* Bold
+* Bold-Italics
 
 I normally add 1 additional font and weight, a monospace font at regular weight for source code and monospace. So that's 2 fonts and a total of 5 weights.
 
@@ -183,12 +181,12 @@ With all the requirements in the open let's look at ITC Stone® Humanist, one of
 
 The font's [MyFonts Page](https://www.myfonts.com/fonts/itc/stone-humanist-itc/) lists some of the options for purchasing a license to the font. Here's the breakdown:
 
-- **Individual weights are $87.50. The 4 fonts would total $350.00**
-- **A 6 font package that includes the fonts we need is $472.50 for the standard version or $567.50 for the pro version**
+* **Individual weights are $87.50. The 4 fonts would total $350.00**
+* **A 6 font package that includes the fonts we need is $472.50 for the standard version or $567.50 for the pro version**
 
 If we want to add a desktop font that we can use with our DTP software the cost goes up, but that's a secondary concern as the TTF web font should work well for development. I did the pricing close to Black Friday in the US. Prices may be different at other times.
 
-#### Open Source Licenses Used in Fonts
+### Open Source Licenses Used in Fonts
 
 If the cost of commercial fonts becomes prohibitive are open source fonts a good alternative?
 
@@ -202,15 +200,14 @@ According to [Choose A License](https://choosealicense.com/licenses/apache-2.0/)
 
 FAQs and answers to questions about usage. Some of the basic questions about fonts are listed below. I'm not a lawyer and this is not legal advice. If you're working for a corporation it always pays to have your legal team check the licenses before adopting them.
 
-- [SIL Open Font License](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
-    
-    - [Web Fonts and Reserved Font Names](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL_web_fonts_and_RFNs)
-    - SIL OFL Restrictions
-    - [Can I make and use WOFF (Web Open Font Format) versions of OFL fonts?](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=ofl-faq_web#1db14da7)
-    - [What about other web font formats such as EOT/EOTLite/CWT/etc.?](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=ofl-faq_web#5ac191d0)
-    - [Using SIL Fonts in Documents and Publications?](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=FontFAQ_use)
-    - [OFL FAQ](http://scripts.sil.org/cms/scripts/page.php?item_id=OFL-FAQ_web)
-- [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+* [SIL Open Font License](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+  * [Web Fonts and Reserved Font Names](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL_web_fonts_and_RFNs)
+  * SIL OFL Restrictions
+    * [Can I make and use WOFF (Web Open Font Format) versions of OFL fonts?](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=ofl-faq_web#1db14da7)
+    * [What about other web font formats such as EOT/EOTLite/CWT/etc.?](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=ofl-faq_web#5ac191d0)
+    * [Using SIL Fonts in Documents and Publications?](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=FontFAQ_use)
+    * [OFL FAQ](http://scripts.sil.org/cms/scripts/page.php?item_id=OFL-FAQ_web)
+* [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 
 Here are some open source fonts, the license they are released under, their websites (or specimen pages in Google Fonts), a Github repository and any additional notes for the font.
 
@@ -228,21 +225,20 @@ Here are some open source fonts, the license they are released under, their webs
 
 I used the first two chapters of Peter Pan that I created for my [ebook experiments](http://caraya.github.io/ebook-experiments/) a few years ago to creaate ebooks using open source fonts to see which one works best for what kind of project.
 
-- Original book without web fonts ([zipped source](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-epub-no-font.zip) -- [epub](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-epub-no-font.epub))
-- Books using the following fonts
-    
-    - Google Roboto ([zipped source](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-epub-roboto.zip) -- [epub](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-epub-roboto.epub))
-    - Adobe Sourcecode Sans ([zipped source](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-sourcecode-sans.zip) -- [epub](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-sourcecode-sans.epub))
-    - Adobe Sourcecode Pro ([zipped source](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-sourcecode-pro.zip) -- [epub](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-sourcecode-pro.epub))
-    - DejaVu ([zipped source](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-dejavu.zip) -- [epub](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-dejavu.epub))
-    - Gentium Plus ([zipped source](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-gentium.zip) -- [epub](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-gentium.epub))
-    - Raleway ([zipped source](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-raleway.zip) -- [epub](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-raleway.epub))
-    - Jura ([zipped source](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-jura.zip) -- [epub](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-jura.epub))
-    - Goudy Bookletter ([zipped source](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-goudybookletter.zip) -- [epub](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-goudybookletter.epub))
+* Original book without web fonts ([zipped source](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-epub-no-font.zip) -* [epub](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-epub-no-font.epub))
+<!-- * Books using the following fonts
+    * Google Roboto ([zipped source](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-epub-roboto.zip) &mdash; [epub](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-epub-roboto.epub))
+    * Adobe Sourcecode Sans ([zipped source](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-sourcecode-sans.zip) -* [epub](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-sourcecode-sans.epub))
+    * Adobe Sourcecode Pro ([zipped source](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-sourcecode-pro.zip) -* [epub](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-sourcecode-pro.epub))
+    * DejaVu ([zipped source](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-dejavu.zip) -* [epub](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-dejavu.epub))
+    * Gentium Plus ([zipped source](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-gentium.zip) -* [epub](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-gentium.epub))
+    * Raleway ([zipped source](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-raleway.zip) -* [epub](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-raleway.epub))
+    * Jura ([zipped source](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-jura.zip) -* [epub](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-jura.epub))
+    * Goudy Bookletter ([zipped source](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-goudybookletter.zip) -* [epub](https://storage.googleapis.com/rivendellweb-bucket-data/epub-resources/font-ebooks/peter-pan-goudybookletter.epub)) -->
 
 So if you use an open source font, you may be avoiding this kind of scenarios with font obfuscation and encryption in the future.
 
-> My favorite fact to take back to my team is that Kobo says they’ve fixed font obfuscation on their readers, so we don’t have to remove font encryption on InDesign-generated books for them anymore (… which we usually learned about when our FXL books reflowed because of missing fonts, to disastrous results; see above)
+> My favorite fact to take back to my team is that Kobo says they’ve fixed font obfuscation on their readers, so we don’t have to remove font encryption on InDesign-generated books for them anymore (which we usually learned about when our FXL books reflowed because of missing fonts, to disastrous results; see above)
 
 Another way to reduce the cost of fonts is to commission them specifically for your company and project. Commissioning a font would allow you to specify the looks, structure and desired language-support and OpenType features available to the font; as well as the desired level of support for print, ebooks and web content.
 
@@ -270,7 +266,7 @@ Another concern that I have is that this new packaging and content technology wi
 
 As long as we don't give people a reason to get rid of their Kindles and other old eInk devices we can't really compete with the simple books those devices require. The devices will not read either epub or PWPs and there is no reason for them to change their minds.
 
-There's no reason for Smashwords and other publishers to improve their service… as David Berglsand says in his article: **_I still use ePUB2, for example, because it works better with D2D \[Draft 2 Digital\] and Smashwords_** and why shouldn't it… they are working to the lowest common denominator that works best across devices and the lowest common denominator is epub2
+There's no reason for Smashwords and other publishers to improve their service… as David Berglsand says in his article: ***I still use ePUB2, for example, because it works better with D2D \[Draft 2 Digital\] and Smashwords*** and why shouldn't it… they are working to the lowest common denominator that works best across devices and the lowest common denominator is epub2
 
 Until we can show a competitive advantage for Apple and Amazon to drop proprietary formats and extensions to standards we can't expect these proprietary books to go away.
 
@@ -284,8 +280,8 @@ If the PWPs are based on the open web platform I have yet to see actual integrat
 
 Some of the specific questions:
 
-- Are we serving the content through HTTPS
-- Are we installing a service worker?
+* Are we serving the content through HTTPS
+* Are we installing a service worker?
 
 I think it all boils down to this: are we treating PWPs as Progressive Web Applications that we enhance as needed for our books and publications? or are we coming up with yet another scheme to package content
 
@@ -297,7 +293,7 @@ The service worker provides a core set of functionality that is crucial for any 
 
 This aspect of the web platform should be included as part of the initial definition of PWPs.
 
-#### Package, Storage, And Network Requirements
+### Package, Storage, And Network Requirements
 
 Where do we store the content of the publications? Do the readers have to be always online to access the publications? How do we package the content for delivery?
 
@@ -308,11 +304,11 @@ A related question is how will we package the content to distribute in a PWP and
 I'm copying portions of the initial post for the issue to illustrate some other issues that I see with the packaging and some additional issues with storage and content ownership.
 
 > The working group has considered several possible answers to this question. They mostly fall into one of four scenarios:
-> 
-> - A WPub URL resolves to a JSON manifest file
-> - A WPub URL resolves to an HTML file that contains both a table of contents (TOC) and other metadata
-> - A WPub URL resolves to an HTML file containing a TOC and which links to a JSON manifest file
-> - A WPub URL resolves to a binary package (e.g. a ZIP file or SQLite database file)
+>
+> * A WPub URL resolves to a JSON manifest file
+> * A WPub URL resolves to an HTML file that contains both a table of contents (TOC) and other metadata
+> * A WPub URL resolves to an HTML file containing a TOC and which links to a JSON manifest file
+> * A WPub URL resolves to a binary package (e.g. a ZIP file or SQLite database file)
 
 Out of the four options, the third one is the one that makes the most sense.
 
@@ -327,26 +323,24 @@ The number and types of client are also intriguing and, I think, mutually exclus
 If we stick to the web platform we shouldn't need WPub exclusive tools… If the WPub is part of the web platform then the platform tools should work with it.
 
 > Each of these scenarios is considered in turn as they would be viewed by four types of clients:
-> 
-> - An existing search engine bot
-> - A WPub aware search engine bot
-> - A reader using an existing user agent
-> - A reader using a WPub aware user agent
+>
+> * An existing search engine bot
+> * A WPub aware search engine bot
+> * A reader using an existing user agent
+> * A reader using a WPub aware user agent
 
 The scenario that seems to be the most wanted proposal listed below. It includes the four types of agents discussed above. I think that if PWPs become popular search engines may include them in the regular search results like Bing does for PWAs and Google does for AMP content. Expecting inclusion just because it's a W3C spec is a disaster waiting to happen.
 
 The need for supporting new and old user agents, to me, is more problematic. We either have to build both an epub version that will work with older implementations and a full web version that will conform to the WPub spec.
 
 > **Scenario 3: HTML TOC & JSON Manifest** If a WPub URL resolves to an HTML file containing a TOC and which links to a JSON manifest file, the four clients may be expected to act like this:
-> 
-> - An existing search engine bot (path 3A in the image below) will encounter and index the HTML page without modification.
-> - A WPub aware search engine bot (path 3B in the image below) will be able to determine that the HTML page represents a WPub, and follow the provided link to the metadata if it wishes.
-> - A reader using an existing user agent (path 3C in the image below) will see a TOC containing links to the components of the WPub.
-> - A reader using a WPub aware user agent (path 3D in the image below) will be able to see and operate upon the WPub as intended.
-> 
+>
+> * An existing search engine bot (path 3A in the image below) will encounter and index the HTML page without modification.
+> * A WPub aware search engine bot (path 3B in the image below) will be able to determine that the HTML page represents a WPub, and follow the provided link to the metadata if it wishes.
+> * A reader using an existing user agent (path 3C in the image below) will see a TOC containing links to the components of the WPub.
+> * A reader using a WPub aware user agent (path 3D in the image below) will be able to see and operate upon the WPub as intended.
+>
 > Scenario 3 seems to cleanly handle old and new clients in appropriate ways. Old clients could follow their noses to the components of a WPub, and new clients could easily load the JSON object to efficiently access metadata.
-> 
-> ![](images/option3.png)
 
 Scenario 3: HTML TOC & JSON Manifest
 
@@ -354,7 +348,7 @@ The experience that we want to have will also dictate how we package the content
 
 ### Encrypting Content And Content Ownership
 
-Because publishers believe that DRM will protect their books and keep piracy down, we need to put this issue front and center when addressing digital publishing, packaging, distribution, and ownertship. Most, if not all, books are encrypted with a few publishers offering their publications DRM free, some watermarked and some not. How would this translate to the open web?
+Because publishers believe that DRM will protect their books and keep piracy down, we need to put this issue front and center when addressing digital publishing, packaging, distribution, and ownership. Most, if not all, books are encrypted with a few publishers offering their publications DRM free, some watermarked and some not. How would this translate to the open web?
 
 One of my biggest fears since the [Encrypted Media Extensions Specification](https://www.w3.org/TR/encrypted-media/) was [accepted as a recommendation](https://www.w3.org/2017/09/pressrelease-eme-recommendation.html.en) by the W3C is that video will not be the only medium where encryption is going to be an issue.
 
@@ -376,9 +370,9 @@ This has always been one of the sticking points about ebooks for me. I spend mon
 
 Unless the publisher or whoever handles the licensing is generous you can't really share your books across devices. You would have to get multiple licenses for the versions we want and they are valid for a single user, I can't loan out my ebooks. I also have to use the same reading application in all my devices if I want to read my ebooks in them and remain compliant with the license I was given.
 
-Despite the [anti circumvention provisions](https://www.stoel.com/the-anti-circumvention-rules-of-the-digital-millennium) of the Digital Millenium Copyright Act and Article 11 of the [WIPO Copyright Treaty](http://www.wipo.int/treaties/en/ip/wct/) there are ways to break ebook encryption schemes whether allowed to or not. People want to share and use their content without having to worry about the devices they read the content in, up to an including [publishing executives](https://gigaom.com/2012/04/24/breaking-drm-publishing-exec/).
+Despite the [anti circumvention provisions](https://www.stoel.com/the-anti-circumvention-rules-of-the-digital-millennium) of the Digital Millenium Copyright Act and Article 11 of the [WIPO Copyright Treaty](http://www.wipo.int/treaties/en/ip/wct/) there are ways to break ebook encryption schemes whether allowed to or not. People want to share and use their content without having to worry about the devices they read the content in, up to and including [publishing executives](https://web.archive.org/web/20220925214548/https://old.gigaom.com/2012/04/24/breaking-drm-publishing-exec/).
 
-Are publishers like [O'Reilly](http://toc.oreilly.com/2010/01/2009-oreilly-ebook-revenue-up-104-percent.html) (before they stopped selling books directly from their website), [Packt](https://www.packtpub.com/books/info/packt/about), [Tor](https://www.tor.com/2012/07/20/torforge-e-books-are-now-drm-free/) and others who have released their books without DRM right in doing so?
+Are publishers like [O'Reilly](http://toc.oreilly.com/2010/01/2009-oreilly-ebook-revenue-up-104-percent.html) (before they stopped selling books directly from their website), [Packt](https://www.packtpub.com/books/info/packt/about), [Tor](https://www.tor.com/2012/07/20/torforge-e-books-are-now-drm-free/) and others who have released their books without DRM right in doing so because it's better for them?
 
 **I believe so, and here is why:**
 

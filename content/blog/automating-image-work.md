@@ -50,7 +50,7 @@ This will handle SVG, GIF, PNG, JPG and WebP images.
 
 ```js
 function processImages() {
-  return gulp.src('src/images/originals/**')
+  return gulp.src('srcoriginals/**')
   .pipe(imagemin([
     imagemin.gifsicle({interlaced: true}),
     imagemin.optipng({optimizationLevel: 5}),

@@ -1,7 +1,7 @@
 ---
 title: "Application Shells and Service Workers: Building Manually"
 date: "2016-05-11"
-categories: 
+categories:
   - "technology"
 ---
 
@@ -15,7 +15,9 @@ Reliable network access is something we take for granted. We expect desktop and 
 
 But we’ve all been in sitautions where the network is not available at all or when the mobile 4G network drops to an Edge connection or worst.
 
-> Frequently not having any data connection in even the wealthiest and most developed cities of the world has led us to conclude that no, the mobile connectivity/bandwidth issue isn’t just going to solve itself on a global level anywhere in the near future. [Say hello to offline first](http://hood.ie/blog/say-hello-to-offline-first.html)
+> Frequently not having any data connection in even the wealthiest and most developed cities of the world has led us to conclude that no, the mobile connectivity/bandwidth issue isn’t just going to solve itself on a global level anywhere in the near future.
+>
+> [Say hello to offline first](http://hood.ie/blog/say-hello-to-offline-first.html)
 
 When I first arrive to my coffee shop to do work for the day I usually get the dinosaur in Chrome and a no network message from my Operating System. Can you imagine what type of experience people have in countries where 3G is considered fast and 2G or slower is the norm?
 
@@ -28,10 +30,7 @@ Before you say connection speed doesn’t affect you do the following experiment
 1. In Chrome open your website and let it load as normal. This is what you normally expect it to be.
 2. Open Devtools (command + option + i on a Mac, Ctrl + Shift+ I or F12 on Windows) and select the network tab.
 3. Clicke on the network throttle pull down menu
-    
-    ![](https://developers.google.com/web/tools/chrome-devtools/profile/network-performance/imgs/throttle-selection.png)
 4. Select Regular 2G and reload the page
-    
 5. Repeat with as many different throttle settings as you want to test with
 
 What is the experience like? Now imagine that’s the normal connection speed for your users.
@@ -72,11 +71,11 @@ You can use `postMessage` to cause the ServiceWorker to communicate with the pag
 
 Matt Gaunt describes the workflow of a ServiceWorker in the image below:
 
-![](//www.html5rocks.com/en/tutorials/service-worker/introduction/images/sw-lifecycle.png "Credit: HTML5 Rocks")
+![Service Worker Lifecyle](//www.html5rocks.com/en/tutorials/service-worker/introductionsw-lifecycle.png)
 
 Older versions of Chrome (M43) require the [serviceworker-cache-polyfill](https://github.com/coonsta/cache-polyfill) to cache content since that particular version of Chrome doesn’t support the API natively. Even newer versions of Chrome may not support the full cache specification so it may still be a good idea to use the script. If you use the cache polyfill use this at the top of your ServiceWorker script.
 
-```
+```sw
 importScripts('js/serviceworker-cache-polyfill.js');
 ```
 
@@ -94,7 +93,7 @@ To accomplish this goal we set up two constant for each cache: a name and a vers
 
 We also setup a constant for the contents of our shell. These are all the files (CSS, Javascript and images)
 
-```
+```js
 'use strict';
  // Chrome's currently missing some useful cache methods, this polyfill adds them.
  importScripts('js/lib/serviceworker-cache-polyfill.js');
@@ -124,7 +123,7 @@ The command is simple. We test if the browser supports service worker by testing
 
 If registration fails, either because registration itself failed or the feature is not supported we also log it to the console. It may be a good idea to also show something to the user so they know that the ServiceWorker was not installed.
 
-```
+```js
   // 1. Register Service Worker
   // If the user agent has a serviceWorker property in navigator then we
   // install the service worker. If it's not supported then we fail silently.
@@ -146,7 +145,7 @@ Now that the service worker is registered we need to install it and start using 
 
 We first define a lit of the files we’ll cache as part of our application shell. These may include the index.html page any associate assets and any other resources that will help the shell load as quickly as possible.
 
-```
+```js
   // 2. Install the Service Worker and cache the shell content. This is only
   // the shell content, not the content inside.
   self.addEventListener('install',  (event) => {
@@ -164,7 +163,7 @@ We first define a lit of the files we’ll cache as part of our application shel
 
 The install event will begin the process of getting the ServiceWorker ready. The first step is to install the worker.
 
-First step is to open the shell cache (by concatenating the name and version of the cache) and add all the files listed in our SHELL\_CONTENT constant.
+First step is to open the shell cache (by concatenating the name and version of the cache) and add all the files listed in our `SHELL_CONTENT` constant.
 
 Using promises we then run skipWaiting as `return self.skipWaiting()` to make sure the new ServiceWorker becomes active right away. It’s important to use return with skipWaiting() to make sure that iw till execute at the end of the then statement.
 
@@ -174,7 +173,7 @@ Together with `Clients.claim()` skipWaiting() allows a worker to take effect imm
 
 We next activate the ServiceWorker and automatically claim all the clients associated with it to make sure that the changes to the worker propagate to the clients associated with them.
 
-```
+```js
  // 3. Activate event
 self.addEventListener('activate', function(event) {
   // TODO: Write cache cleaning logic
@@ -190,7 +189,7 @@ I’ve broken the fetch event into three types of requests.
 
 If the request is not a GET request (meaning it’s a PUT, DELETE, HEAD or PROPFIND request) we go to the network to get the data and, if we can’t do that, we provide the offline notification page.
 
-```
+```js
   // 4. Fetch resources
   self.addEventListener('fetch', function (event) {
     let request = event.request;
@@ -208,7 +207,7 @@ If the request is not a GET request (meaning it’s a PUT, DELETE, HEAD or PROPF
 
 Response 2: Generic Response, fetch content from the network and put it in the cache, then return it.
 
-```
+```js
     event.respondWith(
       caches.match(request).then(() => {
         return fetch(request)
@@ -225,7 +224,7 @@ Response 2: Generic Response, fetch content from the network and put it in the c
 
 Response 3: Return response from cache or fetch from network using a cache first strategy if not in cache. If they both fail provide an SVG fallback placeholder, using offlineResponse defined below.
 
-```
+```js
     event.respondWith(
       caches.match(request)
         .then((response) => {
@@ -243,7 +242,7 @@ Response 3: Return response from cache or fetch from network using a cache first
 
 The image is fully contained in our `offlineResponse` function. We use a function to make it easier to reuse the same response for other content. The image include the full XML code for
 
-```
+```js
     function offlineResponse(event) {
       return new Response('<svg width="400" height="300"' +
         ' role="img" aria-labelledby="offline-title"' +
@@ -262,16 +261,15 @@ The image is fully contained in our `offlineResponse` function. We use a functio
 
 In this small JavaScript file we’ve been able to do the following:
 
-- Register and install a ServiceWorker
-- Load a set of resources on ServiceWorker install
-- Load content from the network and cache it to ServiceWorker Cache
-- Check if an image is in the cache and if it isn’t then fetch it from the network
-- If an image is not in the cache and cannot be pulled from the network then display a placeholder SVG image
+* Register and install a ServiceWorker
+* Load a set of resources on ServiceWorker install
+* Load content from the network and cache it to ServiceWorker Cache
+* Check if an image is in the cache and if it isn’t then fetch it from the network
+* If an image is not in the cache and cannot be pulled from the network then display a placeholder SVG image
 
 It’s not complete. Some of the things I’d like to add:
 
-- Write cache cleaning logic to delete old caches or caches that are not in use
-- Figure out which response is triggered if multiple respondWith match. Do all responses that match activate?
-- Add additional content cases we want to special case
-    
-    - Videos are potentially too large to cache so we may want to do a network only strategy where we ping the network and provide the offline fallback if not available
+* Write cache cleaning logic to delete old caches or caches that are not in use
+* Figure out which response is triggered if multiple respondWith match. Do all responses that match activate?
+* Add additional content cases we want to special case
+  * Videos are potentially too large to cache so we may want to do a network only strategy where we ping the network and provide the offline fallback if not available

@@ -11,9 +11,7 @@ The first one is HTML formatted with special data attributes, a footer and a lin
 
 Once the extension is installed, go to a page, select text and press command + shift + S on Mac and control + shift + S on Windows
 
-![](/images/2020/06/citation-00.png)
-
-The result of highlighting text and pressing command/control + shift + S to generate the quote back. There are options to copy embed, copy markdown or close the quote at the bottom of the caption.
+![The result of highlighting text and pressing command/control + shift + S to generate the quote back. There are options to copy embed, copy markdown or close the quote at the bottom of the caption.](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/citation-00)
 
 The final step in this section is to paste the code into the page that you want to use
 
@@ -35,9 +33,7 @@ Or download the script and link to it locally
 
 Completing both steps will produce results similar to the following image.
 
-![](/images/2020/06/citation-01.png)
-
-Example of a formatted quoteback
+![Examples of a formatted quoteback](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/citation-01)
 
 ## Why Use them?
 

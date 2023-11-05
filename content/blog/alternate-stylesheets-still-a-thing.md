@@ -50,11 +50,11 @@ Using David Baron's website as an example (one of the few sites that have multip
 
 When visiting the site, go to `view > page style` and then select the style that you want to use.
 
-![David Baron's website using one possible alternate stylesheet](/images/2022/05/alternate-stylesheets-firefox1.png)
+![David Baron's website using one possible alternate stylesheet](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/alternate-stylesheets-firefox1)
 
-![David Baron's website using a different alternate stylesheet](/images/2022/05/alternate-stylesheets-firefox2.png)
+![David Baron's website using a different alternate stylesheet](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/alternate-stylesheets-firefox2)
 
 ## Additional resources
 
-* [https://developer.mozilla.org/en-US/docs/Web/CSS/Alternative\_style\_sheets](https://developer.mozilla.org/en-US/docs/Web/CSS/Alternative_style_sheets)
-* [https://alistapart.com/article/alternate/](https://alistapart.com/article/alternate/)
+* [Alternative Style Sheets](https://developer.mozilla.org/en-US/docs/Web/CSS/Alternative_style_sheets) &mdash; MDN
+* [Alternative Style: Working With Alternate Style Sheets](https://alistapart.com/article/alternate/)

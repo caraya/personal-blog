@@ -29,9 +29,8 @@ On September 14, 2016, Adobe, Apple, Google, and Microsoft joined forces to intr
 
 Variable fonts provide diferent axes that give you fine grained control over your site's typography. These axes can be traditional typographical elements like weight, width, optical sizing, or slant. Or they can be fully custom axes to control additional aspects of a font.
 
-![](/images/2023/07/wakamaifondue-variable-font-axes.png)
+![List of Roboto Variable Font axes, both default and custom](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/wakamaifondue-variable-font-axes)
 
-List of Roboto Variable Font axes, both default and custom
 
 For more information about variable fonts see [Introducing variable fonts](https://fonts.google.com/knowledge/introducing_type/introducing_variable_fonts)
 
@@ -178,154 +177,154 @@ The example below was generate for OpenSans Variable using the beta version of [
 
 ```css
 :root {
-    --open-sans-regular-aalt: "aalt" off;
-    --open-sans-regular-dnom: "dnom" off;
-    --open-sans-regular-frac: "frac" off;
-    --open-sans-regular-lnum: "lnum" off;
-    --open-sans-regular-numr: "numr" off;
-    --open-sans-regular-onum: "onum" off;
-    --open-sans-regular-ordn: "ordn" off;
-    --open-sans-regular-pnum: "pnum" off;
-    --open-sans-regular-salt: "salt" off;
-    --open-sans-regular-ss01: "ss01" off;
-    --open-sans-regular-ss02: "ss02" off;
-    --open-sans-regular-ss03: "ss03" off;
-    --open-sans-regular-ss04: "ss04" off;
-    --open-sans-regular-subs: "subs" off;
-    --open-sans-regular-sups: "sups" off;
-    --open-sans-regular-tnum: "tnum" off;
-    --open-sans-regular-zero: "zero" off;
+	--open-sans-regular-aalt: "aalt" off;
+	--open-sans-regular-dnom: "dnom" off;
+	--open-sans-regular-frac: "frac" off;
+	--open-sans-regular-lnum: "lnum" off;
+	--open-sans-regular-numr: "numr" off;
+	--open-sans-regular-onum: "onum" off;
+	--open-sans-regular-ordn: "ordn" off;
+	--open-sans-regular-pnum: "pnum" off;
+	--open-sans-regular-salt: "salt" off;
+	--open-sans-regular-ss01: "ss01" off;
+	--open-sans-regular-ss02: "ss02" off;
+	--open-sans-regular-ss03: "ss03" off;
+	--open-sans-regular-ss04: "ss04" off;
+	--open-sans-regular-subs: "subs" off;
+	--open-sans-regular-sups: "sups" off;
+	--open-sans-regular-tnum: "tnum" off;
+	--open-sans-regular-zero: "zero" off;
 }
 
 .open-sans-regular-aalt {
-    --open-sans-regular-aalt: "aalt" on;
+	--open-sans-regular-aalt: "aalt" on;
 }
 
 .open-sans-regular-dnom {
-    --open-sans-regular-dnom: "dnom" on;
+	--open-sans-regular-dnom: "dnom" on;
 }
 
 .open-sans-regular-frac {
-    --open-sans-regular-frac: "frac" on;
+	--open-sans-regular-frac: "frac" on;
 }
 
 @supports (font-variant-numeric: diagonal-fractions) {
-    .open-sans-regular-frac {
-        --open-sans-regular-frac: "____";
-        font-variant-numeric: diagonal-fractions;
-    }
+	.open-sans-regular-frac {
+		--open-sans-regular-frac: "____";
+		font-variant-numeric: diagonal-fractions;
+	}
 }
 
 .open-sans-regular-lnum {
-    --open-sans-regular-lnum: "lnum" on;
+	--open-sans-regular-lnum: "lnum" on;
 }
 
 @supports (font-variant-numeric: lining-nums) {
-    .open-sans-regular-lnum {
-        --open-sans-regular-lnum: "____";
-        font-variant-numeric: lining-nums;
-    }
+	.open-sans-regular-lnum {
+		--open-sans-regular-lnum: "____";
+		font-variant-numeric: lining-nums;
+	}
 }
 
 .open-sans-regular-numr {
-    --open-sans-regular-numr: "numr" on;
+	--open-sans-regular-numr: "numr" on;
 }
 
 .open-sans-regular-onum {
-    --open-sans-regular-onum: "onum" on;
+	--open-sans-regular-onum: "onum" on;
 }
 
 @supports (font-variant-numeric: oldstyle-nums) {
-    .open-sans-regular-onum {
-        --open-sans-regular-onum: "____";
-        font-variant-numeric: oldstyle-nums;
-    }
+	.open-sans-regular-onum {
+		--open-sans-regular-onum: "____";
+		font-variant-numeric: oldstyle-nums;
+	}
 }
 
 .open-sans-regular-ordn {
-    --open-sans-regular-ordn: "ordn" on;
+	--open-sans-regular-ordn: "ordn" on;
 }
 
 @supports (font-variant-numeric: ordinal) {
-    .open-sans-regular-ordn {
-        --open-sans-regular-ordn: "____";
-        font-variant-numeric: ordinal;
-    }
+	.open-sans-regular-ordn {
+		--open-sans-regular-ordn: "____";
+		font-variant-numeric: ordinal;
+	}
 }
 
 .open-sans-regular-pnum {
-    --open-sans-regular-pnum: "pnum" on;
+	--open-sans-regular-pnum: "pnum" on;
 }
 
 @supports (font-variant-numeric: proportional-nums) {
-    .open-sans-regular-pnum {
-        --open-sans-regular-pnum: "____";
-        font-variant-numeric: proportional-nums;
-    }
+	.open-sans-regular-pnum {
+		--open-sans-regular-pnum: "____";
+		font-variant-numeric: proportional-nums;
+	}
 }
 
 .open-sans-regular-salt {
-    --open-sans-regular-salt: "salt" on;
+	--open-sans-regular-salt: "salt" on;
 }
 
 .open-sans-regular-ss01 {
-    --open-sans-regular-ss01: "ss01" on;
+	--open-sans-regular-ss01: "ss01" on;
 }
 
 .open-sans-regular-ss02 {
-    --open-sans-regular-ss02: "ss02" on;
+	--open-sans-regular-ss02: "ss02" on;
 }
 
 .open-sans-regular-ss03 {
-    --open-sans-regular-ss03: "ss03" on;
+	--open-sans-regular-ss03: "ss03" on;
 }
 
 .open-sans-regular-ss04 {
-    --open-sans-regular-ss04: "ss04" on;
+	--open-sans-regular-ss04: "ss04" on;
 }
 
 .open-sans-regular-subs {
-    --open-sans-regular-subs: "subs" on;
+	--open-sans-regular-subs: "subs" on;
 }
 
 @supports (font-variant-position: sub) {
-    .open-sans-regular-subs {
-        --open-sans-regular-subs: "____";
-        font-variant-position: sub;
-    }
+	.open-sans-regular-subs {
+		--open-sans-regular-subs: "____";
+		font-variant-position: sub;
+	}
 }
 
 .open-sans-regular-sups {
-    --open-sans-regular-sups: "sups" on;
+	--open-sans-regular-sups: "sups" on;
 }
 
 @supports (font-variant-position: super) {
-    .open-sans-regular-sups {
-        --open-sans-regular-sups: "____";
-        font-variant-position: super;
-    }
+	.open-sans-regular-sups {
+		--open-sans-regular-sups: "____";
+		font-variant-position: super;
+	}
 }
 
 .open-sans-regular-tnum {
-    --open-sans-regular-tnum: "tnum" on;
+	--open-sans-regular-tnum: "tnum" on;
 }
 
 @supports (font-variant-numeric: tabular-nums) {
-    .open-sans-regular-tnum {
-        --open-sans-regular-tnum: "____";
-        font-variant-numeric: tabular-nums;
-    }
+	.open-sans-regular-tnum {
+		--open-sans-regular-tnum: "____";
+		font-variant-numeric: tabular-nums;
+	}
 }
 
 .open-sans-regular-zero {
-    --open-sans-regular-zero: "zero" on;
+	--open-sans-regular-zero: "zero" on;
 }
 
 @supports (font-variant-numeric: slashed-zero) {
-    .open-sans-regular-zero {
-        --open-sans-regular-zero: "____";
-        font-variant-numeric: slashed-zero;
-    }
+	.open-sans-regular-zero {
+		--open-sans-regular-zero: "____";
+		font-variant-numeric: slashed-zero;
+	}
 }
 
 .open-sans-regular-aalt,
@@ -345,7 +344,20 @@ The example below was generate for OpenSans Variable using the beta version of [
 .open-sans-regular-sups,
 .open-sans-regular-tnum,
 .open-sans-regular-zero {
-  font-feature-settings: var(--open-sans-regular-aalt), var(--open-sans-regular-dnom), var(--open-sans-regular-frac), var(--open-sans-regular-lnum), var(--open-sans-regular-numr), var(--open-sans-regular-onum), var(--open-sans-regular-ordn), var(--open-sans-regular-pnum), var(--open-sans-regular-salt), var(--open-sans-regular-ss01), var(--open-sans-regular-ss02), var(--open-sans-regular-ss03), var(--open-sans-regular-ss04), var(--open-sans-regular-subs), var(--open-sans-regular-sups), var(--open-sans-regular-tnum), var(--open-sans-regular-zero);
+  font-feature-settings: var(--open-sans-regular-aalt), var(--open-sans-regular-dnom), var(--open-sans-regular-frac), var(--open-sans-regular-lnum),
+	var(--open-sans-regular-numr),
+	var(--open-sans-regular-onum),
+	var(--open-sans-regular-ordn),
+	var(--open-sans-regular-pnum),
+	var(--open-sans-regular-salt),
+	var(--open-sans-regular-ss01),
+	var(--open-sans-regular-ss02),
+	var(--open-sans-regular-ss03),
+	var(--open-sans-regular-ss04),
+	var(--open-sans-regular-subs),
+	var(--open-sans-regular-sups),
+	var(--open-sans-regular-tnum),
+	var(--open-sans-regular-zero);
 }
 ```
 
@@ -419,8 +431,6 @@ This will not create a subset like we did with Glyphhanger, but control whether 
 
 Support is good. According to caniuse.com, all browsers except Opera Mini support the technology.
 
-![](/images/2023/07/caniuse-web-fonts.webp)
-
-Caniuse @font-face browser support
+![Caniuse @font-face browser support](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/caniuse-web-fonts)
 
 This post has skipped some additional things that we can use to load fonts faster. Things like preloading the font or, maybe, using a service worker to cache the font files, are outside the `@font-face` loading process.

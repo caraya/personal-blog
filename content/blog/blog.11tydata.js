@@ -14,7 +14,7 @@ module.exports = {
         return false;
       }
 
-      return data.permalink;
+			return `/${data.page.fileSlug}/`;
     },
     eleventyExcludeFromCollections: data => {
       if (process.env.NODE_ENV === 'production' &&  (data.draft || data.page.date >= new Date())) {
@@ -33,8 +33,6 @@ module.exports = {
 	],
 	// What layout to use
 	"layout": "layouts/post.njk",
-	// draft status for the post. May use it later
-	draft: false,
 	// all conditional elements are set to false by default
 	"youtube": false,
 	"vimeo": false,

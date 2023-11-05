@@ -1,7 +1,7 @@
 ---
 title: "Migrating from WordPress to Eleventy (part 3)"
-date: "2023-12-31"
-draft: true
+date: "2023-11-22"
+draft: false
 ---
 
 These are more random, miscelaneous, items that I'm working on to make the site look as close as possible to the WordPress version of the site.

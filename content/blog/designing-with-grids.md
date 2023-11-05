@@ -211,7 +211,7 @@ According to Andy Clarke in [Inspired Design Decisions: Pressing Matters](https:
 }
 ```
 
-![Example of a 2 x 3 compound grid](/images/2023/02/compound-grid-2x3-1.png)
+![Example of a 2 x 3 compound grid](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/compound-grid-2x3-1)
 
 ```css
 .container {
@@ -221,7 +221,7 @@ According to Andy Clarke in [Inspired Design Decisions: Pressing Matters](https:
 }
 ```
 
-![example of a 4 x 6 compound grid](/images/2023/02/compound-grid-4x6-1.png)
+![example of a 4 x 6 compound grid](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/compound-grid-4x6-1)
 
 Creating compound grids is not easy. Rather than spend time doing it manually (and getting it wrong) I use the [Compound Grid Generator](https://codepen.io/michellebarker/full/zYOMYWv) from [Michelle Barker](https://twitter.com/MicheBarks)
 

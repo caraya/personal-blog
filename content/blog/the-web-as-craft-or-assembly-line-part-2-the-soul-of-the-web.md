@@ -8,7 +8,7 @@ The other side of the argument is that we've let the web become boring. We've lo
 
 Examples like the Space Jam website, from 1996, show what earlier websites looked like:
 
-![Space Jam website, circa 1996](/images/2022/02/space-jam-website.jpeg)
+![Space Jam website, circa 1996](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/space-jam-website)
 
 As much as some of us hated it, tables for layout had their use :)
 

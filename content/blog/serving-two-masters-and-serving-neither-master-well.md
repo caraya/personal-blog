@@ -41,15 +41,15 @@ Before we talk about affordances let's define some terms so we start from a comm
 
 When planning a new interface or product some of the questions I ask are:
 
-- What affordances are we offering our users?
-- Do the affordances match user expectations (and if they don't why not)
-- How can we leverage the web as a platform to improve the reading experience?
+* What affordances are we offering our users?
+* Do the affordances match user expectations (and if they don't why not)
+* How can we leverage the web as a platform to improve the reading experience?
 
 The first affordance that I look for is navigation... How do we move between pages of content and how do we navigate our content.
 
 But apps and the web are different. From any point in a document we can navigate in any direction or we can keep the navigation metaphor we bring along from physical books. Craig Mod asks the question about the iPad but I consider it equally valid for desktop and other mobile browsers:
 
-> _Do we embrace the physicality of the device — a spineless page with a central axis of symmetry? Or do we embrace the device’s virtual physicality — an invisible spine defined by every edge of the device, signaling the potential of additional content just a swipe \[or click or key press\] away?_
+> *Do we embrace the physicality of the device — a spineless page with a central axis of symmetry? Or do we embrace the device’s virtual physicality — an invisible spine defined by every edge of the device, signaling the potential of additional content just a swipe (or click or key press) away?*
 >
 > Craig Mod [A Simpler Page](https://alistapart.com/article/a-simpler-page)
 
@@ -65,9 +65,9 @@ Another affordance that is important is controlling the size of the font in our 
 
 Even if we use the physical book as a metaphor. I read differently depending on how and where I'm reading. The iPad equivalents:
 
-- Close to face: Reading a novel on your stomach, lying in bed holding the iPad close to me or with the device laying down as I read. Decreasing the size of the font on a desktop or laptop to get a little more content per page
-- Medium distance from the face: Sitting on the couch or perhaps on the train on my way to work with the device at arm's length or the device on my lap
-- Far from the face: The iPad propped up by the keyboard at an angle or the device sitting on my desk a little farther than it would when reading on the train
+* Close to face: Reading a novel on your stomach, lying in bed holding the iPad close to me or with the device laying down as I read. Decreasing the size of the font on a desktop or laptop to get a little more content per page
+* Medium distance from the face: Sitting on the couch or perhaps on the train on my way to work with the device at arm's length or the device on my lap
+* Far from the face: The iPad propped up by the keyboard at an angle or the device sitting on my desk a little farther than it would when reading on the train
 
 This is one aspect of how to address font sizing for web reading experiences. It does not address other typographical elements such as font selection (even when using the same measure condensed and expanded fonts will not look the same) line-height, kerning and others that are just as important. It also skips accessibility altogether which is also an important issue.
 
@@ -101,7 +101,7 @@ This is similar to the process of navigating a page using screen readers: you ha
 
 But even if I had to navigate swiping down or using arrow keys or space bar or page up/down why would scrolling be a problem? The site provides a summary above the fold and the table of content below it so people will get the table of content only after they've decided they want to move forward with the site and find what they are looking for. We don't always read technical books from beginning to end every time. These are not blog posts any more than the Bubblin "super books" are and they shouldn't be treated as such just to make an argument.
 
-_**Biggest question is why does he consider the book to be a blog post and talks so condescendingly about the content he didn't author and that doesn't use their technology? Would the authoring platform make a difference in the author's evaluation?**_
+***Biggest question is why does he consider the book to be a blog post and talks so condescendingly about the content he didn't author and that doesn't use their technology? Would the authoring platform make a difference in the author's evaluation?***
 
 Does it need pagination? I don't think it does but perhaps it would have benefitted from being a multi-page application rather than a single page one or having links that would return you to the table of contents.
 
@@ -129,9 +129,7 @@ Bubblin presents a Chartbeat chart without any context to try and prove a point.
 
 I've linked the chart as is from the Bubblin essay to give you an idea of what I mean:
 
-![](https://raw.githubusercontent.com/marvindanig/assets/master/attention-retention.jpg)
-
-Chart expressing percentage of users that scroll through content. Taken from [Frequent Concerns](https://bubblin.io/concerns)
+![Chart expressing percentage of users that scroll through content. Taken from [Frequent Concerns](https://bubblin.io/concerns)](https://raw.githubusercontent.com/marvindanig/assets/master/attention-retention.jpg)
 
 The chart on its own is missing something. There is no summary of the data or context for the results. What type of site is the data referring to? Are users accessing it in mobile or desktop devices? What countries are they accessing the content from?
 
@@ -139,9 +137,8 @@ There is a lot of context missing from the chart and I have to wonder if the ful
 
 Likewise, when he uses Google's search result page pagination as a model of what are the shortcomings of pagination on the web he forgets the primary difference between computer-generated pagination for the results of a search engine query with the pagination used for a book or other paginated long-form content.
 
-![](https://raw.githubusercontent.com/marvindanig/assets/master/pagination.jpg)
-
-How does this relate to long form content? Taken from [https://bubblin.io/concerns](https://bubblin.io/concerns)
+![How does this relate to long form content? Taken from [https://bubblin.io/concerns](https://bubblin.io/concerns)
+](https://raw.githubusercontent.com/marvindanig/assets/master/pagination.jpg)
 
 The search results are grouped in order of relevance where the results grow less relevant with each page you navigate to. How does this relate to paginated long-form content?
 
@@ -169,7 +166,7 @@ The interviewer asks a followup question which, I think, is essential to this di
 
 So is it really the technology that makes reading online less useful than reading a physical book or is it the user's preferences themselves that make one more appealing over the other?
 
-## What I see as web reading experiences: Taking advantages of the online medium.
+## What I see as web reading experiences: Taking advantages of the online medium?
 
 When I made a comment about needing to keep the browser's built-in affordances I was thinking about font sizing and alternatives way to navigate their content. I was first thinking about Desktop browsers but then realized that these affordances are equally important for other form factors.
 
@@ -193,59 +190,59 @@ I have seen good reading experiences on the web. They all move away from a strai
 
 Art Space Tokyo is not meant to be a replacement for the physical books but provides the same reference material in a way that is easier to engage with online. There is no physical equivalent to the Google Map, you'd have to list all the information for the locations which would make it longer and more tedious to read.
 
-![](/images/2019/03/arts-space-tokyo-1.png)
+![Arts Space Tokyo page](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/arts-space-tokyo-1)
 
-![](/images/2019/03/arts-space-tokyo-2.png)
+![Arts Space Tokyo page showing interactive map](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/arts-space-tokyo-2)
 
 The Shape of Design, on the other hand, seeks to reproduce the text and the images of the book into an online environment. Each chapter in the physical book.
 
-![](/images/2019/03/shape-of-design-1.png)
+![The Shape of Design page](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/shape-of-design-1)
 
 Whichever way you choose to read it's beyond the book metaphor.
 
 ## Bibliography and References
 
-- [Infinite Scrolling Is Not for Every Website](https://www.nngroup.com/articles/infinite-scrolling/)
-- [How Users Read on the Web](https://www.nngroup.com/articles/how-users-read-on-the-web/)
-- [Designing for iPad: Reality Check](https://ia.net/topics/designing-for-ipad-reality-check)
-- [What the iPad Is Missing (No, It’s Not a Camera)](https://www.fastcompany.com/1616121/what-ipad-missing-no-its-not-camera)
-- [Books, Typography and the iPad](https://web.archive.org/web/20100413190412/http://blog.samwieck.com/post/457824073/books-typography-and-the-ipad)
-- [The iPad in the eyes of the digerati](https://roomfordebate.blogs.nytimes.com/2010/04/06/the-ipad-in-the-eyes-of-the-digerati/)
-- [As Transparent As Typography](https://web.archive.org/web/20101229184940/http://iii.bobulate.com/2007/09/as-transparent-as-typography/)
-- [The Elements of Typographic Style Applied to the Web](http://webtypography.net/)
-- Research Reporrts
-    - [The Reading Brain in the Digital Age: The Science of Paper versus Screens](https://www.scientificamerican.com/article/reading-paper-screens/)
-    - [Don't throw away your printed books: A meta-analysis on the effects of reading media on reading comprehension](https://www.sciencedirect.com/science/article/pii/S1747938X18300101)
-    - [Do we read differently on paper than on a screen?](https://phys.org/news/2017-09-differently-paper-screen.html)
-- Craig Mod
-    - [As We May Read](https://craigmod.com/essays/as_we_may_read/)
-    - [Future reading](https://aeon.co/essays/stagnant-and-dull-can-digital-books-ever-replace-print)
-    - [Let’s Talk About Margins](https://medium.com/message/lets-talk-about-margins-14646574c385)
-    - [Subcompact Publishing](https://craigmod.com/journal/subcompact_publishing/)
-    - [Platforming Books](https://craigmod.com/journal/platforming_books/)
-    - [The Digital — Physical](https://craigmod.com/journal/digital_physical/)
-    - [A Simpler Page](https://alistapart.com/article/a-simpler-page)
-    - [Post Artifacts Books & Publishing](https://craigmod.com/journal/post_artifact/)
-    - [Books in the age of the iPad](https://craigmod.com/journal/ipad_and_books/)
-- Frank Chimero
-    - [Designing in the borderlands](https://frankchimero.com/writing/designing-in-the-borderlands/)
-    - [What Screens Want](https://frankchimero.com/writing/what-screens-want/)
-    - [The Web's Grain](https://frankchimero.com/writing/the-webs-grain/)
-- Affordances
-    - [Affordances and Design](https://jnd.org/affordances_and_design/)
-    - [Affordance, Conventions and Design (Part 2)](https://jnd.org/affordance_conventions_and_design_part_2/)
-    - [Design as Communication](https://jnd.org/design_as_communication/)
-- Nieman Lab
-    - [The rise of vertical storytelling](http://www.niemanlab.org/2019/01/the-rise-of-vertical-storytelling/)
-    - [I went to NodeJS because I wished to live deliberately](http://www.niemanlab.org/2018/12/i-went-to-node-js-because-i-wished-to-live-deliberately/)
-    - [A Design System For Responsible Publishing](http://www.niemanlab.org/2019/01/a-design-system-for-responsible-publishing/)
-- Hick's Law
-    - [Hick's law](https://en.wikipedia.org/wiki/Hick%27s_law)
-    - [Hick’s Law: Making the choice easier for users](https://www.interaction-design.org/literature/article/hick-s-law-making-the-choice-easier-for-users)
-    - [Redefining Hick's Law](https://www.smashingmagazine.com/2012/02/redefining-hicks-law/)
-- Examples
-    - [FF Meta Variable Font Demo](https://codepen.io/jpamental/full/MGEPEL)
-    - [Scaling Everest](https://www.washingtonpost.com/graphics/world/scaling-everest/)
-    - [Snow Fall](http://www.nytimes.com/projects/2012/snow-fall/index.html#/?part=tunnel-creek)
-    - [The Shape of Design](https://shapeofdesignbook.com/)
-    - [Art Space Tokyo](https://read.artspacetokyo.com/)
+* [Infinite Scrolling Is Not for Every Website](https://www.nngroup.com/articles/infinite-scrolling/)
+* [How Users Read on the Web](https://www.nngroup.com/articles/how-users-read-on-the-web/)
+* [Designing for iPad: Reality Check](https://ia.net/topics/designing-for-ipad-reality-check)
+* [What the iPad Is Missing (No, It’s Not a Camera)](https://www.fastcompany.com/1616121/what-ipad-missing-no-its-not-camera)
+* [Books, Typography and the iPad](https://web.archive.org/web/20100413190412/http://blog.samwieck.com/post/457824073/books-typography-and-the-ipad)
+* [The iPad in the eyes of the digerati](https://roomfordebate.blogs.nytimes.com/2010/04/06/the-ipad-in-the-eyes-of-the-digerati/)
+* [As Transparent As Typography](https://web.archive.org/web/20101229184940/http://iii.bobulate.com/2007/09/as-transparent-as-typography/)
+* [The Elements of Typographic Style Applied to the Web](http://webtypography.net/)
+* Research Reporrts
+  * [The Reading Brain in the Digital Age: The Science of Paper versus Screens](https://www.scientificamerican.com/article/reading-paper-screens/)
+  * [Don't throw away your printed books: A meta-analysis on the effects of reading media on reading comprehension](https://www.sciencedirect.com/science/article/pii/S1747938X18300101)
+  * [Do we read differently on paper than on a screen?](https://phys.org/news/2017-09-differently-paper-screen.html)
+* Craig Mod
+  * [As We May Read](https://craigmod.com/essays/as_we_may_read/)
+  * [Future reading](https://aeon.co/essays/stagnant-and-dull-can-digital-books-ever-replace-print)
+  * [Let’s Talk About Margins](https://medium.com/message/lets-talk-about-margins-14646574c385)
+  * [Subcompact Publishing](https://craigmod.com/journal/subcompact_publishing/)
+  * [Platforming Books](https://craigmod.com/journal/platforming_books/)
+  * [The Digital — Physical](https://craigmod.com/journal/digital_physical/)
+  * [A Simpler Page](https://alistapart.com/article/a-simpler-page)
+  * [Post Artifacts Books & Publishing](https://craigmod.com/journal/post_artifact/)
+  * [Books in the age of the iPad](https://craigmod.com/journal/ipad_and_books/)
+* Frank Chimero
+  * [Designing in the borderlands](https://frankchimero.com/writing/designing-in-the-borderlands/)
+  * [What Screens Want](https://frankchimero.com/writing/what-screens-want/)
+  * [The Web's Grain](https://frankchimero.com/writing/the-webs-grain/)
+* Affordances
+  * [Affordances and Design](https://jnd.org/affordances_and_design/)
+  * [Affordance, Conventions and Design (Part 2)](https://jnd.org/affordance_conventions_and_design_part_2/)
+  * [Design as Communication](https://jnd.org/design_as_communication/)
+* Nieman Lab
+  * [The rise of vertical storytelling](http://www.niemanlab.org/2019/01/the-rise-of-vertical-storytelling/)
+  * [I went to NodeJS because I wished to live deliberately](http://www.niemanlab.org/2018/12/i-went-to-node-js-because-i-wished-to-live-deliberately/)
+  * [A Design System For Responsible Publishing](http://www.niemanlab.org/2019/01/a-design-system-for-responsible-publishing/)
+* Hick's Law
+  * [Hick's law](https://en.wikipedia.org/wiki/Hick%27s_law)
+  * [Hick’s Law: Making the choice easier for users](https://www.interaction-design.org/literature/article/hick-s-law-making-the-choice-easier-for-users)
+  * [Redefining Hick's Law](https://www.smashingmagazine.com/2012/02/redefining-hicks-law/)
+* Examples
+  * [FF Meta Variable Font Demo](https://codepen.io/jpamental/full/MGEPEL)
+  * [Scaling Everest](https://www.washingtonpost.com/graphics/world/scaling-everest/)
+  * [Snow Fall](http://www.nytimes.com/projects/2012/snow-fall/index.html#/?part=tunnel-creek)
+  * [The Shape of Design](https://shapeofdesignbook.com/)
+  * [Art Space Tokyo](https://read.artspacetokyo.com/)

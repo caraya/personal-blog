@@ -1,7 +1,7 @@
 ---
 title: "Can the web look like print?  Tools and techniques"
 date: "2016-05-02"
-categories: 
+categories:
   - "technology"
 ---
 
@@ -27,19 +27,20 @@ In the HTML below, the `boxes` is our flexbox container. Each box has two classe
 
 In the css we do three things:
 
-- Set up an element with class boxes (`.boxes`) as a flex container (`display: flex`) and we set it to be horizontal and to wrap its content (`flex-flow: row wrap`)
-- We set up the items (class `.box`) with the `flex` shorthand which is equivalent to set the following attributes
-    
-    - flex-grow: 1
-    - flex-shrink: 0
-    - flex-basis: auto
-- We set the images inside the box (`.box img`) to be 100% wide and with an automated height. This makes the images responsive without using the flexbox
+* Set up an element with class boxes (`.boxes`) as a flex container (`display: flex`) and we set it to be horizontal and to wrap its content (`flex-flow: row wrap`)
+* We set up the items (class `.box`) with the `flex` shorthand which is equivalent to set the following attributes
+  * flex-grow: 1
+  * flex-shrink: 0
+  * flex-basis: auto
+* We set the images inside the box (`.box img`) to be 100% wide and with an automated height. This makes the images responsive without using the flexbox
 
 To view the full effect open the pen in Codepen and select full view. Otherwise the images will display in one columns, defeating the purpose of the demo.
 
-<p data-height="480" data-theme-id="2039" data-slug-hash="NGoWKM" data-default-tab="result" data-user="caraya" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/NGoWKM/">Flexbox Image Gallery Experiment</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+<iframe height="391.50872802734375" style="width: 100%;" scrolling="no" title="Flexbox Image Gallery Experiment" src="https://codepen.io/caraya/embed/NGoWKM?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/caraya/pen/NGoWKM">
+  Flexbox Image Gallery Experiment</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
 This example uses images to create a gallery type but it can also work with text as a masonry-like layout.
 
@@ -47,13 +48,15 @@ In [Solved by Flexbox](http://philipwalton.github.io/solved-by-flexbox/) Philip 
 
 **Grids:**
 
-![](https://philipwalton.github.io/solved-by-flexbox/images/grids.jpg)
+![Using flexbox to create grid layouts](https://philipwalton.github.io/solved-by-flexbox/images/grids.jpg)
 
-**Media Objects**: \*\*  ![](https://philipwalton.github.io/solved-by-flexbox/images/media-object.jpg)
+**Media Objects**:
+
+![Example of a media object created with flexbox](https://philipwalton.github.io/solved-by-flexbox/images/media-object.jpg)
 
 **Holy Grail Layout:**
 
-![](https://philipwalton.github.io/solved-by-flexbox/images/holy-grail.jpg)
+![Holy Grail layout created with Flexbox](https://philipwalton.github.io/solved-by-flexbox/images/holy-grail.jpg)
 
 #### CSS Grids
 
@@ -65,29 +68,35 @@ With a grid (whatever kind) we can get a close approximation to what a 12 or 16 
 
 The example below, taken from [Grid by example](http://gridbyexample.com/), shows how to build a “holy grail layout” using CSS Grids and Media Queries to change the layout as needed for different displays and resolutions.
 
-![](//gridbyexample.com/examples/images/layout2.png) ![](//gridbyexample.com/examples/images/layout2-2.png) ![](//gridbyexample.com/examples/images/layout2-3.png)
+![Stage 1 of the Holy Grail layout built with CSS Grid](https://gridbyexample.com/examples/images/layout2.png)
+
+![Stage 2 of the Holy Grail layout built with CSS Grid](https://gridbyexample.com/examples/images/layout2-2.png)
+
+![Stage 3 of the Holy Grail layout built with CSS Grid](https://gridbyexample.com/examples/images/layout2-3.png)
 
 You can also use Flexbox and Grids together. You can create a masthead using Flexbox and place it inside a grid like you normally would :-)
 
 ### Columns
 
-[CSS Multi-column Layout Module](https://www.w3.org/TR/css3-multicol/) provides multicolumn layouts for the web without hacking the content to display how we want it to. ![](//lh6.ggpht.com/-cayteA5dLsI/U-oidf964WI/AAAAAAAAL78/TsLGxObMXjU/CSS-columns-Chrome-arbitrary-breaks.png?imgmax=1000)
+[CSS Multi-column Layout Module](https://www.w3.org/TR/css3-multicol/) provides multicolumn layouts for the web without hacking the content to display how we want it to.
+
+![CSS multicolumn layout in Google Chrome](https://lh6.ggpht.com/-cayteA5dLsI/U-oidf964WI/AAAAAAAAL78/TsLGxObMXjU/CSS-columns-Chrome-arbitrary-breaks.png?imgmax=1000)
 
 The columns module still cannot do threaded frames (think of InDesign) but that may yet become part of the web as part of a different specification.
 
 Support for widow and orphans is mostly complete with [Firefox being the last remaining houldout](https://bugzilla.mozilla.org/show_bug.cgi?id=137367) in supporting the feature (and the bug laying dormant since 2010 doesn’t inspire much confidence in them being implemented either.)
 
-![](//codropspz.tympanus.netdna-cdn.com/codrops/wp-content/uploads/2014/11/orphans-example-columns.jpg)
+![CSS multicolumn example showing widows](//codropspz.tympanus.netdna-cdn.com/codrops/wp-content/uploads/2014/11/orphans-example-columns.jpg)
 
 ### Rotation, skews and translations
 
 Most people do rotations, skews and translations in the context of CSS 2D animations but we can also use them as static elements that will appear in its final form when displayed on the document.
 
-![](https://developer.apple.com/library/safari/documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/Art/2drotation.png)
+![Example of roated text using CSS](https://developer.apple.com/library/safari/documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/Art/2drotation.png)
 
 We can also chain transformations to achieve more sophisticated effects.
 
-![](https://www.w3.org/TR/2011/WD-css3-2d-transforms-20111215/compound_transform.png)
+![CSS compound transformation](https://www.w3.org/TR/2011/WD-css3-2d-transforms-20111215/compound_transform.png)
 
 ### Shape outside
 
@@ -95,19 +104,23 @@ I’ve always loved how text wraps around an image shape, be it a circle or some
 
 Now we can do layouts like these witout hacks.
 
-<p data-height="388" data-theme-id="2039" data-slug-hash="LskqC" data-default-tab="result" data-user="SitePoint" class="codepen">See the Pen <a href="http://codepen.io/SitePoint/pen/LskqC/">CSS Shapes Demo #2</a> by SitePoint (<a href="http://codepen.io/SitePoint">@SitePoint</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<iframe height="478.21868896484375" style="width: 100%;" scrolling="no" title="CSS Shapes Demo #2" src="https://codepen.io/SitePoint/embed/ExbzMq?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/SitePoint/pen/ExbzMq">
+  CSS Shapes Demo #2</a> by SitePoint (<a href="https://codepen.io/SitePoint">@SitePoint</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+<iframe height="656.0850219726562" style="width: 100%;" scrolling="no" title="CSS Shapes Demo #8" src="https://codepen.io/SitePoint/embed/WNXqEL?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/SitePoint/pen/WNXqEL">
+  CSS Shapes Demo #8</a> by SitePoint (<a href="https://codepen.io/SitePoint">@SitePoint</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
-<p data-height="456" data-theme-id="2039" data-slug-hash="KyjiB" data-default-tab="result" data-user="SitePoint" class="codepen">See the Pen <a href="http://codepen.io/SitePoint/pen/KyjiB/">CSS Shapes Demo #8</a> by SitePoint (<a href="http://codepen.io/SitePoint">@SitePoint</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+![Sara Soueidan's demo of using multiple shapes to layout content](https://sarasoueidan.com/demos/css-shapes-layouts/demo-1/images/demo-screenshot.jpg)
 
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+![Multiple shapes to simulare regions](https://sarasoueidan.com/demos/css-shapes-layouts/demo-4/images/demo-screenshot.jpg)
 
-![](https://sarasoueidan.com/demos/css-shapes-layouts/demo-1/images/demo-screenshot.jpg)
-
-![](https://sarasoueidan.com/demos/css-shapes-layouts/demo-4/images/demo-screenshot.jpg)
-
-![](https://sarasoueidan.com/images/multicolumn-shapes.png)
+![CSS shapes accross columns in a multicolumn layout](/images/multicolumn-shapes.png)
 
 Until the [level 2](https://drafts.csswg.org/css-shapes-2/) specification is implemented in browsers we’ll just have to be happy with `shape-outside`, its limitations and workarounds.
 

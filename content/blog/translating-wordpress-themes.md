@@ -40,11 +40,11 @@ if ($req) echo ('(required)');
 
 Will always produce the string `required`, regardless of the language we are using in WordPress. Instead use one of the localization functions built into Wordpress.
 
-- [\_\_()](https://developer.wordpress.org/reference/functions/__/)
-- [\_e()](https://developer.wordpress.org/reference/functions/_e/)
-- [\_x()](https://developer.wordpress.org/reference/functions/_x/)
-- [\_ex()](https://developer.wordpress.org/reference/functions/_ex/)
-- [\_n()](https://developer.wordpress.org/reference/functions/_n/)
+* [\_\_()](https://developer.wordpress.org/reference/functions/__/)
+* [\_e()](https://developer.wordpress.org/reference/functions/_e/)
+* [\_x()](https://developer.wordpress.org/reference/functions/_x/)
+* [\_ex()](https://developer.wordpress.org/reference/functions/_ex/)
+* [\_n()](https://developer.wordpress.org/reference/functions/_n/)
 
 Using `_e()` the string to localize now looks like this:
 
@@ -65,22 +65,19 @@ WordPress uses [GNU Gettext](https://www.gnu.org/software/gettext/) to manage th
 
 I downloaded [Poedit](https://poedit.net) and chose to upgrade to the Pro version because it allows you to automatically create the translation files for a WordPress theme or plugin without having to do the work manually.
 
-![Opening screen for Poedit application](/images/2020/03/poedit-01.png)
-
-Opening screen for Poedit application
+![Opening screen for Poedit application](/https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/poedit-01)
 
 In this case we'll select `Translate WordPress theme or plugin` and move on to the next step.
 
 When we choose to work with a WordPress theme or plugin we're prompted for the following information
 
-- If we want to work with a remote server or locally
-
-    - If we want to work locally then enter the location of the theme or plugin we want to work with
-- If we want to create a new translation or a POT template to use as the basis for further transalations
+* If we want to work with a remote server or locally
+  * If we want to work locally then enter the location of the theme or plugin we want to work with
+* If we want to create a new translation or a POT template to use as the basis for further transalations
 
 For this post, we'll create a POT template for our theme.
 
-![POT Screen in Poedit](/images/2020/03/poedit-03.png)
+![POT Screen in Poedit](/https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/poedit-03)
 
 POT Screen in Poedit
 
@@ -88,7 +85,7 @@ When we click on create POT, we see all the translated strings available on the 
 
 You will be prompted to save the POT file and when you do, you will be asked what language are you translating for.
 
-![Poedit language selection](/images/2020/03/poedit-04.png)
+![Poedit language selection](/https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/poedit-04)
 
 Poedit Language Selection
 
@@ -96,7 +93,7 @@ We can then enter translations for each of the strings we chose to translate in 
 
 The Pro version allows you to pull translation from online sources. But, even without the online sources, you can translate the content yourself or you can handle the POT file to a commercial translator to work with.
 
-![Poedit language selection](/images/2020/03/poedit-05.png)
+![Poedit language selection](/https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/poedit-05)
 
 Poedit Translation Screen
 
@@ -104,8 +101,8 @@ You can use the POT to translate to multiple languages. Place the translations o
 
 ## Links and Resources
 
-- [Translating the theme you created](https://wpml.org/documentation/support/translating-the-theme-you-created/)
-- [Poedit](https://poedit.net/)
-- [The Text Domain in WordPress Internationalization](https://pascalbirchler.com/text-domain-wordpress-internationalization/)
-- [https://pascalbirchler.com/wordpress-internationalization-workflows/](https://pascalbirchler.com/wordpress-internationalization-workflows/)
-- [Improving Our Translation Workflow](https://required.com/en/translation-workflow-glotpress-traduttore/)
+* [Translating the theme you created](https://wpml.org/documentation/support/translating-the-theme-you-created/)
+* [Poedit](https://poedit.net/)
+* [The Text Domain in WordPress Internationalization](https://pascalbirchler.com/text-domain-wordpress-internationalization/)
+  * [https://pascalbirchler.com/wordpress-internationalization-workflows/](https://pascalbirchler.com/wordpress-internationalization-workflows/)
+* [Improving Our Translation Workflow](https://required.com/en/translation-workflow-glotpress-traduttore/)

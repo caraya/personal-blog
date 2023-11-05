@@ -19,8 +19,8 @@ But not all our users have the same hardware we do and bandwidth doesn’t cost 
 
 If we take for a fact that the next billion users will come from Asia (not counting Japan) and Africa then we definitely have to change our mindset as developers.
 
-- [Internet Statistics for Africa](http://www.internetworldstats.com/stats1.htm)
-- [Internet Statistics for Asia](http://www.internetworldstats.com/stats3.htm)
+* [Internet Statistics for Africa](http://www.internetworldstats.com/stats1.htm)
+* [Internet Statistics for Asia](http://www.internetworldstats.com/stats3.htm)
 
 I'll pick [India](http://www.internetworldstats.com/asia.htm#in) and [China](http://www.internetworldstats.com/asia.htm#cn) as two examples of what the next billion users may look like. I will not cover political censorship or the Great firewall in China. I don't know how the firewall works and it's outside my area of expertise. I also don't want to deal with politics.
 
@@ -52,13 +52,13 @@ One of the biggest surprises when researching this article was the difference br
 
 The tables below are taken from [stat counter](http://gs.statcounter.com/) and reflect data from June 2015 to June 2016.
 
-![StatCounter-browser-IN-monthly-201506-201606-bar](/images/2016/07/StatCounter-browser-IN-monthly-201506-201606-bar.png)
+![StatCounter-browser-IN-monthly-201506-201606-bar](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/StatCounter-browser-IN-monthly-201506-201606-bar)
 
-![Top 9 Mobile & Tablet Browsers in China from June 2015 to June 2016](/images/2016/07/StatCounter-browser-CN-monthly-201506-201606-bar.png)
+![Top 9 Mobile & Tablet Browsers in China from June 2015 to June 2016](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/StatCounter-browser-CN-monthly-201506-201606-bar)
 
-![StatCounter-browser-US-monthly-201506-201606-bar](/images/2016/07/StatCounter-browser-US-monthly-201506-201606-bar.png)
+![StatCounter-browser-US-monthly-201506-201606-bar](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/StatCounter-browser-US-monthly-201506-201606-bar)
 
-> **_I’m making the assumption that the version of Opera used in India and China is Opera Mini and that UC Browser is also a proxy browser_**
+> ***I’m making the assumption that the version of Opera used in India and China is Opera Mini and that UC Browser is also a proxy browser***
 
 [Opera Mini](http://www.opera.com/mobile/mini) and [UC Browser](http://www.ucweb.com/ucbrowser/) are proxy browsers. They work by sending your request to a remote server that fetches the resources for your page, filters some of the content, and returns a compressed blob to the device to render. Because of the way the current version of these browsers fetch the content they don’t handle Javascript or most things we take for granted.
 
@@ -66,8 +66,8 @@ The tables below are taken from [stat counter](http://gs.statcounter.com/) and r
 
 When we look at this question we should look at the following aspects:
 
-- The actual content we create
-- Handling device limitations and how it affects the content we create.
+* The actual content we create
+* Handling device limitations and how it affects the content we create.
 
 ### Cultural awareness on the content we create
 
@@ -149,21 +149,21 @@ If you decide to gracefully degrade your content how do you handle Proxy Browser
 
 To get an idea of what would a slow connection would do to your application throttle the connection. This is only available in Chrome Dev Tools under the network tab
 
-![](https://developers.google.com/web/tools/chrome-devtools/profile/network-performance/imgs/throttle-selection.png)
+![DevTools network throttling](https://developers.google.com/web/tools/chrome-devtools/profile/network-performance/imgs/throttle-selection.png)
 
 It’s a good approximation to what the experience is for users in that type of connection but it’s just that, an approximation. We should still test in the devices we expect our users to have and use.
 
 We should also test on actual devices mirroring, as close as possible, the devices we expect our users to have
 
-\[caption id="attachment\_787426" align="aligncenter" width="640"\]![Device pile by Adactio on Flicker (cc by 2.0)](/images/2016/07/6153522068_0437d550f7_z.jpg) Device pile by Adactio on Flicker (cc by 2.0)\[/caption\]
+![Device pile by Adactio on Flicker (cc by 2.0)](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/6153522068_0437d550f7_z)
 
 In addition to the variety of devices that we have in western countries (some of them shown in the image above) we have many other devices specific to regions or countries.
 
 Do you recognize any of these phones?
 
-- [Nokia X2 \_01-3610](http://www.gsmarena.com/nokia_x2_01-3610.php)
-- [Samsung E1282T](http://www.gsmarena.com/samsung_e1282t-5362.php)
-- [Nokia 2690](http://www.gsmarena.com/nokia_2690-3004.php) These are the top three mobile phones used in India in 2015 based on Opera agregate data and presented by Bruce Lawson at Velocity. Look at the specs and form factors of these phones. How does it affect the design and development process?
+* [Nokia X2 \_01-3610](http://www.gsmarena.com/nokia_x2_01-3610.php)
+* [Samsung E1282T](http://www.gsmarena.com/samsung_e1282t-5362.php)
+* [Nokia 2690](http://www.gsmarena.com/nokia_2690-3004.php) These are the top three mobile phones used in India in 2015 based on Opera agregate data and presented by Bruce Lawson at Velocity. Look at the specs and form factors of these phones. How does it affect the design and development process?
 
 One last aspect we need to consider is the size of our web content against what it’ll cost users to access it. India’s internet is slower and more expensive than we would expect.
 

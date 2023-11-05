@@ -1,17 +1,17 @@
 ---
 title: "Books as (web) apps"
 date: "2015-06-03"
-categories: 
+categories:
   - "technology"
 ---
-
-# Books as applications
 
 What would it take to make our books in to applications for the web? In this article we'll explore what is an application, what is a web application, why it now makes sense to turn our books in to web applications.
 
 ## What is an application? What is a web application?
 
-> Application software (an application) is a set of one or more programs designed to permit the user to perform a group of coordinated functions, tasks, or activities. Application software cannot run on itself but is dependent on system software to execute. Examples of an application include a word processor, a spreadsheet design and management system, an aeronautical flight simulator, a console game, a drawing, painting, and illustrating system, or a library management system. \[1\] From [Wikipedia](https://www.wikiwand.com/en/Application_software) A web application or web app is any software that runs in a web browser. It is created in a browser-supported programming language (such as the combination of JavaScript, HTML and CSS) and relies on a web browser to render the application.\[1\]\[2\]\[3\] Web applications are popular due to the ubiquity of web browsers, and the convenience of using a web browser as a client, sometimes called a thin client. The ability to update and maintain web applications without distributing and installing software on potentially thousands of client computers is a key reason for their popularity, as is the inherent support for cross-platform compatibility. Common web applications include webmail, online retail sales, online auctions, wikis and many other functions. From [Wikipedia](https://www.wikiwand.com/en/Web_application)
+> Application software (an application) is a set of one or more programs designed to permit the user to perform a group of coordinated functions, tasks, or activities. Application software cannot run on itself but is dependent on system software to execute. Examples of an application include a word processor, a spreadsheet design and management system, an aeronautical flight simulator, a console game, a drawing, painting, and illustrating system, or a library management system. \[1\] From [Wikipedia](https://www.wikiwand.com/en/Application_software) A web application or web app is any software that runs in a web browser. It is created in a browser-supported programming language (such as the combination of JavaScript, HTML and CSS) and relies on a web browser to render the application.\[1\]\[2\]\[3\] Web applications are popular due to the ubiquity of web browsers, and the convenience of using a web browser as a client, sometimes called a thin client. The ability to update and maintain web applications without distributing and installing software on potentially thousands of client computers is a key reason for their popularity, as is the inherent support for cross-platform compatibility. Common web applications include webmail, online retail sales, online auctions, wikis and many other functions.
+>
+> From [Wikipedia](https://www.wikiwand.com/en/Web_application)
 
 ## Open Web versus OS-specific Apps
 
@@ -31,9 +31,9 @@ People look at DRM as a way to preserve intellectual property and to keep people
 
 But DRM is not a perfect (or even a good) solution. Here are some reasons:
 
-- The DRM schemas can be broken and the content can still be given away. It is not a trivial exercise, true. But it's not very difficult either
-- If your ebook provider goes under you will loose access to your books unless the seller has made arrangements to continue supporting the DRM scheme
-- You're locked to your vendor. Amazon, Apple and Barnes and Nobles all use different DRM schemes and they are not compatible. You may still be locked to your vendor without DRM but it would make switching readers easier if they use a common format without restrictions
+* The DRM schemas can be broken and the content can still be given away. It is not a trivial exercise, true. But it's not very difficult either
+* If your ebook provider goes under you will loose access to your books unless the seller has made arrangements to continue supporting the DRM scheme
+* You're locked to your vendor. Amazon, Apple and Barnes and Nobles all use different DRM schemes and they are not compatible. You may still be locked to your vendor without DRM but it would make switching readers easier if they use a common format without restrictions
 
 Ian Hickson [writes about DRM](https://plus.google.com/+IanHickson/posts/iPmatxBYuj2). In one of the last paragraphs of the post, Hickson observes that:
 
@@ -208,7 +208,7 @@ Neither of the alternatives offers answers to how to load the fonts on the page.
 
 Some of the best fonts are not available through font services. If you're sure the font matches your needs and the license available (in most cases it's a different license for web and ebooks) you can host the font on your server and use it from there. There are ups and downs like having to provide for font obfuscation and other security measures to having a wider selections of fonts to license and use.
 
-Note the different versions of the same font you have to support to be compatible with most (all?) existing browsers. You probably can do away with supporting IE6 - IE8 if you can but that still leaves you with 5 different formats for each font you want to support (you can convert your woff font to woff2 using this [online converter](https://everythingfonts.com/woff-to-woff2).)
+Note the different versions of the same font you have to support to be compatible with most (all?) existing browsers. You probably can do away with supporting IE6 * IE8 if you can but that still leaves you with 5 different formats for each font you want to support (you can convert your woff font to woff2 using this [online converter](https://everythingfonts.com/woff-to-woff2).)
 
 We can embed fonts in our web sites (assuming that we have the license for doing so) with a command like this in our main CSS style sheet:
 
@@ -256,9 +256,9 @@ I love The Web Ahead. I think Jenn Simmons does an awesome job in selecting her 
 
 This was specially true about the typography episodes where she's talked to people who have changed the way that I look at fonts and how we use them on the web. The podcasts (in reverse chronological order) are:
 
-- [Delivering Typography](http://thewebahead.net/87) with Jason Pamental
-- [Wrangling Typefaces](http://thewebahead.net/83) with Jason Santa Maria
-- [Typography](http://thewebahead.net/30) with Richard Rutter
+* [Delivering Typography](http://thewebahead.net/87) with Jason Pamental
+* [Wrangling Typefaces](http://thewebahead.net/83) with Jason Santa Maria
+* [Typography](http://thewebahead.net/30) with Richard Rutter
 
 ### Picture elements and responsive images
 
@@ -266,10 +266,10 @@ Wouldn't it be nice if we could use something like Media Queries for images? We 
 
 The picture element attempts to solve 4 issues / Answer 4 questions:
 
-- Can I serve different image sizes based on some attribute of the browser accessing the page?
-- Can I provide different images based on DPI?
-- Can I provide different image formats based on device capability? (For example, not all browsers support WebP)
-- Can I provide different images based on my art direction requirements? (full size images may be overkill for smaller devices)
+* Can I serve different image sizes based on some attribute of the browser accessing the page?
+* Can I provide different images based on DPI?
+* Can I provide different image formats based on device capability? (For example, not all browsers support WebP)
+* Can I provide different images based on my art direction requirements? (full size images may be overkill for smaller devices)
 
 The example below, taken from Opera Developer's site[article on responsive images](https://dev.opera.com/articles/responsive-images/) takes the extreme view of supporting all 4 use cases for responsive images.
 
@@ -386,7 +386,7 @@ The second block adds the application icons that will appear in the home screen 
 
 The final step is to add the spalsh screen that will appear while the site is loading. As with the icons, we have to account for different size/resolution/DPI combinations for different devices.
 
-```markup
+```html
 <!-- iPhone/iPod Touch Portrait – 320 x 460 (standard resolution) -->
 <!-- These are not all available resolutions, do your homework -->
 <link rel="apple-touch-startup-image" href="/images/misc/splash-screen-320x460.png" media="screen and (max-device-width: 320px)" />
@@ -402,8 +402,8 @@ The final step is to add the spalsh screen that will appear while the site is lo
 
 Windows 8 (in tablets and phones) allows applications to be tiled on the start screen. We can take advantage of this feature by going to [buildmypinnedsite.com](http://www.buildmypinnedsite.com/en) completing the form and download the resulting kit. We can the paste the code below on the head of our pages and upload the associated images to the server.
 
-```markup
-<-- Windows 8+ tile stuff -- Assumes all content is uploaded to server -->
+```html
+<!-- Windows 8+ tile stuff -- Assumes all content is uploaded to server -->
 <meta name="application-name" content="My Awesome Site"/>
 <meta name="msapplication-TileColor" content="#e809e8"/>
 <meta name="msapplication-square70x70logo" content="tiny.png"/>
@@ -414,15 +414,15 @@ Windows 8 (in tablets and phones) allows applications to be tiled on the start s
 
 #### Chrome on Android
 
-Chrome takes a two-prong approach to adding web apps to the homescreen. First it asks to link to a json manifest file (in the example below I called it `manifest.json`
+Chrome takes a two-prong approach to adding web apps to the homescreen. First it asks to link to a json manifest file (in the example below I called it `manifest.json`).
 
-```markup
+```html
 <link rel="manifest" href="manifest.json">
 ```
 
 The manifest itself looks like this:
 
-```
+```js
 {
   "name": "Web Application Manifest Sample",
   "icons": [
@@ -552,10 +552,10 @@ gulp.task('sass', function() {
 
 Gulp allows you to pipe commands to output of the previous command. The example below will do the following:
 
-- Convert the SASS files into CSS
-- Minify the CSS
-- Rename the CSS file and convert it to .min.css
-- Write the resulting file out
+* Convert the SASS files into CSS
+* Minify the CSS
+* Rename the CSS file and convert it to .min.css
+* Write the resulting file out
 
 ```javascript
 //declare the task
@@ -576,9 +576,9 @@ As you can see, each Gulp tasks does one thing and then passes its output as the
 
 ### Grunt / Gulp links and resources
 
-- [http://blog.cohaesus.co.uk/post/98963160289/managing-your-tasks-with-grunt-and-gulp](http://blog.cohaesus.co.uk/post/98963160289/managing-your-tasks-with-grunt-and-gulp)
-- [https://medium.com/@preslavrachev/gulp-vs-grunt-why-one-why-the-other-f5d3b398edc4](https://medium.com/@preslavrachev/gulp-vs-grunt-why-one-why-the-other-f5d3b398edc4)
-- [Gulp visual editor](http://gulpfiction.divshot.io/)
+* [http://blog.cohaesus.co.uk/post/98963160289/managing-your-tasks-with-grunt-and-gulp](http://blog.cohaesus.co.uk/post/98963160289/managing-your-tasks-with-grunt-and-gulp)
+* [https://medium.com/@preslavrachev/gulp-vs-grunt-why-one-why-the-other-f5d3b398edc4](https://medium.com/@preslavrachev/gulp-vs-grunt-why-one-why-the-other-f5d3b398edc4)
+* [Gulp visual editor](http://gulpfiction.divshot.io/)
 
 ## Towards Subcompact Publishing
 
@@ -588,14 +588,14 @@ He suggests that books should have: An open web presence with the complete book 
 
 Then in [Subcompact Publishing](http://craigmod.com/journal/subcompact_publishing/) he proposes a departure from tradition in the digital publishing business. It advocates for a system that has/is:
 
-- Small issue sizes (3-7 articles / issue)
-- Small file sizes
-- Digital-aware subscription prices
-- Fluid publishing schedule
-- Scroll (don’t paginate)
-- Clear navigation
-- HTML(ish) based
-- Touching the open web
+* Small issue sizes (3-7 articles / issue)
+* Small file sizes
+* Digital-aware subscription prices
+* Fluid publishing schedule
+* Scroll (don’t paginate)
+* Clear navigation
+* HTML(ish) based
+* Touching the open web
 
 While some of these areas apply to periodical publications (magazines and such) several of these elements are applicable to a wider publishing channels.
 
@@ -603,20 +603,18 @@ While some of these areas apply to periodical publications (magazines and such) 
 
 Note that not all examples listed are books or book-like web experiences. Some, like Unnumbered Sparks, are listed because there was some aspect I thought important to highlight.
 
-```
-  <h3>Books and magazines</h3>
-```
+### Books and magazines
 
-- [Offline Reader](https://jeffy.info/offline-ereader/index.html). I'm not much for paginated content but think this is an example of how to make it work. It is also built with Polymer so it's become a good model of how this can be done
-- [Artspace Tokyo](http://read.artspacetokyo.com/) by Craig Mod and Ashley Rawlings. It highlights a lot of the ethos of Subcompact Publishing and how to Platform books
-- [Shape of Design](http://read.shapeofdesignbook.com/) by Fran Chimero. The navigation was a little hard to understand at first but once I understood the metaphor it became very easy to navigate
-- [The Magazine](http://the-magazine.com) provides a good example of what a SubCompact publication may look like. What I loved the most was t he speed of publication, how long it took to download and read and, particularly, the little link trick where clicking on a link will pop up a small window with information about the link and the giving you the option of actually going to the link
+* [Offline Reader](https://jeffy.info/offline-ereader/index.html). I'm not much for paginated content but think this is an example of how to make it work. It is also built with Polymer so it's become a good model of how this can be done
+* [Artspace Tokyo](http://read.artspacetokyo.com/) by Craig Mod and Ashley Rawlings. It highlights a lot of the ethos of Subcompact Publishing and how to Platform books
+* [Shape of Design](http://read.shapeofdesignbook.com/) by Fran Chimero. The navigation was a little hard to understand at first but once I understood the metaphor it became very easy to navigate
+* [The Magazine](http://the-magazine.com) provides a good example of what a SubCompact publication may look like. What I loved the most was t he speed of publication, how long it took to download and read and, particularly, the little link trick where clicking on a link will pop up a small window with information about the link and the giving you the option of actually going to the link
 
 ### Other Online
 
-- [Liz Danzico's blog](http://bobulate.com/tagged/words) provides a clean and crisp interface. I particularly love the way the site (designed by Jason Santa Maria) uses white space
-- [Climbing Everest](http://www.washingtonpost.com/graphics/world/scaling-everest/) presents a fully interactive experience and it draws the reader to interact with the content
-- [Tokyo Otaku](https://www.facebook.com/tokyootakumode) Mode started as a Facebook page and reached over 3 million subscribers before developing apps and how to subvert the publishing and marketing worlds
-- [Unnumbered Sparks](http://www.unnumberedsparks.com/) is the largest web browser I've ever seen. There is a Chrome instance about 10 million pixels that projects users' interactions into the hanging structure. Every time I see this project (both the video and the material available at the Autodesk Museum in San Francisco) makes me think I'm not thinking big enough
-- [Cabbibo's website](http://cabbibo.com/) makes extensive use of WebGL and 3D web as an expressive medium. It is in the convergence of 2D and 3D where we can find the trully expressive potential of the web
-- [Forest Giant](http://webplatform.adobe.com/Demo-for-National-Geographic-Forest-Giant/browser/src/) and [Alice in Woderland](http://webplatform.adobe.com/Demo-for-Alice-s-Adventures-in-Wonderland/) are technology demonstrations from Adobe that push the envelope of what you can do with web technologies. Unfortunately some of the CSS technologies have been caught in what I call "specification hell" with a very uncertain future (which makes me really sad)
+* [Liz Danzico's blog](http://bobulate.com/tagged/words) provides a clean and crisp interface. I particularly love the way the site (designed by Jason Santa Maria) uses white space
+* [Climbing Everest](http://www.washingtonpost.com/graphics/world/scaling-everest/) presents a fully interactive experience and it draws the reader to interact with the content
+* [Tokyo Otaku](https://www.facebook.com/tokyootakumode) Mode started as a Facebook page and reached over 3 million subscribers before developing apps and how to subvert the publishing and marketing worlds
+* [Unnumbered Sparks](http://www.unnumberedsparks.com/) is the largest web browser I've ever seen. There is a Chrome instance about 10 million pixels that projects users' interactions into the hanging structure. Every time I see this project (both the video and the material available at the Autodesk Museum in San Francisco) makes me think I'm not thinking big enough
+* [Cabbibo's website](http://cabbibo.com/) makes extensive use of WebGL and 3D web as an expressive medium. It is in the convergence of 2D and 3D where we can find the trully expressive potential of the web
+* [Forest Giant](http://webplatform.adobe.com/Demo-for-National-Geographic-Forest-Giant/browser/src/) and [Alice in Woderland](http://webplatform.adobe.com/Demo-for-Alice-s-Adventures-in-Wonderland/) are technology demonstrations from Adobe that push the envelope of what you can do with web technologies. Unfortunately some of the CSS technologies have been caught in what I call "specification hell" with a very uncertain future (which makes me really sad)

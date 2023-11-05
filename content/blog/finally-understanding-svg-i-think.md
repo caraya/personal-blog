@@ -26,15 +26,13 @@ To create an 800px by 600px SVG element use the following code:
 <svg  width="800px" height="600px"
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink">
-  <!-- the content goes here -->
+  <!-* the content goes here -->
 </svg>
 ```
 
 It will produce an SVG element like the one below, captured from Sara Soueidan's [Interactive SVG Coordinate System demo](https://www.sarasoueidan.com/demos/interactive-svg-coordinate-system/)
 
-![](/images/2019/03/svg-viewport-measurements-1024x778.png)
-
-SVG viewport with only height and width
+![SVG viewport with only height and width](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/svg-viewport-measurements-1024x778)
 
 Size attributes are optional. We'll look at how to manage to size and control the aspect ratio of SVG images later in the post. One thing I'm not sure about is whether we need the dimensions to prevent unwanted reflow of the page… more research needed there.
 
@@ -50,8 +48,8 @@ The width is the width in user coordinates/px units, within the SVG code, that s
 
 The x and y numbers specify the coordinate, in the scaled viewBox coordinate system, to use for the top left corner of the SVG viewport. For simple scaling, you can set both values to 0. However, x and y values are useful for two purposes:
 
-- Create a coordinate system with an origin centered in the drawing (this can make defining and transforming shapes easier)
-- Crop an image tighter than it was originally defined.
+* Create a coordinate system with an origin centered in the drawing (this can make defining and transforming shapes easier)
+* Crop an image tighter than it was originally defined.
 
 Once you add a viewBox to your <svg> document you can use that SVG file as an image, or as inline SVG code, and it will scale perfectly to fit within whatever size you give it, it will not be stretched or distorted if you give it dimensions that don't match the aspect ratio.
 
@@ -81,14 +79,12 @@ Test for compatibility with your target browsers and that the result will work a
 
 ### Links and resources
 
-- Specifications
-
-    - [SVG 1.1 (second edition)](https://www.w3.org/TR/SVG11/)
-    - [SVG 2](https://css-tricks.com/svg-2-conundrum/)
-- [The SVG 2 Conundrum](https://css-tricks.com/svg-2-conundrum/)
-- The difference between size and viewport
-
-    - [Understanding SVG Coordinate Systems and Transformations (Part 1) — The viewport, viewBox, and preserveAspectRatio](https://www.sarasoueidan.com/blog/svg-coordinate-systems/)
-    - [Understanding SVG Coordinate Systems and Transformations (Part 2) — The transform Attribute](https://www.sarasoueidan.com/blog/svg-transformations/)
-    - [Understanding SVG Coordinate Systems and Transformations (Part 3) — Establishing New Viewports](https://www.sarasoueidan.com/blog/nesting-svgs/)
-    - [How to scale SVG](https://css-tricks.com/scale-svg/)
+* Specifications
+  * [SVG 1.1 (second edition)](https://www.w3.org/TR/SVG11/)
+  * [SVG 2](https://css-tricks.com/svg-2-conundrum/)
+  * [The SVG 2 Conundrum](https://css-tricks.com/svg-2-conundrum/)
+* The difference between size and viewport
+  * [Understanding SVG Coordinate Systems and Transformations (Part 1) — The viewport, viewBox, and preserveAspectRatio](https://www.sarasoueidan.com/blog/svg-coordinate-systems/)
+  * [Understanding SVG Coordinate Systems and Transformations (Part 2) — The transform Attribute](https://www.sarasoueidan.com/blog/svg-transformations/)
+  * [Understanding SVG Coordinate Systems and Transformations (Part 3) — Establishing New Viewports](https://www.sarasoueidan.com/blog/nesting-svgs/)
+  * [How to scale SVG](https://css-tricks.com/scale-svg/)

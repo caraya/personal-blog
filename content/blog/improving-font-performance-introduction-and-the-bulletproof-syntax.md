@@ -7,9 +7,7 @@ Talking about web font performance is more than just talking about adding the fo
 
 Because of their size fonts tend to be some of the largest components of any web pages. According to the HTTP Archive, the median of requested fonts is 98KB for Desktop and 83.4KB for mobile.
 
-![](/images/2018/11/font-bytes.png)
-
-Comparison of median font sizes from 2010 to today
+![Comparison of median font sizes from 2010 to today](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/font-bytes)
 
 Making our fonts performant is particularly important when working with large variable fonts; [Roboto VF](https://github.com/TypeNetwork/Roboto) is 976KB when compressed with WOFF2 and, if not cached, can significantly impact the performance of the page.
 
@@ -29,10 +27,10 @@ While we had the specification for how to load fonts there was no standard font 
 
 That's where the `bulletproof @font-face syntax` came in. It tried to support all browsers so we only declare the font once with multiple formats to accommodate different browsers. Over the years there have been multiple versions of the syntax, dating back to 2009:
 
-- [Bulletproof @font-face Syntax (2009)](https://www.paulirish.com/2009/bulletproof-font-face-implementation-syntax/)
-- [The New Bulletproof @font-face Syntax (2011)](http://blog.fontspring.com/2011/02/the-new-bulletproof-font-face-syntax/)
-- [Further Hardening of the Bulletproof @font-face Syntax (2011)](http://blog.fontspring.com/2011/02/further-hardening-of-the-bulletproof-syntax/), with “Extra Bulletproofiness” 😀
-- [How to Bulletproof @font-face Web Fonts (2011)](http://sixrevisions.com/css/font-face-web-fonts-issues)
+* [Bulletproof @font-face Syntax (2009)](https://www.paulirish.com/2009/bulletproof-font-face-implementation-syntax/)
+* [The New Bulletproof @font-face Syntax (2011)](http://blog.fontspring.com/2011/02/the-new-bulletproof-font-face-syntax/)
+* [Further Hardening of the Bulletproof @font-face Syntax (2011)](http://blog.fontspring.com/2011/02/further-hardening-of-the-bulletproof-syntax/), with “Extra Bulletproofiness” 😀
+* [How to Bulletproof @font-face Web Fonts (2011)](http://sixrevisions.com/css/font-face-web-fonts-issues)
 
 The next section explores how much it has evolved and whether we still need the full syntax to work with Modern browsers.
 

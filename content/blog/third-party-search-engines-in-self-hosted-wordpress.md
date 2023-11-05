@@ -29,9 +29,7 @@ For testing the plugin, I'll concentrate on the configuration and weighing of te
 
 Self-hosted configuration is just adding the URL to the Elasticsearch server, since we're running everything on the same machine it's just pointing to the Docker Elasticsearch instance
 
-![](/images/2021/07/elastic-search-0.png)
-
-Elastic Press Configuration Dialogue
+![Elastic Press Configuration Dialogue]( https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/elastic-search-0)
 
 Adding more weight to an item will mean it will have more presence during searches. For example, adding more weight to the content attribute will cause search matches on the post content to appear more prominently.
 
@@ -39,15 +37,11 @@ I want to prioritize the content over the other searchable fields for my blog so
 
 I don't use pages on my blog so I'm OK with leaving all weights for pages equal. This may change when the site uses pages
 
-![](/images/2021/07/elastic-search-1.png)
-
-Elasticpress weight configuration for WordPress posts and pages
+![Elasticpress weight configuration for WordPress posts and pages]( https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/elastic-search-1)
 
 I have two custom post types in my development blog. Then we can search the books' CPT by content or taxonomy. The glossary CPT doesn't have a taxonomy so we can only weigh the content.
 
-![](/images/2021/07/elastic-search-2.png)
-
-Elasticpress weight configuration for WordPress custom post types
+![Elasticpress weight configuration for WordPress custom post types]( https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/elastic-search-2)
 
 ### Elasticsearch: Production
 
@@ -67,9 +61,7 @@ Algolia is a managed search service. Third-party plugins enable WordPress to use
 
 Unlike Elasticsearh, Algolia is configured mostly on the server. The only thing we configure on the WordPress plugin is the information about the server, you get the information from your Algolia server configuration.
 
-![](/images/2021/07/algolia-0.png)
-
-Algolia Search WordPress plugin configuration
+![Algolia Search WordPress plugin configuration]( https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/algolia-0)
 
 The main advantage (or disadvantage) that I see is that there's only one set of configuration tools to set up. However, I miss the weight settings in Elasticsearch and wish there was an equivalent functionality for Algolia
 

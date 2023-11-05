@@ -5,13 +5,13 @@ categories:
   - "typography"
 ---
 
-[![kerning](/images/2015/07/kerning.png)](http://xkcd.com/1015/)
+![Kerning (from [XKCD](http://xkcd.com/)1015/)](https://imgs.xkcd.com/comics/kerning.png)
 
 > Kerning can refer to one of two things: spacing instructions that type designers put into font files to mitigate awkward character combinations, or spacing adjustments that graphic designers make as they typeset
 
 In this section we will only discuss the second definition of Kerning. We will cover both the built-in CSS kerning features and [Lettering.js](http://letteringjs.com/), a Javascript library that provides enhanced support for kerning and other formatting using CSS. The idea is to adjust the kerning without having to do any refactoring of the content.
 
-Automatic kerning in CSS depends on [Open Type Features](#open-type-features), particularly in the kerning attribute being enabled. This will change from font to font and is embedded in the font when created.
+Automatic kerning in CSS depends on Open, particularly in the kerning attribute being enabled. This will change from font to font and is embedded in the font when created.
 
 \[codepen\_embed height="618" theme\_id="2039" slug\_hash="RPZrKv" default\_tab="result" user="caraya"\]See the Pen [Automatic Kerning](http://codepen.io/caraya/pen/RPZrKv/) by Carlos Araya ([@caraya](http://codepen.io/caraya)) on [CodePen](http://codepen.io).\[/codepen\_embed\]
 
@@ -56,13 +56,13 @@ Working with Lettering.js is a three step process.
 
 Following the [Lettering.js Wiki Example](https://github.com/davatron5000/Lettering.js/wiki/Wrapping-letters-with-lettering()) we will use this as our example text:
 
-```
+```html
 <h1 class="fancy_title">Some Title
 ```
 
 First, we need to load and initialize the plugin as you would any other plugin:
 
-```markup
+```html
 <script src="path/to/jquery.min.js"></script>
 <script src="path/to/jquery.lettering.min.js"></script>
 <script>
@@ -82,7 +82,7 @@ If you let your content load before scripts and stylesheets are loaded then the 
 
 The result will appear like this:
 
-```markup
+```html
 <h1 class="fancy_title">
   <span class="char1">S</span>
   <span class="char2">o</span>
@@ -107,11 +107,11 @@ Which then we can style with CSS looking something like this:
 
 We can be even more detailed in how we break our content out and how much we style it. In the example below:
 
-```
+```html
 <h1>My Three Sons</h1>
 ```
 
-```markup
+```html
 <script>
   $("h1").lettering('words').children('span').lettering();
 </script>
@@ -119,7 +119,7 @@ We can be even more detailed in how we break our content out and how much we sty
 
 The lettering invocation will create spans for words and then it will split each word into its component characters, producing HTML like the one below:
 
-```markup
+```html
 <h1>
   <span class="word1">
     <span class="char1">M</span>
@@ -145,17 +145,12 @@ Although, as mentioned earlier, this is not good for larger chunks of text the p
 
 ### Links and resources
 
-From MDN
-
-- [https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing](https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing)
-- [https://developer.mozilla.org/en-US/docs/Web/CSS/word-spacing](https://developer.mozilla.org/en-US/docs/Web/CSS/word-spacing)
-
-Other resources
-
-- [http://www.elliotjaystocks.com/blog/kerning/](http://www.elliotjaystocks.com/blog/kerning/)
-- [Kerning on the web](http://blog.typekit.com/2014/02/05/kerning-on-the-web/)
-- [Type Study: and example of Lettering.js](http://blog.typekit.com/2011/01/06/type-study-an-example-of-lettering-js/)
-- [Type study: A better kerning experience with Kern.js](http://blog.typekit.com/2011/06/03/type-study-a-better-kerning-experience-with-kern-js/)
-- [Torture Kerning](http://ilovetypography.com/2007/09/15/type-torture-kerning/)
-
-\[caption width="357" align="aligncenter"\][![If you really hate someone, teach them to recognize bad kerning](//imgs.xkcd.com/comics/kerning.png)](http://xkcd.com/1015/) If you really hate someone, teach them to recognize bad kerning\[/caption\]
+* From MDN
+  * [https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing](https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing)
+  * [https://developer.mozilla.org/en-US/docs/Web/CSS/word-spacing](https://developer.mozilla.org/en-US/docs/Web/CSS/word-spacing)
+* Other resources
+  * [http://www.elliotjaystocks.com/blog/kerning/](http://www.elliotjaystocks.com/blog/kerning/)
+  * [Kerning on the web](http://blog.typekit.com/2014/02/05/kerning-on-the-web/)
+  * [Type Study: and example of Lettering.js](http://blog.typekit.com/2011/01/06/type-study-an-example-of-lettering-js/)
+  * [Type study: A better kerning experience with Kern.js](http://blog.typekit.com/2011/06/03/type-study-a-better-kerning-experience-with-kern-js/)
+  * [Torture Kerning](http://ilovetypography.com/2007/09/15/type-torture-kerning/)

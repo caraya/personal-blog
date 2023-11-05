@@ -25,17 +25,11 @@ The images that follow present Request Map results for three different websites,
 
 For the CNN request map, note that the circles are smaller and the name of individual assets is impossible to read because of the number of assets involved.
 
-![](/images/2020/06/requestmap-rivendellweb-net.png)
+![Requet map for [rivendellweb.net](https://rivendellweb.net). Created from [Request Map Generator](https://requestmap.webperf.tools/)](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/requestmap-rivendellweb-net.png)
 
-Requet map for [rivendellweb.net](https://rivendellweb.net). Created from [Request Map Generator](https://requestmap.webperf.tools/)
+![Requet map for [layout-experiments.firebaseapp.com](https://layout-experiments.firebaseapp.com). Created from [Request Map Generator](https://requestmap.webperf.tools/)](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/requestmap-layout-experiments-scaled)
 
-![request map for layout-experiments.firebaseapp.com](/images/2020/06/requestmap-layout-experiments-scaled.jpg)
-
-Requet map for [layout-experiments.firebaseapp.com](https://layout-experiments.firebaseapp.com). Created from [Request Map Generator](https://requestmap.webperf.tools/)
-
-![request map for cnn.com](/images/2020/06/requestmap-cnn-scaled.jpg)
-
-Requet map for [CNN](https://www.cnn.com). Created from [Request Map Generator](https://requestmap.webperf.tools/)
+![Requet map for [CNN](https://www.cnn.com). Created from [Request Map Generator](https://requestmap.webperf.tools/)](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/requestmap-cnn-scaled)
 
 ## Solving the issue
 

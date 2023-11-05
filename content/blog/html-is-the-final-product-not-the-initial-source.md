@@ -7,16 +7,18 @@ categories:
 
 ## HTML is the final product
 
-In researching the technologies and tools that I use when developing digital content I've come across multiple discussions about what's the best way to create HTML for X application (ebooks, web, transforming into other formats and any number of ideas. Some people think that HTML is perfect for everyone to write, regardless of experience and comfort with the technology. We forget that HTML now is very different to HTML as it was originally created.
+In researching the technologies and tools that I use when developing digital content I've come across multiple discussions about what's the best way to create HTML for X application (ebooks, web, transforming into other formats and any number of ideas). Some people think that HTML is perfect for everyone to write, regardless of experience and comfort with the technology. We forget that HTML now is very different to HTML as it was originally created.
 
-> HTML —which is short for HyperText Markup Language— is the official language of the World Wide Web and was first conceived in 1990. HTML is a product of SGML (Standard Generalized Markup Language) which is a complex, technical specification describing markup languages, especially those used in electronic document exchange, document management, and document publishing. HTML was originally created to allow those who were not specialized in SGML to publish and exchange scientific and other technical documents. HTML especially facilitated this exchange by incorporating the ability to link documents electronically using hyperlinks. From [http://www.ironspider.ca/webdesign101/htmlhistory.htm](http://www.ironspider.ca/webdesign101/htmlhistory.htm)
+> HTML —which is short for HyperText Markup Language— is the official language of the World Wide Web and was first conceived in 1990. HTML is a product of SGML (Standard Generalized Markup Language) which is a complex, technical specification describing markup languages, especially those used in electronic document exchange, document management, and document publishing. HTML was originally created to allow those who were not specialized in SGML to publish and exchange scientific and other technical documents. HTML especially facilitated this exchange by incorporating the ability to link documents electronically using hyperlinks.
+>
+> From [http://www.ironspider.ca/webdesign101/htmlhistory.htm](http://www.ironspider.ca/webdesign101/htmlhistory.htm)
 
 The biggest issue, in my opinion, is that HTML has become a lot more complicated than the initial design. Creating HTML content (particularly when used in conjunction with CSS frameworks like Bootstrap or Zurb or with applications that use additional semantic elements like ePub) takes a lot more than just knowing markup to code them correctly. It takes knowledge of the document structure, the semantics needed for the content or the applications we are creating and the restrictions and schemas that we need to use so that the content will pass validation.
 
 This article presents 4 different approaches to creating HTML. Two of them use HTML directly but target it as the final output for transformations and templating engines; the other two use markup like HTML without requiring strict HTML conformance. I've made these selections for two reasons:
 
-- People who are not profesionals should not have to learn all the details of creating an ePub3 table of content or know the classes to add to elements to create a Bootsrap or Foundation layout grid
-- It makes it easier for developers and designers to build the layout for the content without having to worry about the content itself; we can play with layout and content organization in parallel with content creation and, if we need to make any further changes, we just run our compilation process again
+* People who are not profesionals should not have to learn all the details of creating an ePub3 table of content or know the classes to add to elements to create a Bootsrap or Foundation layout grid
+* It makes it easier for developers and designers to build the layout for the content without having to worry about the content itself; we can play with layout and content organization in parallel with content creation and, if we need to make any further changes, we just run our compilation process again
 
 ## Markdown
 
@@ -54,9 +56,9 @@ The [documentation](http://asciidoctor.org/docs/) provides more detailed instruc
 
 ### Example Asciidoc documents
 
-- [Asciidoctor planning document](https://raw.githubusercontent.com/asciidoctor/asciidoctor-documentation/master/infrastructure-goals-planning.adoc)
-- [Comparison of Asciidoctor and AsciiDoc Features](https://raw.githubusercontent.com/asciidoctor/asciidoctor.org/master/docs/asciidoc-asciidoctor-diffs-table.adoc)
-- [Applying Custom Themes](https://raw.githubusercontent.com/asciidoctor/asciidoctor.org/master/docs/_includes/apply-theme.adoc)
+* [Asciidoctor planning document](https://raw.githubusercontent.com/asciidoctor/asciidoctor-documentation/master/infrastructure-goals-planning.adoc)
+* [Comparison of Asciidoctor and AsciiDoc Features](https://raw.githubusercontent.com/asciidoctor/asciidoctor.org/master/docs/asciidoc-asciidoctor-diffs-table.adoc)
+* [Applying Custom Themes](https://raw.githubusercontent.com/asciidoctor/asciidoctor.org/master/docs/_includes/apply-theme.adoc)
 
 ## HTMLBook
 
@@ -82,7 +84,7 @@ The user must learn not only the required HTML5 syntax but also the details rega
 
 ### Example HTMLbook document
 
-- [Alice Adventures in Wonderland marked as HTMLbook](https://github.com/oreillymedia/HTMLBook/blob/master/samples/alices_adventures_in_wonderland.html)
+* [Alice Adventures in Wonderland marked as HTMLbook](https://github.com/oreillymedia/HTMLBook/blob/master/samples/alices_adventures_in_wonderland.html)
 
 ## XML / XSLT
 
@@ -96,15 +98,15 @@ The issues with xml are similar to those involved in creating HTML. The markup v
 
 The screenshot below shows OxygenXML Author working in a Docbook 5 document using visual mode.
 
-\[caption id="attachment\_275067" align="aligncenter" width="800"\][![Visual editing using OxygenXML Author](/images/2014/08/visual-editing-mode-small.png)](http:/images/2014/08/visual-editing-mode-small.png) Visual editing using OxygenXML Author\[/caption\]
+![Visual editing using OxygenXML Author](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/visual-editing-mode-small)
 
 The positive side is that using XSLT there is no limit to what we can do with our XML content.
 
 ### XML examples
 
-- [Sample Chapter marked as Docbook](https://github.com/oreillymedia/docbook_samples/blob/master/ch01.xml)
-- [Tales by Edgar Allan Poe, marked as TEI](http://docsouth.unc.edu/southlit/poe/poe.xml)
-- [Chapter from 20000 Leagues Under the Sea, marked as DITA](http://sourceforge.net/p/dita2indesign/code/HEAD/tree/trunk/dita_gutenberg_samples/dita_src/20000_leagues/chapters/d2e10630.xml)
+* [Sample Chapter marked as Docbook](https://github.com/oreillymedia/docbook_samples/blob/master/ch01.xml)
+* [Tales by Edgar Allan Poe, marked as TEI](http://docsouth.unc.edu/southlit/poe/poe.xml)
+* [Chapter from 20000 Leagues Under the Sea, marked as DITA](http://sourceforge.net/p/dita2indesign/code/HEAD/tree/trunk/dita_gutenberg_samples/dita_src/20000_leagues/chapters/d2e10630.xml)
 
 ## Conclusion
 

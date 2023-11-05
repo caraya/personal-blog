@@ -7,28 +7,24 @@ Rachel Andrew's [It’s more than just the words](https://rachelandrew.co.uk/arc
 
 Does anyone remember when the only way to get a site online was to get your school (if you were so lucky) to provide you space for your web presence. Then came Geocities and other 'mass' host providers and we saw the birth and proliferation of the "weird" web... either one was the place where most of us began to play with the web.
 
-![](https://i.kinja-img.com/gawker-media/image/upload/s--xJ-WV4WZ--/c_fit,fl_progressive,q_80,w_636/18edh1t46fw0spng.png)
+![Example Geocities Page](https://i.kinja-img.com/gawker-media/image/upload/s--xJ-WV4WZ--/c_fit,fl_progressive,q_80,w_636/18edh1t46fw0spng.png)
 
-![](http://blog.geocities.institute/wp-content/uploads/tumblr_mlk9sgmvAC1rlkewbo1_12801.png)
+![Example Geocities Page](http://blog.geocities.institute/wp-content/uploads/tumblr_mlk9sgmvAC1rlkewbo1_12801.png)
 
-![](http://cdn0.dailydot.com/cache/0e/e3/0ee32ed1e94e79d7d53d7be26bec7aa1.jpg)
-
-Example Geocities Pages
+![Example Geocities Page](http://cdn0.dailydot.com/cache/0e/e3/0ee32ed1e94e79d7d53d7be26bec7aa1.jpg)
 
 Then some of us moved to private commercial hosting. I went through IO.com mostly because I could get free access to Steve Jackson's game at the time. The page below is an experiment from that era
 
-![](/images/2017/02/homepage-circa-1994-95.png)
-
-Author's home page circa 1995 via the Wayback machine
+![Author's home page circa 1995 via the Wayback machine](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/)
 
 It evolved from there both in terms of hosting (where it went to the school's server, to IO and then to the WELL) and in terms of content, the more I learned the better I was able to present the content both in terms of HTML structure, CSS presentation and Javascript behaviors.
 
 As time passed we've been able to host our content in third party applications and it became easier:
 
-- We can upload images to Flickr or Google Photos
-- We can host our written content in Wordpress blogs, AWS or Google Cloud
-- Video can be hosted in Youtube or Vimeo
-- Code samples can be placed in JSbin or Codepen
+* We can upload images to Flickr or Google Photos
+* We can host our written content in Wordpress blogs, AWS or Google Cloud
+* Video can be hosted in Youtube or Vimeo
+* Code samples can be placed in JSbin or Codepen
 
 But, as Rachel points out on her post, we loose flexibility for convenience. We loose the flexibility of creating our own designs and surrender to the way other people want us to create our content.
 
@@ -40,7 +36,7 @@ Before jumping into hosting locally versus using third party hosted apps I'll ta
 
 A cross-origin request is one where the resource is located in a different server than the one making the request. For example the following example makes a cross-origin request from server a to server b.
 
-```markup
+```html
 <!-- This is a normal link pointing to a resource on same server -->
 <a href="resource.html">local resource on server a</a>
 <!-- This link is placed on server a -->
@@ -49,9 +45,7 @@ A cross-origin request is one where the resource is located in a different serve
 
 For security reasons, browsers restrict cross-origin HTTP requests initiated from within scripts. For example, XMLHttpRequest and Fetch follow the [same-origin policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy). So, a web application using XMLHttpRequest or Fetch could only make HTTP requests to its own domain. To improve web applications, developers asked browser vendors to allow cross-domain requests.
 
-![](https://mdn.mozillademos.org/files/14295/CORS_principle.png)
-
-Another example of how CORS requests work. Taken from [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)
+![Another example of how CORS requests work. Taken from [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)](https://mdn.mozillademos.org/files/14295/CORS_principle.png)
 
 CORS (Cross-Origin Resource Sharing) provides a way for servers to indicate who can access their resources. The only thing necessary for CORS to work is a header on a server's response to indicate to indicate they they can serve resources across domains. The header is:
 
@@ -84,9 +78,9 @@ app.post('/', function(req, res, next) {
 
 Apache's configuration style can be used in three different places:
 
-- Default configuration
-- Directory / Virtual Host configuration
-- .htaccess configuration
+* Default configuration
+* Directory / Virtual Host configuration
+* .htaccess configuration
 
 To enable CORS we use `mod_headers` to set the header we want to, something like this:
 
@@ -173,8 +167,8 @@ The flip side is that we limit ourselves to the way the companies want us to wor
 
 Two of my biggest concerns have always been:
 
-- What happens if a service goes down and how do we migrate the content from the service to a new offering
-- How much will it cost (both time and money) to move from one service to another.
+* What happens if a service goes down and how do we migrate the content from the service to a new offering
+* How much will it cost (both time and money) to move from one service to another.
 
 Some of my experiences using other hosted services include the ones below.
 
@@ -198,9 +192,7 @@ Google Photos images are stored in the cloud and indexed by Google using their t
 
 When I first started using it I chose it because of its simplicity and, back then, because it had features that were unique to the platform... and for the longest time they worked well.
 
-![](/images/2017/02/codepen-embed-dialogue.png)
-
-Embed preview/creation dialogue
+![Embed preview/creation dialogue](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/codepen-embed-dialogue)
 
 Over time the sheer number of embeds that I use made Codepen use prohibitive in terms of performance. The Javascript code for the emebeds is not shared across multiple embeds and I've never been certain on how (if) they are cached by the browser. The more distinct elements that we need to fetch from the network the higher the potential for our application to become unresponsive or sluggish.
 
@@ -222,13 +214,13 @@ I host 2 blogs with Wordpress, my personal blog started 10 years ago with 1 and 
 
 Some of the things I particularly like about hosting Wordpress on my own:
 
-- I can run the SVN version of Wordpress which means I can run my development environment with the latest Wordpress code
-- It gives me the ability to install and run any theme or plugin I want or need and I can debug them with whatever tools I need
+* I can run the SVN version of Wordpress which means I can run my development environment with the latest Wordpress code
+* It gives me the ability to install and run any theme or plugin I want or need and I can debug them with whatever tools I need
 
 Some of the downsides:
 
-- You must know you way around a Unix system both through command line and GUI interfaces in Unix or OS X. There's probably a way to automate the process with a GUI but I choose to do it manually. It works better and it's what I'm used to it
-- Unless you're working directly on the server and Vi (the editor) is your friend you must have a way to transfer the files to the server for your production system. Either through SFTP, FTP or some other way to transfer files
+* You must know you way around a Unix system both through command line and GUI interfaces in Unix or OS X. There's probably a way to automate the process with a GUI but I choose to do it manually. It works better and it's what I'm used to it
+* Unless you're working directly on the server and Vi (the editor) is your friend you must have a way to transfer the files to the server for your production system. Either through SFTP, FTP or some other way to transfer files
 
 ## Google Cloud
 
@@ -236,4 +228,4 @@ It is technically possible to serve static HTTP sites from Google Cloud Storage 
 
 As the site warns this will only work with HTTP sites (shame Google Cloud) but they provide these [alternatives](https://cloud.google.com/storage/docs/static-website#https) to deliver content through HTTPS.
 
-COnsidering that most technologies now require HTTPS to work this makes Google Cloud a less appealing alternative for hosting experimental content.
+Considering that most technologies now require HTTPS to work this makes Google Cloud a less appealing alternative for hosting experimental content.

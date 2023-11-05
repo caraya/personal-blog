@@ -47,14 +47,14 @@ And how we use the component on our document.
 
 There are times when a custom element is too much. We might need a smaller chunk of functionality or we may need to enhance an already-existing element instead of creating a whole new element. You can create a custom element that extends a native HTML element and its features. This is called a Type Extension Custom Element. To use the element, use the original tag and specify the custom tag name using the is attribute.
 
-```markup
+```html
 <input is="x-component"></div>
 ```
 
 To define a type extension:
 
-- Create the base prototype object using the prototype of the extended element, instead of HTMLElement.
-- Add an extends key in the second argument to document.registerElement(), specifying the tag name of the extended element.
+* Create the base prototype object using the prototype of the extended element, instead of HTMLElement.
+* Add an extends key in the second argument to document.registerElement(), specifying the tag name of the extended element.
 
 Following is an example code when extending the input element:
 
@@ -69,19 +69,19 @@ Notice that it extends: 'input' and its prototype is based on HTMLInputElement i
 
 #### Github's example
 
-\[caption id="attachment\_786599" align="aligncenter" width="272"\][![Github Relative Time on display](/images/2015/06/gh-relative-time.png)](http:/images/2015/06/gh-relative-time.png) Github Relative Time on display\[/caption\]
+![Github Relative Time on display](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/gh-relative-time)
 
 GitHub has a component that displays date and time as shown above. Notice they are not absolute dates/times but relative to the browser's current time. GitHub uses a Type Extension Custom Element accomplish this. The HTML code looks like this:
 
-\[caption id="attachment\_786598" align="aligncenter" width="747"\][![HTML source for time type extension custom element](/images/2015/06/gh-time-tag.png)](http:/images/2015/06/gh-time-tag.png) HTML source for time type extension custom element\[/caption\]
+![HTML source for time type extension custom element](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/gh-time-tag)
 
 There some things to notice:
 
-- time tag is used as a base element
-- datetime attribute indicates an absolute date/time
-- `is='time-ago'` specifies a type extension
-- The tag's content indicates a relative date/time
-- This is done on the fly as a type extension.
+* time tag is used as a base element
+* datetime attribute indicates an absolute date/time
+* `is='time-ago'` specifies a type extension
+* The tag's content indicates a relative date/time
+* This is done on the fly as a type extension.
 
 Even if web components are not supported or Javascript is disabled we will still be able to see when the file was last changed. If you disable Javascript from your browser's
 

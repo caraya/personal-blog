@@ -130,13 +130,11 @@ Min for body text (the old 4.5:1) |
 Min for body text (the old 4.5:1) |
 | 10: 1 | 90 | Preferred level for body text |
 
-But see also the following figures that explain what the specific values mean for readability.
+But see also the following figures that explain what the
 
-![APCA contrast values and explanation. Original from [Dan Hollick](https://twitter.com/DanHollick/status/1468958658683805703?s=20&t=GMyDkCKNvOjTbEbrr6eGvA)](/images/2022/12/apca-contrast-01.png)
+![APCA contrast values and explanation. Original from [Dan Hollick](https://twitter.com/DanHollick/status/1468958658683805703?s=20&t=GMyDkCKNvOjTbEbrr6eGvA)](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/apca-contrast-01)
 
-{style: "max-width: 600px; width: 600px;"}
-
-![APCA contrast values and explanation. Original from [Dan Hollick](https://twitter.com/DanHollick/status/1468958658683805703?s=20&t=GMyDkCKNvOjTbEbrr6eGvA)](/images/2022/12/apca-contrast-02.png)
+![APCA contrast values and explanation. Original from [Dan Hollick](https://twitter.com/DanHollick/status/1468958658683805703?s=20&t=GMyDkCKNvOjTbEbrr6eGvA)](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/apca-contrast-02)
 
 {style: "max-width: 600px; width: 600px;"}
 

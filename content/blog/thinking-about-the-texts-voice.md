@@ -7,9 +7,7 @@ As I've played more and more with fonts, both in terms of trying to find good pa
 
 Reading issue 61 of [Coffee Table Typography](https://www.getrevue.co/profile/coffeetabletypography/issues/61-interpunct-for-the-future-145914) brought some display fonts for titles to my attention. It also raised some interesting questions about the voice of a text and how do we convey that voice through typography and other elements specific to the web when crafting type and reading experiences online.
 
-![](/images/2018/12/alfred-bester-covers.jpg)
-
-Two covers from Alfred Bester Novels using Serif Gothic
+![Two covers from Alfred Bester Novels using Serif Gothic](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/alfred-bester-covers)
 
 There are fonts that call immediate evoke a certain mood or feeling.
 
@@ -17,9 +15,7 @@ Look at the figure above of two book covers for works from Alfred Bester using S
 
 Another excellent example of how can a typeface can affect the way we perceive or react to a visual display is [Marvin](https://www.readvisions.com/marvin). The page contains a wealth of information and shows you what you can do with the font.
 
-![](https://www.readvisions.com/assets/images/marvin-postcard-8.png)
-
-An example postcard from the [Marvin](https://www.readvisions.com/marvin) website
+![An example postcard from the [Marvin](https://www.readvisions.com/marvin) website](https://www.readvisions.com/assets/images/marvin-postcard-8.png)
 
 ## What is the text trying to say?
 
@@ -29,15 +25,11 @@ Take [Handlee](https://fonts.google.com/specimen/Handlee) and [Pacifico](https:/
 
 Handlee is more playful and informal.
 
-![](https://speckyboy.com/wp-content/uploads/2013/07/18-handlee-webfont-google-open-source.png)
-
-Example of Handlee Regular.
+![Example of Handlee Regular.](https://speckyboy.com/wp-content/uploads/2013/07/18-handlee-webfont-google-open-source.png)
 
 Pacifico is the opposite, more formal and what I would expect to see in a diploma or other formal documents.
 
-![](/images/2018/12/script-fonts-Google-Pacifico.png)
-
-Example of Pacifico font.
+![Example of Pacifico font.](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/script-fonts-Google-Pacifico)
 
 ## Looking matching fonts
 

@@ -9,11 +9,11 @@ categories:
 
 For those of us who have been playing in/with 'the web' for 10 years or longer remember pages like the ones in the figures below. There was no Javascript and, I believe, the original CSS specification was released in 1996 so there was no CSS to play with.
 
-\[caption id="attachment\_786434" align="aligncenter" width="630"\]![Netscape 0.9](/images/2015/06/Mosaic_Netscape_0.png) Netscape 0.9\[/caption\]
+[Netscape Navigator 0.9](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/Mosaic_Netscape_0)
 
-\[caption id="attachment\_786435" align="aligncenter" width="640"\]![Wikipedia in Netscape 1.22](/images/2015/06/Navigator_1-22.png) WIkipedia in Netscape 1.22\[/caption\]
+![Wikipedia in Netscape 1.22](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/Navigator_1-22)
 
-\[caption id="attachment\_786429" align="aligncenter" width="600"\]![Hyperreal.org circa 1996 (via Internet Archive}](/images/2015/06/hyperreal-org-1996-archive.png) Hyperreal.org circa 1996 (via Internet Archive}\[/caption\]
+![Hyperreal.org circa 1996 (via Internet Archive)](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/hyperreal-org-1996-archive)
 
 Why do I bring this up? Because we've gotten spoiled by riches. We talk about critical rendering path, page load and web typography and that's good. But we forget that what may be an acceptable page load in Mountain View, California may not be acceptable in Thailand where the dominant form of Internet access is the mobile smart phone ([Tech Wire Asia](http://www.techwireasia.com/1152/mobile-internet-users-up-40pc-in-thailand-iphone-dominant/)).
 

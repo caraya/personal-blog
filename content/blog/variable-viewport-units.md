@@ -5,10 +5,10 @@ date: "2023-10-04"
 
 We're used to a set of viewport units that represent the size of the browser's viewport.
 
-- `vw`: 1% of the width of the viewport size
-- `vh`: 1% of the height of the viewport size
-- `vmin`: the smaller of `vw` or `vh`
-- `vmax`: the larger of `vw` or `vh`
+* `vw`: 1% of the width of the viewport size
+* `vh`: 1% of the height of the viewport size
+* `vmin`: the smaller of `vw` or `vh`
+* `vmax`: the larger of `vw` or `vh`
 
 The existing viewport units deal with physical properties.
 
@@ -24,9 +24,9 @@ Although the viewport size can change, `vw` and `vh` do not. Elements sized to b
 
 The CSS working group has codified three new groups of viewports units:
 
-- Large
-- Small
-- Dynamic
+* Large
+* Small
+* Dynamic
 
 These new viewport units address issues with the existing viewport units and the presence or absence of browser UI elements.
 
@@ -34,48 +34,48 @@ When we talk about UA or browser interfaces, we're talking about things like add
 
 ### Large viewport units
 
-![Large viewport show in the blue background. Browser address var and navigation are hidden. Source: [Interop 2022](https://github.com/web-platform-tests/interop-2022-viewport/blob/main/explainers/viewport-units.md)](/images/2023/05/large-viewport.png)
+![Large viewport show in the blue background. Browser address var and navigation are hidden. Source: [Interop 2022](https://github.com/web-platform-tests/interop-2022-viewport/blob/main/explainers/viewport-units.md)](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/large-viewport)
 
 The large viewport sizes assumes that any UA interfaces that are dynamically retracted are retracted.
 
 Units representing the large viewport have the lv prefix. The units are:
 
-- lvw
-- lvh
-- lvi
-- lvb
-- lvmin
-- lvmax
+* lvw
+* lvh
+* lvi
+* lvb
+* lvmin
+* lvmax
 
 ### Small viewport units
 
-![Small viewport show in light green color. The image shows the browser address bar at the top and the browser navigation bar at the bottom. Source: [Interop 2022](https://github.com/web-platform-tests/interop-2022-viewport/blob/main/explainers/viewport-units.md)](/images/2023/05/small-viewport.png)
+![Small viewport show in light green color. The image shows the browser address bar at the top and the browser navigation bar at the bottom. Source: [Interop 2022](https://github.com/web-platform-tests/interop-2022-viewport/blob/main/explainers/viewport-units.md)](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/small-viewport)
 
 The small viewport units assume that any UA interfaces are expanded.
 
 Units representing the small viewport have the sv prefix. The units are:
 
-- svw (width)
-- svh (height)
-- svi (inline dimension)
-- svb (block dimension)
-- svmin (smaller of svw and svh)
-- svmax (larger of svw and svh)
+* svw (width)
+* svh (height)
+* svi (inline dimension)
+* svb (block dimension)
+* svmin (smaller of svw and svh)
+* svmax (larger of svw and svh)
 
 ### Dynamic viewport units
 
-![Dynamic viewport showing the same value in both small (left) and large (right) vieports. Source: [Interop 2022](https://github.com/web-platform-tests/interop-2022-viewport/blob/main/explainers/viewport-units.md)](/images/2023/05/dynamic-viewport.png)
+![Dynamic viewport showing the same value in both small (left) and large (right) vieports. Source: [Interop 2022](https://github.com/web-platform-tests/interop-2022-viewport/blob/main/explainers/viewport-units.md)](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/dynamic-viewport)
 
 The dynamic viewport will automatically adjust itself in response to UA interface elements being shown or not. The changes to dynamic viewport units will **not** show automatically. Browsers have a different strategy to update the dynamic viewport values.
 
 The dynamic viewport units are:
 
-- dvw
-- dvh
-- dvi
-- dvb
-- dvmin
-- dvmax
+* dvw
+* dvh
+* dvi
+* dvb
+* dvmin
+* dvmax
 
 ## So when would you use wich?
 
@@ -105,8 +105,8 @@ There is also a dynamic viewport set of units that will adjust themselves based 
 
 A better explanation, taken from web.dev's [The large, small, and dynamic viewport units](https://web.dev/viewport-units/) site:
 
-- If the dynamic toolbars are expanded, the dynamic viewport is equal to the size of the small viewport
-- If the dynamic toolbars are retracted, the dynamic viewport is equal to the size of the large viewport.
+* If the dynamic toolbars are expanded, the dynamic viewport is equal to the size of the small viewport
+* If the dynamic toolbars are retracted, the dynamic viewport is equal to the size of the large viewport.
 
 ### A Note on Logical Viewport Units
 
@@ -144,9 +144,9 @@ For the default viewports, the new units are:
 
 The logical viewport units for large, small and dynamic viewports are:
 
-- `lvi` and `lvb`
-- `svi` and `svb`
-- `dvi` and `dvb`
+* `lvi` and `lvb`
+* `svi` and `svb`
+* `dvi` and `dvb`
 
 ### Things to consider
 
@@ -164,9 +164,9 @@ The on-screen keyboard (also known as the virtual keyboard) is not considered pa
 
 ## Links and resources
 
-- [The large, small, and dynamic viewport units](https://web.dev/viewport-units/) — web.dev
-- [The Large, Small, and Dynamic Viewports](https://www.bram.us/2021/07/08/the-large-small-and-dynamic-viewports/)
-- [https://blog.webdevsimplified.com/2022-08/css-viewport-units/](https://blog.webdevsimplified.com/2022-08/css-viewport-units/)
-- [CSS \*vh (dvh, lvh, svh) and \*vw units](https://dev.to/frehner/css-vh-dvh-lvh-svh-and-vw-units-27k4)
-- [Variable Units](https://drafts.csswg.org/css-variables-2/#variable-units) — CSS Variables Level 2 specification
-- [Viewport-percentage Lengths (aka “Viewport-relative Units”) explainer](https://github.com/web-platform-tests/interop-2022-viewport/blob/main/explainers/viewport-units.md) — Interop 2022
+* [The large, small, and dynamic viewport units](https://web.dev/viewport-units/) — web.dev
+* [The Large, Small, and Dynamic Viewports](https://www.bram.us/2021/07/08/the-large-small-and-dynamic-viewports/)
+* [https://blog.webdevsimplified.com/2022-08/css-viewport-units/](https://blog.webdevsimplified.com/2022-08/css-viewport-units/)
+* [CSS \*vh (dvh, lvh, svh) and \*vw units](https://dev.to/frehner/css-vh-dvh-lvh-svh-and-vw-units-27k4)
+* [Variable Units](https://drafts.csswg.org/css-variables-2/#variable-units) — CSS Variables Level 2 specification
+* [Viewport-percentage Lengths (aka “Viewport-relative Units”) explainer](https://github.com/web-platform-tests/interop-2022-viewport/blob/main/explainers/viewport-units.md) — Interop 2022

@@ -238,7 +238,7 @@ Adobe has created a [CSS regions polyfill](https://github.com/adobe-webplatform/
 
 We will take one of our example images from the top newspapers and convert it into a fluid web layout that uses regions and shapes to layout multiple flows of content in the same page.
 
-![dmn7](/images/2013/11/dmn7.jpg)
+![dmn7](11/dmn7.jpg)
 
 I know that you can do some of the same things that you use regions for. It is true that the CSS uses a combination of flexbox and regions. The looks of the example are a limitation of my skills with CSS and not necessarily a reflection of the recomendations and their implementations.
 

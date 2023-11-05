@@ -18,15 +18,15 @@ In recent versions of Google Chrome, there is a new **Audits** panel in Dev Tool
 
 To get started open Dev Tools (`Control+Shift+I` in Windows, `Command+option+i` on Mac). You will see something similar to the image below. Click on `Audits`.
 
-![Audit Panel in Chrome Dev Tools](/images/2017/12/audits-panel-devtool.png)
+![Audit Panel in Chrome Dev Tools](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/audits-panel-devtool)
 
 This will present you with a list of possible audits to run. In this case, we want to uncheck all audits except accessibility. Then we click `Run Audit`.
 
-![Available Audits in Chrome Dev Tools](/images/2017/12/devtools-avilable-audits.png)
+![Available Audits in Chrome Dev Tools](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/devtools-avilable-audits)
 
 Chrome will run its tests and give you a score and a list of items to change shown below.
 
-![Accessibility Audits Results](/images/2017/12/devtools-accessibility-audit-result.png)
+![Accessibility Audits Results](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/devtools-accessibility-audit-result)
 
 It's important to realize that, while automated testing is good and will get you most of the way there, manual testing and decision making are still important.
 
@@ -48,12 +48,12 @@ For Chrome the process is simple:
 * Install the extension when prompted
 * Open DevTools and select aXe or aXe Coconut (Figure 4 is open with aXe)
 
-![aXe ready to run](/images/2017/12/axe-after-install.png)
+![aXe ready to run](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/axe-after-install)
 
 * Click Analyze on the left-hand frame
 * Axe will produce a report with all accessibility violations (figure 5 shows aXe Coconut)
 
-![aXe Coconut report](/images/2017/12/axe-coconut-report.png)
+![aXe Coconut report](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/axe-coconut-report)
 
 As with the Lighthouse report, there are things that we'll have to manually decide if there are errors or not and whether we need to change the code to fix the problems aXe reported.
 

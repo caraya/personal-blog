@@ -3,9 +3,7 @@ title: "CSS Containment"
 date: "2019-04-17"
 ---
 
-![](/images/2019/03/css-is-awesome.jpg)
-
-Containment may help prevent this and make CSS even more awesome :)
+![Containment may help prevent this and make CSS even more awesome](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/css-is-awesome)
 
 Whenever we insert HTML elements after the document loads by inserting new CCSS rules or new elements via Javascript, we may be slowing down the rendering of the page because every change means the browser has to navigate all the elements in scope and re-render them as needed, they may have been moved or changed their dimensions when our target element grew smaller or larger;
 
@@ -16,32 +14,25 @@ The `contain` CSS property allows an author to indicate that an element and its 
 It can take one or more of the following values:
 
 `size`
-
-The size of the element can be computed without checking its children, the element dimensions are independent of its contents.
+: The size of the element can be computed without checking its children, the element dimensions are independent of its contents.
 
 `layout`
-
-The internal layout of the element is totally isolated from the rest of the page, it’s not affected by anything outside and its contents cannot have any effect on the ancestors.
+: The internal layout of the element is totally isolated from the rest of the page, it’s not affected by anything outside and its contents cannot have any effect on the ancestors.
 
 `style`
-
-Indicates that, for properties that can have effects on more than just an element and its descendants, those effects don't escape the containing element.
-
-The style values has been marked `at risk` and, as such, it may not make it to the final recomendation. Mozilla has already dropped it from Firefox.
+: Indicates that, for properties that can have effects on more than just an element and its descendants, those effects don't escape the containing element.
+: The style values has been marked `at risk` and, as such, it may not make it to the final recomendation. Mozilla has already dropped it from Firefox.
 
 `paint`
-
-Descendants of the element cannot be displayed outside its bounds, nothing will overflow this element (or if it does it won’t be visible).
+: Descendants of the element cannot be displayed outside its bounds, nothing will overflow this element (or if it does it won’t be visible).
 
 In addition, there are two grouping values that shorten what you type as the value of the attribute:
 
-strict
+`strict`
+: This value turns on all forms of containment except style contain for the element. It behaves the same as `contain: size layout paint`
 
-This value turns on all forms of containment except style contain for the element. It behaves the same as `contain: size layout paint`
-
-content
-
-This value turns on all forms of containment _except_ size containment and style containment for the element. It behaves the same as `contain: layout paint;`.
+`content`
+: This value turns on all forms of containment *except* size containment and style containment for the element. It behaves the same as `contain: layout paint;`.
 
 When we add the `newly-added-element` element to the page, it will trigger styles, layout, and paint but, one thing we need to consider is that the DOM for the whole document is in scope. The browser will have to consider all the elements irrespective of whether or not they were changed when it comes to styles layouts and paint.
 
@@ -83,10 +74,10 @@ To make sure that the layout and paint for our `new-element` div don't affect th
 
 ## Links and resources
 
-- [An introduction to CSS Containment](https://blogs.igalia.com/mrego/2019/01/11/an-introduction-to-css-containment/)
-- [CSS Containment Module Level 1](https://www.w3.org/TR/css-contain-1/)
-- [Can I use: CSS containment](https://caniuse.com/#feat=css-containment)
-- [CSS Triggers](https://csstriggers.com/) — What gets triggered by mutating a given property
-- [CSS Containment in Chrome 52](https://developers.google.com/web/updates/2016/06/css-containment)
-- [Avoid Large, Complex Layouts and Layout Thrashing](https://developers.google.com/web/fundamentals/performance/rendering/avoid-large-complex-layouts-and-layout-thrashing)
-- [CSS Contain](https://developer.mozilla.org/en-US/docs/Web/CSS/contain)
+* [An introduction to CSS Containment](https://blogs.igalia.com/mrego/2019/01/11/an-introduction-to-css-containment/)
+* [CSS Containment Module Level 1](https://www.w3.org/TR/css-contain-1/)
+* [Can I use: CSS containment](https://caniuse.com/#feat=css-containment)
+* [CSS Triggers](https://csstriggers.com/) &mdash; What gets triggered by mutating a given property
+* [CSS Containment in Chrome 52](https://developers.google.com/web/updates/2016/06/css-containment)
+* [Avoid Large, Complex Layouts and Layout Thrashing](https://developers.google.com/web/fundamentals/performance/rendering/avoid-large-complex-layouts-and-layout-thrashing)
+* [CSS Contain](https://developer.mozilla.org/en-US/docs/Web/CSS/contain)

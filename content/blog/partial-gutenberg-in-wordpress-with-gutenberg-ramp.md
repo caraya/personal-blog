@@ -40,13 +40,11 @@ I will cover an example of how to create the custom loop in a future post.
 
 ## Install and configure Gutenberg Ramp
 
-In your WordPress Admin Screen go to **_Admin > Plugins > Add New_** and enter _Gutenberg Ramp_ in the search box.
+In your WordPress Admin Screen go to ***Admin > Plugins > Add New*** and enter *Gutenberg Ramp* in the search box.
 
-Once you install it and activate it go to the **_settings > writing_** menu. You will see a way to tell Gutenberg Ramp what kinds of content to use Gutenberg with.
+Once you install it and activate it go to the **settings > writing** menu. You will see a way to tell Gutenberg Ramp what kinds of content to use Gutenberg with.
 
-![](/images/2021/02/gutenberg_ramp.png)
-
-Gutenberg Ramp settings screen showing how to choose the post types that will use Gutenberg
+![Gutenberg Ramp settings screen showing how to choose the post types that will use Gutenberg](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/gutenberg_ramp)
 
 We can also configure Gutenberg programmatically. Loading Gutenberg for all post types, which is equivalent to not using the plugin, can be done with the code below
 
@@ -75,16 +73,13 @@ This is equivalent to using the admin screen as we did in a previous section.
 Whether this solution works for you will depend on several factors. Some of the factors that I can think of are:
 
 1. Does Gutenberg meet your needs?
-
-    - Does Gutenberg works well as a standalone product?
-    - Do you need to create custom blocks?
-    - Do you need to use third-party block libraries?
-
-        - How well do these third-party block libraries integrated with Gutenberg and any custom blocks?
+   * Does Gutenberg works well as a standalone product?
+   * Do you need to create custom blocks?
+   * Do you need to use third-party block libraries?
+     * How well do these third-party block libraries integrated with Gutenberg and any custom blocks?
 2. Do the blocks match the style of your blog or site?
-
-    - If they don't match, then how much work do you need to do to make them match?
-    - Do the styles for the editor match the styles in the front end?
+   * If they don't match, then how much work do you need to do to make them match?
+   * Do the styles for the editor match the styles in the front end?
 3. Do you need to create custom blocks or patterns?
 4. Are you and your content creators happy with the way Gutenberg works?
 

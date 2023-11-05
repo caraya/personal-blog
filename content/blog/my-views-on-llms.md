@@ -1,5 +1,5 @@
 ---
-title: My thoughts on AI - Where we are and where we\'re going
+title: My thoughts on AI - Where we are and where we're going
 date: 2023-12-31
 draft: true
 youtube: true
@@ -126,16 +126,23 @@ I will echo three of the recommendations from the paper:
 **Best Practice #3: LLM users carry the onus of being knowledgeable and informed**: People using LLMs should be knowledgeable about the technology and its limitations. They should also experts in the field they are using LLMs on.
 
 **Best Practice #4: Individuals who employ LLMs in the workplace must be vigilant regarding threats**: The data that we feed into LLMs becomes part of the training data set and can be shared with users outside your organization.
-: This is a potential security risk and should be addressed within organizations with strong data security and data protection policies both extant and newly created to address LLMs.
+
+This is a potential security risk and should be addressed within organizations with strong data security and data protection policies both extant and newly created to address LLMs.
 
 **Data ownership is a concern**.
 : One of the biggest unresolved issues with LLMs is data ownership. How are the LLMs builders capturing the data that they use in training their models? How are they ensuring that the data they use is not commercially licensed or under license that requires attribution or payment?
-: There is a wave of lawsuits regarding data ownership and how LLMs use the collected data.
-: [In generative AI legal Wild West, the courtroom battles are just getting started](https://www.cnbc.com/2023/04/03/in-generative-ai-legal-wild-west-lawsuits-are-just-getting-started.html) shows some of the legal issues arising from LLMs and how the companies that create them collect data to train them.
-: Most of the LLM training data sets is created by scraping data from existing web sources. Scraping is not new and is something that data owners have had to fight against for years.
-: The scrappers for LLMs and their purpose were not known at the time so they would not be handled like other similar applications were at the time.
-: But the emergence of commercial LLMs like ChatGPT and large-scale experiments like Google Bard have brought the issue to the forefront and have rekindled the debate on data ownership and how it is used.
-: This has led to a number of lawsuits against companies that created LLMs.
+
+There is a wave of lawsuits regarding data ownership and how LLMs use the collected data.
+
+[In generative AI legal Wild West, the courtroom battles are just getting started](https://www.cnbc.com/2023/04/03/in-generative-ai-legal-wild-west-lawsuits-are-just-getting-started.html) shows some of the legal issues arising from LLMs and how the companies that create them collect data to train them.
+
+Most of the LLM training data sets is created by scraping data from existing web sources. Scraping is not new and is something that data owners have had to fight against for years.
+
+The scrappers for LLMs and their purpose were not known at the time so they would not be handled like other similar applications were at the time.
+
+But the emergence of commercial LLMs like ChatGPT and large-scale experiments like Google Bard have brought the issue to the forefront and have rekindled the debate on data ownership and how it is used.
+
+This has led to a number of lawsuits against companies that created LLMs.
 
 I've summarized some of the lawsuits related to LLMs and data ownership below.
 
@@ -157,6 +164,7 @@ I've summarized some of the lawsuits related to LLMs and data ownership below.
 : So, it's not a copyright violation. If anything, ChatGPT failed to properly attribute the content as required by the Creative Commons license. How will the courts see this difference is hard to tell but it's something worth keeping in mind.
 
 ['New York Times' considers legal action against OpenAI as copyright tensions swirl](https://www.npr.org/2023/08/16/1194202562/new-york-times-considers-legal-action-against-openai-as-copyright-tensions-swirl)
+
 [Report: Potential NYT lawsuit could force OpenAI to wipe ChatGPT and start over](https://arstechnica.com/tech-policy/2023/08/report-potential-nyt-lawsuit-could-force-openai-to-wipe-chatgpt-and-start-over/)
 : The New York Times is also considering a lawsuit against OpenAI as the licensing negotiatons to include NYT content in ChatGPT's training data have stalled and may have broken down
 : A lawsuit from the Times against OpenAI would set up what could be the most high-profile legal case yet over copyright protection in the age of generative AI.
@@ -174,9 +182,7 @@ I've summarized some of the lawsuits related to LLMs and data ownership below.
 
 ## What else can AI do?
 
-A lot of times I see AI used to represent LLMs and that is a dangerous misconception.
-
-LLM is not the only field of AI that has been made public, it's the one that has been hyped the most.
+A lot of times I see AI used to represent LLMs and that is a dangerous misconception. LLMs is not the only field of AI that has been made public, it's the one that has been hyped the most recently.
 
 Google (both before and after merging all AI research into Google DeepMind) created a number of AI products and services that, in my opinion, are more impressive and useful than LLMs.
 

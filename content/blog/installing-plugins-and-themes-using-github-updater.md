@@ -29,14 +29,12 @@ Only one of these options is necessary.
 
 To install a new item (plugin or theme) from its Git repository fill out the forms and press the installation button.
 
-![](/images/2021/04/github-updater-theme-update.png)
+![Github Updated Install Theme Dialogue](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/github-updater-theme-update)
 
-Github Updated Install Theme Dialogue
+
 
 Both installations require the URI for the project, the branch of code you want to install from and the remote repository host and optionally, a GitHub access token.
 
-![](/images/2021/04/github-updater-plugin-update.png)
-
-Github Updater Install Plugins Dialogue
+![Github Updater Install Plugins Dialogue](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/github-updater-plugin-update)
 
 This tool will make installations and updates easier; we can keep themes and plugins in their respective directories throughout their life.

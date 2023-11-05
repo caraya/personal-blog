@@ -15,7 +15,7 @@ What I find the most intriguing about this functionality is how it groups elemen
 
 Layers allow you to organize styles in groups and to specify the order in which those groups cascade and get applied to a document.
 
-![Where layers sit in determining styles. Taken from [The Future of CSS: Cascade Layers (CSS @layer)](https://www.bram.us/2021/09/15/the-future-of-css-cascade-layers-css-at-layer/)](/images/2021/11/css-cascade-cascade-layers-bramus-1120x630-1.png)
+![Where layers sit in determining styles. Taken from [The Future of CSS: Cascade Layers (CSS @layer)](https://www.bram.us/2021/09/15/the-future-of-css-cascade-layers-css-at-layer/)](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/css-cascade-cascade-layers-bramus-1120x630-1)
 
 Layers are processed before the browser looks at specificity and the order of appearance of CSS so they help reduce some of the problems that come with specificity and the order of appearance of CSS selectors. They also provide grouping for styles; you can create layers that group styles together for specific purposes. For example, you could use a layer for reset styles, one for generic theme elements, and a different layer for specific element overrides.
 

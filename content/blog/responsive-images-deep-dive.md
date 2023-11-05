@@ -3,13 +3,13 @@ title: "Responsive Images Deep Dive"
 date: "2019-02-25"
 ---
 
-Responsive images seek to answer the following question: **_How can we incorporate images in responsive layouts that are appropriate for a device and its resolution without loading unnecessarily large images for mobile devices_**? It is not always intuitive and it has taken me years to get my head wrapped around the responsive images concepts and how to build the images.
+Responsive images seek to answer the following question: ***How can we incorporate images in responsive layouts that are appropriate for a device and its resolution without loading unnecessarily large images for mobile devices***? It is not always intuitive and it has taken me years to get my head wrapped around the responsive images concepts and how to build the images.
 
 The idea is that we have images sized for each type of device and we let the browser decide which one is most appropriate for the device, resolution and screen size combination like the image below shows.
 
-![](/images/2019/02/responsive-images-overview-890631.png)
+![How responsive images work](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/responsive-images-overview-890631)
 
-Different versions of the same image depending on device and resolution. The problem responsive images try to solve. From [Internetting is hard](https://internetingishard.com/html-and-css/responsive-images/responsive-images-overview-890631.png)
+Different versions of the same image depending on device and resolution. The problem responsive images try to solve. From [Internetting is hard](https://internetingishard.netlify.app/html-and-css/responsive-images/)
 
 We'll discuss a few of the [use cases](http://usecases.responsiveimages.org/) for responsive images and ways to automate the generation of all images (because if we have to do it manually then we're less likely to do it... :))
 
@@ -86,11 +86,11 @@ The `picture` element can have one or more `source` children. We can tailor thes
 
 Each `source` element can have one or more of the following attributes:
 
-- **src** — Address of the resource
-- **type** — Type of embedded resource
-- **srcset** — Images to use in different situations (e.g. high-resolution displays, small monitors, etc)
-- **sizes** — Image sizes for different page layouts
-- **media** — Applicable media
+* **src** — Address of the resource
+* **type** — Type of embedded resource
+* **srcset** — Images to use in different situations (e.g. high-resolution displays, small monitors, etc)
+* **sizes** — Image sizes for different page layouts
+* **media** — Applicable media
 
 So we can build the pixel densities and viewport widths use cases inside the individual source elements.
 
@@ -184,20 +184,18 @@ do
 
 The script looks for images in `images/master` and for each image that it finds there it performs the following tasks:
 
-- It resizes the image to a square of the corresponding size and generates a jpg image
-
-    - It uses a quality of 75
-    - It interlaces the images to create progressive JPGs
-- It resizes the image to a square of the corresponding size and generates a Webp image
-
-    - The script makes WebP use lossy compression to make the images as small as possible (`-define webp:lossless=false`)
+* It resizes the image to a square of the corresponding size and generates a jpg image
+  * It uses a quality of 75
+  * It interlaces the images to create progressive JPGs
+* It resizes the image to a square of the corresponding size and generates a Webp image
+  * The script makes WebP use lossy compression to make the images as small as possible (`-define webp:lossless=false`)
 
 The script stores the images in subdirectories of `images/` named after the size we created them with (`100`, and so on).
 
 The script has a few areas where it can be improved:
 
-- It matches only JPEG files, not PNG or TIFF
-- It makes squares of the images, regardless of the original size. This may not be desirable when we work with responsive images for art direction
+* It matches only JPEG files, not PNG or TIFF
+* It makes squares of the images, regardless of the original size. This may not be desirable when we work with responsive images for art direction
 
 How to change this is left as an exercise for the reader :)
 
@@ -300,10 +298,10 @@ There are tools that will automate and simplify the process so there's no techni
 
 ## Links and Resources
 
-- [Responsive Images Community Group](https://responsiveimages.org/)
-- [Why we need responsive images](https://timkadlec.com/2013/06/why-we-need-responsive-images/)
-- [I <3 image bytes](http://www.stevesouders.com/blog/2013/04/26/i/)
-- [HTTPArchive State of Images Report](https://httparchive.org/reports/state-of-images)
-- [Responsive Images](https://alistapart.com/article/responsive-images)
-- [Responsive Images 101, Part 1: Definitions](https://cloudfour.com/thinks/responsive-images-101-definitions)
-- [Responsive Images, Part 10: Conclusion](https://cloudfour.com/thinks/responsive-images-part-10-conclusion/)
+* [Responsive Images Community Group](https://responsiveimages.org/)
+* [Why we need responsive images](https://timkadlec.com/2013/06/why-we-need-responsive-images/)
+* [I <3 image bytes](http://www.stevesouders.com/blog/2013/04/26/i/)
+* [HTTPArchive State of Images Report](https://httparchive.org/reports/state-of-images)
+* [Responsive Images](https://alistapart.com/article/responsive-images)
+* [Responsive Images 101, Part 1: Definitions](https://cloudfour.com/thinks/responsive-images-101-definitions)
+* [Responsive Images, Part 10: Conclusion](https://cloudfour.com/thinks/responsive-images-part-10-conclusion/)

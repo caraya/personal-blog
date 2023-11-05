@@ -9,7 +9,7 @@ This post will explore `ch` units, what they are and what they do.
 
 It will also discuss a problem presented by Silvestar Bistrović in [Be careful with ch units](https://www.silvestar.codes/articles/be-careful-with-ch-units/) along with a possible solution.
 
-## What are `ch` units
+## What are ch units
 
 According to the W3C's [CSS Values and Units Module Level 3](https://www.w3.org/TR/css-values-3/#length-advance-measure) candidate recommendation, the 'ch unit':
 
@@ -19,7 +19,7 @@ The specification also reminds us that the advance measure of a glyph depends on
 
 ## What is the problem
 
-The problem can be summed up in: **_Not all fonts are the same_**.
+The problem can be summed up in: ***Not all fonts are the same***.
 
 When I use `ch units` in my code, I normally do so to set the [measure](https://designsystem.digital.gov/components/typography/#measure-line-length-2) or width, of my text; something like the following CSS:
 
@@ -48,8 +48,7 @@ Unless you're careful in planning your site's font stack, this will cause your l
 
 Monica Dinculescu created a [font style matcher](https://meowni.ca/font-style-matcher/) to create font-related styles to make fonts more closely match each other.
 
-![Monica Dinculescu's [Font style matcher](https://meowni.ca/font-style-matcher/)](/images/2023/07/font-matcher-dinculescu.png)
-
+![Monica Dinculescu's [Font style matcher](https://meowni.ca/font-style-matcher/)](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/font-matcher-dinculescu)
 
 A more modern approach involves attributes of the `@font-face` at-rule.
 

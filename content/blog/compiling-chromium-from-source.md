@@ -96,7 +96,7 @@ out/Default/Chromium.app/Contents/MacOS/Chromium
 
 Unless you have a developer account with Apple you will not be able to sign the app and run it normally
 
-![](/images/2019/07/chromium-dev.png)
+![](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/chromium-dev)
 
 Portion of About Chromium showing the version and indicating it's a developer's build
 

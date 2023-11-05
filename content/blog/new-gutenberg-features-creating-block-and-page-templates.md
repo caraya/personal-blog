@@ -101,13 +101,13 @@ You can build templates directly in Gutenberg using the block editor. To edit wi
 
 Select the editor under the appearance menu. If you don't see the editor link then you don't have the latest version of the Gutenberg plugin as this is not part of WordPress Core.
 
-![Gutenberg Editor Menu](/images/2022/01/gutenberg-editor-01.png)
+![Gutenberg Editor Menu](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/gutenberg-editor-01)
 
 Gutenberg Editor Link Location
 
 Once you are in the editor, click on the WordPress logo on the top left of the screen and you will be shown the options to edit templates or template parts.
 
-![Gutenberg Editor Menu](/images/2022/01/gutenberg-editor-02.png)
+![Gutenberg Editor Menu](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/gutenberg-editor-02)
 
 Gutenberg Editor Link Location
 
@@ -115,7 +115,7 @@ If you select the templates option you will see a list of available templates th
 
 To create a new template click on `Add New` and give it a title. You can then edit the template as any other item in Gutenberg.
 
-![Gutenberg Editor Menu](/images/2022/01/gutenberg-editor-03.png)
+![Gutenberg Editor Menu](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/gutenberg-editor-03)
 
 Add new page templates
 
@@ -123,7 +123,7 @@ Another way to edit templates is to manually write the code that Gutenberg uses 
 
 To do this first create a template that has all the elements and placeholders you want to use, then export the code by clicking the more options button on the top right of the screen and selecting 'export\`. This will save a zip file with all the code on the templates to your local file system.
 
-![Export template dialogue](/images/2022/01/export-template-01.png)
+![Export template dialogue](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/export-template-01)
 
 Export and download template and template parts
 

@@ -12,31 +12,26 @@ Over the years I've developed a sensibility to the way text lies on the page, ho
 
 ### Homework to do before starting the research process
 
-- Read the text you'll be working with (if possible)
-- What does the text tell you?
-
-    - What is the text about?
-- Make notes of the fonts you look at
+* Read the text you'll be working with (if possible)
+* What does the text tell you?
+  * What is the text about?
+* Make notes of the fonts you look at
 
 Some questions that will guide the research process:
 
-- Who is our target audience?
-
-    - Demographics
-    - Devices / Platforms
-- What kind of content are we creating?
-
-    - One page app
-    - website
-    - etc
-- What is the purpose of the content we're creating
-
-    - Kind of content
-
-        - Persuasion
-        - Informative
-        - Entertainment
-        - Other
+* Who is our target audience?
+  * Demographics
+  * Devices / Platforms
+* What kind of content are we creating?
+  * One page app
+  * website
+  * etc
+* What is the purpose of the content we're creating
+  * Kind of content
+    * Persuasion
+    * Informative
+    * Entertainment
+    * Other
 
 ## Getting Started: Research and select your font(s)
 
@@ -52,20 +47,16 @@ As Tim Brown suggests:
 
 There are multiple sources on information when it comes to researching fonts. Designers may not always have the time to do all this but the more you can do the better your design will be for it.
 
-- Check the publisher's site for the font
-
-    - What does it tell you?
-    - Does it give you the information you need to decide whether the font is good for what you want it for?
-
-        - See what the designer say about the font
-        - Subscribe to newsletters like [Creative Characters](http://www.myfonts.com/newsletters/cc/) where type designers discuss their work and their inspiration
-    - See what other people are saying about the font
-
-        - [Typographica](http://typographica.org/category/typeface-reviews/) reviews fonts and type face related books
-        - [Typedia](http://typedia.com/)
-    - See how it's being used in the wild
-
-        - [Fonts in Use](http://fontsinuse.com/) is a good resource to see how fonts are used in real life situations
+* Check the publisher's site for the font
+  * What does it tell you?
+  * Does it give you the information you need to decide whether the font is good for what you want it for?
+* See what the designer say about the font
+  * Subscribe to newsletters like [Creative Characters](http://www.myfonts.com/newsletters/cc/) where type designers discuss their work and their inspiration
+* See what other people are saying about the font
+  * [Typographica](http://typographica.org/category/typeface-reviews/) reviews fonts and type face related books
+  * [Typedia](http://typedia.com/)
+* See how it's being used in the wild
+  * [Fonts in Use](http://fontsinuse.com/) is a good resource to see how fonts are used in real life situations
 
 Based on the answers and the questions above we can now go ahead and select the anchor font for your document. In my experience this has always been the main body font as it is the one that will appear the most often in your content.
 
@@ -81,26 +72,28 @@ All fonts in the same font stack should look similar to each other. Some fonts a
 
 So, if we put Verdana (mostly Windows) with Helvetica (mostly Macs), we’ve met the above requirements. However, since Verdana is much wider than Helvetica and both fonts are available for both Windows and Macintosh computers, the text will look dramatically different on most Macs compared to most Windows computers. See below for a comparison:
 
-<p data-height="402" data-theme-id="2039" data-slug-hash="gJeju" data-user="caraya" data-default-tab="result" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/gJeju">Font comparison between Verdana and Helvetica</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a></p>
+<iframe height="401.36883544921875" style="width: 100%;" scrolling="no" title="Font comparison between Verdana and Helvetica" src="https://codepen.io/caraya/embed/nYgymK?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/caraya/pen/nYgymK">
+  Font comparison between Verdana and Helvetica</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
 So when developing font stacks:
 
-- Make sure you account for the different operating systems
-
-    - The same font looks slightly different in Windows, Mac, and Linux
-- Be consistent in the type of fonts you use throughout your document
-
-    - Make sure that bold, italics and bold/italic fonts are available for all your selected fonts
-- Make sure the fonts in the stack have similar aspect ratios, both your external fonts (downloaded using @font-face rules) and fonts local to your system
-- Use appropriate generic fonts for the primary fonts you use (see [Generic Font Families](#generic-fonts))
+* Make sure you account for the different operating systems
+  * The same font looks slightly different in Windows, Mac, and Linux
+* Be consistent in the type of fonts you use throughout your document
+  * Make sure that bold, italics and bold/italic fonts are available for all your selected fonts
+* Make sure the fonts in the stack have similar aspect ratios, both your external fonts (downloaded using @font-face rules) and fonts local to your system
+* Use appropriate generic fonts for the primary fonts you use
 
 Here is a list of the most common fonts for various aspect ratio types:
 
-- **Wide sans serif**: Verdana, Geneva
-- **Narrow sans serif**: Tahoma, Arial, Helvetica
-- **Wide serif**: Georgia, Utopia
-- **Narrow serif**: Times, Times New Roman
-- **Monospace**: Courier, Courier New, Lucida Console
+* **Wide sans serif**: Verdana, Geneva
+* **Narrow sans serif**: Tahoma, Arial, Helvetica
+* **Wide serif**: Georgia, Utopia
+* **Narrow serif**: Times, Times New Roman
+* **Monospace**: Courier, Courier New, Lucida Console
 
 ### Generic Font Families
 
@@ -108,32 +101,32 @@ Generic Font Families are a last-resource fallback intended to work when no othe
 
 According to the [Mozilla Documentation Project's Font Family page](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family):
 
-\[blockquote\]Generic font families are a fallback mechanism, a means of preserving some of the style sheet author's intent in case when none of the specified fonts are available. Generic family names are keywords and must not be quoted. A generic font family should be the a last alternative in the list of font family names.
-
-**serif** Glyphs have finishing strokes, flared or tapering ends, or have actual serifed endings. E.g. Palatino, "Palatino Linotype", Palladio, "URW Palladio", serif
-
-**sans-serif** Glyphs have stroke endings that are plain. E.g. 'Trebuchet MS', 'Liberation Sans', 'Nimbus Sans L', sans-serif
-
-**monospace** All glyphs have the same fixed width. E.g. "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace
-
-**cursive** Glyphs in cursive fonts generally have either joining strokes or other cursive characteristics beyond those of italic typefaces. The glyphs are partially or completely connected, and the result looks more like handwritten pen or brush writing than printed letterwork.
-
-**fantasy** Fantasy fonts are primarily decorative fonts that contain playful representations of characters.\[/blockquote\]
+> Generic font families are a fallback mechanism, a means of preserving some of the style sheet author's intent in case when none of the specified fonts are available. Generic family names are keywords and must not be quoted. A generic font family should be the a last alternative in the list of font family names.
+>
+> **serif** Glyphs have finishing strokes, flared or tapering ends, or have actual serifed endings. E.g. Palatino, "Palatino Linotype", Palladio, "URW Palladio", serif
+>
+> **sans-serif** Glyphs have stroke endings that are plain. E.g. 'Trebuchet MS', 'Liberation Sans', 'Nimbus Sans L', sans-serif
+>
+> **monospace** All glyphs have the same fixed width. E.g. "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace
+>
+> **cursive** Glyphs in cursive fonts generally have either joining strokes or other cursive characteristics beyond those of italic typefaces. The glyphs are partially or completely connected, and the result looks more like handwritten pen or brush writing than printed letterwork.
+>
+> **fantasy** Fantasy fonts are primarily decorative fonts that contain playful representations of characters.
 
 ### Getting started: Building the Rythm
 
 Now that we have our scale, Let's start with the next obvious question. What impacts a page's vertical rhythm?
 
-- Font size
-- Line Height
-- Margins
-- Paddings
+* Font size
+* Line Height
+* Margins
+* Paddings
 
 In order to achieve a good rhythm we have to calculate these three factors and apply them in our CSS. Here is an example of text without a good rhythm.
 
 For the first image below, we have only set up a default font size:
 
-[![Text without vertical rhythm](/images/2014/01/no-rhythm.png)](http:/images/2014/01/no-rhythm.png)
+![Text without vertical rhythm](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/no-rhythm)
 
 As you can see, the rhythm is off. After the first line the baseline does not remain constant. The further down you go in the paragraph the harder it gets and, consciously or not, reading the text gets harder.
 
@@ -143,15 +136,19 @@ The starting CSS will have set the body font-size: 16px and line-height: 1.25 (w
 
 The CSS looks like below:
 
-<p data-height="268" data-theme-id="2039" data-slug-hash="loLAJ" data-user="caraya" data-default-tab="result" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/loLAJ">Base CSS for typography examples</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a></p>
+<iframe height="300" style="width: 100%;" scrolling="no" title="Base CSS for typography examples" src="https://codepen.io/caraya/embed/DWmQVj?default-tab=css%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/caraya/pen/DWmQVj">
+  Base CSS for typography examples</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
 The text now looks like this:
 
-[![Text in vertical rhythm](/images/2014/01/in-rhythm.png)](http:/images/2014/01/in-rhythm.png)
+![Text in vertical rhythm](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/in-rhythm)
 
 ### Rhythm on a page
 
-Based on thoughts and ideas from [http://blog.8thlight.com/chris-peak/2012/12/30/vertical-rhythm.html](http://blog.8thlight.com/chris-peak/2012/12/30/vertical-rhythm.html), http://blog.8thlight.com/billy-whited/2011/10/28/r-a-ela-tional-design.html and [http://nicewebtype.com/notes/responsive-typography/](http://nicewebtype.com/notes/responsive-typography/)
+Based on thoughts and ideas from [Vertical Rhythm In Typography](https://web.archive.org/web/20220526165023/https://8thlight.com/blog/chris-peak/2012/12/30/vertical-rhythm.html), [R(a|ela)tional Design](https://web.archive.org/web/20220302224744/https://8thlight.com/blog/billy-whited/2011/10/28/r-a-ela-tional-design.html) and [Responsive Typography](https://web.archive.org/web/20180427105746/http://nicewebtype.com/notes/responsive-typography/)
 
 Vertical Rhythm is simply when a body of text is aligned to evenly spaced horizontal lines (think of your lined paper from grade school), making it more cohesive and easier to read.
 
@@ -223,7 +220,7 @@ The [Frontfriend](http://somadesign.ca/projects/fontfriend/) bookmarklet let you
 
 Take the fonts you've chosen and build a portion of your website using them. This will give you one final opportunity to check the fonts in the layout and flow you've developed so far... if it doesn't work then this is a good point to look at alternatives.
 
-[![Example of a font specimen page](/images/2014/01/font-specimen-example-1024x530.png)](/images/2014/01/font-specimen-example.png)
+![Example of a font specimen page](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/font-specimen-example-1024x530)
 
 ### Test on multiple devices
 

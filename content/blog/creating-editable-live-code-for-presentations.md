@@ -24,15 +24,14 @@ The idea is as follows:
 
 1. We use Rety via a bookmarklet, following the instructions in [How do I record a demo from an arbitrary page, e.g. a live coded slide?](https://rety.verou.me/#how-do-i-record-a-demo-from-an-arbitrary-page-eg-a-live-coded-slide)
 2. Save the generated list of actions and include it in the presentation HTML document using a `script` tag with the following attributes:
-
     1. `type="application/json"`
     2. `class="demo-script"`
 
-![Detail of Inspire.js live coding screen. The code is on the left and the live result is on the right](/images/2022/08/inspirejs-live-code-interface-1.png)
+![Detail of Inspire.js live coding screen. The code is on the left and the live result is on the right](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/inspirejs-live-code-interface-1)
 
 Once the script has been added to the slide where you want the replay to happen, there will be additional buttons on the live section of the page that will allow you to play back the content you recorded.
 
-![The play button (highlighted in a red rectangle) is added when we use Rety to playback pre-recorded live demos](/images/2022/08/inspirejs-rety-playback-button.png)
+![The play button (highlighted in a red rectangle) is added when we use Rety to playback pre-recorded live demos](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/inspirejs-rety-playback-button.png)
 
 This has two main benefits. It saves you from making typos during the live presentation and it allows people viewing the deck after the conference to step through the video just like the presenter did.
 

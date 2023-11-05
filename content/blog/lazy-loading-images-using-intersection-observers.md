@@ -11,13 +11,13 @@ Lazy loading allows you to delay loading images until the user actually scrolls 
 
 Images are the largest part of a web page, whether site or app. The median number of images requested per page, according to the HTTP Archive is 32 request for desktop and 28 for mobile. The HTTP Archive defines an image request as:
 
-> The number of external images requested by the page. An external image is identified as a resource with the `png`, `gif`, `jpg`, `jpeg`, `webp`, `ico`, or `svg` file extensions or a MIME type containing the word image. \[HTTP Archive\](https://HTTP Archive.org/reports/state-of-images#bytesImg)
+> The number of external images requested by the page. An external image is identified as a resource with the `png`, `gif`, `jpg`, `jpeg`, `webp`, `ico`, or `svg` file extensions or a MIME type containing the word image.
+>
+> [HTTP Archive](https://httparchive.org/reports/state-of-images#bytesImg)
 
 The time-series below shows a time series for the number of requests for the period between December 2015 and December 2018.
 
-![](/images/2019/01/number-of-images.png)
-
-HTTP Archive timeseries of the median numer of image requested for crawled domains
+![HTTP Archive timeseries of the median numer of image requested for crawled domains](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/number-of-images)
 
 So things are getting better, right. We have fewer requests and that should make things better, right?
 
@@ -25,16 +25,14 @@ Sadly it's not the case. While we have fewer requests per page the median for th
 
 > The sum of transfer size kilobytes of all external images requested by the page. An external image is identified as a resource with the `png`, `gif`, `jpg`, `jpeg`, `webp`, `ico`, or `svg` file extensions or a MIME type containing the word image. [HTTP Archive](https://httparchive.org/reports/state-of-images#reqImg)
 
-![](/images/2019/01/image-weight.png)
-
-HTTP Archive timeseries of the median weight of image requested for crawled domains
+![HTTP Archive timeseries of the median weight of image requested for crawled domains](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/image-weight)
 
 Most of the time a web project is an exercise in compromises. Different stakeholders may have different and competing priorities that may impact the size of your images' payload and your initial page load time.
 
 With these numbers (weight and requests) on hand, we can make the case for not loading images until they are needed; that way we only load the things we need when we need them and not before and we prevent waste:
 
-- Wasted data. On limited data plans loading stuff the user never sees could effectively be a waste of their money
-- Wasted system resources like CPU, and battery. After a media resource is downloaded, the browser must decode it and render its content in the viewport. Rendering stuff that the user may not see is unnecessarily wasteful
+* Wasted data. On limited data plans loading stuff the user never sees could effectively be a waste of their money
+* Wasted system resources like CPU, and battery. After a media resource is downloaded, the browser must decode it and render its content in the viewport. Rendering stuff that the user may not see is unnecessarily wasteful
 
 ## The how
 
@@ -177,25 +175,22 @@ In order to use it at the most basic level you need to load and initialize the s
 
 When you initialize the library you can pass in an options object as the second parameter. The options currently available are:
 
-- **lazyClass _(default: "lazy")_:** The element class used by yall.js to find elements to lazy load
-- **lazyBackgroundClass _(default: "lazy-bg")_**: The element class used by yall.js to find elements to lazy load CSS background images for
-- **lazyBackgroundLoaded _(default: "lazy-bg-loaded")_**: When yall.js finds elements using the class specified by lazyBackgroundClass, it will remove that class and put this one in its place. This will be the class you use in your CSS to bring in your background image when the affected element is in the viewport
-- **throttleTime _(default: 200)_**: In cases where Intersection Observer throttleTime allows you to control how often the code standard event handlers used as replacement fire in milliseconds
-- **idlyLoad _(default: false)_**: If set to true, requestIdleCallback is used to optimize the use of browser idle time to limit monopolization of the main thread
-
-    - This setting is ignored if set to true in a browser that doesn't support requestIdleCallback
-    - Enabling this could cause lazy loading to be delayed significantly more than you might be okay with
-    - Test extensively, and consider increasing the threshold option if you set this option to true
-- **idleLoadTimeout _(default: 100)_**: This option sets a deadline in milliseconds for requestIdleCallback to kick off lazy loading for an element
-- **threshold _(default: 200)_**: The threshold (in pixels) for how far elements need to be within the viewport to begin lazy loading.
-- **observeChanges _(default: false)_**: Use a Mutation Observer to examine the DOM for changes.
-
-    - This is useful if you want to lazy load resources for markup injected into the page after initial page render
-    - This option is ignored if set to true in a browser that doesn't support Mutation Observer
-- **observeRootSelector _(default: "body")_**: If observeChanges is set to true, the value of this string is fed into `document.querySelector` to limit the scope in which the Mutation Observer looks for DOM changes
-
-    - The `<body>` element is used by default, but you can confine the observer to any valid CSS selector (e.g., `#main-wrapper`)
-- **mutationObserverOptions _(default: {childList: true})_**: Options to pass to the MutationObserver instance. Read this [MDN guide](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver#MutationObserverInit) for a list of options.
+* **lazyClass *(default: "lazy")*:** The element class used by yall.js to find elements to lazy load
+* **lazyBackgroundClass *(default: "lazy-bg")***: The element class used by yall.js to find elements to lazy load CSS background images for
+* **lazyBackgroundLoaded *(default: "lazy-bg-loaded")***: When yall.js finds elements using the class specified by lazyBackgroundClass, it will remove that class and put this one in its place. This will be the class you use in your CSS to bring in your background image when the affected element is in the viewport
+* **throttleTime *(default: 200)***: In cases where Intersection Observer throttleTime allows you to control how often the code standard event handlers used as replacement fire in milliseconds
+* **idlyLoad *(default: false)***: If set to true, requestIdleCallback is used to optimize the use of browser idle time to limit monopolization of the main thread
+  * This setting is ignored if set to true in a browser that doesn't support requestIdleCallback
+  * Enabling this could cause lazy loading to be delayed significantly more than you might be okay with
+  * Test extensively, and consider increasing the threshold option if you set this option to true
+* **idleLoadTimeout *(default: 100)***: This option sets a deadline in milliseconds for requestIdleCallback to kick off lazy loading for an element
+* **threshold *(default: 200)***: The threshold (in pixels) for how far elements need to be within the viewport to begin lazy loading.
+* **observeChanges *(default: false)***: Use a Mutation Observer to examine the DOM for changes.
+  * This is useful if you want to lazy load resources for markup injected into the page after initial page render
+  * This option is ignored if set to true in a browser that doesn't support Mutation Observer
+* **observeRootSelector *(default: "body")***: If observeChanges is set to true, the value of this string is fed into `document.querySelector` to limit the scope in which the Mutation Observer looks for DOM changes
+  * The `<body>` element is used by default, but you can confine the observer to any valid CSS selector (e.g., `#main-wrapper`)
+* **mutationObserverOptions *(default: {childList: true})***: Options to pass to the MutationObserver instance. Read this [MDN guide](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver#MutationObserverInit) for a list of options.
 
 Pay particular attention to the `lazyClass`, `lazyBackgroundClass`, and `lazyBackgroundLoaded` configuration parameters. These are the ones most likely to change.
 
@@ -214,7 +209,7 @@ As unlikely as it is we may still find instances where JavaScript is not enabled
       src="placeholder-image.jpg"
       data-src="image-to-lazy-load.jpg"
       alt="I'm an image!">
-<!-- An image that is shown if JavaScript is turned off -->
+<!-* An image that is shown if JavaScript is turned off -->
 <noscript>
   <img src="image-to-lazy-load.jpg" alt="I'm an image!">
 </noscript>
@@ -300,9 +295,9 @@ if ("decode" in newImage) {
 
 ## Links and resources
 
-- [Quick introduction to the Intersection Observer API](https://jeremenichelli.github.io/2016/04/quick-introduction-to-the-intersection-observer-api/)
-- [IntersectionObserver’s Coming into View](https://developers.google.com/web/updates/2016/04/intersectionobserver)
-- [IntersectionObserver Explainer](https://github.com/WICG/IntersectionObserver/blob/gh-pages/explainer.md) from WCIG
-- [IntersectionObserver Spec Work](https://wicg.github.io/IntersectionObserver/)
-- [Google Developers’ Article](https://developers.google.com/web/updates/2016/04/intersectionobserver)
-- [Lazy Loading Images on the Web](http://developer.telerik.com/featured/lazy-loading-images-on-the-web/)
+* [Quick introduction to the Intersection Observer API](https://jeremenichelli.github.io/2016/04/quick-introduction-to-the-intersection-observer-api/)
+* [IntersectionObserver’s Coming into View](https://developers.google.com/web/updates/2016/04/intersectionobserver)
+* [IntersectionObserver Explainer](https://github.com/WICG/IntersectionObserver/blob/gh-pages/explainer.md) from WCIG
+* [IntersectionObserver Spec Work](https://wicg.github.io/IntersectionObserver/)
+* [Google Developers’ Article](https://developers.google.com/web/updates/2016/04/intersectionobserver)
+* [Lazy Loading Images on the Web](http://developer.telerik.com/featured/lazy-loading-images-on-the-web/)

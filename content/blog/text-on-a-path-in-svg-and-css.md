@@ -11,7 +11,7 @@ We will also look at how to animate text on a path.
 
 ## Text in a path
 
-![Example of text on a path](/images/2023/01/text-on-a-path-svg.png)
+![Example of text on a path](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/text-on-a-path-svg)
 
 Figure 1 shows a basic example of text on a path.
 

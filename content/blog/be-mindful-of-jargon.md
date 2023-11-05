@@ -9,7 +9,7 @@ In [Dealing with Technical or Professional Jargon](https://www.nngroup.com/artic
 
 The first consideration that I find interesting is that jargon is defined by the audience reading the document. In other words, do they understand the term?
 
-![Should we use Jargon diagram. Taken from [Dealing with Technical or Professional Jargon](https://www.nngroup.com/articles/technical-jargon/))](/images/2023/05/should-we-use-jargon-1.png)
+![Should we use Jargon diagram. Taken from [Dealing with Technical or Professional Jargon](https://www.nngroup.com/articles/technical-jargon/)](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/should-we-use-jargon-1)
 
 So how do we address jargon on our pages?
 

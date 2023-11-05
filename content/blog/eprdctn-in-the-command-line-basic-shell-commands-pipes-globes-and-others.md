@@ -14,16 +14,14 @@ Unix-like shells (like those on MacOS and WSL) provide globs (global or pattern 
 The two most often used patterns are `*` and `?`.
 
 \*
-
-Matches any string, including the null string.
+: Matches any string, including the null string.
 
 ?
-
-Matches any single character.
+: Matches any single character.
 
 The following command will search the current directory for files that end with `.xhtml`. This can be useful to get a listing of all files of a given type in a directory.
 
-```
+```bash
 # Search for all XHTML files in the current directory
 # We define XHTML files as any file that ends with .xhtml
 ls -al *.xhtml
@@ -31,7 +29,7 @@ ls -al *.xhtml
 
 The `?` pattern matcher matches a single character. This is useful when you have a sequential list of files that are different by a single character. The example below would match all files that start with the word index, a single character and then end with .html. It Would match index1.html but not index10.html or index.html
 
-```
+```bash
 # Search for all files that start with the word index,
 # a single character and then end with .html
 # Would match index1.html
@@ -41,7 +39,7 @@ ls -al index?.html
 
 Newer versions of Bash will let you recursively match using the `**` pattern. This is not guaranteed to work everywhere so it's offered here for you to try it.
 
-```
+```bash
 # sets the recursive match option
 shopt -s globstar
 # Recursive search the current and all children directories
@@ -57,7 +55,7 @@ A pipe pipeline is a sequence of one or more commands separated by the control o
 
 The following command will create a listing of all the files in a directory and look for the word index in the result
 
-```
+```bash
 ls -al | grep index
 ```
 
@@ -65,7 +63,7 @@ ls -al | grep index
 
 Another type of pipe is used to redirect the output of a file into another, usually a text file or some kind. The most typical example is piping the output of a command, in this case `ls -al` to a text file.
 
-```
+```bash
 ls -al > content.txt
 ```
 
@@ -75,7 +73,7 @@ There are times when typing the same command, particularly if it's a long comman
 
 You can create aliases for the current session using the alias command in the current shell. For example, if you paste the following command on your terminal:
 
-```
+```bash
 alias ll="ls -lhA"
 ```
 
@@ -87,20 +85,20 @@ There is a way to create aliases that will persist through different shells. Thi
 
 First, make sure that the Nano package is installed on your Mac via Homebrew
 
-```
+```bash
 brew install nano
 ```
 
 The following steps are the same for Mac and Windows
 
-```
+```bash
 # Makes sure you're in your home directory
 cd
 # Opens or creates the file .bash_profile
 nano .aliases
 ```
 
-![Nano editor working on aliases file](/images/2018/04/nano-editing-aliases-1024x697.png)
+![Nano editor working on aliases file](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/nano-editing-aliases-1024x697)
 
 Nano editor working on aliases file
 
@@ -112,7 +110,7 @@ Bash will read the entire file before starting and will flag any syntax errors.
 
 There are two ways to get Bash to pick up the changes to your `.aliases` files. One is to open a new shell. The second one is to source the aliases files. The command is:
 
-```
+```bash
 source .aliases
 ```
 
@@ -120,7 +118,7 @@ This command will force Bash to read the `.aliases` file and make all the aliase
 
 The last thing to do is to make sure `.aliases` is loaded when we log in. Add the following to the `.bash_profile` file
 
-```
+```bash
 source .aliases
 ```
 
@@ -132,7 +130,7 @@ As with aliases, you can set them one of two ways:
 
 For the current shell (and only for the current shell) you can export the path. For example, if I wanted to add the program `foo` to my sell path for the current shell, I can do:
 
-```
+```bash
 export PATH="$PATH:/usr/local/bin/foo"
 ```
 
@@ -148,7 +146,7 @@ The example below shows multiple instances of adding to the path. These are all 
 
 The example below shows how to add multiple programs to the path one at a time using multiple export commands where there is more than one path (like between $PATH and the first item) they are separated by a colon (`:`). This makes it easier to change individual components if needed.
 
-```
+```bash
 # Path to depot tool to work with Google code and other stuff
 export PATH="$PATH:/Users/carlos/code/depot_tools"
 # Shaka Packager
@@ -161,7 +159,7 @@ export PATH="$PATH:/Users/carlos/code/aom-deploy/aom-build:/Users/carlos/code/ao
 
 To add the export commands to your `.bashrc` file use the following commands using the Nano editor.
 
-```
+```bash
 # to make sure we're in the home directory
 cd
 # open the file with the nano editor
@@ -172,6 +170,6 @@ The syntax of the command is the same as if you were adding it to the individual
 
 One final thing is to make sure `.bashrc` is loaded when we log in. Add the following to the `.bash_profile` file
 
-```
+```bash
 source .bashrc
 ```

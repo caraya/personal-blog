@@ -25,11 +25,11 @@ The first thing to look at is what format the current browser is playing.
 
 When you right-click on a Youtube video you will get a list of options. The one we're interested in is the one at the bottom of the menu, *stuff for nerds*
 
-![YouTube contextual menu, showing stuff for nerds at the bottom](/images/2022/11/youtube-stuff-for-nerds.png)
+![YouTube contextual menu, showing stuff for nerds at the bottom](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/youtube-stuff-for-nerds)
 
 When you right-click on a YouTube video currently playing you will get a window similar to the one in image 2. The information includes both video and audio codecs.
 
-![Stuff for nerds menu. Codec highlighted](/images/2022/11/youtube-stuff-for-nerds-dialogue-codec-highlight.png)
+![Stuff for nerds menu. Codec highlighted](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/youtube-stuff-for-nerds-dialogue-codec-highlight)
 
 `stuff for nerds` will only tell you what audio and video codecs the current browser is playing, in this case using the AV1 video and the Opus audio codecs. However, it won't tell you all the formats that are available for the video.
 
@@ -77,4 +77,4 @@ The video has 21 million views so, as expected, the video has MP4, VP9, and AV1 
 
 The most exciting thing is that several streams are [DASH](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP). It appears that YouTube assembles videos from different audio and video streams at runtime.
 
-So, to fully answer the question in the title of this post: **_YouTube will re-encode the video based on the number of views and serve a DASH muxed video with the best audio and video streams based on device capability and network conditions_**
+So, to fully answer the question in the title of this post: ***YouTube will re-encode the video based on the number of views and serve a DASH muxed video with the best audio and video streams based on device capability and network conditions***

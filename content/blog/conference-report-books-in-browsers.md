@@ -1,6 +1,7 @@
 ---
 title: "Conference Report: Books in Browsers"
 date: "2016-12-26"
+vimeo: true
 ---
 
 > Part conference review and part ideas moving forward. This may or may not make as much sense as the review for AEA did. I still think they complement each other.
@@ -41,7 +42,7 @@ The best way I've seen a rig like this is when used to document a scene or event
 
 Another turning of an idea on its head is what makes a virtual reality beyond experiments like [Google Glass](https://developers.google.com/glass/) or the full head mounted displays like the [Oculus Rift](https://www3.oculus.com/en-us/rift/) or [Playstation VR](https://www.playstation.com/en-us/explore/playstation-vr/)?
 
-We should be able to marry augmented reality (Glass or Microsoft Hololens can provide additional information about a location. What if we could mix the augmented reality with a story that happens in the "real world" and that depends on interactions both virtual and real?
+We should be able to marry augmented reality (Glass or Microsoft Hololens can provide additional information about a location) with the real world where the story happens. What if we could mix the augmented reality with a story that happens in the "real world" and that depends on interactions both virtual and real?
 
 Once again we have to be mindful of the types of stories we tell in this medium. We also need to make sure that people in charge know what we're doing... last thing we want to do is have some of our performers arrested.
 
@@ -85,22 +86,22 @@ The content of the pages can be anything supported by the browser directly or vi
 
 Use the affordances of the web platform to make experiences (author < --> reader and reader < --> reader) better. We no longer need dedicated applications to share our content. We already have an awesome reading device on our computers... it's called a browser
 
-A good example of how to do this is [Membrane](http://nytlabs.com/blog/2015/11/05/membrane/), a project from the New York Times Lab, sadly now dormant and nowhere to be found other than the reference article. The idea is to provide an interactive annotation system.
+A good example of how to do this is [Membrane](https://web.archive.org/web/20190910161754/http://nytlabs.com/blog/2015/11/05/membrane/), a project from the New York Times Lab, sadly now dormant and nowhere to be found other than the reference article. The idea is to provide an interactive annotation system.
 
 One iteration of the NYT experiment looks like the image below.
 
-![](http://nytlabs.com/blog/images/membrane4.gif)
+![NYT Membrane](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/membrane1.jpg)
 
-It works as a prompt - response system for multiuser communication between readers and the author. The readers can create any number of prompts on the piece which the author can then choose to answer creating a feedback loop that the community can participate in.
+It works as a prompt/response system for multiuser communication between readers and the author. The readers can create any number of prompts on the piece which the author can then choose to answer creating a feedback loop that the community can participate in.
 
 Some of the ideas in the NYT piece about Membrane:
 
-- **Different types of responses**. A reporter could respond to prompts with text, or they could respond to prompts with images, videos, audio, etc
-- **Different types of subject matter**. In addition to news articles about people or events, Membrane could be used for ongoing written pieces that are soliciting ideas/next steps from the community
-- **Different lengths of time**. The community that forms around an author who uses Membrane very consistently would likely look different from the more ephemeral communities that form around a time-constrained event (elections, Oscars, etc.).
-- **Different types of questions**. A writer could use the default “who, what, when, where, why” list of questions, or customize their list with subject-specific questions (Membrane tailored for an article on cooking, auto repair, etc.).
-- **Different numbers and types of authors**. Membrane supports multiple authors, so a piece could be written by just one author or several authors, and support community members who become authors.
-- **Different forms of interaction**. Membrane might be used to get additional detail or source material on a finished piece; to get updates on an ongoing event or situation; to ask for more justification on an opinion piece; to nudge the evolution of an ongoing piece or project, and more.
+* **Different types of responses**. A reporter could respond to prompts with text, or they could respond to prompts with images, videos, audio, etc
+* **Different types of subject matter**. In addition to news articles about people or events, Membrane could be used for ongoing written pieces that are soliciting ideas/next steps from the community
+* **Different lengths of time**. The community that forms around an author who uses Membrane very consistently would likely look different from the more ephemeral communities that form around a time-constrained event (elections, Oscars, etc.).
+* **Different types of questions**. A writer could use the default “who, what, when, where, why” list of questions, or customize their list with subject-specific questions (Membrane tailored for an article on cooking, auto repair, etc.).
+* **Different numbers and types of authors**. Membrane supports multiple authors, so a piece could be written by just one author or several authors, and support community members who become authors.
+* **Different forms of interaction**. Membrane might be used to get additional detail or source material on a finished piece; to get updates on an ongoing event or situation; to ask for more justification on an opinion piece; to nudge the evolution of an ongoing piece or project, and more.
 
 All these options invite deeper and ongoing interactions between reders and authors and readers with content. What more can we do with technology like this or similar bits of technologies?
 
@@ -130,23 +131,22 @@ We may also think about incorporating elements of the real world into the story.
 
 It's an interesting challenge and one that leverages both current technology, future technology and the creative process.
 
-**_Bring it on_**
+***Bring it on***
 
-- Links and Resources
-    
-    - [Transmedia Storytelling 101](http://henryjenkins.org/2007/03/transmedia_storytelling_101.html) -- Henry Jenkins
-    - [Transmedia 202: Further Reflections](http://henryjenkins.org/2011/08/defining_transmedia_further_re.html) \-- Henry Jenkins
-    - [Henry Jenkins explains his vision of transmedia and audience engagement](http://www.transmedialab.org/en/events/henry-jenkins-explains-his-vision-of-transmedia-and-audience-engagement/)
-    - [The 7 Literacies of Transmedia Storytelling](https://designerlibrarian.wordpress.com/2013/11/21/the-7-literacies-of-transmedia-storytelling/)
-    - [A look at transmedia storytelling](http://nerdist.com/a-look-at-transmedia-storytelling/) - Nerdist
-    - [5-tips-for-transmedia-storytelling030](http://mediashift.org/2013/01/5-tips-for-transmedia-storytelling030/)
-    - [A Creator's Guide to Transmedia Storytelling](http://www.deusexmachinatio.com/book/)
-    - \[The 15 Things I've Learned about Transmedia Storytelling\](The 15 Things I've Learned about Transmedia Storytelling)
-    - [Transmedia Storytelling and Entertainment: A New Syllabus](http://henryjenkins.org/2013/08/transmedia-storytelling-and-entertainment-a-new-syllabus.html)
-    - [Creating Transmedia: An Interview with Andrea Phillips (Part One)](http://henryjenkins.org/2012/11/creating-transmedia-an-interview-with-andrea-phillips-part-one.html)
-    - [4 Inspiring Examples of Digital Storytelling](http://mashable.com/2012/01/31/digital-storytelling/#kkhPFTtaukqU)
-    - [Transmedia Storytelling](http://www.technologyreview.com/news/401760/transmedia-storytelling/)
-    - [5 Lessons For Storytellers From The Transmedia World](http://www.fastcocreate.com/1680902/5-lessons-for-storytellers-from-the-transmedia-world)
-    - [Storyworlds](http://convergenceishere.weebly.com/storyworlds.html)
-    - [Here Are the 5 Things That Make a Good Transmedia Project](http://www.indiewire.com/article/here-are-the-5-things-that-make-a-good-transmedia-project)
-    - [Videos from Transforming Hollywood 6: Alternative Realities, Worldbuilding, and Immersive Entertainment](http://henryjenkins.org/2015/05/videos-from-transforming-hollywood-6-alternative-realities-worldbuilding-and-immersive-entertainment.html)
+* Links and Resources
+  * [Transmedia Storytelling 101](http://henryjenkins.org/2007/03/transmedia_storytelling_101.html) &mdash; Henry Jenkins
+  * [Transmedia 202: Further Reflections](http://henryjenkins.org/2011/08/defining_transmedia_further_re.html) &mdash; Henry Jenkins
+  * [Henry Jenkins explains his vision of transmedia and audience engagement](http://www.transmedialab.org/en/events/henry-jenkins-explains-his-vision-of-transmedia-and-audience-engagement/)
+  * [The 7 Literacies of Transmedia Storytelling](https://designerlibrarian.wordpress.com/2013/11/21/the-7-literacies-of-transmedia-storytelling/)
+  * [A look at transmedia storytelling](http://nerdist.com/a-look-at-transmedia-storytelling/) &mdash; Nerdist
+  * [5-tips-for-transmedia-storytelling030](http://mediashift.org/2013/01/5-tips-for-transmedia-storytelling030/)
+  * [A Creator's Guide to Transmedia Storytelling](http://www.deusexmachinatio.com/book/)
+  * [The 15 Things I've Learned about Transmedia Storytelling](https://www.indiewire.com/features/craft/the-15-things-ive-learned-about-transmedia-storytelling-33954/)
+  * [Transmedia Storytelling and Entertainment: A New Syllabus](http://henryjenkins.org/2013/08/transmedia-storytelling-and-entertainment-a-new-syllabus.html)
+  * [Creating Transmedia: An Interview with Andrea Phillips (Part One)](http://henryjenkins.org/2012/11/creating-transmedia-an-interview-with-andrea-phillips-part-one.html)
+  * [4 Inspiring Examples of Digital Storytelling](http://mashable.com/2012/01/31/digital-storytelling/#kkhPFTtaukqU)
+  * [Transmedia Storytelling](http://www.technologyreview.com/news/401760/transmedia-storytelling/)
+  * [5 Lessons For Storytellers From The Transmedia World](http://www.fastcocreate.com/1680902/5-lessons-for-storytellers-from-the-transmedia-world)
+  * [Storyworlds](http://convergenceishere.weebly.com/storyworlds.html)
+  * [Here Are the 5 Things That Make a Good Transmedia Project](http://www.indiewire.com/article/here-are-the-5-things-that-make-a-good-transmedia-project)
+  * [Videos from Transforming Hollywood 6: Alternative Realities, Worldbuilding, and Immersive Entertainment](http://henryjenkins.org/2015/05/videos-from-transforming-hollywood-6-alternative-realities-worldbuilding-and-immersive-entertainment.html)

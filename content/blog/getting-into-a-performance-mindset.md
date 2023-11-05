@@ -1,17 +1,18 @@
 ---
 title: "Getting into a performance mindset"
 date: "2019-06-24"
+youtube: true
 ---
 
 Web performance is hard. There is no one size fits all solution and the amount of work we do to make our content performant is more than what we may want to do. This post will explore the process of creating and enforcing a performance budget, why it's important and how will this improve the bottom line.
 
 The following figures show how much stuff measured by the median number of requests and size in kilobytes have grown in a 3-year period from 2016 to March 2019 (data is taken from the HTTP Archive's [state of the web](https://httparchive.org/reports/state-of-the-web) report).
 
-![Timeseries of median total requests over a 3 year period](/images/2019/04/3-year-requests.png)
+![Timeseries of median total requests over a 3 year period](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/3-year-requests)
 
 Timeseries of median total requests over a 3 year period
 
-![Timeseries of median total kilobytes over a 3 year period](/images/2019/04/3-year-total-kilobytes.png)
+![Timeseries of median total kilobytes over a 3 year period](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/3-year-total-kilobytes)
 
 Timeseries of total kilobytes over a 3 year period
 
@@ -21,16 +22,16 @@ Perhaps the best way to convince non-technical staff that performance is importa
 
 You can improve conversion by improving performance and, conversely, you can lose users with a poor performing site:
 
-- [The BBC found they lost an additional 10% of users](https://www.creativebloq.com/features/how-the-bbc-builds-websites-that-scale) for every additional second their site took to load.
-- [DoubleClick by Google found 53% of mobile site visits were abandoned](https://www.thinkwithgoogle.com/intl/en-154/insights-inspiration/research-data/need-mobile-speed-how-mobile-latency-impacts-publisher-revenue/) if a page took longer than 3 seconds to load.
+* [The BBC found they lost an additional 10% of users](https://www.creativebloq.com/features/how-the-bbc-builds-websites-that-scale) for every additional second their site took to load.
+* [DoubleClick by Google found 53% of mobile site visits were abandoned](https://www.thinkwithgoogle.com/intl/en-154/insights-inspiration/research-data/need-mobile-speed-how-mobile-latency-impacts-publisher-revenue/) if a page took longer than 3 seconds to load.
 
 ## Building the budget
 
 We have a rationale as to why we want to work on performance now we'll get serious about creating the performance budget and enforcing it during development. Some of the sources I'm using to write this post include
 
-- [Addy Osmani](https://medium.com/@addyosmani/start-performance-budgeting-dabde04cf6a3) and
-- [Lara Hogan](http://designingforperformance.com/weighing-aesthetics-and-performance/#approach-new-designs-with-a-performance-budget)
-- Smashing Magazine's [Front-End Performance Checklist 2019](https://www.smashingmagazine.com/2019/01/front-end-performance-checklist-2019-pdf-pages/)
+* [Addy Osmani](https://medium.com/@addyosmani/start-performance-budgeting-dabde04cf6a3) and
+* [Lara Hogan](http://designingforperformance.com/weighing-aesthetics-and-performance/#approach-new-designs-with-a-performance-budget)
+* Smashing Magazine's [Front-End Performance Checklist 2019](https://www.smashingmagazine.com/2019/01/front-end-performance-checklist-2019-pdf-pages/)
 
 Tools like [Performance Budget Calculator](http://www.performancebudget.io/), [Performance Budget Builder](https://codepen.io/bradfrost/full/EPQVBp/) and [Browser Calories](https://browserdiet.com/calories/) can help in building the budget once we figure out what a budget is and decide that we want to use one for our project.
 
@@ -44,23 +45,20 @@ Pick what it is that you want to measure based on your research then get to it. 
 
 Some of the things you may want to measure:
 
-- Loading speeds for different parts of the site on desktop and mobile
-
-    - first versus second and third visits
-- Additional measurements you can get from Webpage Test
-
-    - Time to first byte on mobile versus desktop
-    - Load Time
-    - First Byte
-    - Start Render
-    - Visually Complete
-    - Speed Index
-- Additional metrics from lighthouse runs
-
-    - First Contentful Paint
-    - Time to Interactive
-    - First Meaningful Paint
-    - First CPU Idle
+* Loading speeds for different parts of the site on desktop and mobile
+  * first versus second and third visits
+* Additional measurements you can get from Webpage Test
+  * Time to first byte on mobile versus desktop
+  * Load Time
+  * First Byte
+  * Start Render
+  * Visually Complete
+  * Speed Index
+* Additional metrics from lighthouse runs
+  * First Contentful Paint
+  * Time to Interactive
+  * First Meaningful Paint
+  * First CPU Idle
 
 Make sure that when you run the tests on both mobile and desktop and document the settings so you can repeat the tests as you change things. Ideally, also save the archive file (`.har` extension) that the tools provide so you can compare before and after any changes.
 
@@ -87,7 +85,7 @@ See this presentation from Alex Rusell to get a better understanding of the chal
 The first set of budgets we get from running the pages on the site through Webpagetest.
 
 | Measure | Maximum | Tool | Notes |
-| --- | --- | --- | --- |
+| --* | --* | --* | --* |
 | Total page load time | 3 seconds | WebPagetest, median from five runs on 3G | All pages |
 | Total page load time | 3 seconds | Real user monitoring tool, median across geographies | All pages |
 | Total page weight | 800 KB | WebPagetest | All pages |
@@ -97,14 +95,14 @@ The first set of budgets we get from running the pages on the site through Webpa
 We can get additional information from running Lighthouse from Chrome's developer tools (Audit menu)
 
 | Measure | Minimum | Tool |
-| --- | --- | --- |
+| --* | --* | --* |
 | Performance | 95 | Lighthouse, desktop, no throttle, running in the browser with user profile |
 | Performance | 80 | Lighthouse, mobile, slow 3G throttle, running in the browser with a user profile. Score different accounts for additional costs of mobile web browsing |
 
 We can set up a final set of budgets based on Webpackk bundles
 
 | Measure | Maximum | Tool | Notes |
-| --- | --- | --- | --- |
+| --* | --* | --* | --* |
 | Bundle size | 170KB | Webpack | Main Bundle |
 
 It's important to remember: **these are example metrics** based on imaginary results from researching my company and the competition. Your research will almost certainly yield different results and produce different budget needs.
@@ -113,16 +111,16 @@ When we build the content it's easy to just build all aspects of the site and as
 
 The first step in figuring out how to build a performant application is to inventory all assets (Javascript, images, fonts, third-party scripts and any other type of content for your site or app), and break them in groups:
 
-- **Basic core experience**: fully accessible content that works for all your target users regardless of browsers and versions
-- **Enhanced experience** an enhanced experience for browsers that support them
-- **Extras**: "Nice to have assets" that aren’t absolutely required and that can be lazy-loaded.
+* **Basic core experience**: fully accessible content that works for all your target users regardless of browsers and versions
+* **Enhanced experience** an enhanced experience for browsers that support them
+* **Extras**: "Nice to have assets" that aren’t absolutely required and that can be lazy-loaded.
 
 Defining the browsers that will get the enhanced experience can be a little tricky as [cutting the mustard](https://justmarkup.com/log/2015/02/cut-the-mustard-revisited/) for new features can be more complicated than it looks. While all the browsers that support ES2015+ modules support other features in the newer ECMA Script specifications, the reverse is not true. We might find ourselves trying to use modules and fetch in browsers that only support fetch.
 
 If you can get away with it use ES2015+ `<script type="module">` for loading JavaScript:
 
-- Modern browsers will interpret the script as a JavaScript module and run it as expected.
-- Legacy browsers will ignore the module script because it won't recognize the type attribute
+* Modern browsers will interpret the script as a JavaScript module and run it as expected.
+* Legacy browsers will ignore the module script because it won't recognize the type attribute
 
 Caveat: Android phones cut the mustard despite their limited memory and CPU capabilities. One way to work around this is to feature detect the [Device Memory API](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/deviceMemory) first and fall back to cutting the mustard.
 
@@ -158,7 +156,7 @@ module.exports = {
 The values for the attributes are explained in the table below:
 
 | Attribute | Default in bytes | Value in the example in bytes | Description |
-| --- | --- | --- | --- |
+| --* | --* | --* | --* |
 | maxAssetSize | 250000 | 100000 | Maximum Value for individual assets |
 | maxEntrypointSize | 250000 | 100000 | Maximum Value for individual [entry points](https://webpack.js.org/concepts/entry-points/) |
 | hints | warning | warning | Values discussed below |
@@ -173,11 +171,9 @@ Possible values for hints are:
 
 As a second warning/error stage, Webpack's [size-plugin](https://www.npmjs.com/package/size-plugin) reports on each bundle size and whether the size as changed since the last time the command was run.
 
-![Webpack size plugin in action](/images/2019/05/webpack-performance.png)
+![Webpack size plugin in action](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/webpack-performance)
 
-Webpack size plugin in action
-
-TO use the plugin, first install it using NPM:
+To use the plugin, first install it using NPM:
 
 ```js
 npm i -D size-plugin
@@ -204,25 +200,19 @@ One possibility is that we're loading too many dependencies that we don't need. 
 
 [Webpack Bundler Analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer) produces a graphical visualization of the modules you app uses.
 
-![Webpack Analyzer Output](/images/2019/05/webpack-bundle-analyzer.gif)
-
-Webpack Analyzer Output
+![Webpack Analyzer Output](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/webpack-bundle-analyzer)
 
 Bundle analyzer also gives you results for your compressed and minimized bundles. It presents three value for your bundles:
 
 stat
-
-This is the "input" size of your files, before any tansformations like minification.
-
-It is called "stat size" because it's obtained from Webpack's stats object.
+: This is the "input" size of your files, before any tansformations like minification.
+: It is called "stat size" because it's obtained from Webpack's stats object.
 
 parsed
-
-This is the "output" size of your files. If you're using a Webpack plugin such as Uglify, then this value will reflect the minified size of your code.
+: This is the "output" size of your files. If you're using a Webpack plugin such as Uglify, then this value will reflect the minified size of your code.
 
 gzip
-
-This is the size of running the parsed bundles/modules through gzip compression.
+: This is the size of running the parsed bundles/modules through gzip compression.
 
 ### Babel and babel-preset-env
 
@@ -273,7 +263,7 @@ rules: [
 
 This gives you a lot of control over what you transpile for which browsers and help reduce bundle sizes by eliminating unnecessary transpilation. However, it also makes you responsible for ensuring your audience can use the code and doesn't have to rely on polyfills or graceful degradation if possible.
 
-## Measuring performance.
+## Measuring performance
 
 Just like we ran tests to establish our budgets we have to continue running them to make sure we stay within that budget and we don't introduce any performance regressions.
 
@@ -285,17 +275,15 @@ The first idea when it comes to keeping ourselves honest is to make sure that we
 
 ![Result of WPT and Lighthouse running for a PR](https://user-images.githubusercontent.com/238208/46586467-e93c8300-ca33-11e8-83ac-401b23227eb0.png)
 
-Result of WPT and Lighthouse running for a PR
-
 Both of these tools give you performance visibility during the build process. If these either of these tools fails the results will be reflected in the PR and they can reject the PR automatically or let project owners take manual action on the request.
 
 ## Dashboards and reporting
 
-Tools like [caliber](https://calibreapp.com/) and [Speedcurve](https://speedcurve.com/) allow you to create dashboards to show the results of performance testing.
+Tools like [Calibre](https://calibreapp.com/) and [Speedcurve](https://speedcurve.com/) allow you to create dashboards to show the results of performance testing.
 
 The idea is to first surface performance for the whole team to see and to have a clear way to communicate to interested parties when a performance regression happens so you can take appropriate action.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0X19cD4Iaik?re&amp;autoplay=1&amp;loop=1&amp;mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<lite-youtube videoid="0X19cD4Iaik"></lite-youtube>
 
 One thing that I found particularly interesting is how Speed Curve and Calibre allow you to create [competitive dashboards](https://support.speedcurve.com/get-the-most-out-of-speedcurve/benchmark-yourself-against-your-competitors) of your company against the competition you select.
 
@@ -303,6 +291,4 @@ One thing that I found particularly interesting is how Speed Curve and Calibre a
 
 Comparative performance dashboard from Speedcurve
 
-![Comparative performance filmstrip view](https://downloads.intercomcdn.com/i/o/43393518/cf6e242e1b4f82bde996cd80/image.png)
-
-Comparative performance filmstrip view from Speedcurve
+![Comparative performance filmstrip view from Speedcurve](https://downloads.intercomcdn.com/i/o/43393518/cf6e242e1b4f82bde996cd80/image.png)

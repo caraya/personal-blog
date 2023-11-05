@@ -40,21 +40,21 @@ The example below is a basic sample HTML document conforming to the AMP HTML spe
     <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
   <body>
-    <!-- Your amp-approved content goes here -->
+    <!-* Your amp-approved content goes here -->
   </body>
 </html>
 ```
 
 Some of the requirements and limitations of AMP are not evident. According to [AMP HTML Specification](https://www.ampproject.org/docs/fundamentals/spec) an AMP document must:
 
-- start with the doctype < !doctype html>
-- contain a top-level `<html &#x26a1;>` tag (`</html><html amp>` is accepted as well)
-- contain `<head>` and `<body>` tags (They are optional in HTML)
-- contain a `<link rel="canonical" href="$SOME_URL"/>` tag inside their head that points to the regular HTML version of the AMP HTML document or to itself if no such HTML version exists
-- contain a `<meta charset="utf-8"/>` tag as the first child of their head tag
-- contain a `<meta name="viewport" content="width=device-width,minimum-scale=1"/>` tag inside their head tag. It's also recommended to include initial-scale=1
-- contain a `<script async src="https://cdn.ampproject.org/v0.js"></script>` tag inside their head tag
-- contain the AMP boilerplate code (`head > style[amp-boilerplate]` and `noscript > style[amp-boilerplate]`) in their head tag
+* start with the doctype < !doctype html>
+* contain a top-level `<html &#x26a1;>` tag (`</html><html amp>` is accepted as well)
+* contain `<head>` and `<body>` tags (They are optional in HTML)
+* contain a `<link rel="canonical" href="$SOME_URL"/>` tag inside their head that points to the regular HTML version of the AMP HTML document or to itself if no such HTML version exists
+* contain a `<meta charset="utf-8"/>` tag as the first child of their head tag
+* contain a `<meta name="viewport" content="width=device-width,minimum-scale=1"/>` tag inside their head tag. It's also recommended to include initial-scale=1
+* contain a `<script async src="https://cdn.ampproject.org/v0.js"></script>` tag inside their head tag
+* contain the AMP boilerplate code (`head > style[amp-boilerplate]` and `noscript > style[amp-boilerplate]`) in their head tag
 
 If this was all that AMP required for compliance I'd be ok. I've always been a gung-ho fan of proper page structure and including the appropriate elements where they should be. Death to tagsoup markup!
 
@@ -69,7 +69,7 @@ Amp not only requires a certain structure from your HTML page but it changes som
 The table below (also from the [AMP HTML Specification](https://www.ampproject.org/docs/fundamentals/spec)) explains the limitations and changes that AMP makes to standard HTML elements. Some of these changes help explain the structure of the example page seen earlier.
 
 | Tag | Status in AMP HTML |
-| --- | --- |
+| --* | --* |
 | script | Prohibited unless the type is `application/ld+json`. (Other non-executable values may be added as needed.) Exception is the mandatory script tag to load the AMP runtime and the script tags to load extended components. |
 | noscript | Allowed. Can be used anywhere in the document. If specified, the content inside the `<noscript>` element displays if JavaScript is disabled by the user. |
 | base | Prohibited. |
@@ -87,7 +87,7 @@ Please note: `<img>` is a [Void Element according to HTML5](https://www.w3.org/T
 | form | Allowed. Require including [amp-form](https://www.ampproject.org/docs/reference/components/amp-form) extension. |
 | input elements | Mostly allowed with [exception of some input types](https://www.ampproject.org/docs/reference/components/amp-form#inputs-and-fields), namely, `<input[type=image]>`, `<input[type=button]>`, `<input[type=password]>`, `<input[type=file]>` are invalid. Related tags are also allowed: `<fieldset>`, `<label>` |
 | button | Allowed. |
-| style | [Required style tag for amp-boilerplate](#boilerplate). One additional style tag is allowed in head tag for the purpose of custom styling. This style tag must have the attribute `amp-custom`. |
+| style | Required style tag for amp-boilerplate. One additional style tag is allowed in head tag for the purpose of custom styling. This style tag must have the attribute `amp-custom`. |
 | link | `rel` values registered on [microformats.org](http://microformats.org/wiki/existing-rel-values) are allowed. If a `rel` value is missing from our whitelist, [please submit an issue](https://github.com/ampproject/amphtml/issues/new). `stylesheet` and other values like `preconnect`, `prerender` and `prefetch` that have side effects in the browser are disallowed. There is a special case for fetching stylesheets from whitelisted font providers. |
 | meta | The `http-equiv` attribute may be used for specific allowable values; see the [AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) for details. |
 | a | The `href` attribute value must not begin with `javascript:`. If set, the `target` attribute value must be `_blank`. Otherwise allowed. |
@@ -117,35 +117,31 @@ Condé Nast has published information on [how they generate the AMP content](htt
 
 Their system is fairly intricate as the image below illustrates:
 
-![](/images/2018/07/AMP-Arch.png)
-
-AMP Generation Process at Condé Nast. From [The Why and How of Google AMP at Condé Nast](https://technology.condenast.com/story/the-why-and-how-of-google-amp-at-conde-nast)
+![AMP Generation Process at Condé Nast. From [The Why and How of Google AMP at Condé Nast](https://technology.condenast.com/story/the-why-and-how-of-google-amp-at-conde-nast)](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/AMP-Arch)
 
 And the AMP generation process itself looks like it's rather complex, running from Markdown to React that then converts the Markdown content into valid AMP HTML:
 
-![](/images/2018/07/AMP-Pipeline.png)
-
-Condé Nast AMP Service Pipeline. From [The Why and How of Google AMP at Condé Nast](https://technology.condenast.com/story/the-why-and-how-of-google-amp-at-conde-nast)
+![Condé Nast AMP Service Pipeline. From [The Why and How of Google AMP at Condé Nast](https://technology.condenast.com/story/the-why-and-how-of-google-amp-at-conde-nast)](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/AMP-Pipeline)
 
 So now we have to insert a way to identify when we want our CMS to serve AMP content and an AMP conversion process into our pipeline... but only for our AMP optimized content, right? I go back to the question I asked earlier about creating AMP only sites: Are they necessary?
 
 Furthermore, I'm concerned about the amount of work needed to get AMP into a CMS. If you're not using a commercially available platform, how do you build AMP in addition to the standard content? As we saw in Converting your content? the restrictions of an AMP page are different than those of normal HTML (even if some of the restrictions are sensible and make sense). Sure we have WordPress and several other CMS platforms from AMP's [Supported Platforms, Vendors, and Partners](https://www.ampproject.org/support/faqs/supported-platforms) page:
 
-- [AMPize.me](https://www.ampize.me)
-- [Arc Publishing](https://www.arcpublishing.com)
-- [Canvas](https://www.roya.com/blog/roya-announces-addition-of-amp-to-canvas-cms-amp.html)
-- [Drupal](https://www.drupal.org/project/amp)
-- [Fastcommerce](https://www.fastcommerce.com.br/accelerated-mobile-pages-amp)
-- [Hatena](http://help.hatenablog.com/entry/amp)
-- [Kentico](https://github.com/Kentico/kentico-amp)
-- [Marfeel](https://atenea.marfeel.com/atn/product/marfeel-press/360-platform/google-amp/marfeel-s-accelerated-mobile-pages-google-amp-solution)
-- [Rabbit](https://gomobile.jp/rabbit/)
-- [Squarespace](https://support.squarespace.com/hc/en-us/articles/223766868-Using-AMP-with-Squarespace)
-- [Textpattern](https://textpattern.com/weblog/401/textpattern-website-redesign/amp)
-- [TownNews](https://www.townnews365.com/)
-- [Tumblr](https://www.tumblr.com/about)
-- [WordPress.com](https://en.support.wordpress.com/google-amp-accelerated-mobile-pages/)
-- [WordPress.org](https://wordpress.org/plugins/amp/)
+* [AMPize.me](https://www.ampize.me)
+* [Arc Publishing](https://www.arcpublishing.com)
+* [Canvas](https://www.roya.com/blog/roya-announces-addition-of-amp-to-canvas-cms-amp.html)
+* [Drupal](https://www.drupal.org/project/amp)
+* [Fastcommerce](https://www.fastcommerce.com.br/accelerated-mobile-pages-amp)
+* [Hatena](http://help.hatenablog.com/entry/amp)
+* [Kentico](https://github.com/Kentico/kentico-amp)
+* [Marfeel](https://atenea.marfeel.com/atn/product/marfeel-press/360-platform/google-amp/marfeel-s-accelerated-mobile-pages-google-amp-solution)
+* [Rabbit](https://gomobile.jp/rabbit/)
+* [Squarespace](https://support.squarespace.com/hc/en-us/articles/223766868-Using-AMP-with-Squarespace)
+* [Textpattern](https://textpattern.com/weblog/401/textpattern-website-redesign/amp)
+* [TownNews](https://www.townnews365.com/)
+* [Tumblr](https://www.tumblr.com/about)
+* [WordPress.com](https://en.support.wordpress.com/google-amp-accelerated-mobile-pages/)
+* [WordPress.org](https://wordpress.org/plugins/amp/)
 
 Another thing that comes to mind when it comes to generating AMP programmatically is how much of the CSS we use in our normal site can we use with AMP?
 
@@ -161,33 +157,33 @@ There is a growing number of purpose-specific custom AMP elements. I can underst
 
 Below is the list of custom media elements that are part of the AMP ecosystem (`amp-img` is also part of the list but I removed it because it's built into the AMP library):
 
-- amp-3d-gltf
-- amp-3q-player
-- amp-anim
-- amp-apester-media
-- amp-audio
-- amp-bodymovin-animation
-- amp-brid-player
-- amp-brightcove
-- amp-dailymotion
-- amp-google-vrview-image
-- amp-hulu
-- amp-ima-video
-- amp-imgur
-- amp-izlesene
-- amp-jwplayer
-- amp-kaltura-player
-- amp-nexxtv-player
-- amp-o2-player
-- amp-ooyala-player
-- amp-playbuzz
-- amp-reach-player
-- amp-soundcloud
-- amp-springboard-player
-- amp-video
-- amp-vimeo
-- amp-wistia-player
-- amp-youtube
+* amp-3d-gltf
+* amp-3q-player
+* amp-anim
+* amp-apester-media
+* amp-audio
+* amp-bodymovin-animation
+* amp-brid-player
+* amp-brightcove
+* amp-dailymotion
+* amp-google-vrview-image
+* amp-hulu
+* amp-ima-video
+* amp-imgur
+* amp-izlesene
+* amp-jwplayer
+* amp-kaltura-player
+* amp-nexxtv-player
+* amp-o2-player
+* amp-ooyala-player
+* amp-playbuzz
+* amp-reach-player
+* amp-soundcloud
+* amp-springboard-player
+* amp-video
+* amp-vimeo
+* amp-wistia-player
+* amp-youtube
 
 It's interesting that there is an AMP-specific Vimeo and element when the project itself describes how you can use `amp-iframe` to create the same experience:
 

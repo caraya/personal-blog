@@ -47,13 +47,13 @@ Use the small viewport units when you want the smallest possible viewport in res
 
 Use the large viewport size when you want to use the full viewport with the browser interface being retracted or not visible. The large viewport size allows the content you design to fill the entire viewport when browser interfaces are retracting, however, the content might get hidden when browser interfaces expand.
 
-![Comparison of small viewport (left) and large viewport (right). Source: [Interop 2022 Viewport Investigation](https://github.com/web-platform-tests/interop-2022-viewport#readme)](/images/2022/09/viewport-units-mobile-naming-things.png)
+![Comparison of small viewport (left) and large viewport (right). Source: [Interop 2022 Viewport Investigation](https://github.com/web-platform-tests/interop-2022-viewport#readme)](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/viewport-units-mobile-naming-things)
 
 **Dynamic (dvw and dvh)**
 
 Use the dynamic viewport size when you want the viewport to be automatically sized in response to browser interface changes. The value will be anything within the limits of 100lvh (maximum) and 100svh (minimum).
 
-![Dynamic viewport in small and large viewports. Source: [Interop 2022 Viewport Investigation](https://github.com/web-platform-tests/interop-2022-viewport#readme)](/images/2022/09/viewport-units-mobile-dvh-mobilesafari.png)
+![Dynamic viewport in small and large viewports. Source: [Interop 2022 Viewport Investigation](https://github.com/web-platform-tests/interop-2022-viewport#readme)](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/viewport-units-mobile-dvh-mobilesafari)
 
 **Default**
 

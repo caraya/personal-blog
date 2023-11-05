@@ -13,7 +13,7 @@ categories:
 
 One of the hardest things to do in web design is to create a fluid 3 column layout, also known as the holy grail. I could talk for hours about how it was goo enough for the technologies available when the model was first developed, how much of a pain it is to implement correctly, how it did not support mobile and small form devices and how long have developers wanted a solution.
 
-\[caption id="attachment\_153542" align="aligncenter" width="700"\][![Example of Holy Grail Layout](/images/2014/03/litesite-template.jpg)](http:/images/2014/03/litesite-template.jpg) Example of Holy Grail Layout. Courtesy of [Litesite](http://litesite.org/?pg=en/holy-grail-layout-intro)\[/caption\]
+![Example of Holy Grail Layout. Courtesy of [Litesite](http://litesite.org/?pg=en/holy-grail-layout-intro)](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/litesite-template.)
 
 Instead I will talk about a solution that has finally become widely available. With the release of Firefox 28 to wide availability, the last of the big 4 browsers now supportd the full flexible box layouts specificactions. This means we can do some awesome crazy things with layouts that, until now we could only dream about.
 
@@ -45,17 +45,17 @@ or
 
 Each Flex Box container defines two axes:
 
-- A **main axis** that defines how the elements flow in the container
-- A **cross axis** that is perpendicular to the main
+* A **main axis** that defines how the elements flow in the container
+* A **cross axis** that is perpendicular to the main
 
 #### flex-direction
 
 The flex-direction attribute defines the main axis (start, direction, end) for the container. It can take one of 4 values:
 
-- **row**: The flex container's main-axis is defined to be the same as the text direction. The elements in the container flow in the same direction as the page content (left to right in the case of English)
-- **row-reverse**: The flex container's main-axis is defined to be the same as the text direction. The elements in the container flow in the opposite direction to the page content (right to left in the case of English)
-- **column**: The flex container's main-axis is defined to be the same as the block-axis. The main-start and main-end points are the same as the before and after points of the writing-mode (top to bottom in English)
-- **column-reverse**: The flex container's main-axis is defined to be the same as the block-axis. The main-start and main-end points are reversed from the before and after points of the writing-mode (bottom to top in English)
+* **row**: The flex container's main-axis is defined to be the same as the text direction. The elements in the container flow in the same direction as the page content (left to right in the case of English)
+* **row-reverse**: The flex container's main-axis is defined to be the same as the text direction. The elements in the container flow in the opposite direction to the page content (right to left in the case of English)
+* **column**: The flex container's main-axis is defined to be the same as the block-axis. The main-start and main-end points are the same as the before and after points of the writing-mode (top to bottom in English)
+* **column-reverse**: The flex container's main-axis is defined to be the same as the block-axis. The main-start and main-end points are reversed from the before and after points of the writing-mode (bottom to top in English)
 
 ```css
 .content {
@@ -65,9 +65,9 @@ The flex-direction attribute defines the main axis (start, direction, end) for t
 
 #### flex-wrap
 
-- **nowrap** (default): single-line / left to right in ltr; right to left in rtl
-- **wrap**: multi-line / left to right in ltr; right to left in rtl
-- **wrap-reverse**: multi-line / right to left in ltr; left to right in rtl
+* **nowrap** (default): single-line / left to right in ltr; right to left in rtl
+* **wrap**: multi-line / left to right in ltr; right to left in rtl
+* **wrap-reverse**: multi-line / right to left in ltr; left to right in rtl
 
 ```css
 .content {
@@ -90,11 +90,11 @@ This is a shortcut for flex-direction and flex-wrap which together define both t
 
 Justify content takes a special meaning when used in flex boxes: It tells the browser how to arrange the content of the container in its main axis. It can take the following values:
 
-- flex-start (default): items are packed toward the start line
-- flex-end: items are packed toward to end line
-- center: items are centered along the line
-- space-between: items are evenly distributed in the line; first item is on the start line, last item on the end line
-- space-around: items are evenly distributed in the line with equal space around them
+* flex-start (default): items are packed toward the start line
+* flex-end: items are packed toward to end line
+* center: items are centered along the line
+* space-between: items are evenly distributed in the line; first item is on the start line, last item on the end line
+* space-around: items are evenly distributed in the line with equal space around them
 
 ```css
 .content {
@@ -107,22 +107,22 @@ Justify content takes a special meaning when used in flex boxes: It tells the br
 
 align-items controls the vertical positioning of the row's element. It is the vertical counterpart to align-items. It can take the following values:
 
-- flex-start: cross-start margin edge of the items is placed on the cross-start line
-- flex-end: cross-end margin edge of the items is placed on the cross-end line
-- center: items are centered in the cross-axis
-- baseline: items are aligned such as their baselines align
-- stretch (default): stretch to fill the container (still respect min-width/max-width)
+* flex-start: cross-start margin edge of the items is placed on the cross-start line
+* flex-end: cross-end margin edge of the items is placed on the cross-end line
+* center: items are centered in the cross-axis
+* baseline: items are aligned such as their baselines align
+* stretch (default): stretch to fill the container (still respect min-width/max-width)
 
 #### align-content
 
 Controls the use of the rermaining vertical space within a flex-container's row. This has no effect if there is only one row on the
 
-- flex-start: lines packed to the start of the container
-- flex-end: lines packed to the end of the container
-- center: lines packed to the center of the container
-- space-between: lines evenly distributed; the first line is at the start of the container while the last one is at the end
-- space-around: lines evenly distributed with equal space between them
-- stretch (default): lines stretch to take up the remaining space
+* flex-start: lines packed to the start of the container
+* flex-end: lines packed to the end of the container
+* center: lines packed to the center of the container
+* space-between: lines evenly distributed; the first line is at the start of the container while the last one is at the end
+* space-around: lines evenly distributed with equal space between them
+* stretch (default): lines stretch to take up the remaining space
 
 ### Flex Item
 
@@ -171,8 +171,8 @@ This defines the default size of an element before the remaining space is distri
 
 Supported values:
 
-- length
-- auto
+* length
+* auto
 
 The default is auto
 
@@ -186,11 +186,11 @@ Default is 0 1 auto.
 
 If this property is set, it will override the align-item property of the parent.
 
-- flex-start: cross-start margin edge of the items is placed on the cross-start line
-- flex-end: cross-end margin edge of the items is placed on the cross-end line
-- center: items are centered in the cross-axis
-- baseline: items are aligned such as their baselines align
-- stretch (default): stretch to fill the container (still respect min-width/max-width)
+* flex-start: cross-start margin edge of the items is placed on the cross-start line
+* flex-end: cross-end margin edge of the items is placed on the cross-end line
+* center: items are centered in the cross-axis
+* baseline: items are aligned such as their baselines align
+* stretch (default): stretch to fill the container (still respect min-width/max-width)
 
 ## The Holy Grail with Flex Boxes
 
@@ -211,7 +211,7 @@ Taken from [Mozilla Developer Network Flexbox Page](https://developer.mozilla.or
 ### Desktop Browsers
 
 | Feature | Firefox (Gecko) | Chrome | Internet Explorer | Opera | Safari |
-| --- | --- | --- | --- | --- | --- |
+| --* | --* | --* | --* | --* | --* |
 | Basic support (single-line flexbox) | 18.0 (18.0)\-moz(Behind a pref) \[2\]
 22.0 (22.0) \[2\] | 21.0\-webkit
 29.0 | 11 \[3\] | 12.10
@@ -223,7 +223,7 @@ Taken from [Mozilla Developer Network Flexbox Page](https://developer.mozilla.or
 ### Mobile Browsers
 
 | Feature | Firefox Mobile (Gecko) | Android | IE Phone | Opera Mobile | Safari Mobile |
-| --- | --- | --- | --- | --- | --- |
+| --* | --* | --* | --* | --* | --* |
 | Basic support (single-line flexbox) | 18.0 (18.0)\-moz(Behind a pref) \[2\]
 22.0 (22.0) \[2\] | ? | ? | 15-19 \-webkit | 7\-webkit \[1\] |
 | Multi-line flexbox | 28.0 (28.0) | ? | ? | 15-19 \-webkit | 7\-webkit \[1\] |

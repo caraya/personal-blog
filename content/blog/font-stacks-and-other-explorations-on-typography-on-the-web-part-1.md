@@ -103,7 +103,7 @@ One problem with fallback fonts is that they may not match the web font they rep
 
 Monica Dinculescu created a [Font Style Matcher](https://meowni.ca/font-style-matcher/) to work around this issue. We match the fonts as close as possible as show in the figure below and then copy the two CSS blocks.
 
-![Font Matcher Demo of Work In Progress](/images/2018/03/font-matcher-935x1024.png)
+![Font Matcher Demo of Work In Progress](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/font-matcher-935x1024)
 
 Font Matcher Demo of Work In Progress
 
@@ -183,7 +183,9 @@ Other typefaces are designed specifically to be used in large areas of smaller b
 
 Identifying fonts for your specific needs is the first step but then comes the big question: **Serif or Sans-Serif?**
 
-![Sans Serif Font](/images/2018/02/418px-Serif_and_sans-serif_03.svg_.png) ![Serif font with serif lines show in red](/images/2018/02/418px-Serif_and_sans-serif_02.svg_.png)
+![Sans Serif Font](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/418px-Serif_and_sans-serif_03.svg_)
+
+![Serif font with serif lines show in red](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/418px-Serif_and_sans-serif_02.svg_)
 
 Comparison of sans-serif font (left) and serif font showing serif lines in red (right)
 
@@ -340,9 +342,9 @@ Use high contrast between text and background color, with few exception indicate
 
 > The visual presentation of text and images of text has a contrast ratio of at least 4.5:1, except for the following: (Level AA)
 >
-> - Large Text: Large-scale text and images of large-scale text have a contrast ratio of at least 3:1;
-> - Incidental: Text or images of text that are part of an inactive user interface component, that are pure decoration, that are not visible to anyone, or that are part of a picture that contains significant other visual content, have no contrast requirement.
-> - Logotypes: Text that is part of a logo or brand name has no minimum contrast requirement.
+> * Large Text: Large-scale text and images of large-scale text have a contrast ratio of at least 3:1;
+> * Incidental: Text or images of text that are part of an inactive user interface component, that are pure decoration, that are not visible to anyone, or that are part of a picture that contains significant other visual content, have no contrast requirement.
+> * Logotypes: Text that is part of a logo or brand name has no minimum contrast requirement.
 >
 > [Rule 1.4.3](https://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-contrast)
 
@@ -353,7 +355,7 @@ The other aspect is a matter of cultural awareness. In addition to avoiding usin
 The table below (From [Creating Culturally Customized Content](http://blog.globalizationpartners.com/culturally-customized-website.aspx)) shows what different colors mean in 5 different countries with vastly different cultures. It is obvious you're conveying a very different message to each of those audiences, even if they live in the same country.
 
 | COLOR | USA | China | India | Egypt | Japan |
-| --- | --- | --- | --- | --- | --- |
+| --* | --* | --* | --* | --* | --* |
 | Red | Danger
 Love
 Stop | Good fortune
@@ -436,7 +438,7 @@ This will likely render the width of the page at the width of its own screen. So
 
 Do not, I repeat, **do not** use this meta tag if your site is not responsive. The results are unpredictable but ugly. You've been warned.
 
-#### Are you subsetting your fonts? Pros and cons.
+#### Are you subsetting your fonts? Pros and cons
 
 One way to make your fonts files smaller is to subset them. When you subset a font you take out all the characters you're not using for your content. Depending on the font this may reducen the file size significantly at the risk of having to redo the work every time you add content to your site.
 
@@ -475,13 +477,13 @@ In [Real Web Type in Real Web Context](http://alistapart.com/article/real-web-ty
 
 Depending on your needs you could use the W3C's [element sampler](https://www.w3.org/StyleSheets/Core/stylebot.html?family=9doc=Sampler) and style the bare content with your styles and fonts.
 
-Another option is to use Tim Brown's \[http://webfontspecimen.com/\](Web Font Specimen) to create more advanced specimens. I've created specimens for fonts with open sources licenses at [Font Specimen Archive](https://caraya.github.io/font-specimen-archive/)
+Another option is to use Tim Brown's [Web Font Specimen](http://webfontspecimen.com/) to create more advanced specimens. I've created specimens for fonts with open sources licenses at [Font Specimen Archive](https://caraya.github.io/font-specimen-archive/)
 
 #### Have you tested how will your fallback fonts affect your design?
 
 So far we've made the assumption that our fonts will load and everything works well out of the box. But this is not always the case and we shouldn't assume it is.
 
-This begs the question: **_How well will the fallback fonts work with your design_**
+This begs the question: ***How well will the fallback fonts work with your design***
 
 If the fallback has a higher or lower x-height or thicker strokes than your web font, the layout will look different. This is why you must test your stack during development and make sure that your web fonts match as close as possible with the fallbacks. Monica Dinculescu's [Font Style Matcher](https://meowni.ca/font-style-matcher/) can help
 
@@ -493,10 +495,10 @@ If you choose to host fonts in your own site you will have to contend with netwo
 
 These are some of the font services I've used in the past.
 
-- [Google Fonts](https://fonts.google.com/)
-- [Adobe Typekit](https://fonts.google.com/)
-- [Fonts.com Web Fonts](http://webfonts.fonts.com/)
-- [Typotheque](http://www.typotheque.com/webfonts)
+* [Google Fonts](https://fonts.google.com/)
+* [Adobe Typekit](https://fonts.google.com/)
+* [Fonts.com Web Fonts](http://webfonts.fonts.com/)
+* [Typotheque](http://www.typotheque.com/webfonts)
 
 As with anything else on the web, your milleage may vary.
 

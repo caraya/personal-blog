@@ -95,6 +95,7 @@ The code will do the following:
 4. Populate the list with the available fonts
 5. Add all of the elements to the page
 6. Handle error, e.g. user cancelled the operation
+{.custom-ordered}
 
 ```js
 useLocalFontsButton.onclick = async function() {

@@ -86,7 +86,7 @@ For more details on the `display` property check MDN's [display](https://develop
 
 All content it a web page is in a box. The [Box Model](https://web.dev/learn/css/box-model/) describes how these boxes surrounding the content behave and how it interacts with other content on the page.
 
-![CSS Box Model](/images/2022/12/box.png)
+![CSS Box Model](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/box)
 
 There are multiple boxes around the content. They are:
 
@@ -165,7 +165,7 @@ Sometimes the parent element is the same as the containing block, but that's not
 
 The `z-index` CSS property sets the z-order of a positioned element and its children.
 
-![Graphical representation of z-index. Source: [Javascript in plain English](https://javascript.plainenglish.io/css-z-index-not-working-d5c068b6861)](/images/2023/04/zindex.webp)
+![Graphical representation of z-index. Source: [Javascript in plain English](https://javascript.plainenglish.io/css-z-index-not-working-d5c068b6861)](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/zindex)
 
 What has helped me reason through z-index is to think of the content in the page being in layers. The `z-index` property controls how the layers interact with the higher positive values being "closer" to the user.
 

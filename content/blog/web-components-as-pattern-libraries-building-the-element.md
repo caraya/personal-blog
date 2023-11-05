@@ -22,7 +22,7 @@ I will use a modified version of Atomic Web Design as the underlying principle a
 
 [Josh Duck’s Periodic Table of HTML Elements](http://zqsmm.qiniucdn.com/data/20110511083224/index.html) does a good job illustrating that all our web content, regardless of for factor or what framework generated it, uses the same elements.
 
-\[caption id="attachment\_787731" align="aligncenter" width="640"\][![](/images/2016/12/html-periodic-table.png)](https://publishing-project.rivendellweb.net/web-components-as-pattern-libraries-part-i-building-the-element__trashed/html-periodic-table/) Periodic Table of HTML Elements shows that all HTML elements are organized around a function.\[/caption\]
+![Periodic Table of HTML Elements shows that all HTML elements are organized around a function](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/html-periodic-table)
 
 Because all the content that we use for the web starts from the same basic components we can use a similar building pattern to what nature uses, going from the simplest to the most complex.
 
@@ -32,9 +32,7 @@ The main difference in my web component based approach is that I'll concentrate 
 
 We'll look at how to customize a component later in the article but one of the great advantages of web components is that you can create one customizable molecule to handle many layouts and color arrangements without having to create customized versions of the element.
 
-# Building a molecule using Polymer
-
-## Prep work
+## Building a molecule using Polymer
 
 Before we can build a custom molecule we have to build a Polymer element. This requires [Bower](https://bower.io/) in order to install the dependencies for our element. Install Bower as a global Node application if you haven't done so already.
 

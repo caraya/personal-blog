@@ -41,11 +41,11 @@ To access the features we'll discuss below, follow these steps:
 2. Right Click the name of the site
 3. Select ***Open Site Shell***
 
-![Selection of site shell for a local application](/images/2021/09/local-ssh-01.png)
+![Selection of site shell for a local application](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/local-ssh-01.png)
 
 You will see a new terminal shell that looks like this:
 
-![Shell opening for Local site](/images/2021/09/local-ssh-02.png)
+![Shell opening for Local site](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/local-ssh-02.png)
 
 The shell comes preconfigured with the WordPress CLI and PHP Composer
 

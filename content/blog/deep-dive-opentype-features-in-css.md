@@ -13,13 +13,13 @@ The first thing we need to do to enable OpenType features is to figure out what 
 
 If you use Adobe Fonts (FKA Typekit) you can see the OpenType features available when you edit the fonts in a kit.
 
-![Fontkit OpenType edit font dialogue](/images/2020/05/webkit-font-editing-dialogue.png)
+![Fontkit OpenType edit font dialogue](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/webkit-font-editing-dialogue)
 
 Fontkit OpenType feaature dialogue, part of the font section of the kit editing screen.
 
 The next image shows the details of the font editing screen that presents the available OpenType features of a font.
 
-![Fontkit OpenType feature dialogue detail](/images/2020/05/fontkit-font-features.png)
+![Fontkit OpenType feature dialogue detail](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/fontkit-font-features)
 
 Detail of the font editing dialogue showing OpenType Features
 
@@ -27,7 +27,7 @@ Unfortunately, Google Fonts doesn't provide an interface to the OpenType feature
 
 For all the fonts listed in Google Fonts [Github Repo](https://github.com/google/fonts/) it will list and provide a visual demo of the OpenType features available to each font.
 
-![Fontsinfo web interfacce](/images/2020/05/fontsinfo-screenshot.png)
+![Fontsinfo web interfacce](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/fontsinfo-screenshot)
 
 Fontsinfo web interfacce
 
@@ -140,8 +140,8 @@ Another option, slightly more verbose, is to use CSS custom properties, then ins
 
 We could also use custom properties rather than spell out the individual properties. That is left as an exercise to the reader :)
 
-## Links and Resources.
+## Links and Resources
 
-- [OpenType Specification](https://docs.microsoft.com/en-us/typography/opentype/spec/)
-- [Using OpenType features](https://helpx.adobe.com/fonts/using/use-open-type-features.html)
-- [Syntax for OpenType features in CSS](https://helpx.adobe.com/fonts/using/open-type-syntax.html)
+* [OpenType Specification](https://docs.microsoft.com/en-us/typography/opentype/spec/)
+* [Using OpenType features](https://helpx.adobe.com/fonts/using/use-open-type-features.html)
+* [Syntax for OpenType features in CSS](https://helpx.adobe.com/fonts/using/open-type-syntax.html)

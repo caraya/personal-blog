@@ -72,12 +72,12 @@ Active content, on the other hand, needs different handling. It is impossible fo
 
 We've defined 6 routes:
 
-- The first one matches anything from any origins containing **googleapis** and ending with **.com**. The route uses the cacheFirst strategy (check the cache first and only go to the network if the item is not found on the cache) and will store up to 20 items in a cache called **googleapis**
-- The second route will match anyting in the `/images/` path and using the cacheFirst strategy will store its items in the **images-cache** cache without limit
-- The third route will match anything in the `/pages/` path and using the networkFirst strategy store the content in the **content-cache** cache. We use network first because we want to get the freshest content possible and only if the network is not available go to cache
-- The fourth route will match anything in the `/videos/` path and will use a networkOnly strategy. If we're not online we don't want to store potentially very large files on the cache
-- The fifth route will match anything coming from youtube.com or vimeo.com and only do something with it if the network is active. Same rationale as before. We don't want to store potential hundreds of megabytes of vide on our caches
-- The last route is the default. For anything that doesn't matches the previous routes use a cacheFirst strategy.
+* The first one matches anything from any origins containing **googleapis** and ending with **.com**. The route uses the cacheFirst strategy (check the cache first and only go to the network if the item is not found on the cache) and will store up to 20 items in a cache called **googleapis**
+* The second route will match anyting in the `/images/` path and using the cacheFirst strategy will store its items in the **images-cache** cache without limit
+* The third route will match anything in the `/pages/` path and using the networkFirst strategy store the content in the **content-cache** cache. We use network first because we want to get the freshest content possible and only if the network is not available go to cache
+* The fourth route will match anything in the `/videos/` path and will use a networkOnly strategy. If we're not online we don't want to store potentially very large files on the cache
+* The fifth route will match anything coming from youtube.com or vimeo.com and only do something with it if the network is active. Same rationale as before. We don't want to store potential hundreds of megabytes of vide on our caches
+* The last route is the default. For anything that doesn't matches the previous routes use a cacheFirst strategy.
 
 ```javascript
 (function(global) {
@@ -124,6 +124,6 @@ We've defined 6 routes:
 
 There is still a little bit more research to do before declaring this code production ready.
 
-- How do we add a fallback to the video routes so that, when we are offline, we display a placeholder SVG image?
-- How do we create a timeout for a request, similar to what we can do with `promise.race`?
-- can we mix toolbox and non-toolbox in the same service worker?
+* How do we add a fallback to the video routes so that, when we are offline, we display a placeholder SVG image?
+* How do we create a timeout for a request, similar to what we can do with `promise.race`?
+* can we mix toolbox and non-toolbox in the same service worker?

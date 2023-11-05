@@ -24,21 +24,20 @@ Progressive Web Applications (progressive web apps or PWAs) are a set of Web API
 
 We have been able to add applications to the device's homepage since early versions of the iPhone. What has changed is the automation of the process and what it takes for the browser to decide you've engaged with the application. Apps on the homescreen provide a good user experience and to do that they:
 
-- Should load instantly, regardless of network state. This isn’t to say that they need to function fully offline, but they must put their own UI on screen without requiring a network round trip.
-- Should be tied in the user’s mind to where they came from. The brand or site behind the app shouldn’t be a mystery.
-- Can run without extra browser chrome (e.g., the URL bar). This is a potentially dangerous permission. To prevent hijacking by captive portals (and worse), apps must be loaded over TLS connections.
+* Should load instantly, regardless of network state. This isn’t to say that they need to function fully offline, but they must put their own UI on screen without requiring a network round trip.
+* Should be tied in the user’s mind to where they came from. The brand or site behind the app shouldn’t be a mystery.
+* Can run without extra browser chrome (e.g., the URL bar). This is a potentially dangerous permission. To prevent hijacking by captive portals (and worse), apps must be loaded over TLS connections.
 
 These concerns give rise to today’s Baseline Criteria. To be a Progressive Web App, a site must:
 
-- Originate from a Secure Origin. Served over TLS and green padlock displays (no active mixed content).
-- Load while offline (even if only a custom offline page). By implication, this means that Progressive Web Apps require Service Workers.
-- Reference a Web App Manifest with at least the following properties:
-    
-    - name
-    - short\_name
-    - start\_url
-    - display with a value of standalone or fullscreen
-    - An icon at least 144×144 large in png format. E.g.: `"icons": [ { "src": "/images/icon-144.png", "sizes": "144x144", "type": "image/png" } ]`
+* Originate from a Secure Origin. Served over TLS and green padlock displays (no active mixed content).
+* Load while offline (even if only a custom offline page). By implication, this means that Progressive Web Apps require Service Workers.
+* Reference a Web App Manifest with at least the following properties:
+  * name
+  * short\_name
+  * start\_url
+  * display with a value of standalone or fullscreen
+  * An icon at least 144×144 large in png format. E.g.: `"icons": [ { "src": "/images/icon-144.png", "sizes": "144x144", "type": "image/png" } ]`
 
 Criteria taken from Alex Russell's [What, Exactly, Makes Something A Progressive Web App?](https://infrequently.org/2016/09/what-exactly-makes-something-a-progressive-web-app/)
 
@@ -50,13 +49,13 @@ The Web Application Manifest is a JSON file that provides additional information
 
 The Web Application manifest uses a `link` like the one below to link to the manifest file.
 
-```markup
+```html
 <link rel="manifest" href="/manifest.json">
 ```
 
 An example manifest from Paul Kinlan's [Air Horner](https://airhorner.com/) looks like this.
 
-```
+```json
 {
   "name": "The Air Horner",
   "short_name": "Air Horner",
@@ -178,12 +177,11 @@ self.addEventListener('activate', event => {
 
 The fetch event is the heart of the Service Worker. This is where we fetch resources for the application and interact with the user. In essence the fetch event does the following
 
-- If the request comes from a different domain skip it
-- If the item is in the cache, then return it
-- If the item is not in the cache, fetch it from the network and:
-    
-    - Store a copy of the object in the cache
-    - Return the item to the use
+* If the request comes from a different domain skip it
+* If the item is in the cache, then return it
+* If the item is not in the cache, fetch it from the network and:
+  * Store a copy of the object in the cache
+  * Return the item to the use
 
 ```javascript
 self.addEventListener('fetch', event => {
@@ -219,12 +217,12 @@ These two APIs are used on top of a service worker to provide push notifications
 
 The code for Push messaging and notifications is very dependent on the backedn you choose for your project. A couple examples:
 
-- [Firefox Cloud Services](https://developer.mozilla.org/en-US/docs/Web/API/Push_API/Using_the_Push_API) needs serious updates because of changes inn the API but it's still a good starting point
-- [Web Push Notifications: Timely, Relevant, and Precise](https://developers.google.com/web/fundamentals/engage-and-retain/push-notifications/) and associated [code sample](https://github.com/GoogleChrome/samples/tree/gh-pages/push-messaging-and-notifications)
+* [Firefox Cloud Services](https://developer.mozilla.org/en-US/docs/Web/API/Push_API/Using_the_Push_API) needs serious updates because of changes inn the API but it's still a good starting point
+* [Web Push Notifications: Timely, Relevant, and Precise](https://developers.google.com/web/fundamentals/engage-and-retain/push-notifications/) and associated [code sample](https://github.com/GoogleChrome/samples/tree/gh-pages/push-messaging-and-notifications)
 
 ## Why bother?
 
-I know what you're thinking: "**_This sounds like a lot of work, why should I bother?_**"
+I know what you're thinking: "***This sounds like a lot of work, why should I bother?***"
 
 The quickest answer is: because it helps users. It provides easier access to web content and it gives them a way to view the content while they have spotty or no internet connectivity.
 
@@ -232,7 +230,7 @@ Creatively it gives you, the developer, a way to create better and original cont
 
 ## Links and resources
 
-- [Introducing Resilient Web Design](https://adactio.com/journal/11608)
-- [Taking an online book offline](https://adactio.com/journal/10754)
-- [Application Cache is a douchebag](https://alistapart.com/article/application-cache-is-a-douchebag)
-- [Resilient Web Design](https://resilientwebdesign.com/)
+* [Introducing Resilient Web Design](https://adactio.com/journal/11608)
+* [Taking an online book offline](https://adactio.com/journal/10754)
+* [Application Cache is a douchebag](https://alistapart.com/article/application-cache-is-a-douchebag)
+* [Resilient Web Design](https://resilientwebdesign.com/)

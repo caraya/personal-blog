@@ -11,7 +11,7 @@ This post will discuss the COLRV1 color font format and the currently supported 
 
 The beta version of [Wakamaifondue](https://wakamaifondue.com/beta/) gives you a list of the available color palettes for the font we're working with. This will become important when it comes to figuring out if we want to use the built-in palettes or if we want to change the colors individually.
 
-![Wakamaifondue color font palette selection](/images/2022/10/wakamaifondue-color-font-palettes.png)
+![Wakamaifondue color font palette selection](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/wakamaifondue-color-font-palettes)
 
 ## The new features
 

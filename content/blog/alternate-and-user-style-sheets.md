@@ -5,9 +5,9 @@ date: "2018-01-31"
 
 We normally work with the stylesheets we develop for the content we create. This is one of the style sheets available and that interact in the CSS cascade:
 
-- The browser has a basic style sheet that gives a default style to any document. These style sheets are named user-agent style sheets
-- The author of the Web page defines styles for the document. These are the most common style sheets
-- The reader, the user of the browser, may have a custom style sheet to tailor its experience
+* The browser has a basic style sheet that gives a default style to any document. These style sheets are named user-agent style sheets
+* The author of the Web page defines styles for the document. These are the most common style sheets
+* The reader, the user of the browser, may have a custom style sheet to tailor its experience
 
 The user-agent is outside our control and it should stay that way. It's the browser's default that will apply to all content.
 
@@ -41,9 +41,7 @@ The other two stylesheets, with `rel="alternate stylesheet"` attribute are optio
 
 Firefox (screenshot from Firefox 57.0.1) has a menu under `View` that gives you access to all alternate style sheet available for the page.
 
-![](/images/2017/12/alternate-stylesheets-firefox.png)
-
-Accessing Alternate Stylesheets In Firefox 57
+![Accessing Alternate Stylesheets In Firefox 57](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/alternate-stylesheets-firefox)
 
 ### User Stylesheets
 
@@ -53,10 +51,8 @@ Users who need them probably have created custom stylesheets that will override 
 
 Unfortunately, only Microsoft Edge supports adding reader style sheets directly but we can target other browsers, Chrome and pre-Quantum versions of Firefox with Extensions that will accomplish the same goal.
 
-- Adding User Style Sheets To Browsers
-
-    - [Microsoft Edge](https://mcmw.abilitynet.org.uk/microsoft-edge-using-your-own-stylesheet/)
-- Browser Extensions
-
-    - [Stylish - Custom themes for any website](https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe) **Chrome**
-    - [User Style Manager](https://addons.mozilla.org/en-US/firefox/addon/user-style-manager/) **Firefox Before 57.0**
+* Adding User Style Sheets To Browsers
+  * [Microsoft Edge](https://mcmw.abilitynet.org.uk/microsoft-edge-using-your-own-stylesheet/)
+* Browser Extensions
+  * [Stylish - Custom themes for any website](https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe) **Chrome**
+  * [User Style Manager](https://addons.mozilla.org/en-US/firefox/addon/user-style-manager/) **Firefox Before 57.0**

@@ -1,6 +1,7 @@
 ---
 title: "Converting Markdown to Slides"
 date: "2017-03-15"
+youtube: true
 ---
 
 If you've seen some of my earlier posts about Markdown you know that I love the flexibility of writing Markdown and then generate other formats. Using my starter kit I can generate HTML and PDF from the same Markdown source.
@@ -9,9 +10,9 @@ I found out a project to convert Markdown to [Google Slides](https://www.google.
 
 In this essay I'll look at tree aspects of this process:
 
-- How to run the tool inside a Gulp build process
-- The md2gslides specific syntax for different types of slides
-- The code for some of the parser functionality to generate these types of content
+* How to run the tool inside a Gulp build process
+* The md2gslides specific syntax for different types of slides
+* The code for some of the parser functionality to generate these types of content
 
 We could use code from Literate CSS to build both the narrative and the presentation for a given content. In the future we may want to use our own custom parser so we write less raw HTML in the Markdown files.
 
@@ -54,94 +55,96 @@ The following examples show how to create slides of various layouts:
 
 ### Title slide
 
-    ---
+```markdown
+---
 
-    # This is a title slide
-    ## Your name here
+# This is a title slide
+## Your name here
+```
 
-![](/images/2017/03/title_slide.png)
-
-Title Slide
+![Title Slide](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/title_slide)
 
 ### Section title slides
 
-    ---
+```markdown
+---
 
-    # This is a section title
+# This is a section title
 
 ![](../images/section_title_slide.png)
 
 Section title slide
+```
 
 ### Section title & body slides
 
-    ---
+```markdown
+---
 
-    # Section title & body slide
+# Section title & body slide
 
-    ## This is a subtitle
+## This is a subtitle
 
-    This is the body
+This is the body
+```
 
-![](/images/2017/03/section_title_body_slide.png)
-
-Section title & body slide
+![Section title & body slide](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/section_title_body_slide)
 
 #### Title & body slides
 
-    ---
+```markdown
+---
 
-    # Title & body slide
+# Title & body slide
 
-    This is the slide body.
+This is the slide body.
+```
 
-![](/images/2017/03/title_body_slide.png)
-
-Title & body slide
+![Title & body slide](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/title_body_slide)
 
 #### Main point slide
 
 Add `{.big}` to the title to make a slide with one big point
 
-    ---
+```markdown
+---
 
-    # This is the main point {.big}
+# This is the main point {.big}
+```
 
-![](/images/2017/03/main_point_slide.png)
-
-Main point slide
+![Main point slide](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/main_point_slide)
 
 #### Big number slide
 
 Use `{.big}` on a header in combination with a body too.
 
-    ---
+```markdown
+---
 
-    # 100% {.big}
+# 100% {.big}
 
-    This is the body
+This is the body
+```
 
-![](/images/2017/03/big_number_slide.png)
-
-Big number slide
+![Big number slide](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/big_number_slide)
 
 #### Two column slides
 
 Separate columns with `{.column}`. The marker must appear on its own line with a blank both before and after.
 
-    ---
+```markdown
+---
 
-    # Two column layout
+# Two column layout
 
-    This is the left column
+This is the left column
 
-    {.column}
+{.column}
 
-    This is the right column
+This is the right column
+```
 
-![](/images/2017/03/two_column_slide.png)
-
-Two Column Slide
+![Two Column Slide](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/two_column_slide)
 
 ### Images
 
@@ -151,80 +154,81 @@ Images can be placed on slides using image tags. Multiple images can be included
 
 Note: Images are currently scaled and centered to fit the slide template.
 
-    ---
+```markdown
+---
 
-    # Slides can have images
+# Slides can have images
 
-    !\[\](https://placekitten.com/900/900)
+![](https://placekitten.com/900/900)
+```
 
-![](/images/2017/03/image_slide.png)
-
-Image Slide
+![Image Slide](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/image_slide)
 
 #### Background images
 
 Set the background image of a slide by adding `{.background}` to the end of an image URL.
 
-    ---
+```markdown
+---
 
-    # Slides can have background images
+# Slides can have background images
 
-    !\[\](https://placekitten.com/1600/900){.background}
+![](https://placekitten.com/1600/900){.background}
+```
 
-![](/images/2017/03/background_image_slide.png)
-
-Slide with background image
+![Slide with background image](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/background_image_slide)
 
 ### Videos
 
 Include YouTube videos with a modified image tag.
 
-    ---
+```markdown
+---
 
-    # Slides can have videos
+# Slides can have videos
 
-    @\[youtube\](MG8KADiRbOU)
+@\[youtube\](MG8KADiRbOU)
+```
 
-![](/images/2017/03/video_slide.png)
+![Slide with video](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/video_slide)
 
-Slide with video
-
-![](../images/)
 
 ### Speaker notes
 
 Include speaker notes for a slide using HTML comments. Text inside the comments may include markdown for formatting, though only text formatting is allowed. Videos, images, and tables are ignored inside speaker notes.
 
-    ---
+```markdown
+---
 
-    # Slide title
+# Slide title
 
-    !\[\](https://placekitten.com/1600/900){.background}
+![](https://placekitten.com/1600/900){.background}
 
-    <!--
-    These are speaker notes.
-    -->
+<!--
+These are speaker notes.
+-->
+```
 
 ### Formatting
 
 Basic formatting rules are allowed, including:
 
-- Bold
-- Italics
-- Code
-- Strikethrough
-- Hyperlinks
-- Ordered lists
-- Unordered lists
+* Bold
+* Italics
+* Code
+* Strikethrough
+* Hyperlinks
+* Ordered lists
+* Unordered lists
 
 The following markdown illustrates a few common styles.
 
-\*\*Bold\*\*, \*italics\*, and ~~strikethrough~~ may be used.
+\*\*Bold\*\*, \*italics\*, and \~\~strikethrough\~\~ may be used.
 
 Ordered lists:
-1. Item 1
-1. Item 2
-  1. Item 2.1
+\1. Item 1
+\1. Item 2
+\  1. Item 2.1
 
 Unordered lists:
 \* Item 1
@@ -233,24 +237,24 @@ Unordered lists:
 
 Additionally, a subset of inline HTML tags are supported for styling.
 
-- `<span>`
-- `<sup>`
-- `<sub>`
-- `<em>`
-- `<i>`
-- `<strong>`
-- `<b>`
+* `<span>`
+* `<sup>`
+* `<sub>`
+* `<em>`
+* `<i>`
+* `<strong>`
+* `<b>`
 
 Supported CSS styles for use with `<span>` elements:
 
-- `color`
-- `background-color`
-- `font-weight: bold`
-- `font-style: italic`
-- `text-decoration: underline`
-- `text-decoration: line-through`
-- `font-family`
-- `font-variant: small-caps`
+* `color`
+* `background-color`
+* `font-weight: bold`
+* `font-style: italic`
+* `text-decoration: underline`
+* `text-decoration: line-through`
+* `font-family`
+* `font-variant: small-caps`
 
 ### Emoji
 
@@ -276,8 +280,8 @@ console.log('Hello world');
 
 To change the syntax highlight theme specify the `--style <theme>` option on the command line. All [highlight.js themes](https://github.com/isagalaev/highlight.js/tree/master/src/styles) are supported. For example, to use the github theme
 
-```
-$ md2gslides slides.md --style github
+```bash
+md2gslides slides.md --style github
 ```
 
 ### Tables
@@ -288,17 +292,19 @@ Note: Including tables and other block elements on the same slide may produce po
 
 The following generates a 2x5 table on the slide.
 
-\### Top pets in the United States
+```markdown
+### Top pets in the United States
 
 Animal | Number
--------|--------
-Fish   | 142 million
+--- |---
+|Fish   | 142 million
 Cats   | 88 million
 Dogs   | 75 million
 Birds  | 16 million
+```
 
 ## More information
 
 Is this the only way to automate creation of Google Slides? No, it isn't. Google provides an [API](https://developers.google.com/slides/how-tos/overview) that allows developers to programmatically create presentations, slides and slide content. The G Suite Dev Show provides tutorials in addition the tutorials and examples in the [API website](https://developers.google.com/slides/samples/).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8LSUbKZq4ZY?list=PLOU2XLYxmsIJJFx_MVCQJ7eWF3gDxklgJ" frameborder="0" allowfullscreen></iframe>
+<lite-youtube videoid="8LSUbKZq4ZY"></lite-youtube>

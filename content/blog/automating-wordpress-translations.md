@@ -35,15 +35,15 @@ Rather than providing manual translations, we can use tools like POedit or GlotP
 
 ## POedit
 
-I've documented the translation process using POedit in [Translating WordPress Themes](https://publishing-project.rivendellweb.net/translating-wordpress-themes/) so I won't go into too much detail. For the purpose of this post, we'll assume you've already created a POT for the project.
+I've documented the translation process using POedit in [Translating WordPress Themes](/translating-wordpress-themes/) so I won't go into too much detail. For the purpose of this post, we'll assume you've already created a POT for the project.
 
 The idea is that you follow these steps:
 
 1. Open POEdit
-2. Select **_Translate WordPress Theme or Plugin_**
-3. Select **_Create a new translation_**
+2. Select ***Translate WordPress Theme or Plugin***
+3. Select ***Create a new translation***
 4. Enter or select the language for the translation
-5. Begin working with the translations, either manually or automatically (if you use (POedit Pro)
+5. Begin working with the translations, either manually or automatically if you use (POedit Pro)
 
 The idea is that this will make your work easier by creating the translation files for you without having to do so manually.
 
@@ -81,9 +81,7 @@ Glotpress dialog to create a new translation set
 
 Once we complete the creation of a new dialogue set we'll see it presented on the home screen.
 
-![page displaying a list of available translation projects](/images/2020/09/glotpress-04.png)
-
-'alt text'
+![page displaying a list of available translation projects](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/glotpress-04)
 
 Before we start working with the translation set we just created is to click on the language we want to work with
 

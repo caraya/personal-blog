@@ -68,8 +68,6 @@ registerBlockType( 'rivendellweb-blocks/example-06', {
 
 Out of the box, the styles in the editor will not necessarily match the styles when published. You need to be careful and make sure that the editor styles match the front-end styles or are close enough that you won't be surprised by what the published content looks like.
 
-## Thing To Watch Out For
-
 Be careful when following Gutenberg examples out in the wild as they are very inconsistent. Some will use ES5 rather than ES6+ and some will use JSX while others will use React's create element syntax. I'm not saying either version is bad, I'm just warning readers that this the case so they are prepared, particularly if, like me, they are not fluent in React and how it works.
 
 ## Looking forward: Block Patterns and Block Pattern Libraries
@@ -128,13 +126,13 @@ Current work in patterns uses a very low-level Gutenberg syntax. For example, a 
 
 and looks like this:
 
-![Hero Pattern for use with Gutenberg](/images/2020/04/hero01-gutenberg-pattern.png)
+![Hero Pattern for use with Gutenberg](/https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/hero01-gutenberg-pattern)
 
 Hero Pattern for use with Gutenberg
 
 Right now, designing patterns is not as easy or intuitive as it can be. I expect it to change when the code for patterns lands in the plugin and then in WordPress core. I also expect to be able to author the content visually using the built-in editor.
 
-- [Block patterns: create patterns to start populating the library #20345](https://github.com/WordPress/gutenberg/issues/20345)
-- [Variations (formerly patterns) API for blocks #16283](https://github.com/WordPress/gutenberg/issues/16283)
-- [Block Patterns: Add ability for predefined block layouts to be added to a document #17335](https://github.com/WordPress/gutenberg/issues/17335)
-- [Docs: Add docs for variations in the block registration section #20145](https://github.com/WordPress/gutenberg/pull/20145)
+* [Block patterns: create patterns to start populating the library #20345](https://github.com/WordPress/gutenberg/issues/20345)
+* [Variations (formerly patterns) API for blocks #16283](https://github.com/WordPress/gutenberg/issues/16283)
+* [Block Patterns: Add ability for predefined block layouts to be added to a document #17335](https://github.com/WordPress/gutenberg/issues/17335)
+* [Docs: Add docs for variations in the block registration section #20145](https://github.com/WordPress/gutenberg/pull/20145)

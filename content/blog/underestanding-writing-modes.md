@@ -15,13 +15,13 @@ Writing modes are tricky because they vary from language to language.
 
 The most common writing mode is "horizontal, left to right", expressed as `horizontal-tb` with the direction attribute set to `ltr`. In the case of English and other western languages `direction` is optional since `ltr` is the default.
 
-![BBC homepage in English, a top to bottom and left to right language](/images/2022/08/writing-modes-02.png)
+![BBC homepage in English, a top to bottom and left to right language](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/writing-modes-02)
 
 Languages like Arabic and Hebrew are read from top to bottom but horizontally they are read from right to left.
 
 In CSS this is also expressed as `horizontal-tb` but the `direction` attribute is expressed as `rtl`. In the case of right-to-left languages, the `direction` attribute is mandatory since it's not the default.
 
-![The Arabic version of the BBC home page, a top to bottom, right to left language](/images/2022/08/writing-modes-01.png)
+![The Arabic version of the BBC home page, a top to bottom, right to left language](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/writing-modes-01)
 
 We can write Japanese text vertically, in which case the text is read from right to left or they can be used horizontally in which case it's read from left to right. It can also be combined with parts of a page being laid out vertically and others horizontally.
 
@@ -29,7 +29,7 @@ When writing Japanese text vertically we use the `vertical-rl` value for writing
 
 When written horizontally, we use the same attributes as for western languages: `horizontal-tb` and `ltr` direction.
 
-![When Japanese text is set vertically (right) it’s read from top to bottom and the lines go from right to left. When it is set horizontally (left), it is read from left to right, like in European languages.](/images/2022/08/02-japanese-02.jpg)
+![When Japanese text is set vertically (right) it’s read from top to bottom and the lines go from right to left. When it is set horizontally (left), it is read from left to right, like in European languages.](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/02-japanese-02)
 
 ## Cosmetical uses
 

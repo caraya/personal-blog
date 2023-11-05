@@ -15,17 +15,17 @@ If you look at the source code of any large web application you'll see that it's
 
 Gmail looks bad in the sense that the source is almost impossible to follow and understand, the class names only make sense to the people developing the application and, most likely, no one else.
 
-\[caption id="attachment\_786601" align="aligncenter" width="800"\][![Screenshot of browser showing source code for Gmail](/images/2015/06/gmail-source.png)](http:/images/2015/06/gmail-source.png) Source code for Gmail\[/caption\]
+![Screenshot of browser showing source code for Gmail](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/gmail-source)
 
 So does Facebook
 
-\[caption id="attachment\_786600" align="aligncenter" width="800"\][![Screenshot of browser view source showing Source code for Facebook](/images/2015/06/facebook-source.png)](http:/images/2015/06/facebook-source.png) Screenshot of browser view source showing Source code for Facebook\[/caption\]
+![Screenshot of browser view source showing Source code for Facebook](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/facebook-source)
 
 What if we could change all the ‘div soup’ into something that makes more sense and it's eaier to read?
 
 Using Polymer we can define a fictional company-module tag with the following information and using an existing iron-icon component (downloadable from the Polymer site):
 
-```markup
+```html
 <dom-module id="company-info">
   <link rel="import" type="css" href="company-info.css">
   <template>
@@ -45,7 +45,7 @@ Using Polymer we can define a fictional company-module tag with the following in
 
 And then instantiate the element for company MYX like so:
 
-```markup
+```html
 <company-info starred>
   <img src="company-logo.jpg" alt="company logo for MYX">
   <span>MYX Corporation</span>
@@ -54,7 +54,7 @@ And then instantiate the element for company MYX like so:
 
 Using vanilla web components, we can define a `my-avatar` tag that looks like this:
 
-```markup
+```html
 <my-avatar service="twitter" username="caraya"></my-avatar>
 ```
 

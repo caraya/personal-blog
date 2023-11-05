@@ -10,7 +10,7 @@ This post does not cover HEIC/HEIF and AVIF image formats. To cover those two fo
 Before we jump into looking at the quality of compressed images, let's take a look at what's available and what's coming down the pipeline as far as image formats for the web.
 
 | Format | Initial Release | Open? | Type | Available Encoder | Encoder to use | Notes |
-| --- | --- | --- | --- | --- | --- | --- |
+| --* | --* | --* | --* | --* | --* | --* |
 | GIF | 1987 | No | Lossless | Yes | [ImageMagick](https://imagemagick.org/) |  |
 | JPG | 1992 | Yes | Lossy | Yes | [ImageMagick](https://imagemagick.org/) | According to Wikipedia patents for JPEG technologies expired |
 | PNG | 1996 | Yes | Lossless | Yes | [ImageMagick](https://imagemagick.org/) | Also Provides animation support. Check [caniuse.com](https://caniuse.com/#feat=apng) for supported browsers |
@@ -24,29 +24,29 @@ As Kornel Lesinski writes in [How to compare images fairly](https://kornel.ski/e
 
 Before we even start encoding the images we have to do a few things:
 
-- Find a lossless, high-quality image to use as the source for the exercises
-- Decide what tools we will use to encode the images. Sometimes this may be decided for you as there may not be many tools for the newer formats
-- Decide what criteria you will use for your testing and how will you measure it
-- Will you measure objective quality using tools like DSSIM?
-- Will you compare file size for a given quality?
-- **How will you decide which metric is more important?**
-- Make sure that the tools produce similar output. For example, all formats should use [chroma subsampling](https://en.wikipedia.org/wiki/Chroma_subsampling) or none should
-- **Figure out what are the equivalent settings for the formats that you're testing. Q=80 for a JPEG image may not be the same as Q=80 for other formats**
-- Test all formats at the same or equivalent quality
-- Make sure that all format encoders can work from the same source
-- If the format offers lossless and lossy compression use lossy to match what JPEG does
+* Find a lossless, high-quality image to use as the source for the exercises
+* Decide what tools we will use to encode the images. Sometimes this may be decided for you as there may not be many tools for the newer formats
+* Decide what criteria you will use for your testing and how will you measure it
+* Will you measure objective quality using tools like DSSIM?
+* Will you compare file size for a given quality?
+* **How will you decide which metric is more important?**
+* Make sure that the tools produce similar output. For example, all formats should use [chroma subsampling](https://en.wikipedia.org/wiki/Chroma_subsampling) or none should
+* **Figure out what are the equivalent settings for the formats that you're testing. Q=80 for a JPEG image may not be the same as Q=80 for other formats**
+* Test all formats at the same or equivalent quality
+* Make sure that all format encoders can work from the same source
+* If the format offers lossless and lossy compression use lossy to match what JPEG does
 
 I chose to work with different images in TIFF format. Information about the specific images is listed below:
 
-- Images from Los Lajones Estate downloaded from [their website](http://www.loslajonesestate.com/eng/download/)
-- Image of the USS California from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:USS_California_at_1927_naval_review_NARA_19-LC-19C.tif) is in the public domain
-- Images from [Hubblesite](https://hubblesite.org) taken from [bat shadow](https://hubblesite.org/contents/media/images/2020/22/4668-Image) and [NGC 6302: The "Butterfly Nebula"](https://hubblesite.org/image/4680/news) are in the public domain as stated in the [hubblesite copyright page](https://hubblesite.org/copyright)
+* Images from Los Lajones Estate downloaded from [their website](http://www.loslajonesestate.com/eng/download/)
+* Image of the USS California from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:USS_California_at_1927_naval_review_NARA_19-LC-19C.tif) is in the public domain
+* Images from [Hubblesite](https://hubblesite.org) taken from [bat shadow](https://hubblesite.org/contents/media/images/2020/22/4668-Image) and [NGC 6302: The "Butterfly Nebula"](https://hubblesite.org/image/4680/news) are in the public domain as stated in the [hubblesite copyright page](https://hubblesite.org/copyright)
 
 We'll use different encoders for different formats, below is the list of formats with their associated image encoders. All the binaries were reinstalled to make sure I have the latest versions available via Homebrew as of this writing:
 
-- PNG: ImageMagick
-- JPG: ImageMagick
-- WebP: cwebp
+* PNG: ImageMagick
+* JPG: ImageMagick
+* WebP: cwebp
 
 ## First Test: Equal Quality to measure file size
 
@@ -54,7 +54,7 @@ The first test I wanted to run is what happens if we encode a TIFF source image 
 
 The questions that I want to answer with this test:
 
-**_Keeping quality constant, what lossless format provides the smaller file size?_**
+***Keeping quality constant, what lossless format provides the smaller file size?***
 
 Rather than type the command every time that I run the test, and to make the results reproducible, I created the Bash script below
 
@@ -104,7 +104,7 @@ fi
 My Results with images encoded from TIF high-quality sources and JPG where TIF was not an option:
 
 | Format | File Size |
-| --- | --- |
+| --* | --* |
 | TIFF (base) | 15MB |
 | PNG | 13.9MB |
 | JPG | 855KB |
@@ -118,8 +118,8 @@ So in the naïve, all quality is the same test, WebP wins by a lot. remember tha
 
 I know that optimal quality depends on the type of image and the screens we're working with, but an initial step on determining our optimal quality may be to establish what are the best compression settings for each format. We're likely to be serving at least two with our sources or srcset images. To answer this question we'll do a two-step process:
 
-- We create a set of WebP and a set of JPG images with quality ranging from 50 to 100
-- We'll use SSIM to provide an objective metric to use in comparing the images.
+* We create a set of WebP and a set of JPG images with quality ranging from 50 to 100
+* We'll use SSIM to provide an objective metric to use in comparing the images.
 
 We then analyze the SSIM results to decide which of the compressed images gives us the best combination of quality measured by SSIM against a 100 quality compressed PNG image (for some reason ImageMagick's compare command will not work against a TIFF source image) and file size.
 
@@ -188,7 +188,7 @@ The first table uses [STSCI-H-p2022a-f-4398x3982](https://github.com/caraya/test
 The file sizes are generally what I expected and the differences between the SSIM values are similar enough to make file size becomes the primary consideration.
 
 | Quality | WebP File Size | WebP SSIM Value | JPG File Size | JPG SSIM |
-| --- | --- | --- | --- | --- |
+| --* | --* | --* | --* | --* |
 | 100 | 2.1MB | 0.986584 | 10.9M | 0.992733 |
 | 90 | 639KB | 0.981029 | 3.6MB | 0.985442 |
 | 80 | 266KB | 0.975904 | 2.1MB | 0.982087 |
@@ -199,7 +199,7 @@ The file sizes are generally what I expected and the differences between the SSI
 The second table uses [geisha-high-res](https://github.com/caraya/testing-image-formats/blob/master/test-two/geisha_hi_res.tif)as the image to test. This is a much brighter and deep contrast color image. The image is 11.9MB and may use a significant portion of your data plan on mobile.
 
 | Quality | WebP File Size | WebP SSIM Value | JPG File Size | JPG SSIM |
-| --- | --- | --- | --- | --- |
+| --* | --* | --* | --* | --* |
 | 100 | 2.6MB | 0.980442 | 5.2MB | 0.992432 |
 | 90 | 757KB | 0.961136 | 1.4MB | 0.966931 |
 | 80 | 300KB | 0.947507 | 788KB | 0.956424 |
@@ -212,7 +212,7 @@ The final example, the [USS California](https://github.com/caraya/testing-image-
 I ran the compression and the SSIM comparison in separate steps, so I made the incorrect assumption that grayscale WebP images would exhibit the same behavior as color ones where the WebP files scored better in the SSIM metric across the board instead of fluctuating as they did. Need to do more research, particularly if it has to do with encoding settings on the WebP size and whether the `-jpeg_like` and `-shap_yuv` flags would change the results in any way.
 
 | Quality | WebP File Size | WebP SSIM Value | JPG File Size | JPG SSIM |
-| --- | --- | --- | --- | --- |
+| --* | --* | --* | --* | --* |
 | 100 | 10.1MB | 1 | 11.2MB | 0.998955 |
 | 90 | 3MB | 0.956338 | 3.6MB | 0.951193 |
 | 80 | 1.1MB | 0.909765 | 2.1MB | 0.930837 |

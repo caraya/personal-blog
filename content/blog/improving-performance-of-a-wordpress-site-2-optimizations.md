@@ -12,7 +12,7 @@ We will first install a Cache Plugin to make easier to cache different portions 
 I will use [W3 Total Cache](https://wordpress.org/plugins/w3-total-cache/) with the default settings.
 
 | Source | Form Factor | Performance | Best Practices | Accessibility | SEO | PWA |
-| --- | --- | :-: | :-: | :-: | :-: | :-: |
+| --* | --* | :-: | :-: | :-: | :-: | :-: |
 | PSI | Mobile | 68 | 98 | 100 | 100 | N/A |
 | PSI | Desktop | 98 | 98 | 100 | 100 | N/A |
 | Node | Mobile | 84 | 98 | 100 | 100 | Pass |
@@ -22,18 +22,18 @@ After these numbers I chose to fine tune the cache settings.
 
 I've made sure that the following setings are enabled:
 
-- Page Cache: Disk Basic
-- Opcode Cache: Zend Opcache
-- Database Cache: Disk
-- Object Cache: Disk
+* Page Cache: Disk Basic
+* Opcode Cache: Zend Opcache
+* Database Cache: Disk
+* Object Cache: Disk
 
 I chose not to enable Browser Cache at this time since there is more configuration work involved in properly fine-tuning the cache.
 
 At this time I've also chosen to enable some additional settings:
 
-- Disable Emoji
-- Disable wp-embed script
-- Disable jquery-migrate on the front-end
+* Disable Emoji
+* Disable wp-embed script
+* Disable jquery-migrate on the front-end
 
 I did not enable lazy loading since that is handled natively in all major browsers by adding `loading="lazy"` to all images and iframes that we want to lazy load.
 
@@ -54,23 +54,20 @@ The first step is to enable the browser cache in the general settings.
 
 Next we need to set expire headers and the duration in seconds for each section:
 
-- CSS & JS
-
-    - The duration for these items to one year (31536000 seconds)
-    - We enable gzip compression for the assets
-- HTML & XML
-
-    - The duration for these items is 30 days (25920000 seconds)
-    - We enable gzip compression for the assets
-- Media & Other Files
-
-    - The duration for these items to one year (31536000 seconds)
-    - We enable gzip compression for the assets
+* CSS & JS
+  * The duration for these items to one year (31536000 seconds)
+  * We enable gzip compression for the assets
+* HTML & XML
+  * The duration for these items is 30 days (25920000 seconds)
+  * We enable gzip compression for the assets
+* Media & Other Files
+  * The duration for these items to one year (31536000 seconds)
+  * We enable gzip compression for the assets
 
 I wish I had more granularity for media and other files. I don't mind having fonts be cached for a year but other assets like I may want to cache for shorter periods or force to revalidate.
 
 | Source | Form Factor | Performance | Accessibility | Best Practices | SEO | PWA |
-| --- | --- | :-: | :-: | :-: | :-: | :-: |
+| --* | --* | :-: | :-: | :-: | :-: | :-: |
 | PSI | Mobile | 75 | 98 | 100 | 100 | N/A |
 | PSI | Desktop | 97 | 98 | 100 | 100 | N/A |
 | Node | Mobile | 77 | 98 | 100 | 100 | Pass |
@@ -224,13 +221,10 @@ Although the plugin requires an annual, paid, "pro" version for things that I co
 
 The plugin allows you to remove scripts and stylesheets for individual pages or for the entire site.
 
-![](/images/2023/07/asset-cleanup-01.png)
+![Asset Cleanup plugin example showing scripts and stylesheets blocked site-wide and how the administrator can configure exceptions to the site-wide rule](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/asset-cleanup-01)
 
-Asset Cleanup plugin example showing scripts and stylesheets blocked site-wide and how the administrator can configure exceptions to the site-wide rule
 
-![alt text](/images/2023/07/asset-cleanup-02.png)
-
-Asset Plugin example showing a site-wide removal with a logged-in user override
+![Asset Plugin example showing a site-wide removal with a logged-in user override](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/asset-cleanup-02)
 
 Even with the plugin limitations, even though I won't get a paid an annual subscription, it does a good enough job to merit another test.
 

@@ -5,7 +5,7 @@ date: "2019-08-19"
 
 I'm documenting behaviors that I take for granted and then forget just when I need them. The question is **How do I generate screenshots of what I'm working on?**
 
-The answer is **_It depends_**
+The answer is ***It depends***
 
 How to generate screenshots will depend on what tool you're using. Both Windows and Macintosh systems offer you ways to generate files from screenshots and, a surprise to me, Chrome DevTools will let you do it too
 
@@ -35,9 +35,7 @@ This also has the advantage that it's cross platform. It'll work everywhere Chro
 
 Open DevTools (`Control + Shift + I` on Windows / `Command + Option + I` on Mac) then open the command palette `Control / Command + Shift + P` and type `screenshot`. You will get something similar to the image below
 
-![](/images/2019/08/chrome-screen-shot-capture.png)
-
-`Capture area screenshot` is similar to the Macintosh `Command + Option + 4` where it lets you select the area of the screen to capture.
+![Capture area screenshot is similar to the Macintosh `Command + Option + 4` where it lets you select the area of the screen to capture.](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/chrome-screen-shot-capture)
 
 `Capture full size screenshot` is a little counterintuitive. It will not capture a full-screen size shot of your page but the entire pare, no matter how long it is.
 

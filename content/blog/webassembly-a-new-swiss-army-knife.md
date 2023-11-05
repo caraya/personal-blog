@@ -1,6 +1,7 @@
 ---
 title: "WebAssembly: A new Swiss Army Knife"
 date: "2019-06-10"
+youtube: true
 ---
 
 [WebAssembly](https://webassembly.org/) and its predecessor asm.js provide a portable target for compilation of high-level languages like C, C++, Go, and Rust among others, enabling deployment on the web for client and server applications.
@@ -15,7 +16,7 @@ According to the WebAssembly FAQ:
 
 The video below, from Google I/O 2019, explains how web developers can use WebAssembly with C/C++ and other languages.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/njt-Qzw0mVY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<lite-youtube videoid="njt-Qzw0mVY"></lite-youtube>
 
 ## Emscripten
 
@@ -23,18 +24,15 @@ Both C/C++ and Rust use the Emcscripten compiler toolchain, a drop-in replacemen
 
 The process is broken in three
 
-- Download and prepare Emscripten
-
-    - Clone the repository
-    - Change to the directory you downloaded Emscripten to
-    - Update the repository if it's not the first time you're using the software
-- Update and activate the code
-
-    - Use `emsdk install` to install the latest version of the SDK
-    - Run `emsdk activate` to activate the version you just installed
-- Activate the installation
-
-    - Run the `source` command to add the `emsdk` you installed. The command is `source ./emsdk_env.sh`
+* Download and prepare Emscripten
+  * Clone the repository
+  * Change to the directory you downloaded Emscripten to
+  * Update the repository if it's not the first time you're using the software
+* Update and activate the code
+  * Use `emsdk install` to install the latest version of the SDK
+  * Run `emsdk activate` to activate the version you just installed
+* Activate the installation
+  * Run the `source` command to add the `emsdk` you installed. The command is `source ./emsdk_env.sh`
 
 ```bash
 # Clone the repository
@@ -81,9 +79,9 @@ emcc hello.c -s WASM=1 -o hello.html
 
 For those of you familiar with the GCC compiler toolchain, the differences between traditional C/C++ compilation and our WebAssembly compilation are:
 
-- The command is `emcc` provided by Emscripten as a replacement for GCC and Clang
-- The `-s` flag passed commands to the transpiler. In this case, we tell it that we want WebAssembly instead of asm.js
-- the `-o hello.html` tells the compiler to create an HTML file to display the module, a Javascript file with the code to give access to the `.wasm` code and the wasm file that contains the binary Web assembly code.
+* The command is `emcc` provided by Emscripten as a replacement for GCC and Clang
+* The `-s` flag passed commands to the transpiler. In this case, we tell it that we want WebAssembly instead of asm.js
+* the `-o hello.html` tells the compiler to create an HTML file to display the module, a Javascript file with the code to give access to the `.wasm` code and the wasm file that contains the binary Web assembly code.
 
 The compilation will produce the following files:
 
@@ -97,7 +95,7 @@ The compilation will produce the following files:
 
 In order to test the project, start a web server and open `hello.html` in your favorite web browser. They will produce results similar to this:
 
-![Emscripten HTML page show results of the code](/images/2019/05/emscripten-result.png)
+![Emscripten HTML page show results of the code](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/emscripten-result)
 
 Emscripten HTML page show results of the code
 
@@ -162,7 +160,7 @@ The important part of the HTML file is the following block. In it we do the foll
 
 The image below shows the result along with a warning.
 
-![Chrome console showing warning and the results of the code](/images/2019/05/emscripten-compilations-and-warning-3.png)
+![Chrome console showing warning and the results of the code](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/emscripten-compilations-and-warning-3)
 
 Chrome console showing warning and the results of the code
 
@@ -326,18 +324,15 @@ Don't feel like everything you do on the web now has to be coded in C, Rust or G
 
 ## Links
 
-- [WebAssembly.org](https://webassembly.org/)
-- [How WebAssembly is Accelerating the Future of Web Development](https://zendev.com/2018/06/26/webassembly-accelerating-future-web-development.html)
-- [Awesome WebAssembly Languages](https://github.com/appcypher/awesome-wasm-langs)
-- C/C++
-
-    - [Emscripting a C library to Wasm](https://developers.google.com/web/updates/2018/03/emscripting-a-c-library)
-- Go
-
-    - [Go and WebAssembly: running Go programs in your browser](https://blog.gopheracademy.com/advent-2018/go-in-the-browser/)
-    - [WebAssembly](https://github.com/golang/go/wiki/WebAssembly)
-    - [Compiling Go to WebAssembly](https://www.sitepen.com/blog/compiling-go-to-webassembly/)
-- Rust
-
-    - [Why Rust and WebAssembly?](https://rustwasm.github.io/docs/book/why-rust-and-webassembly.html)
-    - [Tutorial: Conway's Game of Life](https://rustwasm.github.io/docs/book/game-of-life/introduction.html)
+* [WebAssembly.org](https://webassembly.org/)
+* [How WebAssembly is Accelerating the Future of Web Development](https://zendev.com/2018/06/26/webassembly-accelerating-future-web-development.html)
+* [Awesome WebAssembly Languages](https://github.com/appcypher/awesome-wasm-langs)
+* C/C++
+  * [Emscripting a C library to Wasm](https://developers.google.com/web/updates/2018/03/emscripting-a-c-library)
+* Go
+  * [Go and WebAssembly: running Go programs in your browser](https://blog.gopheracademy.com/advent-2018/go-in-the-browser/)
+  * [WebAssembly](https://github.com/golang/go/wiki/WebAssembly)
+    * [Compiling Go to WebAssembly](https://www.sitepen.com/blog/compiling-go-to-webassembly/)
+* Rust
+  * [Why Rust and WebAssembly?](https://rustwasm.github.io/docs/book/why-rust-and-webassembly.html)
+  * [Tutorial: Conway's Game of Life](https://rustwasm.github.io/docs/book/game-of-life/introduction.html)

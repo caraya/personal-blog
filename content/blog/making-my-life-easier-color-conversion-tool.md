@@ -11,13 +11,13 @@ All the new color spaces available in the new color [level 4](https://www.w3.org
 
 So I wrote a little app that, given a color, will produce a color swatch for the seven syntaxes I'm interested in:
 
-- rgb
-- display-p3
-- lab
-- hwb
-- hsl
-- OKLAB
-- OKLCH
+* rgb
+* display-p3
+* lab
+* hwb
+* hsl
+* OKLAB
+* OKLCH
 
 It will also display the CSS syntax to use each color space along with the value for the color.
 
@@ -142,6 +142,6 @@ export function processInput(color) {
 
 This code will produce the following result, using magenta as an example.
 
-![](/images/2023/05/color-tool-01.png)
+![Color conversion tool showing results for color magenta](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/color-tool-01)
 
-Color conversion tool showing results for color magenta
+

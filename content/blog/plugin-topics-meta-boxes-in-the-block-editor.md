@@ -314,10 +314,10 @@ registerPlugin( 'rivendellweb-sidebar', {
 
 Now we have a meta box that works in both the block and classic editors so we don't need to worry about compatibility :)
 
-![Custom WordPress metabox viewed in the block editor](/images/2021/08/metabox-1.png)
+![Custom WordPress metabox viewed in the block editor](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/metabox-1)
 
 
-![WordPress custom metabox viewed in the classic editor](/images/2021/08/metabox-2.png)
+![WordPress custom metabox viewed in the classic editor](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/metabox-2)
 
 ## Using the meta block data
 
