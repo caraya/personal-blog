@@ -33,10 +33,10 @@ The modal dialogue will obscure the content behind it as a way to keep the user'
 
 In the Javascript side, we capture all necessary elements to interact with:
 
-- The dialog element
-- the open dialog button
-- the open modal button
-- the close button
+* The dialog element
+* the open dialog button
+* the open modal button
+* the close button
 
 For each of these elements we add a `click` event listener and perform the appropriate action.
 
@@ -90,9 +90,8 @@ They work mostly the same as standard modal dialogues with a few exceptions
 
 1. we add `method="dialog"` to the form element
 2. We create a button and:
-    
-    1. add `formmethod="dialog"`
-    2. add `type="submit"`
+   1. add `formmethod="dialog"`
+   2. add `type="submit"`
 
 ```html
 <dialog id="modal" class="modal">
@@ -132,5 +131,5 @@ It is interesting to see how much we can do with HTML, CSS and a pinch of Javasc
 
 ## Links and Resources
 
-- [Modals Will Never Be The Same - HTML dialog Element](https://blog.webdevsimplified.com/2023-04/html-dialog/)
-- [Building a dialog component](https://web.dev/building-a-dialog-component/)
+* [Modals Will Never Be The Same &mdash; HTML dialog Element](https://blog.webdevsimplified.com/2023-04/html-dialog/)
+* [Building a dialog component](https://web.dev/building-a-dialog-component/)

@@ -137,25 +137,24 @@ const materials = [
 When we log the result of running `filter` on the `materials` array, we will get a new array with only the names that eight characters or longer.
 
 ```js
-console.log(materials.filter((material) => 
+console.log(materials.filter((material) =>
   material.length >= 8
 ));
 
 // Expected result:
 // [
-//   'Hydrogen', 
-//   'Beryllium', 
-//   'Plutonium', 
+//   'Hydrogen',
+//   'Beryllium',
+//   'Plutonium',
 //   'Nitrogen'
 // ]
 ```
 
 ## Links and resources
 
-- [JavaScript’s Map, Reduce, and Filter](https://danmartensen.svbtle.com/javascripts-map-reduce-and-filter)
-- [Arrow Function Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
-- MDN
-    
-    - [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
-    - [Reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
-    - [Filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+* [JavaScript’s Map, Reduce, and Filter](https://danmartensen.svbtle.com/javascripts-map-reduce-and-filter)
+* [Arrow Function Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+* MDN
+  * [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+  * [Reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
+  * [Filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)

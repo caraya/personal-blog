@@ -7,7 +7,7 @@ One of the first things that brought me to programming was Logo back in the mid 
 
 If running the following commands:
 
-```
+```text
 repeat 4
 forward 90
 ```
@@ -20,13 +20,9 @@ Move forward about 30 years and I found [Scratch](https://scratch.mit.edu/) and 
 
 But it looks different and it uses a different paradigm to create the scripts that will make things happen. The first figure shows an animated example created with Scratch and the second shows a more technically complex example using the same language.
 
-![](//publishing-project.rivendellweb.net/wp-content/uploads/2017/06/scatch-screen-shot-2013.png)
+![Scratch 2.0 screenshot](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/scatch-screen-shot-2013)
 
-Scratch 2.0 screenshot
-
-![](//publishing-project.rivendellweb.net/wp-content/uploads/2017/06/mihoxw.png)
-
-More complex example of Scratch
+![More complex example of Scratch](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/mihoxw)
 
 Wouldn't it be cool if we could leverage these technologies to serve children and other people coming into code with a less threatening introduction to programming? Coding is not hard, figuring out the rules behind code is more complicated, at least it was to me.
 
@@ -34,19 +30,17 @@ That's where I think Scratch and similar tools can be useful. Google released a 
 
 The figure below shows an example of what one of the [Wonder Woman based tutorials](https://www.madewithcode.com/projects/wonderwoman) look like: you assemble the tasks for Wonder woman using blocks and then play the actions represented by the blocks we've assembled together.
 
-![](//publishing-project.rivendellweb.net/wp-content/uploads/2017/06/wonder-woman-coding-tutorial.jpg)
-
-[Wonder Woman Coding Tutorial](https://www.madewithcode.com/projects/wonderwoman)
+![[Wonder Woman Coding Tutorial](https://www.madewithcode.com/projects/wonderwoman)](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/wonder-woman-coding-tutorial)
 
 How can we leverage these tools for a larger audience? How can we make a programming environment that gives us both the advantage of Blockly/Scratch and allows us to copy and paste the resulting code in one of many programming languages.
 
 Blockly has several advantages: it allows you to see the results of your block actions in the target language of your choice. The currently supported languages are:
 
-- Javascript
-- Dart
-- PHP
-- Lua
-- Python
+* Javascript
+* Dart
+* PHP
+* Lua
+* Python
 
 In the configuration we can create groups of blocks to show users.
 
@@ -62,7 +56,7 @@ Let's build a Blockly app.
 
 Download the code or clone the Git repository from:
 
-```
+```bash
 https://github.com/google/blockly
 ```
 
@@ -74,12 +68,12 @@ We'll start with the most basic Blockly app. It is a simple HTML page where we i
 
 The first part is to add Blockly an associated scripts for the page:
 
-- Blockly itself
-- A basic set of blocks
-- The Javascript syntax file
-- English translation of Blockly's messages
+* Blockly itself
+* A basic set of blocks
+* The Javascript syntax file
+* English translation of Blockly's messages
 
-```markup
+```html
 <script src="js/blockly_compressed.js"></script>
 <script src="js/blocks_compressed.js"></script>
 <script src="js/javascript_compressed.js"></script>
@@ -88,7 +82,7 @@ The first part is to add Blockly an associated scripts for the page:
 
 We then set up two empty elements: A div that will hold the blocks and the work area, and a text are that will hold the Javascript version of the block code.
 
-```markup
+```html
 <div id="blocklyDiv"
       style="height: 600px; width: 800px;"></div>
 <textarea id="textarea"
@@ -97,7 +91,7 @@ We then set up two empty elements: A div that will hold the blocks and the work 
 
 The next postion is an `xml` element that will hold the block elements that we want to use in our application.
 
-```markup
+```html
 <xml id="toolbox"
       style="display: none">
   <block type="controls_if"></block>
@@ -118,13 +112,13 @@ The next function defines how Blockly will update the text area with the result 
 
 Finally we add a change listener and tell it to run `myUpdateFunction` every time it's triggered.
 
-```markup
+```html
 <script>
-var workspace = Blockly.inject('blocklyDiv', 
-{toolbox: document.getElementById('toolbox')}); 
+var workspace = Blockly.inject('blocklyDiv',
+{toolbox: document.getElementById('toolbox')});
 
-function myUpdateFunction(event) { 
-  var code = Blockly.JavaScript.workspaceToCode(workspace); 
+function myUpdateFunction(event) {
+  var code = Blockly.JavaScript.workspaceToCode(workspace);
   document.getElementById('textarea').value = code;
 }
 workspace.addChangeListener(myUpdateFunction);
@@ -141,11 +135,10 @@ Blockly comes pre-configured to work with [Google App Engine](https://cloud.goog
 2. Log into [Google App Engine](https://appengine.google.com/) and create an application.
 3. Edit `appengine/app.yaml` and change the application ID from blockly-demo to the application name you created in the previous step.
 4. Copy (or soft-link) the following files and directories into appengine/static/:
-    
-    - demos/
-    - msg/
-    - media/
-    - \*\_compressed.js
+   1. demos/
+   2. msg/
+   3. media/
+   4. \*\_compressed.js
 5. Run the Google App Engine Launcher from the GUI, add your appengine directory as an existing application, and press the "Deploy" button. If you prefer to use the command line, run: `appcfg.py --oauth2 update appengine/`
 
 **Optional**: If you'd like to use `blockly_uncompressed.js` on the server, also copy that file into `appengine/static/`, copy core into appengine/static/, and copy closure-library/ into the parent directory, appengine/.
@@ -194,27 +187,22 @@ I think evaluation of Blockly projects is mostly outcomes based. Did they partic
 
 ## Links and References
 
-- Papers and essays
-    
-    - [This Computer Language Is Feeding Hacker Values into Young Minds](https://backchannel.com/the-kids-computer-language-that-became-a-mind-bomb-for-the-hacker-ethic-a0b7e42c229d)
-    - [Mitchel Resnick: Designing for Wide Walls](https://design.blog/2016/08/25/mitchel-resnick-designing-for-wide-walls/)
-    - [A Different Approach to Coding](https://brightreads.com/a-different-approach-to-coding-d679b06d83a)
-    - [Learn to Code, Code to Learn](https://www.edsurge.com/news/2013-05-08-learn-to-code-code-to-learn)
-- Authoring environments
-    
-    - Blockly
-    - [Developer Documentation](https://developers.google.com/blockly/)
-    - [Github Code Repository](https://github.com/google/blockly)
-    - Scratch
-    - [Website](https://scratch.mit.edu/)
-    - [Developer Documentation](https://scratch.mit.edu/developers)
-    - Other Alternatives
-    - Pencil Code
-        
-        - [Website](http://pencilcode.net/)
-        - [Droplet Editor](https://github.com/droplet-editor/droplet)
-        - [Pencil Code Dev](http://dev.pencilcode.net/)
-    - Snap
-        
-        - [Main Website](http://snap.berkeley.edu/)
-        - [Github Repo](https://github.com/jmoenig/Snap--Build-Your-Own-Blocks)
+* Papers and essays
+  * [This Computer Language Is Feeding Hacker Values into Young Minds](https://backchannel.com/the-kids-computer-language-that-became-a-mind-bomb-for-the-hacker-ethic-a0b7e42c229d)
+  * [Mitchel Resnick: Designing for Wide Walls](https://design.blog/2016/08/25/mitchel-resnick-designing-for-wide-walls/)
+  * [A Different Approach to Coding](https://brightreads.com/a-different-approach-to-coding-d679b06d83a)
+  * [Learn to Code, Code to Learn](https://www.edsurge.com/news/2013-05-08-learn-to-code-code-to-learn)
+* Authoring environments
+  * Blockly
+    * [Developer Documentation](https://developers.google.com/blockly/)
+    * [Github Code Repository](https://github.com/google/blockly)
+  * Scratch
+    * [Website](https://scratch.mit.edu/)
+    * [Developer Documentation](https://scratch.mit.edu/developers)
+    * Pencil Code
+      * [Website](http://pencilcode.net/)
+      * [Droplet Editor](https://github.com/droplet-editor/droplet)
+      * [Pencil Code Dev](http://dev.pencilcode.net/)
+    * Snap
+      * [Main Website](http://snap.berkeley.edu/)
+      * [Github Repo](https://github.com/jmoenig/Snap--Build-Your-Own-Blocks)

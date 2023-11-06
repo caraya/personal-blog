@@ -92,7 +92,7 @@ Yet another option is to use applications that will abstract all the code and pr
 
 [Prepros](https://prepros.io/) (cross-platform) and its alternatives like [Codekit](https://codekitapp.com/) (macOS only) automate several different development activities. For the purpose of this post, we'll look at reloading when files change.
 
-![Prepros showing dialogue and instructions for loading preview. Command / Control + L will open the default browser to the site's index page](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/prepros-browser-sync-01.png)
+![Prepros showing dialogue and instructions for loading preview. Command / Control + L will open the default browser to the site's index page](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/prepros-browser-sync-01)
 
 Command / Control + l will open the default browser to the site's index page (usually `index.html`)
 

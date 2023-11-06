@@ -93,11 +93,11 @@ For most cases, I would agree but if you follow the [Intent to Deprecate and Fre
 
 The following user agent client hints are available since Chrome 84 and were run against my current browser (Chrome 88 stable)
 
-| Server Response Accept-CH  
-Client Request header | Client Request  
+| Server Response Accept-CH
+Client Request header | Client Request
 Example value | Description |
 | --- | --- | --- |
-| **Sec-CH-UA** | "Chromium";v="88"  
+| **Sec-CH-UA** | "Chromium";v="88"
 "Google Chrome";v="88" | List of browser brands and their significant version |
 | **Sec-CH-UA-Mobile** | ?0 | Boolean indicating if the browser is on a mobile device (?1) or not (?0) |
 | **Sec-CH-UA-Full-Version** | "88.0.4324.150" | The complete browser version |
@@ -315,8 +315,8 @@ It's awesome that we can do this but it's a lot of work and the code will contin
 
 We could optimize how we write picture elements using client hints and the Accept HTTP Header. The idea is the following:
 
-- The accept header determines if a browser supports a given format or not
-- The DPR client header will determine what version of the image to use
+* The accept header determines if a browser supports a given format or not
+* The DPR client header will determine what version of the image to use
 
 We use the information to build source elements only if a given format is supported and use the DPR from the client to generate the appropriate sources.
 
@@ -352,5 +352,5 @@ This is one example of many. Other examples include
 
 Using the Downlink and RTT client hints to serve lighter content for low bandwidth or poor connections
 
-- Provide OS-specific downloads and resources
-- One final thing to remember: Client Hints as currently implemented and deployed need to be a progressive enhancement or you will have unexpected but unpleasant results.
+* Provide OS-specific downloads and resources
+* One final thing to remember: Client Hints as currently implemented and deployed need to be a progressive enhancement or you will have unexpected but unpleasant results.

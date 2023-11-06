@@ -63,24 +63,17 @@ This may not be what you were expecting so it pays to code defensively and inclu
 There are a few values for the display property that deserve special consideration:
 
 **flow**
-
-The element lays out its contents using flow layout (block-and-inline layout).
-
-If its outer display type is `inline` or `run-in`, and it is participating in a block or inline formatting context, the block generates an inline box. Otherwise, it generates a block container box.
-
-Depending on the value of other properties (such as position, float, or overflow) and whether the block itself participates in a block or inline formatting context, it either establishes a new block formatting context (BFC) for its contents or integrates its contents into its parent formatting context.
+: The element lays out its contents using flow layout (block-and-inline layout).
+: If its outer display type is `inline` or `run-in`, and it is participating in a block or inline formatting context, the block generates an inline box. Otherwise, it generates a block container box.
+: Depending on the value of other properties (such as position, float, or overflow) and whether the block itself participates in a block or inline formatting context, it either establishes a new block formatting context (BFC) for its contents or integrates its contents into its parent formatting context.
 
 **flow-root**
-
-The element generates a block element box that establishes a new block formatting context, defining where the formatting root lies.
+: The element generates a block element box that establishes a new block formatting context, defining where the formatting root lies.
 
 **inline-block**
-
-The element generates a block element box that will be flowed with surrounding content as if it were a single inline box (behaving much like a replaced element would).
-
-It is equivalent to an inline flow-root.
-
-For more details on the `display` property check MDN's [display](https://developer.mozilla.org/en-US/docs/Web/CSS/display) and [Digging Into The Display Property: The Two Values Of Display](https://www.smashingmagazine.com/2019/04/display-two-value/) for more information.
+: The element generates a block element box that will be flowed with surrounding content as if it were a single inline box (behaving much like a replaced element would).
+: It is equivalent to an inline flow-root.
+: For more details on the `display` property check MDN's [display](https://developer.mozilla.org/en-US/docs/Web/CSS/display) and [Digging Into The Display Property: The Two Values Of Display](https://www.smashingmagazine.com/2019/04/display-two-value/) for more information.
 
 ## Box model
 

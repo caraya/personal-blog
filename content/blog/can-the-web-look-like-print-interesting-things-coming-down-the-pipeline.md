@@ -20,7 +20,7 @@ We can use exclusions to create effects like those in magazines. From using it t
 
 [CSS Overflow Module Level 3](https://drafts.csswg.org/css-overflow-3/) is another attempt to do content fragmentation on the web, similar to what [CSS Regions](https://www.w3.org/TR/css-regions-1/) did except that unlike regions it is not implemented on any current browser. It can create different layouts by changing the way content flows within a page.
 
-![Example of CSS Regions](https://corlan.org/wp-content/uploads/2013/02/cssregions2.png)
+![Example of CSS Regions](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/cssregions2)
 
 [CSS Page Floats](https://www.w3.org/TR/css-page-floats-3/) takes care of floats that move to the top or bottom of content passages. This draft is the web equivalent to what print publications use to move which figures and photos to the top or bottom of columns or pages, along with their captions.
 

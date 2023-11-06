@@ -1,7 +1,7 @@
 ---
 title: "Case Study: MOBI publishing from Docbook"
 date: "2013-11-23"
-categories: 
+categories:
   - "ebook-publishing"
 ---
 
@@ -15,7 +15,7 @@ I offered to run the project for free in exchange of being allowed to write a ca
 
 This is the first time I work with content I didn't author. It might have had something to do with some of the issues discussed throughout or it might not.
 
-## Source material and initial challenges.
+## Source material and initial challenges
 
 The source material was a set of Docbook XML files along with the corresponding images in the screenshot directory. Since i cloned the files from a Github repository i shouldn’t have been surprised that thee were more inages tha those i needed and in different formats. This only became aparent later in the process.
 
@@ -23,14 +23,14 @@ The main file (index.xml) used XInclude to reference the rest of the content. Wo
 
 ## FILES TO NOTICE
 
-- **build.xml** The Apache Ant build script
-- **local-style.css** Additional CSS classes to make the ePub document look nicer. It will only work with Kindle Fire devices (those supporting the KF8 format)
-- **docbook-custom.xsl** The Docbook customization layer.
+* **build.xml** The Apache Ant build script
+* **local-style.css** Additional CSS classes to make the ePub document look nicer. It will only work with Kindle Fire devices (those supporting the KF8 format)
+* **docbook-custom.xsl** The Docbook customization layer.
 
 This project also makes use of open source fonts for the ePub3 and KF8 versions:
 
-- **SourceSansPro-Regular** An open source font from [Adobe](http://blogs.adobe.com/typblography/2012/08/source-sans-pro.html "Adobe Source Sans Pro font announcement")
-- **UbuntuMono-Regular** Part of the [Ubuntu Font Family](http://font.ubuntu.com/ "Ubuntu Font Family")
+* **SourceSansPro-Regular** An open source font from [Adobe](http://blogs.adobe.com/typblography/2012/08/source-sans-pro.html "Adobe Source Sans Pro font announcement")
+* **UbuntuMono-Regular** Part of the [Ubuntu Font Family](http://font.ubuntu.com/ "Ubuntu Font Family")
 
 ## THE PROCESS
 
@@ -86,20 +86,18 @@ Kindlegen is a command line tool that allows you to convert your ePub 3 file int
 
 Because I've automated my workflow I use Kindlegen rather than the Kindle Previewer for the automatic validation. I will still use Kindle Previewer to validate the content.
 
-## THE PROCESS
-
-### Developing your customization layer.
+## The Process: Developing your customization layer
 
 As counterintuitive as this may sound this is always my first step. There are things I know I'll need and they need to be used from the first test of the book conversion.
 
 Some of the things I knew I needed for this particular project:
 
-- **kindle.extensions**: Provides an umbrella for all Kindle-specific changes the stylesheets need to make to the ePub. Since the target platform is the Kindle family of devices we need to make sure that whatever is Kindle specific is addressed
-    
-- **html.stylesheet**: Adds additional CSS stylesheets to use with your book. This is important as the default stylesheet provides only minimal styling support
-    
-- **user.manifest.items**: The template, empty by default, allows you to add additional elements to the book package manifest (package.opf). In this particular instance we use it to add fonts for the ePub3 and KF8 (Kindle Fire) formats. ePub2 and eInk kindles (I believe all of them except the white paper model) will ignore material
-    
+* **kindle.extensions**: Provides an umbrella for all Kindle-specific changes the stylesheets need to make to the ePub. Since the target platform is the Kindle family of devices we need to make sure that whatever is Kindle specific is addressed
+
+* **html.stylesheet**: Adds additional CSS stylesheets to use with your book. This is important as the default stylesheet provides only minimal styling support
+
+* **user.manifest.items**: The template, empty by default, allows you to add additional elements to the book package manifest (package.opf). In this particular instance we use it to add fonts for the ePub3 and KF8 (Kindle Fire) formats. ePub2 and eInk kindles (I believe all of them except the white paper model) will ignore material
+
 
 What's a customization layer, why would you create one and how to do it is best covered in Bob Stayton's book [Docbook XSL: The Complete Guide](http://www.sagehill.net/docbookxsl/ "Docbook XSL: The Complete Guide"), particularly chapter 9.
 
@@ -121,7 +119,7 @@ I know it shouldn't make a difference but I've learned over time to always clean
 
 Run the Docbook file (index.xml in this case) through Jing using a command similr to this:
 
-```
+```bash
 java -jar /path/to/jing/jing -jar /path/to/jing/lib/docbookxi.rng index.xml
 ```
 
@@ -139,30 +137,30 @@ While XSLTProc supports XInclude you have to tell it to use them as it is not a 
 
 XSLTProc, by default, will work in the directory where it is run. We need to tell it not to do that and to create a directory for our ePub content. We use the following command:
 
-```
+```bash
 xsltproc --xinclude --stringparam base.dir OEBPS/ docbook-custom.xsl index.xml
 ```
 
 1. The first parameter (--xinclude) tells XSLTProc to process any XInclude references and add them to the document
-    
+
 2. The second parameter (--stringparam base.dir OEBPS/) tells XSLTProc to create the OEBPS directory if it doesn't exists and to create all the files in this directory.
-    
+
 3. docbook-custom.xsl is the Docbook customization layer we created earlier in the process.
-    
+
 4. index.xml refers to the main Docbook file. It contains all the XInclude references and will generate all out XHTML content.
-    
+
 
 ### Copy images, fonts and additional CSS stylesheets to the book directory
 
 In the step above we only created the XHTML files with their references to images and other internal resources. We now need to copy all additional resources (in this case they are: CSS, fonts, and images) to the corresponding directory. For example, if we referenced the images like this:
 
-```
+```bash
 images/sample.png
 ```
 
 We would copy the image to:
 
-```
+```bash
 OEBPS/images
 ```
 
@@ -174,13 +172,13 @@ Ziping the epub book is a two step process.
 
 The first step is to add the mimetype file (generated by Docbook) into the ePub archive without any compression. This is required by the ePub specification.
 
-```
+```bash
 zip -X0 mybook.epub mimetype
 ```
 
 The second zip command will add the remaining content, the OEBPS directory and the META-INF with normal compression settingsand exclusing all metadata; excluding the metadata is also required by the ePub specification.
 
-```
+```bash
 zip -r -X9 mybook.epub META-INF OEBPS
 ```
 
@@ -198,7 +196,7 @@ This is also an itertive process. If there are errors you will have to go back t
 
 To run epubcheck type the following command:
 
-```
+```bash
 java -jar /path/to/epubcheck/epubcheck.jar mybook.epub
 ```
 
@@ -210,7 +208,7 @@ Kindlegen is a command line application chosen because it is easier to merge wit
 
 Tu run Kindlegen run it like this:
 
-```
+```bash
 /path/to/kindlegen mybook.epub
 ```
 

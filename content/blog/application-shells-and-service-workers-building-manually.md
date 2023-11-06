@@ -71,7 +71,7 @@ You can use `postMessage` to cause the ServiceWorker to communicate with the pag
 
 Matt Gaunt describes the workflow of a ServiceWorker in the image below:
 
-![Service Worker Lifecyle](//www.html5rocks.com/en/tutorials/service-worker/introductionsw-lifecycle.png)
+![Service Worker Lifecyle](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/sw-lifecycle)
 
 Older versions of Chrome (M43) require the [serviceworker-cache-polyfill](https://github.com/coonsta/cache-polyfill) to cache content since that particular version of Chrome doesn’t support the API natively. Even newer versions of Chrome may not support the full cache specification so it may still be a good idea to use the script. If you use the cache polyfill use this at the top of your ServiceWorker script.
 

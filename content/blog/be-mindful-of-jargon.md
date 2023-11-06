@@ -29,7 +29,7 @@ You then have to determine how important the jargon is for your audience to lear
 
 If you expect that most of your audience will not be familiar with the text, use the plain-language version first with the technical term in parenthesis, like this:
 
-\[plain-language alternative\] (\[technical term\])
+`plain-language alternative (technical term)`
 
 But if you expect that the majority of your audience to be familiar with the term, but some users won’t be, you can flip the order and use the technical term first followed by a non-technical alternative
 

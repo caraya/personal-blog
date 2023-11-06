@@ -13,26 +13,25 @@ Running coverage from Chrome DevTools is fairly straight forward. Open DevTools 
 
 When you select the coverage tab you will see something like the figure below. Click on the reload icon to reload the page and analyze your site's coverage.
 
-![Chrome DevTools showing coverage panel](https://res.cloudinary.com/dfh6ihzvj/image/upload/v1601359088/publishing-project.rivendellweb.net/coverage-01.png)
+![Chrome DevTools showing coverage panel](https://res.cloudinary.com/dfh6ihzvj/image/upload/v1601359088/publishing-project.rivendellweb.net/coverage-01)
 
 Chrome DevTools showing coverage panel
 
 The coverage panel will present a list of all the scripts and styles loaded on the page along with information about each resource loaded.
 
-![Chrome DevTools showing the results of a coverage analysis](https://res.cloudinary.com/dfh6ihzvj/image/upload/v1601359083/publishing-project.rivendellweb.net/coverage-02.png)
+![Chrome DevTools showing the results of a coverage analysis](https://res.cloudinary.com/dfh6ihzvj/image/upload/v1601359083/publishing-project.rivendellweb.net/coverage-02)
 
 Chrome DevTools showing the results of a coverage analysis
 
 The information provides is listed below:
 
-- The **URL** of the resource that was analyzed
-- The **Type** of resource (CSS, JavaScript, or both)
-- The **Total Bytes** column shows the total size (in bytes) of the resource
-- The **Unused Bytes** column is the number of unused bytes for the resource, both as a number of bytes and a percentage
-- The last column shows a visualization of the Total Bytes and Unused Bytes columns
-    
-    - The red section of the bar is unused bytes
-    - The green section is used bytes
+* The **URL** of the resource that was analyzed
+* The **Type** of resource (CSS, JavaScript, or both)
+* The **Total Bytes** column shows the total size (in bytes) of the resource
+* The **Unused Bytes** column is the number of unused bytes for the resource, both as a number of bytes and a percentage
+* The last column shows a visualization of the Total Bytes and Unused Bytes columns
+  * The red section of the bar is unused bytes
+  * The green section is used bytes
 
 Looking at the coverage table I can see that there are scripts and styles that are seldom used and can dig into what resources they are, whether I need them, and whether I can reduce them further.
 

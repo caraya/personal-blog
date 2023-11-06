@@ -55,19 +55,19 @@ Unlike POedit [Glotpress](https://glotpress.blog/) is designed from the start to
 
 After you install the plugin navigate to `server_url/glotpress/`. The first time you access Glotpress you will see something like the figure below:
 
-![Glot Press after first install](https://res.cloudinary.com/dfh6ihzvj/image/upload/v1599105401/publishing-project.rivendellweb.net/glotpress-01.png)
+![Glot Press after first install](https://res.cloudinary.com/dfh6ihzvj/image/upload/v1599105401/publishing-project.rivendellweb.net/glotpress-01)
 
 Glot Press after first install
 
 Once we load GlotPress we can click on `Create a New Project` and we'll be presented with the screen in the following figure.
 
-![Glotpress project creation screen](https://res.cloudinary.com/dfh6ihzvj/image/upload/v1599106084/publishing-project.rivendellweb.net/glotpress-01.png)
+![Glotpress project creation screen](https://res.cloudinary.com/dfh6ihzvj/image/upload/v1599106084/publishing-project.rivendellweb.net/glotpress-01)
 
 Glotpress project creation screen
 
 We will then be presented with a menu of actions for us to do with the project we just created.
 
-![List of project actions for the project we just created](https://res.cloudinary.com/dfh6ihzvj/image/upload/v1599105403/publishing-project.rivendellweb.net/glotpress-02.png)
+![List of project actions for the project we just created](https://res.cloudinary.com/dfh6ihzvj/image/upload/v1599105403/publishing-project.rivendellweb.net/glotpress-02)
 
 List of project actions for the project we just created
 
@@ -75,7 +75,7 @@ The first task is to `Import Originals`. This will take a PO or POT translation 
 
 We then create a new `translation set` which is what Glotpress will present us when we start doing the actual translation work.
 
-![Create a new translation set in Glot Press form with a pull down menu, two input boxes and another pull down menu](https://res.cloudinary.com/dfh6ihzvj/image/upload/v1599171189/publishing-project.rivendellweb.net/glotpress-03.png)
+![Create a new translation set in Glot Press form with a pull down menu, two input boxes and another pull down menu](https://res.cloudinary.com/dfh6ihzvj/image/upload/v1599171189/publishing-project.rivendellweb.net/glotpress-03)
 
 Glotpress dialog to create a new translation set
 
@@ -85,15 +85,14 @@ Once we complete the creation of a new dialogue set we'll see it presented on th
 
 Before we start working with the translation set we just created is to click on the language we want to work with
 
-![list of available translating strings](https://res.cloudinary.com/dfh6ihzvj/image/upload/v1599174008/publishing-project.rivendellweb.net/glotpress-05.png)
+![list of available translating strings](https://res.cloudinary.com/dfh6ihzvj/image/upload/v1599174008/publishing-project.rivendellweb.net/glotpress-05)
 
 List of available translations strings
 
 Choose the string you want to work with and double click the textbox where it says `click to add`. You will see something like the following figure.
 
-![alt text](https://res.cloudinary.com/dfh6ihzvj/image/upload/v1599183966/publishing-project.rivendellweb.net/glotpress-06.png)
+![Create Glotpress Glossary](https://res.cloudinary.com/dfh6ihzvj/image/upload/v1599183966/publishing-project.rivendellweb.net/glotpress-06)
 
-'alt text'
 
 Enter as many translations and you like. When you're done click on `add translation ->` or cancel if you change your mind.
 
@@ -101,7 +100,7 @@ The last step, once you've completed the translations, is to export to a PO or P
 
 One way to do it is to click on the Export link at the bottom of the screen and keep it the default settings as they are.
 
-![links to import and export translations from Glotpress](https://res.cloudinary.com/dfh6ihzvj/image/upload/v1599183962/publishing-project.rivendellweb.net/glotpress-07.png)
+![links to import and export translations from Glotpress](https://res.cloudinary.com/dfh6ihzvj/image/upload/v1599183962/publishing-project.rivendellweb.net/glotpress-07)
 
 Links to import and export translations from Glotpress
 

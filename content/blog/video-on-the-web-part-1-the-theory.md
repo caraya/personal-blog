@@ -22,7 +22,7 @@ Although things have improved in recent years, this is still a matter of trial a
 The first thing we need to find out is if our target browsers support the container we want to use. I've only looked at three container types: MP4, WebM, and OGG.
 
 | Container Format | Chrome | Edge | Safari | Firefox | Notes |
-| --* | --* | --* | --* | --* | --* |
+| --- | --- | --- | --- | --- | --- |
 | MP4 | ✅ | ✅ | ✅ | ✅ |   |
 | WebM | ✅ | ✅ | ✅ | ✅ |   |
 | OGG | ✅ | ✅ | ✅ | ✅ |   |
@@ -34,7 +34,7 @@ Now let's look at video codecs to put in the containers.
 The video table is based on data from caniuse.com and Mozilla's [Web video codec guide](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs). **It does not include codecs for [WebRTC](https://webrtc.org/), only those codecs that will work in the `&lt;video>` element or its `&lt;source>` children**.
 
 | Format | Full Codec Name | Container Support | Chrome | Edge | Safari | Firefox | Notes |
-| --* | --* | --* | --* | --* | --* | --* | --* |
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | VP8 | Video Processor 8 | OGG, WebM | ✅ | ✅ | ✅ | ✅ |   |
 | VP9 | Video Processor 9 | MP4, OGG, WebM | ✅ | Partial | ❌ | ✅ |   |
 | AV1 | AOMedia Video 1 | MP4, WebM | ✅ | Partial | ❌ | ❌ |   |
@@ -45,7 +45,7 @@ The video table is based on data from caniuse.com and Mozilla's [Web video codec
 The audio codec information is taken from caniuse.com and from Mozilla's [Web audio codec guide](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs).
 
 | Format | Full Name | Container Support | Chrome | Edge | Safari | Firefox | Notes |
-| --* | --* | --* | --* | --* | --* | --* | --* |
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | AAC | Advanced Audio Coding | MP4 | ✅ | ✅ | ❌ | ✅ |   |
 | FLAC | Free Lossless Audio Codec | MP4, OGG | ✅ | ✅ | ✅ | ✅ |   |
 | MP3 | MPEG-1 Audio Layer III | MP4 | ✅ | ✅ | ✅ | ✅ | MP3 are MPEG files with no video tracks |

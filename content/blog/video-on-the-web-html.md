@@ -24,7 +24,7 @@ controls
 : Wether the browser shows default controls (play, pause, seek) for the video
 
 playsinline
-:whether a mobile browser should play the video embedded on the page or play it full screen (the default)
+: whether a mobile browser should play the video embedded on the page or play it full screen (the default)
 
 autoplay
 : Whether the video will start playing as soon as the page loads

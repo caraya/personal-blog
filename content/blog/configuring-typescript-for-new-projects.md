@@ -33,7 +33,7 @@ The command for project installation uses the `-D` flag to install it as a devel
 npm install -D typescript
 ```
 
-## Adding scripts to `package.json`
+## Adding scripts to package.json
 
 The next step is to add the commands to run Typescript-related commands.
 

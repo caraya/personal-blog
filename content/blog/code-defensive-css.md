@@ -108,7 +108,7 @@ Finally, because we chose not to make the property inherit, we save ourselves fr
 
 `.item4` defines a new value for `--colorPrimary`.
 
-`.item4-iner` doesn't redefine `--colorPrimary`. Because we set `inherit` to false, the color will not inherit down to the child and, because we didn't put a `--colorPrimary` override, it will take the initial value for the color.
+`.item4-inner` doesn't redefine `--colorPrimary`. Because we set `inherit` to false, the color will not inherit down to the child and, because we didn't put a `--colorPrimary` override, it will take the initial value for the color.
 
 ```css
 .item4 {

@@ -31,7 +31,7 @@ The idea is as follows:
 
 Once the script has been added to the slide where you want the replay to happen, there will be additional buttons on the live section of the page that will allow you to play back the content you recorded.
 
-![The play button (highlighted in a red rectangle) is added when we use Rety to playback pre-recorded live demos](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/inspirejs-rety-playback-button.png)
+![The play button (highlighted in a red rectangle) is added when we use Rety to playback pre-recorded live demos](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/inspirejs-rety-playback-button)
 
 This has two main benefits. It saves you from making typos during the live presentation and it allows people viewing the deck after the conference to step through the video just like the presenter did.
 

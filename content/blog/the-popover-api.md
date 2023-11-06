@@ -12,20 +12,14 @@ This post will explore the Popover API, what it does, how it works and provide e
 Before we jump into popovers we need to define a few terms.
 
 Top layer
-
-The top layer, as the name implies is painted last as the top-most layer of content in the browser viewport, regardless of document order or z-index values
-
-By default, if multiple elements are positioned in the same location, the browser paints them in the order they appear in the document (document order). With the z-index property you decide your layer order
-
-Within the top layer, elements are painted in document order
-
-If your popup is in an element with overflow: hidden, that will cut it off. If it is promoted to the top layer, no cutting off will take place.
+: The top layer, as the name implies is painted last as the top-most layer of content in the browser viewport, regardless of document order or z-index values
+: By default, if multiple elements are positioned in the same location, the browser paints them in the order they appear in the document (document order). With the z-index property you decide your layer order
+: Within the top layer, elements are painted in document order
+: If your popup is in an element with overflow: hidden, that will cut it off. If it is promoted to the top layer, no cutting off will take place.
 
 Backdrop
-
-A backdrop usually serves as a visual cue that any content behind the popover is unavailable for interactions. This can be used as a way to help the user focus.
-
-You can style the backdrop with the `::backdrop` pseudo-element.
+: A backdrop usually serves as a visual cue that any content behind the popover is unavailable for interactions. This can be used as a way to help the user focus.
+: You can style the backdrop with the `::backdrop` pseudo-element.
 
 ## Why another API
 

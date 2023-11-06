@@ -23,15 +23,14 @@ These technologies are still experimental and subject to change. Best place to k
 
 **The following browser supports the standard:**
 
-- IE, IE Mobile (-ms- flag)
-- Webkit nightly (-webkit-flag)
-- iOS (-webkit- flag)
-- Fully supported on iOS 7
-- Chrome Canary
-
-    - Enable with Enable CSS Regions flag
-    - For Chrome 23 and later enable with: Enable experimental WebKit features)
-    - Latest Chrome Nightly uses Enable Experimental Web Platform Features to enable regions
+* IE, IE Mobile (-ms- flag)
+* Webkit nightly (-webkit-flag)
+* iOS (-webkit- flag)
+* Fully supported on iOS 7
+* Chrome Canary
+  * Enable with Enable CSS Regions flag
+  * For Chrome 23 and later enable with: Enable experimental WebKit features
+  * Latest Chrome Nightly uses Enable Experimental Web Platform Features to enable regions
 
 
 ## Can we use this for publishing projects now?
@@ -48,7 +47,7 @@ For those familiar with InDesign think of regions as threaded text frames that c
 
 For those not familiar with InDesign, regions and flows look something like this:
 
-![](images/flow-example.png)
+![Example of flow concept](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/flow-example)
 
 ### Getting Started
 
@@ -56,8 +55,7 @@ In supported browsers the code for something like the example above is fairly si
 
 CSS code:
 
-```
-
+```css
 #source {
     -webkit-flow-into: main-content;
     -ms-flow-into: main-content;
@@ -77,7 +75,7 @@ Every container with the class `.region` will be used to flow the text into. We 
 
 Combining the HTML below:
 
-```
+```html
 <div id="source">Some long chunk of text goes here</div>
 
 <div class="region"></div>
@@ -88,7 +86,11 @@ Combining the HTML below:
 
 with the CSS that we looked at earlier will produce a result like the one in the [Codepen](http://codepen.io/) below:
 
-<p data-height="492" data-theme-id="2039" data-slug-hash="staCu" data-user="caraya" data-default-tab="result" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/staCu">CSS Regions Example #1</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a></p>
+<iframe height="300" style="width: 100%;" scrolling="no" title="Iregularly Shaped Region Example 1" src="https://codepen.io/caraya/embed/ngQreY?default-tab=css%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/caraya/pen/ngQreY">
+  Iregularly Shaped Region Example 1</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
 One thing to notice is that the `#source` disappears from the flow of your page's content and only appears once, on our regions. This will be interesting later when we start working with multiple flows in the same layout.
 
@@ -98,8 +100,7 @@ We have our basic regions layout... it's nothing to write home about, is it? Let
 
 We will change the regions on our HTML to add an `ID` attribute to each. Our HTML code now looks like this:
 
-```
-
+```html
 <h1>Positioned Regions</h1>
 
 <p>Each of the 4 regions (marked with a 1px red border) below has been positioned using CSS attributes (top and left)</p>
@@ -120,8 +121,7 @@ I also added individual ID attributes to each region so we can style them indepe
 
 Now that we've identified each region on our content we will play with style. We will change the size of the region and play with their positions.
 
-```
-
+```css
 #source {
     -webkit-flow-into: main-content;
     -ms-flow-into: main-content;
@@ -160,7 +160,11 @@ Now that we've identified each region on our content we will play with style. We
 
 The resulting modifications produce the result below:
 
-<p data-height="257" data-theme-id="2039" data-slug-hash="CLFEk" data-user="caraya" data-default-tab="result" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/CLFEk">CSS Regions Example2: Positioned flow</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a></p>
+<iframe height="442.343994140625" style="width: 100%;" scrolling="no" title="CSS Regions Example2: Positioned flow" src="https://codepen.io/caraya/embed/kyqdyG?default-tab=css%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/caraya/pen/kyqdyG">
+  CSS Regions Example2: Positioned flow</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
 ### Making it more flexible
 
@@ -170,29 +174,29 @@ The example in the previous section uses absolute positioning to layout the cont
 
 So we'll change the CSS to make the code more responsive while keeping the HTML the same. The new CSS looks like the one below:
 
-```
+```css
 html, body {
   width: 100%;
 }
 
 #source {
-    -webkit-flow-into: main-content;
-    -ms-flow-into: main-content;
-    flow-into: main-content;
+	-webkit-flow-into: main-content;
+	-ms-flow-into: main-content;
+	flow-into: main-content;
 }
 
 .region {
-    -webkit-flow-from: main-content;
-    -ms-flow-from: main-content;
-    flow-from: main-content;
+	-webkit-flow-from: main-content;
+	-ms-flow-from: main-content;
+	flow-from: main-content;
   position:relative;
   width: 300px;
-    height: 400px;
+	height: 400px;
   border: 1px solid red;
 }
 
 #region1, #region3 {
-    left: 10px;
+	left: 10px;
 }
 
 #region2, #region4 {
@@ -202,7 +206,11 @@ html, body {
 
 Changing the regions' positioning to relative allows us more flexibility. While we can keep the order of the elements, we can now position them anywhere in the screen we want. In developing the example below I also played with negative values for the top element to move content up from its original position.
 
-<p data-height="517" data-theme-id="2039" data-slug-hash="cCqnD" data-default-tab="result" data-user="caraya" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/cCqnD/">CSS Regions Example3: Positioned flow with relative elements</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<iframe height="614.2901000976562" style="width: 100%;" scrolling="no" title="CSS Regions Example3: Positioned flow with relative elements" src="https://codepen.io/caraya/embed/AJBQRG?default-tab=css%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/caraya/pen/AJBQRG">
+  CSS Regions Example3: Positioned flow with relative elements</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
 ### Will this work with older browsers?
 
@@ -214,7 +222,7 @@ This is where polyfills and resource loaders come into play. While no browser su
 
 [Modernizr.load](http://modernizr.com/docs/#load) (also know as [yepnope.js](yepnopejs.com)) allows you to conditionally load javascript based on Modernizr tests. The example below makes sure we supports both columns, shapes and regions before we do anything:
 
-```
+```js
 Modernizr.load([
   {
     // List of things we need
@@ -238,13 +246,17 @@ Adobe has created a [CSS regions polyfill](https://github.com/adobe-webplatform/
 
 We will take one of our example images from the top newspapers and convert it into a fluid web layout that uses regions and shapes to layout multiple flows of content in the same page.
 
-![dmn7](11/dmn7.jpg)
+![print magazine layout that we can emulate in print](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/dmn7)
 
 I know that you can do some of the same things that you use regions for. It is true that the CSS uses a combination of flexbox and regions. The looks of the example are a limitation of my skills with CSS and not necessarily a reflection of the recomendations and their implementations.
 
 I will continue working on this final example in Codepen. Comments and feedback asked for and encouraged.
 
-<p data-height="257" data-theme-id="2039" data-slug-hash="apnou" data-user="caraya" data-default-tab="result" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/apnou">apnou</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a></p>
+<iframe height="300" style="width: 100%;" scrolling="no" title="CSS Regions Layout - Take 1" src="https://codepen.io/caraya/embed/DjvdxG?default-tab=css%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/caraya/pen/DjvdxG">
+  CSS Regions Layout - Take 1</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
 #### Outstanding Issues and Questions
 
@@ -258,7 +270,7 @@ The CSS shapes recommendations are like Drop Caps or floated images on steroids.
 
 For the unintiated drop caps are the large letters used in the first paragraph of a chapter or a page. The CSS code for a drop cap may look something like this:
 
-```
+```css
 p:first-child:first-letter {
     float: left;
     color: #903;
@@ -289,12 +301,12 @@ Support for shapes is in a much larger flux than regions as no single browser su
 
 The simplest example is to use them alongside floated content. In the example below we've taken the [Dunetocat image from Github](http://octodex.github.com/dunetocat/) and floated it both left and right and used CSS shapes and float attributes.
 
-```
+```html
 <div id="container">
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tempor ipsum, tempor placerat nisi. Cras feugiat est et turpis scelerisque auctor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tempor ipsum, tempor placerat nisi. Etiam vehicula lectus   vel leo pharetra malesuada. Nulla risus magna, vulputate id elit quis, luctus ullamcorper ligula. Nam at faucibus massa, sed elementum tellus. Proin et dictum ligula. </div>
 ```
 
-```
+```css
 #container{
   border: 1px solid blue;
 }
@@ -312,11 +324,15 @@ The simplest example is to use them alongside floated content. In the example be
 
 In the codepen below notice the way in which the text wraps around the text around the image and how it is wrapped differently depending on where the object is placed. You can play with the values for the rectangle **shape-outside** CSS property to see how the wrapping changes.
 
-<p data-height="511" data-theme-id="2039" data-slug-hash="JuBeF" data-user="caraya" data-default-tab="result" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/JuBeF">Shape example 2: Shape Inside</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a></p>
+<iframe height="300" style="width: 100%;" scrolling="no" title="Shape example 2: Shape Inside" src="https://codepen.io/caraya/embed/DoaagM?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/caraya/pen/DoaagM">
+  Shape example 2: Shape Inside</a> by Carlos Araya (<a href="https://codepen.io/caraya">@caraya</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
 The next easiest example is to use shape inside to put our text inside a shape. We are flowing the content using regions like we did above and then shape the area we are flowing our content to and use the CSS **shape-inside** property to define the shape we are flowing our content into... in this case a circle.
 
-```
+```html
 <div id="region1"></div>
 
 <div id="content" align="justify">
@@ -324,7 +340,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tempor ipsu
 <div>
 ```
 
-```
+```css
 #content {
   flow-into: flow;
   font-size: 11pt;
@@ -336,11 +352,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tempor ipsu
   height: 200px;
   background-color: #9BBCE3;
   shape-inside: circle(50%, 50%, 50%);
+}
 ```
 
 As usual you can play with the CSS definitions on the Codepen below to test what would happen if you make changes in the shape you're flowing your content into.
-
-<p data-height="629" data-theme-id="2039" data-slug-hash="JuBeF" data-user="caraya" data-default-tab="result" class="codepen">See the Pen <a href="http://codepen.io/caraya/pen/JuBeF">Shape example 2: Shape Inside</a> by Carlos Araya (<a href="http://codepen.io/caraya">@caraya</a>) on <a href="http://codepen.io">CodePen</a></p>
 
 ### Getting fancy
 
@@ -370,24 +385,30 @@ Surprisingly, at least for me, exclusions are only supported on IE 10+ (I imagin
 
 The first example we'll look at is text wrapping around a straight image. We will use the same code that we used on our first shape example and modify it slightly:
 
-```
-Big Example Title
+```html
+<h1>Big Example Title</h1>
 
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tempor ipsum, tempor placerat nisi. Cras feugiat est et turpis scelerisque auctor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tempor ipsum, tempor placerat nisi. Etiam vehicula lectus vel leo pharetra malesuada. Nulla risus magna, vulputate id elit quis, luctus ullamcorper ligula. Nam at faucibus massa, sed elementum tellus. Proin et dictum ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tempor ipsum, tempor placerat nisi. Cras feugiat est et turpis scelerisque auctor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tempor ipsum, tempor placerat nisi. Etiam vehicula lectus
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tempor ipsum, tempor placerat nisi. Cras feugiat est et turpis scelerisque auctor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tempor ipsum, tempor placerat nisi. Etiam vehicula lectus vel leo pharetra malesuada. Nulla risus magna, vulputate id elit quis, luctus ullamcorper ligula. Nam at faucibus massa, sed elementum tellus. Proin et dictum ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tempor ipsum, tempor placerat nisi. Cras feugiat est et turpis scelerisque auctor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tempor ipsum, tempor placerat nisi. Etiam vehicula lectus
 
-        This is a test
+<div class="excluded">
+	<p>This is a test</p>
+
+	<p>This is a major quote for this document and we'll have to offset it from the rest of the text</p>
+
+</div>
+
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tempor ipsum, tempor placerat nisi. Cras feugiat est et turpis scelerisque auctor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tempor ipsum, tempor placerat nisi. Etiam vehicula lectus vel leo pharetra malesuada. Nulla risus magna, vulputate id elit quis, luctus ullamcorper ligula. Nam at faucibus massa, sed elementum tellus.</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tempor ipsum, tempor placerat nisi. Cras feugiat est et turpis scelerisque auctor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tempor ipsum, tempor placerat nisi. Etiam vehicula lectus vel leo pharetra malesuada.</p>
+
+<p>Nulla risus magna, vulputate id elit quis, luctus ullamcorper ligula. Nam at faucibus massa, sed elementum tellus. Proin et dictum ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tempor ipsum, tempor placerat nisi. Cras feugiat est et turpis scelerisque auctor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tempor ipsum, tempor placerat nisi. Etiam vehicula lectus</p>
+
 ```
 
-```
-    <p>This is a major quote for this document and we'll have to offset it from the rest of the text</p>
-  </div>
-```
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tempor ipsum, tempor placerat nisi. Cras feugiat est et turpis scelerisque auctor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tempor ipsum, tempor placerat nisi. Etiam vehicula lectus vel leo pharetra malesuada. Nulla risus magna, vulputate id elit quis, luctus ullamcorper ligula. Nam at faucibus massa, sed elementum tellus. Proin et dictum ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tempor ipsum, tempor placerat nisi. Cras feugiat est et turpis scelerisque auctor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tempor ipsum, tempor placerat nisi. Etiam vehicula lectus
 
 With the following CSS:
 
-```
+```css
 #container {
   position: relative;
   padding: 20px;
@@ -396,12 +417,23 @@ With the following CSS:
   text-align: justify;
   column-count: 2;
 }
-```
 
-.excluded { background: #0ff; opacity: 0.6; padding: 10px; width: 150px; height: 150px; left: 45%; **position: absolute;** shape-outside: rectangle(0, 0, 100%, 100%); float:left; wrap-flow: both; }
+.excluded {
+	background: #0ff;
+	opacity: 0.6;
+	padding: 10px;
+	width: 150px;
+	height: 150px;
+	left: 45%;
+	position: absolute;
+	shape-outside: rectangle(0, 0, 100%, 100%);
+	float:left;
+	wrap-flow: both;
+}
+```
 
 ## **Currently the example above Only works in IE 10 using the -ms vendor prefix**
 
 ### The final example
 
-Larger and more complex example, including both regions and shapes is forthcoming
+Larger and more complex examples, including both regions and shapes are forthcoming

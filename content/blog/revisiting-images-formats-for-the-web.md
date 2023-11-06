@@ -10,7 +10,7 @@ This post does not cover HEIC/HEIF and AVIF image formats. To cover those two fo
 Before we jump into looking at the quality of compressed images, let's take a look at what's available and what's coming down the pipeline as far as image formats for the web.
 
 | Format | Initial Release | Open? | Type | Available Encoder | Encoder to use | Notes |
-| --* | --* | --* | --* | --* | --* | --* |
+| --- | --- | --- | --- | --- | --- | --- |
 | GIF | 1987 | No | Lossless | Yes | [ImageMagick](https://imagemagick.org/) |  |
 | JPG | 1992 | Yes | Lossy | Yes | [ImageMagick](https://imagemagick.org/) | According to Wikipedia patents for JPEG technologies expired |
 | PNG | 1996 | Yes | Lossless | Yes | [ImageMagick](https://imagemagick.org/) | Also Provides animation support. Check [caniuse.com](https://caniuse.com/#feat=apng) for supported browsers |
@@ -104,7 +104,7 @@ fi
 My Results with images encoded from TIF high-quality sources and JPG where TIF was not an option:
 
 | Format | File Size |
-| --* | --* |
+| --- | --- |
 | TIFF (base) | 15MB |
 | PNG | 13.9MB |
 | JPG | 855KB |
@@ -188,7 +188,7 @@ The first table uses [STSCI-H-p2022a-f-4398x3982](https://github.com/caraya/test
 The file sizes are generally what I expected and the differences between the SSIM values are similar enough to make file size becomes the primary consideration.
 
 | Quality | WebP File Size | WebP SSIM Value | JPG File Size | JPG SSIM |
-| --* | --* | --* | --* | --* |
+| --- | --- | --- | --- | --- |
 | 100 | 2.1MB | 0.986584 | 10.9M | 0.992733 |
 | 90 | 639KB | 0.981029 | 3.6MB | 0.985442 |
 | 80 | 266KB | 0.975904 | 2.1MB | 0.982087 |
@@ -199,7 +199,7 @@ The file sizes are generally what I expected and the differences between the SSI
 The second table uses [geisha-high-res](https://github.com/caraya/testing-image-formats/blob/master/test-two/geisha_hi_res.tif)as the image to test. This is a much brighter and deep contrast color image. The image is 11.9MB and may use a significant portion of your data plan on mobile.
 
 | Quality | WebP File Size | WebP SSIM Value | JPG File Size | JPG SSIM |
-| --* | --* | --* | --* | --* |
+| --- | --- | --- | --- | --- |
 | 100 | 2.6MB | 0.980442 | 5.2MB | 0.992432 |
 | 90 | 757KB | 0.961136 | 1.4MB | 0.966931 |
 | 80 | 300KB | 0.947507 | 788KB | 0.956424 |
@@ -212,7 +212,7 @@ The final example, the [USS California](https://github.com/caraya/testing-image-
 I ran the compression and the SSIM comparison in separate steps, so I made the incorrect assumption that grayscale WebP images would exhibit the same behavior as color ones where the WebP files scored better in the SSIM metric across the board instead of fluctuating as they did. Need to do more research, particularly if it has to do with encoding settings on the WebP size and whether the `-jpeg_like` and `-shap_yuv` flags would change the results in any way.
 
 | Quality | WebP File Size | WebP SSIM Value | JPG File Size | JPG SSIM |
-| --* | --* | --* | --* | --* |
+| --- | --- | --- | --- | --- |
 | 100 | 10.1MB | 1 | 11.2MB | 0.998955 |
 | 90 | 3MB | 0.956338 | 3.6MB | 0.951193 |
 | 80 | 1.1MB | 0.909765 | 2.1MB | 0.930837 |

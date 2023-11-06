@@ -210,7 +210,7 @@ While we can define variable fonts when declaring them in `theme.json` there are
 Variable fonts define four default axes. Like `font-feature-settings`, these can be set with regular descriptors as explained in the following table.
 
 | Variation axis | Equivalent Descriptor | Notes |
-| --* | --* | --* |
+| --- | --- | --- |
 | Weight (wght) | font-weight | The `font-weight` property will set the `wght` axis if one is present. |
 | Width (wdth) | font-stretch | The `font-stretch` property will set the `wdth` axis if one is present. |
 | Slant (slnt) or Italic (ital) | font-sty`le |` The `font-style` property will set the `slnt` or `ital` axis, depending on its value. |  |
@@ -220,7 +220,9 @@ A font doesn't need to use all axes. Optical size is one we don't see in too man
 
 In addition to these default axes, fonts can define any number of custom axes that are exclusive to the font.
 
-**Note:** See Microsoft's [OpenType Design-Variation Axis Tag Registry](https://learn.microsoft.com/en-us/typography/opentype/spec/dvaraxisreg) documentation for a more in-depth discussion about the OpenType tags and why you would want to register them (or not).
+!!! note **Note:**
+See Microsoft's [OpenType Design-Variation Axis Tag Registry](https://learn.microsoft.com/en-us/typography/opentype/spec/dvaraxisreg) documentation for a more in-depth discussion about the OpenType tags and why you would want to register them (or not).
+!!!
 
 For example, [Recursive](https://www.recursive.design/) defines the following custom axes in addition to `wght` (weight) and `slnt` (Slant):
 

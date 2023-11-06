@@ -1,6 +1,7 @@
 ---
 title: "Digital Storytelling: Place-based stories"
 date: "2017-08-23"
+youtube: true
 ---
 
 One of the things that has really caught my attention is place-based story telling. How can a place tell a story that is different depending on the occasion or the type of story we want to tell. The two biggest technologies for this type of story telling are augmented reality and beacons/Physical web.
@@ -11,13 +12,13 @@ Beacons, iBeacons or the Physical Web all refer to the same group of technologie
 
 In "Coffee With a Googler" Laurence Moroney discusses the Physical Web with Scott Jenson. This is the best introduction to the technology for non-technical audiences.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/w8zkLGwzP_4" frameborder="0" allowfullscreen></iframe>
+<lite-youtube videoid="w8zkLGwzP_4"></lite-youtube>
 
 The idea behind the physical web is that we can incorporate beacons to everyday objects and places and give these objects and places an online presence and interaction capability. I first saw Physical Web devices demonstrated at the Chrome Developer Summit in 2015 with a vending machine taking input from your mobile phone to "sell" you candy.
 
 We will use the URL capabilities of the beacons to build experiences.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/s-4J7cijPAo" frameborder="0" allowfullscreen></iframe>
+<lite-youtube videoid="s-4J7cijPAo"></lite-youtube>
 
 We can place different pieces of the story in multiple beacons and leave it up to the player to fully construct his version of the story, realizing that the reader may not work on the story linearly or complete it altogether at which point it'll be up to the reader to complete the story to their satisfaction.
 
@@ -27,9 +28,12 @@ We can place different pieces of the story in multiple beacons and leave it up t
 
 If you've seen [Niantic's](https://nianticlabs.com/) AR games [Ingress](https://www.ingress.com/) and [Pokemon Go](http://www.pokemongo.com/en-us/) you have played an Augmented Reality game. In the images below different Pokemon from the first generation of the Pokemon Go game appear around Embarcadero in San Francisco
 
-![](//publishing-project.rivendellweb.net/wp-content/uploads/2017/02/pokemon-go-1.png) ![](//publishing-project.rivendellweb.net/wp-content/uploads/2017/02/pokemon-go-2.png) ![](//publishing-project.rivendellweb.net/wp-content/uploads/2017/02/pokemon-go-3.png)
+![Different images from Pokemon Go in San Francisco, CA. Images from [http://www.pokemongo.com/en-us/photos/)](http://www.pokemongo.com/en-us/photos/)](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/pokemon-go-1)
 
-Different images from Pokemon Go in San Francisco, CA. Images from [http://www.pokemongo.com/en-us/photos/)](http://www.pokemongo.com/en-us/photos/)
+![Different images from Pokemon Go in San Francisco, CA. Images from [http://www.pokemongo.com/en-us/photos/)](http://www.pokemongo.com/en-us/photos/)](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/pokemon-go-2)
+
+![Different images from Pokemon Go in San Francisco, CA. Images from [http://www.pokemongo.com/en-us/photos/)](http://www.pokemongo.com/en-us/photos/)](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/pokemon-go-3)
+
 
 Sadly when Google terminated their Google Glass Explorer program it also terminated any posibility of development outside [Google Glass at Work](https://developers.google.com/glass/distribute/glass-at-work) they left [Microsoft Hololens](https://www.microsoft.com/microsoft-hololens/en-us) as the main commercially available augmented reality development tool set (both hardware and software).
 
@@ -39,43 +43,43 @@ the list keeps growing larger so I probably won't update it often:
 
 **[Microsoft Hololens](https://www.microsoft.com/en-us/hololens)**
 
-- Untethered
-- Full PC running Windows 10, can take advantage of desktop applications as well as AR specific
-- Requires Unity to develop
-- Windows Only, will use Mac or Linux as a development platform
-- Expensive (3 to 5 thousand dollars per unit, current developer price)
+* Untethered
+* Full PC running Windows 10, can take advantage of desktop applications as well as AR specific software
+* Requires Unity to develop
+* Windows Only, will use Mac or Linux as a development platform
+* Expensive (3 to 5 thousand dollars per unit, current developer price)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2MqGrF6JaOM" frameborder="0" allowfullscreen></iframe>
+<lite-youtube videoid="2MqGrF6JaOM"></lite-youtube>
 
 **[Meta 2](https://buy.metavision.com/products/meta2)**
 
-- Available for presale ($950)
-- Tethered
+* Available for presale ($950)
+* Tethered
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_cmPFsBOquk?rel=0" frameborder="0" allowfullscreen></iframe>
+<lite-youtube videoid="_cmPFsBOquk"></iframe>
 
 **[Magic Leap](https://www.magicleap.com/)**
 
-- No one knows what the device or the technology looks like
-- Adaptive focus
-- Cheaper than Hololens but still in the 1 thousand dollar range
+* No one knows what the device or the technology looks like
+* Adaptive focus
+* Cheaper than Hololens but still in the 1 thousand dollar range
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/BLkFWq_ipCc?rel=0" frameborder="0" allowfullscreen></iframe>
+<lite-youtube videoid="BLkFWq_ipCc"></lite-youtube>
 
 **[CastAR](http://castar.com/)**
 
-- Under Development
+* Under Development
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/GpmKq_qg3Tk?rel=0" frameborder="0" allowfullscreen></iframe>
+<lite-youtube videoid="GpmKq_qg3Tk"></lite-youtube>
 
 **AR Toolkit**
 
-- Toolkit to create AR without devices
-- Uses device's built in camera and requires WebGL and WebRTC to work
-- Doesn't work in iOS yet (no WebRTC)
-- Open source Github project
+* Toolkit to create AR without devices
+* Uses device's built in camera and requires WebGL and WebRTC to work
+* Doesn't work in iOS yet (no WebRTC)
+* Open source Github project
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0MtvjFg7tik?rel=0" frameborder="0" allowfullscreen></iframe>
+<lite-youtube videoid="0MtvjFg7tik"></lite-youtube>
 
 Since I started writing this the Meta 2 went on sale for developers and I've discovered many AR devices targeted to business and sports (Recon Jet) markets. The problem with having so many vendors in the market is that you need to decide what devices to target and how many versions of your experience you want to create.
 
@@ -89,4 +93,4 @@ The big advantage of AR over beacons or VR is that we can leverage the world aro
 
 One of the disadvantages that I see for AR storytelling is the size of the device and the adverse public reaction people have had to public use of earlier AR devices like [Google Glass](https://www.google.com/glass/start/) and how people saw them as a threat to privacy and as a way to break the law without people realizing it. We'll talk more about this when we talk about if we are ready for the technology.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ihKUoZxNClA" frameborder="0" allowfullscreen></iframe>
+<lite-youtube videoid="ihKUoZxNClA"></lite-youtube>

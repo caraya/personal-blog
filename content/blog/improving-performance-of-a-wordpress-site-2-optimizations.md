@@ -12,7 +12,7 @@ We will first install a Cache Plugin to make easier to cache different portions 
 I will use [W3 Total Cache](https://wordpress.org/plugins/w3-total-cache/) with the default settings.
 
 | Source | Form Factor | Performance | Best Practices | Accessibility | SEO | PWA |
-| --* | --* | :-: | :-: | :-: | :-: | :-: |
+| --- | --- | :-: | :-: | :-: | :-: | :-: |
 | PSI | Mobile | 68 | 98 | 100 | 100 | N/A |
 | PSI | Desktop | 98 | 98 | 100 | 100 | N/A |
 | Node | Mobile | 84 | 98 | 100 | 100 | Pass |
@@ -67,13 +67,13 @@ Next we need to set expire headers and the duration in seconds for each section:
 I wish I had more granularity for media and other files. I don't mind having fonts be cached for a year but other assets like I may want to cache for shorter periods or force to revalidate.
 
 | Source | Form Factor | Performance | Accessibility | Best Practices | SEO | PWA |
-| --* | --* | :-: | :-: | :-: | :-: | :-: |
+| --- | --- | :-: | :-: | :-: | :-: | :-: |
 | PSI | Mobile | 75 | 98 | 100 | 100 | N/A |
 | PSI | Desktop | 97 | 98 | 100 | 100 | N/A |
 | Node | Mobile | 77 | 98 | 100 | 100 | Pass |
 | Node | Desktop | 57 | 98 | 100 | 100 | Pass |
 
-### Sidenote: Will a 10kb `.htaccess` file slow down page load?
+### Sidenote: Will a 10kb .htaccess file slow down page load?
 
 W3 Total Cache inserts instructions into into the sites `.htaccess` configuration file.
 
@@ -101,7 +101,9 @@ W3 Total Cache provides tools change the behavior of these files. The default be
 
 However, even though it improves performance, it doesn't change the caching behavior of my font file, one of the largest assets downloaded.
 
-**Note**: I forgot to run my tests after this change so no data is recorded.
+!!! note **Note**:
+I forgot to run my tests after this change so no data is recorded.
+!!!
 
 ### Add `fetchpriority` to the header image
 
@@ -114,7 +116,7 @@ The `fetchpriority` attribute is the HTML way to indicating that we want to chan
 This example image uses `fetchpriority` to let the browser know that we want to load the image as early as possible.
 
 ```html
-<img src="my_image.jpg" fetchpriority="high"
+<img src="my_image.jpg" fetchpriority="high" />
 ```
 
 Rather than use a plugin to do this in Wordpress, we'll leverage a WordPress function to do this.

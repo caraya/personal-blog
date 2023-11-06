@@ -7,9 +7,9 @@ date: "2023-03-27"
 
 This post will look at three things:
 
-- What are `data` attributes
-- How to use data attributes in CSS
-- How to use data attributes in javascript
+* What are `data` attributes
+* How to use data attributes in CSS
+* How to use data attributes in javascript
 
 ## What are data attributes
 
@@ -17,9 +17,9 @@ This post will look at three things:
 
 The names of data attributes have the following restrictions
 
-- The name must not start with the string `xml` (case-insensitive)
-- The name must not contain any colon characters (`:`)
-- The name must not contain any capital letters
+* The name must not start with the string `xml` (case-insensitive)
+* The name must not contain any colon characters (`:`)
+* The name must not contain any capital letters
 
 For example, the following snippet of HTML defines a custom attribute for the font family:
 

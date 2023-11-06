@@ -24,7 +24,7 @@ import {
   createBrotliCompress,
   createBrotliDecompress,
 } from 'node:zlib';
-import { 
+import {
   exit
 } from 'node:process';
 ```
@@ -34,8 +34,9 @@ import {
 3. Create a Brotli compression stream with default parameters
 4. Pipe the read stream through the Brotli compression stream and end in the writable stream for the output
 5. listen for the finished event on the stream
-    
-    1. When finished, log a message to console and exit.
+{.custom-ordered}
+   1. When finished, log a message to console and exit.
+{.custom-ordered}
 
 ```js
 export function brotliStreamCompress(inputFile) {
@@ -48,7 +49,7 @@ export function brotliStreamCompress(inputFile) {
   const readStream = fs.createReadStream(inputFileName);
   const writeStream = fs.createWriteStream(outputFileName);
 
-  // 3 
+  // 3
   const brotli = zlib.createBrotliCompress();
 
   // 4
@@ -102,6 +103,6 @@ The results are shown in the following table
 
 ## Links and References
 
-- [zlib](https://nodejs.org/api/zlib.html) Node module
-- [fs](https://nodejs.org/api/fs.html) Node module
-- [Streams and Brotli compression in Node.js](https://medium.com/@linoyzaga/streams-and-brotli-compression-in-node-js-fc2507d4d177)
+* [zlib](https://nodejs.org/api/zlib.html) Node module
+* [fs](https://nodejs.org/api/fs.html) Node module
+* [Streams and Brotli compression in Node.js](https://medium.com/@linoyzaga/streams-and-brotli-compression-in-node-js-fc2507d4d177)

@@ -13,9 +13,7 @@ So what ladder should we use?
 
 It depends on the budget and what streams your audience is using.
 
-![](https://developer.apple.com/library/content/technotes/tn2224/Art/tn2224_settings_May_2016.jpg)
-
-Apple recommended bitrates from [TN 2244](https://developer.apple.com/library/content/technotes/tn2224/_index.html)
+![Apple recommended bitrates from [TN 2244](https://developer.apple.com/library/content/technotes/tn2224/_index.html)](https://developer.apple.com/library/content/technotes/tn2224/Art/tn2224_settings_May_2016.jpg)
 
 We don't have to use all or any of the encodings.
 
@@ -29,9 +27,7 @@ For this ideal ladder, we'll skip pricing concerns. In an ideal world, we'd take
 
 The table below, taken from Ozer's Linked In article, uses Apple's Technical Note 2244 as the basis for the encoding ladder.
 
-![](https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAApBAAAAJGNkMzAyNTg0LTZjYmYtNGE0OC04MDk3LTMyY2ZhM2QyY2RhNw.png)
-
-An ideal encoding ladder bassed on Apple''s Technical Note 2244
+![An ideal encoding ladder bassed on Apple''s Technical Note 2244](https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAApBAAAAJGNkMzAyNTg0LTZjYmYtNGE0OC04MDk3LTMyY2ZhM2QyY2RhNw.png)
 
 I've always wondered how much we can cut off the bottom end for our American users. I'm thinking about removing either 234p, 270p or both depending on our target audience.
 
@@ -45,9 +41,9 @@ Working with video for web delivery can be done either of two ways, we can use a
 
 I've chosen to work with these providers:
 
-- Youtube
-- Vimeo
-- Twitch
+* Youtube
+* Vimeo
+* Twitch
 
 Although Twitch was initially geared towards computer gamers' broadcast my experience has been vastly different in the kind of games that first attracted me to earth.
 
@@ -82,9 +78,9 @@ Below I'm providing a condensed version of my [Encoding Spreadsheet](https://sto
 
 Looking at the table and their resources on compression:
 
-- [Youtube](https://support.google.com/youtube/answer/1722171?hl=en)
-- [Vimeo](https://vimeo.com/help/compression)
-- [Twitch](https://stream.twitch.tv/encoding/)
+* [Youtube](https://support.google.com/youtube/answer/1722171?hl=en)
+* [Vimeo](https://vimeo.com/help/compression)
+* [Twitch](https://stream.twitch.tv/encoding/)
 
 We can see the commonalities. For the most part, we should be able to create one file to push to Youtube and Vimeo and one additional stream, if needed or wanted, for Twitch.
 
@@ -134,8 +130,8 @@ agent_327_360p_sized_ratio_deinterlace_audio.mp4
 
 Using the 360p video as a reference we can work the other versions (1080p and 720p) using the command as a reference. The parameters we need to change for each version are:
 
-- `-b:v 2m` to change the video data rate
-- `-s 640x480` to change the video dimensions
+* `-b:v 2m` to change the video data rate
+* `-s 640x480` to change the video dimensions
 
 We can go even further and create a script in either Python or Ruby that will automate the changes. We only need one command for each version that we want to create
 
@@ -172,12 +168,12 @@ If you’re used to HTML5 the way you add DASH video is a little more complicate
 
 First, we create a simple HTML page with a video element. In this page we make sure that we add the scripts we need:
 
-- The shaka-player script
-- The script for our application
+* The shaka-player script
+* The script for our application
 
 The video element is incomplete on purpose. We will add the rest of the video in the script later on.
 
-```
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -197,9 +193,9 @@ The video element is incomplete on purpose. We will add the rest of the video in
 
 We’ll break the script into three parts:
 
-- Application init
-- Player init
-- Error handler and event listener
+* Application init
+* Player init
+* Error handler and event listener
 
 We initialize the application by installing the polyfills built into the Shaka player to make sure that all the supported players behave the same way and that there won’t be any unexpected surprises later on.
 

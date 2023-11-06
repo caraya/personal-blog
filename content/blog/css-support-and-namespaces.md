@@ -1,7 +1,7 @@
 ---
 title: "CSS Support and namespaces"
 date: "2014-09-01"
-categories: 
+categories:
   - "technology"
   - "tools-projects"
 ---
@@ -10,11 +10,11 @@ There are two new @rules in CSS (well, they may not be new but they are new to m
 
 ## @namespace
 
-[CSS namespaces](https://developer.mozilla.org/en-US/docs/Web/CSS/@namespace) are the CSS implementation of [XML namespaces](http://www.w3.org/TR/xml-names11/); the technology that allows elements from different XML vocabularies to live in the same document .
+[CSS namespaces](https://developer.mozilla.org/en-US/docs/Web/CSS/@namespace) are the CSS implementation of [XML namespaces](http://www.w3.org/TR/xml-names11/); the technology that allows elements from different XML vocabularies to live in the same document.
 
 In the case of CSS, namespaces allow us to style elements with the same name from different vocabularies differently. For example, let's look at the `a` from both XHTML and SVG vocabularies
 
-```
+```css
 @namespace url(http://www.w3.org/1999/xhtml);
 @namespace svg url(http://www.w3.org/2000/svg);
 
@@ -38,7 +38,7 @@ Feature queries using the [@supports](https://developer.mozilla.org/en-US/docs/W
 
 Where media queries concentrate on the device capabilities (as seen in the example below for a screen wider than 1024 pixels)
 
-```
+```css
 @media screen and (min-width: 1025){
 /* content for devices matching the query goes here */
 }
@@ -46,7 +46,7 @@ Where media queries concentrate on the device capabilities (as seen in the examp
 
 Feature queries work by testing for a CSS capability, similar to how we should be doing feature detection in Javascript, as show below:
 
-```
+```css
 @supports (display: flex) {
 /* content for browsers that support the condition goes here */
 }
@@ -54,19 +54,19 @@ Feature queries work by testing for a CSS capability, similar to how we should b
 
 Bear Travis, from Adobe, presents a more realistic example on his [blog post](http://blogs.adobe.com/webplatform/2014/08/21/coming-soon-css-feature-queries/)about feature queries, copied below:
 
-```
+```css
 @supports (background-blend-mode: multiply) {
-body {
-background-blend-mode: multiply;
-background: linear-gradient(rgb(59, 89, 106), rgb(63, 154, 130)),
-url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/28727/tree_bark.png');
-}
+	body {
+		background-blend-mode: multiply;
+		background: linear-gradient(rgb(59, 89, 106), rgb(63, 154, 130)),
+		url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/28727/tree_bark.png');
+	}
 }
 ```
 
 Furthermore we can do more complext detections using `and`, `not` and `or` operators. For example we can test for multiple display features by using something like this:
 
-```
+```css
 @supports (display: table-cell)
 and (display: list-item){
 /* code goes here for browsers that support
@@ -78,7 +78,7 @@ One of my favorite uses of feature detection in CSS is to test for prefixed prop
 
 This technique does not eliminate the need for Prefix Free or Autoprefixer but it allows designers to code deffensively without having to worry about which browser dropped each prefix when.
 
-```
+```css
 @supports (
 (perspective: 10px)
 or (-moz-perspective: 10px)
@@ -92,17 +92,18 @@ or (-o-perspective: 10px)
 
 The final trick to add to the CSS feature detection arsenal is the `not` operator which negates the test being performed. For example, we can test for lack of support for text-align-last or its Mozilla prefixed counterpart.
 
-```
+```css
 @supports ( not ( (text-align-last:justify) or (-moz-text-align-last: justify)) ) {
-/* selectors and rules for browsers that don't 
+/* selectors and rules for browsers that don't
 support text-align-last: feature */
+}
 ```
 
 Note the parentheses. When using compound expressions they are required, otherwise the css parser will not know how to process the query.
 
 @support allows progressive enhancement on the CSS side of the design equation (or it will once all browsers fully support the specification). Using the CSS cascade we might be able to do something like this:
 
-```
+```css
 /* First we do a plain color body background for older browsers */
 body {
 background-color: #ff8;
@@ -114,7 +115,7 @@ background-color: rgb(255, 255, 128);
 }
 
 /* test for hsla color space, if supported, use it*/
-@supports (background-color: hsla(50, 33%, 25%, 0.75){
+@supports (background-color: hsla(50, 33%, 25%, 0.75)) {
 background-color: hsla(50, 33%, 25%, 0.75);
 }
 
@@ -132,24 +133,21 @@ I created a [CodePen](http://codepen.io/caraya/pen/HrGLk) with the code above to
 
 Only the last supported rule will be used so we can set up for as many capabilities of the browser as we need to. However, the results are inconsistent in the different Macintosh browsers I've tested this with. As you can see below, the support is not uniform across browsers or complete in the browsers that do support the specification. Still it's a great starting point.
 
-## Specification status and browser support.
+## Specification status and browser support
 
 [CSS Conditional Rules Module Level 3](http://dev.w3.org/csswg/css-conditional/) (the recommendation that contains [feature queries](http://dev.w3.org/csswg/css-conditional/#at-supports)) is at the Candidate Recommendation stage. I'm concerned that the @supoort rule is at risk but the blink implementation is not included on the test case suite.
 
 As far as support the matrix looks like this:
 
-**Desktop**
-
-- Chrome: 28.0
-- Firefox (Gecko): 22
-- Internet Explorer: Not Supported
-- Opera: 12.1
-- Safari: Not Supported
-
-**mobile**
-
-- Android: Not supported
-- Firefox Mobile (Gecko): 22
-- IE Mobile: Not supported
-- Opera Mobile: 12.1
-- Safari Mobile: Not supported
+* **Desktop**
+  * Chrome: 28.0
+  * Firefox (Gecko): 22
+  * Internet Explorer: Not Supported
+  * Opera: 12.1
+  * Safari: Not Supported
+* **mobile**
+  * Android: Not supported
+  * Firefox Mobile (Gecko): 22
+  * IE Mobile: Not supported
+  * Opera Mobile: 12.1
+  * Safari Mobile: Not supported

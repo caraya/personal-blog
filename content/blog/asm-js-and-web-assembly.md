@@ -1,6 +1,7 @@
 ---
 title: "Asm.js and Web Assembly"
 date: "2017-03-29"
+youtube: true
 ---
 
 I've been hearing about Web Assembly and its predecessor, ASM.js for a while. The idea is that we can bring C and C++ code into the web and use it directly on the browser without having plugins get in the way. This would also make it easier to port high end games and other C/C++ code to Javascript and leverage existing APIs and features
@@ -11,13 +12,11 @@ I've been hearing about Web Assembly and its predecessor, ASM.js for a while. Th
 
 The first attempt at using Javascript as a target language for cross compilation is [asm.js](http://asmjs.org/faq.html). Using [Emscripten](http://kripken.github.io/emscripten-site/) asm.js allowed developers to compile massive C/C++ code bases to Javascript that that ran natively in the browser and leverages web technologies and APIs like WebGL being able to port games created with Unity and Unreal engine directly to the web like the Unreal demo below, circa 2013
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/XsyogXtyU9o?rel=0" frameborder="0" allowfullscreen></iframe>
+<lite-youtube videoid="XsyogXtyU9o"></lite-youtube>
 
 The process can be illustrated with the diagram below (taken from ejohn.org):
 
-![](http://i2.wp.com/i.imgur.com/1yoy1Fal.png)
-
-ASM.js compilation and execution pipeline from [ejohn.org](http://ejohn.org/blog/asmjs-javascript-compile-target/)
+![ASM.js compilation and execution pipeline from [ejohn.org](http://ejohn.org/blog/asmjs-javascript-compile-target/)](http://i2.wp.com/i.imgur.com/1yoy1Fal.png)
 
 The code is not meant to be written, or read, by humans. The example below was [created by John Ressig](https://gist.github.com/jeresig/5293608#file-bananabread-asm-js) to demonstrate the differences between asm.js and the regular Javascript code developers normally work with. The code has been formatted for clarity and sanity preservation, standard asm.js is heavily minified into one continuous blog of text.
 
@@ -186,9 +185,9 @@ Am asm.js module is contained within a function and starts with the `"use asm";`
 
 Note the three arguments for the asm.js function: `stdlib`, `foreign`, and `heap`.
 
-- The stdlib object contains references to a number of built-in math functions
-- foreign provides access to custom user-defined functionality, such as drawing a shape in WebGL
-- heap gives you an ArrayBuffer which can be viewed through a number of different lenses, such as Int32Array and Float32Array.
+* The stdlib object contains references to a number of built-in math functions
+* foreign provides access to custom user-defined functionality, such as drawing a shape in WebGL
+* heap gives you an ArrayBuffer which can be viewed through a number of different lenses, such as Int32Array and Float32Array.
 
 The rest of the module is broken up into three parts: variable declarations, function declarations, and finally an object exporting the functions to expose to the user.
 
@@ -236,11 +235,11 @@ Open a command prompt inside the SDK directory and run the following emsdk comma
 ./emsdk activate latest
 ```
 
-**Notes:**
-
+!!! note **Notes:**
 On Windows, invoke the tool with emsdk instead of ./emsdk.
 
 Linux and Mac OS X only: Call source ./emsdk\_env.sh after activate to set the system path to the active version of Emscripten.
+!!!
 
 **Platform-specific notes**
 
@@ -249,20 +248,17 @@ Mac OS X
 These instructions explain how to install all the required tools. You can test whether some of these are already installed on the platform and skip those steps.
 
 1. Install the XCode Command Line Tools. These are a precondition for git.
-    
-    - Install XCode from the Mac OS X App Store.
-    - In XCode | Preferences | Downloads, install Command Line Tools.
+   * Install XCode from the Mac OS X App Store.
+   * In XCode | Preferences | Downloads, install Command Line Tools.
 2. Install git:
-    
-    - Allow installation of unsigned packages, or installing the git package won’t succeed.
-    - Install XCode and the XCode Command Line Tools (should already have been done). This will provide git to the system PATH (see this [stackoverflow post](http://stackoverflow.com/questions/9329243/xcode-4-4-command-line-tools))
-    - Download and install git directly from [http://git-scm.com/](http://git-scm.com/)
+   * Allow installation of unsigned packages, or installing the git package won’t succeed.
+   * Install XCode and the XCode Command Line Tools (should already have been done). This will provide git to the system PATH (see this [stackoverflow post](http://stackoverflow.com/questions/9329243/xcode-4-4-command-line-tools))
+   * Download and install git directly from [http://git-scm.com/](http://git-scm.com/)
 3. Install cmake if you do not have it yet:
-    
-    - Download and install latest CMake from [Kitware CMake downloads](http://www.cmake.org/download/)
-    - Install node.js from [nodejs.org](http://nodejs.org/)
+   * Download and install latest CMake from [Kitware CMake downloads](http://www.cmake.org/download/)
+   * Install node.js from [nodejs.org](http://nodejs.org/)
 
-Linux
+**Linux**
 
 Pre-built binaries of tools are not available on Linux. Installing a tool will automatically clone and build that tool from the sources inside the emsdk directory.
 
@@ -284,7 +280,7 @@ We'll run two examples. The first one will print `hello, world`. The second exam
 
 For each example we'll compile the code and generate a webpage to make sure the code works.
 
-```
+```c
 #include <stdio.h>
 
 int main() {
@@ -301,7 +297,7 @@ To compile the code and generate the web page associated with it the command to 
 
 I'm running the command from within the Emscripten directory. Adjust your path as needed.
 
-```
+```c
 #include <stdio.h>
 #include <SDL/SDL.h>
 
@@ -326,8 +322,8 @@ extern "C" int main(int argc, char** argv) {
       // Alpha behaves like in the browser, so write proper opaque pixels.
       int alpha = 255;
 #else
-      // To emulate native behavior with blitting to screen, alpha component 
-      // is ignored. Test that it is so by outputting data (and testing 
+      // To emulate native behavior with blitting to screen, alpha component
+      // is ignored. Test that it is so by outputting data (and testing
       // that it does get discarded)
       int alpha = (i+j) % 255;
 #endif
@@ -335,7 +331,7 @@ extern "C" int main(int argc, char** argv) {
     }
   }
   if (SDL_MUSTLOCK(screen)) SDL_UnlockSurface(screen);
-  SDL_Flip(screen); 
+  SDL_Flip(screen);
 
   printf("you should see a smoothly-colored square - no sharp lines but the square borders!\n");
   printf("and here is some text that should be HTML-friendly: amp: |&| double-quote: |\"| quote: |'| less-than, greater-than, html-like tags: |<cheez></cheez>|\nanother line.\n");
@@ -350,7 +346,7 @@ The second demo works the same way. The code is more complex than the `hello_wor
 
 To run the compiler run the following command from the root of your Emscripten SDK:
 
-```
+```bash
 ./emcc tests/hello_world_sdl.cpp -o hello2.htm
 ```
 

@@ -11,9 +11,7 @@ This is important because in large or long-lasting projects there may be CSS tha
 
 Since Chrome 59 DevTools offers a coverage tool that will tell you how much of your CSS is used in a given page. This may help you decide if you should use Critical to inline that CSS on the page or UnCSS to remove the unused CSS rules and selectors from your CSS stylesheets.
 
-![](//publishing-project.rivendellweb.net/wp-content/uploads/2017/06/coverage-menu-location.png)
-
-Where is the coverage panel item
+![Where is the coverage panel item](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/coverage-menu-location)
 
 To use the coverage tool, open DevTools open the tools menu in the far right corner of the DevTools GUI, select `More Tools` and from the submenu select `Coverage`.
 

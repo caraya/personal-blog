@@ -98,7 +98,7 @@ glyphhanger --latin \
 --formats=woff-zopfli,woff2
 ```
 
-## Loading the font: `@font-face`
+## Loading the font: @font-face
 
 We've create the font subset that we want to use, we'll now load the font in our CSS.
 
@@ -150,16 +150,13 @@ Determines how a font face is displayed based on whether and when it is download
 The override descriptors are mostly useful to help better match fallback fonts with the primary font to reduce or eliminate layout shift due to font size differences.
 
 **ascent-override**
-
-Defines the ascent metric for the font. The ascent metric is the height above the baseline that CSS uses to lay out line boxes in an inline formatting context.
+: Defines the ascent metric for the font. The ascent metric is the height above the baseline that CSS uses to lay out line boxes in an inline formatting context.
 
 **descent-override**
-
-Defines the descent metric for the font. The descent metric is the height below the baseline that CSS uses to lay out line boxes in an inline formatting context.
+: Defines the descent metric for the font. The descent metric is the height below the baseline that CSS uses to lay out line boxes in an inline formatting context.
 
 **line-gap-override**
-
-defines the line-gap metric for the font. The line-gap metric is the font recommended line-gap or external leading.
+: Defines the line-gap metric for the font. The line-gap metric is the font recommended line-gap or external leading.
 
 ### font-feature-settings
 

@@ -1,7 +1,7 @@
 ---
 title: "Asynchronous Javascript: SetTimeout and SetInterval"
 date: "2018-08-13"
-categories: 
+categories:
   - "mdn"
 ---
 
@@ -151,15 +151,11 @@ The difference between the two versions of the code is a subtle one.
 
 Recursive setTimeout guarantees a delay between the executions; the code will run and then wait 100 milliseconds before it runs again. The 100 milliseconds will happen regardless of how long the code takes to run.
 
-![](https://javascript.info/article/settimeout-setinterval/settimeout-interval@2x.png)
-
-Using recursive setTimeout guarantees the interval will be the same between executions. Image taken from [https://javascript.info/settimeout-setinterval](https://javascript.info/settimeout-setinterval).
+![Using recursive setTimeout guarantees the interval will be the same between executions. Image taken from [https://javascript.info/settimeout-setinterval](https://javascript.info/settimeout-setinterval).](https://javascript.info/article/settimeout-setinterval/settimeout-interval@2x.png)
 
 The example using setInterval does things differently. The interval we choose for setInterval includes the code we want to run in its execution. Let's say that the code takes 40 milliseconds to run, then the interval ends up being only 60 milliseconds.
 
-![](https://javascript.info/article/settimeout-setinterval/setinterval-interval@2x.png)
-
-The interval we set for setInterval includes our own code execution. Image taken from [https://javascript.info/settimeout-setinterval](https://javascript.info/settimeout-setinterval).
+![The interval we set for setInterval includes our own code execution. Image taken from [https://javascript.info/settimeout-setinterval](https://javascript.info/settimeout-setinterval).](https://javascript.info/article/settimeout-setinterval/setinterval-interval@2x.png)
 
 ### Immediate Timeout
 

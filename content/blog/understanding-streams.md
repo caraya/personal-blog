@@ -64,17 +64,17 @@ var stream = new ReadableStream(
 );
 ```
 
-- `start` is called straight away. Use this to set up any underlying data sources. If you return a promise from this and it rejects it, it will signal an error through the stream
-- **pull** is called when your stream's buffer isn't full and is called repeatedly until it is. If you return a promise from this and it rejects it, it will signal an error through the stream. Since pull is promise-based, it won't be called again until the returned promise fulfills
-- **cancel** is called if the stream is canceled. Use this to cancel any underlying data sources
-- **queuingStrategy** defines how much this stream should ideally buffer, defaulting to one item. See the [streams spec](https://streams.spec.whatwg.org/#blqs-class) for more details
+* `start` is called straight away. Use this to set up any underlying data sources. If you return a promise from this and it rejects it, it will signal an error through the stream
+* **pull** is called when your stream's buffer isn't full and is called repeatedly until it is. If you return a promise from this and it rejects it, it will signal an error through the stream. Since pull is promise-based, it won't be called again until the returned promise fulfills
+* **cancel** is called if the stream is canceled. Use this to cancel any underlying data sources
+* **queuingStrategy** defines how much this stream should ideally buffer, defaulting to one item. See the [streams spec](https://streams.spec.whatwg.org/#blqs-class) for more details
 
 The readable stream controller has the following methods:
 
-- **controller.enqueue(something)**: queue data in the stream's buffer
-- **controller.close()**: signal the end of the stream
-- **controller.error(e)**: signal a terminal error
-- **controller.desiredSize**: the amount of buffer remaining, which may be negative if the buffer is over-full
+* **controller.enqueue(something)**: queue data in the stream's buffer
+* **controller.close()**: signal the end of the stream
+* **controller.error(e)**: signal a terminal error
+* **controller.desiredSize**: the amount of buffer remaining, which may be negative if the buffer is over-full
 
 Having the ability to create custom readable streams gives us a lot of flexibility in terms of what we can do. I'm still exploring the possibilities but one that sounds very promising is to mix both local content and content we fetch from the network.
 
@@ -193,21 +193,17 @@ There are probably more ideas, but these two are the ones that came to mind firs
 
 ## References
 
-- Concepts
-    
-    - [Streams API concepts](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Concepts) — MDN
-    - [Streams — The Definitive Guide](https://web.dev/streams/) — web.dev
-- [Streams API](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API)
-    
-    - [Using readable streams](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Using_readable_streams)
-    - [Using readable byte streams](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Using_readable_byte_streams)
-    - [Using writable streams](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Using_writable_streams)
-- General usage
-    
-    - [Experimenting with the Streams API](https://deanhume.com/experimenting-with-the-streams-api/)
-    - [Web Streams Everywhere (and Fetch for Node.js)](https://css-tricks.com/web-streams-everywhere-and-fetch-for-node-js/)
-    - [The Streams API](https://flaviocopes.com/stream-api/)
-- Streams in Node
-    
-    - [Using web streams on Node.js](https://exploringjs.com/nodejs-shell-scripting/ch_web-streams.html)
-    - [Web Streams API](https://nodejs.org/api/webstreams.html)
+* Concepts
+  * [Streams API concepts](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Concepts) — MDN
+  * [Streams — The Definitive Guide](https://web.dev/streams/) — web.dev
+* [Streams API](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API)
+  * [Using readable streams](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Using_readable_streams)
+  * [Using readable byte streams](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Using_readable_byte_streams)
+  * [Using writable streams](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Using_writable_streams)
+* General usage
+  * [Experimenting with the Streams API](https://deanhume.com/experimenting-with-the-streams-api/)
+  * [Web Streams Everywhere (and Fetch for Node.js)](https://css-tricks.com/web-streams-everywhere-and-fetch-for-node-js/)
+  * [The Streams API](https://flaviocopes.com/stream-api/)
+* Streams in Node
+  * [Using web streams on Node.js](https://exploringjs.com/nodejs-shell-scripting/ch_web-streams.html)
+  * [Web Streams API](https://nodejs.org/api/webstreams.html)
