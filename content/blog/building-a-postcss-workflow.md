@@ -37,24 +37,18 @@ The first thing to do is decide what features we want to implement.
 I realized that, rather than implement every single feature from the start, it would be better to start with the most important ones and work my way down. Based on the feature lists that I want to implement the initial list of features looks like this:
 
 [Autoprefixer](https://github.com/postcss/autoprefixer)
-
-Adds vendor prefixes to properties that require them based on a specified list of browsers and versions
-
-The plugin uses browserslist to create and access the list, and caniuse to provide a list of browsers that support a given feature
-
-Because `preset-env` also supports Autoprefixer, I don't know if I want to leave it as a separate package
+: Adds vendor prefixes to properties that require them based on a specified list of browsers and versions
+: The plugin uses browserslist to create and access the list, and caniuse to provide a list of browsers that support a given feature
+: Because `preset-env` also supports Autoprefixer, I don't know if I want to leave it as a separate package
 
 [postcss-nested](https://github.com/postcss/postcss-nested)
-
-nested rules and at-rules. It provides a close approximation to what SASS does with nested selectors and relationship notation
+: nested rules and at-rules. It provides a close approximation to what SASS does with nested selectors and relationship notation
 
 [postcss-sorting](https://github.com/hudochenkov/postcss-sorting)
-
-Sorts the rules inside selectors for you so you don't have to do it yourself manually
+: Sorts the rules inside selectors for you so you don't have to do it yourself manually
 
 [postcss-easy-import](https://github.com/TrySound/postcss-easy-import)
-
-Inline the contents of imported files reducing the number of requests and potentially improving performance
+: Inline the contents of imported files reducing the number of requests and potentially improving performance
 
 ## Implementation: Gulp task V1
 

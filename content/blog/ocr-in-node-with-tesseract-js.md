@@ -71,6 +71,8 @@ The core of the script is the async IIFE that will execute the recognition proce
 4. Write the text to a file with the hashed name and the extension .txt
 5. Terminate the Tesseract worker
 
+{.custom-ordered}
+
 ```js
 (async () => {
   await worker.load(); // 1

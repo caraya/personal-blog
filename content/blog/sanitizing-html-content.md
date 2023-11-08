@@ -71,7 +71,7 @@ The example does the following:
 
 1. Defines the dirty text
 2. Specify a configuration directive, only &lt;p> elements allowed
-   * Note: We want to also keep &lt;p>'s text content, so we add #text too
+   * We want to also keep &lt;p>'s text content, so we add #text too
 3. Sanitize the input
 4. place the sanitized input in the document
 

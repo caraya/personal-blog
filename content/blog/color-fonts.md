@@ -40,19 +40,13 @@ Spotty, at best. There is no current browser that supports `@font-palette-values
 
 Status per browser:
 
-Safari doesn't take the font color into consideration at all.
-
-and turns the font into a black and white affair that looks good but it's not what I wanted
-
-I would have expected the browser to at least render the colors in the font.
-
-Chrome ignores the @font-palete at-rule and the font-palette attribute altogether
-
-It honors the colors as stored in the font.
-
-Firefox doesn't support color fonts at all
-
-The font I tested with renders as white letters in black background
+* Safari doesn't take the font color into consideration at all
+  * Turns the font into a black and white affair that looks good but it's not what I wanted
+  * I would have expected the browser to at least render the colors in the font
+* Chrome ignores the @font-palete at-rule and the font-palette attribute altogether
+  * It honors the colors as stored in the font
+* Firefox doesn't support color fonts at all
+  * The font I tested with renders as white letters in black background
 
 ## More information
 

@@ -20,7 +20,7 @@ hwb(194 0% 0%) /* #00c3ff */
 hwb(194 0% 0% / .5) /* #00c3ff with 50% opacity */
 ```
 
-Note how the `hwb` function **does not** use commas to separate the values and how the alpha value is separated with w a slash.
+Note how the `hwb` function **does not** use commas to separate the values and how the alpha value is separated with a slash.
 
 `hwb()` produces colors from the sRGB space, the same as HSL and RGB. It just makes it easier for humans to understand and work with.
 
@@ -47,7 +47,8 @@ These values are not separated by commas and the alpha value is separated by a s
 
 Lea Verou does much better and thorough work in explaining what LCH is and why should we use it in her post: [LCH colors in CSS: what, why, and how?](https://lea.verou.me/2020/04/lch-colors-in-css-what-why-and-how/). She also provides an [LCH color picker](https://css.land/lch/) as a tool to learn about and use the LCH color space.
 
-**Note:** As of this writing (early July 2022), LCH is only supported in Safari but it's under development in Chromium browsers and under discussion in Firefox
+!!! note **Note:** As of this writing (early July 2022), LCH is only supported in Safari but it's under development in Chromium browsers and under discussion in Firefox
+!!!
 
 ## Color-mix()
 

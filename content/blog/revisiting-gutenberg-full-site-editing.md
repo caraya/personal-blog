@@ -46,16 +46,12 @@ React blocks are the core of Gutenberg, both the ones that are bundled with Word
 That said, Gutenberg doesn't fully eliminate the need for PHP. There are still places where PHP is necessary.
 
 **Block Filters**
-
-WordPress provides a series of [filters](https://developer.wordpress.org/block-editor/reference-guides/filters/block-filters/) that can be used to modify the block before it is rendered.
-
-Some of the filters are written in PHP and the ones that seem to be written in Javascript, it is hard to tell from the examples and the prose surrounding them.
+: WordPress provides a series of [filters](https://developer.wordpress.org/block-editor/reference-guides/filters/block-filters/) that can be used to modify the block before it is rendered.
+: Some of the filters are written in PHP and the ones that seem to be written in Javascript, it is hard to tell from the examples and the prose surrounding them.
 
 **Plugins**
-
-[plugins](https://developer.wordpress.org/plugins/) are still the preferred way to package content for use in WordPress, whether it's in Gutenberg or outside.
-
-Writing plugins is not complicated but it's not trivial either. It gets more complicated if you plan to share the plugin in the WordPress.org repository as there are more rules to follow.
+: [plugins](https://developer.wordpress.org/plugins/) are still the preferred way to package content for use in WordPress, whether it's in Gutenberg or outside.
+: Writing plugins is not complicated but it's not trivial either. It gets more complicated if you plan to share the plugin in the WordPress.org repository as there are more rules to follow.
 
 That brings up what, to me, is the biggest problem with Gutenberg:
 

@@ -213,7 +213,7 @@ Variable fonts define four default axes. Like `font-feature-settings`, these can
 | --- | --- | --- |
 | Weight (wght) | font-weight | The `font-weight` property will set the `wght` axis if one is present. |
 | Width (wdth) | font-stretch | The `font-stretch` property will set the `wdth` axis if one is present. |
-| Slant (slnt) or Italic (ital) | font-sty`le |` The `font-style` property will set the `slnt` or `ital` axis, depending on its value. |  |
+| Slant (slnt) or Italic (ital) | font-style | The `font-style` property will set the `slnt` or `ital` axis, depending on its value. |  |
 | Optical size (opsz) | font-optical-sizing | The `font-optical-sizing` property will set the `opsz` axis if one is present. |
 
 A font doesn't need to use all axes. Optical size is one we don't see in too many fonts.

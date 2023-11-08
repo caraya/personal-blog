@@ -18,7 +18,7 @@ If you set a container, then you can choose to size the components based on the 
 The following table shows the different values for the `contain` property. Some of these values were defined in the level 2 CSS containment module so I indicate the spec version they were defined in.
 
 | Types of Containment | Spec Introduced in | Description |
-| --* | --* | --* |
+| --- | --- | --- |
 | **Size** | Level 2 | size: The size of the element can be computed without checking its children, the element dimensions are independent of its contents. |
 | **Layout** | Level 2 | The internal layout of the element is totally isolated from the rest of the page, it’s not affected by anything outside and its contents cannot have any effect on the ancestors. |
 | **Style** | Level 2 | The effects of counters and quotes cannot escape this element, so they are isolated from the rest of the page. |
@@ -287,7 +287,7 @@ Use the following links to track support on your browser:
   * [(forked) Codepen](https://codepen.io/caraya/pen/eYELoZV?editors=1100) — Original Pen by Chris Coyier
   * [Query Units * Card](https://codepen.io/shadeed/pen/yLXKBqN?editors=0100) – Ahmad Shadeed
   * [Query Units * Importance](https://codepen.io/shadeed/pen/oNwqvap?editors=0100) – Ahmad Shadeed
-  * [Query Units * Bio](https://codepen.io/shadeed/pen/wvemwNb?editors=0100) – Ahmad Shadeed
+  * [Query Units - Bio](https://codepen.io/shadeed/pen/wvemwNb?editors=0100) – Ahmad Shadeed
   * [Simplified Container Query Demo](https://codepen.io/una/pen/MWvzQdR) — Una
   * [Podcast Card Demo](https://codepen.io/una/pen/LYbvKpK) — Una
   * [Plant Store Demo](https://codepen.io/una/pen/mdOgyVL) — Una

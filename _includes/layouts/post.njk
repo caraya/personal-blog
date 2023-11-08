@@ -5,10 +5,15 @@ layout: layouts/base.njk
   <article>
     <h1>{{ title }}</h1>
     <ul class="post-metadata">
-      <li>
-        <time class="iconfont published" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
-      </li>
+      <li><time class="iconfont published" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></li>
+
+			{% set date_updated = post.data.date_updated if post.data else date_updated %}
+			{% if date_updated -%}
+			<li><time class="iconfont last-updated" datetime="{{ date_updated | htmlDateString }}">{{ date_updated | readableDate }}</time></li>
+			{%- endif %}
+
       <li><span class="iconfont readingtime"></span>{{ content | emojiReadTime }}</li>
+
       {%- for tag in tags | filterTagList %}
         {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
         <li>
@@ -23,7 +28,7 @@ layout: layouts/base.njk
     {% if content | toc %}
       <aside>
         <p>
-          <strong>Table of Content</strong>
+          <strong>In this page</strong>
         </p>
         {{ content | toc | safe }}
       </aside>
@@ -33,21 +38,15 @@ layout: layouts/base.njk
       {%- set previousPost = collections.posts | getPreviousCollectionItem %}
       {%- set nextPost = collections.posts | getNextCollectionItem %}
       {%- if nextPost or previousPost %}
-        <nav class="navigation post-navigation" aria-label="Posts">
-          <h2 class="visually-hidden">Post navigation</h2>
-          <div class="nav-links">
-            {%- if previousPost %}
-              <div class="nav-previous">
-                <a rel="next" href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
-              </div>
-            {% endif %}
-            {%- if nextPost %}
-              <div class="nav-next">
-                <a rel="prev" href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>
-              </div>
-            {% endif %}
-          </div>
-        </nav>
+			{# next posts is the newer one, previous is older #}
+ 			<div class="prev-next">
+				{%- if previousPost%}
+					<a rel="prev" class="next" href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
+				{%- endif -%}
+				{%- if nextPost %}
+					<a rel="prev" class="prev" href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>
+				{% endif %}
+			</div>
       {%- endif %}
     {%- endif %}
   </article>

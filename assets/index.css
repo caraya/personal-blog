@@ -32,7 +32,6 @@ TODO:
         U+2193, U+2212, U+2215;
 }
 
-
 :root {
 	/* Set custom properties for each layout feature */
 	--recursive-sans-linear-light-dnom: "dnom" off;
@@ -55,7 +54,7 @@ TODO:
 	--link-color: oklch(55.69% 0.2 12.21);
 	--background-color: var(--color-white);
 
-	--text-color: var(--color-black)
+	--text-color: var(--color-black);
 	--link-color-active: var(--link-color);
 	--link-color-visited: var(--text-color);
 
@@ -92,6 +91,14 @@ TODO:
 	--icon-rss-fill: "\F521";
 	--icon-stopwatch: "\F597";
 	--icon-tags: "\F5B2";
+
+	/* Code Blocks */
+	--width-med: 50rem;
+
+	--content-width: var(--width-med);
+	--min-padding: 1rem;
+	--content-margin: clamp(var(--min-padding), 50vw - var(--content-width) / 1.5, 100vw);
+
 }
 
 /* If class is applied, update custom property and
@@ -338,6 +345,8 @@ table {
   border-collapse: collapse;
 	margin-block-end: 2rem;
 
+	width: 100%;
+	overflow-x: scroll;
 }
 
 thead tr {
@@ -358,6 +367,16 @@ tr {
 th,
 td {
 	border: 3px solid black;
+
+	/*
+		control word wrap and prevents text
+		from flowing into another cell.
+
+		Downside is that the text look awful
+	*/
+	/* word-break: break-all; */
+	overflow-wrap: break-word;
+	hyphens: manual;
 }
 
 
@@ -825,40 +844,6 @@ lite-vimeo {
 	}
 }
 
-.nav-links {
-  margin: 0 auto;
-  padding: 0 0.4em;
-}
-
-.nav-previous {
-  padding-bottom: 1em;
-}
-
-.post-navigation .nav-next a::before {
-  content: 'Next Post \2192 \A\A';
-  font-size: 1.25em;
-  font-weight: 700;
-  margin-right: 1em;
-  white-space: pre;
-  color: var(--color-black);
-}
-
-.post-navigation .nav-previous a::before {
-  content: '\2190 Previous Post \A\A';
-  font-size: 1.25em;
-  font-weight: 700;
-  margin-right: 1em;
-  white-space: pre;
-  color: var(--color-black);
-}
-
-.nav-previous a,
-.nav-next a
-.nav-previous a::hover,
-.nav-next a::hover {
-	color: var(--link-color)
-}
-
 .iconfont::before {
 	content: var(--icon);
 	font-family: bootstrap-icons;
@@ -874,3 +859,100 @@ lite-vimeo {
 .readingtime {
 	--icon: var(--icon-stopwatch);
 }
+
+.edit-post {
+	--icon: var(--icon-edit);
+}
+
+
+/* POST NAVIGATION */
+.prev-next {
+	display: flex;
+	justify-content: space-between;
+	gap: 4rem;
+	padding: 0;
+}
+
+.prev-next .prev,
+.prev-next .next {
+	flex-grow: 1;
+	padding: 1rem;
+	font-size: 120%;
+	text-decoration: none;
+}
+
+.prev-next .next {
+	flex-grow: 1;
+	position: relative;
+
+}
+
+.prev-next .prev::before,
+.prev-next .next::after {
+	font-weight: normal;
+	font-size: 2rem;
+}
+
+.prev-next .next::before {
+	font-family: bootstrap-icons;
+	content: var(--icon-arrow-left-circle, "←");
+	margin-right: .3em;
+
+}
+
+.prev-next .prev {
+	text-align: end;
+}
+
+.prev-next .next {
+	text-align: start;
+}
+
+.prev-next .prev::after {
+	font-family: bootstrap-icons;
+	content: var(--icon-arrow-right-circle, "→");
+	margin-left: .3em;
+}
+
+/* Blocks of code
+pre:is(pre, [class*="language-"][class*="language-"]) {
+	position: relative;
+	border: 0;
+	padding: 1rem var(--content-margin) .5rem;
+	margin: 0 calc(-1 * var(--content-margin));
+	border: 0 solid transparent;
+	border-width: 1.5em 0;
+	box-sizing: content-box;
+	overflow: visible;
+	font-size: 80%;
+	font-weight: 500;
+
+	clip-path: polygon(var(--clip-top), var(--clip-bottom));
+	--clip-top: 0 0, 100% 2em;
+	--clip-bottom: 100% calc(100% - 1.5em), 0 100%;
+}
+
+pre:is(pre, [class*="language-"][class*="language-"]):nth-of-type(odd) {
+	--clip-top: 0 2em, 100% 0;
+}
+
+pre:is(pre, [class*="language-"][class*="language-"]):nth-of-type(3n + 1),
+pre:is(pre, [class*="language-"][class*="language-"]):nth-of-type(5n + 1) {
+	--clip-bottom: 100% 100%, 0 calc(100% - 1.5em);
+}
+
+pre:is(pre, [class*="language-"][class*="language-"]) p {
+	display: contents;
+}
+
+	pre:is(pre, [class*="language-"][class*="language-"]) > code {
+	display: block;
+	background: transparent;
+	padding: 0;
+	text-shadow: none;
+}
+
+pre:is(pre, [class*="language-"][class*="language-"]):has(> code[data-file]) {
+	--clip-top: 0 -1em, 100% -1em;
+	padding-top: 0;
+} */

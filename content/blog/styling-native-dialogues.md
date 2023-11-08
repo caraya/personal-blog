@@ -3,7 +3,7 @@ title: "Styling Native Dialogues"
 date: "2022-10-31"
 ---
 
-In the [dialogues in the web](https://publishing-project.rivendellweb.net/dialogues-in-the-web/) we saw how to create native dialogues using HTML and Javascript. This post will look at how to style the dialogues and the parent element.
+In [dialogues in the web](https://publishing-project.rivendellweb.net/dialogues-in-the-web/) we saw how to create native dialogues using HTML and Javascript. This post will look at how to style the dialogues and the parent element.
 
 ## Styling the dialogue element
 

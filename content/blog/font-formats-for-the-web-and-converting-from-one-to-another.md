@@ -116,7 +116,7 @@ OpenSans-Italic-VariableFont_wdth,wght.ttf
 These are the results of compressing our regular variable font with the different formats:
 
 | Font | Format | Size |
-| --* | --* | --* |
+| --- | --- | --- |
 | OpenSans-VariableFont\_wdth,wght | TTF | 530KB |
 | OpenSans-VariableFont\_wdth,wght | WOFF | 345KB |
 | OpenSans-VariableFont\_wdth,wght | WOFF2 | 280KB |
@@ -124,7 +124,7 @@ These are the results of compressing our regular variable font with the differen
 And these are the results for the italic variable font. Note how the values for all formats are slightly larger in this example.
 
 | Font | Format | Size |
-| --* | --* | --* |
+| --- | --- | --- |
 | OpenSans-Italic-VariableFont\_wdth,wght | TTF | 580 KB |
 | OpenSans-Italic-VariableFont\_wdth,wght | WOFF | 389KB |
 | OpenSans-Italic-VariableFont\_wdth,wght | WOFF2 | 310KB |
@@ -180,7 +180,7 @@ glyphhanger --US_ASCII \
 This produces the smallest font size by a large margin as shown in the following table
 
 | Font | Subset | Format | Size |
-| --* | --* | --* | --* |
+| --- | --- | --- | --- |
 | OpenSans-VariableFont | Latin | WOFF + Zopfli | 330KB |
 | OpenSans-VariableFont | Latin | WOFF2 | 276KB |
 | OpenSans-VariableFont | ASCII | WOFF + Zopfli | 74KB |

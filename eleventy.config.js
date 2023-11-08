@@ -17,6 +17,7 @@ const markdownItFootnotes = require("markdown-it-footnote");
 const admonitions = require("markdown-it-admonition");
 const markdownItKbd = require('markdown-it-kbd-better');
 const markdownItAttrs = require('markdown-it-attrs');
+const multiMDTable = require('markdown-it-multimd-table');
 
 // 11ty plugins
 const pluginRss = require("@11ty/eleventy-plugin-rss");
@@ -190,6 +191,7 @@ module.exports = function (eleventyConfig) {
 			// All attributes are allowed
 			allowedAttributes: []
 		});
+		mdLib.use(multiMDTable, {});
 	});
 
 	// Features to make your build faster (when you need them)

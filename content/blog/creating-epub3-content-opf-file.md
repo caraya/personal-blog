@@ -8,20 +8,15 @@ One of the hardest files in an epub book is the `content.opf` manifest file. Thi
 There are three components to a `content.opf` file:
 
 Metadata
-
-Provides information about the book using a combination of meta tags and Dublin Core metadata elements
-
-The normative reference is in the EPUB 3.2 package specification [metadata section](https://www.w3.org/publishing/epub3/epub-packages.html#sec-pkg-metadata)
+: Provides information about the book using a combination of meta tags and Dublin Core metadata elements
+: The normative reference is in the EPUB 3.2 package specification [metadata section](https://www.w3.org/publishing/epub3/epub-packages.html#sec-pkg-metadata)
 
 Manifest
-
-The manifest element provides an exhaustive list of the Publication Resources that constitute the given Rendition, including the media type, the file path and the media encoding
-
-See the [Manifest section](https://www.w3.org/publishing/epub3/epub-packages.html#sec-pkg-manifest) of the EPUB 3.2 specification for more information
+: The manifest element provides an exhaustive list of the Publication Resources that constitute the given Rendition, including the media type, the file path and the media encoding
+: See the [Manifest section](https://www.w3.org/publishing/epub3/epub-packages.html#sec-pkg-manifest) of the EPUB 3.2 specification for more information
 
 Spine
-
-The spine element defines an ordered list of manifest item references that represent the default reading order of the given Rendition
+: The spine element defines an ordered list of manifest item references that represent the default reading order of the given Rendition
 
 There are aditional sections that are optional and, as such, not covered in this post. See the [legacy section](https://www.w3.org/publishing/epub3/epub-packages.html#sec-pkg-legacy) of the EPUB package specification for more information.
 

@@ -45,16 +45,13 @@ you chose the value `non` then there will be no italics and boldface styles appl
 You can also work on properties for each individual `font-synthesis` componny. The values are:
 
 `font-synthesis-weight`
-
-Controls whether bold typefaces are synthesized. Equivalent to the `weight` value in `font-synthesis`
+: Controls whether bold typefaces are synthesized. Equivalent to the `weight` value in `font-synthesis`
 
 `font-synthesis-style`
-
-Controls whether bold typefaces are synthesized. Equivalent to the `style` value in `font-synthesis`
+: Controls whether bold typefaces are synthesized. Equivalent to the `style` value in `font-synthesis`
 
 `font-synthesis-small-caps`
-
-Controls whether bold typefaces are synthesized. Equivalent to the `small-capts` value in `font-synthesis`
+: Controls whether bold typefaces are synthesized. Equivalent to the `small-capts` value in `font-synthesis`
 
 This falls into the category of "It's nice to have but be careful how you use it". In an ideal world, we would load all the faces of the fonts we need but we don't always have that luxury since at the very least we need four different files to cover the basic variants of the font without synthesizing:
 

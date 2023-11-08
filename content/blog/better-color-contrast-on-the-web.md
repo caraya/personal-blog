@@ -116,21 +116,13 @@ Dan provides a set of equivalencies between WCAG 2 and APCA
 | WCAG 2 | APCA | Meaning |
 | :-: | :-: | --- |
 | 1.25: 1 | 15 | Minimum for non-text elements |
-| 1.5: 1 | 30 | **Rough Equivalency**
-
-Absolute min for any text |
-| 3:1 | 45 | **Rough Equivalency**
-
-Min for large text (the old 3:1) |
-| 4.5:1 | 60 | **Rough Equivalency**
-
-Min for body text (the old 4.5:1) |
-| 7:1 | 75 | **Rough Equivalency**
-
-Min for body text (the old 4.5:1) |
+| 1.5: 1 | 30 | **Rough Equivalency** <br><br>Absolute min for any text |
+| 3:1 | 45 | **Rough Equivalency**<br><br>Min for large text (the old 3:1) |
+| 4.5:1 | 60 | **Rough Equivalency**<br><br>Min for body text (the old 4.5:1) |
+| 7:1 | 75 | **Rough Equivalency**<br><br>Min for body text (the old 4.5:1) |
 | 10: 1 | 90 | Preferred level for body text |
 
-But see also the following figures that explain what the
+But see also the following figures that explain the APCA contrast values.
 
 ![APCA contrast values and explanation. Original from [Dan Hollick](https://twitter.com/DanHollick/status/1468958658683805703?s=20&t=GMyDkCKNvOjTbEbrr6eGvA)](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/apca-contrast-01)
 

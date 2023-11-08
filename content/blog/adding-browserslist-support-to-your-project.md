@@ -14,8 +14,7 @@ The table below shows the earliest browser that supports module scripts and the 
 | Feature Supported | Chrome | Edge | Firefox | Safari |
 | --- | :-: | :-: | :-: | :-: |
 | &lt;script type="module"> | 61+ | 16+ | 60+ | 10.1+ |
-| All ES2017 features
-(minus atomics+shared memory) | 58+ | 16+ | 53+ | 10.1+ |
+| All ES2017 features (minus atomics+shared memory) | 58+ | 16+ | 53+ | 10.1+ |
 
 This could be easily included in a `.browserslistrc` configuration file or as part of a `package.json` file. A `.browserslistrc` file for the browser versions that support the `<script type="module">` looks like this:
 

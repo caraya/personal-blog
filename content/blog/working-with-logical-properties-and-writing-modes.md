@@ -98,7 +98,8 @@ You can use `inline` and `block` as the values for the resize attribute.
 | [inset-inline-start](https://developer.mozilla.org/en-US/docs/Web/CSS/inset-inline-start) | [left](https://developer.mozilla.org/en-US/docs/Web/CSS/left) |
 | [inset-inline-end](https://developer.mozilla.org/en-US/docs/Web/CSS/inset-inline-end) | [right](https://developer.mozilla.org/en-US/docs/Web/CSS/right) |
 | [inset-block-start](https://developer.mozilla.org/en-US/docs/Web/CSS/inset-block-start) | [top](https://developer.mozilla.org/en-US/docs/Web/CSS/top) |
-| [inset-block-end](https://developer.mozilla.org/en-US/docs/Web/CSS/inset-block-end) | [bottom](https://developer.mozilla.org/en-US/docs/Web/CSS/bottom) | [text-align](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align): start | [text-align](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align): left |
+| [inset-block-end](https://developer.mozilla.org/en-US/docs/Web/CSS/inset-block-end) | [bottom](https://developer.mozilla.org/en-US/docs/Web/CSS/bottom) |
+| [text-align](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align): start | [text-align](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align): left |
 | [text-align](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align): end | [text-align](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align): right |
 
 ### Margins

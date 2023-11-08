@@ -17,8 +17,6 @@ Go to the editor under appearance. From there click the options menu (three vert
 
 Once you click on the menu you will see several options. Under the `Tools` group, the first option is `Export`.
 
-![Theme editor options open. The export option is the first one under tools](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/fse-theme-export)
-
 Click on export and choose the location to save the file to will do the following:
 
 1. It will create a zip file to place the content in

@@ -51,6 +51,7 @@
 		"markdown-it-footnote": "^3.0.3",
 		"markdown-it-image-figures": "^2.1.1",
 		"markdown-it-kbd-better": "^1.2.5",
+		"markdown-it-multimd-table": "^4.2.3",
 		"postcss": "^8.4.31",
 		"postcss-cli": "^10.1.0",
 		"postcss-preset-env": "^9.3.0",

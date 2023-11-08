@@ -314,3 +314,37 @@ lite-vimeo {
   height: auto;
 }
 ```
+
+## Special table formatting
+
+Basic Markdown table support is good for basic tables but it doesn't work for more complex tables where cells span rows and/or columns.
+
+For a full reference see [MultiMarkdown Table Syntax](https://fletcher.github.io/MultiMarkdown-6/syntax/tables.html)
+
+This example adds multiple headings at the top of the table, cells spanning more than one column and a caption for the table at the bottom, below the content.
+
+```markdown
+|             |          Grouping           ||
+First Header  | Second Header | Third Header |
+ ------------ | :-----------: | -----------: |
+Content       |          *Long Cell*        ||
+Content       |   **Cell**    |         Cell |
+
+New section   |     More      |         Data |
+And more      | With an escaped '\|'         ||
+[Prototype table]
+```
+
+And the resulting table, with all the table formatting done in CSS, looks like this:
+
+|             |          Grouping           ||
+First Header  | Second Header | Third Header |
+ ------------ | :-----------: | -----------: |
+Content       |          *Long Cell*        ||
+Content       |   **Cell**    |         Cell |
+
+New section   |     More      |         Data |
+And more      | With an escaped '\|'         ||
+[Prototype table]
+
+

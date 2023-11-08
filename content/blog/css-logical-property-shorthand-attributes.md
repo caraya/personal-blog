@@ -9,17 +9,13 @@ CSS [logical properties](https://publishing-project.rivendellweb.net/working-wit
 
 To better understand logical properties, we need to work with the following terms:
 
-**Block dimension**
+Block dimension
+: The dimension perpendicular to the flow of text within a line, i.e., the vertical dimension in horizontal writing modes, and the horizontal dimension in vertical writing modes
+: For standard English text, it is the vertical dimension.
 
-The dimension perpendicular to the flow of text within a line, i.e., the vertical dimension in horizontal writing modes, and the horizontal dimension in vertical writing modes
-
-For standard English text, it is the vertical dimension.
-
-**Inline dimension**
-
-The dimension parallel to the flow of text within a line, i.e., the horizontal dimension in horizontal writing modes, and the vertical dimension in vertical writing modes.
-
-For standard English text, it is the horizontal dimension.
+Inline dimension
+: The dimension parallel to the flow of text within a line, i.e., the horizontal dimension in horizontal writing modes, and the vertical dimension in vertical writing modes.
+: For standard English text, it is the horizontal dimension.
 
 ## Shorthands
 
