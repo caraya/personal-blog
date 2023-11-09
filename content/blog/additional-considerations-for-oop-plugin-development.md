@@ -110,8 +110,8 @@ $classname::aStaticMethod();
 
 There are two reasons why I would use Composer in a project:
 
-- I have external dependencies
-- I want classes and libraries, both local and installed with Composer, to autoload
+* I have external dependencies
+* I want classes and libraries, both local and installed with Composer, to autoload
 
 Using composer requires a slightly different approach to writing plugins. We first need to run `composer init`, and answer the questions it asks, to create the project's `composer.json` file and the necessary directories.
 
@@ -150,20 +150,20 @@ It's worth considering the complexity and the number of files you expect to have
 
 Documenting the code is a good practice and can help you down the road. If you're working on a team and need to onboard people, having document comments in your code will make it easier for the new teammates to get up to speed. another instance where commenting the code is useful is when you leave your project for a while and then have a hard time remembering what it did or how it's supposed to work.
 
-[PHPDocumentor](https://phpdoc.org/)) is a combination of comment styles (DocBlocks) and a parser that will generate documentation from the comments on your code.
+[PHPDocumentor](https://phpdoc.org/) is a combination of comment styles (DocBlocks) and a parser that will generate documentation from the comments on your code.
 
 A DocBlock is a piece of documentation in your source code that informs you what the function of a Structural Element is.
 
 phpDocumentor follows the PHPDoc definition and recognizes the following Structural Elements:
 
-- Function
-- Constant
-- Class
-- Interface
-- Trait
-- Class constant
-- Property
-- Method
+* Function
+* Constant
+* Class
+* Interface
+* Trait
+* Class constant
+* Property
+* Method
 
 In addition to the above, the PHPDoc standard also supports DocBlocks for Files and include/require statements, even though PHP itself does recognize this as a language structure.
 
@@ -173,14 +173,14 @@ Each of these elements can have exactly one DocBlock associated with it, which d
 
 The following is a list of what should be documented in WordPress files:
 
-- Functions and class methods
-- Classes
-- Class members (including properties and constants)
-- Requires and includes
-- Hooks (actions and filters)
-- Inline comments
-- File headers
-- Constants
+* Functions and class methods
+* Classes
+* Class members (including properties and constants)
+* Requires and includes
+* Hooks (actions and filters)
+* Inline comments
+* File headers
+* Constants
 
 Where the core PHPDoc documentation and the WordPress Documentation Standards disagree, the WordPress Documentation Standards take precedence.
 

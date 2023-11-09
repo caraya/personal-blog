@@ -17,7 +17,7 @@ module.exports = async () => {
 
 	const web_options = { transformation: [
 		{width: "500",crop: "scale"},
-		// {quality: "auto", fetch_format: "auto"},
+		{quality: "auto", fetch_format: "auto"},
 		// { dpr: "auto", responsive: true, width: "auto", crop: "scale", angle: 20 },
   ]}
 
@@ -38,7 +38,7 @@ module.exports = async () => {
 
 		// Should try/catch this.
 		const result = await cloudinary.uploader.upload(file, cloudinary_options);
-		console.log(result);
+		// console.log(result);
 
 		let newPhoto = {
 			id: result.public_id,

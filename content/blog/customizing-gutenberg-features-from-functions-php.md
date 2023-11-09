@@ -56,7 +56,7 @@ An example of why this is useful is when your parent theme enabled support for a
 | custom-spacing | Set `spacing.customPadding` to true |
 | custom-units | Provide the list of units via `spacing.units` |
 | disable-custom-colors | Set `color.custom` to false |
-| disable-custom-font-sizes | Set `typography.customFontSize` | to false |
+| disable-custom-font-sizes | Set `typography.customFontSize` to false |
 | disable-custom-gradients | Set `color.customGradient` to false |
 | editor-color-palette | Provide the list of colors via `color.palette` |
 | editor-font-sizes | Provide the list of font size via `typography.fontSizes` |
