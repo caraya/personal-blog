@@ -7,7 +7,7 @@
 		"postcss:watch": "npx postcss -w assets/index.css -o public/css/index.css",
 		"build": "NODE_ENV=production npx @11ty/eleventy --incremental",
 		"build:dev": "npx @11ty/eleventy --incremental",
-		"build:all": "rm -rf **/.DS_store && npm run build && npm run workbox",
+		"build:all": "npm run build && npm run workbox",
 		"workbox": "npx workbox-cli injectManifest ./workbox-config.js",
 		"start": "npx @11ty/eleventy --serve --quiet",
 		"debug": "DEBUG=Eleventy* npx @11ty/eleventy",
