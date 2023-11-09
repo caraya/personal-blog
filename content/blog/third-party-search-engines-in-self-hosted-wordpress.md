@@ -21,9 +21,9 @@ Rather than install it locally and have to deal with all the files and configura
 
 Once we have Elasticsearch running on Docker, we need to install a plugin. I chose [elasticpress](https://wordpress.org/plugins/elasticpress/) to test with.
 
-**Warning**
-
+!!! warning **Warning**
 Elasticpress has one big drawback. It only works with Elasticsearch 7.9 and older. The current version is not supported so it might or might not work (it has worked so far).
+!!!
 
 For testing the plugin, I'll concentrate on the configuration and weighing of terms for different post types.
 

@@ -10,5 +10,5 @@ module.exports = {
 		'images/cropped-Long_Room_Interior_Trinity_College_Dublin_Ireland.webp',
   ],
   'swSrc': 'assets/sw.js',
-  'swDest': '_site/sw.js',
+  'swDest': 'public/sw.js',
 };
