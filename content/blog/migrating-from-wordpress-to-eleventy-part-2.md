@@ -1,7 +1,6 @@
 ---
 title: "Migrating from WordPress to Eleventy (part 2)"
 date: "2023-11-08"
-draft: true
 youtube: false
 vimeo: false
 mermaid: false
