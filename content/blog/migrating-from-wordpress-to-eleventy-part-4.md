@@ -8,12 +8,9 @@ mavo: false
 draft: true
 ---
 
-The last items I want to discuss from the migration to Eleventy are:
+There are more areas I'm working on as I move from WordPress to Eleventy that, in my opinion, are easier to do with a static site generator.
 
-* Identifying links to the Wayback Machine
-* Integration:
-  * Cloudinary
-* Automating post publishing with Cron
+There is still more to work on as I've officially moved the site, I will continue to post in this series as I finish the other pieces of content.
 
 ## Identifying links to the Wayback Machine
 
@@ -59,6 +56,18 @@ When the script is done uploading it will write the list of all our photos to a 
 The steps are roughly as follows:
 
 1. Load the necessary Node packages
+2. Configure Cludinary using the [dotenv](https://www.npmjs.com/package/dotenv) to store the values
+3. Store the location of the image directory
+4. Initialize the photos array
+5. Set up the Cloudinary image configuration. This is what we want Cloudinary to do with the images
+6. Creates the image format we want to use for the web
+7. Options for uploading the files to Couldinary
+8. Use Node's [readdirSync](https://nodejs.org/api/fs.html#fsreaddirsyncpath-options) to get an array of the files in the target directory
+9. for each of the files in the target array
+10. Upload the photo to cloudinary
+11. Create a photo object with data about the photo
+12. Push photo object to the array we created in step 3
+13. Write the photos array (we created in step 3) to file
 
 {.custom-ordered}
 
@@ -137,12 +146,13 @@ module.exports = async () => {
 }
 ```
 
-The uploader code
+This works, but it has its drawbacks.
 
-## Algolia
+The script will run every time that Eleventy rebuilds the site, because of the number of images, it takes significantly longer to build the site.
 
-The WordPress version of the blog uses Algolia as the search provider. There is no reason we can't use the same service with Eleventy.
+Some part of the process (don't know if it's Eleventy or Cloudinary) is very sensitive about the files in the directory. The process produces an error when there are is a `.DS_Store` hidden files anywhere in the images directory.
 
+I'm researching if it's possible to run `photos.js` when not in production. This would reduce the time (and potential cost) it takes to build the site on Cloudinary.
 
 ## Automating post publishing with Cron
 

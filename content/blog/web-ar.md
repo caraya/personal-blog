@@ -1,5 +1,5 @@
 ---
-title: Web AR in the wild * City Games and Communities
+title: Web AR in the wild -- City Games and Communities
 date: 2023-12-31
 youtube: true
 draft: true
@@ -15,13 +15,13 @@ The idea of making a Daemon-like networked environment using current AR technolo
 
 1. How to get consistent outdoors AR?
     * Does WebXR help with the placement of augmented elements in the real world?
-    * Are beacons (like [Physical Web](https://google.github.io/physical-web/) beacons, iBeacons or [Nearby](https://developers.google.com/nearby/) proximity API) a good way to introduce AR experiences
 2. Can we get things other than markers to display out AR content from?
+    * Are beacons (like [Physical Web](https://google.github.io/physical-web/) beacons, iBeacons or [Nearby](https://developers.google.com/nearby/) proximity API) a good way to introduce AR experiences
 3. How do we translate 2D content to a 3D environment?
 4. Can we move from 2D to 3D and back?
 5. Can we generate multi user AR experiences?
 
-For more details, watch Brandon Jones' presentation at Google I/O this year for more details on WebXR.
+For more details, watch Brandon Jones' presentation at Google I/O 2018 for more details on WebXR.
 
 <lite-youtube videoid="1t1gBVykneA"></lite-youtube>
 
@@ -29,13 +29,20 @@ Before we jump to far let's talk about WebXR.
 
 ## What is WebXR
 
-WebXR is an evolutionary development over the WebAR 1.0 and 1.1 APIs currently under [Origin Trials](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/explainer.md), a way to run experiments for a subset of developers using a feature. This allows for rapid iteration and quick feedback but without running the risk of the feature becoming a defacto standard, particularly when the API or feature is not finished.
-
 In this context, I'll use WebXR to mean the [WebXR Device API](https://immersive-web.github.io/webxr-reference/webxr-device-api/).
 
-WebXR lets you create AR and VR experiences by providing access to input and output capabilities of AR/VR hardware.
+WebXR is a group of standards which are used together to support rendering 3D scenes to hardware designed for presenting virtual worlds (virtual reality, or VR), or for adding graphical imagery to the real world, (augmented reality, or AR).
 
-For more information, check this [Web Fundamentals Article](https://developers.google.com/web/updates/2018/05/welcome-to-immersive) that covers the API in more detail along with the rationale for the change.
+The WebXR Device API implements the core of the WebXR feature set, managing the selection of output devices, render the 3D scene to the chosen device at the appropriate frame rate, and manage motion vectors created using input controllers.
+
+To accomplish these things, the WebXR Device API provides the following key capabilities:
+
+* Find compatible VR or AR output devices
+* Render a 3D scene to the device at an appropriate frame rate
+* (Optionally) mirror the output to a 2D display
+* Create vectors representing the movements of input controls
+
+For more information, check [Fundamentals of WebXR](https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API/Fundamentals) for a theoretical foundation and [Movement, orientation, and motion: A WebXR example](https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API/Movement_and_motion) for a code example of WebXR.
 
 ## How to get consistent outdoors AR?
 
@@ -52,12 +59,14 @@ Using the WebXR Device API we can now place virtual items in physical spaces so 
 
 ## Can we generate multi player AR experiences?
 
+
+
 ## Links and resources
 
 * Inspiration
   * [Daemon by Daniel Suarez](https://amzn.to/2Kr6SCp)
   * [Freedom (TM) by Daniel Suarez](https://amzn.to/2Kf2RF7)
-  * [Understanding the Daemon](http://www.faz.net/aktuell/feuilleton/medien/english-version-understanding-the-daemon-1621404.html?printPagedArticle=true#pageIndex_0)
+  * [Understanding the Daemon](https://web.archive.org/web/20211205205841/https://www.faz.net/aktuell/feuilleton/medien/english-version-understanding-the-daemon-1621404.html?printPagedArticle=true#pageIndex_0)
 * Groups
   * [Google AR](https://github.com/google-ar)
   * [Mozilla Mixed Reality Blog](https://blog.mozvr.com/)
@@ -69,10 +78,11 @@ Using the WebXR Device API we can now place virtual items in physical spaces so 
 * Beacons and Placement Technologies
   * [Physical Web](https://google.github.io/physical-web/)
 * Examples and Demos
-  * [webxr examples](https://immersive-web.github.io/webxr-samples/)
+  * [WebXR Device API](https://www.w3.org/TR/webxr/)
+  * [WebXR examples](https://immersive-web.github.io/webxr-samples/)
 * Hardware Devices:
-  * [Google’s Daydream](https://vr.google.com/daydream/)
-  * [Oculus Rift](https://www3.oculus.com/rift/)
+  * [Oculus Rift](https://www.oculus.com/rift-s/)
+  * [Meta Quest 2](https://en.wikipedia.org/wiki/Quest_2)
   * [Samsung Gear VR](http://www.samsung.com/global/galaxy/gear-vr/)
   * [HTC Vive](https://www.htcvive.com/)
   * [Windows Mixed Reality headsets](https://developer.microsoft.com/en-us/windows/mixed-reality)

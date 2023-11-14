@@ -101,6 +101,20 @@ TODO:
 
 }
 
+@supports (color: oklab(0% 0 0)){
+:root {
+	--color-gray-20: oklch(82.68% 0.015 286.06)
+	--color-gray-50: oklch(37.46% 0.025 288.16)
+	--color-gray-90: oklch(32.11% 0 0);
+
+	--color-white: oklch(99.72% 0.002847056028263826 84.5587270007485);
+	--color-black: oklch(24.69% 0.006 314.7);
+
+	--link-color: oklch(55.69% 0.2 12.21);
+
+}
+}
+
 /* If class is applied, update custom property and
  apply modern font-variant-* when supported */
 .recursive-sans-linear-light-dnom {
@@ -242,6 +256,7 @@ dd {
   -webkit-text-decoration: none;
   text-decoration: none;
 	color: rgb(34, 32, 35);
+	color: oklch(24.69% 0.006 314.7);
 	color: var(--color-black);
 }
 
@@ -249,8 +264,10 @@ dd {
 .continue-reading a:hover {
 	/* Figure out why I had to add !important here */
   color: rgb(255, 254, 252) !important;
+  color: oklch(99.72% 0.002847056028263826 84.5587270007485) !important;
   color: var(--color-white) !important;
   background-color: rgb(205, 38, 83) !important;
+  background-color: oklch(55.69% 0.2 12.21) !important;
   background-color: var(--link-color) !important;
 }
 
@@ -294,8 +311,10 @@ body {
 	font-family: Recursive, Verdana, sans-serif;
 	font-family: var(--font-family);
 	color: rgb(34, 32, 35);
+	color: oklch(24.69% 0.006 314.7);
 	color: var(--text-color);
 	background-color: rgb(255, 254, 252);
+	background-color: oklch(99.72% 0.002847056028263826 84.5587270007485);
 	background-color: var(--background-color);
 }
 html {
@@ -320,15 +339,18 @@ p {
 
 a[href] {
 	color: rgb(205, 38, 83);
+	color: oklch(55.69% 0.2 12.21);
 	color: var(--link-color);
 }
 a[href]:visited {
 	color: rgb(34, 32, 35);
+	color: oklch(24.69% 0.006 314.7);
 	color: var(--link-color-visited);
 }
 a[href]:hover,
 a[href]:active {
 	color: rgb(205, 38, 83);
+	color: oklch(55.69% 0.2 12.21);
 	color: var(--link-color-active);
 }
 
@@ -355,6 +377,9 @@ header {
 	border-bottom: 1px dashed rgb(197, 197, 208)
 	--color-gray-50: rgb(64, 63, 78)
 	--color-gray-90: rgb(51, 51, 51);
+	border-bottom: 1px dashed oklch(82.68% 0.015 286.06)
+	--color-gray-50: oklch(37.46% 0.025 288.16)
+	--color-gray-90: oklch(32.11% 0 0);
 	border-bottom: 1px dashed var(--color-gray-20);
 }
 
@@ -369,6 +394,9 @@ header:after {
 	border-top: 1px dashed rgb(197, 197, 208)
 	--color-gray-50: rgb(64, 63, 78)
 	--color-gray-90: rgb(51, 51, 51);
+	border-top: 1px dashed oklch(82.68% 0.015 286.06)
+	--color-gray-50: oklch(37.46% 0.025 288.16)
+	--color-gray-90: oklch(32.11% 0 0);
 	border-top: 1px dashed var(--color-gray-20);
 	padding: 1em 0;
 }
@@ -384,13 +412,16 @@ table {
 
 thead tr {
   background: rgb(34, 32, 35);
+  background: oklch(24.69% 0.006 314.7);
   background: var(--color-black);
   color: rgb(255, 254, 252);
+  color: oklch(99.72% 0.002847056028263826 84.5587270007485);
   color: var(--background-color);
 }
 
 tbody tr:nth-child(even) {
-	background-color: rgba(34, 32, 35, 0.125)
+	background-color: rgba(34, 32, 35, 0.125);
+	background-color: oklch(24.69% 0.006 314.7 / .125)
 }
 
 tr {
@@ -578,6 +609,7 @@ a[href].header-anchor:focus,
 
 article {
 	color: rgb(34, 32, 35);
+	color: oklch(24.69% 0.006 314.7);
 	color: var(--text-color);
 }
 
@@ -640,12 +672,14 @@ article {
   font-size: 1.2em;
   font-weight: 700;
   border-bottom: 3px solid rgb(34, 32, 35);
+  border-bottom: 3px solid oklch(24.69% 0.006 314.7);
   border-bottom: 3px solid var(--text-color);
 }
 
 .post-navigation a:hover .post-title,
 .post-navigation a:focus .post-title {
   border-bottom-color: rgb(205, 38, 83);
+  border-bottom-color: oklch(55.69% 0.2 12.21);
   border-bottom-color: var(--link-color);
 }
 
@@ -660,6 +694,7 @@ nav.archive-pagination {
 
 .admonition {
 	border: 1px solid rgb(34, 32, 35);
+	border: 1px solid oklch(24.69% 0.006 314.7);
 	border: 1px solid var(--text-color);
   border-radius: 20px;
   padding: 1rem;
@@ -673,37 +708,42 @@ nav.archive-pagination {
 .admonition.info,
 	.admonition.note {
 		background-color: rgba(36, 48, 194, 0.4);
+		background-color: oklch(0.42 0.22 269 / .4);
 	}
 
 .admonition.tip {
 		background-color: rgba(102, 0, 205, 0.4);
+		background-color: color(display-p3 0.36369 0.0461 0.77452 / 0.4);
 	}
 
 @media (color-gamut: p3){
 .admonition.tip {
-		background-color: color(display-p3 0.36369 0.0461 0.77452 / 0.4);
+		background-color: oklch(0.45 0.25 294 / .4);
 	}
 }
 
 .admonition.warning,
 	.admonition.bug {
 		background-color: rgba(255, 221, 15, 0.5);
+		background-color: color(display-p3 0.98512 0.87141 0.26925 / 0.5);
 	}
 
 @media (color-gamut: p3){
 .admonition.warning,
 	.admonition.bug {
-		background-color: color(display-p3 0.98512 0.87141 0.26925 / 0.5);
+		background-color: oklch(0.9 0.19 97.4 / 50%);
 	}
 }
 
 .admonition.danger,
 	.admonition.failure {
 		background-color: rgba(255, 85, 2, 0.4);
+		background-color: oklch(67.59% 0.217 38.8 / .4);
 	}
 
 .admonition.success {
 		background-color: rgba(11, 138, 18, 0.4);
+		background-color: oklch(0.55 0.18 143 / .4);
 	}
 
 
@@ -712,15 +752,24 @@ nav.archive-pagination {
   padding: .0625rem .5rem;
   border-radius: .125rem;
   border: 1px solid rgb(6, 54, 93);
+  border: 1px solid oklch(32.58% 0.084 249.05);
   box-shadow: 1px 1px 0 rgb(6, 54, 93), 2px 2px 0 rgb(6, 54, 93);
+  box-shadow: 1px 1px 0 oklch(32.58% 0.084 249.05), 2px 2px 0 oklch(32.58% 0.084 249.05);
   margin: 0 .25rem;
   color: rgb(6, 54, 93);
+  color: oklch(32.58% 0.084 249.05);
 }
 
 blockquote {
   border-left: 4px solid rgb(0, 16, 118);
   border-left: 4px solid color(display-p3 0 0 0.4818);
   padding-left: 1rem;
+}
+
+@media (color-gamut: rec2020){
+blockquote {
+  border-left: 4px solid oklch(27.12% 0.19 264.052);
+}
 }
 
 code, kbd, tt, var {
@@ -730,11 +779,13 @@ code, kbd, tt, var {
 
 abbr, acronym {
   border-bottom: 1px dotted rgb(102, 102, 102);
+  border-bottom: 1px dotted oklch(51.03% 0 0);
   cursor: help;
 }
 
 mark, ins {
   background: rgb(255, 249, 192);
+  background: oklch(97.31% 0.073 102.63);
   -webkit-text-decoration: none;
   text-decoration: none;
 }
@@ -751,6 +802,7 @@ big {
 	margin-right: 1em;
 	white-space: pre;
 	color: rgb(34, 32, 35);
+	color: oklch(24.69% 0.006 314.7);
 	color: var(--text-color);
 }
 
@@ -762,6 +814,7 @@ ul {
 ul li::marker {
   font-size: 1.1rem;
   color: rgb(205, 38, 83);
+  color: oklch(55.69% 0.2 12.21);
   color: var(--link-color);
 }
 
@@ -774,6 +827,7 @@ ol li {
 ol li::marker {
   font-size: .7rem;
   color: rgb(205, 38, 83);
+  color: oklch(55.69% 0.2 12.21);
   color: var(--link-color);
 }
 
@@ -786,6 +840,7 @@ ol li::marker {
 .custom-ordered li::marker {
   font-size: 1rem;
   color: rgb(205, 38, 83);
+  color: oklch(55.69% 0.2 12.21);
   color: var(--link-color);
 }
 
@@ -800,8 +855,10 @@ lite-vimeo {
 	flex-direction: row;
 	justify-content: space-evenly;
 	color: rgb(255, 254, 252);
+	color: oklch(99.72% 0.002847056028263826 84.5587270007485);
 	color: var(--color-white);
 	background: rgb(34, 32, 35);
+	background: oklch(24.69% 0.006 314.7);
 	background: var(--color-black);
 }
 
@@ -821,20 +878,37 @@ lite-vimeo {
 		--background-color: rgb(21, 32, 43);
 	}
 
+@supports (color: oklab(0% 0 0)){
+:root {
+		--color-gray-20: oklch(90.67% 0 0);
+		--color-gray-50: oklch(80.78% 0 0);
+		--color-gray-90: oklch(88.38% 0.002 17.2);
+    --link-color: oklch(65.47% 0.183 250.8);
+		--link-color-active: oklch(59.91% 0.207 278.14);
+		--link-color-visited: oklch(75.68% 0.117 283.25);
+
+		--background-color: oklch(23.85% 0.026 248.99);
+	}
+}
+
 	.post-navigation .nav-previous a::before {
 		color: rgb(255, 254, 252);
+		color: oklch(99.72% 0.002847056028263826 84.5587270007485);
 		color: var(--color-white);
 	}
 
 	.post-navigation .nav-next a::before {
 		color: rgb(255, 254, 252);
+		color: oklch(99.72% 0.002847056028263826 84.5587270007485);
 		color: var(--color-white);
 	}
 
 	thead tr {
 		background: rgb(255, 254, 252);
+		background: oklch(99.72% 0.002847056028263826 84.5587270007485);
 		background: var(--color-white);
 		color: rgb(34, 32, 35);
+		color: oklch(24.69% 0.006 314.7);
 		color: var(--color-black);
 	}
 
@@ -916,8 +990,10 @@ lite-vimeo {
 	.footer {
 		display: block;
 		color: rgb(34, 32, 35);
+		color: oklch(24.69% 0.006 314.7);
 		color: var(--color-black);
 		background: rgb(255, 254, 252);
+		background: oklch(99.72% 0.002847056028263826 84.5587270007485);
 		background: var(--color-white);
 	}
 }

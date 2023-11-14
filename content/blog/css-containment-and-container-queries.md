@@ -81,7 +81,7 @@ The example below uses four container queries to change the way content will loo
 }
 ```
 
-## Alternatives for browsers that don't support `@container`
+## Alternatives for browsers that don't support @container
 
 I'm still researching the way to get container queries to work in older browsers.
 
