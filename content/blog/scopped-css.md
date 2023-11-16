@@ -11,8 +11,8 @@ The `@scope` root at-rule declares a scoping root and optional scoping limits as
 
 Using the `@scope` at-rule we can specify:
 
-- Rules that apply to all elements in the scope using the `:scope` seelector
-- Rules that apply to specific elements in the scope that will override the default rules
+* Rules that apply to all elements in the scope using the `:scope` seelector
+* Rules that apply to specific elements in the scope that will override the default rules
 
 This example defines a scope of `.card`. All elements with a the class will be in scope.
 
@@ -113,6 +113,6 @@ Using scopped CSS is not the same as using Layers. The way I see their relations
 
 ## References
 
-- [Scoping Styles: the @scope rule](https://drafts.csswg.org/css-cascade-6/#scoped-styles) — W3C specification
-- [An introduction to @scope in CSS](https://fullystacked.net/posts/scope-in-css/)
-- [Scoped CSS is Back](https://keithjgrant.com/posts/2023/04/scoped-css-is-back/)
+* [Scoping Styles: the @scope rule](https://drafts.csswg.org/css-cascade-6/#scoped-styles) — W3C specification
+* [An introduction to @scope in CSS](https://fullystacked.net/posts/scope-in-css/)
+* [Scoped CSS is Back](https://keithjgrant.com/posts/2023/04/scoped-css-is-back/)
