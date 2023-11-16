@@ -1,6 +1,6 @@
 ---
 title: "Playing with relative color syntax in CSS"
-date: 2023-12-04
+date: 2023-11-29
 ---
 
 [Relative color syntax](https://www.w3.org/TR/css-color-5/#relative-colors) gives developers a lot of power to control the colors we use in our pages.

@@ -1,6 +1,6 @@
 ---
 title: Temporal is about to reach stage 4
-date: 2023-11-20
+date: 2023-11-15
 ---
 
 People who have been waiting for the Temporal proposal, and for browsers to release their implementations unprefixed, have reason to be happy :)

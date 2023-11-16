@@ -1,6 +1,6 @@
 ---
 title: OKLCH as my new deafult color space
-date: 2023-11-29
+date: 2023-11-27
 ---
 
 [CSS Colors Level 4](https://www.w3.org/TR/css-color-4/) introduced new syntactic sugar to color functions.

@@ -1,11 +1,6 @@
 ---
 title: "Migrating from WordPress to Eleventy (part 4)"
-date: "2023-11-27"
-youtube: false
-vimeo: false
-mermaid: false
-mavo: false
-draft: true
+date: 2023-11-22
 ---
 
 There are more areas I'm working on as I move from WordPress to Eleventy that, in my opinion, are easier to do with a static site generator.
