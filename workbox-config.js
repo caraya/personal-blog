@@ -7,7 +7,7 @@ module.exports = {
 		'offline.html',
 		'fonts/Recursive.woff2',
     '**/index.css',
-		'images/cropped-Long_Room_Interior_Trinity_College_Dublin_Ireland.webp',
+		'./images/cropped-Long_Room_Interior_Trinity_College_Dublin_Ireland.webp',
   ],
   'swSrc': 'assets/sw.js',
   'swDest': 'public/sw.js',

@@ -5,7 +5,7 @@ const {Route, registerRoute, setDefaultHandler, setCatchHandler} = workbox.routi
 const {StaleWhileRevalidate, CacheFirst} = workbox.strategies;
 const {ExpirationPlugin} = workbox.expiration;
 
-precacheAndRoute([{"revision":"5271bd80aee52c10fea17707c77df86b","url":"index.html"},{"revision":"7a1fa8d7e8777e29902b164f4cf3d00a","url":"404.html"},{"revision":"c63266e6e78ad6ab59a2d587ddd34022","url":"offline.html"},{"revision":"abcbe11d1f0d578a3abf5538241bc45a","url":"fonts/Recursive.woff2"},{"revision":"db834ee64134795d4dd0de1badadf156","url":"css/index.css"},{"revision":"ed61dda927f58a50adbea133e8adeff0","url":"images/cropped-Long_Room_Interior_Trinity_College_Dublin_Ireland.webp"}]);
+precacheAndRoute([{"revision":"9547ab759e64ccfffaba6330c41c86cc","url":"index.html"},{"revision":"d6ea070a7b411afea5735d24536ddfc4","url":"404.html"},{"revision":"220f629117717ec010fdc0ea86010d2f","url":"offline.html"},{"revision":"abcbe11d1f0d578a3abf5538241bc45a","url":"fonts/Recursive.woff2"},{"revision":"6fab8a0b11d28c6b64b48e134a3887fb","url":"css/index.css"},{"revision":"ed61dda927f58a50adbea133e8adeff0","url":"images/cropped-Long_Room_Interior_Trinity_College_Dublin_Ireland.webp"}]);
 
 // Handle HTML documents
 const contentRoute = new Route(({ request }) => {

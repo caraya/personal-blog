@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title or metadata.title }}</title>
     <meta
-    name="description" content="{{ description or metadata.description }}"> {#- Atom and JSON feeds included by default #}
+    name="description" content="{{ description or metadata.description }}">
+		<meta name="theme-color" content="#1e456e"/>
+		{#- Atom and JSON feeds included by default #}
     <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
     <link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}">
     <link
-    rel="manifest" href="/manifest.json"> {#- Learn more about bundles: https://github.com/11ty/eleventy-plugin-bundle #}
-    <link rel="stylesheet" href="/css/index.css"/>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    rel="manifest" href="/manifest.json">
+		{#- Learn more about bundles: https://github.com/11ty/eleventy-plugin-bundle #}
+    <link rel="stylesheet" media="screen" href="/css/index.css"/>
     {# add prism.js stylesheets unconditionally #}
-    <link rel="stylesheet" href="/css/prism-solarizedlight.css"/>
-    <link rel="stylesheet" href="/css/prism-diff.css"/>
+    <link rel="stylesheet" media="screen" href="/css/prism-solarizedlight.css"/>
+    <link rel="stylesheet" media="screen" href="/css/prism-diff.css"/>
     {# Only load Mavo if instructed to do so in the post's front matter #}
     {% if mavo %}
       <link rel="stylesheet" href="https://get.mavo.io/mavo.css"/>
@@ -69,18 +71,6 @@
           .catch(function (err) { // Error Message
             console.log('ServiceWorker registration failed: ', err);
           });
-      }
-    </script>
-    <!-- added for Netlify CMS -->
-    <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
       }
     </script>
   </body>

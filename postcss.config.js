@@ -1,5 +1,5 @@
 module.exports = {
-  plugins: [
+	plugins: [
 		require('@csstools/postcss-oklab-function')({
 			preserve: true,
 			enableProgressiveCustomProperties: true,
@@ -7,6 +7,14 @@ module.exports = {
 				displayP3: true,
 			},
 		}),
-    require('postcss-preset-env')({})
-  ],
+		require("cssnano")({
+			preset: [ 'default', {
+				svgo: false,
+				discardComments: {
+					removeAll: true,
+				},
+			},
+		 ],
+		})
+	],
 }
