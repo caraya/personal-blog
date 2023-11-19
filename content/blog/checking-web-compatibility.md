@@ -25,6 +25,35 @@ You can use either of these packages as  the database for your own projects.
 
 Sometimes you just want to make sure that something will work on the browsers you are targetting but don't want to open a new browser tab to check it.
 
-[caniuse-cmd](https://github.com/sgentle/caniuse-cmd)
+[caniuse-cmd](https://github.com/sgentle/caniuse-cmd) gives you one tool to do this.
 
+You can choose two methods of using the caniuse CLI.
 
+You can install it globally using the following command:
+
+```bash
+npm i -g caniuse-cmd
+```
+
+You can also choose to install it as a development dependency. This will pin the version of caniuse to a specific point in time.
+
+```bash
+npm i -D caniuse-cmd
+```
+
+Once it's installed you can run it using a command like this:
+
+```bash
+caniuse nesting
+```
+
+and you'll get a result like this (broken into multiple lines for readability):
+
+```bash
+CSS Nesting ✔ 2.16% ◒ 78.26%
+  IE ✘  Edge ✘ 12+ ✘ 109+¹ ◒ 112+³ Firefox ✘ 2+ ✘ 115+² ✔ 117+
+  Chrome ✘ 4+ ✘ 109+¹ ◒ 112+³ Safari ✘ 3.1+ ◒ 16.5+³
+  Opera ✘ 9+ ✘ 95+¹ ◒ 98+³
+```
+
+While this is not a perfect solution, it doesn't help with syntax, it helps to keep your hands on the keyboard as you work and gives you the minimal necessary information about support for a technology on y our target browsers.

@@ -13,16 +13,7 @@ layout: layouts/base.njk
 			{%- endif %}
 
       <li><span class="iconfont readingtime"></span>{{ content | emojiReadTime }}</li>
-
-      {%- for tag in tags | filterTagList %}
-        {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-        <li>
-          <a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>
-          {%- if not loop.last %},
-          {% endif %}
-        </li>
-      {%- endfor %}
-    </ul>
+		</ul>
     <p>&nbsp;</p>
     {# Conditionally load the table of content if there are headers to render #}
     {% if content | toc %}
@@ -34,6 +25,19 @@ layout: layouts/base.njk
       </aside>
     {% endif %}
     {{ content | safe }}
+
+		{# category/tags for the post #}
+		<ul class="post-metadata post-tags"><span class="iconfont tags"></span>
+	      {%- for tag in tags | filterTagList %}
+        {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+        <li>
+          <a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>
+          {%- if not loop.last %},
+          {% endif %}
+        </li>
+      {%- endfor %}
+    </ul>
+
     {%- if collections.posts %}
       {%- set previousPost = collections.posts | getPreviousCollectionItem %}
       {%- set nextPost = collections.posts | getNextCollectionItem %}
