@@ -5,6 +5,16 @@ youtube: true
 draft: true
 ---
 
+## Intro and explainer
+
+This post spans several (four or five!) years from the time it was started to when it was published.
+
+Some of the technologies covered in the earlier part of this post like the [Physical Web](https://google.github.io/physical-web/) have been abandoned by Google.
+
+Other technologies, like the [Google Maps Gaming Services](https://developers.google.com/maps/documentation/gaming), have been deprecated but their documentation still remains on their website, although it's unknown for how long.
+
+A third set of technologies, like [WebVR](https://webvr.info/), have evolved as the WebXR Device API that encompases both VR and AR experiences. Most WebGL and WebVR libraries are moving to support The WebXR Device API
+
 I thought that perhaps picking a project to conceptualize around rather than code would be easier for me as a way to get back into AR/VR and WebGL than (re)learning WebGL and the WebXR Device API at the same time.
 
 Something that has been in my mind a lot when thinking about AR is Daniel Suarez books: Daemon and [Freedom<sup>tm</sup>](https://www.wikiwand.com/en/Freedom%E2%84%A2) and how can we leverage our modern technologies to build a next-generation networked community.
@@ -48,10 +58,15 @@ For more information, check [Fundamentals of WebXR](https://developer.mozilla.or
 
 If you're using phones or other devices to work with AR experiences the issue becomes how to seed the environment. We're not using devices like DayDream, Oculus or Vibe so we can't have a full on VR experience, and that wouldn't be the objective anyways.
 
-Using the WebXR Device API we can now place virtual items in physical spaces so users have access to them either through dedicated devices or through their WebXR enabled browsers using Magic Windows. The beacons could work presenting notifications to users that will then use browsers in ARCore/ARKit powered devices or with the right applications to experience the content as designed.
-
-
 ## Can we get things other than markers to display out AR content from?
+
+Using the WebXR Device API we can now place virtual items in physical spaces so users have access to them either through dedicated devices or through their WebXR enabled browsers using Magic Windows.
+
+The beacons could work presenting notifications to users that will then use browsers in ARCore/ARKit powered devices or with the right applications to experience the content as designed.
+
+[Ingress](https://ingress.fandom.com/wiki/Ingress) and [Pokemon Go](https://en.wikipedia.org/wiki/Pok%C3%A9mon_Go)
+
+in 2020
 
 ## How do we translate 2D content to a 3D environment?
 

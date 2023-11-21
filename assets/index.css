@@ -51,13 +51,15 @@ TODO:
 	--color-white: oklch(99.72% 0.002847056028263826 84.5587270007485);
 	--color-black: oklch(24.69% 0.006 314.7);
 
-	--link-color: oklch(55.69% 0.2 12.21);
-	--background-color: var(--color-white);
+	--color-blue: oklch(50.43% 0.182 261.45);
+	--accent-color: oklch(55.69% 0.2 12.21);
 	--code-color: oklch(55.2% 0.228 351.47 / 94%);
 
+	--background-color: var(--color-white);
 	--text-color: var(--color-black);
+	--link-color: var(--color-blue);
 	--link-color-active: var(--link-color);
-	--link-color-visited: var(--text-color);
+	--link-color-visited: var(--link-color);
 
 	--syntax-tab-size: 2;
 
@@ -92,14 +94,6 @@ TODO:
 	--icon-rss-fill: "\F521";
 	--icon-stopwatch: "\F597";
 	--icon-tags: "\F5B2";
-
-	/* Code Blocks */
-	--width-med: 50rem;
-
-	--content-width: var(--width-med);
-	--min-padding: 1rem;
-	--content-margin: clamp(var(--min-padding), 50vw - var(--content-width) / 1.5, 100vw);
-
 }
 
 /* If class is applied, update custom property and
@@ -238,7 +232,7 @@ dd {
 .continue-reading a:hover {
 	/* Figure out why I had to add !important here */
   color: var(--color-white) !important;
-  background-color: var(--link-color) !important;
+  background-color: var(--accent-color) !important;
 }
 
 /* figures and images */
@@ -425,7 +419,9 @@ header {
 	font-size: 1em; /* 18px /16 */
 	font-weight: 700;
 	margin-right: 2em;
+	color: var(--accent-color);
 }
+
 .home-link:link:not(:hover) {
 	text-decoration: none;
 }
@@ -446,14 +442,24 @@ header {
 
 .nav-item {
 	margin-inline-end: 1em;
-}
-
-.nav-item a[href]:not(:hover) {
 	text-decoration: none;
 }
 
-/* .nav a[href][aria-current="page"] {
+.nav-item a[href]:hover {
 	text-decoration: underline;
+
+}
+
+/* .nav a[href][aria-current="page"]::before {
+	content: "{";
+	font-size: 200%;
+	font-weight: 800;
+}
+
+.nav a[href][aria-current="page"]::after {
+	content: "}";
+	font-size: 200%;
+	font-weight: 800;
 } */
 
 /* Posts list */
@@ -478,8 +484,6 @@ header {
 	font-size: calc(var(--h2-size) * 1rem);
 	font-weight: 700;
 	flex-basis: calc(100% - 1.5rem);
-	/* padding-left: .25em;
-	padding-right: .5em; */
 	text-decoration-skip-ink: auto;
 	text-underline-offset: 8px;
 	text-decoration-thickness: 2px;
@@ -598,7 +602,7 @@ article {
 
 .post-navigation a:hover .post-title,
 .post-navigation a:focus .post-title {
-  border-bottom-color: var(--link-color);
+  border-bottom-color: var(--accent-color);
 }
 
 /* Archive pagination */
@@ -696,7 +700,7 @@ ul {
 
 ul li::marker {
   font-size: 1.1rem;
-  color: var(--link-color);
+  color: var(--accent-color) !important;
 }
 
 /* Override default OL styles */
@@ -707,7 +711,7 @@ ol li {
 
 ol li::marker {
   font-size: .7rem;
-  color: var(--link-color);
+  color: var(--accent-color);
 }
 
 /* custom OL styles using declaration at the top of the file */
@@ -718,7 +722,7 @@ ol li::marker {
 
 .custom-ordered li::marker {
   font-size: 1rem;
-  color: var(--link-color);
+  color: var(--accent-color);
 }
 
 lite-vimeo {
@@ -744,9 +748,9 @@ lite-vimeo {
 		/* --text-color is assigned to --color-gray-_ above */
 
 		--text-color: rgb(255,255,255);
-    --link-color: oklch(65.47% 0.183 250.8);
-		--link-color-active: oklch(59.91% 0.207 278.14);
-		--link-color-visited: oklch(75.68% 0.117 283.25);
+    --accent-color: oklch(65.47% 0.183 250.8);
+		--accent-color-active: oklch(59.91% 0.207 278.14);
+		--accent-color-visited: oklch(75.68% 0.117 283.25);
 
 		--background-color: oklch(23.85% 0.026 248.99);
 	}
@@ -889,7 +893,6 @@ lite-vimeo {
 .prev-next .next {
 	flex-grow: 1;
 	position: relative;
-
 }
 
 .prev-next .prev::before,
