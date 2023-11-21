@@ -1,7 +1,8 @@
 ---
-title: "Migrating from WordPress to Netlify: WOrking on Lighthouse Scores"
+title: "Migrating from WordPress to Netlify: Working on Lighthouse Scores"
 date: 2023-11-16
 youtube: true
+draft: true
 ---
 
 After a few weeks of running the blog on Netlify I decided to take a look at how it's working.

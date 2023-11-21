@@ -4,7 +4,7 @@
 	"description": "Preparing to move my blog from WordPress to 11ty",
 	"scripts": {
 		"postcss:build": "postcss --verbose assets/index.css -o public/css/index.css",
-		"postcss:watch": "npx postcss -w assets/index.css -o public/css/index.css",
+		"postcss:watch": "npx postcss --verbose -w assets/index.css -o public/css/index.css",
 		"build": "NODE_ENV=production npx @11ty/eleventy --incremental",
 		"build:dev": "npx @11ty/eleventy --incremental",
 		"workbox": "npx workbox-cli injectManifest ./workbox-config.js",
@@ -23,9 +23,9 @@
 		"node": ">=16"
 	},
 	"bugs": {
-		"url": "https://github.com/11ty/eleventy-base-blog/issues"
+		"url": "https://github.com/caraya/personal-blog/issues"
 	},
-	"homepage": "https://github.com/11ty/eleventy-base-blog#readme",
+	"homepage": "https://github.com/caraya/personal-blog#readme",
 	"devDependencies": {
 		"@11ty/eleventy": "^2.0.1",
 		"@11ty/eleventy-img": "^3.1.1",
@@ -53,10 +53,10 @@
 		"markdown-it-image-figures": "^2.1.1",
 		"markdown-it-kbd-better": "^1.2.5",
 		"markdown-it-multimd-table": "^4.2.3",
-		"netlify-cli": "^17.5.1",
 		"postcss": "^8.4.31",
 		"postcss-cli": "^10.1.0",
 		"postcss-preset-env": "^9.3.0",
-		"posthtml": "^0.16.6"
+		"posthtml": "^0.16.6",
+		"prettier": "3.1.0"
 	}
 }
