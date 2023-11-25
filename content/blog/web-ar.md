@@ -35,7 +35,7 @@ For more details, watch Brandon Jones' presentation at Google I/O 2018 for more 
 
 <lite-youtube videoid="1t1gBVykneA"></lite-youtube>
 
-Before we jump to far let's talk about WebXR.
+Before we jump too far let's talk about WebXR.
 
 ## What is WebXR
 
@@ -58,23 +58,21 @@ For more information, check [Fundamentals of WebXR](https://developer.mozilla.or
 
 If you're using phones or other devices to work with AR experiences the issue becomes how to seed the environment. We're not using devices like DayDream, Oculus or Vibe so we can't have a full on VR experience, and that wouldn't be the objective anyways.
 
-## Can we get things other than markers to display out AR content from?
+### Can we get things other than markers to display out AR content from?
 
 Using the WebXR Device API we can now place virtual items in physical spaces so users have access to them either through dedicated devices or through their WebXR enabled browsers using Magic Windows.
 
 The beacons could work presenting notifications to users that will then use browsers in ARCore/ARKit powered devices or with the right applications to experience the content as designed.
 
-[Ingress](https://ingress.fandom.com/wiki/Ingress) and [Pokemon Go](https://en.wikipedia.org/wiki/Pok%C3%A9mon_Go)
+[Ingress](https://ingress.fandom.com/wiki/Ingress) and [Pokemon Go](https://en.wikipedia.org/wiki/Pok%C3%A9mon_Go) presented a different interface to augmented reality. They seeded locations around the world with content for the game and
 
 in 2020
 
-## How do we translate 2D content to a 3D environment?
+### How do we translate 2D content to a 3D environment?
 
-## How do we move from 2D to 3D and back?
+### How do we move from 2D to 3D and back?
 
 ## Can we generate multi player AR experiences?
-
-
 
 ## Links and resources
 

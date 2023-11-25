@@ -13,23 +13,33 @@ The font-family declaration looks like this:
 
 ```css
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: system-ui,
+	-apple-system,
+	BlinkMacSystemFont,
+	'Segoe UI',
+	Roboto,
+	Oxygen-Sans,
+	Ubuntu,
+	Cantarell,
+	'Helvetica Neue',
+	Helvetica,
+	Arial,
+	sans-serif;
 }
 ```
 
 Each of the fonts is explained below:
 
-- `system-ui` is the new family defined in Fonts Module level 4 to represent the native OS font family
-- `-apple-system` is San Francisco, used on iOS and macOS (not Chrome, however)
-- `BlinkMacSystemFont` is San Francisco, used on Chrome for macOS
-- `Segoe UI` is used on Windows 10
-- `Roboto` is used on Android
-- `Oxygen-Sans` is used on GNU+Linux
-- `Ubuntu` is used on Linux
-- `"Helvetica Neue"` and `Helvetica` is used on macOS 10.10 and below (wrapped in quotes because it has spaces in the name)
-- `Arial` is a font widely supported by all operating systems
-- `sans-serif` is the fallback sans-serif font if none of the other fonts are supported
+* `system-ui` is the new family defined in Fonts Module level 4 to represent the native OS font family
+* `-apple-system` is San Francisco, used on iOS and macOS (not Chrome, however)
+* `BlinkMacSystemFont` is San Francisco, used on Chrome for macOS
+* `Segoe UI` is used on Windows 10
+* `Roboto` is used on Android
+* `Oxygen-Sans` is used on GNU+Linux
+* `Ubuntu` is used on Linux
+* `"Helvetica Neue"` and `Helvetica` is used on macOS 10.10 and below (wrapped in quotes because it has spaces in the name)
+* `Arial` is a font widely supported by all operating systems
+* `sans-serif` is the fallback sans-serif font if none of the other fonts are supported
 
 ### Caveats and warnings
 
@@ -40,7 +50,7 @@ If working with Oxygen Sans you need to pay special attention. Google Fonts offe
 ## System Fonts
 
 | OS | Version | System Font |
-| --- | --- | --- |
+| --* | --* | --* |
 | Mac OS X | El Capitan, Sierra and High Sierra | [San Francisco](https://github.com/supermarin/YosemiteSanFranciscoFont) |
 | Mac OS X | Yosemite | [Helvetica Neue](https://www.myfonts.com/fonts/linotype/neue-helvetica/) |
 | Mac OS X | Mavericks | [Lucida Grande](https://en.wikipedia.org/wiki/Lucida_Grande) |
@@ -53,16 +63,14 @@ If working with Oxygen Sans you need to pay special attention. Google Fonts offe
 
 ## Links and Resources
 
-- Specs
-    
-    - [CSS Fonts Module Level 3](https://drafts.csswg.org/css-fonts-3/)
-    - [CSS Fonts Module Level 4](https://drafts.csswg.org/css-fonts-4/)
-- Articles
-    
-    - [System Font Stack](https://css-tricks.com/snippets/css/system-font-stack/)
-    - [System Fonts in CSS](https://furbo.org/2018/03/28/system-fonts-in-css/) (furbo.org)
-    - [Using UI System Fonts In Web Design: A Quick Practical Guide](https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/) (Smashing Magazine)
-    - [System Font CSS Code](https://github.com/jonathantneal/system-font-css/blob/gh-pages/system-font.css)
-    - [OS Specific Fonts in CSS](https://css-tricks.com/os-specific-fonts-css/)
-    - [system-ui](https://drafts.csswg.org/css-fonts-4/#system-ui-def) font family definition, part of CSS Fonts Level 4
-    - [Implementing system fonts on Booking.com — A lesson learned](https://booking.design/implementing-system-fonts-on-booking-com-a-lesson-learned-bdc984df627f)
+* Specs
+  * [CSS Fonts Module Level 3](https://drafts.csswg.org/css-fonts-3/)
+  * [CSS Fonts Module Level 4](https://drafts.csswg.org/css-fonts-4/)
+* Articles
+  * [System Font Stack](https://css-tricks.com/snippets/css/system-font-stack/)
+  * [System Fonts in CSS](https://furbo.org/2018/03/28/system-fonts-in-css/) (furbo.org)
+  * [Using UI System Fonts In Web Design: A Quick Practical Guide](https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/) (Smashing Magazine)
+  * [System Font CSS Code](https://github.com/jonathantneal/system-font-css/blob/gh-pages/system-font.css)
+  * [OS Specific Fonts in CSS](https://css-tricks.com/os-specific-fonts-css/)
+  * [system-ui](https://drafts.csswg.org/css-fonts-4/#system-ui-def) font family definition, part of CSS Fonts Level 4
+  * [Implementing system fonts on Booking.com — A lesson learned](https://booking.design/implementing-system-fonts-on-booking-com-a-lesson-learned-bdc984df627f)

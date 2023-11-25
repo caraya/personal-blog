@@ -1,10 +1,29 @@
 ---
 title: Publishing Explorations
 date: 2023-12-31
+tags:
+  - CSS
+  - Explorations
+  - Notes
 draft: true
 ---
 
+
 ## Creating gradient-colored text
+
+```css
+@supports (background-clip: text) {
+h1 {
+  font-size: 6rem;
+  color: transparent;
+  background: linear-gradient(90deg,
+    oklch(50.42% 0.188 308.56) 0%,
+    oklch(63.22% 0.248 28.28) 20%,
+    oklch(81.19% 0.148 71.76) 40%);
+  background-clip: text;
+  }
+}
+```
 
 ## Don't be Afraid Of Large Font Sizes
 

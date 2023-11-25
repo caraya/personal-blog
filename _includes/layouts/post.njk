@@ -23,13 +23,14 @@ layout: layouts/base.njk
         </p>
         {{ content | toc | safe }}
       </aside>
-    {% endif %}
+    {% endif %} {# end if content | toc #}
+
     {{ content | safe }}
 
 		{# category/tags for the post #}
 		<ul class="post-metadata post-tags"><span class="iconfont tags"></span>
 	      {%- for tag in tags | filterTagList %}
-        {%- if tags %} {# does this mean if tags not empty? #}
+        {%- if tags.length >= 1 %} {# does this mean if tags not empty? #}
         {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
 					<li>
 						<a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>
