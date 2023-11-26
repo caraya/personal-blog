@@ -35,7 +35,7 @@ The process is slightly more complicated than just assigning color to the desire
 
 You can play with the gradients by adding colors and changing the type of gradients that we use to color the text.
 
-The code below uses a conical gradient as the background color. Note that conical gradients use a different syntax than linear gradients we saw in the previous example and we use OKLCH colors so we don't
+The code below uses a conical gradient as the background color. Note that conical gradients use a different syntax than linear gradients we saw in the previous example and we use OKLCH colors so we don't have to convert them
 
 ```css
 /* Conical gradients*/

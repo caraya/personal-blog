@@ -4,6 +4,7 @@ date: 2024-01-01
 tags:
   - CSS
   - Explorations
+draft: true
 ---
 
 One thing I particularly like about variable fonts is that it allows some interesting animation tricks.

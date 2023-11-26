@@ -36,7 +36,6 @@
 		"@11tyrocks/eleventy-plugin-emoji-readtime": "^1.0.1",
 		"@csstools/postcss-oklab-function": "^3.0.7",
 		"@kevingimbel/eleventy-plugin-mermaid": "^2.1.1",
-		"@netlify/plugin-lighthouse": "^5.0.0",
 		"cloudinary": "^1.41.0",
 		"cssnano": "^6.0.1",
 		"dotenv": "^16.3.1",
