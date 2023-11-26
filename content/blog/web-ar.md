@@ -64,9 +64,21 @@ Using the WebXR Device API we can now place virtual items in physical spaces so 
 
 The beacons could work presenting notifications to users that will then use browsers in ARCore/ARKit powered devices or with the right applications to experience the content as designed.
 
-[Ingress](https://ingress.fandom.com/wiki/Ingress) and [Pokemon Go](https://en.wikipedia.org/wiki/Pok%C3%A9mon_Go) presented a different interface to augmented reality. They seeded locations around the world with content for the game and
+[Ingress](https://ingress.fandom.com/wiki/Ingress) and [Pokemon Go](https://en.wikipedia.org/wiki/Pok%C3%A9mon_Go) presented a different interface to augmented reality. They seeded locations around the world with content for the game and let players (either individually or in groups) face the game generated content either in 2-D or in AR on top of the actual environment the player is in.
 
-in 2020
+Some of these AR hybrid games:
+
+* Ingress Prime
+* Harry Potter: Wizards Unite
+* The Witcher: Monster Slayer
+* Sharks in the Park
+* Ghost Busters World
+* Jurassic World Alive
+* Pokémon Sword And Shield
+* Dragon Quest Walk
+* The Walking Dead: Our World
+
+
 
 ### How do we translate 2D content to a 3D environment?
 
