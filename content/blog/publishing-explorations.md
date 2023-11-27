@@ -28,21 +28,23 @@ h1 {
 }
 ```
 
+## Animating variable fonts
+
+## using splitting.js
+
+<https://splitting.js.org/guide.html#basic-usage>
+
 ## Don't be Afraid Of Large Font Sizes
 
 <https://trail-of-thoughts.beehiiv.com/p/mastering-type-scale>
 
 <https://typescale.com/>
 
-## Animating variable fonts
-
-
-
 ## Creating Grid-Based Components
 
 ## Font Stacks: To variable font or not to variable font
 
-## Leveraging Variable Font Features
+### Leveraging Variable Font Features
 
 ## Leveraging opentype font features
 
@@ -54,9 +56,6 @@ h1 {
 
 ## Media Queries To The Rescue
 
-## using splitting.js
-
-<https://splitting.js.org/guide.html#basic-usage>
 
 ## What the web can do that print can't
 

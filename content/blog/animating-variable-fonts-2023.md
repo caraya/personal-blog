@@ -4,7 +4,6 @@ date: 2024-01-01
 tags:
   - CSS
   - Explorations
-draft: true
 ---
 
 One thing I particularly like about variable fonts is that it allows some interesting animation tricks.
@@ -62,6 +61,8 @@ span {
 
 We then define the keyframe animation that we want to use.
 
+In this case we use three steps, 0% (`from`), 50% and 100% (`to`).
+
 ```css
 @keyframes weight {
   from {
@@ -78,15 +79,37 @@ We then define the keyframe animation that we want to use.
 }
 ```
 
+To make the animation smoother we could add steps to cover each value from 300 to 900 and then from 900 back down to 300.
+
+We could also play with more than one value in the animation or test if multiple animations would work well.
+
 ## Animating individual characters
+
+Animating individual characters requires more work. We have to manually wrap characters with `span` elements and add classes or ID attributes that will permit manipulation of individual characters or we can use libraries like [Splitting](https://splitting.js.org/) to break the content into letters or words and then animate each unit of content individually.
+
+On the Javascript side we need to import the Spliting library. For the demo I'm loading it from CDN; in a production environment, I would likely download it and use it locally.
+
+The we instantiate splitting in a separate script. For the demo we'll use the default settings.
+
+Under the hood, Splitting will insert span characters for each letter in the content that we want to animate. This will give us the possibility of animating characters individually or in groups of two or more.
 
 ```html
 <script src="https://unpkg.com/splitting/dist/splitting.js"></script>
+
+<script>
+	Splitting();
+</script>
 ```
+
+Next, we import Splitting's CSS stylesheet. Again, for this demo, I'm importing it from CDN.
 
 ```css
 @import url("https://unpkg.com/splitting/dist/splitting.css");
+```
 
+The `@font-face` declaration is the same as the previous example.
+
+```css
 @font-face {
   font-family: "Recursive";
   src: url("https://assets.codepen.io/32795/recursive.woff2") format("woff2")
@@ -101,6 +124,12 @@ We then define the keyframe animation that we want to use.
 }
 ```
 
+When we define the `span` elements we want to work with, we can define individual styles and animations for each character
+
+The main difference is that in this case we have multiple elements wrapped on their own `span` so we can delay each element based on where in our word the `span` is located.  This will cause a progressive delay in the animation start for each letter.
+
+I've chosen to apply the same animation to all letters, this doesn't always have to be the case.
+
 ```css
 span {
   font-size: 10rem;
@@ -109,6 +138,8 @@ span {
   animation-delay: calc(var(--char-index) * 150ms);
 }
 ```
+
+The `@keyframes` declaration remains the same.
 
 ```css
 @keyframes weight {

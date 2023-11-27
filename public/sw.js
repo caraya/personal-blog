@@ -4,8 +4,16 @@ const {precacheAndRoute} = workbox.precaching;
 const {Route, registerRoute, setDefaultHandler, setCatchHandler} = workbox.routing;
 const {StaleWhileRevalidate, CacheFirst} = workbox.strategies;
 const {ExpirationPlugin} = workbox.expiration;
+// Testing this plugin
+import {CacheableResponsePlugin} from 'workbox-cacheable-response';
 
-precacheAndRoute([{"revision":"9547ab759e64ccfffaba6330c41c86cc","url":"index.html"},{"revision":"d6ea070a7b411afea5735d24536ddfc4","url":"404.html"},{"revision":"220f629117717ec010fdc0ea86010d2f","url":"offline.html"},{"revision":"abcbe11d1f0d578a3abf5538241bc45a","url":"fonts/Recursive.woff2"},{"revision":"6fab8a0b11d28c6b64b48e134a3887fb","url":"css/index.css"},{"revision":"ed61dda927f58a50adbea133e8adeff0","url":"images/cropped-Long_Room_Interior_Trinity_College_Dublin_Ireland.webp"}]);
+addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
+});
+
+precacheAndRoute([{"revision":"54f2e5bdcec42323655a7ce45c190514","url":"index.html"},{"revision":"f79c9a3e2ae205a6d1ef18b1643f8537","url":"404.html"},{"revision":"3064f70ea145ac7569bc8bb4d0af6108","url":"offline.html"},{"revision":"abcbe11d1f0d578a3abf5538241bc45a","url":"fonts/Recursive.woff2"},{"revision":"6641cce3af49dfbffd7ff8bf9e2443b1","url":"css/index.css"},{"revision":"ed61dda927f58a50adbea133e8adeff0","url":"images/cropped-Long_Room_Interior_Trinity_College_Dublin_Ireland.webp"}]);
 
 // Handle HTML documents
 const contentRoute = new Route(({ request }) => {
@@ -44,6 +52,9 @@ const scriptsRoute = new Route(({ request }) => {
 			maxEntries: 30,
 			purgeOnQuotaError: true,
 		}),
+		new CacheableResponsePlugin({
+      statuses: [0, 200]
+    }),
 	],
 }));
 
@@ -58,6 +69,9 @@ const stylesRoute = new Route(({ request }) => {
 			maxEntries: 30,
 			purgeOnQuotaError: true,
 		}),
+		new CacheableResponsePlugin({
+      statuses: [0, 200]
+    }),
 	],
 }));
 
@@ -70,6 +84,9 @@ const fontRoute = new Route(({ request }) => {
 			maxAgeSeconds: 120 * 24 * 60 * 60,
 			purgeOnQuotaError: true,
 		}),
+    new CacheableResponsePlugin({
+      statuses: [0, 200]
+    }),
 	],
 }));
 

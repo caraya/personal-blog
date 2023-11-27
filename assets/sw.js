@@ -4,6 +4,14 @@ const {precacheAndRoute} = workbox.precaching;
 const {Route, registerRoute, setDefaultHandler, setCatchHandler} = workbox.routing;
 const {StaleWhileRevalidate, CacheFirst} = workbox.strategies;
 const {ExpirationPlugin} = workbox.expiration;
+// Testing this plugin
+import {CacheableResponsePlugin} from 'workbox-cacheable-response';
+
+addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
+});
 
 precacheAndRoute(self.__WB_MANIFEST);
 
@@ -44,6 +52,9 @@ const scriptsRoute = new Route(({ request }) => {
 			maxEntries: 30,
 			purgeOnQuotaError: true,
 		}),
+		new CacheableResponsePlugin({
+      statuses: [0, 200]
+    }),
 	],
 }));
 
@@ -58,6 +69,9 @@ const stylesRoute = new Route(({ request }) => {
 			maxEntries: 30,
 			purgeOnQuotaError: true,
 		}),
+		new CacheableResponsePlugin({
+      statuses: [0, 200]
+    }),
 	],
 }));
 
@@ -70,6 +84,9 @@ const fontRoute = new Route(({ request }) => {
 			maxAgeSeconds: 120 * 24 * 60 * 60,
 			purgeOnQuotaError: true,
 		}),
+    new CacheableResponsePlugin({
+      statuses: [0, 200]
+    }),
 	],
 }));
 
