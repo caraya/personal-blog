@@ -7,10 +7,8 @@ const {ExpirationPlugin} = workbox.expiration;
 // Testing this plugin
 import {CacheableResponsePlugin} from 'workbox-cacheable-response';
 
-addEventListener('message', (event) => {
-  if (event.data && event.data.type === 'SKIP_WAITING') {
-    self.skipWaiting();
-  }
+addEventListener('message', messageEvent => {
+  if (messageEvent.data === 'skipWaiting') return skipWaiting();
 });
 
 precacheAndRoute(self.__WB_MANIFEST);

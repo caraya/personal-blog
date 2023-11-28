@@ -1,0 +1,22 @@
+[
+	{
+		"title": "Home",
+		"path": ""
+	},
+	{
+		"title": "About",
+		"path": "about"
+	},
+	{
+		"title": "Patterns",
+		"path": "https://patterns.rivendellweb.net"
+	},
+	{
+		"title": "Projects",
+		"path": "https://projects.rivendellweb.net"
+	},
+	{
+		"title": "Repo",
+		"url": "https://github.com/caraya/personal-blog"
+	}
+]

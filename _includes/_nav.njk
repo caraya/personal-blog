@@ -1,0 +1,8 @@
+{% macro render(links, location) %}
+{% for link in links %}
+{% if not link.location or link.location == location %}
+{% set url = link.url or ("/" + (link.path or ".") + "/") %}
+<li class="nav-item"><a href="{{ url }}"{{ " class=selected" if siteArea === link.path }}{{ ' target="_blank"' if link.url }}>{{ link.title }}</a></li>
+{% endif %}
+{% endfor %}
+{% endmacro %}
