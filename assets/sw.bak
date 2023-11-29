@@ -1,13 +1,37 @@
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.0.2/workbox-sw.js');
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-sw.js');
 
 const {precacheAndRoute} = workbox.precaching;
-const {registerRoute, setDefaultHandler, setCatchHandler} = workbox.routing;
+const {Route, registerRoute, setDefaultHandler, setCatchHandler} = workbox.routing;
 const {StaleWhileRevalidate, CacheFirst} = workbox.strategies;
-const {CacheableResponsePlugin} = workbox.cacheableResponse;
 const {ExpirationPlugin} = workbox.expiration;
+// Testing this plugin
+const {CacheableResponsePlugin} = workbox.cacheableResponse;
+
+// Testing to see if this works when the service worker is using Workbox
+
+// self.addEventListener('install', event => event.waitUntil(onInstall(event)));
+// self.addEventListener('activate', event => event.waitUntil(onActivate(event)));
+// self.addEventListener('fetch', () => { });
+
+// async function onInstall(event) {
+//     console.info('Service worker: Install');
+//     // Here we are telling the service worker to activate right away when an update is pickedup.
+//     // In our main JavaScript this will trigger 'controllerchange', which we can use to trigger an page reload.
+//     self.skipWaiting();
+// }
+
+// async function onActivate(event) {
+//     console.info('Service worker: Activate');
+// }
+
+
+addEventListener('message', messageEvent => {
+  if (messageEvent.data === 'skipWaiting') return skipWaiting();
+});
 
 precacheAndRoute(self.__WB_MANIFEST);
 
+// Handle HTML documents
 const contentRoute = new Route(({ request }) => {
 	return request.destination === 'document'
 }, new StaleWhileRevalidate({
@@ -50,10 +74,27 @@ const scriptsRoute = new Route(({ request }) => {
 	],
 }));
 
+// Handle styles:
+const stylesRoute = new Route(({ request }) => {
+  return request.destination === 'style';
+}, new CacheFirst({
+  cacheName: 'styles',
+	plugins: [
+		new ExpirationPlugin({
+			maxAgeSeconds: 30 * 24 * 60 * 60,
+			maxEntries: 30,
+			purgeOnQuotaError: true,
+		}),
+		new CacheableResponsePlugin({
+      statuses: [0, 200]
+    }),
+	],
+}));
+
 const fontRoute = new Route(({ request }) => {
-	return request.destination === 'image'
+	return request.destination === 'font'
 }, new StaleWhileRevalidate({
-	cacheName: 'Images',
+	cacheName: 'Content',
 	plugins: [
 		new ExpirationPlugin({
 			maxAgeSeconds: 120 * 24 * 60 * 60,
@@ -64,6 +105,7 @@ const fontRoute = new Route(({ request }) => {
     }),
 	],
 }));
+
 
 // Set default caching strategy for everything else.
 setDefaultHandler(new StaleWhileRevalidate());
@@ -99,3 +141,11 @@ setCatchHandler(({event}) => {
       return Response.error();
   }
 });
+
+
+// Register routes
+registerRoute(contentRoute);
+registerRoute(imageRoute);
+registerRoute(scriptsRoute);
+registerRoute(stylesRoute);
+registerRoute(fontRoute);

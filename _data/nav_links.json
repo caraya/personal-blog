@@ -9,14 +9,14 @@
 	},
 	{
 		"title": "Patterns",
-		"path": "https://patterns.rivendellweb.net"
+		"url": "https://patterns.rivendellweb.net/"
 	},
 	{
 		"title": "Projects",
-		"path": "https://projects.rivendellweb.net"
+		"url": "https://projects.rivendellweb.net"
 	},
 	{
-		"title": "Repo",
+		"title": "Blog Repo",
 		"url": "https://github.com/caraya/personal-blog"
 	}
 ]

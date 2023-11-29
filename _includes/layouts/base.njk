@@ -10,8 +10,7 @@
     <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
     <link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}">
     <link rel="apple-touch-icon" href="/images/icon-192x192.png"/>
-    <link
-    rel="manifest" href="manifest.json"> {#- Learn more about bundles: https://github.com/11ty/eleventy-plugin-bundle #}
+    <link rel="manifest" href="/manifest.json"> {#- Learn more about bundles: https://github.com/11ty/eleventy-plugin-bundle #}
     <link
     rel="stylesheet" media="screen" href="/css/index.css"/> {# add prism.js stylesheets unconditionally #}
     <link rel="stylesheet" media="screen" href="/css/prism-solarizedlight.css"/>
@@ -54,12 +53,11 @@
         {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
       </header>
       <nav id="nav-top-menu-container">
-				{% import "_nav.njk" as nav with context %}
-				<ul class="nav-top-menu">
-					{{ nav.render(nav_links, "nav-top-menu-container") }}
-				</ul>
-			</nav>
-
+        {% import "_nav.njk" as nav with context %}
+        <ul class="nav-top-menu">
+          {{ nav.render(nav_links, "nav-top-menu-container") }}
+        </ul>
+      </nav>
       <main id="skip">
         {{ content | safe }}
       </main>
@@ -68,33 +66,17 @@
     <!-- Current page: {{ page.url | htmlBaseUrl }} -->
     <!-- Configure and load Service Worker -->
     <script type="module">
-      // This code sample uses features introduced in Workbox v6.
-      import {Workbox} from 'https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-window.prod.mjs';
-      if ('serviceWorker' in navigator) {
-        const wb = new Workbox('/sw.js');
-        let registration;
-        const showSkipWaitingPrompt = async (event) => {
-          // Assuming the user accepted the update, set up a listener that will reload the page as soon as the previously waiting
-          // service worker has taken control.
-          wb.addEventListener('controlling', () => {
-            // At this point, reloading will ensure that the current tab is loaded under the control of the new service worker.
-            // Depending on your web app, you may want to auto-save or persist transient state before triggering the reload.
-            window.location.reload();
+      // Test if service workers are supported
+      if ('serviceWorker' in navigator) { // Attempt to register it
+        navigator
+          .serviceWorker
+          .register('/sw.js')
+          .then(function () { // Success Message
+            console.log('ServiceWorker succesfully registered');
+          })
+          .catch(function (err) { // Error Message
+            console.log('ServiceWorker registration failed: ', err);
           });
-          // When `event.wasWaitingBeforeRegister` is true, a previously updated service worker is still waiting. You may want to
-          // customize the UI prompt accordingly. This code assumes your app has a promptForUpdate() method, which returns true if
-          // the user wants to update. Implementing this is app-specific; some examples are:
-          // https://open-ui.org/components/alert.research or https://open-ui.org/components/toast.research
-          const updateAccepted = await confirm('Reload window?');
-          if (updateAccepted) {
-            wb.messageSkipWaiting();
-          }
-        };
-        // Add an event listener to detect when the registered service worker has installed but is waiting to activate.
-        wb.addEventListener('waiting', (event) => {
-          showSkipWaitingPrompt(event);
-        });
-        wb.register();
       }
     </script>
   </body>

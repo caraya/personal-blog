@@ -1,95 +1,97 @@
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-sw.js');
+/* eslint require-jsdoc: "off",  max-len: "off", new-cap: "off" */
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.0.2/workbox-sw.js');
 
 const {precacheAndRoute} = workbox.precaching;
-const {Route, registerRoute, setDefaultHandler, setCatchHandler} = workbox.routing;
+const {registerRoute, setDefaultHandler, setCatchHandler} = workbox.routing;
 const {StaleWhileRevalidate, CacheFirst} = workbox.strategies;
+const {CacheableResponsePlugin} = workbox.cacheableResponse;
 const {ExpirationPlugin} = workbox.expiration;
-// Testing this plugin
-import {CacheableResponsePlugin} from 'workbox-cacheable-response';
 
-addEventListener('message', (event) => {
-  if (event.data && event.data.type === 'SKIP_WAITING') {
-    self.skipWaiting();
-  }
-});
+precacheAndRoute([{"revision":"68ca620d13652059a3f5ee53b6be4d12","url":"index.html"},{"revision":"289697e966c649891a57a2088cf4d9ac","url":"404.html"},{"revision":"59f69645bf824f69662bc99e646d3b0c","url":"offline.html"},{"revision":"abcbe11d1f0d578a3abf5538241bc45a","url":"fonts/Recursive.woff2"},{"revision":"6d1d484f1b90bb2029232894f362d2a7","url":"css/index.css"},{"revision":"ed61dda927f58a50adbea133e8adeff0","url":"images/cropped-Long_Room_Interior_Trinity_College_Dublin_Ireland.webp"}]);
 
-precacheAndRoute([{"revision":"54f2e5bdcec42323655a7ce45c190514","url":"index.html"},{"revision":"f79c9a3e2ae205a6d1ef18b1643f8537","url":"404.html"},{"revision":"3064f70ea145ac7569bc8bb4d0af6108","url":"offline.html"},{"revision":"abcbe11d1f0d578a3abf5538241bc45a","url":"fonts/Recursive.woff2"},{"revision":"6641cce3af49dfbffd7ff8bf9e2443b1","url":"css/index.css"},{"revision":"ed61dda927f58a50adbea133e8adeff0","url":"images/cropped-Long_Room_Interior_Trinity_College_Dublin_Ireland.webp"}]);
+registerRoute(({url}) => url.endsWith(['html', 'htm', 'php']),
+  new CacheFirst({
+    cacheName: 'Content',
+    plugins: [
+      new ExpirationPlugin({
+        maxAgeSeconds: 30 * 24 * 60 * 60,
+        maxEntries: 30,
+        purgeOnQuotaError: true,
+      }),
+    ],
+  })
+);
 
-// Handle HTML documents
-const contentRoute = new Route(({ request }) => {
-	return request.destination === 'document'
-}, new StaleWhileRevalidate({
-	cacheName: 'Content',
-	plugins: [
-		new ExpirationPlugin({
-			maxAgeSeconds: 120 * 24 * 60 * 60,
-			purgeOnQuotaError: true,
-		}),
-	],
-}));
+registerRoute(({url}) => url.endsWith('css'),
+  new StaleWhileRevalidate({
+    cacheName: 'CSS Styles',
+    plugins: [
+      new ExpirationPlugin({
+        magAgeSeconds: 30 * 24 * 60 * 60,
+        maxEntries: 30,
+        purgeOnQuotaError: true,
+      }),
+    ],
+  })
+);
 
-// handle images
-const imageRoute = new Route(({ request }) => {
-  return request.destination === 'image'
-}, new CacheFirst({
-  cacheName: 'images',
-	plugins: [
-		new ExpirationPlugin({
-			maxAgeSeconds: 120 * 24 * 60 * 60,
-			purgeOnQuotaError: true,
-		}),
-	],
-}));
+registerRoute(({url}) => url.endsWith('js') ||
+url.endsWith('mjs'),
+  new CacheFirst({
+    cacheName: 'scripts',
+    plugins: [
+      new CacheableResponsePlugin({
+        statuses: [0, 200],
+      }),
+      new ExpirationPlugin({
+        maxAgeSeconds: 30 * 24 * 60 * 60,
+        maxEntries: 30,
+        purgeOnQuotaError: true,
+      }),
+    ],
+  })
+);
 
-// Handle scripts:
-const scriptsRoute = new Route(({ request }) => {
-  return request.destination === 'script';
-}, new CacheFirst({
-  cacheName: 'scripts',
-	plugins: [
-		new ExpirationPlugin({
-			maxAgeSeconds: 30 * 24 * 60 * 60,
-			maxEntries: 30,
-			purgeOnQuotaError: true,
-		}),
-		new CacheableResponsePlugin({
-      statuses: [0, 200]
-    }),
-	],
-}));
+registerRoute(({url}) => url.endsWith([
+	'woff',
+	'woff2'
+]),
+  new CacheFirst({
+    cacheName: 'local-fonts',
+    plugins: [
+      new CacheableResponsePlugin({
+        statuses: [0, 200],
+      }),
+      new ExpirationPlugin({
+        maxAgeSeconds: 30 * 24 * 60 * 60,
+        maxEntries: 30,
+        purgeOnQuotaError: true,
+      }),
+    ],
+  })
+);
 
-// Handle styles:
-const stylesRoute = new Route(({ request }) => {
-  return request.destination === 'style';
-}, new CacheFirst({
-  cacheName: 'styles',
-	plugins: [
-		new ExpirationPlugin({
-			maxAgeSeconds: 30 * 24 * 60 * 60,
-			maxEntries: 30,
-			purgeOnQuotaError: true,
-		}),
-		new CacheableResponsePlugin({
-      statuses: [0, 200]
-    }),
-	],
-}));
-
-const fontRoute = new Route(({ request }) => {
-	return request.destination === 'font'
-}, new StaleWhileRevalidate({
-	cacheName: 'Content',
-	plugins: [
-		new ExpirationPlugin({
-			maxAgeSeconds: 120 * 24 * 60 * 60,
-			purgeOnQuotaError: true,
-		}),
-    new CacheableResponsePlugin({
-      statuses: [0, 200]
-    }),
-	],
-}));
-
+registerRoute(({url}) => url.endsWith([
+  'png',
+  'jpg',
+  'webp',
+  'avif',
+  'heic',
+  'svg']),
+  new CacheFirst({
+    cacheName: 'images',
+    plugins: [
+      new CacheableResponsePlugin({
+        statuses: [0, 200],
+      }),
+      new ExpirationPlugin({
+        maxAgeSeconds: 30 * 24 * 60 * 60,
+        maxEntries: 30,
+        purgeOnQuotaError: true,
+      }),
+    ],
+  })
+);
 
 // Set default caching strategy for everything else.
 setDefaultHandler(new StaleWhileRevalidate());
@@ -125,11 +127,3 @@ setCatchHandler(({event}) => {
       return Response.error();
   }
 });
-
-
-// Register routes
-registerRoute(contentRoute);
-registerRoute(imageRoute);
-registerRoute(scriptsRoute);
-registerRoute(stylesRoute);
-registerRoute(fontRoute);
