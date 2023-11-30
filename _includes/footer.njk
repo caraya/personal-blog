@@ -1,12 +1,12 @@
 <footer class="footer">
-
 	<section class="left">
-		<h4>Social Me</h4>
+		<h4>Social</h4>
 		{%- include "_social.njk" -%}
 	</section>
 
 	<section class="right">
-		<h4>About me</h4>
+		{% import "_nav.njk" as nav with context %}
+		<h4>Links</h4>
 		{{ nav.render(nav_links, "footer") }}
 	</section>
 

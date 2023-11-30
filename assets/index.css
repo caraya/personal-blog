@@ -1,8 +1,8 @@
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css")
-layer(icons);
-
 @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css")
 layer(reset);
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css")
+layer(icons);
 
 @layer typography {
   /* Font Import */
@@ -137,6 +137,7 @@ layer(reset);
     --icon-stopwatch: "\F597";
     --icon-tags: "\F5B2";
   }
+
 }
 
 @layer defaults {
@@ -550,7 +551,8 @@ layer(reset);
     text-decoration: none;
   }
 
-  .nav-top-menu {
+  .nav-top-menu,
+	.nav-footer-menu {
     list-style: none;
 
     display: flex;
@@ -680,13 +682,7 @@ layer(reset);
     height: auto;
   }
 
-  .footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    /* color: var(--color-white);
-    background: var(--color-black); */
-  }
+
 
   @media (prefers-color-scheme: dark) {
     :root {
@@ -716,77 +712,6 @@ layer(reset);
     thead tr {
       background: var(--color-white);
       color: var(--color-black);
-    }
-  }
-
-  @media (34rem < width <= 50rem) {
-    /* Set the grid container dimensions */
-    .grid-container {
-      display: grid;
-      grid-template-columns: 1fr 2fr 2fr 1fr;
-      gap: 1rem;
-    }
-
-    img.full-bleed-header {
-      grid-column: 1/-1;
-      max-width: 100%;
-      width: 100% !important;
-      height: auto;
-    }
-
-    /* Grid placement */
-    header {
-      grid-column: 2/4;
-    }
-
-    .nav-top-menu {
-      grid-column: 2/4;
-    }
-
-    main {
-      grid-column: 2/4;
-    }
-
-    footer {
-      grid-column: 1/-1;
-    }
-  }
-
-  /* smaller mobile devices */
-  @media screen and (width <= 30rem) {
-    /* Play with the heading size values here*/
-    :root {
-      --base-font-size: 1.5;
-      --h1-size: 1.526;
-      --h2-size: 1.12;
-      --h3-size: 0.977;
-      --h4-size: 0.782;
-      --h5-size: 0.625;
-    }
-
-    img.full-bleed-header {
-      width: 100% !important;
-    }
-
-    .grid-container {
-      display: block;
-      width: 80vw;
-      margin: 0 auto;
-    }
-
-    /* .nav-top-menu {
-      display: flex;
-      flex-flow: row;
-    } */
-
-    .continue-reading {
-      align-self: center;
-    }
-
-    .footer {
-      display: block;
-      color: var(--color-black);
-      background: var(--color-white);
     }
   }
 
@@ -911,7 +836,108 @@ layer(reset);
     grid-column: 2/8;
   }
 
-  footer {
-    grid-column: 1/-1;
+	footer {
+		grid-column: 2/-2;
+	}
+
+	@media (34rem < width <= 50rem) {
+    /* Set the grid container dimensions */
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 2fr 2fr 1fr;
+      gap: 1rem;
+    }
+
+    img.full-bleed-header {
+      grid-column: 1/-1;
+      max-width: 100%;
+      width: 100% !important;
+      height: auto;
+    }
+
+    /* Grid placement */
+    header {
+      grid-column: 2/4;
+    }
+
+    .nav-top-menu {
+      grid-column: 2/4;
+    }
+
+    main {
+      grid-column: 2/4;
+    }
+
+    footer {
+      grid-column: 1/-1;
+    }
+  }
+
+  /* smaller mobile devices */
+  @media screen and (width <= 30rem) {
+    /* Play with the heading size values here*/
+    :root {
+      --base-font-size: 1.5;
+      --h1-size: 1.526;
+      --h2-size: 1.12;
+      --h3-size: 0.977;
+      --h4-size: 0.782;
+      --h5-size: 0.625;
+    }
+
+    img.full-bleed-header {
+      width: 100% !important;
+    }
+
+    .grid-container {
+      display: block;
+      width: 80vw;
+      margin: 0 auto;
+    }
+
+    .nav-top-menu {
+      display: flex;
+      flex-flow: row wrap;
+			margin-block-start: 0;
+			margin-bloc-end: 1rem;
+    }
+
+    .continue-reading {
+      align-self: center;
+    }
   }
 }
+
+@layer footer {
+  footer {
+    grid-column: 2/-2;
+
+		display: flex;
+		flex-flow: row;
+		justify-content: space-between;
+
+		margin-block-end: 4rem;
+
+		section.social-container {
+			display: flex;
+			gap: 1.25em;
+
+			a {
+				text-decoration: none;
+			}
+
+			& i {
+				display: inline-flex;
+				gap: .5em;
+				font-size: 1.25em;
+				border-radius: 50%;
+				padding: .3em;
+				box-sizing: content-box;
+				background: var(--color);
+				color: white;
+			}
+
+		}
+	}
+}
+

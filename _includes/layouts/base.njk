@@ -10,7 +10,8 @@
     <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
     <link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}">
     <link rel="apple-touch-icon" href="/images/icon-192x192.png"/>
-    <link rel="manifest" href="/manifest.json"> {#- Learn more about bundles: https://github.com/11ty/eleventy-plugin-bundle #}
+    <link
+    rel="manifest" href="/manifest.json"> {#- Learn more about bundles: https://github.com/11ty/eleventy-plugin-bundle #}
     <link
     rel="stylesheet" media="screen" href="/css/index.css"/> {# add prism.js stylesheets unconditionally #}
     <link rel="stylesheet" media="screen" href="/css/prism-solarizedlight.css"/>
@@ -36,6 +37,7 @@
     {% endif %}
   </head>
   <body>
+    {% import "_nav.njk" as nav with context %}
     <a href="#skip" class="visually-hidden">Skip to main content</a>
     <div class="grid-container">
       <img
@@ -52,8 +54,7 @@
         </h1>
         {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
       </header>
-      <nav id="nav-top-menu-container">
-        {% import "_nav.njk" as nav with context %}
+      <nav class="nav-container">
         <ul class="nav-top-menu">
           {{ nav.render(nav_links, "nav-top-menu-container") }}
         </ul>
@@ -61,7 +62,27 @@
       <main id="skip">
         {{ content | safe }}
       </main>
-      {# {% include "footer.njk" %} #}
+      <footer>
+        <div>
+					<section class="social">
+						<h4>Social Me</h4>
+						{%- include "_social.njk" -%}
+        	</section>
+
+					<section classs="latest">
+						<h4>Latest Posts</h4>
+						{%- include "_latest.njk" -%}
+					</section>
+				</div>
+        <nav id="nav">
+          <h4>About me</h4>
+					<div class="nav-container">
+						<ul class="nav-footer-menu">
+          		{{ nav.render(nav_links, "footer") }}
+						</ul>
+					</div>
+        </nav>
+      </footer>
     </div>
     <!-- Current page: {{ page.url | htmlBaseUrl }} -->
     <!-- Configure and load Service Worker -->
