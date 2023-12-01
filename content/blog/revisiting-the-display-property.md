@@ -11,7 +11,7 @@ The `display` property has been around for a long time but its definition has ev
 >
 > Source: [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/display)
 
-Different values for the `display` property
+CSS 2 made a lot of implicit assumptions when dealing with the `display` property. We can keep using them or we can adopt the more explicit behavior from the [CSS Display Module Level 3](https://drafts.csswg.org/css-display/) draft specification where you can use values for both inside and outside display values.
 
 ## display-inside and display-outside
 
