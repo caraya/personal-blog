@@ -875,7 +875,6 @@ layer(icons);
 
   /* smaller mobile devices */
   @media screen and (width <= 30rem) {
-    /* Play with the heading size values here*/
     :root {
       --base-font-size: 1.5;
       --h1-size: 1.526;
@@ -945,10 +944,18 @@ layer(icons);
 		footer {
 			display: flex;
 			flex-flow: column;
-		}
-		.social-posts {
-			display: flex;
-			flex-flow: column;
+
+			.social-posts {
+				display: flex;
+				flex-flow: column;
+				justify-content: flex-start;
+			}
+
+			.nav-footer-menu {
+				display: flex;
+				flex-flow: column wrap;
+				align-items: flex-start;
+			}
 		}
 	}
 }
