@@ -1,7 +1,7 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.0.2/workbox-sw.js');
 
 const {precacheAndRoute} = workbox.precaching;
-const {registerRoute, setDefaultHandler, setCatchHandler} = workbox.routing;
+const {Route, registerRoute, setDefaultHandler, setCatchHandler} = workbox.routing;
 const {StaleWhileRevalidate, CacheFirst} = workbox.strategies;
 const {CacheableResponsePlugin} = workbox.cacheableResponse;
 const {ExpirationPlugin} = workbox.expiration;
