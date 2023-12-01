@@ -1,0 +1,5 @@
+# Algolia-Crawler-Verif: EBFEAF740CB474B7
+
+User-agent: *
+Allow: /
+Sitemap: https://publishing-project.rivendellweb.net/sitemap.xml
