@@ -899,7 +899,7 @@ layer(icons);
       display: flex;
       flex-flow: row wrap;
 			margin-block-start: 0;
-			margin-bloc-end: 1rem;
+			margin-block-end: 1rem;
     }
 
     .continue-reading {
@@ -937,6 +937,18 @@ layer(icons);
 				color: white;
 			}
 
+		}
+	}
+
+  /* smaller mobile devices */
+  @media screen and (width <= 30rem) {
+		footer {
+			display: flex;
+			flex-flow: column;
+		}
+		.social-posts {
+			display: flex;
+			flex-flow: column;
 		}
 	}
 }

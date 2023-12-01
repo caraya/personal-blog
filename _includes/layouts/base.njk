@@ -63,7 +63,7 @@
         {{ content | safe }}
       </main>
       <footer>
-        <div>
+        <div class="social-posts">
 					<section class="social">
 						<h4>Social Me</h4>
 						{%- include "_social.njk" -%}
@@ -75,7 +75,7 @@
 					</section>
 				</div>
         <nav id="nav">
-          <h4>About me</h4>
+          <h4>Links</h4>
 					<div class="nav-container">
 						<ul class="nav-footer-menu">
           		{{ nav.render(nav_links, "footer") }}

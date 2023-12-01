@@ -1,15 +1,21 @@
 {
-	"twitter": {
-		"name": "Twitter",
-		"url": "http://twitter.com/elrond25",
-		"icon": "twitter",
-		"color": "#1DA1F2"
-	},
 	"github": {
 		"name": "GitHub",
 		"url": "https://github.com/caraya",
 		"icon": "github",
 		"color": "#333"
+	},
+	"codepen": {
+		"name": "CodePen",
+		"url": "https://codepen.io/caraya/",
+		"icon": "code",
+		"color": "#333"
+	},
+	"twitter": {
+		"name": "Twitter",
+		"url": "http://twitter.com/elrond25",
+		"icon": "twitter",
+		"color": "#1DA1F2"
 	},
 	"mastodon": {
 		"name": "Mastodon",
