@@ -8,6 +8,10 @@
 		"path": "about"
 	},
 	{
+		"title": "Search",
+		"path": "search"
+	},
+	{
 		"title": "Patterns",
 		"url": "https://patterns.rivendellweb.net/"
 	},

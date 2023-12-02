@@ -1,55 +1,17 @@
-<!doctype html>
-<html lang="{{ metadata.language }}">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title or metadata.title }}</title>
-    <meta
-    name="description" content="{{ description or metadata.description }}"> {#- Atom and JSON feeds included by default #}
-    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
-    <link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}">
-    <link
-    rel="manifest" href="/manifest.json"> {#- Learn more about bundles: https://github.com/11ty/eleventy-plugin-bundle #}
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css"/>
-    <script defer src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"></script>
-  </head>
-  <body>
-    <a href="#skip" class="visually-hidden">Skip to main content</a>
-    <div class="grid-container">
-      <img
-        class="full-bleed-header"
-        fetchpriority="high"
-        decoding="async"
-        src="/images/cropped-Long_Room_Interior_Trinity_College_Dublin_Ireland.webp"
-        alt=""/>
-      <header>
-        <h1>
-          <a href="/" class="home-link">{{ metadata.title }}</a>
-        </h1>
-        {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
-      </header>
-    </div>
-
+---
+layout: layouts/base.njk
+---
 		<div id="search"></div>
 
-    <!-- added for Algolia -->
-    <script type="text/javascript">
-			algoliasearchNetlify({
-				appId: '533NB4QJXX',
-				apiKey: '0cd62f229744d35fb517b13466758622',
-				siteId: '26351df2-c0d4-4526-950c-3866501cb99d',
-				branch: 'main',
-				selector: 'div#search',
-			});
-      {# algoliasearchNetlify({
-				appId: 'Y6ZTOOIEPA',
-				apiKey: 'f26ad70fb6f0c36f099f5b507e750da6',
-				siteId: '26351df2-c0d4-4526-950c-3866501cb99d',
-				branch: 'main',
-				selector: 'div#search',
-			}); #}
-    </script>
-  </body>
-</html>
+<!-- added for Algolia -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"></script>
+<script type="text/javascript">
+algoliasearchNetlify({
+	appId: '533NB4QJXX',
+	apiKey: '0cd62f229744d35fb517b13466758622',
+	siteId: '26351df2-c0d4-4526-950c-3866501cb99d',
+	branch: 'main',
+	selector: 'div#search',
+});
+</script>

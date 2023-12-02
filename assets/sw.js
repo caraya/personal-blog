@@ -1,13 +1,15 @@
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.0.2/workbox-sw.js');
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-sw.js');
 
-const {precacheAndRoute} = workbox.precaching;
+const {matchPrecache, precacheAndRoute} = workbox.precaching;
 const {Route, registerRoute, setDefaultHandler, setCatchHandler} = workbox.routing;
 const {StaleWhileRevalidate, CacheFirst} = workbox.strategies;
-const {CacheableResponsePlugin} = workbox.cacheableResponse;
 const {ExpirationPlugin} = workbox.expiration;
+// Testing this plugin
+const {CacheableResponsePlugin} = workbox.cacheableResponse;
 
 precacheAndRoute(self.__WB_MANIFEST);
 
+// Handle HTML documents
 const contentRoute = new Route(({ request }) => {
 	return request.destination === 'document'
 }, new StaleWhileRevalidate({
@@ -50,10 +52,27 @@ const scriptsRoute = new Route(({ request }) => {
 	],
 }));
 
+// Handle styles:
+const stylesRoute = new Route(({ request }) => {
+  return request.destination === 'style';
+}, new CacheFirst({
+  cacheName: 'styles',
+	plugins: [
+		new ExpirationPlugin({
+			maxAgeSeconds: 30 * 24 * 60 * 60,
+			maxEntries: 30,
+			purgeOnQuotaError: true,
+		}),
+		new CacheableResponsePlugin({
+      statuses: [0, 200]
+    }),
+	],
+}));
+
 const fontRoute = new Route(({ request }) => {
-	return request.destination === 'image'
+	return request.destination === 'font'
 }, new StaleWhileRevalidate({
-	cacheName: 'Images',
+	cacheName: 'Content',
 	plugins: [
 		new ExpirationPlugin({
 			maxAgeSeconds: 120 * 24 * 60 * 60,
@@ -64,6 +83,7 @@ const fontRoute = new Route(({ request }) => {
     }),
 	],
 }));
+
 
 // Set default caching strategy for everything else.
 setDefaultHandler(new StaleWhileRevalidate());
@@ -99,3 +119,11 @@ setCatchHandler(({event}) => {
       return Response.error();
   }
 });
+
+
+// Register routes
+registerRoute(contentRoute);
+registerRoute(imageRoute);
+registerRoute(scriptsRoute);
+registerRoute(stylesRoute);
+registerRoute(fontRoute);

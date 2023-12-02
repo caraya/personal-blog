@@ -13,14 +13,8 @@ How will this affect AV1 and AVIF adoption is unknown at this time.
 
 | Format | Initial Release | Type | Encoder to Use | Notes |
 | --- | --- | --- | --- | --- |
-| HEIC | 2013 | Lossless and Lossy | [Image Magick](https://imagemagick.org/) or [libheif](https://github.com/strukturag/libheif) | H265 compression in HEIF container  
-  
-Fully supported in Apple Products (macOS and iOS) |
-| AVIF | 2019 | Lossless and Lossy | [libavif](https://github.com/AOMediaCodec/libavif) | AV1 compression in HEIF container  
-  
-Google has published an intent to ship a native AVIF decoder in Chrome. See [Chrome Status entry](https://chromestatus.com/feature/4905307790639104)  
-  
-Firefox has a basic implementation behind a flag. See [Bugzilla Bug 1625363](https://bugzilla.mozilla.org/show_bug.cgi?id=1625363) |
+| HEIC | 2013 | Lossless and Lossy | [Image Magick](https://imagemagick.org/) or [libheif](https://github.com/strukturag/libheif) | H265 compression in HEIF container<br><br>Fully supported in Apple Products (macOS and iOS) |
+| AVIF | 2019 | Lossless and Lossy | [libavif](https://github.com/AOMediaCodec/libavif) | AV1 compression in HEIF container<br><br>Google has published an intent to ship a native AVIF decoder in Chrome. See [Chrome Status entry](https://chromestatus.com/feature/4905307790639104)<br><br>Firefox has a basic implementation behind a flag. See [Bugzilla Bug 1625363](https://bugzilla.mozilla.org/show_bug.cgi?id=1625363) |
 
 ## Getting started
 
@@ -72,9 +66,9 @@ In a Mac, Homebrew provides the dependencies we need to run libavif, but not lib
 
 The dependecies we need are:
 
-- **aom** provides an encoder and a decoder
-- **dav1d** provides a decoder
-- **rav1e** provides an encoder
+* **aom** provides an encoder and a decoder
+* **dav1d** provides a decoder
+* **rav1e** provides an encoder
 
 To install the dependecies, run the following command
 
@@ -161,7 +155,7 @@ heif-enc --params
 
 For a default install using x265 it will produce the following output.
 
-```
+```text
 Parameters for encoder `x265 HEVC encoder (3.4)`:
   quality, default=50, [0;100]
   lossless, default=false
@@ -248,9 +242,9 @@ So, for the most part, it's OK to use the libheif default preset. We'll do addit
 
 AVIF presents different challenges. We begin by considering the three different encoders:
 
-- Libheif (with a special flag)
-- AOM for libavif (encoder and decoder)
-- Rav1e for libavif (encoder only)
+* Libheif (with a special flag)
+* AOM for libavif (encoder and decoder)
+* Rav1e for libavif (encoder only)
 
 I wouldn't expect major differences using the three codecs but it's always good to test and be sure. Using libheif for all our tests and future encodings reduces the number of applications we have to use but, if we can get better performance in terms of encoding time and quality then the additional software may be warranted.
 
@@ -290,7 +284,7 @@ As with WebP, PNG, and JPG, AVIF and HEIF have a quality setting that will allow
 
 AVIF doesn't have a straight quality value like HEIF but it has the following elements that, as far as I know, produce the same effect as the quality setting in libheif
 
-```
+```text
 --min Q: Set min quantizer for color
 (0-63, where 0 is lossless)
 --max Q: Set max quantizer for color
