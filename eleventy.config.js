@@ -41,11 +41,12 @@ module.exports = function (eleventyConfig) {
 	// For example, `./public/css/` ends up in `_site/css/`
 	eleventyConfig.addPassthroughCopy({
 		"./public/": "/",
-		"./content/admin/": "/admin",
 		"./assets/manifest.json": "/manifest.json",
 		"./node_modules/lite-youtube-embed/src/lite-yt-embed.css": "/css/lite-yt-embed.css",
 		"./node_modules/lite-youtube-embed/src/lite-yt-embed.js": "/js/lite-yt-embed.js",
-		"./node_modules/prismjs/themes/prism-solarizedlight.css": "/css/prism-solarizedlight.css"
+		"./node_modules/prismjs/themes/prism-solarizedlight.css": "/css/prism-solarizedlight.css",
+		"./assets/algoliasearchNetlify.css": "/css/algoliasearchNetlify.css",
+		"./assets/algoliasearchNetlify.js": "/js/algoliasearchNetlify.js",
 	});
 
 	// Run Eleventy when these files change:
