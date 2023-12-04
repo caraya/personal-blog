@@ -42,38 +42,37 @@ These one-value displays have implicity defaults.
 These keywords specify the element's outer display type, which is essentially its role in flow layout:
 
 block
-: The element generates a block box, generating line breaks both before and after the element when in the normal flow.
+: The element generates a block box, with line breaks both before and after the element when in the normal flow.
 
 inline
-: The element generates one or more inline boxes that do not generate line breaks before or after themselves. In normal flow, the next element will be on the same line if there is space.
+: The element generates one or more inline boxes **without** line breaks before or after themselves. In normal flow, the next element will be on the same line if there is space.
 
-!!! note
-In browsers that support two-value syntax, `inline` and `block` are equivalent to `inline flow` and `block flow`.  If you specify an element to be block, you expect the children of the element to participate in block and inline normal flow layouts.
+!!! note **Note:**
+In browsers that support two-value syntax, `inline` and `block` are equivalent to `inline flow` and `block flow`.  If you specify an element to be block, you expect the children of the element to participate in block and inline flow layouts.
 !!!
 
 ### Display inside
 
-These keywords specify the element's inner display type, which defines the type of formatting context that its contents are laid out in (assuming it is a non-replaced element):
+These display inside keywords specify the element's inner display type, which defines the type of formatting context that its contents are laid out in:
 
 flow
-: The element lays out its contents using flow layout (block-and-inline layout).
-: If its outer display type is inline or run-in, and it is participating in a block or inline formatting context, then it generates an inline box. Otherwise it generates a block container box.
-: Depending on the value of other properties (such as position, float, or overflow) and whether it is itself participating in a block or inline formatting context, it either establishes a new block formatting context (BFC) for its contents or integrates its contents into its parent formatting context.
+: The element lays out its contents using flow layout.
+: If its outer display type is `inline` or `run-in`, and it is participating in a block or inline formatting context, then it generates an inline box. Otherwise it generates a block container box.
+: Depending on the value of other properties (`position`, `float`, or `overflow`) and whether it is participating in a block or inline formatting context, it either establishes a new [block formatting context (BFC)](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context) for its contents or integrates its contents into its parent formatting context.
 
 flow-root
 : The element generates a block box that establishes a new block formatting context, defining where the formatting root lies.
 
 table
-: These elements behave like HTML `table` elements. It defines a block-level box.
+: defines a block-level box that behaves like HTML `table` elements. It .
 
 flex
-: The element behaves like a block-level element and lays out its content according to the flexbox model.
+: The element behaves like a block-level element
+: Lays out its content using the [flexbox model](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout).
 
 grid
-: The element behaves like a block-level element and lays out its content according to the grid model.
-
-ruby
-: The element behaves like an inline-level element and lays out its content according to the ruby formatting model. It behaves like the corresponding HTML [ruby](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ruby) elements.
+: The element behaves like a block-level element
+: Lays out its content according to the [grid model](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout).
 
 !!! note
 Browsers that support the two-value display syntax will treat `flex` and `grid` as `box flex` and `box grid`.  If we're using grid and flex, we expect them to create block-level boxes.
@@ -81,25 +80,34 @@ Browsers that support the two-value display syntax will treat `flex` and `grid` 
 
 ### Legacy precomposed values
 
-CSS 2 used a single-keyword, precomposed syntax for the display property, requiring separate keywords for block-level and inline-level variants of the same layout mode.
+CSS 2 uses a single-keyword, precomposed syntax for the display property, requiring separate keywords for block-level and inline-level variants of the same layout mode.
+
+This is what most developers are used to in addition to `inline` and `block`.
 
 inline-block
-: The element generates a block box that will be flowed with surrounding content as if it were a single inline box (behaving much like a replaced element would).
+: The element generates a block box that will be flowed with surrounding content as if it were a single inline box.
 : It is equivalent to inline flow-root.
 
 inline-table
-: The inline-table value does not have a direct mapping in HTML. It behaves like an HTML `table` element, but as an inline box, rather than a block-level box. Inside the table box is a block-level context.
-: It is equivalent to inline table.
+: The inline-table value does not have a direct mapping in HTML.
+: It behaves like an HTML `table` element, but as an inline box, rather than a block-level box. Inside the table box is a block-level context.
+: ***It is equivalent to inline table***.
 
 inline-flex
 : The element behaves like an inline-level element and lays out its content according to the flexbox model.
-: It is equivalent to inline flex.
+: ***It is equivalent to inline flex***.
 
 inline-grid
 : The element behaves like an inline-level element and lays out its content according to the grid model.
-: It is equivalent to inline grid.
+: ***It is equivalent to inline grid***.
 
 ### Single or double values: which one to use?
+
+Most of the time the single value properties will be fine. They are supported everywhere and they usually do what we want.
+
+It is only when we deliberately want to deviate from the default that using display with two explicit values comes in handy.
+
+Not all variants of the two-value display property are supported in all browsers. Look at the [support matrix](https://developer.mozilla.org/en-US/docs/Web/CSS/display#browser_compatibility) in MDN.
 
 ## Links and References
 

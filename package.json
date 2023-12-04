@@ -1,61 +1,65 @@
 {
-	"name": "publishing-project-blog",
-	"version": "1.0.0",
-	"description": "Preparing to move my blog from WordPress to 11ty",
-	"scripts": {
-		"postcss:build": "postcss --verbose assets/index.css -o public/css/index.css",
-		"postcss:watch": "npx postcss --verbose -w assets/index.css -o public/css/index.css",
-		"build": "NODE_ENV=production rm -rf **/.DS_Store && npx @11ty/eleventy --incremental",
-		"build:dev": "npx @11ty/eleventy --incremental",
-		"workbox": "npx workbox-cli injectManifest ./workbox-config.js",
-		"start": "npx @11ty/eleventy --serve --quiet",
-		"debug": "DEBUG=Eleventy* npx @11ty/eleventy",
-		"debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
-		"benchmark": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
-	},
-	"author": {
-		"name": "Carlos Araya",
-		"email": "carlos.araya@gmail.com",
-		"url": "https://publishing-project.rivendellweb.net"
-	},
-	"license": "MIT",
-	"engines": {
-		"node": ">=16"
-	},
-	"bugs": {
-		"url": "https://github.com/caraya/personal-blog/issues"
-	},
-	"homepage": "https://github.com/caraya/personal-blog#readme",
-	"dependencies": {
-		"@11ty/eleventy": "^2.0.1",
-		"@11ty/eleventy-img": "^3.1.1",
-		"@11ty/eleventy-navigation": "^0.3.5",
-		"@11ty/eleventy-plugin-bundle": "^1.0.4",
-		"@11ty/eleventy-plugin-rss": "^1.2.0",
-		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-		"@11tyrocks/eleventy-plugin-emoji-readtime": "^1.0.1",
-		"@csstools/postcss-oklab-function": "^3.0.7",
-		"@kevingimbel/eleventy-plugin-mermaid": "^2.1.1",
-		"cloudinary": "^1.41.0",
-		"cssnano": "^6.0.1",
-		"dotenv": "^16.3.1",
-		"eleventy-plugin-automatic-noopener": "^2.0.2",
-		"eleventy-plugin-toc": "^1.1.5",
-		"lite-youtube-embed": "^0.3.0",
-		"luxon": "^3.3.0",
-		"markdown-it": "^13.0.2",
-		"markdown-it-admonition": "^1.0.4",
-		"markdown-it-anchor": "^8.6.7",
-		"markdown-it-attrs": "^4.1.6",
-		"markdown-it-deflist": "^2.1.0",
-		"markdown-it-footnote": "^3.0.3",
-		"markdown-it-image-figures": "^2.1.1",
-		"markdown-it-kbd-better": "^1.2.5",
-		"markdown-it-multimd-table": "^4.2.3",
-		"postcss": "^8.4.31",
-		"postcss-cli": "^10.1.0",
-		"postcss-preset-env": "^9.3.0",
-		"posthtml": "^0.16.6",
-		"prettier": "3.1.0"
-	}
+  "name": "publishing-project-blog",
+  "version": "1.0.0",
+  "description": "Preparing to move my blog from WordPress to 11ty",
+  "scripts": {
+    "postcss:build": "postcss --verbose assets/index.css -o public/css/index.css",
+    "postcss:watch": "npx postcss --verbose -w assets/index.css -o public/css/index.css",
+    "build": "NODE_ENV=production rm -rf **/.DS_Store && npx @11ty/eleventy --incremental",
+    "build:dev": "npx @11ty/eleventy --incremental",
+    "workbox": "npx workbox-cli injectManifest ./workbox-config.js",
+    "start": "npx @11ty/eleventy --serve --quiet",
+    "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
+    "debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
+    "benchmark": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
+  },
+  "author": {
+    "name": "Carlos Araya",
+    "email": "carlos.araya@gmail.com",
+    "url": "https://publishing-project.rivendellweb.net"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=16"
+  },
+  "bugs": {
+    "url": "https://github.com/caraya/personal-blog/issues"
+  },
+  "homepage": "https://github.com/caraya/personal-blog#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-img": "^3.1.1",
+    "@11ty/eleventy-navigation": "^0.3.5",
+    "@11ty/eleventy-plugin-bundle": "^1.0.4",
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "@11tyrocks/eleventy-plugin-emoji-readtime": "^1.0.1",
+    "@csstools/postcss-oklab-function": "^3.0.7",
+    "@kevingimbel/eleventy-plugin-mermaid": "^2.1.1",
+    "cloudinary": "^1.41.0",
+    "cssnano": "^6.0.1",
+    "dotenv": "^16.3.1",
+    "eleventy-plugin-automatic-noopener": "^2.0.2",
+    "eleventy-plugin-toc": "^1.1.5",
+    "lite-youtube-embed": "^0.3.0",
+    "luxon": "^3.3.0",
+    "markdown-it": "^13.0.2",
+    "markdown-it-admonition": "^1.0.4",
+    "markdown-it-anchor": "^8.6.7",
+    "markdown-it-attrs": "^4.1.6",
+    "markdown-it-deflist": "^2.1.0",
+    "markdown-it-footnote": "^3.0.3",
+    "markdown-it-image-figures": "^2.1.1",
+    "markdown-it-kbd-better": "^1.2.5",
+    "markdown-it-multimd-table": "^4.2.3",
+    "postcss": "^8.4.31",
+    "postcss-cli": "^10.1.0",
+    "postcss-preset-env": "^9.3.0",
+    "posthtml": "^0.16.6",
+    "prettier": "3.1.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.1",
+    "@types/node": "^20.10.2"
+  }
 }
