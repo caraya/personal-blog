@@ -1,6 +1,7 @@
 ---
 title: "Testing front-end code"
 date: 2024-01-08
+youtube: true
 tags:
   - JS
   - Testing
@@ -39,20 +40,17 @@ const { defineConfig, devices } = require('@playwright/test');
 // require('dotenv').config();
 ```
 
-We then use `defineConfig` inside `modules.exports` to define the full configuration. The first part sets the parameters for the testing.
+We use Common.js' `modules.exports` to export the the full configuration defined with `defineConfig`. The first part sets the parameters for the testing.
 
 | Option | Description |
-| --- | --- |
-| forbidOnly | Whether to exit with an error if any tests are marked as test.only. Useful on CI. |
-| fullyParallel | have all tests in all files to run in parallel. |
-| projects | Run tests in multiple configurations or on multiple browsers |
-| reporter | The reporter to use. See Test Reporters to learn more about which reporters are available.|
-| retries | The maximum number of retry attempts per test. See Test Retries to learn more about retries. |
+| :---: | --- |
 | testDir | Directory with the test files.
-| use | Options with use{} |
-| webServer | To launch a server during the tests, use the webServer option |
-| workers | The maximum number of concurrent worker processes to use for parallelizing tests. Can also be set as percentage of logical CPU cores, e.g. '50%'. See /Parallelism and sharding for more details. |
-
+| fullyParallel | have all tests in all files to run in parallel. See [Parallelism and sharding](https://playwright.dev/docs/test-parallel) for more details. |
+| retries | The maximum number of retry attempts per test. See Test Retries to learn more about retries. |
+| forbidOnly | Whether to exit with an error if any tests are marked as test.only. Useful on CI.<br><br>In the example we use a ternary operator to only set value to true if we're running on a CI environment|
+| reporter | The reporter to use. See [Test Reporters](https://playwright.dev/docs/test-reporters) to learn more about available reporters.|
+| workers | The maximum number of concurrent worker processes to use for parallelizing tests. Can also be set as percentage of logical CPU cores, e.g. '50%'.<br><br>In this example we use a ternary operator to set the workers to 2 when working in CI environments and to 0 or the undefined value otherwise.<br><br>See [Parallelism and sharding](https://playwright.dev/docs/test-parallel) for more information.|
+| use | Options for the `use{}` global configuration test. |
 
 ```js
 module.exports = defineConfig({
@@ -64,33 +62,15 @@ module.exports = defineConfig({
   reporter: 'html',
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: 'http://127.0.0.1:3000',
+    baseURL: 'http://127.0.0.1:8080',
     trace: 'on-first-retry',
   },
 ```
 
+The `projects` section, as specified below, tells Playwright what browsers to use when running the tests. The example includes desktop and mobile browsers.
+
 ```js
   projects: [
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
-    },
-
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
-
-    /* Test against mobile viewports. */
-    {
-      name: 'Mobile Chrome',
-      use: { ...devices['Pixel 5'] },
-    },
-    {
-      name: 'Mobile Safari',
-      use: { ...devices['iPhone 12'] },
-    },
-
     /* Test against branded browsers. */
     {
       name: 'Microsoft Edge',
@@ -104,9 +84,23 @@ module.exports = defineConfig({
       name: 'Safari',
       use: { ...devices['Desktop Safari'] },
     },
-
+		{
+			name: "Firefox",
+			use: {...devices['Desktop Firefox']}
+		},
+		/* Test against mobile viewports. */
+    {
+      name: 'Mobile Chrome',
+      use: { ...devices['Pixel 5'] },
+    },
+    {
+      name: 'Mobile Safari',
+      use: { ...devices['iPhone 12'] },
+    },
   ],
 ```
+
+Playwright configuration also allows us to configure a local web server that will run before starting the tests. This allows Playwright to work against the local copy of the application.
 
 ```js
   /* Run your local dev server before starting the tests */
@@ -120,17 +114,114 @@ module.exports = defineConfig({
 
 ### Writing the tests
 
+To start we require the parts of `@playwright/test` that we will need. For basic tests these parts are `test` and `expect`.
+
+The `@ts-check` declaration in the comment at the very top of the file will make it easier for VS Code to typechek the Javascript file.
+
 ```js
 // @ts-check
 const { test, expect } = require('@playwright/test');
 ```
 
+Playwright tests do two things:
+
+* Perform actions
+* Assert the state against expectations
+
+### Navigation
+
+Before we can work on an objectin our target page we need to navigate to that page using the `goto` method of the `page` object.
+
 ```js
 test('has title', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+  await page.goto('https://publishing-project.rivendellweb.net');
+
+  // Once the page.goto promises return we
+  // can do something with the results
+});
+```
+
+We can also use the page fixture to set the viewport size for the tests that we want to run.
+
+```js
+const page = await browser.newPage();
+await page.setViewportSize({
+  width: 640,
+  height: 480,
+});
+await page.goto('https://publishing-project.rivendellweb.net');
+```
+
+This will run all subsequent tests in the smaller vieport size.
+
+For more information on the page fixture, see the [page](https://playwright.dev/docs/api/class-page) documentation.
+
+### Locators
+
+<lite-youtube videoid="9RJMNU4eNEc"></lite-youtube>
+
+Once we've pointed Playwright to a page, we need to tell it the specific element of the page we want to work with using locators.
+
+There are several typesof locators, but I will look at the two that have been the most valuable to me: CSS selectors and simple locators.
+
+Selectors are tricky because they can be a fixture like the page object or in more specific selectors.
+
+The first example uses the `toHaveTitle` locator to test if the page title contains the string "Publishing Project".
+
+```js
+test('has title', async ({ page }) => {
+  await page.goto('https://publishing-project.rivendellweb.net');
+
+  await expect(page).toHaveTitle(/Publishing Project/);
+});
+```
+
+The second example uses a simple locator with the `:has-text` pseudo class.
+
+```js
+test('has title', async ({ page }) => {
+  await page.goto('https://publishing-project.rivendellweb.net');
+
+  await page.locator('article:has-text("Playwright")').click();
+});
+```
+
+The [locators guide](https://playwright.dev/docs/locators) has basic information about locators: How to use them and what are the recommended locators to use.
+
+There are additional locators built into Playwright. Look at [Other locators](https://playwright.dev/docs/other-locators)
+
+### Assertions
+
+So far we've told Playwright the URL of the page and the specific element within the page we want to test. Now we need to tell Playwright what the actual test it. We do this with a combination of expect and assertion matchers.
+
+| Assertion | Description |
+| --- | --- |
+| expect(locator).toBeChecked() | Checkbox is checked |
+| expect(locator).toBeEnabled() | Control is enabled |
+| expect(locator).toBeVisible() | Element is visible |
+| expect(locator).toContainText() | Element contains text |
+| expect(locator).toHaveAttribute() |Element has attribute |
+| expect(locator).toHaveCount() | List of elements has given length |
+| expect(locator).toHaveText() | Element matches text |
+| expect(locator).toHaveValue() | Input element has value |
+| expect(page).toHaveTitle() | Page has title |
+| expect(page).toHaveURL() | Page has URL |
+
+### Hooks
+
+| Hook | Description |
+| --- | --- |
+| beforeEach | Runs before each test |
+| afterEach | Runs after each test |
+| beforeAll | Runs once per worker before all tests|
+| afterAll | Runs once per worker after all tests |
+
+```js
+test('has title', async ({ page }) => {
+  await page.goto('https://publishing-project.rivendellweb.net');
 
   // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
+  await expect(page).toHaveTitle(/Publishing Project/);
 });
 ```
 
@@ -138,10 +229,8 @@ test('has title', async ({ page }) => {
 test('get started link', async ({ page }) => {
   await page.goto('https://playwright.dev/');
 
-  // Click the get started link.
   await page.getByRole('link', { name: 'Get started' }).click();
 
-  // Expects page to have a heading with the name of Installation.
   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
 });
 ```
@@ -152,11 +241,21 @@ test('get started link', async ({ page }) => {
 npx playwright test
 ```
 
+or the following if you want to run with a UI.
+
+```bash
+npx playwright test --ui
+```
+
 ```bash
 npx playwright show-report
 ```
 
 ### Headless versus headed
+
+## Fixtures
+
+<lite-youtube videoid="2O7dyz6XO2s"></lite-youtube>
 
 ## Links and Resources
 

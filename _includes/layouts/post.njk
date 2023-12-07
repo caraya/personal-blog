@@ -29,16 +29,18 @@ layout: layouts/base.njk
 
 		{# category/tags for the post #}
 		<ul class="post-metadata post-tags"><span class="iconfont tags"></span>
-	      {%- for tag in tags | filterTagList %}
+      {%- for tag in tags | filterTagList %}
         {%- if tags.length >= 1 %} {# does this mean if tags not empty? #}
         {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
 					<li>
 						<a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>
 						{%- if not loop.last %},{% endif %}
 					</li>
-				{% endif %} {# closes if tags #}
+				{%- endif %} {# closes if tags #}
       {%- endfor %}
     </ul>
+
+		<p class="edit-on-github-wrap">{% gh_edit page %}</p>
 
     {%- if collections.posts %}
       {%- set previousPost = collections.posts | getPreviousCollectionItem %}
@@ -51,7 +53,7 @@ layout: layouts/base.njk
 				{%- endif -%}
 				{%- if nextPost %}
 					<a rel="prev" class="prev" href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>
-				{% endif %}
+				{%- endif %}
 			</div>
       {%- endif %}
     {%- endif %}

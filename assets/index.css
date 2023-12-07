@@ -682,8 +682,6 @@ layer(icons);
     height: auto;
   }
 
-
-
   @media (prefers-color-scheme: dark) {
     :root {
       --color-gray-20: oklch(90.67% 0 0);
@@ -803,6 +801,7 @@ layer(icons);
   .tags {
     --icon: var(--icon-tags);
   }
+
 }
 
 @layer layout {
@@ -908,6 +907,23 @@ layer(icons);
 }
 
 @layer footer {
+	.edit-on-github-wrap::before {
+		content: var(--icon);
+		font-family: bootstrap-icons;
+		display: inline-block;
+		vertical-align: -0.1em;
+		margin-right: 0.5em;
+	}
+
+	.edit-on-github-wrap {
+		--icon: var(--icon-edit);
+		font-size: 0.8em;
+	}
+
+	.edit-on-github {
+		font-size: 0.8em;
+	}
+
   footer {
     grid-column: 2/-2;
 
@@ -935,7 +951,6 @@ layer(icons);
 				background: var(--color);
 				color: white;
 			}
-
 		}
 	}
 

@@ -26,15 +26,15 @@ const pluginBundle = require("@11ty/eleventy-plugin-bundle");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
-const pluginDrafts = require("./eleventy.config.drafts.js");
-const pluginImages = require("./eleventy.config.images.js");
+// const pluginDrafts = require("./eleventy.config.drafts.js");
+// const pluginImages = require("./eleventy.config.images.js");
 
 // Added by Carlos
-// AutomaticNoOpener
 const posthtml = require('posthtml');
 const { posthtml: automaticNoopener, parser } = require('eleventy-plugin-automatic-noopener');
 const NoOpOptions = parser({ noreferrer: true });
 const pluginTOC = require('eleventy-plugin-toc');
+const editOnGithub = require('eleventy-plugin-edit-on-github');
 
 module.exports = function (eleventyConfig) {
 	// Copy the contents of the `public` folder to the output folder
@@ -75,7 +75,15 @@ module.exports = function (eleventyConfig) {
 		tags: [ 'h2', 'h3' ],
 		ul: true,
 		ol: false,
-	})
+	});
+	eleventyConfig.addPlugin(editOnGithub, {
+    // required
+    github_edit_repo: 'https://github.com/caraya/personal-blog',
+    // optional: defaults
+		github_edit_class: '',
+    github_edit_branch: 'main',
+    github_edit_attributes: 'target="_blank"',
+  });
 
 	// Transforms
 	eleventyConfig.addTransform('posthtml', function (HTMLString, outputPath) {
