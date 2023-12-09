@@ -192,22 +192,65 @@ There are additional locators built into Playwright. Look at [Other locators](ht
 
 ### Assertions
 
-So far we've told Playwright the URL of the page and the specific element within the page we want to test. Now we need to tell Playwright what the actual test it. We do this with a combination of expect and assertion matchers.
+So far we've told Playwright the URL of the page and the specific element within the page we want to test. Now we need to tell Playwright what the actual test it. We do this with a combination of the `expect` functions and assertion matchers.
+
+The assertions in the list below will continue retrying until they succeed or timeout.
+
+!!! note **Note**
+You must use `await` with these assertions
+!!!
+
+<p>&nbsp;</p>
 
 | Assertion | Description |
-| --- | --- |
-| expect(locator).toBeChecked() | Checkbox is checked |
-| expect(locator).toBeEnabled() | Control is enabled |
-| expect(locator).toBeVisible() | Element is visible |
-| expect(locator).toContainText() | Element contains text |
-| expect(locator).toHaveAttribute() |Element has attribute |
-| expect(locator).toHaveCount() | List of elements has given length |
-| expect(locator).toHaveText() | Element matches text |
-| expect(locator).toHaveValue() | Input element has value |
-| expect(page).toHaveTitle() | Page has title |
-| expect(page).toHaveURL() | Page has URL |
+| :---: | --- |
+| await expect(locator).toBeAttached() |Element is attached |
+| await expect(locator).toBeChecked()| Checkbox is checked |
+| await expect(locator).toBeDisabled() | Element is disabled |
+| await expect(locator).toBeEditable() |Element is editable |
+| await expect(locator).toBeEmpty()	| Container is empty |
+| await expect(locator).toBeEnabled() | Element is enabled |
+|await expect(locator).toBeFocused() |Element is focused |
+| await expect(locator).toBeHidden() | Element is not visible |
+| await expect(locator).toBeInViewport() | Element intersects viewport |
+| await expect(locator).toBeVisible() | Element is visible |
+|await expect(locator).toContainText() | Element contains text |
+| await expect(locator).toHaveAttribute() |Element has a DOM attribute |
+| await expect(locator).toHaveClass() |Element has a class property |
+| await expect(locator).toHaveCount()	|List has exact number of children |
+| await expect(locator).toHaveCSS() | Element has CSS property |
+| await expect(locator).toHaveId() | Element has an ID |
+| await expect(locator).toHaveJSPropert() |Element has a JavaScript property |
+|await expect(locator).toHaveScreenshot() |Element has a screenshot |
+| await expect(locator).toHaveText() |Element matches text |
+| await expect(locator).toHaveValue() |Input has a value |
+| await expect(locator).toHaveValues() |Select has options selected |
+| await expect(page).toHaveScreenshot() |Page has a screenshot |
+| await expect(page).toHaveTitle() | Page has a title |
+| await expect(page).toHaveURL() | Page has a URL |
+| await expect(response).toBeOK() | Response has an OK status |
 
 ### Hooks
+
+Most of the time there are tasks that we will want to run before or after each test or before or after we run all our tests.
+
+Some of these tasks may include:
+
+* Set/tear down a test database
+* Prepare navigation or locators that will be shared among tests
+
+In the example below, we use the
+
+```js
+test.beforeEach(async ({ page }, testInfo) => {
+  console.log(`Running ${testInfo.title}`);
+  await page.goto('https://publishing-project.rivendellweb.net');
+});
+
+test('my test', async ({ page }) => {
+  expect(page.url()).toBe('https://publishing-project.rivendellweb.net');
+});
+```
 
 | Hook | Description |
 | --- | --- |
@@ -216,26 +259,7 @@ So far we've told Playwright the URL of the page and the specific element within
 | beforeAll | Runs once per worker before all tests|
 | afterAll | Runs once per worker after all tests |
 
-```js
-test('has title', async ({ page }) => {
-  await page.goto('https://publishing-project.rivendellweb.net');
-
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Publishing Project/);
-});
-```
-
-```js
-test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
-
-  await page.getByRole('link', { name: 'Get started' }).click();
-
-  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
-});
-```
-
-### Running the tests
+## Running the tests
 
 ```bash
 npx playwright test
@@ -251,7 +275,88 @@ npx playwright test --ui
 npx playwright show-report
 ```
 
-### Headless versus headed
+## Example tests
+
+I've created examples of Playwright tests to illustrate the topics that we've covered in this post.
+
+The tests cover a basic set of tasks that you can accomplish with Playwright. They are offered as a starting point.
+
+**Example 1: Find and click a button containing "Submit".**
+
+```js
+test('has title', async ({ page }) => {
+	await page.goto('https://example.com');
+
+	await page.getByText('Submit').click();
+})
+```
+
+**Example 2: Find a link with text starting with "Learn More" and navigate to it.**
+
+```js
+test('Find link with "Learn more text"', async ({ page }) => {
+	await page.goto('https://example.com');
+
+	await page.getByText(/Learn More/).click();
+})
+```
+
+**Example 3: Find and fill the second element containing the text "Product Name".**
+
+```js
+test('Find and fill the second product name item', async ({ page }) => {
+	await page.goto('https://example.com/products');
+
+	await page.locator('.product-name')
+		.nth(1) // 0 based
+		.fill('My Awesome Product');
+})
+```
+
+**Example 4: Find all buttons with the class "primary-button" and click the first one.**
+
+```js
+test('Find primary-button buttons', async ({ page }) => {
+	await page.goto('https://example.com');
+
+	await page.locator('button.primary-button')
+		.first()
+		.click();
+})
+```
+
+**Example 5: Find and clear the input element with the id "username".**
+
+```js
+test('Clear user name input', async ({ page }) => {
+	await page.goto('https://example.com/login');
+
+	await page.locator('#username').clear();
+})
+```
+
+**Example 6: Find the element with specific attributes and click it.**
+
+```js
+test('Click about link', async ({ page }) => {
+	await page.goto('https://example.com');
+
+	await page.locator('a[href="/about"]').click();
+})
+```
+
+**Example 8: Find the checkbox element labeled "Remember Me" and check it.**
+
+```js
+test('check remember me checkbox', async({ page }) => {
+	await page.goto('https://example.com/login');
+
+	const rememberMeCheckbox = page.getByLabel('Remember Me');
+	await rememberMeCheckbox.check();
+})
+```
+
+## Headless versus headed
 
 ## Fixtures
 
