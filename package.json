@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Preparing to move my blog from WordPress to 11ty",
   "scripts": {
+    "playwright:ui": "npx playwright test --ui",
+    "playwright:all": "npx playwright test",
+    "playwright:debug": "npx playwright test --debug",
     "postcss:build": "postcss --verbose assets/index.css -o public/css/index.css",
     "postcss:watch": "npx postcss --verbose -w assets/index.css -o public/css/index.css",
     "build": "NODE_ENV=production rm -rf **/.DS_Store && npx @11ty/eleventy --incremental",

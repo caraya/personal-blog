@@ -3,13 +3,13 @@ const { test, expect } = require('@playwright/test');
 
 test.beforeEach(async ({ page }, testInfo) => {
   console.log(`Running ${testInfo.title}`);
-  await page.goto('https://publishing-project.rivendellweb.net');
+  await page.goto('http://localhost:8080');
 });
 
 test.describe('Tests for the homepage', () => {
 
 	test('Check correct URL', async ({ page }) => {
-		expect(page.url()).toBe('https://publishing-project.rivendellweb.net/');
+		expect(page.url()).toBe('http://localhost:8080/');
 	});
 
 	test('Page has a title', async ({ page }) => {

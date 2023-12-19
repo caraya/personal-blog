@@ -1,5 +1,5 @@
 ---
-title: Web AR in the wild -- City Games and Communities
+title: Web AR in the Wild -- City Games and Communities
 date: 2023-12-31
 youtube: true
 draft: true
@@ -7,19 +7,19 @@ draft: true
 
 ## Intro and explainer
 
-This post spans several (four or five!) years from the time it was started to when it was published.
+This post spans several (four or five!) years from the time it was started to when it was published. It's still a theoretical exercise where I'm asking questions and providing what I believe are the answers to these questions as I continue to do research.
 
 Some of the technologies covered in the earlier part of this post like the [Physical Web](https://google.github.io/physical-web/) have been abandoned by Google.
 
 Other technologies, like the [Google Maps Gaming Services](https://developers.google.com/maps/documentation/gaming), have been deprecated but their documentation still remains on their website, although it's unknown for how long.
 
-A third set of technologies, like [WebVR](https://webvr.info/), have evolved as the WebXR Device API that encompases both VR and AR experiences. Most WebGL and WebVR libraries are moving to support The WebXR Device API
+A third set of technologies, like [WebVR](https://webvr.info/), have evolved into the WebXR Device API that encompases both VR and AR experiences. Most WebGL and WebVR libraries are moving to support The WebXR Device API
 
 I thought that perhaps picking a project to conceptualize around rather than code would be easier for me as a way to get back into AR/VR and WebGL than (re)learning WebGL and the WebXR Device API at the same time.
 
 Something that has been in my mind a lot when thinking about AR is Daniel Suarez books: Daemon and [Freedom<sup>tm</sup>](https://www.wikiwand.com/en/Freedom%E2%84%A2) and how can we leverage our modern technologies to build a next-generation networked community.
 
-The idea of the "Darknet" as a communication hub and online community has always intrigued me. Think of it as an AR version of Lucasfilm's [Habitat](https://www.wikiwand.com/en/Habitat_(video_game)), a free-form unscripted  version of our current MMORPG worlds.
+The idea of the "Darknet" as a communication hub and online community has always intrigued me. Think of it as an AR version of Lucasfilm's [Habitat](https://www.wikiwand.com/en/Habitat_(video_game)), a free-form unscripted version of our current MMORPG worlds.
 
 The idea of making a Daemon-like networked environment using current AR technologies present several challenges, both social and technical that I hope to walk through in essay. We'll begin with the technical challenges, those are easier to articulate and present a lower barrier to understanding what they are:
 
@@ -77,8 +77,6 @@ Some of these AR hybrid games:
 * Pokémon Sword And Shield
 * Dragon Quest Walk
 * The Walking Dead: Our World
-
-
 
 ### How do we translate 2D content to a 3D environment?
 

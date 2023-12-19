@@ -381,6 +381,8 @@ layer(icons);
 
     width: 100%;
     overflow-x: scroll;
+
+		font-size: 1rem;
   }
 
   thead tr {

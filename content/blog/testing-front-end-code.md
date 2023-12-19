@@ -239,7 +239,7 @@ Some of these tasks may include:
 * Set/tear down a test database
 * Prepare navigation or locators that will be shared among tests
 
-In the example below, we use the
+In the example below, we use the `beforeEach` hook to go to the site we want to test.
 
 ```js
 test.beforeEach(async ({ page }, testInfo) => {
@@ -252,6 +252,12 @@ test('my test', async ({ page }) => {
 });
 ```
 
+The hooks that I use more often are listed in the table below.
+
+`BeforeAll` and `afterAll` will run before all the tests execute.
+
+`beforeEach` and `afterEach` will run before each test.
+
 | Hook | Description |
 | --- | --- |
 | beforeEach | Runs before each test |
@@ -261,18 +267,28 @@ test('my test', async ({ page }) => {
 
 ## Running the tests
 
+To run the tests you've created, run the following command if you want to run the tests in the command line.
+
 ```bash
 npx playwright test
 ```
 
-or the following if you want to run with a UI.
+The following command will run a UI so you can choose what tests to run and in what order.
 
 ```bash
 npx playwright test --ui
 ```
 
+If you run the CLI command, you can get a GUI with the results with the following command:
+
 ```bash
 npx playwright show-report
+```
+
+Finally, you can run the following command to debug your playwright tests:
+
+```bash
+npx playwright test --debug
 ```
 
 ## Example tests
@@ -358,9 +374,11 @@ test('check remember me checkbox', async({ page }) => {
 
 ## Headless versus headed
 
-## Fixtures
+By default Playwright will run the tests in headless mode. There may be times when you want to see how Playwright interacts with the page. To do so, run playwright with the `--headed` flag.
 
-<lite-youtube videoid="2O7dyz6XO2s"></lite-youtube>
+```bash
+npx playwright test --headed
+```
 
 ## Links and Resources
 

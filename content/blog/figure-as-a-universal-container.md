@@ -3,7 +3,7 @@ title: "Figure as a universal container"
 date: "2017-05-15"
 ---
 
-I've been looking at some way to group content in a semantic way. For example, rather than using:
+I've been looking at ways to group content in a semantic way. For example, rather than using:
 
 ```markup
 <div class="video">
@@ -11,7 +11,7 @@ I've been looking at some way to group content in a semantic way. For example, r
 </div>
 ```
 
-I would like to find an equivalent unit of content that would allow me to group the children and still be semantically valid. Looking at the code from Dudley Storey's [The New Code](https://thenewcode.com/) that I saw his use of the `figure` element to do this. Knowing that Dudley would never do something that went against spec I thought I'd look at figure and see if would do what I want it to do.
+I would like to find an equivalent unit of content that would allow me to group the children and still be semantically valid. Looking at the code from Dudley Storey's [The New Code](https://thenewcode.com/) that I saw his use of the `figure` element to do this. Knowing that Dudley would never do something that went against spec I thought I'd look at the figure element and see if would do what I wanted it to do.
 
 The `figure` element is surprisingly flexible in what it can hold. According to the HTML specification:
 
@@ -30,8 +30,8 @@ We can also do something like this:
 
 ```markup
 <figure class='video'>
-  <iframe width="560" height="315" 
-    src="https://www.youtube.com/embed/rn7szaphdWk" 
+  <iframe width="560" height="315"
+    src="https://www.youtube.com/embed/rn7szaphdWk"
     frameborder="0" allowfullscreen></iframe>
 </figure>
 ```
@@ -47,7 +47,7 @@ We can also do something like this:
 </figure>
 ```
 
-We can use CSS generated content to tailor the way the figcaption look and add generated text to make sure that each image is idenitfiable on its own with a figure number before the text:
+We can use CSS-generated content to tailor the way the figcaption looks and add generated text to make sure that each image is identifiable on its own with a figure number before the text:
 
 ```scss
 figure {
@@ -56,7 +56,7 @@ figure {
 
   img {
     max-height: auto;
-    max-width: inherit; 
+    max-width: inherit;
   }
 
   figcaption {
@@ -70,27 +70,27 @@ figure {
 }
 ```
 
-The two key elements to create self increasing counters are:
+The two key elements to create self-increasing counters are:
 
-The `counter-increment` rule in the figure element increases the `figure-count` counter for every image that appears in the page.
+The `counter-increment` rule in the figure element increases the `figure-count` counter for every image that appears on the page.
 
-The `figcaption::before` pseudo element that will insert the text, along with thecurrent value of the `figure-count` counter.
+The `figcaption::before` pseudo-element will insert the text, along with the current value of the `figure-count` counter.
 
 If we insert new images or delete existing ones the values will adjust automatically without us having to do any manual work, the CSS rules will handle the numbering of the figures. We could do the same thing for videos and any other elements that
 
-We can also use `figcaption` to describe or otherwise enhance the content of the figure. In the video example we could use figcaption to hold buttons for a custom player, transcript display and other enhancements we choose to make to the video. Below is how we could write the markup for the custom buttons:
+We can also use `figcaption` to describe or otherwise enhance the content of the figure. In the video example, we could use figcaption to hold buttons for a custom player, transcript display and other enhancements we choose to make to the video. Below is how we could write the markup for the custom buttons:
 
 ```markup
 <figure class='video'>
-  <iframe  id="video" width="560" height="315" 
-  src="https://www.youtube.com/embed/rn7szaphdWk" 
+  <iframe  id="video" width="560" height="315"
+  src="https://www.youtube.com/embed/rn7szaphdWk"
   frameborder="0" allowfullscreen></iframe>
   <figcaption>
-    <img src="path/to/images/seekBack.svg" 
+    <img src="path/to/images/seekBack.svg"
       alt="seek back 15" id="back">
-    <img src="path/to/images/play.svg" 
+    <img src="path/to/images/play.svg"
       alt="play / pause" id="play">
-    <img src="path/to/images/seekForward.svg" 
+    <img src="path/to/images/seekForward.svg"
       alt="seek forward 15" id="back">
   </figcaption>
 </figure>

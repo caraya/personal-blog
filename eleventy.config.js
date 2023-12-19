@@ -152,7 +152,6 @@ module.exports = function (eleventyConfig) {
 
 	// COLLECTIONS
 
-	// EMPTY FOR NOW
 
 	// COMPUTED PROPERTIES
 
@@ -200,7 +199,13 @@ module.exports = function (eleventyConfig) {
 			// All attributes are allowed
 			allowedAttributes: []
 		});
-		mdLib.use(multiMDTable, {});
+		mdLib.use(multiMDTable, {
+			multiline:  true,
+			rowspan:    true,
+			headerless: false,
+			multibody:  true,
+			aotolabel:  true,
+		});
 	});
 
 	// Features to make your build faster (when you need them)
