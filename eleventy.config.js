@@ -3,6 +3,7 @@ const { DateTime } = require("luxon");
 // Custom filters from https://github.com/LeaVerou/lea.verou.me/blob/main/assets/filters.cjs
 // Looking to trim the fat
 const filters = require("./assets/filters");
+const njkFilters = require("nunjucks/src/filters");
 
 // Custom markdown-it installation to customize it
 const markdownIt = require("markdown-it");
@@ -22,7 +23,7 @@ const multiMDTable = require('markdown-it-multimd-table');
 // 11ty plugins
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const pluginBundle = require("@11ty/eleventy-plugin-bundle");
+// const pluginBundle = require("@11ty/eleventy-plugin-bundle");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
@@ -35,6 +36,7 @@ const { posthtml: automaticNoopener, parser } = require('eleventy-plugin-automat
 const NoOpOptions = parser({ noreferrer: true });
 const pluginTOC = require('eleventy-plugin-toc');
 const editOnGithub = require('eleventy-plugin-edit-on-github');
+const metagen = require('eleventy-plugin-metagen');
 
 module.exports = function (eleventyConfig) {
 	// Copy the contents of the `public` folder to the output folder
@@ -77,13 +79,44 @@ module.exports = function (eleventyConfig) {
 		ol: false,
 	});
 	eleventyConfig.addPlugin(editOnGithub, {
-    // required
-    github_edit_repo: 'https://github.com/caraya/personal-blog',
-    // optional: defaults
+		// required
+		github_edit_repo: 'https://github.com/caraya/personal-blog',
+		// optional: defaults
 		github_edit_class: '',
-    github_edit_branch: 'main',
-    github_edit_attributes: 'target="_blank"',
-  });
+		github_edit_branch: 'main',
+		github_edit_attributes: 'target="_blank"',
+	});
+	eleventyConfig.addPlugin(metagen);
+
+	// Nunjucks plugins
+	eleventyConfig.addNunjucksFilter("metaDescription", function (content) {
+		if (content) {
+			let paragraphContent = content.split("<p>");
+
+			// get the first paragraph element
+			paragraphContent =
+				paragraphContent.length > 2 ? paragraphContent[ 1 ].split("</p>") : null;
+
+			// convert array to string
+			paragraphContent = paragraphContent
+				? njkFilters.string(paragraphContent)
+				: null;
+
+			// convert any anchor elements to text
+			paragraphContent = paragraphContent
+				? njkFilters.striptags(paragraphContent)
+				: null;
+
+			// limit description length per SEO guidelines
+			paragraphContent = paragraphContent
+				? njkFilters.truncate(paragraphContent, 160)
+				: null;
+
+			return paragraphContent;
+		}
+
+		return null;
+	});
 
 	// Transforms
 	eleventyConfig.addTransform('posthtml', function (HTMLString, outputPath) {
@@ -102,7 +135,7 @@ module.exports = function (eleventyConfig) {
 	// Credit: https://11ty.rocks/eleventyjs/content/#excerpt-filter
 	eleventyConfig.addFilter("excerpt", (post) => {
 		const content = post.replace(/(<([^>]+)>)/gi, "");
-		return content.substr(0, content.lastIndexOf(" ", 300)) + "...";
+		return content.substr(0, content.lastIndexOf(" ", 200)) + "...";
 	});
 
 	eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
@@ -200,11 +233,11 @@ module.exports = function (eleventyConfig) {
 			allowedAttributes: []
 		});
 		mdLib.use(multiMDTable, {
-			multiline:  true,
-			rowspan:    true,
+			multiline: true,
+			rowspan: true,
 			headerless: false,
-			multibody:  true,
-			aotolabel:  true,
+			multibody: true,
+			aotolabel: true,
 		});
 	});
 

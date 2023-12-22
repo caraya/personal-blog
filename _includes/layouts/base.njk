@@ -1,17 +1,15 @@
 <!doctype html>
 <html lang="{{ metadata.language }}">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {# <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> #}
     <title>{{ title or metadata.title }}</title>
-    <meta name="description" content="{{ description or metadata.description }}">
-    <meta
-    name="theme-color" content="#1e456e"/> {#- Atom and JSON feeds included by default #}
+    <meta name="description" content=" {{ metaDescription }}" />
+		<meta name="theme-color" content="#1e456e"/> {#- Atom and JSON feeds included by default #}
     <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
     <link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}">
     <link rel="apple-touch-icon" href="/images/icon-192x192.png"/>
-    <link
-    rel="manifest" href="/manifest.json"> {#- Learn more about bundles: https://github.com/11ty/eleventy-plugin-bundle #}
+    <link rel="manifest" href="/manifest.json"> {#- Learn more about bundles: https://github.com/11ty/eleventy-plugin-bundle #}
 		<!-- Added for Netlify -->
 		<link rel="stylesheet" href="/css/algoliasearchNetlify.css" />
     <link
@@ -37,6 +35,19 @@
     {% if mermaid %}
       {% mermaid_js %}
     {% endif %}
+		<!-- Metagen specific tags -->
+		{% metagen
+			comments=true,
+			url=url,
+			site="https://publishing-project.rivendellweb.net/",
+			site_name= "The Publishing Project",
+			img="https://publishing-project.rivendellweb.net/images/Thumbnail_Trinity_College_Dublin_Ireland.webp",
+			img_alt="Trinity College Library, Dublin",
+			twitter_comment=true,
+			twitter_site="https://publishing-project.rivendellweb.net/",
+			twitter_card_type=summary,
+			twitter_handle="elrond25"
+		%}
   </head>
   <body>
     {% import "_nav.njk" as nav with context %}

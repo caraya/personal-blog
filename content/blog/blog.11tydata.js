@@ -1,4 +1,3 @@
-
 module.exports = {
 	eleventyComputed: {
     /**
@@ -9,33 +8,31 @@ module.exports = {
      * For dev builds we will always render the page.
 		 * Taken from https://github.com/11ty/eleventy/issues/26
      */
-     permalink: data => {
-      if (process.env.NODE_ENV === 'production' && (data.draft || data.page.date >= new Date())) {
+    permalink: data => {
+			if (process.env.NODE_ENV === "production" && (data.draft || data.page.date >= new Date())) {
         return false;
       }
-
 			return `/${data.page.fileSlug}/`;
     },
     eleventyExcludeFromCollections: data => {
-      if (process.env.NODE_ENV === 'production' &&  (data.draft || data.page.date >= new Date())) {
+      if (process.env.NODE_ENV === "production" &&  (data.draft || data.page.date >= new Date())) {
         return true;
       }
-
       return false;
-    }
+    },
+		url: data => {
+			return `https://publishing-project.rivendellweb.net${data.page.url}`
+		}
   },
-	// permalink: function (data) {
-	// 	const slug = data.slug ?? this.slugify(data.title);
-	// 	return `/${slug}/index.html`;
-	// },
-		tags: [
+	tags: [
 		"posts"
 	],
 	// What layout to use
-	"layout": "layouts/post.njk",
+	layout: "layouts/post.njk",
 	// all conditional elements are set to false by default
-	"youtube": false,
-	"vimeo": false,
-	"mermaid": false,
-	"mavo": false,
+  // and can be overriden on individual posts
+	youtube: false,
+	vimeo: false,
+	mermaid: false,
+	mavo: false,
 };
