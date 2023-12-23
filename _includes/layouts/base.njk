@@ -71,12 +71,12 @@
         alt="Dublin Library"
         width="1564"
         height="389"/>
-      {# <header>
+      <header>
         <h1>
-          <a href="/" class="home-link">{{ metadata.title }}</a>
-        </h1> #}
+          <a href="/" class="home-link">{{ site_name or metadata.site_name }}</a>
+        </h1>
         {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
-      {# </header> #}
+      </header>
       <nav id="nav-top-menu-container" class="nav-container">
         <ul class="nav-top-menu">
           {{ nav.render(nav_links, "nav-top-menu-container") }}

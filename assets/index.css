@@ -819,14 +819,14 @@ layer(icons);
   }
 
   /* Grid placement */
-  /* header {
+  header {
     grid-column: 3/7;
-  } */
+  }
 
   /* Nav */
   nav#nav-top-menu-container {
     grid-column: 1/1;
-    grid-row: 2;
+    grid-row: 3;
   }
 
   main {
