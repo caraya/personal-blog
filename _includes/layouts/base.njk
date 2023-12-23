@@ -1,17 +1,40 @@
 <!doctype html>
-<html lang="{{ metadata.language }}">
+<html lang="{{ language }}">
   <head>
-    {# <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> #}
     <title>{{ title or metadata.title }}</title>
-    <meta name="description" content=" {{ metaDescription }}" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ desc or metadata.desc }}" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{url or metadata.url}}">
+    <meta property="og:site_name" content="{{ title or metadata.title }}">
+    <meta property="og:locale" content="{{ language or metadata.language}}">
+    <meta property="og:image" content="https://publishing-project.rivendellweb.net/images/Thumbnail_Trinity_College_Dublin_Ireland.webp">
+    <meta property="og:image:alt" content="Trinity College Library, Dublin">
+		<meta property="og:description" content="{{ desc or metadata.desc }}">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="{{ metadata.author.twitter_handle}}">
+    <meta name="twitter:creator" content="{{ metadata.author.twitter_handle}}">
+    <meta name="twitter:url" content="https://publishing-project.rivendellweb.net/syndicating-content-to-x/">
+    <meta name="twitter:image" content="https://publishing-project.rivendellweb.net/images/Thumbnail_Trinity_College_Dublin_Ireland.webp">
+    <meta name="twitter:image:alt" content="Trinity College Library, Dublin">
+		<meta name="twitter:description" content="{{ desc or metadata.desc }}">
+    <!-- Theme Colors -->
 		<meta name="theme-color" content="#1e456e"/> {#- Atom and JSON feeds included by default #}
-    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
+    <!-- Feeds -->
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
     <link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}">
-    <link rel="apple-touch-icon" href="/images/icon-192x192.png"/>
-    <link rel="manifest" href="/manifest.json"> {#- Learn more about bundles: https://github.com/11ty/eleventy-plugin-bundle #}
-		<!-- Added for Netlify -->
-		<link rel="stylesheet" href="/css/algoliasearchNetlify.css" />
+    <!-- Apple touch icon -->
+		<link rel="apple-touch-icon" href="/images/icon-192x192.png"/>
+    <!-- Manifest -->
+		<link rel="manifest" href="/manifest.json"> {#- Learn more about bundles: https://github.com/11ty/eleventy-plugin-bundle #}
+    <!-- Canonical Link -->
+		<link rel="canonical" href="https://publishing-project.rivendellweb.net/syndicating-content-to-x/">
+    <!-- Added for Netlify -->
+    <link rel="stylesheet" href="/css/algoliasearchNetlify.css" />
     <link
     rel="stylesheet" media="screen" href="/css/index.css"/> {# add prism.js stylesheets unconditionally #}
     <link rel="stylesheet" media="screen" href="/css/prism-solarizedlight.css"/>
@@ -35,19 +58,6 @@
     {% if mermaid %}
       {% mermaid_js %}
     {% endif %}
-		<!-- Metagen specific tags -->
-		{% metagen
-			comments=true,
-			url=url,
-			site="https://publishing-project.rivendellweb.net/",
-			site_name= "The Publishing Project",
-			img="https://publishing-project.rivendellweb.net/images/Thumbnail_Trinity_College_Dublin_Ireland.webp",
-			img_alt="Trinity College Library, Dublin",
-			twitter_comment=true,
-			twitter_site="https://publishing-project.rivendellweb.net/",
-			twitter_card_type=summary,
-			twitter_handle="elrond25"
-		%}
   </head>
   <body>
     {% import "_nav.njk" as nav with context %}
@@ -61,12 +71,12 @@
         alt="Dublin Library"
         width="1564"
         height="389"/>
-      <header>
+      {# <header>
         <h1>
           <a href="/" class="home-link">{{ metadata.title }}</a>
-        </h1>
+        </h1> #}
         {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
-      </header>
+      {# </header> #}
       <nav id="nav-top-menu-container" class="nav-container">
         <ul class="nav-top-menu">
           {{ nav.render(nav_links, "nav-top-menu-container") }}
@@ -77,30 +87,30 @@
       </main>
       <footer>
         <div class="left-footer">
-					<section class="social">
-						<h4>Social Me</h4>
-						{%- include "_social.njk" -%}
-        	</section>
+          <section class="social">
+            <h4>Social Me</h4>
+            {%- include "_social.njk" -%}
+          </section>
 
-					<section classs="latest">
-						<h4>Latest Posts</h4>
-						{%- include "_latest.njk" -%}
-					</section>
-				</div>
+          <section classs="latest">
+            <h4>Latest Posts</h4>
+            {%- include "_latest.njk" -%}
+          </section>
+        </div>
 
-				<div class="right-footer">
-					<h4>Search</h4>
-						<div id="search"></div>
+        <div class="right-footer">
+          <h4>Search</h4>
+            <div id="search"></div>
 
-		      <nav id="nav">
-        	  <h4>Links</h4>
-						<div class="nav-container">
-							<ul class="nav-footer-menu">
-								{{ nav.render(nav_links, "footer") }}
-							</ul>
-						</div>
-        	</nav>
-				</div>
+          <nav id="nav">
+            <h4>Links</h4>
+            <div class="nav-container">
+              <ul class="nav-footer-menu">
+                {{ nav.render(nav_links, "footer") }}
+              </ul>
+            </div>
+          </nav>
+        </div>
       </footer>
     </div>
     <!-- Current page: {{ page.url | htmlBaseUrl }} -->
@@ -120,16 +130,16 @@
       }
     </script>
 
-		<!-- added for Algolia -->
-		<script type="text/javascript" src="/js/algoliasearchNetlify.js"></script>
-		<script type="text/javascript">
-		algoliasearchNetlify({
-			appId: '533NB4QJXX',
-			apiKey: '0cd62f229744d35fb517b13466758622',
-			siteId: '26351df2-c0d4-4526-950c-3866501cb99d',
-			branch: 'main',
-			selector: 'div#search',
-		});
-		</script>
+    <!-- added for Algolia -->
+    <script type="text/javascript" src="/js/algoliasearchNetlify.js"></script>
+    <script type="text/javascript">
+    algoliasearchNetlify({
+      appId: '533NB4QJXX',
+      apiKey: '0cd62f229744d35fb517b13466758622',
+      siteId: '26351df2-c0d4-4526-950c-3866501cb99d',
+      branch: 'main',
+      selector: 'div#search',
+    });
+    </script>
   </body>
 </html>
