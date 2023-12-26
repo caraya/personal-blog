@@ -35,6 +35,7 @@ const { posthtml: automaticNoopener, parser } = require('eleventy-plugin-automat
 const NoOpOptions = parser({ noreferrer: true });
 const pluginTOC = require('eleventy-plugin-toc');
 const editOnGithub = require('eleventy-plugin-edit-on-github');
+const metagen = require('eleventy-plugin-metagen');
 
 module.exports = function (eleventyConfig) {
 	// Copy the contents of the `public` folder to the output folder
@@ -84,6 +85,7 @@ module.exports = function (eleventyConfig) {
 		github_edit_branch: 'main',
 		github_edit_attributes: 'target="_blank"',
 	});
+	eleventyConfig.addPlugin(metagen);
 
 	// Nunjucks plugins
 

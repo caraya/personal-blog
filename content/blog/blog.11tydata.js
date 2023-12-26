@@ -19,10 +19,7 @@ module.exports = {
         return true;
       }
       return false;
-    },
-		url: data => {
-			return `https://publishing-project.rivendellweb.net/${data.page.fileSlug}/`
-		},
+    }
   },
 	tags: [
 		"posts"

@@ -122,8 +122,8 @@ const filters = {
 			return value;
 		}, "\t");
 
-		return `<pre class="language-json">${json}</pre>`
-	}
+		return `${json}`
+	},
 }
 
 module.exports = filters;

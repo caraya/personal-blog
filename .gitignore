@@ -4,9 +4,11 @@ package-lock.json
 **/.DS_Store
 .env
 _data/photos.js
-publishing-project.rivendellweb.net_2023-11-16_18-07-49.report.html
 budget.json
 /test-results/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+# Local Netlify folder
+.netlify

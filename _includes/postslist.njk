@@ -1,3 +1,7 @@
+---
+desc: {{ post }}
+---
+{{ desc | log }}
 <div class="postlist">
   {% for post in postslist | reverse %}
     <div class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
@@ -9,7 +13,7 @@
         {% endif %}
       </a>
       <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("LLLL dd yyyy") }}</time>
-      <p>{{ post.templateContent | excerpt }}
+      <p>{{ post.templateContent | excerpt }}</p>
         <div class="continue-reading">
           <a href="{{ post.url }}">Read More...</a>
         </div>

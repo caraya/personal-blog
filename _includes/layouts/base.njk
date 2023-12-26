@@ -1,11 +1,25 @@
 <!doctype html>
-<html lang="{{ language }}">
+<html lang="{{ language or metadata.language }}">
   <head>
-    <title>{{ title or metadata.title }}</title>
+		{%- metagen
+			comments=true,
+			title=title or metadata.title,
+			desc=desc or metadata.desc,
+			url=url,
+			img="/images/Thumbnail_Trinity_College_Dublin_Ireland.webp",
+			img_alt="Trinity College Library, Dublin",
+			twitter_card_type=summary,
+			twitter_handle=elrond25
+		-%}
+    {# <title>{{ title or metadata.title }}</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{ desc or metadata.desc }}" />
+		{%- if data.content -%}
+    <meta name="description" content="{{ desc or metadata.desc}}}">
+		{%- else -%}
+		<meta name="description" content="Placeholder text. Can't generate excerpt">
+    {%- endif -%}
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{url or metadata.url}}">
@@ -13,26 +27,33 @@
     <meta property="og:locale" content="{{ language or metadata.language}}">
     <meta property="og:image" content="https://publishing-project.rivendellweb.net/images/Thumbnail_Trinity_College_Dublin_Ireland.webp">
     <meta property="og:image:alt" content="Trinity College Library, Dublin">
-		<meta property="og:description" content="{{ desc or metadata.desc }}">
-    <!-- Twitter -->
+		{%- if content -%}
+		<meta property="og:description" content="{{ desc or metadata.desc}}}">
+    {%- else -%}
+		<meta name="description" content="Placeholder text. Can't generate excerpt">
+    {%- endif -%}
+		<!-- Twitter -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="{{ metadata.author.twitter_handle}}">
     <meta name="twitter:creator" content="{{ metadata.author.twitter_handle}}">
     <meta name="twitter:url" content="https://publishing-project.rivendellweb.net/syndicating-content-to-x/">
     <meta name="twitter:image" content="https://publishing-project.rivendellweb.net/images/Thumbnail_Trinity_College_Dublin_Ireland.webp">
     <meta name="twitter:image:alt" content="Trinity College Library, Dublin">
-		<meta name="twitter:description" content="{{ desc or metadata.desc }}">
+		{%- if page.templateContent -%}
+		<meta name="twitter:description" content="{{ page.templateContent | excerpt }}">
+    {%- else -%}
+		<meta name="description" content="Placeholder text. Can't generate excerpt">
+    {%- endif -%} #}
     <!-- Theme Colors -->
-		<meta name="theme-color" content="#1e456e"/> {#- Atom and JSON feeds included by default #}
+		<meta name="theme-color" content="#1e456e"/>
     <!-- Feeds -->
+		{#- Atom and JSON feeds included by default #}
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
     <link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}">
     <!-- Apple touch icon -->
 		<link rel="apple-touch-icon" href="/images/icon-192x192.png"/>
     <!-- Manifest -->
 		<link rel="manifest" href="/manifest.json"> {#- Learn more about bundles: https://github.com/11ty/eleventy-plugin-bundle #}
-    <!-- Canonical Link -->
-		<link rel="canonical" href="https://publishing-project.rivendellweb.net/syndicating-content-to-x/">
     <!-- Added for Netlify -->
     <link rel="stylesheet" href="/css/algoliasearchNetlify.css" />
     <link
