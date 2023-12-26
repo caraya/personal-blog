@@ -3,7 +3,6 @@ title: "Creating Sane CSS defaults"
 date: 2023-12-25
 tags:
   - CSS
-draft: true
 ---
 
 Both [Eric Meyer's Reset](https://meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/) and [Normalize.css](https://necolas.github.io/normalize.css/) are comprehensive solutions to provide a baseline for CSS development.
