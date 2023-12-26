@@ -9,7 +9,7 @@ Both [Eric Meyer's Reset](https://meyerweb.com/eric/thoughts/2007/05/01/reset-re
 
 Can I build a set of defaults that make sense for my projects on top of these resets? what shape would this set of defaults take?
 
-Ever since I decided to move this blog to Eleventy, I've been thinking about moving the CSS to use [@CSS Layers](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer). This would make it easier to organize the styelsheet.
+Ever since I decided to move this blog to Eleventy, I've been thinking about moving the CSS to use [@CSS Layers](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer). This would make it easier to organize the stylesheet.
 
 ## Getting started
 

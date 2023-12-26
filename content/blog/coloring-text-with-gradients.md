@@ -6,7 +6,7 @@ tags:
   - Explorations
 ---
 
-In addition to black and white or single, solid color text, we can also use gradients to color the text.
+In addition to black and white or single, solid-color text, we can also use gradients to color the text.
 
 The process is slightly more complicated than just assigning color to the desired element.
 
