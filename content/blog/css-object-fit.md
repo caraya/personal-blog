@@ -1,6 +1,6 @@
 ---
 title: Cropping Images in CSS With object-fit
-date: 2023-12-31
+date: 2024-06-30
 draft: true
 ---
 

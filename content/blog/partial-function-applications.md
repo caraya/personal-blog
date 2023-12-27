@@ -1,6 +1,6 @@
 ---
 title: Partial function applications
-date: 2023-12-31
+date: 2024-06-30
 draft: true
 ---
 

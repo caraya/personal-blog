@@ -1,12 +1,12 @@
 ---
 title: Interactive sandboxes for blogs and training
-date: 2023-12-31
+date: 2024-06-30
 draft: true
 ---
 
-Working on technical writing and developing training material, it'd be ideal to have a sandbox where you can show code, show the result and provide a way for people to edit it and fork it for their own use.
+Working on technical writing and developing training material, it'd be ideal to have a sandbox where you can show code, show the result and provide a way for people to edit it and fork it for their use.
 
-This post will explore three different options to provide such sandboxes. They are not all the options available but the ones I've explored and what I perceive as they advantages and disadvantges.
+This post will explore three different options to provide such sandboxes. They are not all the options available but the ones I've explored and what I perceive as their advantages and disadvantages.
 
 ## Codepen
 

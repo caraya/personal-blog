@@ -1,6 +1,6 @@
 ---
-title: Using proxies for reactivity in Javascript
-date: 2023-12-31
+title: Using Proxies for Reactivity in Javascript
+date: 2024-06-30
 draft: true
 ---
 
@@ -8,11 +8,11 @@ Reactivity seems to be an important concept to learn as you work in front-end de
 
 The idea is that your app's UI will reflect changes as soon as they happen without requiring a full page reload.
 
-In this post we'll look at What is reactivity, how does it work using three different approaches, and an example of using reactivity in front end projects
+In this post, we'll look at What is reactivity, how it works using three different approaches, and an example of using reactivity in front-end projects
 
 ## What is reactivity
 
-In the context of front end development, reactivity programming deals with data streams and the propagation of change.
+In the context of front-end development, reactivity programming deals with data streams and the propagation of change.
 
 In reactive programming, data is modeled as a sequence of events, and the application reacts to these events by updating its state.
 

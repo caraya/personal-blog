@@ -1,6 +1,6 @@
 ---
 title: "Syndicating content to Twitter/X"
-date: 2024-06-30
+date: 2024-01-18
 desc: "The process of configuring an Eleventy site to syndicate content to Twitter/X"
 tags:
   - Javascript
@@ -55,7 +55,9 @@ Once we have the metadata set up, we need to write code to publish the tweet whe
 
 I chose to use [Netlify functions](https://www.youtube.com/watch?v=VHYVipdTE8k) following the ideas from [Syndicating Content to Twitter](https://mxb.dev/blog/syndicating-content-to-twitter-with-netlify-functions/)
 
-The idea is that we'll use
+The idea is as follows:
+
+* load the
 
 ```js
 import dotenv from 'dotenv'

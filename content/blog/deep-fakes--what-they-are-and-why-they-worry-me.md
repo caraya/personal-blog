@@ -1,6 +1,6 @@
 ---
 title: "Deep fakes: What they are and why they worry me"
-date: 2023-12-31
+date: 2024-06-30
 tags:
   - AI
   - Development

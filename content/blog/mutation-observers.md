@@ -1,6 +1,6 @@
 ---
 title: Mutation observers
-date: 2023-12-31
+date: 2024-06-30
 draft: true
 ---
 What events within the DOM does Mutation Observers NOT account for?

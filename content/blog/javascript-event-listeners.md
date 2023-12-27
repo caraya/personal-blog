@@ -1,6 +1,6 @@
 ---
 title: Javascript Events
-date: 2023-12-31
+date: 2024-06-30
 draft: true
 ---
 
@@ -17,9 +17,9 @@ See MDN's [Event reference](https://developer.mozilla.org/en-US/docs/Web/Events)
 
 ## Handling events
 
-Browsers generate events all the time. When you move the mouse or tab in or out of an element, when you click on a link or a button, or when you type in a text area for example.
+Browsers generate events all the time. When you move the mouse or tab in or out of an element when you click on a link or a button, or when you type in a text area for example.
 
-As a developer you can choose to interact with or handle these events to produce interactivity.
+As a developer, you can choose to interact with or handle these events to produce interactivity.
 
 In older browsers, you would handle events using [onevent handler attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes#event_handler_attributes). In older code you may see something like this:
 
@@ -29,7 +29,7 @@ In older browsers, you would handle events using [onevent handler attributes](ht
 </button>
 ```
 
-When you click the button the `onclick` even will activate and the even will be logged to the console.
+When you click the button the `onclick` event will activate and the event will be logged to the console.
 
 The first evolution of event handlers moved the code outside the HTML attribute and into a separate script. Because we no longer have a reference to the element triggering the event, we need to provide it.
 
@@ -63,15 +63,15 @@ document.querySelectorAll('button').forEach(item => {
 })
 ```
 
-### Pointer events heads up
+### Pointer events heads-up
 
 Note that in addition to [mouse](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent) and [touch events](https://developer.mozilla.org/en-US/docs/Web/API/Touch_events) you have [pointer events](https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events).
 
-Pointer events provide an enhanced experience for pointer devices other than mice, however they may have some differences with mouse and touch events.
+Pointer events provide an enhanced experience for pointer devices other than mice, however, they may have some differences with mouse and touch events.
 
 One way to handle these differences is to test for the type of pointer device being used.
 
-`pointerType` is a read-only property of pointer events that detect the type of pointer device used. The three possible values are:
+`pointerType` is a read-only property of pointer events that detects the type of pointer device used. The three possible values are:
 
 * mouse
 * pen
@@ -79,7 +79,7 @@ One way to handle these differences is to test for the type of pointer device be
 
 If the type of pointer device can't be detected or doesn't match the three available values, it will return an empty string.
 
-For the `pointerdown` event we use a switch statement to test the type of pointer device used. We then create a different function to handle each type of device and, if the device doesn't match our list, we let the user know in the console.
+For the `pointerdown` event, we use a switch statement to test the type of pointer device used. We then create a different function to handle each type of device and, if the device doesn't match our list, we let the user know in the console.
 
 ```js
 myButton.addEventListener("pointerdown", (event) => {
@@ -99,28 +99,18 @@ myButton.addEventListener("pointerdown", (event) => {
 });
 ```
 
-Pointer events are useful but require significant more work for limited functionality.
+Pointer events are useful but require significantly more work for limited functionality.
 
 ## Custom events
 
-Most of the time we will work with browser generated events. There are times when we want to fire out own events and handle them appropriately.
+Most of the time we will work with browser-generated events. There are times when we want to fire our own events and handle them appropriately.
 
 [Creating and triggering events](https://developer.mozilla.org/en-US/docs/Web/Events/Creating_and_triggering_events) shows how to create custom events. I've chosen to use the [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent) interface to create custom events that can pass data to the handlers in the `details` attribute.
-
-```js
-const myEvent = new CustomEvent("myevent", {
-  detail: {},
-  bubbles: true,
-  cancelable: true,
-  composed: false,
-});
-```
-
-After building event we call [dispatchEvent()](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/dispatchEvent) to send the event to be handled.
+After building the event we call [dispatchEvent()](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/dispatchEvent) to send the event to be handled.
 
 `dispatchEvent()` sends an Event to the object, invoking the affected event listeners in the appropriate order. The normal event processing rules (including the capturing and optional bubbling phase) also apply to events dispatched manually with dispatchEvent().
 
-Calling `dispatchEvent()` is the last step to firing an event. You  should have already created and initialized the event you want to dispatch.
+Calling `dispatchEvent()` is the last step to firing an event. You should have already created and initialized the event you want to dispatch.
 
 Using the example above we dispatch like this:
 
@@ -130,27 +120,27 @@ const myButton = document.querySelector('#myButton')
 myButton.dispatchEvent(myEvent);
 ```
 
-With custom events we get additional flexibility to craft specific types of events.
+With custom events, we get additional flexibility to craft specific types of events.
 
-### Event propagation, bubling and capturing
+### Event propagation, bubbling and capturing
 
-Javascript has two different way to propagate events around the DOM.
+Javascript has two different ways to propagate events around the DOM.
 
-`bubbling` travels from the target upto the root, and `capturing` travels from the root down to the target.
+`bubbling` travels from the target up to the root, and `capturing` travels from the root down to the target.
 
-`root` is the highest-level parent of the target. This is usually the document, which is a parent of the , which is a (possibly distant) parent of your target element.
+`root` is the highest-level parent of the target. This is usually the document, which is a (possibly distant) parent of your target element.
 
 The target is the DOM node that triggered the event.
 
-Capturing is not used nearly as commonly as bubbling. `addEventListener()` has an optional third parameter, `useCapture`, that controls the phase of the propagation. If the value is  true, it will cause the listener to be on the capturing phase. When the value is false, it will apply the to the bubbling phase.
+Capturing is not used nearly as commonly as bubbling. `addEventListener()` has an optional third parameter, `useCapture`, that controls the phase of the propagation. If the value is true, it will cause the listener to be fired in the capturing phase. When the value is false, it will apply to the bubbling phase.
 
-Once you trigger the event, it will propagate up to the root, and it will trigger every event handler which is associated with the same type.
+Once you trigger the event, it will propagate up to the root, and it will trigger every event handler associated with the same type.
 
 For example, if your button has a click event, during the bubbling phase, it will bubble up to the root, and trigger every click event along the way.
 
 You also have means to prevent even bubbling and propagation.
 
-[event.stopPropagation()](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation) prevents further propagation of the current event in the capturing and bubbling phases. It will stop events events further up the bubbling chain but not the handler that calls `stopPropagation` any other handlers attached to the same element.
+[event.stopPropagation()](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation) prevents further propagation of the current event in the capturing and bubbling phases. It will stop events further up the bubbling chain but not the handler that calls `stopPropagation` or any other handlers attached to the same element.
 
 [stopImmediatePropagation()](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopImmediatePropagation) will stop all events up the chain from being triggered.
 

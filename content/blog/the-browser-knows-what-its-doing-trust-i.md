@@ -1,6 +1,6 @@
 ---
 title: The Browser Knows What It's Doing, Trust it
-date: 2023-12-31
+date: 2024-06-30
 draft: true
 youtube: true
 ---

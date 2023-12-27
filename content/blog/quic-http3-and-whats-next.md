@@ -1,6 +1,6 @@
 ---
 title: QUIC, HTTP3  and what's next
-date: 2023-12-31
+date: 2024-06-30
 draft: true
 ---
 

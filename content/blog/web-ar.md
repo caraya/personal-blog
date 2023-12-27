@@ -1,6 +1,6 @@
 ---
 title: Web AR in the Wild -- City Games and Communities
-date: 2023-12-31
+date: 2024-06-30
 youtube: true
 draft: true
 ---

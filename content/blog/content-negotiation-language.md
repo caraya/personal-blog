@@ -1,6 +1,6 @@
 ---
 title: Serving the right language via content negotiation
-date: 2023-12-31
+date: 2024-06-30
 draft: true
 ---
 
@@ -8,12 +8,12 @@ draft: true
 
 ## Apache
 
-Before we configure our language negotiation parameters we need to setup things on the server. You can set this on the default `httpd.conf` configuration file (meaning that it'll work in all virtual hosts) or you can set in in each virtual host configuration (meaning it'll only work for that virtual host)
+Before we configure our language negotiation parameters we need to set up things on the server. You can set this on the default `httpd.conf` configuration file (meaning that it'll work in all virtual hosts) or you can set it in each virtual host configuration (meaning it'll only work for that virtual host)
 
 The two items are:
 
-* `LanguagePriority` allows you the language precedence during content negotiation. If more than one version of a file is availab
-* `ForceLanguagePriority` allows you to serve a result page rather than MULTIPLE CHOICES (Prefer) in case of a tie or NOT ACCEPTABLE (Fallback) in case no accepted languages matched the available variants.
+* `LanguagePriority` allows you to set the language precedence during content negotiation. If more than one version of a file is available
+* `ForceLanguagePriority` allows you to serve a result page rather than MULTIPLE CHOICES (Prefer) in case of a tie or NOT ACCEPTABLE (Fallback) in case no accepted languages match the available variants.
 
 ```apacheconf
 <IfModule mod_negotiation.c>
@@ -66,8 +66,8 @@ If the browser sends headers like this one: `accept-language: en,en-US;q=0.8,ja;
 
 The configuration does the following:
 
-1. Sets the variable `$first_language`  to the value of the accept language header
-1. Matches the string to the fir comma. This can be just the top level language code (`en`), the language and country code (`en-US`) or the language plus qualifier (`en-US;q=0.8`)
+1. Sets the variable `$first_language`  to the value of the accept-language header
+1. Matches the string to the first comma. This can be just the top-level language code (`en`), the language and country code (`en-US`) or the language plus qualifier (`en-US;q=0.8`)
 1. Set the default suffix to a language. In this case, English (en)
 1. If the first language is Japanese (`ja`) then set the language suffix to Japanese
 
@@ -87,5 +87,5 @@ if ($first_language ~* 'ja') {
 
 One shortcoming of this approach is that we need to have a list of our supported languages in hand as we prepare this configuration and every time we add a language we have to add if statements to the later block.
 
-The [nginx_accept_language_module](https://www.nginx.com/resources/wiki/modules/accept_language/) module parses the `Accept-Language` field in HTTP headers and chooses the most suitable locale for the user from the list of locales supported at your website.
+The [nginx_accept_language_module](https://www.nginx.com/resources/wiki/modules/accept_language/) module parses the `Accept-Language` field in HTTP headers and chooses the most suitable locale for the user from the list of locales supported in your website.
 

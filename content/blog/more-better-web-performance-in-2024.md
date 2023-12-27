@@ -1,6 +1,6 @@
 ---
 title: "More/Better Web Performance in 2024"
-date: 2023-12-31
+date: 2024-06-30
 youtube: true
 draft: true
 ---

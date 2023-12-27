@@ -1,6 +1,6 @@
 ---
 title: "Publishing Explorations"
-date: 2023-12-31
+date: 2024-06-30
 tags:
   - CSS
   - Explorations
@@ -10,7 +10,7 @@ draft: true
 
 ## Creating gradient-colored text
 
-In addition to black and white or single, solid color text, we can also use gradients to color the text.
+In addition to black and white or single, solid-color text, we can also use gradients to color the text.
 
 The process is slightly more complicated than just assigning color to the desired element.
 
@@ -46,7 +46,7 @@ h1 {
 
 ### Leveraging Variable Font Features
 
-## Leveraging opentype font features
+## Leveraging Opentype font features
 
 ## Escaping our web metaphors
 

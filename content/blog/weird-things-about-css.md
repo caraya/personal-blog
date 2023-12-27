@@ -1,6 +1,6 @@
 ---
 title: "Weird Things About CSS"
-date: 2023-12-31
+date: 2024-06-30
 youtube: true
 tags:
 	- CSS

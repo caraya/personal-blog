@@ -1,20 +1,20 @@
 ---
 title: A declarative web?
-date: 2023-12-31
+date: 2024-06-30
 draft: true
 ---
 
 Jeremy Keith recently published [Declarative design](https://adactio.com/journal/18982) on his blog.
 
-The premise of the post is that there are two divergent ways to think about web design and building web content, ecapsulated by these two diametically opposed statements:
+The premise of the post is that there are two divergent ways to think about web design and building web content, encapsulated by these two diametrically opposed statements:
 
 ***CSS is broken and I want my tools to work around the way CSS has been designed***.
 
 and
 
-***CSS is awesome and I want my tools to amplify the way that CSS had been designed***.
+***CSS is awesome and I want my tools to amplify the way **that CSS **has** been designed*****.
 
-And that which of these statements resonates with you will influence the tools that you choose and the comfort you feel when you use tools that don't fit your paradigm.
+Which of these statements resonates with you will influence the tools that you choose and the comfort you feel when you use tools that don't fit your paradigm.
 
 This post will explore the idea of declarative web design and how it can be used to build web content and contrast it with a more imperative design paradigm represented by CSS in JS and Tailwind CSS in particular.
 
@@ -46,7 +46,7 @@ CSS is not easy to learn well. We can write CSS that looks good but it's hard to
   * [A Thorough Analysis of CSS-in-JS](https://css-tricks.com/a-thorough-analysis-of-css-in-js/)
 * Examples of imperative design
   * [Bootstrap](https://getbootstrap.com/)
-  * [Foundation](https://get.foundation/) &mdash; on life support?
+  * [Foundation](https://get.foundation/)
   * [Tailwind CSS](https://tailwindcss.com/)
 * New design thinking or is it new thinking about design?
   * [Intrinsic web design](https://www.youtube.com/watch?v=AMPKmh98XLY) &mdash; Jenn Simmons
