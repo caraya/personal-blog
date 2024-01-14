@@ -2,6 +2,11 @@
 title: Web AR in the Wild -- City Games and Communities
 date: 2024-06-30
 youtube: true
+tags:
+  - Javascript
+  - VR
+  - AR
+  - Immersive Technologies
 draft: true
 ---
 
@@ -54,11 +59,7 @@ To accomplish these things, the WebXR Device API provides the following key capa
 
 For more information, check [Fundamentals of WebXR](https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API/Fundamentals) for a theoretical foundation and [Movement, orientation, and motion: A WebXR example](https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API/Movement_and_motion) for a code example of WebXR.
 
-## How to get consistent outdoors AR?
-
-If you're using phones or other devices to work with AR experiences the issue becomes how to seed the environment. We're not using devices like DayDream, Oculus or Vibe so we can't have a full on VR experience, and that wouldn't be the objective anyways.
-
-### Can we get things other than markers to display out AR content from?
+## Can we get things other than markers to display AR content from?
 
 Using the WebXR Device API we can now place virtual items in physical spaces so users have access to them either through dedicated devices or through their WebXR enabled browsers using Magic Windows.
 
@@ -78,9 +79,7 @@ Some of these AR hybrid games:
 * Dragon Quest Walk
 * The Walking Dead: Our World
 
-### How do we translate 2D content to a 3D environment?
-
-### How do we move from 2D to 3D and back?
+For an experience like the Darknet of the Daemon novels, we don't need beacons. Each device on the network is a beacon and can help place objects in the 3D space.
 
 ## Can we generate multi player AR experiences?
 

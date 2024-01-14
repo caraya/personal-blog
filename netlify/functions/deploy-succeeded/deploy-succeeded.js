@@ -1,3 +1,4 @@
+import fetch from 'node-fetch'
 import dotenv from 'dotenv'
 import Twitter from 'twitter'
 import { decode } from 'html-entities'
@@ -5,7 +6,7 @@ import { decode } from 'html-entities'
 dotenv.config()
 
 // URL of items JSON feed
-const itemS_URL = 'https://publishing-project.rivendellweb.net/feed/feed.json'
+const ITEMS_URL = 'https://publishing-project.rivendellweb.net/feed/feed.json'
 
 // Configure Twitter API Client
 const twitter = new Twitter({
@@ -115,7 +116,7 @@ const publishitem = async (item) => {
 exports.handler = async () => {
 	// Fetch the list of published items to work on,
 	// then process them to check if an action is necessary
-	return fetch(itemS_URL)
+	return fetch(ITEMS_URL)
 		.then((response) => response.json())
 		.then(processitems)
 		.catch(handleError)

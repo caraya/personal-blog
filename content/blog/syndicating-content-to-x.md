@@ -1,11 +1,12 @@
 ---
 title: "Syndicating content to Twitter/X"
-date: 2024-01-18
+date: 2024-06-30
 desc: "The process of configuring an Eleventy site to syndicate content to Twitter/X"
 tags:
   - Javascript
   - Netlify
   - Eleventy
+draft: true
 ---
 
 One of the things I miss from my WordPress days is the ability to automatically post links to new content to Twitter/X once the content is published.
@@ -57,7 +58,10 @@ I chose to use [Netlify functions](https://www.youtube.com/watch?v=VHYVipdTE8k) 
 
 The idea is as follows:
 
-* load the
+* Load the JSON feed
+* Get the latest post
+  * If it hasn't been published then publish it
+  * If it has been published then skip it
 
 ```js
 import dotenv from 'dotenv'
