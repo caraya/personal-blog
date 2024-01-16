@@ -1,7 +1,10 @@
 ---
 title: A declarative web?
-date: 2024-06-30
-draft: true
+date: 2024-01-30
+tags:
+  - CSS
+  - Design
+  - Web
 ---
 
 Jeremy Keith recently published [Declarative design](https://adactio.com/journal/18982) on his blog.
@@ -20,9 +23,11 @@ This post will explore the idea of declarative web design and how it can be used
 
 ## Where we are now
 
-CSS is not easy to learn well. We can write CSS that looks good but it's hard to write CSS that looks good, doesn't break when we make changes to other parts of the stylesheet and performs well.
+CSS is not easy to learn well. We can write CSS that looks good but it's hard to write CSS that looks good, doesn't break when we make changes to other parts of the stylesheet and performs well at scale.
 
 ## One solution: Imperative CSS
+
+For people who want to "simplify" work with Javascript, the solution may be to use imperative solutions to styles.
 
 ### CSS in JS
 

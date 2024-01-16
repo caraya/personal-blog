@@ -1,6 +1,7 @@
 ---
 title: "Revisiting Web Components (2024 edition)"
 date: 2024-01-23
+youtube: true
 tags:
   - Javascript
   - Web Components
@@ -15,7 +16,7 @@ Web Components is the umbrella term for a set of technologies (custom elements, 
 A web component may look like this when used in a web document:
 
 ```html
-<image-gallery>
+<image-gallery></image-gallery>
 ```
 
 And they would behave the same way as built-in elements like `video` and `audio`.
@@ -110,7 +111,7 @@ The custom element API is the core of web components. It defines the element and
 
 The component definition is done with the `define` method. This method takes two parameters: the element name (must have a hyphen `-` character in it) and the element definition.
 
-In our example, we use an anonymous class to define the element. This class extends the generic [HTMLElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement) base class.
+In our example, we use an anonymous class to define the element. This class extends the [HTMLElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement) base class.
 
 We're working with autonomous elements that inherit from HTMLElement, not customized built-in elements that inherit from more specialized elements.
 
@@ -211,13 +212,18 @@ shadowRoot.appendChild(templateContent.cloneNode(true));
 We use a slightly different version since the one above doesn't work when using Declarative Shadow DOM
 
 ```js
-const template = document.getElementById('my-paragraph-template').content;
+const template = document
+	.getElementById('my-paragraph-template')
+	.content;
+
 this.attachShadow({
   mode: 'open'
 }).appendChild(template.cloneNode(true));
 ```
 
-This element also uses `observedAttributes` and the `attributeChangedCallback` lifecycle method to make live changes to the dimensions of the element.
+This element uses `observedAttributes` and the `attributeChangedCallback` lifecycle method to make live changes to the dimensions of the element.
+
+It also uses CSS custom elements, updated from Javascript, to handle the component styles.
 
 ```js
 static get observedAttributes() {
@@ -237,7 +243,7 @@ attributeChangedCallback(name, oldValue, newValue) {
 
 One of the biggest issues with web components is how to style them. Web Components V0 had piercing combinators that would allow styles to pierce to and from the Shadow DOM. Those were removed for V1 custom elements as they were seen as a contradiction to Shadow DOM encapsulation.
 
-CSS Parts, or technically CSS Shadow Parts, use the `part` attribute in the custom element template to expose the attached element to CSS, and the `:``:part`` pseudo-element in CSS to style the exposed element with a matching part name.
+CSS Parts, or technically CSS Shadow Parts, use the `part` attribute in the custom element template to expose the attached element to CSS, and the`:``:part`` pseudo-element in CSS to style the exposed element with a matching part name.
 
 To work with parts we need to modify the template and add parts to the elements that we want to style from outside the element.
 
@@ -263,12 +269,94 @@ my-paragraph::part(title) {
 }
 ```
 
-## Drawbacks and HTML components
+## Using slots for progressive enhancement
 
-[HTML Web Components](https://blog.jim-nielsen.com/2023/html-web-components/)>
+Most of the time we see web components like this:
 
-[HTML Web Components](https://adactio.com/journal/20618) &mdash; Jeremy Keith
+```html
+<my-paragraph></my-paragraph>
+```
 
+This works well when we have internet connectivity, and Javascript is enabled in the browser.
+
+But what happens if it doesn't work?
+
+If we want to use custom elements as designed, we can use slots and named slots when we design the markup for the custom element. If we've added the `slot` attributes to the template, then whatever content we put in the slots of the element instance will be processed.
+
+These may not be everyone's cup of tea. So let's look for another potential solution
+
+Jim Nielsen ([HTML Web Components](https://blog.jim-nielsen.com/2023/html-web-components/)), Jeremy Keith ([HTML Web Components](https://adactio.com/journal/20618)) and Chris Coyier [Light-DOM-Only Web Components are Sweet](https://frontendmasters.com/blog/light-dom-only/) all advocate for a "light DOM" only approach to web components that, in essence, is a way to package progressive enhancement for a given set of markup using web components.
+
+Dave Rupert's [HTML with Superpowers](https://daverupert.com/2021/10/html-with-superpowers/) presents the theoretical background and Jim Nielsen presents a working example of an HTML, no-shadow-DOM custom element.
+
+The custom element has all the markup inside. We won't be using templates or shadow DOM so all the content we want to display must be inside the element instance.
+
+```html
+<icon-list size="md">
+  <a href="...">
+    <img src="..." width="128" height="128" />
+  </a>
+</icon-list>
+```
+
+The class that defines the custom element looks like normal. There is no shadow DOM creation or template content attachment; What remains is the lifecycle method that upgrades the custom element.
+
+The element registration works the
+
+```js
+class IconList extends HTMLElement {
+  connectedCallback() {
+    // Add `<input>` controls for changing icon size/spacing
+    this.insertAdjacentHTML = `
+      <input type=range name=size />
+    `;
+
+    // Then event listeners when those values change, e.g.
+    this.querySelector("input[name=size]")
+      .addEventListener((e) => {
+        this.size = e.target.value;
+        this._renderSizing();
+      });
+  }
+
+  _renderSizing() {
+    this.querySelectorAll("img").forEach(img => {
+       // swap out the `src` and `srcset`
+       // and change `width` and `height`
+    });
+  }
+}
+
+customElements.define("icon-list", IconList);
+```
+
+Because we don't use shadow DOM, we can store the CSS for the custom element along in the site's CSS stylesheets.
+
+```css
+icon-list {
+  /* styles */
+}
+icon-list[size="sm"] {
+  /* styles for 64px sized icons */
+}
+icon-list[size="md"] {
+  /* styles for 128px sized icons */
+}
+icon-list[size="lg"] {
+  /* styles for 256px sized icons */
+}
+icon-list[size="xl"] {
+  /* styles for 512px sized icons */
+}
+```
+
+This is no different than what we would normally do:
+
+* Add the Javascript code as functions either inline or an external script
+* Add the CSS to stylesheets either inline or external stylesheets
+* Add the HTML inside a `div` instead of a custom element
+
+In the end, it's up to each developer to choose which method to use.
 
 ## Links and Resources
 
@@ -282,5 +370,6 @@ my-paragraph::part(title) {
 * Declarative Web Components
   * [HTML Web Components](https://blog.jim-nielsen.com/2023/html-web-components/) &mdash; Jim Nielsen
   * [HTML Web Components](https://adactio.com/journal/20618) &mdash; Jeremy Keith
-  * [A Web Component Story](https://www.abeautifulsite.net/posts/a-web-component-story/)
+  * [A Web Component Story](https://www.abeautifulsite.net/posts/a-web-component-story/) &mdash; Cory LaViska
   * [Blinded By the Light DOM](https://meyerweb.com/eric/thoughts/2023/11/01/blinded-by-the-light-dom/) &mdash; Eric Meyer
+  * [Light-DOM-Only Web Components are Sweet](https://frontendmasters.com/blog/light-dom-only/) &mdash; Chris Coyier
