@@ -1,6 +1,6 @@
 ---
 title: "Use margin-trim to trim the bottom margin on the last child"
-date: 2024-01-18
+date: 2024-01-17
 tags:
   - CSS
   - Notes

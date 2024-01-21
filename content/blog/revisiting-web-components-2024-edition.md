@@ -1,6 +1,6 @@
 ---
 title: "Revisiting Web Components (2024 edition)"
-date: 2024-01-23
+date: 2024-01-24
 youtube: true
 tags:
   - Javascript

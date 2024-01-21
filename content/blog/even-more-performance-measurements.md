@@ -1,6 +1,6 @@
 ---
 title: "Even more performance measurements"
-date: 2024-01-16
+date: 2024-01-15
 tags:
   - Performance
   - Javascript

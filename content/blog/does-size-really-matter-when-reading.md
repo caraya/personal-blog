@@ -1,7 +1,9 @@
 ---
-title: "does size really matter when reading?"
+title: "Does (font) size really matter when reading?"
 date: 2024-06-30
-draft: true
+tags:
+  - CSS
+  - Typography
 ---
 
 <https://jov.arvojournals.org/article.aspx?articleid=2191906>
