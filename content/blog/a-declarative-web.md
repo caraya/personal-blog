@@ -5,6 +5,7 @@ tags:
   - CSS
   - Design
   - Web
+draft: true
 ---
 
 Jeremy Keith recently published [Declarative design](https://adactio.com/journal/18982) on his blog.
