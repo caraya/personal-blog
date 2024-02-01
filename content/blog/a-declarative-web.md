@@ -1,6 +1,6 @@
 ---
 title: A declarative web?
-date: 2024-01-30
+date: 2024-02-14
 tags:
   - CSS
   - Design
@@ -16,7 +16,7 @@ The premise of the post is that there are two divergent ways to think about web 
 
 and
 
-***CSS is awesome and I want my tools to amplify the way **that CSS **has** been designed*****.
+***CSS is awesome and I want my tools to amplify the way that CSS has been designed***.
 
 Which of these statements resonates with you will influence the tools that you choose and the comfort you feel when you use tools that don't fit your paradigm.
 
@@ -28,7 +28,7 @@ CSS is not easy to learn well. We can write CSS that looks good but it's hard to
 
 ## One solution: Imperative CSS
 
-For people who want to "simplify" work with Javascript, the solution may be to use imperative solutions to styles.
+For people who want to "simplify" work with Javascript, the solution may be to use solutions like CSS in JS.
 
 ### CSS in JS
 
@@ -36,7 +36,34 @@ For people who want to "simplify" work with Javascript, the solution may be to u
 >
 > [Why I Write CSS in JavaScript](https://mxstbr.com/thoughts/css-in-js/)
 
-### Tailwind CSS
+CSS is not an easy language to master... I agree. Until recently it was hard to control the cascade and style only our target elements without running afoul of specificity or having to use `!important` rules everywhere.
+
+```js
+import styled from 'styled-components';
+
+const Button = styled.button`
+  background-color: ${props => props.primary ? '#333' : '#fafafa'};
+  color: ${props => props.primary ? '#fafafa' : '#333'};
+  border: 1px solid #ccc;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: ${props => props.primary ? '#222' : '#eee'};
+  }
+`;
+```
+
+## Tailwind CSS
+
+One of the most popular CSS libraries
+
+```html
+```
+
+
+Tailwind CSS encourages you to style each element individually by applying multiple utility classes to it. However, this leads to duplication and inconsistency in your code, as you have to repeat the same classes for similar elements or change them slightly for different variations.
 
 ## New thinking about design?
 
