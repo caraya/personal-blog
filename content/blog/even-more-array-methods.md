@@ -1,6 +1,6 @@
 ---
 title: "Even More Array Methods"
-date: 2024-06-29
+date: 2024-02-19
 tags:
   - Javascript
   - Notes

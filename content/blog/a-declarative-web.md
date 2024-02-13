@@ -26,7 +26,7 @@ This post will explore the idea of declarative web design and how it can be used
 
 CSS is not easy to learn well. We can write CSS that looks good but it's hard to write CSS that looks good, doesn't break when we make changes to other parts of the stylesheet and performs well at scale.
 
-## One solution: CSS in JS
+### One solution: CSS in JS
 
 For people who want to "simplify" work with Javascript, the solution may be to use solutions like CSS in JS.
 
@@ -90,7 +90,7 @@ Looking at this without knowing how the technology works raised a lot of questio
 * How do you customize the styles? Can you make it work with more than one style?
 * Does it load the styles for every instance of the component rather than once and reuse the styles for all instances of the component?
 
-## Tailwind CSS
+### Tailwind CSS
 
 One of the most popular CSS libraries is [Tailwind CSS](https://tailwindcss.com/). It has replaced older Frameworks like [Foundation](https://get.foundation/) and [Bootstrap](https://getbootstrap.com) but, from my perspective, it doesn't really resolve the problems that it tries to address.
 
@@ -195,8 +195,7 @@ Some tools that have made CSS easier for me to work with are:
 
 * @scope
 * [Functional pseudo-classes](https://publishing-project.rivendellweb.net/playing-with-css-selectors/) (`:is()`, `:has` and `:where` in particular)
-* `calc()` and `clamp()`
-* The new [advanced math functions in CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Functions/Using_CSS_math_functions#advanced_css_math_functions)
+* `var()`, `pow()`, `calc()` and `clamp()`
 * Simplified nesting
 * The OKLCH color space
 * Relative colors
@@ -209,16 +208,67 @@ We will only cover some of these features in this post. We will explore them fur
 
 With a scoping root set, the contained style rules (`scoped style rules`) can only be applied to the limited subtree of the DOM.
 
+In this example, `img` elements and the elements with class `.img` will only match if they are inside an aside.
+
+This would be particularly useful if we had different styles for elements based on their position in the document. It would also reduce the need for random class names and inline styles.
+
 ```css
-@scope (.card) {
+@scope (aside) {
 	img, .img {
-		background: lightgreen;
-		border-color: green;
+		background: lightblue;
+		border-color: navy;
 	}
 }
 ```
 
+The `:scope` selector would match the root scope element.
+
+This example adds a 5-pixel solid red border to all aside elements.
+
+```css
+@scope (aside) {
+	:scope {
+    border: 5px solid red;
+	}
+}
+```
+
+You can use the `to` keyword to set the lower boundary of a scope.
+
+For example, we can style all images inside an `aside` element that are not part of the aside `.content` child.
+
+```css
+@scope (aside) to (.content) {
+  img, .img {
+    border-radius: 50%;
+  }
+}
+```
+
+For more information see [Limit the reach of your selectors with the CSS @scope at-rule](https://developer.chrome.com/docs/css-ui/at-scope#closing_note_selector_isolation_not_style_isolation)
+
 #### calc(), var(), clamp(), and pow()
+
+Mathematical functions make it easier to write rules that would normally require Javascript to run.
+
+This section will concentrate on a few of these functions:
+
+`var()`
+: Let's you use an existing CSS Custom Property, regardless of how it was defined
+
+`calc()`
+: Performs calculations on their parameters.
+: The parameters can be of different types and require coercion to the type we want to use
+
+`clamp()`
+: Given a lower and upper boundaries `clamp()` will calculate and use a value between the boundaries
+
+`pow()`
+: Allows exponents on CSS calculations
+
+In this example, we set the base value to 1rem by multiplying 1 by 1rem and the factor to be 1.5
+
+For each heading variable (`h1` to `h6`) we multiply the base value (`--base`) times the factor (`--factor`) raised to a given power.
 
 ```css
 :root {
@@ -234,24 +284,151 @@ With a scoping root set, the contained style rules (`scoped style rules`) can on
 }
 ```
 
+We also use `clamp()` to constrain the value of the paragraph font size. Here we tell the browser to make the font size 2% of the browser width but no smaller than our base variable and no larger than 2.5 times the value of our base variable.
+
 ```css
 p {
-  width: 80ch;
-  font-size: clamp(1rem, calc(1rem * var(--factor)), 2.5rem);
+  width: 60ch;
+  font-size: clamp((var(--base)), 2vw, (calc(var(--base) * 2.5)));;
 }
 ```
 
+With combinations like these, we have fluid typography and we can handle other areas of design with far fewer styles than we used to.
+
 #### Simplified nesting
 
-#### The OKLCH color space
+Nesting in native CSS always seemed like a mess to me compared to SASS nesting rules. Things have improved since the relaxation of the nesting rules.
 
-#### Relative colors
+You still need to add the `&` selector before the nested rules so the browser will know what you mean.
 
+In the example below, we create a generic `.notice` class that holds all common aspects of the notices we want to use.
 
-### Flexible Layouts
+We then nest more specific classes with information that is specific to them like the background color.
+
+```css
+.notice {
+  width: 600px;
+  height: 200px;
+  justify-content: center;
+  border-radius: 50%;
+  border: black solid 2px;
+  color: black;
+  padding: 1rem;
+
+.notice .danger {
+    background: red;
+  }
+
+.notice .warning {
+    background-color: lightyellow;
+  }
+
+.notice .success {
+    background-color: lightgreen;
+  }
+}
+```
+
+This is equivalent to:
+
+```css
+.notice {
+  width: 600px;
+  height: 200px;
+  justify-content: center;
+  border-radius: 50%;
+  border: black solid 2px;
+  color: black;
+  padding: 1rem;
+}
+
+.notice .danger {
+	background: red;
+}
+
+.notice .warning {
+	background-color: lightyellow;
+}
+
+.notice .success {
+	background-color: lightgreen;
+}
+```
+
+Which one you use depends on your preferences. I prefer nesting as it makes it clear to me what I meant to do with the code.
+
+#### The OKLCH color space and relative colors
+
+Unlike RGB(A) colors, has different components to the color that make it better represent colors we can see and it makes it easier to manipulate with CSS or Javascript.
+
+The four components of an LCH color are:
+
+L (Perceived Lightness)
+: A number between 0 and 1, a percentage between 0% and 100%, or the keyword none. It specifies the perceived lightness.
+: 0 corresponds to 0% (black) and 1 corresponds to 100% (white).
+
+C (Chroma)
+: A number, a percentage, or the keyword none, where 0% is 0 and 100% is the number 0.4. It is a measure of the chroma (roughly representing the "amount of color").
+: Its minimum useful value is 0, while the maximum is theoretically unbounded (but in practice does not exceed 0.5).
+
+H (Hue)
+: A `<number>`, an `<angle>`, or the keyword none, which represents the hue angle.
+
+A (Alpha) (Optional)
+: An `<alpha-value>` or the keyword none, where the number 1 corresponds to 100% (full opacity).
+
+We can build a color palette by changing the lightness of a base color using [relative color syntax](https://developer.chrome.com/blog/css-relative-color-syntax) to create a nine-step progression of colors.
+
+```css
+:root {
+  --theme-primary: #663399;
+  --theme-primary-900: oklch(from var(--theme-primary) 10% c h);
+  --theme-primary-800: oklch(from var(--theme-primary) 20% c h);
+  --theme-primary-700: oklch(from var(--theme-primary) 30% c h);
+  --theme-primary-600: oklch(from var(--theme-primary) 40% c h);
+  --theme-primary-500: oklch(from var(--theme-primary) 50% c h);
+  --theme-primary-400: oklch(from var(--theme-primary) 60% c h);
+  --theme-primary-300: oklch(from var(--theme-primary) 70% c h);
+  --theme-primary-200: oklch(from var(--theme-primary) 80% c h);
+  --theme-primary-100: oklch(from var(--theme-primary) 90% c h);
+}
+```
+
+Then we can reference these variables anywhere we need or want a color.
+
+This class also uses the [color-contrast function](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-contrast) to decide if the text color will be black or white.
+
+```css
+.theme-900 {
+  background: var(--theme-primary-900);
+  color: color-contrast(var(--theme-primary-900) vs white, black);
+}
+```
+
+There is a lot more than we can do with these functions and other math and math-related functions, particularly when it comes to animations and transitions.
 
 ### Fluid type & Space
 
+I've separated Fluid type and space from the other uses of CSS math and math-related functions to make it easier to read.
+
+Fluid typography relies primarily on the `clamp()` function. Rather than using media queries, we can use `clamp()` and control the size of the content within preset boundaries.
+
+```css
+p {
+  width: 60ch;
+  font-size: clamp((var(--base)), 2vw, (calc(var(--base) * 2.5)));
+}
+```
+
+We can also handle spacing with clamp, by setting boundaries beyond which the values cannot change.
+
+```css
+div {
+	inline-size: clamp(25rem, 30vw, 50rem)
+}
+```
+
+### Flexible Layouts
 
 ## Towards a declarative web?
 
@@ -259,8 +436,6 @@ p {
 
 ## Links and resources
 
-* [Declarative design](https://adactio.com/journal/18982)
-* [Be The Browser’s Mentor, Not Its Micromanager](https://andy-bell.co.uk/be-the-browsers-mentor-not-its-micromanager/)
 * CSS in JS
   * [An Introduction to CSS-in-JS: Examples, Pros, and Cons](https://webdesign.tutsplus.com/articles/an-introduction-to-css-in-js-examples-pros-and-cons--cms-33574)
   * [A Thorough Analysis of CSS-in-JS](https://css-tricks.com/a-thorough-analysis-of-css-in-js/)
@@ -277,3 +452,6 @@ p {
   * [Responsive Web Design](https://alistapart.com/article/responsive-web-design/) &mdash; Ethan Marcotte
   * [The Web’s Grain](https://frankchimero.com/blog/2015/the-webs-grain/) &mdash; Frank Chimero
   * [What Screens Want](https://frankchimero.com/blog/2013/what-screens-want/) &mdash; Frank Chimero
+  * [Declarative design](https://adactio.com/journal/18982)
+  * [Be The Browser’s Mentor, Not Its Micromanager](https://andy-bell.co.uk/be-the-browsers-mentor-not-its-micromanager/)
+
