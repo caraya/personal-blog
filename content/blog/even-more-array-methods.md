@@ -1,6 +1,6 @@
 ---
 title: "Even More Array Methods"
-date: 2024-06-29
+date: 2024-02-19
 tags:
   - Javascript
   - Notes
@@ -92,7 +92,7 @@ console.log(cars)
 
 The sort method takes an optional parameter with a custom sorting function.
 
-This function will compare the length of two array values and sort them from longest to shortest.  It has some shortcomings (it doesn't take into account what happens if the lengths are equal) but as an example it's OK.
+In the example, The function will compare the length of two array values and sort them from longest to shortest.  It has some shortcomings (it doesn't take into account what happens if the lengths are equal) but as an example it's OK.
 
 ```js
 let cars = ["Porsche", "Ferrari", "Jaguar", "BMW"]
