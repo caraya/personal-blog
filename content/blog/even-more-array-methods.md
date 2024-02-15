@@ -6,7 +6,7 @@ tags:
   - Notes
 ---
 
-The ECMAScript specification gained a new set of methods for the Array object that work on copies of the original array rather than modifying the original array directly.
+The ECMAScript specification gained a new set of methods for the Array object. These methods work on copies of the original array rather than modifying the original array directly.
 
 There are other ways to complete the tasks these methods do. Which method you use will largely depend on whether you need to keep the original array intact or not.
 
@@ -15,8 +15,7 @@ There are other ways to complete the tasks these methods do. Which method you us
 When I want to reverse the content of an array, I normally clone the array using [from](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from) and then reverse it using [reverse](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse).
 
 ```js
-console.log(cars)
-// -> ['Porsche', 'Ferrari', 'BMW']
+let cars = ['Porsche', 'Ferrari', 'BMW']
 
 let reverseCars = Array.from(cars).reverse();
 
@@ -31,7 +30,6 @@ Using the [toReversed](https://developer.mozilla.org/en-US/docs/Web/JavaScript/R
 
 ```js
 let cars = ["Porsche", "Ferrari", "BMW"]
-
 
 let carsReversed = cars.ToReversed;
 console.log(cars.toReversed())
