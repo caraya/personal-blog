@@ -176,7 +176,7 @@ These colors will also change when the values on the sliders are updated since t
 
 ## Triadic colors
 
-![Hue Color Wheel. Source [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/hue/color_wheel.svg)](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/color_wheel.svg)
+![OKLCH Color Wheel. Source [Coloraide](https://github.com/facelessuser/coloraide)](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/oklch-color-wheel_kz2mmy.png)
 
 [Triadic colors](https://www.interaction-design.org/literature/article/triadic-color-scheme) are three colors equidistant in the color wheel.
 

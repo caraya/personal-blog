@@ -6,12 +6,11 @@ templateEngineOverride: false
 
 ### Adding Webpack to the mix
 
-The second example is more complex and uses Globalize, the CLDR data files, IANA timezone data and Webpack specific tools, including a custom `globalize-webpack-plugin`.
+The second example is more complex and uses Globalize, the CLDR data files, IANA timezone data and Webpack-specific tools, including a custom `globalize-webpack-plugin`.
 
 The first component is the `package.json` file that will tell NPM what packages and versions to install and what commands to run. If you're familiar with Webpack the commands in the script commands should look familiar.
 
 ```javascript
-{% raw %}
 {
   "private": true,
   "devDependencies": {
@@ -31,10 +30,9 @@ The first component is the `package.json` file that will tell NPM what packages 
   },
   "cldr-data-urls-filter": "(core|dates|numbers|units)"
 }
-{% endraw %}
 ```
 
-`webpack-config.js` build the Webpack side of the equation. It requires the packages needed, configures Webpack and specifies the bunldes to build:
+`webpack-config.js` builds the Webpack side of the equation. It requires the packages needed, configures Webpack and specifies the bunldes to build:
 
 1. `vendor`, which holds Globalize Runtime modules and other third-party libraries
 2. `i18n precompiled data`, which means the minimum yet sufficient set of precompiled i18n data that your application needs (one file for each supported locale)
@@ -45,7 +43,7 @@ The configuration uses **[html-webpack-plugin](https://github.com/jantimon/html-
 In a later section, we'll add another plugin to this Webpack configuration. You can also add more to it based on your build system requirements.
 
 ```javascript
-{% raw %}
+
 var webpack = require( "webpack" );
 var CommonsChunkPlugin = require( "webpack/lib/optimize/CommonsChunkPlugin" );
 var HtmlWebpackPlugin = require( "html-webpack-plugin" );
@@ -101,7 +99,7 @@ module.exports = {
     })
   ] : [] )
 };
-{% endraw %}
+
 ```
 
 `index.js` runs the globalization tasks that we want the user to see. This is a contrived example meant to exercise the library and show what it can do. That said it gives you an idea of the power of GLobalize and what we can use it for.
@@ -113,7 +111,7 @@ These tasks work on the localization tasks for our application. We're capable of
 The first two examples work with number formatting, one for numbers (where the locale indicates how to format decimals and number separators) and one for currency.
 
 ```javascript
-{% raw %}
+
 var Globalize = require( "globalize" );
 var startTime = new Date();
 
@@ -123,7 +121,7 @@ document.getElementById( "number" ).textContent = numberFormatter( 12345.6789 );
 
 var currencyFormatter = Globalize.currencyFormatter( "USD" );
 document.getElementById( "currency" ).textContent = currencyFormatter( 69900 );
-{% endraw %}
+
 ```
 
 Dates are more complicated. The first example formats a date using the default formatting rules for the locale we are using.
@@ -131,7 +129,7 @@ Dates are more complicated. The first example formats a date using the default f
 The second data example uses an array to indicate the format for the date (`datetime`) and a full IANA time zone like `America/Sao_Paulo` or `America/Los_Angeles` to indicate the offset to use and the name of the Time Zone that corresponds to the location. It then uses the array we created to display the date.
 
 ```javascript
-{% raw %}
+
 var dateFormatter = Globalize.dateFormatter({ datetime: "medium" });
 document.getElementById( "date" ).textContent = dateFormatter( new Date() );
 
@@ -142,13 +140,13 @@ var dateWithTimeZoneFormatter = Globalize.dateFormatter({
 
 document.getElementById( "date-time-zone" ).textContent =
   dateWithTimeZoneFormatter(new Date());
-{% endraw %}
+
 ```
 
 Another way to parse dates according to locale is to break it into its constituent parts. In this example we break it down into parts and, for illustrative purposes, it makes the month part bold.
 
 ```javascript
-{% raw %}
+
 var _dateToPartsFormatter =
   Globalize.dateToPartsFormatter({ datetime: "medium" });
 var dateToPartsFormatter = function( value ) {
@@ -165,13 +163,13 @@ var dateToPartsFormatter = function( value ) {
   };
 document.getElementById( "date-to-parts" ).innerHTML =
   dateToPartsFormatter( new Date() );
-{% endraw %}
+
 ```
 
 Next, we test relative time formatting (`10 minutes ago` type) and unit type (`60 MPH`) type formatting.
 
 ```javascript
-{% raw %}
+
 var relativeTimeFormatter = Globalize.relativeTimeFormatter( "second" );
 document.getElementById( "relative-time" ).textContent =
   relativeTimeFormatter( 0 );
@@ -179,7 +177,7 @@ document.getElementById( "relative-time" ).textContent =
 var unitFormatter = Globalize.unitFormatter( "mile/hour", { form: "short" } );
 document.getElementById( "unit" ).textContent =
   unitFormatter( 60 );
-{% endraw %}
+
 ```
 
 The variables in the section below have been cut for formatting. Each `document.getElementById` and `Globalize.formatMessage` should be in the same line.
@@ -187,7 +185,7 @@ The variables in the section below have been cut for formatting. Each `document.
 These examples work with `formatMessage` for different strings. These will be used and localized in the HTML file described in the next section
 
 ```javascript
-{% raw %}
+
 // Messages.
 document.getElementById( "intro-1" ).textContent =
  Globalize.formatMessage( "intro-1" );
@@ -222,13 +220,13 @@ document.getElementById( "message-2" ).textContent =
 // Display demo.
 document.getElementById( "requirements" ).style.display = "none";
 document.getElementById( "demo" ).style.display = "block";
-{% endraw %}
+
 ```
 
 The final bin in the script is a timing function that will update the valies in the timer once every 1000 milliseconds.
 
 ```javascript
-{% raw %}
+
 // Refresh elapsed time
 setInterval(function() {
     var elapsedTime = +( ( startTime - new Date() ) / 1000 ).toFixed( 0 );
@@ -249,7 +247,7 @@ setInterval(function() {
       unit: unitFormatter( 60 )
     });
 }, 1000);
-{% endraw %}
+
 ```
 
 The final piece is the HTML documebnt that will hold all the localized messages generated during the build process and also links to the Webpack generated bundles as well.
@@ -342,7 +340,7 @@ it.
     }
 }
 %}
-{% endraw %}
+
 </body>
 </html>
 ```

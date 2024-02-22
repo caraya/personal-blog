@@ -79,63 +79,19 @@ Even in countries that speak the same language words can have different meanings
 
 I’m a Spanish native speaker and always thought that guagua only means baby as it did where I grew up. But according to [Wikitionary](https://en.wiktionary.org/wiki/guagua) it may also mean bus in other areas where people speak the language.
 
-Colors can have different meaning depending on the user’s cultural background. In the table below, taken from [http://blog.globalizationpartners.com/culturally-customized-website.aspx](http://blog.globalizationpartners.com/culturally-customized-website.aspx), we can see how different cultures perceive color. How does the perception of color afect how people see your brand and content?
+Colors can have different meanings depending on the user’s cultural background. In the table below, taken from [http://blog.globalizationpartners.com/culturally-customized-website.aspx](https://web.archive.org/web/20111104184034/http://blog.globalizationpartners.com/culturally-customized-website.aspx), we can see how different cultures perceive color. How does the perception of color affect how people see your brand and content?
 
-| COLOR | USA | China | India | Egypt | Japan |
-| --- | --- | --- | --- | --- | --- |
-| Red | Danger
-Love
-Stop | Good fortune
-Luck
-Joy | Luck
-Fury
-Masculine | Death | Anger
-Danger |
-| Orange | Confident
-Dependable
-Corporate | Fortune
-Luck
-Joy | Sacred (the Color Saffron) | Virtue
-Faith
-Truth | Future
-Youth
-Energy |
-| Yellow | Coward
-Joy
-Hope | Wealth
-Earth
-Royal | Celebration | Mourning | Grace
-Nobility |
-| Green | Spring
-Money
-New | Health
-Prosperity
-Harmony | Romance
-New
-Harvest | Happiness
-Prosperity | Eternal life |
-| Blue | Confident
-Dependability
-Corporate | Heavenly
-Clouds | Mourning
-Disgust
-Chilling | Virtue
-Faith
-Truth | Villainy |
-| Purple | Royalty
-Imagination | Royalty | Unhappiness | Virtue | Wealth |
-| White | Purity
-Peace
-Holy | Mourning | Fun
-Serenity
-Harmony | Joy | Purity
-Holiness |
-| Black | Funeral
-Death
-Evil | Heaven
-Neutral
-High Quality | Evil | Death
-Evil |   |
+| &nbsp; | 	Countries |||||
+| Color | USA | China | India | Egypt | Japan
+| :---: | --- | --- | ---| ---| --- |
+| Red | Danger<br>Love<br>Stop| Good fortune<br>Luck<br>Joy | Luck<br>Fury<br>Masculine| Death| Anger<br>Danger |
+| Orange| Confident<br>Dependable<br>Corporate | Fortune<br>Luck<br>Joy| Sacred (the Color Saffron)| Virtue<br>Faith<br>Truth| Future<br>Youth<br>Energy |
+| Yellow | Coward<br>Joy<br>Hope |Wealth<br>Earth<br>Royal | Celebration | Mourning | Grace<br>Nobility |
+| Green | Spring<br>Money<br>New | Health<br>Prosperity<br>Harmony | Romance<br>New<br>Harvest | Happiness<br>Prosperity | Eternal life |
+| Blue | Confident<br>Dependability<br>Corporate | Heavenly<br>Clouds | Mourning<br>Disgust<br>Chilling | Virtue<br>Faith<br>Truth | Villainy |
+| Purple | Royalty<br>Imagination | Royalty | Unhappiness | Virtue | Wealth |
+| Black | Funeral<br>Death<br> | Evil | Heaven<br>Neutral<br>High Quality | Evil | Death |
+| White | Purity<br>Peace<br>Holy | Mourning | Fun<br>Serenity<br>Harmony | Joy | Purity<br>Holiness |
 
 ### Working with the constraints of users’ devices
 
