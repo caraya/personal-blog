@@ -14,14 +14,12 @@ This post will cover what these palettes are and how to use them.
 
 ## Triadic Colors
 
-![OKLCH Color Wheel. Source [Coloraide](https://github.com/facelessuser/coloraide)](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/oklch-color-wheel_kz2mmy.png)
+![OKLCH color wheel, provided for reference. Source [Coloraide](https://github.com/facelessuser/coloraide)](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/oklch-color-wheel_kz2mmy.png)
 
 [Triadic colors](https://www.interaction-design.org/literature/article/triadic-color-scheme) are equidistant on the color wheel.
 
-
-
 <figure>
-<div style="display:flex;flex-flow:row-wrap;gap:1rem">
+<div style="display:flex;flex-flow:row-wrap">
   <div style="background-color:oklch(0.5 1 0 /1);height:100px;width:200px;">&nbsp;</div>
   <div style="background-color:oklch(0.5 1 120 /1);height:100px;width:200px;">&nbsp;</div>
   <div style="background-color:oklch(0.5 1 240 /1);height:100px;width:200px;">&nbsp;</div>
@@ -32,7 +30,7 @@ This post will cover what these palettes are and how to use them.
 If we use blue as our starting color, the palette will loop around, that's why the third color is at 92 on the wheel.
 
 <figure>
-<div style="display:flex;flex-flow:row-wrap;gap:1rem">
+<div style="display:flex;flex-flow:row-wrap">
   <div style="background-color:oklch(0.5 1 212 /1);height:100px;width:200px;">&nbsp;</div>
   <div style="background-color:oklch(0.5 1 332 /1);height:100px;width:200px;">&nbsp;</div>
   <div style="background-color:oklch(0.5 1 92 /1);height:100px;width:200px;">&nbsp;</div>
@@ -40,13 +38,14 @@ If we use blue as our starting color, the palette will loop around, that's why t
 <figcaption>Example of Triadic Colors at 212, 332, and 92 degrees in the color wheel</figcaption>
 </figure>
 
-
 ## Tetradic colors
 
-Tetradic colors are four colors equidistant in the color wheel. Because there are four colors, they are placed 90 degrees from each other in the color
+Tetradic colors are four colors equidistant in the color wheel. Because there are four colors, and I'm using the square Tetradic color scheme, they are placed 90 degrees from each other in the color wheel.
+
+Tetradic colors will create two pairs of complementary colors.
 
 <figure>
-<div style="display:flex;flex-flow:row-wrap;gap:1rem">
+<div style="display:flex;flex-flow:row-wrap;">
 	<div style="background-color:oklch(0.5 1 0 /1);height:100px;width:200px;">&nbsp;</div>
 	<div style="background-color:oklch(0.5 1 90 /1);height:100px;width:200px;">&nbsp;</div>
 	<div style="background-color:oklch(0.5 1 180 /1);height:100px;width:200px;">&nbsp;</div>
@@ -55,9 +54,10 @@ Tetradic colors are four colors equidistant in the color wheel. Because there ar
 <figcaption>Example of Triadic Colors at 0, 90, 180, and 270 degrees in the color wheel</figcaption>
 </figure>
 
+We can use any color as a starting point to generate the swatches by adding 90 degrees to the starting color.
 
 <figure>
-<div style="display:flex;flex-flow:row-wrap;gap:1rem">
+<div style="display:flex;flex-flow:row-wrap">
 	<div style="background-color:oklch(0.50 1 212 / 1);height:100px;width:200px;">&nbsp;</div>
 	<div style="background-color:oklch(0.50 1 302 / 1);height:100px;width:200px;">&nbsp;</div>
 	<div style="background-color:oklch(0.50 1 32 / 1);height:100px;width:200px;">&nbsp;</div>
@@ -71,7 +71,7 @@ Tetradic colors are four colors equidistant in the color wheel. Because there ar
 
 There is no dominant color in either palette, you will have to pick the primary color for your project.
 
-Using different colors in the palette as your primary color will have different effects on your audience. This is especially important when working with cross-cultural audiences that may interpret colors differently.
+Using different colors in the palette as your primary color will have different effects on your audience. **This is especially important when working with cross-cultural audiences that may interpret colors differently**.
 
 The table below, taken from [Creating Culturally Customized Content for Website Translation](https://web.archive.org/web/20111104184034/http://blog.globalizationpartners.com/culturally-customized-website.aspx), shows how people in different countries perceive colors.
 
@@ -91,12 +91,6 @@ As with any other aspect of UX work, test your colors with your target audience.
 
 ## Links and Resources
 
-<https://www.interaction-design.org/literature/article/triadic-color-scheme>
-
-<https://www.colorsexplained.com/square-colors/>
-
-<https://quiltsbyjen.ca/tetradic-colour-schemes-the-square/>
-
-<https://www.colorsexplained.com/square-colors/>
-
-
+* [Everything You Need To Know About Triadic Colors](https://www.interaction-design.org/literature/article/triadic-color-scheme)
+* [Square Colors – How to Master This Lesser-Known Color Scheme](https://www.colorsexplained.com/square-colors/)
+* [Tetradic Colour Schemes – The Square](https://quiltsbyjen.ca/tetradic-colour-schemes-the-square/)
