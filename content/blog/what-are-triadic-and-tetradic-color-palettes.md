@@ -4,7 +4,6 @@ date: 2024-02-26
 tags:
   - CSS
   - Color
-draft: true
 ---
 
 In my last post [Creating an OKLCH Generator Tool](https://publishing-project.rivendellweb.net/creating-an-oklch-generator-tool/), I wrote about about Triadic and Tetradic palettes and how to build them using vanilla JS.

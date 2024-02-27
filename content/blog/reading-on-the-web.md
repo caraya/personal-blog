@@ -70,6 +70,9 @@ Character similarity
 : The similarity depends on the font and whether the font provides support to differentiate the similar numbers.
 : Some fonts may implement the [slashed zero](https://www.preusstype.com/techdata/otf_zero.php) open type feature to differentiate between 0 and O when they are used in the same document.
 
+## Controlling font size with CSS
+
+
 
 ## Links and Resources
 
