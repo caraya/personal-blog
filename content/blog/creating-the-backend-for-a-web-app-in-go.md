@@ -1,10 +1,9 @@
 ---
 title: "Creating the Backend for a Web App in Go"
-date: 2024-06-30
+date: 2024-03-11
 tags:
   - Go
   - Backend
-draft: true
 ---
 
 I've always struggled with how to bring languages like Go and Rust into my web development work.
