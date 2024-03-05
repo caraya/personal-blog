@@ -1,6 +1,6 @@
 ---
 title: "Creating the Backend for a Web App in Go"
-date: 2024-03-11
+date: 2024-03-06
 tags:
   - Go
   - Backend

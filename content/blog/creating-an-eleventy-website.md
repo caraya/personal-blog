@@ -5,6 +5,7 @@ tags:
   - Eleventy
   - Design
   - Build
+draft: true
 ---
 
 I used WordPress until 2023 when I became disappointed as to the direction the project was going towards and how much harder blocks make it to create bespoke designs the way I'm used to.
