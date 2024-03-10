@@ -581,6 +581,10 @@ After all the iterations, this is what the final code looks like.
 
 We've made changes to the template file to add basic layout and typography styles along with [Prism.js](https://prismjs.com/) scripts and styles.
 
+It also adds commas after the value of all tags but the last one.
+
+I've uploaded the code to a
+
 {% raw %}
 ```html
 <!DOCTYPE html>
@@ -610,6 +614,8 @@ We've made changes to the template file to add basic layout and typography style
 {% endraw %}
 
 The generator code consolidates all the prior iterations and will produce well-formed, valid HTML documents.
+
+I've packaged the program and its associated files in a Github repository [https://github.com/caraya/markdown-converter](https://github.com/caraya/markdown-converter) so you can see it in action.
 
 ```go
 package main
