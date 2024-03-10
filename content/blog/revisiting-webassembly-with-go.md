@@ -14,7 +14,7 @@ Before we start looking at specific projects, let's look at what we need to do t
 The first step is to initialize the project from GO. We do this by running the following command:
 
 ```bash
-go mod init go-project
+go mod init github.com/caraya/go-project
 ```
 
 The resulting go.mod will look like this:
