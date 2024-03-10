@@ -7,14 +7,14 @@ module.exports = {
 				displayP3: true,
 			},
 		}),
-		require("cssnano")({
-			preset: [ 'default', {
-				svgo: false,
-				discardComments: {
-					removeAll: true,
-				},
-			},
-		 ],
-		})
+		// require("cssnano")({
+		// 	preset: [ 'default', {
+		// 		svgo: false,
+		// 		discardComments: {
+		// 			removeAll: true,
+		// 		},
+		// 	},
+		//  ],
+		// })
 	],
 }
