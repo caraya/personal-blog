@@ -58,9 +58,7 @@
     <link rel="stylesheet" href="/css/algoliasearchNetlify.css" />
     <link
     rel="stylesheet" media="screen" href="/css/index.css"/> {# add prism.js stylesheets unconditionally #}
-    <link rel="stylesheet" media="screen" href="/css/prism-solarizedlight.css"/>
-    <link
-    rel="stylesheet" media="screen" href="/css/prism-diff.css"/>
+    <link rel="stylesheet" media="screen" href="/css/prism.css"/>
     {# Only load Mavo if instructed to do so in the post's front matter #}
     {% if mavo %}
       <link rel="stylesheet" href="https://get.mavo.io/mavo.css"/>
@@ -136,7 +134,8 @@
     </div>
     <!-- Current page: {{ page.url | htmlBaseUrl }} -->
     <!-- Configure and load Service Worker -->
-    <script type="module">
+    <script src="/js/prism.js"></script>
+		<script type="module">
       // Test if service workers are supported
       if ('serviceWorker' in navigator) { // Attempt to register it
         navigator

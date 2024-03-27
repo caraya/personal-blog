@@ -45,7 +45,8 @@ module.exports = function (eleventyConfig) {
 		"./assets/manifest.json": "/manifest.json",
 		"./node_modules/lite-youtube-embed/src/lite-yt-embed.css": "/css/lite-yt-embed.css",
 		"./node_modules/lite-youtube-embed/src/lite-yt-embed.js": "/js/lite-yt-embed.js",
-		"./node_modules/prismjs/themes/prism-solarizedlight.css": "/css/prism-solarizedlight.css",
+		"./assets/prism.css": "/css/prism.css",
+		"./assets/prism.js": "/js/prism.js",
 		"./assets/algoliasearchNetlify.css": "/css/algoliasearchNetlify.css",
 		"./assets/algoliasearchNetlify.js": "/js/algoliasearchNetlify.js",
 	});
