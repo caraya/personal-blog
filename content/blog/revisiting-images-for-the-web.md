@@ -378,7 +378,7 @@ These images are provided as examples. These and other images are stored in the 
 
 **In my testing, AVIF consistently produced the smallest file sizes across quality**. As usual, your mileage may vary.
 
-Even though it's not absolutely necessary, you should always consider using the [picture] element with a PNG or JPG fallback, something like this
+Even though it's not absolutely necessary, you should always consider using the [picture](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture) element with a PNG or JPG fallback, something like this
 
 ```html
 <picture>
@@ -388,9 +388,11 @@ Even though it's not absolutely necessary, you should always consider using the 
 </picture>
 ```
 
-Like working with video [video](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video) elements, the browser will load the first supported format, so order does matter.
+Like when working with video [video](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video) or [audio](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio) elements, the browser will load the first supported format, so order does matter.
 
 Note the use of the `srcset` attribute. This is required when `source` is the child of a `picture` element. This is different than working with `video` or `audio` elements where the `src` attribute is required.
+
+These examples don't account for retina (high DPI) displays. Look at the picture article referenced above for more information.
 
 I still need to finetune how the quality settings go since the same value can mean different things based on formats. There is little documentation regarding passing quality settings between ImageMagick to the underlying delegate for that format.
 
