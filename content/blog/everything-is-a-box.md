@@ -1,11 +1,10 @@
 ---
 title: Everything is a box
-date: "2024-06-30"
+date: "2024-04-08"
 tags:
   - CSS
   - Design
 youtube: true
-draft: true
 ---
 
 One way of thinking about HTML and web content is to think about boxes, multiple boxes surrounding your content. You can see these nested boxes in your browser's Dev Tools as shown in figure 1.
@@ -116,25 +115,33 @@ Using extrinsic sizing for the figure and image would look like this:
 
 In [Intrinsic Sizing In CSS](https://ishadeed.com/article/intrinsic-sizing-in-css/) Ahmad Shadeed discusses intrinsic and extrinsic sizing and goes into details on the intrinsic sizing units.
 
-## Flow and Block Directions
-
 ## Display Values And Their Impact On Content
 
 The display CSS property sets whether an element is treated as a `block` or `inline` box and the layout used for its children, such as flow layout, grid or flex.
 
 Formally, the display property sets an element's inner and outer display types. The outer type sets an element's participation in the flow layout; the inner type sets the layout of its children.
 
-As far as boxes are concerned
+As far as boxes are concerned, the `display` property changes the type of block they are (block or inline) and what rules its children will follow (flow layout, grid or flex).
 
 ## Writing Modes
 
-## Logical Styles
+In CSS, writing modes control the direction in which text flows within a document or component.
+
+They can be used to create different layouts, such as vertical text or bidirectional text.
+
+Because we changed the way which text flows the boxes that make up our content will be laid out differently and may cause unexpected layout issues
+
+A related property when working with writing modes is [text-orientation](https://developer.mozilla.org/en-US/docs/Web/CSS/text-orientation). This property will only work in vertical layouts and controls the orientation of the text in a line.
+
+## Final Thoughts
+
+Understanding that everything is a box made it easier for me to work through getting stuck when things didn't work out, especially when working with vertical text.
 
 ## Links And Resources
 
 * [Introduction to the CSS basic box model](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model) &mdash; MDN
 * [Box Model](https://web.dev/learn/css/box-model) &mdash; web.dev
-* [The box model and box sizing](https://piccalil.li/blog/the-box-model-and-box-sizing/) &mdash; piccalil.li
+* [The box model and box sizing](https://piccalil.li/blog/the-box-model-and-box-sizing/)
 * [Boxes](https://every-layout.dev/rudiments/boxes/) &mdash; Every Layout
 * [box sizing](https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing) &mdash; MDN
 * [A Simple Introduction to Intrinsic Web Design](https://www.webdesignerdepot.com/2018/05/a-simple-introduction-to-intrinsic-web-design/)
