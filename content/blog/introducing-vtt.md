@@ -4,61 +4,98 @@ date: "2017-02-08"
 ---
 
 > I originally wrote this post for the Web Platform Documentation Project. Since the project was halted in 2015 I decided to move the text to this blog while the companion [code repository](https://github.com/caraya/vtt-demos) remains on Github
+>
+> Some of the links no longer work. Where possible, I've linked to archived copies on the Internet Archive
 
-WebVTT (Web Video Text Tracks), formerly known as WebSRT, is a W3C community proposal for synchronized video caption playback. It is a time-indexed file format and it is referenced by HTML5 video **_and_** audio elements.
+WebVTT (Web Video Text Tracks), formerly known as WebSRT, is a W3C community proposal for synchronized video caption playback. It is a time-indexed file format and it is referenced by HTML5 video ***and*** audio elements.
 
-As with many assistive technologies, it would be a mistake to assume that they are only meant as a way to provide accessibility accommodations. We can enable captions when the ambient noise is too loud to listen to a recorded presentation, we can use chapters to navigate through a long lecture video just like DVD or Blue Ray movies.
+As with many assistive technologies, it would be a mistake to assume that they are only meant as a way to provide accessibility accommodations. We can enable captions when the ambient noise is too loud to listen to a recorded presentation, we can use chapters to navigate through a long lecture video just like DVD or Blu-Ray movies.
 
-Captions can also improve our movies' discoverability. Google indexes the content of our captions. Both YouTube and Google search can report results based on the video captions available for a given file.
+Captions can also improve our movies' discoverability. Google indexes the content of our captions. Both YouTube and Google Search can report results based on the video captions available for a given file.
 
 WebVTT files provide open captions, independent of the audio or video files they are attached to, they are not "hardcoded" into pixels. This also means that creating VTT files requires nothing more than a text editor; although there are more specialized tools to create the captions.
 
 ## Browser support
 
-Based on Silvia Pfeiffer's [post to the VTT community group](http://www.w3.org/community/texttracks/2012/08/23/webvtt-support-in-browsers/) dated August, 2012, and updated with new information about Firefox, the following browsers support VTT tracks for video and audio:
+Based on Silvia Pfeiffer's [post to the VTT community group](http://www.w3.org/community/texttracks/2012/08/23/webvtt-support-in-browsers/) dated August 2012, and updated with new information about Firefox, the following browsers support VTT tracks for video and audio:
 
-| Browser | First supported | Format Supported | Notes |
-| --- | --- | --- | --- |
-| Internet Explorer | Version 10 | VTT and TML | 
-- [Test Page](http://ie.microsoft.com/testdrive/Graphics/VideoCaptions/)
-- [Documentation](http://html5labs.interoperabilitybridges.com/prototypes/video-captioning/video-captioning/info)
-- [HTML5 Video Caption Maker](http://ie.microsoft.com/testdrive/Graphics/CaptionMaker)
-- [Timed Text Track Information](http://msdn.microsoft.com/library/ie/bg123962.aspx)
-- [Timed Text Tracks examples](http://samples.msdn.microsoft.com/iedevcenter/TextTrack/default.html)
-
- |
-| Google Chrome | Version 18 | VTT | 
-
-- Basic tutorial hosted at [HTML5 Rocks](http://www.html5rocks.com/en/tutorials/track/basics/)
-- Based on Webkit's implementation
-
- |
-| Apple Safari | Version 6 | VTT | 
-
-- Based on Webkit's implementation
-
- |
-| Opera | Since August, 2012 | VTT | 
-
-- Documentation at: [dev.opera">dev.opera](Documentation at <a href=)
-- Based on Webkit's implementation
-
- |
-| Firefox | Nightly | VTT | 
-
-- See the [Mozilla Developer Documentation](http://developer.mozilla.org/en-US/docs/HTML/WebVTT) for more information
-- Tested with version 29.0a1 (12/14/2013)
-- Feature enabled by default in nightly builds
-
- |
+<table>
+<thead>
+  <tr>
+    <th>Browser</th>
+    <th>First supported</th>
+    <th>Format Supported</th>
+    <th>Notes</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Internet Explorer</td>
+    <td>Version 10</td>
+    <td>VTT and TML</td>
+    <td>
+      <ul>
+        <li><a href="https://web.archive.org/web/20120102140321/http://ie.microsoft.com/testdrive/Graphics/VideoCaptions/">Test Page</a></li>
+        <li><a href="https://web.archive.org/web/20160827042427/http://html5labs.interoperabilitybridges.com/prototypes/video-captioning/video-captioning/documentation">Documentation</a>
+        <li><a href="https://web.archive.org/web/20120305205502/http://ie.microsoft.com/testdrive/Graphics/CaptionMaker">HTML5 Video Caption Maker</a></li>
+        <li><a href="https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/dev-guides/bg123962(v=vs.85)?redirectedfrom=MSDN"></a></li>
+        <li><a href="https://web.archive.org/web/20160309112309/http://samples.msdn.microsoft.com/iedevcenter/TextTrack/default.html">Timed Text Tracks examples</a></li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Google Chrome</td>
+    <td>Version 18</td>
+    <td>VTT</td>
+    <td>
+      <ul>
+        <li>Basic tutorial hosted at [HTML5 Rocks](http://www.html5rocks.com/en/tutorials/track/basics/)</li>
+        <li>Based on Webkit's implementation</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Apple Safari</td>
+    <td>Version 6</td>
+    <td>VTT</td>
+    <td>
+      <ul>
+        <li>Based on Webkit's implementation</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Opera</td>
+    <td>Since August, 2012</td>
+    <td>VTT</td>
+    <td>
+      <ul>
+        <li>Based on Webkit's implementation</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Firefox</td>
+    <td>VTT</td>
+    <td>Nightly</td>
+    <td>
+      <ul>
+        <li>See the <a href="http://developer.mozilla.org/en-US/docs/HTML/WebVTT">Mozilla Developer Documentation</a> for more information</li>
+        <li>Tested with version 29.0a1 (12/14/2013)</li>
+        <li>Feature enabled by default in nightly builds</li>
+      </ul>
+    </td>
+  </tr>
+</tbody>
+</table>
 
 ## Polyfills and alternatives
 
-I will use one of the many polyfills available for HTML5 Video Tracks. [Playr](http://www.delphiki.com/html5/playr/) seems to be the most feature-complete polyfill for HTML5 video tracks. The downside is 2 more files (one CSS and one JavaScript) to download for the video page but until VTT is widely supported the extra files are worth the effort to create accessible content.
+I will use one of the many polyfills available for HTML5 Video Tracks. [Playr](https://web.archive.org/web/20120511174636/https://delphiki.com/html5/playr/) seems to be the most feature-complete polyfill for HTML5 video tracks. The downside is 2 more files (one CSS and one JavaScript) to download for the video page but until VTT is widely supported the extra files are worth the effort to create accessible content.
 
 One way to ensure that we only load our polyfill if the browser doesn't support tracks natively is to use Modernizr.load to conditionally load Playr's CSS and JavaScript when the browser does not support HTML5 video tag natively.
 
-```language-javascript
+```js
 Modernizr.load([
   {
     // test whether we support video
@@ -72,7 +109,7 @@ Modernizr.load([
 
 The code below uses plain JavaScript to test if a browser supports HTML5 video by creating an empty video element and testing for the video's canPlayType property. It will not load the code for a polyfill like the Modernizr example.
 
-```language-javascript
+```js
 var h, plink, pscript;
 var canPlay = false;
 
@@ -99,13 +136,13 @@ else {
 }
 ```
 
-This is the simplest test for video support; a more elaborate version can include support for specific formats and write the  tags only for the supported formats. The example below makes the following assumptions:
+This is the simplest test for video support; a more elaborate version can include support for specific formats and write the tags only for the supported formats. The example below makes the following assumptions:
 
-- You have encoded a video in all three formats (WebM, MP4 and Ogg)
-- You are testing for support for HTML5 video in general and specific formats
-- If HTML5 video is not supported you have a flash-based fallback solution
+* You have encoded a video in all three formats (WebM, MP4 and Ogg)
+* You are testing for support for HTML5 video in general and specific formats
+* If HTML5 video is not supported you have a Flash-based fallback solution
 
-```language-javascript
+```js
 var canPlay = false;
 // Get the video by selecting the video tag
 var v = document.getElementsByTagName('video');
@@ -138,13 +175,11 @@ Also note that we're testing for specific audio and video codec combinations. We
 
 Playr is by no means the only polyfill or the only player that supports VTT. It is the one that I found the most feature-complete for what I needed. The selection below represents a set of players and polyfills available.
 
-- [video.js player](http://videojs.com/docs/tracks/)
-- [jwplayer](http://www.longtailvideo.com/addons/plugins/84/Captions)
-- [MediaElementJS player](http://mediaelementjs.com/)
-- [LeanBack player](http://leanbackplayer.com/)
-- [js\_videosub polyfill](http://www.storiesinflight.com/js_videosub/)
-- [Captionator polyfill](http://github.com/cgiffard/Captionator)
-- [vtt.js](http://github.com/mozilla/vtt.js) by the Mozilla Foundation
+* [video.js player](http://videojs.com/)
+* [jwplayer](http://www.longtailvideo.com/)
+* [MediaElementJS player](http://mediaelementjs.com/)
+* [Captionator polyfill](http://github.com/cgiffard/Captionator)
+* [vtt.js](http://github.com/mozilla/vtt.js) by the Mozilla Foundation
 
 ## Different types of VTT tracks and their structures
 
@@ -172,7 +207,7 @@ that touched the lead to the pages of your manuscript.
 
 1. WEBVTT must be the first item on the file, on the first line and in a line of its own. Optionally there may be lines of metadata. This section must be followed by a blank line
 2. The name of the cue. This is also optional
-3. Immediately below the name of the cue come the beginning and end time for the cue expressed in hours:minutes:seconds:milliseconds format. **Hours, Minutes, and Seconds must have 2 digits and be padded with zeros if necessary. Mil liseconds must have 3 digits and be zero-padded if not long enough**
+3. Immediately below the name of the cue come the beginning and end time for the cue expressed in hours:minutes:seconds:milliseconds format. **Hours, Minutes, and Seconds must have 2 digits and be padded with zeros if necessary. Milliseconds must have 3 digits and be zero-padded if not long enough**
 4. Optional Cue Settings separated from the time one or more SPACE or TAB characters
 5. The text for the cue
 
@@ -186,7 +221,7 @@ Subtitles are not expected to convey additional non-verbal cues. Once again, sub
 
 > The main difference is that subtitles usually only transcribe the spoken dialog, and are mainly aimed at people who are not hearing impaired, but lack fluency in the spoken language. Closed captions are aimed at the deaf and hearing impaired, who need additional non-verbal audio cues (such as "GUNSHOT" or "SPOOKY MUSIC") to be transcribed in the text. Closed captions are also useful for situations in which video is being shown but the sound is muted or difficult to hear, such as for a noisy bar, convention floor, video signage & billboards, etc. From [http://www.cpcweb.com/faq/](http://www.cpcweb.com/faq/)
 
-Other than the content for each type of track, HTML5 video structures the track element the same way. In the example below, the only difference are the kind attributes for each track.
+Other than the content for each type of track, HTML5 video structures the track element the same way. In the example below, the only difference is the kind of attributes for each track.
 
 ```html
 <!-- This is the captions track -->
@@ -199,7 +234,7 @@ Other than the content for each type of track, HTML5 video structures the track 
 
 Chapter tracks help you navigate through the video by associating certain "chapters" with time codes. This will let you navigate to different sections of your video using some sort of visual cue.
 
-In the example below, chapter 1 is 10 second long and titled Introduction to HTML5.
+In the example below, chapter 1 is 10 seconds long and titled Introduction to HTML5.
 
 ```vtt
 WEBVTT (1)
@@ -246,8 +281,7 @@ multiCell
 00:01:15.200 --> 00:02:18.800
 {
 "title": "Multi-celled organisms",
-"description": "Multi-celled organisms have different types of cells that perform specialized functions.
-  Most life that can be seen with the naked eye is multi-cellular. These organisms are thought to have evolved around 1 billion years ago with plants, animals, and fungi having independent evolutionary paths.",
+"description": "Multi-celled organisms have different types of cells that perform specialized functions. Most life that can be seen with the naked eye is multi-cellular. These organisms are thought to have evolved around 1 billion years ago with plants, animals, and fungi having independent evolutionary paths.",
 "src": "multiCell.jpg",
 "href": "http://en.wikipedia.org/wiki/Multicellular"
 }
@@ -256,10 +290,7 @@ insects
 00:02:18.800 --> 00:03:01.600
 {
 "title": "Insects",
-"description": "Insects are the most diverse group of animals on the planet with estimates for the total
-  number of current species range from two million to 50 million. The first insects appeared around
-  400 million years ago, identifiable by a hard exoskeleton, three-part body, six legs, compound eyes
-  and antennae.",
+"description": "Insects are the most diverse group of animals on the planet with estimates for the total number of current species range from two million to 50 million. The first insects appeared around 400 million years ago, identifiable by a hard exoskeleton, three-part body, six legs, compound eyes and antennae.",
 "src": "insects.jpg",
 "href": "http://en.wikipedia.org/wiki/Insects"
 }
@@ -267,7 +298,7 @@ insects
 
 We can then use Javascript to parse the track content and do something with the track's content.
 
-```language-javascript
+```js
 textTrack.oncuechange = function (){
   // "this" is a textTrack
   var cue = this.activeCues[0]; // assuming there is only one active cue
@@ -284,9 +315,9 @@ We can also build multiple caption tracks as well as a variety of other tracks. 
 
 ### Building the tracks
 
-(built with information from [http://thenewcode.com/584/Creating-And-Validating-WebVTT-Subtitles](http://demosthenes.info/blog/584/Creating-And-Validating-WebVTT-Subtitles))
+(built with information from [http://thenewcode.com/584/Creating-And-Validating-WebVTT-Subtitles](https://web.archive.org/web/20230306093813/http://thenewcode.com:80/584/Creating-And-Validating-WebVTT-Subtitles) (archived version))
 
-There are no programs that support VTT as a native captioning format. However there are plenty of programs that will create SRT captions, which is very similar to VTT (we'll discuss the differences later in this section).
+There are no programs that support VTT as a native captioning format. However, there are plenty of programs that will create SRT captions, which are very similar to VTT (we'll discuss the differences later in this section).
 
 Choose whatever tool will work best for you to generate the SRT file; then follow the instructions below to convert them to VTT files.
 
@@ -298,7 +329,7 @@ Due to their close relationship, conversion from .srt into .vtt is very simple. 
 1
 00:01:21,700 --> 00:01:24,675
 Life on the road is something
-I was raised to embrace.</pre>
+I was raised to embrace.
 ```
 
 The process is little more than a find-and-replace:
@@ -306,10 +337,9 @@ The process is little more than a find-and-replace:
 1. Add WEBVTT to the first line of the file
 2. Convert the comma before the millisecond mark in every timestamp to a decimal point
 3. Add styling markup to the subtitle text if needed
-    
-    - Special characters must be escaped as in HTML (&, < , >)
-    - You can use CSS classes defined in your CSS file by using &gt;c.XXX&lt;
-4. See the section [Cue Payload Tags](#payload) for more information about the specific tags you can use to style your content
+    * Special characters must be escaped as in HTML (&, &gt; , &lt;)
+    * You can use CSS classes defined in your CSS file by using &gt;c.XXX&lt;
+4. See the [Cue Payload Tags](#payload) section for more information about the specific tags you can use to style your content
 
 The resulting VTT file will look like this:
 
@@ -322,28 +352,28 @@ Life on the road is something
 I was <i>raised</i> to embrace.</pre>
 ```
 
-Save the file with a .vtt extension and link to it from a  element in your video.
+Save the file with a .vtt extension and link to it from an element in your video.
 
 #### Validating A VTT File
 
-It is not hard to make mistakes when creating a VTT track fille. Fortunately there is an [online validator](http://quuz.org/webvtt/) to help with authoring.
+It is not hard to make mistakes when creating a VTT track file. Fortunately, there is an [online validator](http://quuz.org/webvtt/) to help with authoring.
 
 It is essentially a two-step process:
 
-- Paste the text of your VTT file
-- Select the type of track you're working on
+* Paste the text of your VTT file
+* Select the type of track you're working on
 
-The results will display automatically.
+The results will be displayed automatically.
 
 #### Optional Cue Settings
 
-Cues can also be styled and moved around the screen relative to the borders of the video. The table below summarizes the settings avalable for cues.
+Cues can also be styled and moved around the screen relative to the borders of the video. The table below summarizes the settings available for cues.
 
 ##### Vertical Alignment
 
 Name: vertical
 
-Values: rl (right to left) - lr (left to right)
+Values: rl (right to left) * lr (left to right)
 
 What is used for Vertical text alignment for languages that can be read from top to bottom
 
@@ -353,14 +383,14 @@ Example: vertical:lr (makes the cue display vertically from left to right)
 
 Name: line
 
-Value \[-\]\[0 or larger\] (negative or possitive number) or \[0-100\]%
+Value \[-\]\[0 or larger\] (negative or positive number) or \[0-100\]%
 
-What is used for: Absolute references to a particular line number the cue is to be displayed on.
+What is used for? Absolute references to a particular line number the cue is to be displayed on.
 
-What is used for: Percentage value indicating the position relative to the top of the frame (when using percentages)
+What is used for? Percentage value indicating the position relative to the top of the frame (when using percentages)
 
-- Line numbers are based on the size of the first line of the cue.
-- A negative number counts from the bottom of the frame\* Positive numbers from the top
+* Line numbers are based on the size of the first line of the cue.
+* A negative number counts from the bottom of the frame\* Positive numbers from the top
 
 ##### Cue Box Size
 
@@ -378,13 +408,13 @@ Values: start | middle | end
 
 What it's used for: Specifies the alignment of the text within the cue. The keywords are relative to the text direction and are the same alignment keywords used in SVG
 
-The alignment values are similar to those used in SVG. For users of CSS that uses different terminology, the equivalency is:
+The alignment values are similar to those used in SVG. For users of CSS that use different terminology, the equivalency is:
 
-- Start alignment: The cue box's left side (for horizontal cues) or top side (otherwise) is aligned at the text position.
-- Middle alignment: The cue box is centered at the text position.
-- End alignment: The cue box's right side (for horizontal cues) or bottom side (otherwise) is aligned at the text position.
+* Start alignment: The cue box's left side (for horizontal cues) or top side (otherwise) is aligned at the text position.
+* Middle alignment: The cue box is centered at the text position.
+* End alignment: The cue box's right side (for horizontal cues) or bottom side (otherwise) is aligned at the text position.
 
-**Note: if no cue settings are set, the positioning default to the middle, at the bottom of the frame.**
+**Note: if no cue settings are set, the positioning defaults to the middle, at the bottom of the frame.**
 
 ##### Cue positioning
 
@@ -398,26 +428,26 @@ Percentage value indicating the horizontal alignment relative to the edge of the
 
 The value is dependent on the alignment of the cue:
 
-- For left-aligned or start aligned cues: 0%.
-- For middle aligned cues: 50%.
-- For right-aligned or end aligned cues: 100%.
+* For left-aligned or start-aligned cues: 0%.
+* For middle aligned cues: 50%.
+* For right-aligned or end-aligned cues: 100%.
 
 Note: Since the default value of the text track cue text alignment is middle, if there is no text track cue text alignment setting for a cue, the text track cue text position defaults to 50%.
 
-Note: Even for horizontal cues with right-to-left paragraph direction text, the cue box is positioned from the left edge of the video frame. This allows defining a rendering space template which can be filled with either left-to-right or right-to-left paragraph direction text. If you define such a cue box template with start or end aligned text, make sure to control its size unless you want text to flip from one side of the video frame to the other.
+Note: Even for horizontal cues with right-to-left paragraph direction text, the cue box is positioned from the left edge of the video frame. This allows the definition of a rendering space template which can be filled with either left-to-right or right-to-left paragraph direction text. If you define such a cue box template with start or end-aligned text, make sure to control its size unless you want text to flip from one side of the video frame to the other.
 
 #### Cue Payload Tags
 
-These are additional tracks that will allow you to customize the appearance of your tracks. '''You cannot use payload tags with chapter tracks'''
+These are additional tracks that will allow you to customize the appearance of your tracks. 'You cannot use payload tags with chapter tracks'
 
 ##### Timestamp Tags (Karaoke Style and Paint On Caption Text)
 
-Using timestamp tags can build Karaoke Style tracks. You build the track by inserting the correct timestamp where you want the text to change, subject to the following restrictions:
+Using timestamp tags can build Karaoke-Style tracks. You build the track by inserting the correct timestamp where you want the text to change, subject to the following restrictions:
 
-- The timestamp must be greater than the cue's start timestamp, greater than any previous timestamp in the cue payload, and less than the cue's end timestamp.
+* The timestamp must be greater than the cue's start timestamp, greater than any previous timestamp in the cue payload, and less than the cue's end timestamp.
 
 ```vtt
-VTT - Example Karaoke Style Track
+VTT * Example Karaoke Style Track
 
 1
 00:16.500 --> 00:18.500
@@ -434,9 +464,9 @@ That's <00:00:21.000>amore</pre>
 
 In the example above:
 
-- The active text is the text between the timestamp and the next timestamp or to the end of the payload if there is not another timestamp in the payload.
-- Any text before the active text in the payload is previous text .
-- Any text beyond the active text is future text. We can use the previous and future tracks to create the Karaoke experience.
+* The active text is the text between the timestamp and the next timestamp or to the end of the payload if there is no other timestamp in the payload
+* Any text before the active text in the payload is the previous text
+* Any text beyond the active text is future text. We can use the previous and future tracks to create the Karaoke experience
 
 A possible CSS rule to style the content looks like this.
 
@@ -450,14 +480,14 @@ A possible CSS rule to style the content looks like this.
 }
 ```
 
-Timestamp tags can also be used for Paint On captions, which placed independently from each other and don't erase what was already on the screen. They are written one letter at a time and they appear to 'paint on' the screen.
+Timestamp tags can also be used for Paint On captions, which are placed independently from each other and don't erase what was already on the screen. They are written one letter at a time and they appear to 'paint on' the screen.
 
 ##### Speaker Semantics
 
-You can use a combination of cue positioning and specific markup on individual cues to further emphazise who is speaking in a given caption or subtitle where appropriate.
+You can use a combination of cue positioning and specific markup on individual cues to further emphasize who is speaking in a given caption or subtitle where appropriate.
 
 ```vtt
-WEBVTT - Sintel Caption File With Speaker Semantics
+WEBVTT * Sintel Caption File With Speaker Semantics
 
 Sage
 00:00:12.000 --> 00:00:15.000 A:middle T:10%
@@ -468,7 +498,7 @@ Searching
 <v.sintel>I'm searching for someone.
 ```
 
-We can style the speaker semantic classes using CSS. For example we can add a different color for each speaker, something like the example below:
+We can style the speaker semantic classes using CSS. For example, we can add a different color for each speaker, something like the example below:
 
 ```css
 video::cue(v.gatekeeper) {
@@ -489,7 +519,7 @@ The following tags require opening and closing tags.
 Style the contained text using a CSS class.
 
 ```vtt
-Cue 14 - Class tag example
+Cue 14 * Class tag example
 <c.classname>text</c>
 ```
 
@@ -498,7 +528,7 @@ Cue 14 - Class tag example
 Italicize the contained text.
 
 ```vtt
-Example 15 - Italics tag
+Example 15 * Italics tag
 <i>text</i>
 ```
 
@@ -507,7 +537,7 @@ Example 15 - Italics tag
 Bold the contained text.
 
 ```vtt
-Example 16 - Bold tag
+Example 16 * Bold tag
 <b>text</b>
 ```
 
@@ -516,7 +546,7 @@ Example 16 - Bold tag
 Underline the contained text.
 
 ```vtt
-Example 17 - Underline tag
+Example 17 * Underline tag
 <u>text</u>
 ```
 
@@ -527,7 +557,7 @@ Used together to display ruby characters (i.e. small annotative characters above
 > Ruby characters are small, annotative glosses that can be placed above or to the right of a Chinese character when writing languages with logographic characters such as Chinese or Japanese to show the pronunciation. Typically called just ruby or rubi, such annotations are used as pronunciation guides for characters that are likely to be unfamiliar to the reader. From [Wikipedia](http://en.wikipedia.org/wiki/Ruby_character)
 
 ```vtt
-Example 18 - Ruby tag and Ruby text tag
+Example 18 * Ruby tag and Ruby text tag
 <ruby>WWW<rt>World Wide Web</rt>oui<rt>yes</rt></ruby>
 ```
 
@@ -535,7 +565,7 @@ Example 18 - Ruby tag and Ruby text tag
 
 Either in a supported browser or using one of the polyfills available (like we've chosen to do with Playr) we add `</track><track>` elements, one for each language of captions that we make available.
 
-There is one non-standard attribute we will add to the video to make it work with Playr. The code below shows what a video track looks with associated an associated caption track for English.
+There is one non-standard attribute we will add to the video to make it work with Playr. The code below shows what a video track looks like with an associated caption track for English.
 
 ```html
 <!DOCTYPE html>
@@ -571,7 +601,7 @@ There is one non-standard attribute we will add to the video to make it work wit
 
 The working example is located at [http://caraya.github.io/vtt-demos/basic.html](http://caraya.github.io/vtt-demos/basic.html) and an example without a polyfill (meant to test native browser support) is located at [http://caraya.github.io/vtt-demos/basic-plain.html](http://caraya.github.io/vtt-demos/basic-plain.html)
 
-The same example without polyfill support and supporting captions in English and Spanish with the English caption being the default. The default attribute will also display the captions automatically
+The same example works without polyfill support and supporting captions in English and Spanish with the English caption being the default. The default attribute will also display the captions automatically
 
 ```html
 <!DOCTYPE html>
@@ -677,14 +707,14 @@ audio.textTracks[0].oncuechange = function (){
 
 ## Additional Tutorials And Tools
 
-- [Opera: An introduction to webvtt and track](http://dev.opera.com/articles/view/an-introduction-to-webvtt-and-track/)
-- [Mozilla Developer Docs: WebVTT](http://developer.mozilla.org/en-US/docs/HTML/WebVTT)
-- [MSDN: HTML5 Video Captioning](http://blogs.msdn.com/b/ie/archive/2011/10/12/html5-video-captioning.aspx)
-- [http://www.delphiki.com/webvtt/](http://www.delphiki.com/webvtt/)
-- [Creating and validating WebVTT Subtitles](http://demosthenes.info/blog/580/Make-Online-Video-Accessible-And-Searchable-With-WebVTT)
-- [http://www.accessiq.org/news/features/2013/03/webvtt-and-captioning-on-the-web](http://www.accessiq.org/news/features/2013/03/webvtt-and-captioning-on-the-web)
-- [Test Drive Video Captions](http://ie.microsoft.com/testdrive/Graphics/VideoCaptions/)
-- [http://html5labs.interoperabilitybridges.com/prototypes/video-captioning/video-captioning/info](http://html5labs.interoperabilitybridges.com/prototypes/video-captioning/video-captioning/info)
-- [Microsoft Caption Maker](http://ie.microsoft.com/testdrive/Graphics/CaptionMaker/)
-- [Timed Text Track Information](http://msdn.microsoft.com/library/ie/bg123962.aspx)
-- [Timed Text Tracks examples](http://samples.msdn.microsoft.com/iedevcenter/TextTrack/default.html)
+* [Opera: An introduction to webvtt and track](http://dev.opera.com/articles/view/an-introduction-to-webvtt-and-track/)
+* [Mozilla Developer Docs: WebVTT](http://developer.mozilla.org/en-US/docs/HTML/WebVTT)
+* [MSDN: HTML5 Video Captioning](http://blogs.msdn.com/b/ie/archive/2011/10/12/html5-video-captioning.aspx)
+* [http://www.delphiki.com/webvtt/](http://www.delphiki.com/webvtt/)
+* [Creating and validating WebVTT Subtitles](http://demosthenes.info/blog/580/Make-Online-Video-Accessible-And-Searchable-With-WebVTT)
+* [http://www.accessiq.org/news/features/2013/03/webvtt-and-captioning-on-the-web](http://www.accessiq.org/news/features/2013/03/webvtt-and-captioning-on-the-web)
+* [Test Drive Video Captions](http://ie.microsoft.com/testdrive/Graphics/VideoCaptions/)
+* [http://html5labs.interoperabilitybridges.com/prototypes/video-captioning/video-captioning/info](http://html5labs.interoperabilitybridges.com/prototypes/video-captioning/video-captioning/info)
+* [Microsoft Caption Maker](http://ie.microsoft.com/testdrive/Graphics/CaptionMaker/)
+* [Timed Text Track Information](http://msdn.microsoft.com/library/ie/bg123962.aspx)
+* [Timed Text Tracks examples](http://samples.msdn.microsoft.com/iedevcenter/TextTrack/default.html)
