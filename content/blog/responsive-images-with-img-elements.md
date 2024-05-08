@@ -9,15 +9,17 @@ tags:
 draft: true
 ---
 
-This post is a follow-up to 2019's [Responsive images with img elements](http://localhost:8080/responsive-images-deep-dive/) and will explore primarily art direction use cases using `img` elements.
+This post is a follow-up to 2019's [Responsive images with img elements](https://publishing-project.rivendellweb.net/responsive-images-deep-dive/) and will explore primarily art direction use cases using `img` elements.
 
 ## The srcset attribute
+
+The first part of responsive images is the srcset attribute
 
 ### Width descriptors
 
 ### Sizes
 
-## Pixel density descriptors
+### Pixel density descriptors
 
 ## Image hints
 
