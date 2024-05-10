@@ -12,10 +12,10 @@ This post will explore the Popover API, what it does, how it works and provide e
 Before we jump into popovers we need to define a few terms.
 
 Top layer
-: The top layer, as the name implies is painted last as the top-most layer of content in the browser viewport, regardless of document order or z-index values
-: By default, if multiple elements are positioned in the same location, the browser paints them in the order they appear in the document (document order). With the z-index property you decide your layer order
-: Within the top layer, elements are painted in document order
-: If your popup is in an element with overflow: hidden, that will cut it off. If it is promoted to the top layer, no cutting off will take place.
+: The top layer, as the name implies is painted last as the top-most layer of content in the browser viewport, regardless of document order or z-index values.
+: By default, if multiple elements are positioned in the same location, the browser paints them in the order they appear in the document (document order). With the z-index property you decide your layer order.
+: Within the top layer, elements are painted in document order.
+: If your popup is in an element with overflow: hidden, that will cut it off. If it is promoted to the top layer, no cutting will take place.
 
 Backdrop
 : A backdrop usually serves as a visual cue that any content behind the popover is unavailable for interactions. This can be used as a way to help the user focus.
@@ -23,12 +23,12 @@ Backdrop
 
 ## Why another API
 
-Using the popover API let's the browser manage the complexity of working with popups. The API will handle the following tasks for you:
+Using the popover API lets the browser manage the complexity of working with popups. The API will handle the following tasks for you:
 
-* **Promotion to the top layer** layer. Popovers will always appear in the top layer
+* **Promotion to the top layer** layer. Popovers will always appear on the top layer
 * **Light-dismiss functionality**. Clicking outside of the popover area will close the popover and return focus
 * **Default focus management**. When a popup is open, the next tab will navigate to the popup content
-* **Accessible keyboard bindings**. Pressing the esc key will close the popover and return focus Accessible component bindings. Connecting a popover element to a popover trigger semantically.
+* **Accessible keyboard bindings**. Pressing the <kbd>esc</kbd> (escape) key will close the popover and return focus Accessible component bindings
 
 These tasks make it easier to work with popovers. It gives you a lot of functionality "for free", just by using the API
 
@@ -57,11 +57,11 @@ The default behavior for popovers is to only allow one open popover at a time; t
 
 ## Automatic versus manual popovers
 
-using the `popover` attribute is an alias for \`popover = 'auto'. This is the default behavior that we discussed in previous sections.
+using the `popover` attribute is an alias for `popover = 'auto'`. This is the default behavior that we discussed in previous sections.
 
 There is another value for the `popover` attribute: `manual`.
 
-Manual popovers wil not work like automatic popovers (they will not force close any other element type and do not close when you click outside them). You must close them via a timer or explicit close action.
+Manual popovers will not work like automatic popovers (they will not force close any other element type and do not close when you click outside them). You must close them via a timer or explicit close action.
 
 These manual popovers are best for elements that shouldn't affect the rest of the page, such as a toast notification.
 
@@ -112,7 +112,7 @@ I've avoided talking about the semantics of the popover API. Hidde de Vries does
 ## Links and Resources
 
 * [popover](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API) — MDN
-* [MDN Popover API Exampless](https://mdn.github.io/dom-examples/popover-api/)
-* [Introducing the popover API](https://developer.chrome.com/blog/introducing-popover-api/)
+* [MDN Popover API Examples](https://mdn.github.io/dom-examples/popover-api/)
+* [Introducing the Popover API](https://developer.chrome.com/blog/introducing-popover-api/)
 * [Dialogs and popovers seem similar. How are they different?](https://hidde.blog/dialog-modal-popover-differences/)
 * [Semantics and the popover attribute: what to use when?](https://hidde.blog/popover-semantics/)
