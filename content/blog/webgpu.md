@@ -11,7 +11,7 @@ date: 2024-06-30
 * <https://developer.chrome.com/blog/webgpu-io2023/>
 * <https://webgpu.github.io/webgpu-samples/>
 * <https://threejs.org/examples/?q=webgpu>
-
-<https://alain.xyz/blog/raw-webgpu>
-
+* <https://greggman.github.io/webgpu-utils/>
+* <https://alain.xyz/blog/raw-webgpu>
+* <https://tympanus.net/codrops/2024/05/01/reaction-diffusion-compute-shader-in-webgpu/>
 
