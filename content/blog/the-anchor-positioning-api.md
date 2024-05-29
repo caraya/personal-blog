@@ -128,3 +128,4 @@ There is an [anchor tool](https://anchor-tool.com/) that illustrates the differe
 
 for basic adjustments like flipping from top to bottom or left to right (or both), you can skip creating custom `@position-try` declarations and use the built-in browser-supported [`flip` keywords](https://developer.chrome.com/blog/anchor-positioning-api#anchor_position_auto-flip_keywords): `flip-block` and `flip-inline` either on their own or combined. These work as stand-ins for custom @position-try declarations.
 
+Anchor positioning simplifies the creation of anchored content, either as standalone elements or in combination with popovers and dialogues. The possibilities are worth exploring and promise fun and creative ways to display content.
