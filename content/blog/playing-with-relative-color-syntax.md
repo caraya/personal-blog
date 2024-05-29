@@ -226,9 +226,9 @@ Support is getting better with Firefox being the last straggler to implement the
 <img src="https://caniuse.bitsofco.de/static/v1/css-relative-colors-1716966128951.jpg" alt="Data on support for the css-relative-colors feature across the major browsers from caniuse.com">
 </picture>
 
-Until the feature becomes [baseline newly available](https://web.dev/baseline) at the earliest and perhaps even baseline widely available, you should use `@supports` to make sure the feature works properly and that you provide fallbacks where it doesn't.
+Until the feature becomes [baseline newly available](https://web.dev/baseline) at the earliest and perhaps even baseline widely available, you should use feature queries to make sure the feature works properly and that you provide fallbacks where it doesn't.
 
-In this `@supports` example we do the following:
+In this example we do the following:
 
 * Define the colors as OKLCH without relative syntax first
 * Define our relative colors inside a `@supports` at-rule. This will only be triggered in browsers (and versions) that support the feature
