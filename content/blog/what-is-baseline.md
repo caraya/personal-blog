@@ -37,4 +37,4 @@ Widely Available:
 : This time gives corporate IT teams and other groups that restrict browser versions on their network time to test and deploy browsers that support interoperable features.
 : The feature can be used by most sites without worrying about browser support.
 
-Understanding what features are available in the Baseline feature list makes it easier to build a core feature set for your applications.
+Understanding what features are available in the Baseline feature list makes it easier to build a core feature set for your applications that will work out of the box without polyfills or fallbacks.
