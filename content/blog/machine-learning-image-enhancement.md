@@ -1,22 +1,27 @@
 ---
 title: "Machine Learning Image Enhancement"
 date: "2017-12-22"
-templateEngineOverride: false
+tags:
+  - Images
+  - AI
+  - Technology
+  - Experiments
+templateEngineOverride: md
 ---
 
 The following tweets, products of an earlier request for comments on an essay about ebooks, started an interesting line of thinking.
 
-<blockquote class="twitter-tweet" data-conversation="none" data-cards="hidden" data-partner="tweetdeck"><p lang="en" dir="ltr">Re: image quality, as a book publisher whose backlist is pre-digital, our problem is generally that we don’t have high-enough-res source art.</p>— Teresa Elsey (@teresaelsey) <a href="https://twitter.com/teresaelsey/status/940292077878939648?ref_src=twsrc%5Etfw">December 11, 2017</a></blockquote>
+<blockquote><p>Re: image quality, as a book publisher whose backlist is pre-digital, our problem is generally that we don’t have high-enough-res source art.</p>— Teresa Elsey (@teresaelsey) <a href="https://twitter.com/teresaelsey/status/940292077878939648?ref_src=twsrc%5Etfw">December 11, 2017</a></blockquote>
 
-<blockquote class="twitter-tweet" data-conversation="none" data-cards="hidden" data-partner="tweetdeck"><p lang="en" dir="ltr">If we're *lucky* we have a digital file for what appears in the original print book! Often we're scanning a print book to recreate the assets ...</p>— Teresa Elsey (@teresaelsey) <a href="https://twitter.com/teresaelsey/status/940303635157803008?ref_src=twsrc%5Etfw">December 11, 2017</a></blockquote>
+<blockquote><>If we're *lucky* we have a digital file for what appears in the original print book! Often we're scanning a print book to recreate the assets ...</p>— Teresa Elsey (@teresaelsey) <a href="https://twitter.com/teresaelsey/status/940303635157803008?ref_src=twsrc%5Etfw">December 11, 2017</a></blockquote>
 
 After the initial thought that poor archival practices can bite you hard I started thinking about a solution to the actual problem. You're scanning from printed media and need a high-resolution version that you can run through an image processing pipeline to create 2x and, maybe, 3x retina versions.
 
-If you've seen the demos from Googles Machine Learning and Image processing they can do awesome things with image search and manipulation. They assume good quality images like those shot with phone cameras or some other mid to high-quality cameras.
+If you've seen the demos from Google's Machine Learning and Image processing they can do awesome things with image search and manipulation. They assume good quality images like those shot with phone cameras or some other mid to high-quality cameras.
 
 But what if the images are of lower quality, like those we scan from printed documents?
 
-We'll look at [Neural Enhance](https://github.com/alexjc/neural-enhance) see if does what we need them to.
+We'll look at [Neural Enhance](https://github.com/alexjc/neural-enhance) to see if does what we need them to.
 
 I'm looking to answer the following questions:
 
@@ -30,7 +35,7 @@ As seen on TV! What if you could increase the resolution of your photos using te
 
 The catch? The neural network is hallucinating details based on its training from example images. It's not reconstructing your photo exactly as it would have been if it was HD. That's only possible in Hollywood — but using deep learning as "Creative AI" works and it is just as cool! Here's how you can get started...
 
-Rather than install all the requirements from scratch I'll use a Docker image to run the experiment. There instructions for installing Docker in [Mac](https://www.docker.com/docker-mac) and [Windows](https://www.docker.com/docker-windows). The rest of this post will assume you have installed Docker and it's running on your system.
+Rather than install all the requirements from scratch I'll use a Docker image to run the experiment. There are instructions for installing Docker in [Mac](https://www.docker.com/docker-mac) and [Windows](https://www.docker.com/docker-windows). The rest of this post will assume you have installed Docker and it's running on your system.
 
 The latest version of Docker for Windows requires Microsoft Windows 10 Professional or Enterprise 64-bit.
 
@@ -62,7 +67,7 @@ enhance --zoom=1 --model=repair images/broken.jpg
 enhance --zoom=2 "images/*.jpg"
 ```
 
-For this example, we'll use an old black and white image I downloaded from an old article about [Simnet](https://www.wikiwand.com/en/SIMNET). Figure one shows the original image, without retouch.
+For this example, we'll use an old black-and-white image I downloaded from an old article about [Simnet](https://www.wikiwand.com/en/SIMNET). Figure one shows the original image, without retouching.
 
 ![Simnet Concept Base Image](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/simnet-concept-2)
 
@@ -102,7 +107,7 @@ First, we remove the model file. Don't want to reload the data to fine-tune it.
 rm -f ne?x*.pkl.bz2
 ```
 
-Pre-train the model using perceptual loss and algorithm that uses **convolutional neural networks** using a per-pixel loss and **perceptual loss functions** based on high-level features extracted from trained networks.
+Pre-train the model using perceptual loss and an algorithm that uses **convolutional neural networks** using a per-pixel loss and **perceptual loss functions** based on high-level features extracted from trained networks.
 
 ```bash
 enhance --train "data/*.jpg" --model custom
@@ -123,7 +128,7 @@ enhance --train "data/*.jpg" --model custom
   --adversarial-start=5 --discriminator-size=64
 ```
 
-Additional models can be trained by playing with the different parameter available to the `enhance` tool. We can get a list of the parameters by running the same command we used to install and check the image:
+Additional models can be trained by playing with the different parameters available to the `enhance` tool. We can get a list of the parameters by running the same command we used to install and check the image:
 
 ```bash
 # Download the Docker image and show the help text to
@@ -153,8 +158,8 @@ The results look promising but to answer the questions I asked originally:
   * [Photo Enhancement is Starting to Get Crazy](https://petapixel.com/2017/11/01/photo-enhancement-starting-get-crazy/)
   * [EnhanceNet: Single Image Super-Resolution Through Automated Texture Synthesis](http://webdav.tuebingen.mpg.de/pixel/enhancenet/)
   * PRSR
-  * [Pixel Recursive Super Resolution](https://arxiv.org/pdf/1702.00783v2.pdf)
-  * [Github Repository](https://github.com/nilboy/pixel-recursive-super-resolution)
+    * [Pixel Recursive Super Resolution](https://arxiv.org/pdf/1702.00783v2.pdf)
+    * [Github Repository](https://github.com/nilboy/pixel-recursive-super-resolution)
 * Research Background
   * [Perceptual Losses for Real-Time Style Transfer and Super-Resolution](https://cs.stanford.edu/people/jcjohns/papers/eccv16/JohnsonECCV16.pdf)
   * [Real-Time Super-Resolution Using Efficient Sub-Pixel Convolution](https://arxiv.org/abs/1609.05158)
