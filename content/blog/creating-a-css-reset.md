@@ -534,6 +534,7 @@ figure {
 
 That's a good starting point. I'm pretty sure that if I look at other resets and normalize stylesheets I will find more things to add but I have to keep reminding myself that these are the defaults and most changes are likely to work better in project-specific stylesheets rather than defaults.
 
+
 ## Links and Resources
 
 * Historical Context

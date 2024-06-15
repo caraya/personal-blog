@@ -11,7 +11,7 @@ One of my current projects is to create a journaling system similar to [Hi](http
 
 The idea is described in [Full stack writing (and publishing): Welcome to Hi](https://hitotoki.org/moments/q4oi5i68).
 
-The idea is as follows:
+The idea of this followup is as follows:
 
 * Mobile first application
 *
