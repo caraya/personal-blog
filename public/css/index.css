@@ -447,9 +447,10 @@ layer(icons);
   tt,
   var {
     color: var(--code-color);
-    font-family: var(--font-family-monospace);
+		font-family: monosapce, monospace;
+    /* font-family: var(--font-family-monospace), var(--font-family-monospace);
     font-variation-settings: "MONO" 1, "CASL" 0, "wght" 400, "slnt" 0,
-      "CRSV" 0.501;
+      "CRSV" 0.501; */
     font-size: 1rem;
   }
 
