@@ -1,6 +1,7 @@
 ---
 title: WebGPU
 date: 2024-06-30
+draft: true
 ---
 
 * <https://www.w3.org/TR/webgpu/>

@@ -1,6 +1,6 @@
 ---
-title: Revisiting streams (again)
-date: 2024-06-30
+title: Revisiting Streams (again)
+date: 2024-09-02
 draft: true
 ---
 

@@ -11,20 +11,12 @@ We have four image formats to experiment with:
 
 | Format | Extension | Notes |
 | --- | --- | --- |
-| JPEG | jpg | Default where no other formats are supported  
-  
-**We still need the format because it is upported in all browsers** |
-| WebP | webp | Smaller file sizes than JPG.  
-  
-Supported in all modern browsers. ([caniuse entry](https://caniuse.com/#feat=webp)) |
-| HEIF | heif | **Part of HEVC MPEG family of specifications**.  
-  
-Supported in Safari (macOS and iOS) |
-| AVIF | avif | **Part of AV1 specification**.  
-  
-Supported natively in Firefox (behind a flag) and in Chrome 85 and later ([chromestatus entry](https://chromestatus.com/feature/4905307790639104)). |
+| JPEG | jpg | Default where no other formats are supported<br><br>**We still need the format because it is upported in all browsers** |
+| WebP | webp | Smaller file sizes than JPG.<br><br>Supported in all modern browsers. ([caniuse entry](https://caniuse.com/#feat=webp)) |
+| HEIF | heif | **Part of HEVC MPEG family of specifications**.<br></br>Supported in Safari (macOS and iOS) |
+| AVIF | avif | **Part of AV1 specification**. <br><br>Supported natively in Firefox (behind a flag) and in Chrome 85 and later ([chromestatus entry](https://chromestatus.com/feature/4905307790639104)). |
 
-Responsive images provide a client-side solution for delivering alternate image data based on device capabilities to prevent wasted bandwidth and optimize display for both screen and print. (Description is taken from the [Responsive Images Community Group](https://responsiveimages.org/) web site).
+Responsive images provide a client-side solution for delivering alternate image data based on device capabilities to prevent wasted bandwidth and optimize display for both screen and print. (Description is taken from the [Responsive Images Community Group](https://responsiveimages.org/) website).
 
 So the question is how we combine responsive images with all the formats we have available?
 
