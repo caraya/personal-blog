@@ -3,7 +3,7 @@ title: "A way to leverage new image formats"
 date: "2020-07-27"
 ---
 
-After researching image sizes ([Revisiting images formats for the web](https://publishing-project.rivendellweb.net/revisiting-image…mats-for-the-web/) and [Image formats for the web: HEIC and AVIF](https://publishing-project.rivendellweb.net/image-formats-for-the-web-heic-and-avif/)) and how to [add new mime types to WordPress](https://publishing-project.rivendellweb.net/supporting-aadditional-content-types-in-wordpress/) there is one final question to ask. How do we leverage responsive images and new image formats?
+After researching image sizes ([Revisiting images formats for the web](https://publishing-project.rivendellweb.net/revisiting-images-formats-for-the-web/) and [Image formats for the web: HEIC and AVIF](https://publishing-project.rivendellweb.net/image-formats-for-the-web-heic-and-avif/)) and how to [add new mime types to WordPress](https://publishing-project.rivendellweb.net/supporting-aadditional-content-types-in-wordpress/) there is one final question to ask. How do we leverage responsive images and new image formats?
 
 ## Background
 
@@ -14,7 +14,7 @@ We have four image formats to experiment with:
 | JPEG | jpg | Default where no other formats are supported<br><br>**We still need the format because it is upported in all browsers** |
 | WebP | webp | Smaller file sizes than JPG.<br><br>Supported in all modern browsers. ([caniuse entry](https://caniuse.com/#feat=webp)) |
 | HEIF | heif | **Part of HEVC MPEG family of specifications**.<br></br>Supported in Safari (macOS and iOS) |
-| AVIF | avif | **Part of AV1 specification**. <br><br>Supported natively in Firefox (behind a flag) and in Chrome 85 and later ([chromestatus entry](https://chromestatus.com/feature/4905307790639104)). |
+| AVIF | avif | **Part of AV1 specification**. <br><br>Supported natively in Firefox (behind a flag) and in Chrome 85 and later ([chromestatus entry](https://chromestatus.com/feature/4905307790639104)) at the time the post was originally written.<br><br>Now supported across all major browsers ([caniuse](https://caniuse.com/avif)) |
 
 Responsive images provide a client-side solution for delivering alternate image data based on device capabilities to prevent wasted bandwidth and optimize display for both screen and print. (Description is taken from the [Responsive Images Community Group](https://responsiveimages.org/) website).
 
