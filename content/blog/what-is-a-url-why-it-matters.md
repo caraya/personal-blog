@@ -9,7 +9,7 @@ youtube: true
 
 Whether we know it or not we work with URLs all the time. Whenever we enter a web address into the browser's omni-bar, click on a link on a web page or click on an email link, all those are URLs.
 
-Despite their use everywhere, defining a URL is hard. URLs are defined in [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986), in the [WHATWG URL Living Standard](https://url.spec.whatwg.org/) but even with these specifications, many inconsistent implementations can turn things into a security nightmare.
+Despite their use everywhere, defining a URL is hard. URLs are defined in [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986) and in the [WHATWG URL Living Standard](https://url.spec.whatwg.org/) but even with these specifications, many inconsistent implementations can turn things into a security nightmare.
 
 In this post, we'll look at what URLs are and how they can potentially be abused.
 
@@ -35,13 +35,13 @@ The generic definition of a URL looks like this.
 scheme://username:password@host:port/path?query#fragment
 ```
 
-* **scheme**: The protocol used (`http` or `https`, `mailto` or `ftp` for example)
+* **scheme**: The protocol used (`http`, `https`, or `mailto`)
 * **username:password**: When a website uses the Basic authentication scheme, it allows you to authenticate by adding your username and password to the URL itself. This is considered very insecure, so not a lot of websites implement it
 * **host**: This is the domain or IP address you want to connect to (`google.com` or `127.0.0.1` for example)
 * **port**: The specific port we want to access, think of it as the house or apartment number. If the port is missing (the most common case), the default for the scheme/protocol is used (`80` for http and `443` for https)
 * **path**: This is the specific webpage on the host. This post has a path of `what-is-a-url-why-it-matters/index.html`. You can skip the `index.html` portion of the path, this also points to the same resource `what-is-a-url-why-it-matters/`
 * **query**: Zero or more parameters, usually in the form of `key=value` pairs joined together by `&`. These are used to send the server additional information
-* **fragment**: This usually links to a specific section of the document. Fragments are handled (or ignored) client-side.
+* **fragment**: This usually links to a specific section of the document. Fragments are handled (or ignored) client-side
 
 This is a URL, so now why is it important to know what it is and how it works?
 
@@ -53,7 +53,7 @@ We'll address these separately
 
 Even though there are multiple specifications of what a URL should do and how it should be parsed. This may allow the creation of misleading URLs that compromise your data.
 
-According to [OWASP](https://owasp.org/):
+According to OWASP:
 
 > SSRF flaws occur whenever a web application is fetching a remote resource without validating the user-supplied URL. It allows an attacker to coerce the application to send a crafted request to an unexpected destination, even when protected by a firewall, VPN, or another type of network access control list (ACL).
 >
@@ -200,7 +200,7 @@ Mitigating this type of CSRF attack is not hard but it's not trivial either. Dep
 
 ## Misleading URLs
 
-Another type of URL attack to consider is a [homographic attack](https://web.archive.org/web/20200102175251/http://www.cs.technion.ac.il/~gabr/papers/homograph_full.pdf), where the attackers craft a URL to trick users into entering their information into a malicious application.
+Another type of URL attack to consider is a [homographic attack](https://gabrilovich.com/publications/papers/homograph_full.pdf), where the attackers craft a URL to trick users into entering their information into a malicious application.
 
 [Emily Stark](https://emilymstark.com/) has studied these issues through the lens of a browser vendor and a security researcher.
 
@@ -217,11 +217,19 @@ The first one uses a Cyrillic lowercase A (<code>&#1072;</code>) glyph instead o
 
 This example is harmless since both URLs point to the same, legal, URL. But bad actors may change both the text and the URL to point to their servers instead of where you think you're going.
 
-But it can be simpler and just require a different order for words that you'd expect to see on a website. Can you tell which one of these is the URL for the Google blog?
+But it can be simpler and just require a different order for words that you'd expect to see on a website. Can you tell which one of these is the URL for the Google blog just by looking at the URLs?
 
 * [https://google.blog](https://google.blog)
 * [https://blog.google](https://blog.google)
 
 This is trickier since both are legal URLs, and you'd likely have to visit both sites to realize that it's the second URL that takes you to the Google blog.
 
-This is a much harder problem to address since this is up to individual users. These malicious URLs are used together with pages that look like real properties like Google, Microsoft or others making it harder to identify if we're accessing a legitimate site or if we're falling for a scam. In the end, it's up to individual users to be aware and discerning... If it sounds too good to be true then it probably is.
+This is a much harder problem to address since this is up to individual users. These malicious URLs are used together with pages that look like real properties like Google, Microsoft or others making it harder to identify if we're accessing a legitimate site or if we're falling for a scam.
+
+As Gabrilovich and Gontmakher discuss in their paper homographic attack paper:
+
+> Revisiting our newspaper example, one can observe that Russian letters "а,е,р,у" are indistinguishable in writing from their English counterparts. Some of the letters (such as "a") are close etymologically, while others look similar by sheer coincidence. For instance, Russian letter "p" is actually pronounced like "r", but the glyphs of the two letters are identical. As it happens, Russian is not the only such language; other Cyrillic languages may cause similar collisions.
+>
+> With the proposed infrastructure in place, numerous English domain names may be homographed &ndash; maliciously misspelled by substitution of non-Latin letters. For example, the Bloomberg attack could have been crafted much more skillfully, by registering a domain name bloomberg.com, where the letters "o" and/or "e" have been faked with Russian substitutes. Without adequate safety mechanisms, this scheme can easily mislead even the most cautious reader.
+
+In the end, it's up to individual users to be aware and discerning... If it sounds too good to be true then it probably is.
