@@ -1,6 +1,9 @@
 ---
 title: Web Components FTW!
 date: 2024-07-10
+tags:
+	- Web Components
+	- Design
 ---
 
 Web Components have come a long way since they were introduced and the original Polymer library made them useful for non-experts.
@@ -366,14 +369,55 @@ class HelloWorld extends HTMLElement {
 customElements.define('hello-world', HelloWorld);
 ```
 
-## Accessibility
+## Accessibility And elementInternals()
 
-## HTML Web Components
+The last area I want to highlight is [elementInternals()](https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals) and the accessibility portion of the interface.
+
+The interface provides a way for custom elements to handle forms. It also exposes the [Accessibility Object Model (AOM)](https://wicg.github.io/aom/explainer.html).
+
+!!! note Note:
+Using this interface is in addition to the manual work that you do to create accessibility affordances. You can also override the default values provided by the interface by setting `aria-*` attributes directly on the element.
+!!!
+
+The final `hello-world` version uses `elementInternals` to add a `role = 'button'` attribute to the element. This is flagged in the Chrome Devtools accessibility panel and will be used by Assistive Technology tools.
+
+```js
+class HelloWorld extends HTMLElement {
+	static get observedAttributes() {
+		return ['greeting', 'name'];
+	}
+	constructor() {
+		super();
+		// attach elementInternals
+		this.internals = this.attachInternals();
+		// assign the button role to the element
+		this.internals.role = 'button';
+		const template = document.getElementById('hello-world-template').content;
+		//Assign ARIA role
+		this.internals.ariaRole = 'button';
+		// Tab index
+		this.appendChild(template.cloneNode(true));
+		this.render();
+	}
+	attributeChangedCallback(name, oldValue, newValue) {
+		if (oldValue !== newValue) {
+			this.render();
+		}
+	}
+	render() {
+		const greeting = this.getAttribute('greeting') || '';
+		const name = this.getAttribute('name') || '';
+		this.querySelector('.greeting').textContent = greeting;
+		this.querySelector('.name').textContent = name;
+	}
+}
+customElements.define('hello-world', HelloWorld);
+```
 
 ## Links And Resources
 
 * Background
-  * <https://kinsta.com/blog/web-components/>
+  * [A Complete Introduction to Web Components](https://kinsta.com/blog/web-components/)
 * Specifications
   * [Custom Elements](https://html.spec.whatwg.org/multipage/custom-elements.html)
   * [HTML Templates](https://html.spec.whatwg.org/multipage/scripting.html#the-template-element)
@@ -384,10 +428,6 @@ customElements.define('hello-world', HelloWorld);
 * Declarative Web Components
   * <https://developer.chrome.com/docs/css-ui/declarative-shadow-dom>
   * <https://github.com/WICG/webcomponents/blob/gh-pages/proposals/Declarative-Custom-Elements-Strawman.md>
-* HTML Web Components
-  * <https://adactio.com/journal/20618>
-  * <https://meyerweb.com/eric/thoughts/2023/11/01/blinded-by-the-light-dom/>
-  * <https://www.freecodecamp.org/news/reusable-html-components-how-to-reuse-a-header-and-footer-on-a-website/>
 * Examples
   * Color.js [elements](https://elements.colorjs.io/) &mdash; Lea Verou
     * Be mindful that these components are under development and they may change without notice
