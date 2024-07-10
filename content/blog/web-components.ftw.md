@@ -2,8 +2,8 @@
 title: Web Components FTW!
 date: 2024-07-10
 tags:
-	- Web Components
-	- Design
+  - Web Components
+  - Design
 ---
 
 Web Components have come a long way since they were introduced and the original Polymer library made them useful for non-experts.
@@ -141,6 +141,9 @@ class HelloWorld extends HTMLElement {
 
   constructor() {
     super();
+  }
+
+  connectedCallback() {
     const template = document.getElementById('hello-world-template').content;
     this.appendChild(template.cloneNode(true));
     this.render();
@@ -153,8 +156,8 @@ class HelloWorld extends HTMLElement {
   }
 
   render() {
-    const greeting = this.getAttribute('greeting') || '';
-    const name = this.getAttribute('name') || '';
+    const greeting = this.getAttribute('greeting') || 'Hello';
+    const name = this.getAttribute('name') || 'World';
     this.querySelector('.greeting').textContent = greeting;
     this.querySelector('.name').textContent = name;
   }
@@ -344,28 +347,41 @@ closed
 
 ```js
 class HelloWorld extends HTMLElement {
-  constructor() {
-    super();
-    // Attach a shadow root to the element
-    this.attachShadow({ mode: 'open' });
+  static get observedAttributes() {
+    return ['greeting', 'name'];
   }
 
-  // Called when the element is inserted into the DOM
+  constructor() {
+    super();
+  }
+
   connectedCallback() {
-    const template = document.getElementById('hello-world')
-      .content.cloneNode(true);
+    // Attach shadow DOM and append template content
+    const shadow = this.attachShadow({ mode: 'open' });
+    const template = document.getElementById('hello-world-template').content;
+    shadow.appendChild(template.cloneNode(true));
+
+    this.render();
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (oldValue !== newValue) {
+      this.render();
+    }
+  }
+
+  render() {
+    const greeting = this.getAttribute('greeting') || 'Hello';
     const name = this.getAttribute('name') || 'World';
-    const hwMsg = `Hello ${name}`;
-
-    Array.from(template.querySelectorAll('.hw-text'))
-      .forEach(n => n.textContent = hwMsg);
-
-    // Append the template content to the shadow root
-    this.shadowRoot.appendChild(template);
+    if (this.shadowRoot) {
+      const greetingSlot = this.shadowRoot.querySelector('slot[name="greeting"]');
+      const nameSlot = this.shadowRoot.querySelector('slot[name="name"]');
+      greetingSlot.textContent = greeting;
+      nameSlot.textContent = name;
+    }
   }
 }
 
-// Define the custom element
 customElements.define('hello-world', HelloWorld);
 ```
 
