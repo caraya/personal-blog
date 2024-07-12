@@ -17,7 +17,7 @@ Using Import Maps is a two-step process. First, you create a script with a `type
 </script>
 ```
 
-You can also reference files in the project's node\_modules folder.
+You can also reference files in the project's node_modules folder.
 
 ```html
 <script type="importmap">
@@ -77,11 +77,11 @@ This is the basic usage of import maps. The specification [README](https://githu
 
 The important element (and why I revisited the API now) is that the API is now supported in all browsers so it's worth revisiting it and testing if suits your needs.
 
- ![Data on support for the import-maps feature across the major browsers from caniuse.com](https://caniuse.bitsofco.de/static/v1/import-maps-1682201143288.jpg) 
+ ![Data on support for the import-maps feature across the major browsers from caniuse.com](https://caniuse.bitsofco.de/static/v1/import-maps-1682201143288.jpg)
 
 ## Links and Resources
 
-- [Import maps spec README](https://github.com/WICG/import-maps#readme)
-- [JavaScript import maps are now supported cross-browser](https://web.dev/import-maps-in-all-modern-browsers/)
-- [Using ES modules in browsers with import-maps](https://blog.logrocket.com/es-modules-in-browsers-with-import-maps/)
-- [ES modules: A cartoon deep-dive](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/)
+* [Import maps spec README](https://github.com/WICG/import-maps#readme)
+* [JavaScript import maps are now supported cross-browser](https://web.dev/import-maps-in-all-modern-browsers/)
+* [Using ES modules in browsers with import-maps](https://blog.logrocket.com/es-modules-in-browsers-with-import-maps/)
+* [ES modules: A cartoon deep-dive](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/)
