@@ -119,7 +119,7 @@ With either version, we can import the package and use in our pages.
 </color-picker>
 ```
 
-Since this is baseline newly available you should be careful how you implement it and provide an alternative way to import your scripts.
+Since this is baseline newly available you should be careful how you implement it and provide an alternative way to import your modules.
 
 ## Links and Resources
 
