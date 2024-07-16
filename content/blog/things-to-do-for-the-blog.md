@@ -10,7 +10,7 @@ tags:
 
 I've been busy writing content but there are things that I'm either long overdue in implementing or want to explore.
 
-This should keep me busy when
+This should keep me busy when no writing posts and working on other projects.
 
 * Dark Theme
   * Re-evaluate the existing color palette and come up with a decent dark color palette
