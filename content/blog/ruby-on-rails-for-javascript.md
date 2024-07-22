@@ -10,7 +10,7 @@ Laravel for PHP and Ruby on Rails for Ruby provide a full set of opinionated, 'b
 
 In [Why We Don't Have a Laravel For JavaScript... Yet](https://wasp-lang.dev/blog/2024/05/29/why-we-dont-have-laravel-for-javascript-yet), Vinny (a DevRel engineer at Wasp) discusses his views on why Javascript doesn't have an opinionated framework like Ruby on Rails or Laravel.
 
-I have a different opinion of why Javascript doesn't have an equivalent tool and will discuss it in this post, along with a set of tools to build an equivalent platform.
+I have a different opinion of why Javascript doesn't have an equivalent tool and will discuss it in this post, along with a set of ideas I would use to build an equivalent platform.
 
 I will also base the content of this post on Ruby on Rails, which is what I'm most familiar with.
 
