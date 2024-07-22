@@ -1,7 +1,6 @@
 ---
 title: "Syndicating content to Twitter/X"
 date: 2024-06-30
-desc: "The process of configuring an Eleventy site to syndicate content to Twitter/X"
 tags:
   - Javascript
   - Netlify

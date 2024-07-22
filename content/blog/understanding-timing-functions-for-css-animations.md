@@ -1,7 +1,7 @@
 ---
 title: Understanding timing functions for CSS animations
 date: 2024-07-17
-tag:
+tags:
   - CSS
   - Animations
 ---
