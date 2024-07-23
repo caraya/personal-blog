@@ -1,5 +1,7 @@
 name: Trigger Netlify Build
 on:
+  push: 
+    branches: ['main']
   schedule:
     # “At 1130 on every Monday and Friday”
     # https://crontab.guru/#30_11_*_*_1,3
