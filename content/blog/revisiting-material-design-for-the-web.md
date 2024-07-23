@@ -106,7 +106,7 @@ We first install the packages from Material Web Components by installing the ful
 npm install @material/web
 ```
 
-Next, we create an `index.js` to hold the imports for the project. This will not be referenced in the HTML; we'll use it to build the bundle that we link to in the HTML.
+Next, we create an `index.js` file to hold the imports for the project. This will not be referenced in the HTML; we'll use it to build the bundle that we link to in the HTML.
 
 After importing the typography component, we use [adoptedStyleSheets](https://developer.mozilla.org/en-US/docs/Web/API/Document/adoptedStyleSheets) to append the stylesheet to the existing style sheets array.
 
