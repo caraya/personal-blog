@@ -1,6 +1,6 @@
 ---
 title: Adding math formulas to web pages
-date: 2024-07-24
+date: 2024-07-31
 ---
 <script>
   MathJax = {
@@ -26,9 +26,12 @@ Out of the three possible inputs, I thin I'll stick with LaTeX for the input. I'
 
 ### Using MathJax
 
-Before we write LaTeX for use with MathJax, we need to configure and load the
+Before we write LaTeX for use with MathJax, we need to configure and load the library.
+
+The first script configures the library and it must be loaded before we load the library.
 
 ```html
+<script>
   MathJax = {
     tex: {
       inlineMath: [
@@ -38,11 +41,18 @@ Before we write LaTeX for use with MathJax, we need to configure and load the
     },
   };
 </script>
+```
+
+The second script loads MathJax asynchronously and assigns an ID to the script so we can reference it later.
+
+```html
 <script id="MathJax-script"
 	async
 	src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
 ```
+
+
 
 ```html
 <p>When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\)
