@@ -1,6 +1,6 @@
 ---
 title: Web Components - You Don't Have to Reinvent the Wheel
-Date: 2024-07-15
+Date: 2024-07-29
 tags:
   - Web Components
   - Design
