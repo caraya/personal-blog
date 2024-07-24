@@ -1,6 +1,6 @@
 ---
 title: Web Components - You Don't Have to Reinvent the Wheel
-Date: 2024-07-29
+date: 2024-07-29
 tags:
   - Web Components
   - Design
@@ -12,7 +12,6 @@ This is a follow-up to [Web Components, FTW](https://publishing-project.rivendel
 ## Accessibility And elementInternals()
 
 [The Guide to Accessible Web Components](https://www.erikkroes.nl/blog/accessibility/the-guide-to-accessible-web-components-draft/)
-
 
 I want to highlight [elementInternals()](https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals), in particular the accessibility portion of the interface.
 
@@ -56,7 +55,7 @@ connectedCallback() {
 
 But as I mentioned earlier, we still need to do manual work to make the element accessible.
 
-We will add more the `tabindex` attribute to the `hello-world` component using the [setAttribute](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute) method.
+We will add the `tabindex` attribute to the `hello-world` component using the [setAttribute](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute) method.
 
 ```js
 connectedCallback() {

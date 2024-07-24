@@ -1,6 +1,6 @@
 ---
 title: Revisiting Material Design For The Web
-data: 2024-07-24
+date: 2024-07-24
 tags:
   - Web Components
   - Web Design

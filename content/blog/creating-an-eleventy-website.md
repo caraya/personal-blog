@@ -1,6 +1,6 @@
 ---
 title: "Creating an Eleventy Website"
-data: 2024-03-30
+date: 2024-03-30
 tags:
   - Eleventy
   - Design
