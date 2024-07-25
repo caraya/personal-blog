@@ -22,6 +22,8 @@ It's not common but there are times when we need to render math equations in a w
 
 This post will discuss two strategies for rendering math on web pages: The MathJAX third-party library and MathML, a native way to render math in browsers. We'll discuss the individual tools and why would we choose one over the other.
 
+Tools like [iMathEQ](https://www.imatheq.com/imatheq/com/imatheq/math-equation-editor-latex-mathml.html) allow to you create MathML and LaTeX that you can paste directly on your web content, but these graphical editors still require you to know enough math how to build them.
+
 ## MathJax
 
 MathJax is a cross-browser JavaScript library that displays mathematical notation in web browsers, using [MathML](https://developer.mozilla.org/en-US/docs/Web/MathML), [LaTeX](https://en.wikibooks.org/wiki/LaTeX/Mathematics) and [ASCIIMathML](https://www1.chapman.edu/~jipsen/mathml/asciimathsyntax.html) markup. MathJax is released as open-source software under the Apache License.
@@ -104,7 +106,7 @@ Mathematical Markup Language (MathML) is an XML-based language for describing ma
 
 [MathML Core](https://w3c.github.io/mathml-core/) is a subset with increased implementation details based on rules from LaTeX and the Open Font Format. It is tailored for browsers and designed specifically to work well with other web standards including HTML, CSS, DOM, and Javascript.
 
-<https://developer.mozilla.org/en-US/docs/Web/MathML>
+You can find more information in the [MathML specification](https://w3c.github.io/mathml-core/) and [MDN's(https://developer.mozilla.org/en-US/docs/Web/MathML) MathML documentation and tutorials](https://developer.mozilla.org/en-US/docs/Web/MathML)
 
 ```mathml
 <math class="math" display="block">
@@ -1196,4 +1198,46 @@ This is what the code looks like on the page:
   </semantics>
 </math>
 
+You can also create inline equations by using the `display=inline` attribute.
+
+```html
+<p>Testing if this works <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+    <mstyle mathsize="1.5rem">
+      <mi>x</mi>
+      <mo>+</mo>
+      <mn>5</mn>
+      <mo>=</mo>
+      <mn>0</mn>
+    </mstyle>
+  </math>
+```
+
+And it looks like this:
+
+<p>Testing if this works <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+    <mstyle mathsize="1.5rem">
+      <mi>x</mi>
+      <mo>+</mo>
+      <mn>5</mn>
+      <mo>=</mo>
+      <mn>0</mn>
+    </mstyle>
+  </math>
+
+You can style MathML with CSS, either with the [mstyle](https://developer.mozilla.org/en-US/docs/Web/MathML/Element/mstyle) child element or by applying styles directly to the elements. Which one you choose
+
+A good starting point is MDN's [MathML Tutorial](https://developer.mozilla.org/en-US/docs/Learn/MathML)
+
 ## Which one to use?
+
+**Short answer**: It's up to you.
+
+Both MathJax and MathML Core have advantages and disadvantages. That makes it hard for me to recommend one over the other for all cases.
+
+MathJax works with LaTeX inputs. That makes it the perfect solution if you're importing content from one of these editors, it just becomes a copy/paste exercise.
+
+If you're not careful the external scripts used to load MathJax can slow down your page to a noticeable level or cause flashes of unstyled or unconverted text in your equations.
+
+On the other hand, MathML is built into browsers. However, there are two different implementations (MathML and MathML Core) with varied levels of support.
+
+If we concentrate on MathML Core we can expect better support across browsers and interoperability with other web standards. The main drawback, in my opinion, is that, because this is a full markup vocabulary it has a steeper learning curve and it might not be what developers are looking for.
