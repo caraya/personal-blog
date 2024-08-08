@@ -140,6 +140,56 @@ layer(icons);
 
 }
 
+@layer links {
+	:root {
+		--link-color: var(--color-blue);
+    --link-color-active: var(--link-color);
+    --link-color-visited: var(--link-color);
+		--link-color-dark: rgb(100, 149, 237);
+		--link-color-dark-active: rgba(100, 149, 237, 0.75);
+    --link-color-dark-visited: var(--link-color-dark);
+
+		color-scheme: light dark;
+	}
+
+@supports (color: oklab(0% 0 0)){
+:root {
+		--link-color-dark: oklch(67.46% 0.141 261.34);
+		--link-color-dark-active: oklch(67.46% 0.141 261.34 / 0.75);
+	}
+}
+  a[href] {
+    color: light-dark(var(--link-color), var(--link-color-dark));
+  }
+  a[href]:visited {
+    color: light-dark(var(--link-color-visited), var(--link-color-dark-visited));
+  }
+  a[href]:hover,
+  a[href]:active {
+    color: light-dark(var(--link-color-active), var(--link-color-dark-active));
+  }
+
+  a[href*="web.archive"]::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    background-image: url("https://res.cloudinary.com/dfh6ihzvj/image/upload/v1699174096/ia-logo.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+  }
+
+  /* Direct Links / Markdown Headers */
+  .header-anchor {
+    text-decoration: none;
+    font-style: normal;
+    font-size: 1em;
+    margin-left: 0.1em;
+  }
+}
+
 @layer defaults {
   /* Custom OL style declaration */
   @counter-style circled-decimal {
@@ -173,10 +223,6 @@ layer(icons);
     --code-color: rgba(202, 3, 129, 0.94);
     --background-color: var(--color-white);
     --text-color: var(--color-black);
-
-    --link-color: var(--color-blue);
-    --link-color-active: var(--link-color);
-    --link-color-visited: var(--link-color);
 
     --syntax-tab-size: 2;
   }
@@ -363,38 +409,6 @@ layer(icons);
   }
 }
 
-@layer links {
-  a[href] {
-    color: var(--link-color);
-  }
-  a[href]:visited {
-    color: var(--link-color-visited);
-  }
-  a[href]:hover,
-  a[href]:active {
-    color: var(--link-color-active);
-  }
-
-  a[href*="web.archive"]::after {
-    content: "";
-    width: 20px;
-    height: 20px;
-    margin-left: 10px;
-    background-image: url("https://res.cloudinary.com/dfh6ihzvj/image/upload/v1699174096/ia-logo.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    display: inline-block;
-  }
-
-  /* Direct Links / Markdown Headers */
-  .header-anchor {
-    text-decoration: none;
-    font-style: normal;
-    font-size: 1em;
-    margin-left: 0.1em;
-  }
-}
 
 @layer tables {
   table {
@@ -447,8 +461,10 @@ layer(icons);
   tt,
   var {
     color: var(--code-color);
- 		font-family: monospace, monospace;
-		font-size: 1em;
+    font-family: var(--font-family-monospace);
+    font-variation-settings: "MONO" 1, "CASL" 0, "wght" 400, "slnt" 0,
+      "CRSV" 0.501;
+    font-size: 1rem;
   }
 
   pre:not([class*="language-"]) {
@@ -724,12 +740,14 @@ layer(icons);
 
       --text-color: rgb(255, 255, 255);
 
-      /* --accent-color: oklch(65.47% 0.183 250.8);
-    --accent-color-active: oklch(59.91% 0.207 278.14);
-    --accent-color-visited: oklch(75.68% 0.117 283.25); */
+			/*
+      --accent-color: oklch(65.47% 0.183 250.8);
+    	--accent-color-active: oklch(59.91% 0.207 278.14);
+    	--accent-color-visited: oklch(75.68% 0.117 283.25);
+			*/
 
       --background-color: rgb(21, 32, 43);
-    }
+		}
 
 @supports (color: oklab(0% 0 0)){
 :root {
@@ -738,7 +756,7 @@ layer(icons);
       --color-gray-90: oklch(88.38% 0.002 17.2);
 
       --background-color: oklch(23.85% 0.026 248.99);
-    }
+		}
 }
 
     .post-navigation .nav-previous a::before {
