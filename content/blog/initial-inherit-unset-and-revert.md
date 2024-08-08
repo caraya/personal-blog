@@ -105,8 +105,8 @@ So, how does `revert` work:
 * When used in the user origin, revert rolls the cascaded value back to the user agent's default style
 * When used in the user agent origin, this keyword is functionally equivalent to unset.
 
-The revert keyword works exactly the same as unset in many cases. The only difference is for properties that have values set by the browser or by custom stylesheets created by users (set on the browser side).
+The revert keyword works the same as unset in many cases. The only difference is for properties that have values set by the browser or by custom stylesheets created by users (set on the browser side).
 
-Revert will not affect rules applied to children of an element you reset but will remove any effects on a parent's rule applied to its children.
+Revert will not affect rules applied to the children of an element you reset but will remove any effects on a parent's rule applied to its children.
 
 Revert is just a value. It is still possible to override the revert value using specificity.
