@@ -2,9 +2,9 @@
 title: Simplifying dark theme creation with light-dark()
 date: 2024-08-14
 tags:
-  CSS
-  design
-  dark mode
+  - CSS
+  - Design
+  - Dark Mode
 ---
 
 We can control the color schemes for light and dark modes through CSS using the `prefers-color-scheme` media query.
@@ -53,10 +53,10 @@ This function takes two parameters, each a color. The first color represents the
 
 ```css
 .demo {
-	background: light-dark(
-		var(--background-color-light),
-		var(--background-color-dark)
-	);
+  background: light-dark(
+    var(--background-color-light),
+    var(--background-color-dark)
+  );
 }
 ```
 
@@ -75,10 +75,10 @@ The example below defines the `color-scheme` property and colors for light and d
 ```css
 :root {
   color-scheme: light dark;
-	--background-color-light: oklch(85.05% 0.049 84.53);
-	--background-color-dark: oklch(47.78% 0.067 65.07);
-	--color-light: oklch(40.9% 0.105 43.91);
-	--color-dark: oklch(85.46% 0.03 67.41);
+  --background-color-light: oklch(85.05% 0.049 84.53);
+  --background-color-dark: oklch(47.78% 0.067 65.07);
+  --color-light: oklch(40.9% 0.105 43.91);
+  --color-dark: oklch(85.46% 0.03 67.41);
 }
 ```
 
@@ -87,13 +87,13 @@ We then use `light-dark()` wherever we use colors and indicate which color to us
 ```css
 * {
   background: light-dark(
-		var(--background-color-light),
-		var(--background-color-dark)
-	);
+    var(--background-color-light),
+    var(--background-color-dark)
+  );
   color: light-dark(
-		var(--color-light),
-		var(--color-light)
-	);
+    var(--color-light),
+    var(--color-light)
+  );
 }
 ```
 

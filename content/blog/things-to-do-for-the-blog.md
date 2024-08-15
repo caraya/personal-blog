@@ -14,7 +14,7 @@ This should keep me busy when not writing posts and working on other projects.
 
 * Dark Theme
   * Re-evaluate the existing color palette and come up with a decent dark color palette
-  * Use the [light-dark()](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark) function to simplify the color schemes
+  * ~~Use the [light-dark()](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark) function to simplify the color schemes~~
 * Web Components
   * Color.js [elements](https://elements.colorjs.io/) &mdash; Lea Verou
     * Be mindful that these components are under development and they may change without notice
