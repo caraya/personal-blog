@@ -107,9 +107,9 @@ As Christian Heilmann writes in [CSS vs. JavaScript: Trust vs. Control](https://
 
 We've gone to either extreme before.
 
-Earlier in the web's history we thought that [DHTML](https://www.yourhtmlsource.com/javascript/dhtmlexplained.html) (see also the [Wikpedia entry for DHTML](https://en.wikipedia.org/wiki/Dynamic_HTML)) would be the perfect solution. It wasn't since it didn't address cross browser issues inherent in the version 4 browsers (Netscape and IE).
+Earlier in the web's history we thought that [DHTML](https://www.yourhtmlsource.com/javascript/dhtmlexplained.html) (see also the [Wikpedia entry for DHTML](https://en.wikipedia.org/wiki/Dynamic_HTML)) would be the perfect solution. It wasn't, since it didn't address cross browser issues of the main browsers at the time (Netscape and IE).
 
-We then swung the other way around when we started using CSS in ways that wasn't accessible. [The checkbox hack](https://css-tricks.com/the-checkbox-hack/) is the opposite of DHTML, it uses (some would say abuses) CSS to eliminate the use of Javascript altogether.
+We then swung the other way around when we started using CSS in ways that wasn't accessible or didn't work . [The checkbox hack](https://css-tricks.com/the-checkbox-hack/) is the opposite of DHTML, it uses (some would say abuses) CSS to eliminate the use of Javascript altogether.
 
 From my perspective, neither approach is optimal. They, like the underlying technologies they use, have strengths and weaknesses and they work best when we use them for what they are best for.
 
