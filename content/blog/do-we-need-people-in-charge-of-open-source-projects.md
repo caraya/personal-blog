@@ -5,7 +5,6 @@ tags:
   - Design Systems
   - Project Management
   - Community
-
 ---
 
 In episode 629 of [Shoptalk](https://shoptalkshow.com/629/) [Dave](https://x.com/davatron5000) and [Chris](https://x.com/chriscoyier) had an interesting discussion about [Design ain’t a democracy](https://robinrendle.com/notes/design-aint-a-democracy/) an article by Robin Rendle, published in July 2024 and Miriam Suzanne's [We don’t need a boss, we need a process](https://www.miriamsuzanne.com/2024/08/08/vision) repsponse.
