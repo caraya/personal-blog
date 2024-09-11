@@ -160,4 +160,4 @@ With a basic set of skills, we can now look at more advanced skills and knowledg
 * Write integration code for third-party services and APIs
 * Write code using Frameworks or libraries as needed
 
-There are likely more items in each category and they are likely to be specific to a specific teams.
+There are likely more items in each category and they are likely to be specific to a specific teams but I believe this is a good starting point.
