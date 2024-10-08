@@ -1,9 +1,10 @@
 ---
-title: Creating a CSS Reset
+title: Creating A CSS Reset
 date: 2024-06-26
 tags:
   - CSS
   - Tools
+  - Codepen
 ---
 
 CSS Resets have been around for a while and they have evolved along with CSS and browser support.
@@ -371,8 +372,6 @@ Matching the `hidden` attribute to the correct display value presents an interes
   display: none;
 }
 ```
-
-## Resets over the years
 
 While these big resets are still popular, many developers have created their own resets to address particular needs or ideas. I've referenced these works in my own.
 

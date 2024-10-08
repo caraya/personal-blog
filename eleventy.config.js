@@ -209,7 +209,7 @@ module.exports = function (eleventyConfig) {
 			rowspan: true,
 			headerless: false,
 			multibody: true,
-			aotolabel: true,
+			autolabel: true,
 		});
 	});
 
