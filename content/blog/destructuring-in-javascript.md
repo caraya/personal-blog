@@ -1,6 +1,6 @@
 ---
 title: Destructuring in Javascript
-date: 2024-10-09
+date: 2024-10-14
 tags:
  - Javascript
 ---
