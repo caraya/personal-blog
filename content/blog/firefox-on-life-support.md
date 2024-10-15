@@ -49,41 +49,39 @@ Browserslist default query covers the following browsers:
 
 | Browser | Version | Percentage |
 | :--- | :---: | :---: |
-| Chrome for Android | 119 | 36.4% |
-| Chrome | 120 | 0.02% |
-^^ | 119 | 14.7% |
-^^ | 118 | 5.4% |
-^^ | 117 | 0.70% |
-^^ | 109 | 1.8% |
-| Safari on iOS | 17.1 | 2.6% |
-^^ | 17.0 | 1.6% |
-^^ | 16.6-16.7 | 5.2% |
-^^ | 16.3 | 0.58% |
-^^ | 16.1 | 0.64% |
-^^ | 15.6-15.7 | 0.68% |
-| Edge | 120 | 0.00% |
-^^ | 119 | 3.5% |
-^^ | 118 | 0.82% |
-| Safari | 17.1 | 0.69% |
-^^ | 17.0 | 0.44% |
-^^ | 16.6 | 2.1% |
-^^ | 15.6 | 0.52% |
-| Firefox | 120 | 0.37% |
-^^ | 119 | 1.4% |
-^^ | 115 | 0.37% |
-| Samsung Internet | 23 | 1.8% |
-^^ | 22 | 0.25% |
-| Opera | 104 | 0.66% |
-^^ | 103 | 0.16% |
-^^ | 102 | 0.91% |
-| Opera Mobile | 73 | 1.1% |
-| UC Browser for Android | 15.5 | 0.79% |
-| Android Browser | 119 | 0.51% |
-| Firefox for Android | 119 | 0.29% |
-| QQ Browser | 13.1 | 0.14% |
-| KaiOS Browser | 3.0-3.1| 0.00% |
-^^ | 2.5 | 0.07%
-| Opera Mini | all | 0.06% |
+| Chrome for Android | 129 | 44.3% |
+| Chrome | 129 | 0.01% |
+| ^^ | 128 | 2.3% |
+| ^^ | 127 | 12.8% |
+| ^^ | 126 | 1.5% |
+| ^^ | 109 | 1.4% |
+| Safari | 18.0 | 0.02% |
+| ^^ | 17.6 | 0.42% |
+| ^^ | 17.5 | 1.4% |
+| Samsung Internet | 25 | 1.3% |
+| ^^ | 24 | 0.08% |
+| Opera Mobile | 80 | 1.3% |
+| UC Browser for Android | 15.5 | 1.1% |
+| Firefox for Android | 130 | 0.37% |
+| Android Browser | 129 | 0.33% |
+| QQ Browser | 14.9 | 0.32% |
+| KaiOS Browser | 3.0-3.1 | 0.00% |
+| ^^ | 2.5 | 0.05% |
+| Opera Mini | all | 0.05% |
+| Opera | 114 | 0.00% |
+| ^^ | 113 | 0.00% |
+| Safari on iOS | 18.0 | 0.16% |
+| ^^ | 17.6 | 1.4% |
+| ^^ | 17.5 | 8.6% |
+| ^^ | 16.6-16.7 | 0.92% |
+| ^^ | 15.6-15.8 | 0.74% |
+| Edge | 129 | 0.00% |
+| ^^ | 128 | 0.92% |
+| ^^ | 127 | 3.4% |
+| Firefox | 130 | 0.01% |
+| ^^ | 129 | 1.1% |
+| ^^ | 128 | 0.45% |
+| ^^ | 115 | 0.35% |
 [Browserslist default ]
 
 While it aims for the widest possible support globally, in my opinion, it is too permissive and it will add unnecessary bloat to web applications.
@@ -94,24 +92,25 @@ If I run the query `> 2%` in the [browserslist playground](https://browsersl.ist
 
 | Browser | Version | Percentage |
 | :--- | :---: | :---: |
-| Chrome for Android | 119 | 36.4% |
-| Chrome | 119 | 14.7% |
-^^ | 118 | 5.4%|
-| Safari on iOS | 17.1 | 2.6% |
-^^ | 16.6-16.7 | 5.2% |
-| Edge | 119 | 3.5% |
-| Safari | 16.6 | 2.1% |
+| Chrome for Android | 129 | 44.3% |
+| Chrome | 128 | 2.3% |
+| ^^ | 127 | 12.8% |
+| Safari on iOS | 17.5 | 8.6% |
+| Edge | 127 | 3.4% |
 [List of browsers with 2% support or larger globally]
+
+
 
 | Browser | Version | Percentage |
 | :--- | :---: | :---: |
-| Chrome | 119 | 16.2% |
-^^ | 118 | 8.9% |
-| Chrome for Android | 119 | 15.0% |
-| Safari on iOS | 17.1 | 3.7% |
-^^ | 16.6-16.7 | 7.5% |
-| Safari | 16.6 | 5.2% |
-| Edge | 119 | 4.6% |
+| Chrome for Android | 129 | 44.3% |
+| Chrome | 128 | 2.3% |
+| ^^ | 127 | 12.8% |
+| ^^ | 126 | 1.5% |
+| Safari on iOS | 17.6 | 1.4% |
+| ^^ | 17.5 | 8.6% |
+| Edge | 127 | 3.4% |
+| Safari | 17.5 | 1.4% |
 [List of browsers with 2% support or larger in North America]
 
 So what happens if your browser doesn't appear in the Browserslist list?
