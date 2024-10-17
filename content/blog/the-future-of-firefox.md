@@ -1,12 +1,12 @@
 ---
-title: "Firefox on life support"
-date: 2024-12-12
+title: The future of Firefox
+date: 2024-10-30
 tags:
   - Browsers
   - Firefox
 ---
 
-A few days ago, I came across [Firefox on the brink?](https://www.brycewray.com/posts/2023/11/firefox-brink/). In the article, the author wonders if we're seeing the final decline of Firefox.
+A while back I came across [Firefox on the brink?](https://www.brycewray.com/posts/2023/11/firefox-brink/). In the article, the author wonders if we're seeing the final decline of Firefox.
 
 According to the article, the US Web Design System provides a set of standards and guidelines for US Federal Government websites. Part of these guidelines include browser support:
 
@@ -14,9 +14,9 @@ According to the article, the US Web Design System provides a set of standards a
 >
 > Source: [Browser Support](https://designsystem.digital.gov/documentation/developers/#browser-support-2)
 
-When the article was written (11/30/2023) Firefox usage was hovering around 2.2%. The numbers don't appear to have changed when I visited the US analytics website on 12/10/2023 but it may be possible that the data hasn't been updated since the analytics service is transitioning to a new provider.
+When the article was written (10/15/2024) Firefox usage was 1.9% in the last 30-day period.
 
-But what happens if the support falls under 2% for government websites and the digital service drops support for Firefox?
+What happens if the support falls under 2% for government websites and the digital service drops support for Firefox?
 
 According to Firefox on the brink:
 
@@ -28,9 +28,9 @@ According to Firefox on the brink:
 
 There are also other potential consequences. With only two rendering engines left in the market (Blink for Chromium browsers and WebKit for Safari) the pace of innovation will slow down, potentially to a crawl.
 
-Chromium and Blink have a written procedure to develop new features. WebKit has decided not to implement them because of perceived privacy concerns.
+The Chromium project has a written procedure to develop new features. WebKit has decided not to implement them because of perceived privacy concerns.
 
-If they are the only two major rendering engines in the market there is no real way to stimulate either browser to change their stance on development or to force them to work together so we'll have a unified platform to develop apps.
+If they are the only two major rendering engines (Blink and WebKit) in the market there is no real way to stimulate either browser to change their stance on development or to force them to work together so we'll have a unified platform to develop apps.
 
 There is a related area that concerns me.
 
@@ -88,37 +88,65 @@ While it aims for the widest possible support globally, in my opinion, it is too
 
 Let's change the defaults to those browsers with more than 2% support, just like the UWDS does for their projects.
 
-If I run the query `> 2%` in the [browserslist playground](https://browsersl.ist/#q=%3E+2%25%0A&region=alt-na) to only query for browsers with more than 2% of support, we get some interesting numbers:
+If I run the query `>= 2%` in the [browserslist playground](https://browsersl.ist/#q=%3E+2%25%0A&region=alt-na) to only query for browsers with more than 2% of support, we get some interesting numbers:
 
 | Browser | Version | Percentage |
 | :--- | :---: | :---: |
-| Chrome for Android | 129 | 44.3% |
+| Chrome for Android | 129 | 24.7% |
 | Chrome | 128 | 2.3% |
-| ^^ | 127 | 12.8% |
-| Safari on iOS | 17.5 | 8.6% |
-| Edge | 127 | 3.4% |
+| ^^ | 127 | 14.1% |
+| Safari on iOS | 17.5 | 15.3% |
+| Edge | 127 | 5.2% |
 [List of browsers with 2% support or larger globally]
 
-
+If we narrow the results to only North America (`>= 2% in US`), we get a narrower set of results.
 
 | Browser | Version | Percentage |
 | :--- | :---: | :---: |
-| Chrome for Android | 129 | 44.3% |
+| Chrome for Android | 129 | 24.7% |
 | Chrome | 128 | 2.3% |
-| ^^ | 127 | 12.8% |
-| ^^ | 126 | 1.5% |
-| Safari on iOS | 17.6 | 1.4% |
-| ^^ | 17.5 | 8.6% |
-| Edge | 127 | 3.4% |
-| Safari | 17.5 | 1.4% |
+| ^^ | 127 | 14.1% |
+| ^^ | 126 | 3.4% |
+| Safari on iOS | 17.6 | 2.6% |
+| ^^ | 17.5 | 15.3% |
+| Edge | 127 | 5.2% |
+| Safari | 17.5 | 3.0% |
 [List of browsers with 2% support or larger in North America]
 
-So what happens if your browser doesn't appear in the Browserslist list?
+So what happens if your browser (firefox in this case) doesn't appear in the Browserslist list that you selected?
 
 Most of the tools using Browserslist use it to decide if they should use older techniques or polyfills for specific browsers.
 
-For example, Babel's `preset/env` will use the browserslist values to decide if any plugins or core-js features need to be included in the transpiled project.
+For example, Babel and PostCSS `preset/env` plugins will use the browserslist values to decide if any plugins or core-js features need to be included in the transpiled project.
 
 So, if a browser doesn't appear in the results of a browserslist queries, it will not use modern features supported by the browser creating larger code bundles or unnecessary prefixes added to your stylesheets.
 
-Rather than use the default, you can query based on the features that you need for your site. This would give you even more flexibility in the Javascript you use in your code since it would be tailored for the site's visitors.
+Rather than use the default, you can query based on the features that you need for your site.
+
+You can use feature queries (`@supports`) in CSS to only run code if the feature is (or isn't) available.
+
+For example, this code will only execute when the browser does not support subgrid.
+
+```css
+@supports not (grid-template-columns: subgrid) {
+  /* rules in here */
+}
+```
+
+In Javascript we have two ways to do  [feature detection](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Feature_detection). The first one is to check if the feature is available in its parent object.
+
+```js
+if ("geolocation" in navigator) {
+  // Access navigator.geolocation APIs
+}
+```
+
+The second one is to programmatically create an object and add the property we're testing and see if it persists.
+
+```js
+function supports_canvas() {
+  return !!document.createElement("canvas").getContext;
+}
+```
+
+Any of these techniques would help reduce the size of your codebase since we're only using native features when they are supported and choose what, if any, fallback to use when it's not.
