@@ -77,6 +77,10 @@
     {% if mermaid %}
       {% mermaid_js %}
     {% endif %}
+		{# Only load color.js if we enable it in the post frontmatter #}
+		{% if colorjs %}
+			<script src="https://elements.colorjs.io/index.js" type="module"></script>
+		{% endif %}
   </head>
   <body>
     {% import "_nav.njk" as nav with context %}

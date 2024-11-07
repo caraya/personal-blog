@@ -49,6 +49,7 @@ module.exports = function (eleventyConfig) {
 		"./assets/prism.js": "/js/prism.js",
 		"./assets/algoliasearchNetlify.css": "/css/algoliasearchNetlify.css",
 		"./assets/algoliasearchNetlify.js": "/js/algoliasearchNetlify.js",
+		"./assets/share-url-wc.js": "/js/share-url-wc.js",
 	});
 
 	// Run Eleventy when these files change:

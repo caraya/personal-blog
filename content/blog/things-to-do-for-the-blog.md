@@ -18,6 +18,7 @@ This should keep me busy when not writing posts and working on other projects.
 * Web Components
   * Color.js [elements](https://elements.colorjs.io/) &mdash; Lea Verou
     * Be mindful that these components are under development and they may change without notice
+    * Is forking at this point worth consideration?
   * [playground-elements](https://github.com/google/playground-elements) &mdash; Google
   * [share-url](https://nigelotoole.github.io/share-url/) to create share links for different platforms
   * Evaluate if [Wired Elements](https://wiredjs.com/) or [Shoelace](https://shoelace.style/) would be good libraries to experiment with for UI components
