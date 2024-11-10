@@ -4,9 +4,7 @@ date: 2024-11-18
 tags:
   - Design
   - Web Components
-  - Evaluation
 colorjs: true
-share: true
 ---
 
 !!! warning **Warning:**

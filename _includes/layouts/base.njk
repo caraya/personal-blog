@@ -81,6 +81,10 @@
 		{% if colorjs %}
 			<script src="https://elements.colorjs.io/index.js" type="module"></script>
 		{% endif %}
+		{# only load baseline component if enabled in post #}
+		{% if baseline %}
+			<script src="https://cdn.jsdelivr.net/npm/baseline-status@1.0.8/baseline-status.min.js" type="module"></script>
+		{% endif %}
   </head>
   <body>
     {% import "_nav.njk" as nav with context %}

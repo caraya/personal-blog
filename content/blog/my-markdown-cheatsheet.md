@@ -347,4 +347,105 @@ New section   |     More      |         Data |
 And more      | With an escaped '\|'         ||
 [Prototype table]
 
+## Web Components
 
+### color.js elements
+
+#### color-picker
+
+The [color-picker](https://elements.colorjs.io/src/color-picker/) elements displays a slider-based color picker that will display the selected color. It will also fire events that will enable you to use the color you picked in styles for other parts of the page.
+
+This code:
+
+```html
+<color-picker space="oklch" color="oklch(60% 30% 180)"></color-picker>
+```
+
+Will produce the following result:
+
+<color-picker space="oklch" color="oklch(60% 30% 180)"></color-picker>
+
+The [color-picker reference](https://elements.colorjs.io/src/color-picker/#reference) for the component's API.
+
+#### color-scale
+
+The [color-scale](https://elements.colorjs.io/src/color-scale/) component provides a visual representation of a color scale presented in the `colors` attribute.
+
+You can enter the colors in any color space supported in color.js. The component will convert the colors to the space specified in the `space` attribute.
+
+This code:
+
+```html
+<color-scale space="oklch" colors="
+  Gray 50: #f9fafb,
+  Gray 100: #f3f4f6,
+  Gray 200: #e5e7eb,
+  Gray 300: #d1d5db,
+  Gray 400: #9ca3af,
+  Gray 500: #6b7280,
+  Gray 600: #4b5563,
+  Gray 700: #374151,
+  Gray 800: #1f2937,
+  Gray 850: #1a202c,
+	Gray 900: #111827,
+"></color-scale>
+```
+
+Will produce the following result:
+
+<color-scale space="oklch" colors="
+  Gray 50: #f9fafb,
+  Gray 100: #f3f4f6,
+  Gray 200: #e5e7eb,
+  Gray 300: #d1d5db,
+  Gray 400: #9ca3af,
+  Gray 500: #6b7280,
+  Gray 600: #4b5563,
+  Gray 700: #374151,
+  Gray 800: #1f2937,
+  Gray 850: #1a202c,
+	Gray 900: #111827
+"></color-scale>
+
+There is no actual API since this is a presentational element but you can check the [color-scale](https://elements.colorjs.io/src/color-scale/) page for more information on what attributes are available.
+
+#### color-swatch
+
+The [color-swatch](https://elements.colorjs.io/src/color-swatch/) element creates color swatches that can be edited if so configured.
+
+The input file inside the `color-swatch` component will render the value of the selected color.
+
+This code:
+
+```html
+<color-swatch value="oklch(70% 0.25 138)" size="large">
+	<input />
+</color-swatch>
+```
+
+Will render the following result:
+
+<color-swatch value="oklch(70% 0.25 138)" size="large">
+	<input />
+</color-swatch>
+
+#### color-inline
+
+The [color-swatch](https://elements.colorjs.io/src/color-swatch/) element renders a swatch of color inline with other content like text.
+
+```html
+<p>This will render the color
+	<color-inline contentEditable>lch(50% 40 30)</color-inline> inline.</p>
+```
+
+<p>This will render the color <color-inline contentEditable>lch(50% 40 30)</color-inline> inline.</p>
+
+See the [color-inline reference](https://elements.colorjs.io/src/color-inline/#reference) for the component's API.
+
+### Baseline
+
+```html
+<baseline-status
+	featureId="anchor-positioning">
+</baseline-status>
+```
