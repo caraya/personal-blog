@@ -5,6 +5,8 @@ youtube: true
 vimeo: true
 mermaid: false
 mavo: false
+colorjs: true
+baseline: true
 ---
 
 One of the reasons to move my blog from WordPress to Eleventy was the flexibility of convert the Markdown I write into proper HTML without using raw HTML in the Markdown files.
@@ -15,7 +17,7 @@ This document is my attempt at remembering all the things I've added so I can co
 
 This post is my attempt at a cheat sheet for the extra Markdown Elements that I use in this blog.
 
-!!! warning This post is specific to this site
+!!! tip **This post is specific to this site**
 The commands, as explained in this post, are designed for this blog and will only work as explained here.
 
 If you want to get them to work in your own site contact me and I'll try to help.
@@ -449,3 +451,7 @@ See the [color-inline reference](https://elements.colorjs.io/src/color-inline/#r
 	featureId="anchor-positioning">
 </baseline-status>
 ```
+
+<baseline-status
+	featureId="anchor-positioning">
+</baseline-status>
