@@ -151,7 +151,7 @@ The web evolves in stages and the same move back to server side rendering it's l
 
 > But frontend is a much more restrictive space. The cost of each kilobyte of JS is not insignificant. It isn't only maintenance why you wouldn't want to mix and match but to reduce payload. And this is where the wheels start coming off.
 
-Do they, really? Custom elements provide a framework neutral to add functionality to a web site or app so why wouldn't we want to add them?
+Do they, really? Custom elements provide a framework neutral way to add functionality to a web site or app that requires a single import for any number of instances so why wouldn't we want to add them?
 
 [Custom Elements Everywhere](https://custom-elements-everywhere.com/) shows custom element support for different frameworks. While the number of frameworks is small the level of support is eye opening for me.
 
