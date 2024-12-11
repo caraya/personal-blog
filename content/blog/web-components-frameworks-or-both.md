@@ -166,9 +166,9 @@ I believe that, in the end, this is a personal choice rather than a technical on
 ## Links and References
 
 * [Shadow DOM and events](https://pm.dartus.fr/posts/2021/shadow-dom-and-event-propagation/)
-* <https://medium.com/torq-ai/shadow-dom-events-59a90068e612>
-* <https://javascript.info/shadow-dom-events>
-* <https://dev.to/rrees/server-side-rendered-web-components-34pl>
-* <https://developer.mozilla.org/en-US/docs/Web/API/Event/composedPath>
+* [Shadows in Motion: Harnessing the Potential of Shadow DOM Events](https://medium.com/torq-ai/shadow-dom-events-59a90068e612)
+* [Shadow DOM and events](https://javascript.info/shadow-dom-events)
+* [Server-side rendered Web Components](https://dev.to/rrees/server-side-rendered-web-components-34pl)
+* [Event: composedPath() method](https://developer.mozilla.org/en-US/docs/Web/API/Event/composedPath)
 * [Custom Elements Everywhere](https://custom-elements-everywhere.com/)
 * [Astro](https://astro.build/)
