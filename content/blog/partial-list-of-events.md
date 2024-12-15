@@ -1,6 +1,6 @@
 ---
 title: Partial List of Events
-date: 2024-11-13
+date: 2024-11-18
 tags:
   - Javascript
   - Events
