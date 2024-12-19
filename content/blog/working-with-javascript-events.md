@@ -14,7 +14,9 @@ This post will explore events. What they are how to use them with event listener
 
 ## How They Work
 
-<!-- <baseline-status featureId="events"></baseline-status> -->
+<baseline-status featureId="events"></baseline-status>
+
+<baseline-status featureId="addEventListener"></baseline-status>
 
 We first decide what element we will capture the event for.
 
@@ -64,7 +66,7 @@ btn.addEventListener("click", randomBackground);
 
 ## Creating Custom Events
 
-<!-- <baseline-status featureId="Custom-Event"><baseline-status> -->
+<baseline-status featureId="CustomEvent"><baseline-status>
 
 There are times when the built-in events are not enough to accomplish our tasks.  Javascript provides ways to create custom events and then dispatch or fire them when necessary.
 
@@ -118,6 +120,10 @@ textarea.addEventListener("input", function () {
 ```
 
 ## Event Bubbling and Propagation
+
+<baseline-status featureId="bubbles"><baseline-status>
+
+<baseline-status featureId="dispatch-event"><baseline-status>
 
 In the last example we also saw how events bubble up the parent chain and how you can fire custom events to propagate up the parent chain.
 
