@@ -217,8 +217,6 @@ export const extra = "He won the world cup";
 
 You can import modules from both systems in the same file using the `import` statement.
 
-Note how we call the functions from the CommonJS import uses the full name of the variables (`darthVader.name` and `darthVader.ability()`), while the ESM import uses the destructuring syntax (`messi.name` and `messi.ability()`). You just need to be careful about the syntax you use when calling the functions.
-
 ```js
 // importing esm in esm
 import messi from "./esm.mjs";
