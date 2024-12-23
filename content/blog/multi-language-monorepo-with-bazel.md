@@ -29,7 +29,7 @@ Reproducibility
 : Your builds are reproducible. If you’re using a constant set of inputs, Bazel will produce the same build each time.
 
 Scalability
-: Bazel’s invention arose from one of Google’s internal build tools, Blaze. Within Google itself, Bazel handles builds for projects containing more than 100K source files. In other words, Bazel is perfect for large projects with enormous codebases.
+: Bazel’s invention arose from one of Google’s internal build tools, Blaze. Within Google itself, Bazel handles builds for projects containing more than 100K source files
 : While it advocates the monorepo pattern, it handles microservices architecture just as easily. Dropbox used Bazel to scale their CI/CD pipelines to mitigate the number of tests executed on their commits. Uber also adopted Bazel to scale their Go monorepo. They leveraged Bazel’s hermetic builds to support incremental build generation that supports their distributed infrastructure.
 
 Declarative programming
