@@ -1,6 +1,6 @@
 ---
 title: Reading and Writing Files With Streams
-date: 2025-01-01
+date: 2024-12-30
 tags:
   - Javascript
   - Streams
