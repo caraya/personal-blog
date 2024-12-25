@@ -1,6 +1,6 @@
 ---
 title: Converting CommonJS to ES Modules
-date: 2024-12-30
+date: 2024-12-25
 tags:
   - Javascript
   - Modules
