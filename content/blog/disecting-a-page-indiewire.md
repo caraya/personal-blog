@@ -104,6 +104,8 @@ The full bleed image adds the class to the figure element.
 </figure>
 ```
 
+The `full-bleed` class is used to place the image and to style the caption for the image.
+
 ```css
 figure.full-bleed {
   grid-column: 1 / -1;
