@@ -1,10 +1,9 @@
 ---
-title: "Publishing Explorations"
+title: Publishing Explorations
 date: 2024-06-30
 tags:
   - CSS
   - Explorations
-draft: true
 ---
 
 ## Animating variable fonts
