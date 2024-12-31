@@ -132,7 +132,7 @@ We can also style individual characters by targeting the specific class for that
 
 ## final thoughts
 
-The code in this post is not a replacement for the full functionality provided by [Splitting.js](https://splitting.js.org/). However, it can be useful when you only need to split text into characters and style them individually without the weight of the full library.
+The code in this post is not a replacement for the full functionality provided by [Splitting.js](https://splitting.js.org/). However, it can be useful when you only need to split text into characters and style them individually.
 
 You can use this technique to create animations and transformations, change their colors, or apply other CSS properties to create unique text effects.
 
