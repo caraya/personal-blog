@@ -37,6 +37,7 @@
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@11tyrocks/eleventy-plugin-emoji-readtime": "^1.0.1",
+    "@csstools/postcss-design-tokens": "^4.0.4",
     "@csstools/postcss-oklab-function": "^3.0.7",
     "@kevingimbel/eleventy-plugin-mermaid": "^2.1.1",
     "cloudinary": "^1.41.0",

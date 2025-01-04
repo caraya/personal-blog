@@ -7,6 +7,7 @@ module.exports = {
 				displayP3: true,
 			},
 		}),
+		require('@csstools/postcss-design-tokens')({}),
 		// require("cssnano")({
 		// 	preset: [ 'default', {
 		// 		svgo: false,

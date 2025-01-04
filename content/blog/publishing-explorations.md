@@ -8,9 +8,7 @@ tags:
 
 ## Animating variable fonts
 
-## using splitting.js
 
-<https://splitting.js.org/guide.html#basic-usage>
 
 ## Don't be Afraid Of Large Font Sizes
 
@@ -44,10 +42,14 @@ tags:
 ## Anotations and marginalia
 
 * [The social life of marginalia](http://bobulate.com/post/5013829096/the-social-life-of-marginalia)
-  * Bookmarking, annotations and sharing
-    * [openbookmarks.org](http://www.openbookmarks.org/)
-    * [Hypothes.is](https://hypothes.is/)
-    * [emphasis](https://github.com/NYTimes/Emphasis) from the New York Times
+* Bookmarking, annotations and sharing
+  * [openbookmarks.org](http://www.openbookmarks.org/)
+  * [Hypothes.is](https://hypothes.is/)
+  * [emphasis](https://github.com/NYTimes/Emphasis) from the New York Times
+
+
+## Reading List
+
 * Frank Chimero
   * [The Web's Grain](https://frankchimero.com/blog/2015/the-webs-grain/)
   * [What The Web Wants](https://frankchimero.com/blog/2013/what-screens-want/)
