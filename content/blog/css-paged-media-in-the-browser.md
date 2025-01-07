@@ -1,6 +1,6 @@
 ---
 title: CSS Paged Media In The Browser
-date: 2025-01-25
+date: 2025-01-27
 tags:
   - CSS
   - Print
