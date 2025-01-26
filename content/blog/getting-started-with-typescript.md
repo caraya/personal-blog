@@ -1,10 +1,9 @@
 ---
 title: Getting Started with Typescript
-date: 2025-01-27
+date: 2025-01-29
 tags:
   - Typescript
   - Javascript
-baseline: true
 ---
 
 Typescript is a superset of Javascript.It provides type checking and object-oriented programming features on top of Javascript.
