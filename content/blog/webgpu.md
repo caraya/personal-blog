@@ -647,4 +647,4 @@ export const cubeVertexArray = new Float32Array([
 * <https://greggman.github.io/webgpu-utils/>
 * <https://alain.xyz/blog/raw-webgpu>
 * <https://tympanus.net/codrops/2024/05/01/reaction-diffusion-compute-shader-in-webgpu/>
-
+* <https://developer.nvidia.com/gpugems/gpugems/part-vi-beyond-triangles/chapter-38-fast-fluid-dynamics-simulation-gpu>

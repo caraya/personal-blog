@@ -62,11 +62,11 @@
     {# Only load Mavo if instructed to do so in the post's front matter #}
     {% if mavo %}
       <link rel="stylesheet" href="https://get.mavo.io/mavo.css"/>
-      <script src="https://get.mavo.io/mavo.js"></script>
+      <script defer src="https://get.mavo.io/mavo.js"></script>
     {% endif %}
     {# Only load lite-vimeo if instructed to do so in the post's front matter #}
     {% if vimeo %}
-      <script defer type="module" src="https://cdn.jsdelivr.net/npm/@slightlyoff/lite-vimeo@0.1.1/lite-vimeo.js"></script>
+      <script type="module" src="https://cdn.jsdelivr.net/npm/@slightlyoff/lite-vimeo@0.1.1/lite-vimeo.js"></script>
     {% endif %}
     {# Only load lite-youtube if instructed to do so in the post's front matter #}
     {% if youtube %}
@@ -142,7 +142,7 @@
     </div>
     <!-- Current page: {{ page.url | htmlBaseUrl }} -->
     <!-- Configure and load Service Worker -->
-    <script src="/js/prism.js"></script>
+    <script defer src="/js/prism.js"></script>
 		<script type="module">
       // Test if service workers are supported
       if ('serviceWorker' in navigator) { // Attempt to register it
@@ -159,7 +159,7 @@
     </script>
 
     <!-- added for Algolia -->
-    <script type="text/javascript" src="/js/algoliasearchNetlify.js"></script>
+    <script defer src="/js/algoliasearchNetlify.js"></script>
     <script type="text/javascript">
     algoliasearchNetlify({
       appId: '533NB4QJXX',
