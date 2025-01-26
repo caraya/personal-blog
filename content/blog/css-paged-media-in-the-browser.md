@@ -7,6 +7,7 @@ tags:
   - Paged Media
   - Design
 baseline: true
+mavo: true
 ---
 
 When it comes down to printing web pages we haven't had much control over the output. The browser would just render the page as it is and print it. But with the introduction of CSS Paged Media, we can now control how the page is rendered when printed.
