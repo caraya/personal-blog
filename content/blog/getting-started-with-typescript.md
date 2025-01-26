@@ -4,6 +4,7 @@ date: 2025-01-27
 tags:
   - Typescript
   - Javascript
+baseline: true
 ---
 
 Typescript is a superset of Javascript.It provides type checking and object-oriented programming features on top of Javascript.
