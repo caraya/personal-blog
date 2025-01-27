@@ -272,6 +272,10 @@ module.exports = {
 };
 ```
 
+All these fixes should improve the performance of the site. However, WebPageTest keeps telling me that fonts are using `font-display: block` and that a font is hosted in an external CDN instead of locally. Neither of these are true.
+
+In the next post we'll look at Core Web Vitals, what they are, how to measure them and what they mean for your site.
+
 ## Links and resources
 
 * Webpage Test
@@ -283,19 +287,3 @@ module.exports = {
   * [rel=preload](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel/preload) &mdash; MDN
   * [Preload: What Is It Good For?](https://www.smashingmagazine.com/2016/02/preload-what-is-it-good-for/)
   * [script defer property](https://developer.mozilla.org/en-US/docs/Web/API/HTMLScriptElement/defer)
-* Core Web Vitals
-  * <https://web.dev/articles/vitals/>
-  * <https://web.dev/articles/top-cwv>
-  * <https://developers.google.com/search/docs/appearance/core-web-vitals>
-  * <https://frontendmasters.com/blog/mastering-interaction-to-next-paint-inp/>
-* Lighthouse
-  * [Introduction to Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
-  * [Lighthouse](https://developer.chrome.com/docs/lighthouse/)
-  * [Google Lighthouse: What It Is & How to Use It](https://www.semrush.com/blog/google-lighthouse/)
-  * [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci/blob/main/docs/getting-started.md)
-  * [You Might Not Have A Web Performance Problem](https://www.debugbear.com/blog/poor-performance-score-good-performance)
-  * [Why Optimizing Your Lighthouse Score Is Not Enough For A Fast Website](https://www.smashingmagazine.com/2024/11/why-optimizing-lighthouse-score-not-enough-fast-website/)
-* Perceived Performance
-  * [Why Perceived Performance Matters, Part 1: The Perception Of Time](https://www.smashingmagazine.com/2015/09/why-performance-matters-the-perception-of-time/)
-  * [Why Performance Matters, Part 2: Perception Management](https://www.smashingmagazine.com/2015/11/why-performance-matters-part-2-perception-management/)
-  * [Why Performance Matters, Part 3: Tolerance Management](https://www.smashingmagazine.com/2015/12/performance-matters-part-3-tolerance-management/)
