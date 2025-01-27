@@ -11,7 +11,7 @@
 			twitter_card_type=summary,
 			twitter_handle=elrond25
 		-%}
-    {# <title>{{ title or metadata.title }}</title>
+    <title>{{ title or metadata.title }}</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,7 +43,7 @@
 		<meta name="twitter:description" content="{{ page.templateContent | excerpt }}">
     {%- else -%}
 		<meta name="description" content="Placeholder text. Can't generate excerpt">
-    {%- endif -%} #}
+    {%- endif -%}
     <!-- Theme Colors -->
 		<meta name="theme-color" content="#1e456e"/>
     <!-- Feeds -->
@@ -57,12 +57,19 @@
     <!-- Added for Netlify -->
     <link rel="preload" href="/css/algoliasearchNetlify.css" as="style" />
 		<link rel="stylesheet" href="/css/algoliasearchNetlify.css" />
-    <link
-    rel="preload" href="/css/index.css" as="style"/> {# add prism.js stylesheets unconditionally #}
-    <link
-    rel="stylesheet" href="/css/index.css" /> {# add prism.js stylesheets unconditionally #}
-    <link rel="preload" href="/css/prism.css" as="style"/>
-    <link rel="stylesheet" href="/css/prism.css" />
+    <!-- Load main stylesheet -->
+		<link
+    rel="preload" href="/css/index.css" as="style"/>
+    <!-- Load Prism assets -->
+		<link
+    rel="stylesheet" href="/css/index.css" />
+    {# Only load Prism if configured to do so #}
+		{% if prism %}
+			<script defer src="js/prism/components/prism-core.js"></script>
+			<script defer src="js/prism/plugins/autoloader/prism-autoloader.js"></script>
+			<link rel="preload" href="/css/prism.css" as="style"/>
+    	<link rel="stylesheet" href="/css/prism.css" />
+		{% endif %}
     {# Only load Mavo if instructed to do so in the post's front matter #}
     {% if mavo %}
       <link rel="stylesheet" href="https://get.mavo.io/mavo.css"/>
@@ -146,7 +153,6 @@
     </div>
     <!-- Current page: {{ page.url | htmlBaseUrl }} -->
     <!-- Configure and load Service Worker -->
-    <script defer src="/js/prism.js"></script>
 		<script type="module">
       // Test if service workers are supported
       if ('serviceWorker' in navigator) { // Attempt to register it
