@@ -113,7 +113,7 @@ The results are presented in three areas:
 * **Is it resilient**
 
 <figure>
-	<img src='https://res.cloudinary.com/dfh6ihzvj/image/upload/v1737848562/webpage-test-06.png' alt='Results of performance tests'>
+	<img src='https://res.cloudinary.com/dfh6ihzvj/image/upload/v1737311941/c_scale,w_500/f_auto,q_auto/webpage-test-06' alt='Results of performance tests'>
 	<figcaption>Results of WebPageTest performance tests</figcaption>
 </figure>
 
