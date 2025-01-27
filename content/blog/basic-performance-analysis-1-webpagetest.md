@@ -250,8 +250,8 @@ We do this by introducing conditional Handlebars logic in the page template to o
 {{ raw }}
 ```html
 {% if prism %}
-	<script src="js/prism/components/prism-core.js"></script>
-	<script src="js/prism/plugins/autoloader/prism-autoloader.js"></script>
+	<script src="/js/prism/components/prism-core.js"></script>
+	<script src="/js/prism/plugins/autoloader/prism-autoloader.js"></script>
 	<link rel="preload" href="/css/prism.css" as="style"/>
 	<link rel="stylesheet" href="/css/prism.css"/>
 {% endif %}

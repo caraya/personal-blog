@@ -28,6 +28,7 @@ module.exports = {
 	layout: "layouts/post.njk",
 	// all conditional elements are set to false by default
   // and can be overriden on individual posts
+	prism: true,
 	youtube: false,
 	vimeo: false,
 	mermaid: false,
