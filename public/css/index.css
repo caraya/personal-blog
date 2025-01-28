@@ -1,7 +1,7 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css")
+@import url("normalize.css")
 layer(reset);
 
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css")
+@import url("bootstrap-icons.css")
 layer(icons);
 
 @layer typography {
