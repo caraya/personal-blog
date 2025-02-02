@@ -94,6 +94,15 @@
 		{% if baseline %}
 			<script src="https://cdn.jsdelivr.net/npm/baseline-status@1/baseline-status.min.js" type="module"></script>
 		{% endif %}
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-TN8FNQGPZX"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-TN8FNQGPZX');
+		</script>
   </head>
   <body>
     {% import "_nav.njk" as nav with context %}
@@ -166,7 +175,7 @@
       }
     </script>
 
-    <!-- added for Algolia -->
+    {# <!-- added for Algolia -->
     <script defer src="/js/algoliasearchNetlify.js"></script>
     <script type="text/javascript">
     algoliasearchNetlify({
@@ -176,6 +185,28 @@
       branch: 'main',
       selector: 'div#search',
     });
-    </script>
+    </script> #}
+		<!-- Web Vitals Library -->
+		<script src="/js/web-vitals.js"></script>
+		<!-- Web Vitals Reporting -->
+		<script>
+			import { onCLS, onINP, onLCP } from 'web-vitals';
+			const sendToAnalytics = ({ name, delta, id }) => {
+				const roundedValue = Math.round(name === 'CLS' ? delta * 1000 : delta);
+
+				window.gtag('event', 'web_vitals', {
+					event_category: 'Web Vitals',
+					event_label: id,
+					value: roundedValue,
+					metric_name: name,
+					non_interaction: true,
+				});
+			};
+
+			// Register the web-vital metric listeners.
+			onCLS(sendToAnalytics);
+			onINP(sendToAnalytics);
+			onLCP(sendToAnalytics);
+		</script>
   </body>
 </html>
