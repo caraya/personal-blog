@@ -189,7 +189,7 @@
 		<!-- Web Vitals Library -->
 		<script src="/js/web-vitals.js"></script>
 		<!-- Web Vitals Reporting -->
-		<script>
+		<script type="module">
 			import { onCLS, onINP, onLCP } from 'web-vitals';
 			const sendToAnalytics = ({ name, delta, id }) => {
 				const roundedValue = Math.round(name === 'CLS' ? delta * 1000 : delta);
