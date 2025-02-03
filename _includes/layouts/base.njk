@@ -187,10 +187,10 @@
     });
     </script> #}
 		<!-- Web Vitals Library -->
-		<script src="/js/web-vitals.js"></script>
+		<script type="module" src="/js/web-vitals.js"></script>
 		<!-- Web Vitals Reporting -->
 		<script type="module">
-			import { onCLS, onINP, onLCP } from 'web-vitals';
+			import { onCLS, onINP, onLCP } from '/js/web-vitals';
 			const sendToAnalytics = ({ name, delta, id }) => {
 				const roundedValue = Math.round(name === 'CLS' ? delta * 1000 : delta);
 
