@@ -94,15 +94,6 @@
 		{% if baseline %}
 			<script src="https://cdn.jsdelivr.net/npm/baseline-status@1/baseline-status.min.js" type="module"></script>
 		{% endif %}
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-E7KL229VRJ"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-
-			gtag('config', 'G-E7KL229VRJ');
-		</script>
   </head>
   <body>
     {% import "_nav.njk" as nav with context %}
@@ -176,7 +167,7 @@
     </script>
 		<!-- Web Vitals Library -->
 		<script type="module" src="/js/web-vitals.js"></script>
-		<!-- Web Vitals Reporting -->
+		{# <!-- Web Vitals Reporting -->
 	  <script type="module">
     // Import the necessary functions from the Web Vitals library.
     import { onCLS, onINP, onLCP } from '/js/web-vitals.js';
@@ -199,6 +190,6 @@
     onCLS(sendToAnalytics);
     onINP(sendToAnalytics);
     onLCP(sendToAnalytics);
-  </script>
+  </script> #}
   </body>
 </html>
