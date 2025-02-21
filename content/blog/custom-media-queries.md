@@ -59,7 +59,15 @@ Or in combination with other media queries and logical operators.
 /* other styles */
 ```
 
-Using custom media queries makes stylesheets easier to read and maintain. However, there is a drawback: ***you must define custom media queries in the file where you will use them***.
+## Some considerations
+
+A `@custom-media` rule can refer to other custom media queries. However, loops are forbidden, and a custom media query must not be defined in terms of itself or of another custom media query that directly or indirectly refers to it. Any such attempt of defining a custom media query with a circular dependency must cause all the custom media queries in the loop to fail to be defined.
+
+If multiple `@custom-media` rules declare the same name, the truth value is based on the last one alone, ignoring all previous declarations of the same name.
+
+## Conclusion
+
+Using custom media queries makes stylesheets easier to read and maintain. You have to be careful when defining custom media queries to avoid circular dependencies and to ensure that the custom media query is defined before it is used.
 
 ## Links and References
 
