@@ -63,7 +63,7 @@ Or in combination with other media queries and logical operators.
 
 A `@custom-media` rule can refer to other custom media queries. However, loops are forbidden, and a custom media query must not be defined in terms of itself or of another custom media query that directly or indirectly refers to it. Any such attempt of defining a custom media query with a circular dependency must cause all the custom media queries in the loop to fail to be defined.
 
-If multiple `@custom-media` rules declare the same name, the truth value is based on the last one alone, ignoring all previous declarations of the same name.
+If multiple `@custom-media` rules declare the same named query, the truth value is based on the last one alone, ignoring all previous declarations of the same name.
 
 ## Conclusion
 
