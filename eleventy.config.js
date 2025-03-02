@@ -1,5 +1,5 @@
 // External libraries
-const { DateTime } = require("luxon");
+// const { DateTime } = require("luxon");
 // Custom filters from https://github.com/LeaVerou/lea.verou.me/blob/main/assets/filters.cjs
 // Looking to trim the fat
 const filters = require("./assets/filters");
@@ -47,9 +47,9 @@ module.exports = function (eleventyConfig) {
 		"./node_modules/lite-youtube-embed/src/lite-yt-embed.js": "/js/lite-yt-embed.js",
 		"./assets/prism.css": "/css/prism.css",
 		"./assets/prism.js": "/js/prism.js",
-		"./assets/algoliasearchNetlify.css": "/css/algoliasearchNetlify.css",
-		"./assets/algoliasearchNetlify.js": "/js/algoliasearchNetlify.js",
-		"./assets/share-url-wc.js": "/js/share-url-wc.js",
+		// "./assets/algoliasearchNetlify.css": "/css/algoliasearchNetlify.css",
+		// "./assets/algoliasearchNetlify.js": "/js/algoliasearchNetlify.js",
+		// "./assets/share-url-wc.js": "/js/share-url-wc.js",
 	});
 
 	// Run Eleventy when these files change:
@@ -75,7 +75,7 @@ module.exports = function (eleventyConfig) {
 		showEmoji: false,
 	});
 	eleventyConfig.addPlugin(pluginTOC, {
-		tags: [ 'h2', 'h3' ],
+		tags: [ 'h2', 'h3', 'h4' ],
 		ul: true,
 		ol: false,
 	});
@@ -111,15 +111,52 @@ module.exports = function (eleventyConfig) {
 		return content.substr(0, content.lastIndexOf(" ", 200)) + "...";
 	});
 
-	eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
-		// Formatting tokens for Luxon: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
-		return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(format || "LLLL dd yyyy");
-	});
+	/**
+ * Eleventy filter to format dates in a readable format using Intl.DateTimeFormat.
+ *
+ * @param {object} eleventyConfig - The Eleventy configuration object.
+ */
+  eleventyConfig.addFilter(
+    "readableDate",
+    (dateObj, options, zone) => {
+      const defaultOptions = {
+        month: "long",
+        day: "2-digit",
+        year: "numeric",
+        timeZone: zone || "UTC"
+      };
+
+      const finalOptions = {
+        ...defaultOptions,
+        ...options,
+        timeZone: zone || options?.timeZone || "UTC"
+      };
+
+      return new Intl.DateTimeFormat("en-US", finalOptions).format(dateObj);
+    }
+  );
+
+	// eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
+	// 	// Formatting tokens for Luxon: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
+	// 	return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(format || "LLLL dd yyyy");
+	// });
+
+	// eleventyConfig.addFilter('htmlDateString', (dateObj) => {
+	// 	// dateObj input: https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
+	// 	return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('yyyy-LL-dd');
+	// });
 
 	eleventyConfig.addFilter('htmlDateString', (dateObj) => {
-		// dateObj input: https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
-		return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('yyyy-LL-dd');
+		// Using the en-CA locale ensures the date is formatted as YYYY-MM-DD.
+		const formatter = new Intl.DateTimeFormat('en-CA', {
+			timeZone: 'UTC',
+			year: 'numeric',
+			month: '2-digit',
+			day: '2-digit'
+		});
+		return formatter.format(dateObj);
 	});
+
 
 	// Get the first `n` elements of a collection.
 	eleventyConfig.addFilter("head", (array, n) => {
