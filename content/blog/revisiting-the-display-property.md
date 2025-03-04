@@ -2,7 +2,7 @@
 title: "Revisiting the display property"
 date: 2024-01-03
 tags:
-	- CSS
+  - CSS
 ---
 
 The `display` property has been around for a long time but its definition has evolved over the years.
@@ -19,19 +19,19 @@ The `display` property takes one or two values. If it uses one value, it uses th
 
 ```css
 .element01 {
-	display: block;
+  display: block;
 }
 
 .element02 {
-	display: inline;
+  display: inline;
 }
 
 .element03 {
-	display: flex;
+  display: flex;
 }
 
 .element04 {
-	display: grid;
+  display: grid;
 }
 ```
 

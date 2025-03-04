@@ -33,4 +33,5 @@ module.exports = {
 	vimeo: false,
 	mermaid: false,
 	mavo: false,
+	baseline: false,
 };

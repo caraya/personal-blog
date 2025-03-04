@@ -3,7 +3,7 @@ title: "Weird Things About CSS"
 date: 2024-06-30
 youtube: true
 tags:
-	- CSS
+  - CSS
   - Video
 draft: true
 ---

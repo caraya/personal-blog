@@ -2,7 +2,7 @@
 title: "Defining multiple syntax in CSS variables"
 date: 2023-12-11
 tags:
-	- CSS
+  - CSS
 ---
 
 In [Revisiting Custom Properties](https://publishing-project.rivendellweb.net/revisiting-css-custom-properties/) we looked at how to define custom properties using the `@property` at-rule.
@@ -17,9 +17,9 @@ A CSS variable defined with `@property` looks like this:
 
 ```css
 @property --border-block {
-	syntax: "<length-percentage>";
-	inherits: false;
-	initial-value: 2rem;
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 2rem;
 }
 ```
 
@@ -86,9 +86,9 @@ Which one you use will depend on the attribute that you want to emulate. For exa
 
 ```css
 @property --margin-block {
-	syntax: "<length-percentage>+";
-	inherits: false;
-	initial-value: 2rem;
+  syntax: "<length-percentage>+";
+  inherits: false;
+  initial-value: 2rem;
 }
 ```
 
