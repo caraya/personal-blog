@@ -4,7 +4,7 @@ layout: layouts/base.njk
   <article>
     <h1>{{ title }}</h1>
     <ul class="post-metadata">
-      <li><time class="iconfont published" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time> - <span>({{ page.date | timeSince }})</span></li>
+      <li><time class="iconfont published" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></li>
 
 			{% set date_updated = page.data.date_updated if page.data else date_updated %}
 			{% if date_updated -%}
