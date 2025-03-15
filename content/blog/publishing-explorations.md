@@ -59,7 +59,7 @@ tags:
     * [On Wikipedia, Cultural Patrimony, and Historiography](http://booktwo.org/notebook/wikipedia-historiography/)
       * You own your content
         * [Amazon zaps purchased copies of Orwell's 1984 and Animal Farm from Kindles](http://boingboing.net/2009/07/17/amazon-zaps-purchase.html)
-      * [Forever](https://aworkinglibrary.com/writing/forever) - Things never last forever on the web
+      * [Forever](https://aworkinglibrary.com/writing/forever) &mdash; Things never last forever on the web
       * [The social life of marginalia](http://bobulate.com/post/5013829096/the-social-life-of-marginalia)
         * Bookmarking, annotations and sharing
           * [openbookmarks.org](http://www.openbookmarks.org/)

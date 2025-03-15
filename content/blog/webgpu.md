@@ -6,9 +6,9 @@ draft: true
 
 ## What it is
 
-### Differences with WebGL and WebGL 2
+### Differences with WebGL
 
-## What it matters
+### What it matters
 
 ## How it works
 

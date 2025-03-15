@@ -1,5 +1,6 @@
 ---
 title: Balancing text in CSS
+date: 2025-03-17
 tags:
   - CSS
   - Design
