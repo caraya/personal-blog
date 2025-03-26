@@ -185,8 +185,8 @@ That, to me, is the key to using CSS wisely. Know when to use it to control 100%
 
 ## Links and Resources
 
-* <https://frontendmasters.com/blog/what-you-need-to-know-about-modern-css-spring-2024-edition/>
-* <https://developer.mozilla.org/en-US/docs/Web/CSS>
-* <https://webdesignerdepot.com/a-simple-introduction-to-intrinsic-web-design/>
-* <https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model>
-* <https://css-tricks.com/an-introduction-and-guide-to-the-css-object-model-cssom/>
+* [What You Need to Know about Modern CSS (2024 Edition)](https://frontendmasters.com/blog/what-you-need-to-know-about-modern-css-spring-2024-edition/)
+* [CSS: Cascading Style Sheets](https://developer.mozilla.org/en-US/docs/Web/CSS)
+* [A Simple Introduction to Intrinsic Web Design](https://webdesignerdepot.com/a-simple-introduction-to-intrinsic-web-design/)
+* [CSS Object Model (CSSOM)](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model)
+* [An Introduction and Guide to the CSS Object Model (CSSOM)](https://css-tricks.com/an-introduction-and-guide-to-the-css-object-model-cssom/)
