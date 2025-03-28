@@ -1,11 +1,10 @@
 ---
 title: Using CSS Wisely
-date: 2024-06-05
+date: 2025-03-26
 tags:
   - CSS
   - Opinion
 youtube: true
-draft: true
 ---
 
 CSS has progressed enormously in the last few years.
