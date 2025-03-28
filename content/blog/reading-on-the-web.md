@@ -1,6 +1,6 @@
 ---
 title: "Reading on the Web"
-date: 2024-02-17
+date: 2025-03-26
 tags:
   - CSS
   - Typography
@@ -44,15 +44,16 @@ The post also contains guidelines on how to structure the content to support the
 
 We've seen how people read online. Now let's look at how large we need to make the font size to help with readability.
 
-There is no universal font size for our content since we now live in a world of responsive design, multiple form factors, and screen resolutions.
+There is no universal font size for our content since we now live in a world of responsive design, multiple form factors, and screen resolutions while we have to respect users' preferences set in their browsers.
 
 Here are some aspects to consider:
 
 Screen size
 : It’s impossible to predict what form factor users will access your content from.
+: It is also impossible to predict if the user has changed the default font size on their browser settings.
 : Responsive Design aims to accommodate these different dimensions but there is a big difference between an iPhone, an HDR Laptop and a Gaming monitor in a Desktop machine.
 
-Screen resolution
+Screen density
 : Pixel density plays a big part in text legibility. Technological advances have made hi-res screens more accessible to the masses.
 : 16px (the default font size for browsers) will look different on a phone than on a tablet or a large display.
 : Designers should keep in mind both the outliers with older tech and the different densities available across devices.
@@ -68,7 +69,7 @@ Accessibility
 Character similarity
 : Does font size affect the way we read similar characters like O (capital `o`) and 0 (the number `0`) or l (lowercase `l`) and 1 (the number).
 : The similarity depends on the font and whether the font provides support to differentiate the similar numbers.
-: Some fonts may implement the [slashed zero](https://www.preusstype.com/techdata/otf_zero.php) open type feature to differentiate between 0 and O when they are used in the same document.
+: Some fonts may implement the [slashed zero](https://www.preusstype.com/techdata/otf_zero.php) open type feature to differentiate between 0 and O when they are used in the same document. As far as I'm aware there is no open type feature to differentiate between l and 1.
 
 ## Controlling font size with CSS
 
