@@ -1,6 +1,6 @@
 ---
 title: "Reading on the Web"
-date: 2025-03-31
+date: 2025-04-02
 tags:
   - CSS
   - Typography
@@ -72,9 +72,43 @@ Character similarity
 : The similarity depends on the font and whether the font provides support to differentiate the similar numbers.
 : Some fonts may implement the [slashed zero](https://www.preusstype.com/techdata/otf_zero.php) open type feature to differentiate between 0 and O when they are used in the same document. As far as I'm aware there is no open type feature to differentiate between l and 1.
 
-## Controlling font size with CSS
+## Working with typography in CSS
 
+!!! note **Note:**
+This is not always the right thing to do since it may override the user's desired font size configured in the browser settings.
 
+You need to consider the multiple devices that can access your site or app. The font size on a small mobile device may be different than the font size on a large monitor.
+!!!
+
+The easiest way to control text size with CSS is to set a size in the root element, either `html` or `:root` and use that as the base for all relative calculations.
+
+```html
+:root {
+	font-size:18px;
+}
+
+h1 {
+	2.5rem;
+}
+```
+
+Again, we need to remember not to micromanage the browser and let it do its work.
+
+This may be as simple as not doing anything and let the system settings (with any additional user settings as additional stylesheet) or as complicated as using tools like [Utopia](https://utopia.fyi/) or [Modular Scale](https://www.modularscale.com/?1&em&1.618) or [Typescale](https://typescale.com/).
+
+Font selection matters. Even fonts of the same type (sans-serif, serif or cursive) will look different on screen at the same size.
+
+The measure of a line should also be considered. In typography, the emasyre is the width of a text block. Typical values are between 65 and 80 characters wide... the [ch](https://help.webflow.com/hc/en-us/articles/33961301828243-Legible-paragraphs-using-the-CH-unit) to establish the measure of a text block based on character count.
+
+> In web typography, the "ch" unit in CSS refers to the width of the character "0" (zero) in the current font, and it's useful for setting widths or paddings based on character count, particularly for text elements like paragraphs or input fields.
+>
+> Source: [What is the CSS ‘ch’ Unit?](https://meyerweb.com/eric/thoughts/2018/06/28/what-is-the-css-ch-unit/)
+
+You should be careful with the `ch` unit since the width of a `0` character is not the same in all characters in all fonts. This is less of a problem with monospaced fonts where all fonts are the same width; in serif and sans-serif characters are not the same width so even if we keep the same measure, the width of the text may be different.
+
+Line height is also important. The distance between the line may contribute to the readability of the text. You may need to adjust it based on the font and the content.
+
+```css
 
 ## Links and Resources
 
@@ -83,4 +117,5 @@ Character similarity
 * [Towards Individuated Reading Experiences: Different Fonts Increase Reading Speed for Different Individuals](https://dl.acm.org/doi/pdf/10.1145/3502222)
 * [Does print size matter for reading? A review of findings from Vision Science and Typography](https://jov.arvojournals.org/article.aspx?articleid=2191906)
 * [Oh, oh, zero!](https://tug.org/TUGboat/tb34-2/tb107bigelow-zero.pdf)
-
+* [Designing for Readability: A Guide to Web Typography (With Infographic)](https://www.toptal.com/designers/typography/web-typography-infographic)
+* [What is the CSS ‘ch’ Unit?](https://meyerweb.com/eric/thoughts/2018/06/28/what-is-the-css-ch-unit/)
