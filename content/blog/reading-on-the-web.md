@@ -108,7 +108,9 @@ You should be careful with the `ch` unit since the width of a `0` character is n
 
 Line height is also important. The distance between the line may contribute to the readability of the text. You may need to adjust it based on the font and the content.
 
-```css
+## Conclusion
+
+A combination of understanding how people read online and the CSS elements related to typography should be considered when laying out the text on the page.
 
 ## Links and Resources
 
