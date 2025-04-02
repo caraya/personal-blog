@@ -42,8 +42,6 @@ The comments are useful because it allows you to document the JSON file without 
 
 The other changes to the JSON5 grammar make it easier to work with as we don't have the cognitive load to switch between Javascript and JSON with its slight but fignificant differences.
 
-I also understad that working with JSON5 requires additional libraries to be installed and used in the code. However, I find that the benefits of using JSON5 outweigh the costs of having to install and use additional libraries.
-
 ## Example
 
 This is what a JSON5 file looks like:
@@ -92,3 +90,6 @@ function readJSON5File(filePath) {
 const data = readJSON5File('./config.json5')
 console.log('Parsed JSON5 Data:', data)
 ```
+
+I understad that working with JSON5 requires additional libraries to be installed and used in the code. However, I find that the benefits of using JSON5 outweigh the costs of having to install and use additional libraries.
+
