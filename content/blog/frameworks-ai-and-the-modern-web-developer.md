@@ -7,9 +7,9 @@ tags:
   - Web
 ---
 
-I first started playing with web content in 1994 while in college. Over the years I've see most major changes in web development. From the early days of HTML, to CGI, to Javascript, Ajax, and many other libraries, to AR/VR to now AI.
+I first started playing with web content in 1994 while in college. Over the years I've see most major changes in web development. From the early days of HTML-only sites, to CGI for server-side processing, to Javascript, Ajax, and many other libraries and frameworks, to AR/VR to now AI.
 
-In this post I will try to address my views on why fads come and go in web development, why we should be careful with the new hypes in technology and why I think we should be careful with AI as it is at the time of this writing.
+In this post I will try to address my views on frameworks and their issues, and why I think we should be careful with AI as it is at the time of this writing.
 
 ## Prehistory: Before Javascript
 
