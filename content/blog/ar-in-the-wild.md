@@ -16,9 +16,11 @@ This post spans several (four or five!) years from the time it was started to wh
 
 Technologies, like the [Google Maps Gaming API](https://developers.google.com/maps/documentation/gaming), have been deprecated but their documentation remains on their website, although it's unknown for how long.
 
-Another set of technologies, like [WebVR](https://webvr.info/), has evolved into the WebXR Device API that encompasses both VR and AR experiences. Most WebGL and WebVR libraries are moving to support The WebXR Device API.
+Another set of technologies, like [WebVR](https://webvr.info/), has evolved into the [WebXR Device API](https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API) that encompasses both VR and AR experiences. Most WebGL and WebVR libraries are moving to support The WebXR Device API.
 
-There are also proprietary technologies like Niantic Lightship and Microsoft Mesh also present ways to create multi-user AR experiences
+There are also proprietary technologies like Niantic Lightship and Microsoft Mesh also present ways to create multi-user AR experiences.
+
+Other technologies like [WebGPU](https://www.w3.org/TR/webgpu/) and [WGSL](https://www.w3.org/TR/WGSL/) are still in development. Their initial implementations in browsers can improve performance of WebXR applications.
 
 I thought that perhaps picking a project to conceptualize around rather than code would be easier for me as a way to get back into AR/VR and WebGL than (re)learning WebGL and the WebXR Device API at the same time.
 
