@@ -22,19 +22,17 @@ There are also proprietary technologies like Niantic Lightship and Microsoft Mes
 
 Other technologies like [WebGPU](https://www.w3.org/TR/webgpu/) and [WGSL](https://www.w3.org/TR/WGSL/) are still in development. Their initial implementations in browsers can improve performance of WebXR applications.
 
-I thought that perhaps picking a project to conceptualize around rather than code would be easier for me as a way to get back into AR/VR and WebGL than (re)learning WebGL and the WebXR Device API at the same time.
+I thought that perhaps picking a project to conceptualize around rather than code would be easier for me as a way to get back into AR/XR and learn WebXR Device API.
 
 Something that has been in my mind a lot when thinking about AR is Daniel Suarez's books: Daemon and [Freedom<sup>tm</sup>](https://www.wikipedia.com/en/Freedom%E2%84%A2) and how can we leverage our modern technologies to build a next-generation networked community.
 
-The idea of the "Darknet" as a communication hub and online community has always intrigued me. Think of it as an AR version of Lucasfilm's [Habitat](https://www.wikiwand.com/en/Habitat_(video_game)), a free-form unscripted version of our current MMORPG worlds.
+The idea of the "Darknet" as a communication hub and online community has always intrigued me. Think of it as an AR version of Lucasfilm's [Habitat](https://www.wikiwand.com/en/Habitat_(video_game)), a free-form, unscripted, version of our current MMORPG worlds.
 
 The idea of making a Daemon-like networked environment using current AR technologies presents several challenges, both social and technical that I hope to walk through in this essay. We'll begin with the technical challenges, which are easier to articulate and present a lower barrier to understanding what they are:
 
 1. How to get consistent outdoor AR?
 2. Can we get things other than markers to display AR content?
 3. Can we generate multi-user AR experiences?
-4. Can we integrate WebXR into AR experiences?
-
 
 ## What is WebXR
 
@@ -66,7 +64,7 @@ Using the WebXR Device API we can now place virtual items in physical spaces so 
 
 [Ingress](https://ingress.fandom.com/wiki/Ingress) and [Pokemon Go](https://en.wikipedia.org/wiki/Pok%C3%A9mon_Go) presented a different interface to augmented reality. They seeded locations around the world with content for the game and let players (either individually or in groups) face the game-generated content either in 2-D or in AR on top of the actual environment the player is in.
 
-Some of these AR hybrid games include:
+Some of these AR hybrid games include (not all these games are live anymore):
 
 * Ingress Prime
 * Harry Potter: Wizards Unite
@@ -83,7 +81,7 @@ Some of these games use the deprecated Google Maps Gaming API. This API allowed 
 
 ## Can we generate multi-user AR experiences?
 
-There is an API proposal on the immersive web community group for a [WebXR Mesh Detection Module](https://immersive-web.github.io/real-world-meshing/). I'm researching if this would
+There is an API proposal on the immersive web community group for a [WebXR Mesh Detection Module](https://immersive-web.github.io/real-world-meshing/). As I understand it, this module was superseeded by the [WebXR Augmented Reality Module - Level 1](https://www.w3.org/TR/webxr-ar-module-1/). This specification interfaces with native mesh detection APIs to provide a way to detect the real world enviroment and create a mesh of the environment for XR objects to interact with. This is similar to what the proprietary [ARKit](https://developer.apple.com/augmented-reality/arkit/) and [ARCore](https://developers.google.com/ar) APIs do.
 
 Niantic Labs, the creators of Ingress and Pokemon Go, released the [Lightship platform](https://lightship.dev/).
 
@@ -109,9 +107,9 @@ Shared AR
 : Up to ten players can join a room and interact in a shared AR space through a process called co-localization.
 : After co-localizing (using either VPS or a QR code), players can see positions of objects and each other in the same physical space!
 
-The downside of Light Ship is that it only works with Unity, a company I'm not very happy with after their latest price shennanigans
+The downside of Light Ship is that it only works with Unity, not necessarily a bad thing, but it does limit the number of developers who can use it. The platform is also not free, although there is a free tier for developers to get started.
 
-[Microsoft Mesh](https://www.microsoft.com/en-us/mesh#Overview). This is a preview of upcoming technology.
+[Microsoft Mesh](https://www.microsoft.com/en-us/mesh#Overview). This technology provides similar bennefits to the technologies we've previously discussed but it seems to be tied to specific Microsoft products (Microsoft Teams) so, unless you use that tool, the functionality is very limited.
 
 
 
