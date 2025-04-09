@@ -19,19 +19,19 @@ Not every project needs a framework, and not every part of a SPA needs to load t
 
 Be deliberate in your choices. Be thorough in evaluating third-party JS regarding these areas:
 
-- features
-- accessibility
-- stability
-- performance
-- package ecosystem
-- community
-- learning curve
-- documentation
-- tooling
-- track record
-- team
-- compatibility
-- security
+* features
+* accessibility
+* stability
+* performance
+* package ecosystem
+* community
+* learning curve
+* documentation
+* tooling
+* track record
+* team
+* compatibility
+* security
 
 Pick your framework battles wisely. Make sure that your chosen framework has all the feature you need for your project and understand the way your framework works.
 
@@ -43,9 +43,9 @@ If you make multiple calls to an API or use multiple APIs in your app, they migh
 
 Run an inventory on all of your assets (JavaScript, images, fonts, third-party scripts, “expensive” modules on the page), and break them down in groups. Break the content into groups:
 
-- The basic core experience (fully accessible core content for legacy browsers)
-- An enhanced, full experience for capable browsers
-- Whatever extras assets that are nice to have and, thus, that can be lazy-loaded)
+* The basic core experience (fully accessible core content for legacy browsers)
+* An enhanced, full experience for capable browsers
+* Whatever extras assets that are nice to have and, thus, that can be lazy-loaded
 
 ### Define what "cutting-the-mustard" means for your site
 
@@ -78,7 +78,7 @@ if (('querySelector' in document) && ('serviceWorker' in navigator)) {
 Another, coarser, way to cut the mustard is to use ES2016 ES Modules and the `type="module` attribute in the `script` tag for loading JavaScript. Modern browsers will interpret the script as a JavaScript module and run it as expected, while legacy browsers won't recognize it and hence ignore it
 
 > Be aware that cheap Android phones will cut the mustard despite their limited memory and CPU capabilities, so consider feature detect [Device Memory API](https://developers.google.com/web/updates/2017/12/device-memory) and then decide on what features you send the user, using feature detection to make sure they are supported).
-> 
+>
 > ```js
 > const memory = navigator.deviceMemory
 > console.log ("This device has at least " + memory + "GiB of RAM.")
@@ -90,9 +90,9 @@ Remember that parsing JavaScript is expensive, so keep it small. Look for module
 
 Use tree-shaking, scope hoisting, and code-splitting to reduce payloads where appropriate. I'm not against tree shaking and minimizing, as long as we can understand the code when we expand the minimized files.
 
-- Tree-shaking is a way to clean up your build process by only including code that is actually used in production
-- Code-splitting splits your code base into “chunks” that are loaded on demand
-- Scope hoisting detects where import chaining can be flattened and converted into one inlined function without compromising the code.
+* Tree-shaking is a way to clean up your build process by only including code that is actually used in production
+* Code-splitting splits your code base into “chunks” that are loaded on demand
+* Scope hoisting detects where import chaining can be flattened and converted into one inlined function without compromising the code.
 
 Make use of these techniques via your bundler of choice.
 
@@ -102,9 +102,9 @@ Offloading expensive computations to a worker (running in a separate thread) or 
 
 [WebAssembly](https://webassembly.org/) provides several benefits when working with Javascript for performance
 
-- Access to libraries that are not available in Javascript or that provide better performance than built-in libraries in current browsers. (See [Emscripting a C library to Wasm](https://developers.google.com/web/updates/2018/03/emscripting-a-c-library))
-- A mechanism to improve your application's hot path code, those pieces of script that slow down your application. In [Replacing a hot path in your app's JavaScript with WebAssembly](https://developers.google.com/web/updates/2019/02/hotpath-with-wasm) we get a second way to work around
-- Integrate modules written in other languages into your web projects. [Emscripten and NPM](https://developers.google.com/web/updates/2019/01/emscripten-npm) give an example of how you can do this
+* Access to libraries that are not available in Javascript or that provide better performance than built-in libraries in current browsers. (See [Emscripting a C library to Wasm](https://developers.google.com/web/updates/2018/03/emscripting-a-c-library))
+* A mechanism to improve your application's hot path code, those pieces of script that slow down your application. In [Replacing a hot path in your app's JavaScript with WebAssembly](https://developers.google.com/web/updates/2019/02/hotpath-with-wasm) we get a second way to work around
+* Integrate modules written in other languages into your web projects. [Emscripten and NPM](https://developers.google.com/web/updates/2019/01/emscripten-npm) give an example of how you can do this
 
 ### Trim unused CSS/JavaScript: Differential loading and using smaller packages
 
@@ -196,9 +196,9 @@ console.log(dateGB)
 
 See the following articles for more information:
 
-- [The Intl.ListFormat API](https://developers.google.com/web/updates/2018/12/intl-listformat)
-- [The Intl.RelativeTimeFormat API](https://developers.google.com/web/updates/2018/10/intl-relativetimeformat)
-- [ECMA-402/Intl Status update - May 2018](https://docs.google.com/presentation/d/1wEkpdxC37t4sk64QThcna8c4753-9Ak1I23LNDmZ9KE/edit#slide=id.p)
+* [The Intl.ListFormat API](https://developers.google.com/web/updates/2018/12/intl-listformat)
+* [The Intl.RelativeTimeFormat API](https://developers.google.com/web/updates/2018/10/intl-relativetimeformat)
+* [ECMA-402/Intl Status update * May 2018](https://docs.google.com/presentation/d/1wEkpdxC37t4sk64QThcna8c4753-9Ak1I23LNDmZ9KE/edit#slide=id.p)
 
 ### Restrict Third-Party code loading additional assets
 
@@ -244,10 +244,10 @@ Test your video in all the formats your target audience can play and choose whic
 
 See the following entries in my blog for more information about video encoding, codecs and containers:
 
-- [Tools for video on the web](https://publishing-project.rivendellweb.net/web-content-optimization-video/)
-- [AV1 video in browsers](https://publishing-project.rivendellweb.net/av1-video-in-browsers/)
-- [Quick Note: Video Containers](https://publishing-project.rivendellweb.net/quick-note-video-containers/)
-- [Revisiting Video Encoding: MP4 and WebM](https://publishing-project.rivendellweb.net/revisiting-video-encoding-mp4-and-webm/)
+* [Tools for video on the web](https://publishing-project.rivendellweb.net/web-content-optimization-video/)
+* [AV1 video in browsers](https://publishing-project.rivendellweb.net/av1-video-in-browsers/)
+* [Quick Note: Video Containers](https://publishing-project.rivendellweb.net/quick-note-video-containers/)
+* [Revisiting Video Encoding: MP4 and WebM](https://publishing-project.rivendellweb.net/revisiting-video-encoding-mp4-and-webm/)
 
 ## Optimizing fonts
 
@@ -257,8 +257,8 @@ Subsetting fonts will shrink them to only the glyphs you're actually using. Depe
 
 More information on subsetting:
 
-- [Subsetting fonts](https://publishing-project.rivendellweb.net/subsetting-fonts/)
-- [More on font subsetting](https://publishing-project.rivendellweb.net/more-on-font-subsetting/)
+* [Subsetting fonts](https://publishing-project.rivendellweb.net/subsetting-fonts/)
+* [More on font subsetting](https://publishing-project.rivendellweb.net/more-on-font-subsetting/)
 
 Where possible choose WOFF2 as your primary font format and fallback to WOFF. These two formats will produce smaller files for the same content and some tools use zoplfi compression, giving you better overall compression.
 
@@ -290,9 +290,9 @@ Still, I think that Variable Fonts are the best solution to handle font size and
 
 Run an inventory on all of your assets (JavaScript, images, fonts, third-party scripts, “expensive” modules on the page), and break them down in groups. Break the content into groups:
 
-- The basic core experience (fully accessible core content for legacy browsers)
-- An enhanced, full experience for capable browsers
-- Whatever extras assets that are nice to have and, thus, that can be lazy-loaded).
+* The basic core experience (fully accessible core content for legacy browsers)
+* An enhanced, full experience for capable browsers
+* Whatever extras assets that are nice to have and, thus, that can be lazy-loaded).
 
 Design and build the core experience first, and then enhance the experience with advanced features for capable browsers, creating resilient experiences.
 
@@ -310,14 +310,14 @@ Having some browsers support lazy loading natively and some not introduces some 
 
 Following Addy Osmani's example, we can do something like this. Then we do two things
 
-- We set up a class for the assets we want to lazy load
-- We add the `loading` attribute to flag the lazy loading behavior we want in native support
+* We set up a class for the assets we want to lazy load
+* We add the `loading` attribute to flag the lazy loading behavior we want in native support
 
 ```html
-<!-- Let's load this in-viewport image normally -->
+<!-* Let's load this in-viewport image normally -->
 <img src="hero.jpg" alt=".."/>
 
-<!-- Let's lazy-load the rest of these images -->
+<!-* Let's lazy-load the rest of these images -->
 <img data-src="unicorn.jpg"
      loading="lazy"
      alt=".."
@@ -370,12 +370,12 @@ Cache inlined CSS with a service worker and experiment with in-body CSS.
 
 ### Consider using client hints and Network Information API to customize your users' experiences
 
-The [Save-Data](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/save-data/) client hint request header allows us to customize the application and the payload to cost- and performance-constrained users.
+The [Save-Data](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/save-data/) client hint request header allows us to customize the application and the payload to cost* and performance-constrained users.
 
-- Serve low-resolution images devices that request it
-- Omit non-essential imagery
-- Omit non-essential web fonts
-- Opting out of server pushes
+* Serve low-resolution images devices that request it
+* Omit non-essential imagery
+* Omit non-essential web fonts
+* Opting out of server pushes
 
 See [Delivering Fast and Light Applications with Save-Data](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/save-data/) for more specifics. Of course, your projects may need.
 
@@ -443,11 +443,11 @@ Most, if not all, modern browsers support HTTP/2 and take advantage of its featu
 
 Some of the differences between HTTP/2 and HTTP/1.x:
 
-- HTTP/2 is binary, instead of textual. This allows for better compression
-- HTTP/2 can send multiple requests for data in parallel over a single TCP connection
-- It compresses headers for more efficient communication
-- It allows servers to “push” responses proactively into client caches instead of waiting for a new request for each resource. **Take this with a grain of salt**.
-- It reduces additional round trip times (RTT), making your website load faster without any optimization
+* HTTP/2 is binary, instead of textual. This allows for better compression
+* HTTP/2 can send multiple requests for data in parallel over a single TCP connection
+* It compresses headers for more efficient communication
+* It allows servers to “push” responses proactively into client caches instead of waiting for a new request for each resource. **Take this with a grain of salt**.
+* It reduces additional round trip times (RTT), making your website load faster without any optimization
 
 HTTP/1.1 (the previous version of HTTP) suggested you package all your page/app resources into as few bundles as possible so as to optimize the server performance, you could also shard your content to different domains or subdomains so they'd come from different origins and not be subject to download restrictions for a single origin. With HTTP/2, domain sharding and asset concatenation are no longer needed
 
@@ -476,9 +476,9 @@ See [Setting performance budgets with webpack](https://web.dev/codelab-setting-p
 
 While we're in the Webpack area; Contentful published a series of articles on how to put your Webpack Bundle on a diet and make your gzipped bundle less than 100KB.
 
-- [Part 1](https://www.contentful.com/blog/2017/10/10/put-your-webpack-on-a-diet-part-1/)
-- [Part 2](https://www.contentful.com/blog/2017/10/19/put-your-webpack-bundle-on-a-diet-part-2/)
-- [Part 3](https://www.contentful.com/blog/2017/10/27/put-your-webpack-bundle-on-a-diet-part-3/)
+* [Part 1](https://www.contentful.com/blog/2017/10/10/put-your-webpack-on-a-diet-part-1/)
+* [Part 2](https://www.contentful.com/blog/2017/10/19/put-your-webpack-bundle-on-a-diet-part-2/)
+* [Part 3](https://www.contentful.com/blog/2017/10/27/put-your-webpack-bundle-on-a-diet-part-3/)
 
 The techniques discussed in the series may or may not be applicable to your individual needs but they point the way to how to improve the performance of your bundled content.
 
