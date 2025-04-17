@@ -1,6 +1,6 @@
 ---
 title: Frameworks, AI, and the modern web developer
-date: 2025-03-24
+date: 2025-05-05
 tags:
   - AI
   - Development
@@ -9,11 +9,11 @@ tags:
 
 I first started playing with web content in 1994 while in college. Over the years I've see most major changes in web development. From the early days of HTML-only sites, to CGI for server-side processing, to Javascript, Ajax, and many other libraries and frameworks, to AR/VR to now AI.
 
-In this post I will try to address my views on frameworks and their issues, and why I think we should be careful with AI as it is at the time of this writing.
+In this post I will try to present a brief history of frameworks and address my views on frameworks and their issues, and why I think we should be careful with AI as it exists at the time of this writing.
 
 ## Prehistory: Before Javascript
 
-The earliest server-side programming was done with Perl using what's called the Commong Gateway Interface or CGI and stored in the server's `cgi-bin` directory.
+The earliest server-side programming was done with Perl using what's called the [Commong Gateway Interface](https://www.ibm.com/docs/en/i/7.6.0?topic=functionality-cgi) (CGI) and stored in the server's `cgi-bin` directory.
 
 ```perl
 #!/usr/local/bin/perl
@@ -119,14 +119,14 @@ The second component is the (uppercase) HTML that would call the Javascript func
 
 The `IMG` tag (yes, it was all caps) inside the link
 : `SRC="/api/placeholder/150/40"`. The initial image source that will work if the script cannot run
-: `NAME="button1"`. In 1996 JavaScript, browsers will use the  name attribute to identify the image to change (modern JavaScript would use id instead)
+: `NAME="button1"`. In 1996 JavaScript, browsers used the `name` attribute to identify the image to change (modern JavaScript would use `id` instead)
 : `WIDTH="150" HEIGHT="40"`. You would always specify dimensions as explicit values in their corresponding attributes
 : `BORDER="0"`. Removes the blue border that would otherwise appear around images inside links even if the link went nowhere. In modern Web Apps, you would use CSS to remove the border
 : `ALT="Home Button"`. Alternative text for accessibility (this was good practice even in 1996)
 
 Going beyond these basic applications of Javascript (that were common to all browsers) was possible but it was a real challenge. The language was not standardized and the browser implementations were inconsistent and incompatible (anyone remember the ***best viewed with*** buttons?).
 
-You would have to write code that would check for the browser and then write different code for each browser. In the example below we create three variables to check wchich browser is being used and then write different code for each one. And this code is future proof: modern browsers will still run the isW3C branch as written.
+You would have to write code that would check for the browser (and likely version) and then write different code for each browser. In the example below we create three variables to check wchich browser is being used and then write different code for each one. And this code is future proof: modern browsers will still run the isW3C branch as written.
 
 ```js
 var isIE = document.all ? true : false;
@@ -184,13 +184,13 @@ $(document).ready(function () {
 });
 ```
 
-We can also use other jQuery functions to simplify the code. For example, the `append` function is a jQuery function that appends the message to the body of the document before an equivalent functionality was introduced to the DOM
+We can also use other jQuery functions to simplify the code. For example, the `append` function is a jQuery function that appends the message to the body of the document before an equivalent functionality was introduced to the Javascript standard.
 
 ## Early Frameworks: Backbone and AngularJS
 
-As the W3C standardized the DOM, Javascript became an international standard through ECMA, and the work of the WASP (web standards project) helped to push the browser vendors to implement the standards, the need for jQuery was reduced but never eliminated (we'll revisit this later).
+As the W3C standardized the DOM, Javascript became an international standard through ECMA, and the work of the [Web Standards Project](https://www.webstandards.org/) (WASP) helped to push the browser vendors to implement the standards, the need for jQuery was reduced but never eliminated.
 
-Then frameworks came into the picture. The first one was the Dojo Toolkit in 205, followed by Backbobe.js, Knockout.js, Sprout Core, AngularJS, Ember.js, React, Meteor, Vue.js, Svelte, Angular, and others.
+Then frameworks came into the picture. The first one was the Dojo Toolkit in 2005, followed by Backbobe.js, Knockout.js, Sprout Core, AngularJS, Ember.js, React, Meteor, Vue.js, Svelte, Angular, and others.
 
 It is challenging to understand why did these new technologies come into place and why they are important.
 
@@ -210,13 +210,45 @@ The table below shows a sample of early libraries and frameworks.
 
 One end of the first generation of frameworks is Backbone.js. Backbone.js was a lightweight framework that introduced the [MVC (Model-View-Controller) architecture](https://www.freecodecamp.org/news/the-model-view-controller-pattern-mvc-architecture-and-frameworks-explained/) to Javascript. It was a simple framework that provided a way to structure code and separate concerns.
 
-The other end is AngularJS. AngularJS is a complete framework that provided a way to build complex web applications with a structured approach. Through directives, AngularJS also introduced a way to extend HTML with custom elements and attributes.
+The other end is AngularJS. AngularJS is a framework that provided a way to build complex web applications with a structured approach. Through directives, AngularJS also introduced a way to extend HTML with custom elements and attributes.
+
+This is an AngularJS single page application example:
+
+```html
+<!DOCTYPE html>
+<html ng-app="helloApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World - AngularJS</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+
+  <div ng-controller="HelloController">
+    <h1>{{ greeting }}</h1>
+    <input type="text" ng-model="greeting" placeholder="Type something..." />
+  </div>
+
+  <script>
+    // Define the AngularJS module
+    const app = angular.module('helloApp', []);
+
+    // Define a controller with a default greeting
+    app.controller('HelloController', function($scope) {
+      $scope.greeting = 'Hello, World!';
+    });
+  </script>
+
+</body>
+</html>
+
+```
 
 The earlier frameworks opened conversations about technologies and best practices.
 
 ## Modern Frameworks: React and Vue
 
-As the W3C standardized the DOM, Javascript became an international standard through ECMA, and the work of  WASP ([the Web Standards Project](https://www.webstandards.org/)) helped to push the browser vendors to implement the standards, the need for jQuery was reduced but never eliminated (we'll revisit this later). These new frameowkrs were built to work with the new standards and mostly ignored browser-specific code.
+As the W3C standardized the DOM, Javascript became an international standard through ECMA, and the work of  WASP ([the Web Standards Project](https://www.webstandards.org/)) helped to push the browser vendors to implement the standards, the need for jQuery was reduced but never eliminated (the [second beta for jQuery 4.0](https://blog.jquery.com/2024/07/17/second-beta-of-jquery-4-0-0/) was released in July 2024). These new frameowkrs were built to work with the new standards and mostly ignored browser-specific code.
 
 | Framework/Library | Year Released | Key Features/Significance |
 |:---: | :---: | --- |
@@ -229,59 +261,166 @@ As the W3C standardized the DOM, Javascript became an international standard thr
 
 The second generation of frameworks introduced new concepts and approaches to web development.
 
-React introduced a component-based approach and a virtual DOM. It has also become the go-to framework in the industry for building user interfaces and has been adopted by large companies and open source projects like WordPress as their front-end framework for the block editor.
+!!! note **Note:**
+The code in the framework examples below is not a complete application. It is meant to show the basic structure of a component.
+!!!
 
-Vue.js introduced a progressive framework that was praised for its simplicity, ease of learning, and flexibility. You can run Vue applications without a build step, but you can also use it with a build step to add more features and optimizations.
+[React](https://react.dev/) introduced a component-based approach and a virtual DOM. It has also become the go-to framework in the industry for building user interfaces and has been adopted by large companies and open source projects like WordPress as their front-end framework for the block editor.
 
-Angular (version 2 and later) provide an incompatible rewrite of AngularJS. This incompatibility was a major issue for developers who had invested time and resources in AngularJS applications. I believe this is the reason why the Angular team is so focused on providing automated migrations between versions and for migrating or introducing new features.
+The basic code for a React app looks like this:
 
-Most, if not all, these frameworks are `all-in-one` solutions that provide everything you need to build a web application. They've also built large ecosystems of third-party libraries to augment their functionality.
+```typescript
+import React, { useState } from 'react'
+import ReactDOM from 'react-dom/client'
+
+const App: React.FC = () => {
+  const [count, setCount] = useState(0)
+
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 text-gray-900 font-sans">
+      <h1 className="text-4xl font-bold mb-4">Hello, World! 👋</h1>
+      <p className="mb-4 text-lg">You clicked {count} times</p>
+      <button
+        className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        onClick={() => setCount(count + 1)}
+      >
+        Click me
+      </button>
+    </div>
+  )
+}
+
+ReactDOM.createRoot(document.getElementById('root')!).render(<App />)
+```
+
+[Vue.js](https://vuejs.org/) introduced a progressive framework that was praised for its simplicity, ease of learning, and flexibility. You can run Vue applications without a build step, but a build step adds features and optimizations.
+
+```typescript
+<template>
+  <div class="min-h-screen flex flex-col items-center justify-center bg-gray-100 text-gray-900 font-sans">
+    <h1 class="text-4xl font-bold mb-4">Hello, World! 👋</h1>
+    <p class="mb-4 text-lg">You clicked {{ count }} times</p>
+    <button
+      class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      @click="count++"
+    >
+      Click me
+    </button>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const count = ref(0)
+</script>
+```
+
+[Angular](https://angular.io/) (version 2 and later) provide an incompatible rewrite of AngularJS. This incompatibility was a major issue for developers who had invested time and resources in AngularJS applications. I believe this is the reason why the Angular team is so focused on providing automated migrations between versions and when introducing or updating features.
+
+The Angular component uses Tailwind to style the element (which explains all the classes in the template).
+
+```typescript
+import 'zone.js'
+import { Component, importProvidersFrom } from '@angular/core'
+import { bootstrapApplication } from '@angular/platform-browser'
+import { CommonModule } from '@angular/common'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+
+/**
+ * A simple standalone Angular component showing Hello World with a counter.
+ */
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [
+		CommonModule
+	],
+  template: `
+    <div class="min-h-screen flex flex-col items-center justify-center bg-gray-100 text-gray-900 font-sans">
+      <h1 class="text-4xl font-bold mb-4">Hello, World! 👋</h1>
+      <p class="mb-4 text-lg">You clicked {{ count }} times</p>
+      <button
+        class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        (click)="count++"
+      >
+        Click me
+      </button>
+    </div>
+  `,
+})
+class AppComponent {
+  count = 0
+}
+
+bootstrapApplication(AppComponent, {
+  providers: [
+    importProvidersFrom(BrowserAnimationsModule)
+  ]
+})
+```
+
+Most, if not all, these frameworks are *full stack* solutions that provide everything you need to build web applications. They've also built large ecosystems of third-party libraries to augment their functionality.
 
 New tools were introduced along with these new frameworks to help with the development process. This has caused its own set of issues.
 
 ## The issues I see
 
-There are two sets of issues I see with the current state of web development:
+There are three sets of issues I see with the current state of web development with or without frameworks:
 
 * Training and documentation
 * Added complexity. Are they necessary all the time?
+* How much tooling do people need to learn and use?
 * Vendor tie-in
-
-These frameworks add complexity where it may not be needed.
 
 The documentation for the frameworks makes a lot of assumptions about the reader's knowledge. This is a problem for new developers who are trying to learn web development. The documentation is written for experienced developers who are already familiar with the concepts and technologies.
 
-How many beginning web developers will learn the basics before jumping into a framework like React or Angular? How many will understand the concepts of the framework before using it?
+How many beginning web developers will learn the basics of Javascript or Typescript before jumping into a framework like React or Angular? How many will understand the concepts of the framework before using it?
 
-For example, all components in React are built in classes. How many new developers will research and understand classes before using them?
+For example, all components in React are built in classes. How many beginning developers will research and understand classes before using copy and pasting code examples?
 
-I hear a lot about not needing to learn CSS and HTML because we can do it in Javascript. While this is true and we can do pretty much every HTML and CSS generation with Javascript, how many new developers will understand the concepts of CSS and HTML before using Javascript to generate them?
+I hear a lot about not needing to learn CSS and HTML because we can do it in Javascript. While this is true and we can generate HTML and CSS with Javascript, how many beginners understand the concepts of CSS and HTML before using Javascript to generate them?
 
-The final point is trickier. When you adopt a framework, you are tying yourself to that framework and vendor. If the vendor decides to make incompatible changes then you're stuck with the choice of staying with the old version and keeping the feature or rewriting the code for the new version.
+Tooling has become too widespread and too specific. When a project is created, it makes decisions about tooling: from the package manager ([NPM](https://docs.npmjs.com/), [Yarn](https://yarnpkg.com/), [PNPM](https://pnpm.io/)), task runners/builders ([NPM scripts](https://docs.npmjs.com/cli/using-npm/scripts), [Gulp](https://gulpjs.com/), [Grunt](https://gruntjs.com/), [Broccoli](https://broccoli.build/)), build tools ([Webpack](https://webpack.js.org/), [Vite](https://vite.dev/), [Rollup](https://rollupjs.org/)), and testing frameworks ([Jest](https://jestjs.io/), [Mocha](https://mochajs.org/), [Cypress](https://www.cypress.io/)). Each of these tools has its own set of features and configuration options. This adds complexity to the development process and makes it harder for new developers to get started if they are not already familiar with the tools or have already installed them on their systems.
 
-This is what happened with the migration between AngularJS and Angular 2 and is similar to what happens when software deprecates and removes features.
+The final point is trickier. When you adopt a framework, you are tying yourself to that framework and vendor, even more so than with build tools. If the vendor decides to make incompatible changes then you're stuck with the choice of staying with the old version and keeping the feature or rewriting the code for the new version.
 
-These framework features make the learning curve higher than it needs to be and it encourages people to skip the basics just to get to the flashy stuff that frameworks provide. This is not strictly a problem with the frameworks but with the way they are used and how beginners see frameworks as they gateway to lucrative jobs and projects.
+This is what happened with the migration between AngularJS and Angular 2 and is similar to what happens when software deprecates and removes features... developers are given a warning so they can decide what to do when the deprecation turn into a removal.
+
+Framework features make the learning curve higher than it needs to be and it encourages people to skip the basics just to get to the flashy stuff that frameworks provide. This is not strictly a problem with the frameworks but with the way they are used and how beginners see frameworks as they gateway to lucrative jobs and projects.
 
 ## Adding AI to the mix
 
 AI has become the latest buzzword in development. When it comes to web development, it has made it possible to automate code creation and testing. It doesn't solve the issues I mentioned above but, in my opinion, the issues with AI add even more complexity to the mix.
 
-Unless you build your own RAG agent trained on your codebase, there is no way to ensure consistency in the generated code. This is not a trivial undertaking and it may be beyond most people's skills... a good example of how you might do this with OpenAI is [Customize ChatGPT for Your Codebase: OpenAI](https://dev.to/mrrishimeena/customize-chatgpt-for-your-codebase-openai-14n6), just be aware that even paid ChatGPT accounts limit the number of tokens that you can generate and it can get expensive to go past those limits.
+Unless you build your own RAG agent or train your agent on your codebase, there is no way to ensure consistency in the generated code. This is not a trivial undertaking and it may be beyond most people's skills... a good example of how you might do this with OpenAI is [Customize ChatGPT for Your Codebase: OpenAI](https://dev.to/mrrishimeena/customize-chatgpt-for-your-codebase-openai-14n6), just be aware that even paid ChatGPT accounts limit the number of tokens that you can generate and it can get expensive to go past those limits.
 
-The AI-generated code is not always the best code and it's not guaranteed to work. Again, you should be proficient with the language you're working with to tell if the code is good and how to debug it when it doesn't work.
+Same thing when using a commercial agent like GitHub Copilot. You can train it on your codebase but you have to pay for the service.
 
 Even when trained with your codebase, most of the AI frameworks I'm aware of produce non-deterministic code. The code will not always be the same even with the same prompt... you should store the code in your repository and possibly keep multiple copies until you decide which one works best.
 
 Do new programmers truly understand the code they're working with? If all programmers need is a prompt for the AI agent to spit out code, then why should they bother learning the language they're working with?
 
+The AI-generated code is not always the best code and it's not guaranteed to work; you should always be wary of hallucinations.
+
+In the context of AI, a hallucination happens when an AI system generates outputs that are factually incorrect, nonsensical, or otherwise misleading, often presenting them as if they were true.
+
+Again, you should be proficient with the language you're working with to tell if the code is good and how to debug it when it doesn't work. If you use AI agents to help with code generation then you have a choice to make when the code doesn't work.
+
+* Do you ask the agent to generate the code again, knowing that the code will be different and it's still not guaranteed to work?
+* Do you try to debug the code yourself? Do you understand the language and the codebase enough to debug it?
+
 ## Conclusions
 
-I' not saying we shouldn't use frameworks or AI.
+I'm not saying don't use frameworks.
 
-I'm saying we shouldn't completely rely on AI to do our work for us. We should understand the basics of the language we're working with and the concepts of the frameworks we're using.
+While I'm not partial to frameworks, I understand that they have their uses. They can help us build applications faster and with less code. They can also help us avoid common pitfalls and provide a consistent way to structure our code.
 
-We should also be aware of the limitations of the AI we're using and how to compensate for them.
+I'm not saying don't use AI either.
+
+I'm saying we shouldn't completely rely on AI to do our work for us. We should understand the language we're working with and be comfortable with debugging and testing in the target language.
+
+We should also be aware of the limitations of any AI agent we use and how to compensate for them.
 
 ## Links and resources
 
