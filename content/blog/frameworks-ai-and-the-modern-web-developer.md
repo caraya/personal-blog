@@ -422,6 +422,10 @@ I'm saying we shouldn't completely rely on AI to do our work for us. We should u
 
 We should also be aware of the limitations of any AI agent we use and how to compensate for them.
 
+## NotebookML
+
+I've created an [experimental audio Notebook](https://notebooklm.google.com/notebook/4a852d14-2f94-4c3b-ad1a-1b579d471896/audio) that sumarizes this post.
+
 ## Links and resources
 
 * [Perl and CGI](https://www.perl.com/article/perl-and-cgi/)
