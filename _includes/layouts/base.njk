@@ -58,20 +58,41 @@
     <link rel="preload" href="/css/algoliasearchNetlify.css" as="style" />
 		<link rel="stylesheet" href="/css/algoliasearchNetlify.css" /> #}
     <!-- Load main stylesheet -->
-		<link
-    rel="preload" href="/css/index.css" as="style"/>
-		<link rel="stylesheet" href="/css/index.css" />
+		<script>
+			performance.mark('start load css');
+		</script>
+		<link rel="preload" href="/css/index.css" as="style">
+		<link rel="stylesheet" href="/css/index.css">
+		<script>
+			performance.mark('end load css');
+			performance.measure('load css', 'start load css', 'end load css');
+		</script>
+
 		{# Load tinylytics script unconditionally #}
 		<script defer src="https://tinylytics.app/embed/qBUTwx2TFjavF6-RT8uP.js"></script>
     {# Only load Prism if configured to do so #}
 		{% if prism %}
+			<script>
+				performance.mark('start load prism scripts');
+			</script>
 			<script defer src="/js/prism/components/prism-core.js"></script>
 			<script defer src="/js/prism/plugins/autoloader/prism-autoloader.js"></script>
 			<script defer src="/js/prism/plugins/toolbar/prism-toolbar.js"></script>
 			<script defer src="/js/prism/plugins/copy-to-clipboard/prism-copy-to-clipboard.js"></script>
 			<script defer src="/js/prism/plugins/show-language/prism-show-language.js"></script>
+			<script>
+				performance.mark('end load prism scripts');
+				performance.measure('load prism', 'start load prism scripts', 'end load prism scripts');
+			</script>
+			<script>
+				performance.mark('start load prism css');
+			</script>
 			<link rel="preload" href="/css/prism.css" as="style"/>
     	<link rel="stylesheet" href="/css/prism.css" />
+			<script>
+				performance.mark('end load prism css');
+				performance.measure('load prism css', 'start load prism css', 'end load prism css');
+			</script>
 		{% endif %}
     {# Only load Mavo if instructed to do so in the post's front matter #}
     {% if mavo %}
