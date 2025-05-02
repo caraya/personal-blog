@@ -1,6 +1,6 @@
 ---
 title: Browser default stylesheets
-date: 2025-05-24
+date: 2025-05-21
 tags:
   - Web
   - CSS
