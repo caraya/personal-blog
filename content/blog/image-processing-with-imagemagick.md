@@ -36,7 +36,9 @@ This will convert `image.png` to `image.jpg`. The convert command is the main co
 You can chain multiple commands in a single line. The following command will resize the image to 50% of its original size and save it as a PNG file:
 
 ```bash
-magick image.jpg -resize 50% output/image-resized-50.png
+magick image.jpg \
+-resize 50% \
+output/image-resized-50.png
 ```
 
 ImageMagick’s command-line tools (e.g. magick or convert) process your operations exactly in the order you specify them, from left to right. Under the hood there are three categories of command-line parameters, each behaving slightly differently:
