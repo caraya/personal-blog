@@ -5,6 +5,7 @@ tags:
   - AR
   - Immersive Technologies
 youtube: true
+draft: true
 ---
 
 I've been interested in virtual and augmented reality for a long time. I've also been interested in how these technologies can be used to create new experiences and communities, in particular, if they can be used to create communities around games and experiences as outlined in the boo Freedom (TM) by Daniel Suarez.
@@ -20,14 +21,16 @@ This post will not address Artificial General Intelligence (AGI) or the Daemon a
 
 <figure class="video">
 	<lite-youtube videoid="GdeY-MrXD74"></lite-youtube>
-	<figcaption>Google Deepmind Podcast: The <a href="https://www.youtube.com/watch?v=GdeY-MrXD74">Future of AGI</a></figcaption>
+	<figcaption>Google Deepmind Podcast: <a href="https://www.youtube.com/watch?v=GdeY-MrXD74">The Future of AGI</a></figcaption>
 </figure>
 
 ## The idea: What is the Daemon? What is the Darknet?
 
 In order to understand the idea of this post we need to understand the Daemon and the Darknet as described in the books.
 
-In the novels, the Daemon is an advanced AI that operates autonomously, executing its creator's vision without human intervention. It uses a decentralized network to coordinate actions and influence events globally. The Darknet is a self-organizing system that operates outside traditional power structures, allowing individuals to connect and collaborate without centralized control.
+In the novels, the Daemon is an advanced AI that operates autonomously, executing its creator's vision without human intervention. It uses a decentralized network to coordinate actions and influence events globally.
+
+The Darknet is a self-organizing system that operates outside traditional power structures, allowing individuals to connect and collaborate without centralized control.
 
 The Darknet, overseen by the Daemon’s evolved AI, leverages advanced technologies to create both a defensive force and a means of social organization.
 
