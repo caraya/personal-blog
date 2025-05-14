@@ -1,24 +1,24 @@
 <!doctype html>
 <html lang="{{ language or metadata.language }}">
   <head>
-		{%- metagen
-			comments=true,
-			title=title or metadata.title,
-			desc=desc or metadata.desc,
-			url=url,
-			img="/images/Thumbnail_Trinity_College_Dublin_Ireland.webp",
-			img_alt="Trinity College Library, Dublin",
-			twitter_card_type=summary,
-			twitter_handle=elrond25
-		-%}
+    {%- metagen
+      comments=true,
+      title=title or metadata.title,
+      desc=desc or metadata.desc,
+      url=url,
+      img="/images/Thumbnail_Trinity_College_Dublin_Ireland.webp",
+      img_alt="Trinity College Library, Dublin",
+      twitter_card_type=summary,
+      twitter_handle=elrond25
+    -%}
     <title>{{ title or metadata.title }}</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-		{%- if data.content -%}
+    {%- if data.content -%}
     <meta name="description" content="{{ desc or metadata.desc}}}">
-		{%- else -%}
-		<meta name="description" content="Placeholder text. Can't generate excerpt">
+    {%- else -%}
+    <meta name="description" content="Placeholder text. Can't generate excerpt">
     {%- endif -%}
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -27,73 +27,81 @@
     <meta property="og:locale" content="{{ language or metadata.language}}">
     <meta property="og:image" content="https://publishing-project.rivendellweb.net/images/Thumbnail_Trinity_College_Dublin_Ireland.webp">
     <meta property="og:image:alt" content="Trinity College Library, Dublin">
-		{%- if content -%}
-		<meta property="og:description" content="{{ desc or metadata.desc}}}">
+    {%- if content -%}
+    <meta property="og:description" content="{{ desc or metadata.desc}}}">
     {%- else -%}
-		<meta name="description" content="Placeholder text. Can't generate excerpt">
+    <meta name="description" content="Placeholder text. Can't generate excerpt">
     {%- endif -%}
-		<!-- Twitter -->
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="{{ metadata.author.twitter_handle}}">
     <meta name="twitter:creator" content="{{ metadata.author.twitter_handle}}">
     <meta name="twitter:url" content="https://publishing-project.rivendellweb.net/syndicating-content-to-x/">
     <meta name="twitter:image" content="https://publishing-project.rivendellweb.net/images/Thumbnail_Trinity_College_Dublin_Ireland.webp">
     <meta name="twitter:image:alt" content="Trinity College Library, Dublin">
-		{%- if page.templateContent -%}
-		<meta name="twitter:description" content="{{ page.templateContent | excerpt }}">
+    {%- if page.templateContent -%}
+    <meta name="twitter:description" content="{{ page.templateContent | excerpt }}">
     {%- else -%}
-		<meta name="description" content="Placeholder text. Can't generate excerpt">
+    <meta name="description" content="Placeholder text. Can't generate excerpt">
     {%- endif -%}
     <!-- Theme Colors -->
-		<meta name="theme-color" content="#1e456e"/>
+    <meta name="theme-color" content="#1e456e"/>
     <!-- Feeds -->
-		{#- Atom and JSON feeds included by default #}
-		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
+    {#- Atom and JSON feeds included by default #}
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
     <link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}">
     <!-- Apple touch icon -->
-		<link rel="apple-touch-icon" href="/images/icon-192x192.png"/>
+    <link rel="apple-touch-icon" href="/images/icon-192x192.png"/>
     <!-- Manifest -->
-		<link rel="manifest" href="/manifest.json"> {#- Learn more about bundles: https://github.com/11ty/eleventy-plugin-bundle #}
-    {# <!-- Added for Netlify -->
-    <link rel="preload" href="/css/algoliasearchNetlify.css" as="style" />
-		<link rel="stylesheet" href="/css/algoliasearchNetlify.css" /> #}
+    <link rel="manifest" href="/manifest.json"> {#- Learn more about bundles: https://github.com/11ty/eleventy-plugin-bundle #}
+    <!-- Added for Algolia -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css"/>
+		<script>
+			performance.mark('start load algolia');
+		</script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"></script>
+		<script>
+			performance.mark('end load algolia');
+			performance.measure('load algolia', 'start load algolia', 'end load algolia');
+		</script>
     <!-- Load main stylesheet -->
-		<script>
-			performance.mark('start load css');
-		</script>
-		<link rel="preload" href="/css/index.css" as="style">
-		<link rel="stylesheet" href="/css/index.css">
-		<script>
-			performance.mark('end load css');
-			performance.measure('load css', 'start load css', 'end load css');
-		</script>
+    <script>
+      performance.mark('start load css');
+    </script>
+    <link rel="preload" href="/css/index.css" as="style">
+    <link rel="stylesheet" href="/css/index.css">
+    <script>
+      performance.mark('end load css');
+      performance.measure('load css', 'start load css', 'end load css');
+    </script>
 
-		{# Load tinylytics script unconditionally #}
-		<script defer src="https://tinylytics.app/embed/qBUTwx2TFjavF6-RT8uP.js"></script>
+    {# Load tinylytics script unconditionally #}
+    <script defer src="https://tinylytics.app/embed/qBUTwx2TFjavF6-RT8uP.js"></script>
     {# Only load Prism if configured to do so #}
-		{% if prism %}
-			<script>
-				performance.mark('start load prism scripts');
-			</script>
-			<script defer src="/js/prism/components/prism-core.js"></script>
-			<script defer src="/js/prism/plugins/autoloader/prism-autoloader.js"></script>
-			<script defer src="/js/prism/plugins/toolbar/prism-toolbar.js"></script>
-			<script defer src="/js/prism/plugins/copy-to-clipboard/prism-copy-to-clipboard.js"></script>
-			<script defer src="/js/prism/plugins/show-language/prism-show-language.js"></script>
-			<script>
-				performance.mark('end load prism scripts');
-				performance.measure('load prism', 'start load prism scripts', 'end load prism scripts');
-			</script>
-			<script>
-				performance.mark('start load prism css');
-			</script>
-			<link rel="preload" href="/css/prism.css" as="style"/>
-    	<link rel="stylesheet" href="/css/prism.css" />
-			<script>
-				performance.mark('end load prism css');
-				performance.measure('load prism css', 'start load prism css', 'end load prism css');
-			</script>
-		{% endif %}
+    {% if prism %}
+      <script>
+        performance.mark('start load prism scripts');
+      </script>
+      <script defer src="/js/prism/components/prism-core.js"></script>
+      <script defer src="/js/prism/plugins/autoloader/prism-autoloader.js"></script>
+      <script defer src="/js/prism/plugins/toolbar/prism-toolbar.js"></script>
+      <script defer src="/js/prism/plugins/copy-to-clipboard/prism-copy-to-clipboard.js"></script>
+      <script defer src="/js/prism/plugins/show-language/prism-show-language.js"></script>
+      <script>
+        performance.mark('end load prism scripts');
+        performance.measure('load prism', 'start load prism scripts', 'end load prism scripts');
+      </script>
+      <script>
+        performance.mark('start load prism css');
+      </script>
+      <link rel="preload" href="/css/prism.css" as="style"/>
+      <link rel="stylesheet" href="/css/prism.css" />
+      <script>
+        performance.mark('end load prism css');
+        performance.measure('load prism css', 'start load prism css', 'end load prism css');
+      </script>
+    {% endif %}
     {# Only load Mavo if instructed to do so in the post's front matter #}
     {% if mavo %}
       <link rel="stylesheet" href="https://get.mavo.io/mavo.css"/>
@@ -112,14 +120,14 @@
     {% if mermaid %}
       {% mermaid_js %}
     {% endif %}
-		{# Only load color.js if we enable it in the post frontmatter #}
-		{% if colorjs %}
-			<script src="https://elements.colorjs.io/index.js" type="module"></script>
-		{% endif %}
-		{# only load baseline component if enabled in post #}
-		{% if baseline %}
-			<script src="https://cdn.jsdelivr.net/npm/baseline-status@1/baseline-status.min.js" type="module"></script>
-		{% endif %}
+    {# Only load color.js if we enable it in the post frontmatter #}
+    {% if colorjs %}
+      <script src="https://elements.colorjs.io/index.js" type="module"></script>
+    {% endif %}
+    {# only load baseline component if enabled in post #}
+    {% if baseline %}
+      <script src="https://cdn.jsdelivr.net/npm/baseline-status@1/baseline-status.min.js" type="module"></script>
+    {% endif %}
   </head>
   <body>
     {% import "_nav.njk" as nav with context %}
@@ -177,7 +185,7 @@
     </div>
     <!-- Current page: {{ page.url | htmlBaseUrl }} -->
     <!-- Configure and load Service Worker -->
-		<script type="module">
+    <script type="module">
       // Test if service workers are supported
       if ('serviceWorker' in navigator) { // Attempt to register it
         navigator
@@ -191,10 +199,21 @@
           });
       }
     </script>
-		<!-- Web Vitals Library -->
-		<script type="module" src="/js/web-vitals.js"></script>
-		{# <!-- Web Vitals Reporting -->
-	  <script type="module">
+		<!-- Load Algolia search -->
+		   <!-- added for Algolia -->
+    <script type="text/javascript">
+      algoliasearchNetlify({
+        appId: '533NB4QJXX',
+        apiKey: '0cd62f229744d35fb517b13466758622',
+        siteId: '26351df2-c0d4-4526-950c-3866501cb99d',
+        branch: 'main',
+        selector: 'div#search'
+      });
+    </script>
+    <!-- Web Vitals Library -->
+    {# <script type="module" src="/js/web-vitals.js"></script> #}
+    {# <!-- Web Vitals Reporting -->
+    <script type="module">
     // Import the necessary functions from the Web Vitals library.
     import { onCLS, onINP, onLCP } from '/js/web-vitals.js';
 
