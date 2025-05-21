@@ -91,234 +91,232 @@ module.exports = function (eleventyConfig) {
     github_edit_attributes: 'target="_blank"',
   });
   eleventyConfig.addPlugin(metagen);
-
-	// Upgrade helper plugin
-	// Should always be the last plugin to run
 	// eleventyConfig.addPlugin(UpgradeHelper);
 
-  // Transforms
-  eleventyConfig.addTransform('posthtml', function (HTMLString, outputPath) {
-    if (outputPath && outputPath.endsWith('.html')) {
-      return posthtml([
-        automaticNoopener(NoOpOptions),
-      ])
-        .process(HTMLString)
-        .then(result => result.html);
-    } else {
-      return HTMLString;
-    }
-  });
 
-  // Filters
-  // Credit: https://11ty.rocks/eleventyjs/content/#excerpt-filter
-  eleventyConfig.addFilter("excerpt", (post) => {
-    const content = post.replace(/(<([^>]+)>)/gi, "");
-    return content.substr(0, content.lastIndexOf(" ", 200)) + "...";
-  });
+	// Transforms
+	eleventyConfig.addTransform('posthtml', function (HTMLString, outputPath) {
+		if (outputPath && outputPath.endsWith('.html')) {
+			return posthtml([
+				automaticNoopener(NoOpOptions),
+			])
+				.process(HTMLString)
+				.then(result => result.html);
+		} else {
+			return HTMLString;
+		}
+	});
 
-  eleventyConfig.addFilter('readableDate',
-    (dateObj, options, zone) => {
-      const defaultOptions = {
-        month: "long",
-        day: "2-digit",
-        year: "numeric",
-        timeZone: zone || "UTC"
-      };
+	// Filters
+	// Credit: https://11ty.rocks/eleventyjs/content/#excerpt-filter
+	eleventyConfig.addFilter("excerpt", (post) => {
+		const content = post.replace(/(<([^>]+)>)/gi, "");
+		return content.substr(0, content.lastIndexOf(" ", 200)) + "...";
+	});
 
-      const finalOptions = {
-        ...defaultOptions,
-        ...options,
-        timeZone: zone || options?.timeZone || "UTC"
-      };
+	eleventyConfig.addFilter('readableDate',
+		(dateObj, options, zone) => {
+			const defaultOptions = {
+				month: "long",
+				day: "2-digit",
+				year: "numeric",
+				timeZone: zone || "UTC"
+			};
 
-      return new Intl.DateTimeFormat("en-US", finalOptions).format(dateObj);
-    }
-  );
+			const finalOptions = {
+				...defaultOptions,
+				...options,
+				timeZone: zone || options?.timeZone || "UTC"
+			};
 
-  eleventyConfig.addFilter('htmlDateString', (dateObj) => {
-    // Using the en-CA locale ensures the date is formatted as YYYY-MM-DD.
-    const formatter = new Intl.DateTimeFormat('en-CA', {
-      timeZone: 'UTC',
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit'
-    });
-    return formatter.format(dateObj);
-  });
+			return new Intl.DateTimeFormat("en-US", finalOptions).format(dateObj);
+		}
+	);
 
-  eleventyConfig.addFilter('timeSince', (dateObj, locale = 'en') => {
-    // Calculate the difference in milliseconds between the provided date and now.
-    const diffMs = dateObj.getTime() - Date.now();
+	eleventyConfig.addFilter('htmlDateString', (dateObj) => {
+		// Using the en-CA locale ensures the date is formatted as YYYY-MM-DD.
+		const formatter = new Intl.DateTimeFormat('en-CA', {
+			timeZone: 'UTC',
+			year: 'numeric',
+			month: '2-digit',
+			day: '2-digit'
+		});
+		return formatter.format(dateObj);
+	});
 
-    // Only interested in past dates; if the date is in the future, return an empty string.
-    if (diffMs > 0) {
-      return "";
-    }
+	eleventyConfig.addFilter('timeSince', (dateObj, locale = 'en') => {
+		// Calculate the difference in milliseconds between the provided date and now.
+		const diffMs = dateObj.getTime() - Date.now();
 
-    // Use the absolute difference since it's a past date.
-    let remaining = Math.abs(diffMs);
+		// Only interested in past dates; if the date is in the future, return an empty string.
+		if (diffMs > 0) {
+			return "";
+		}
 
-    // Define time units for years, months, weeks, and days.
-    const units = [
-      { unit: 'year', ms: 1000 * 60 * 60 * 24 * 365 },
-      { unit: 'month', ms: 1000 * 60 * 60 * 24 * 30 },
-      { unit: 'week', ms: 1000 * 60 * 60 * 24 * 7 },
-      { unit: 'day', ms: 1000 * 60 * 60 * 24 },
-    ];
+		// Use the absolute difference since it's a past date.
+		let remaining = Math.abs(diffMs);
 
-    const parts = [];
-    // Iterate over each unit and calculate the non-zero difference.
-    for (const { unit, ms } of units) {
-      const value = Math.floor(remaining / ms);
-      if (value > 0) {
-        parts.push(`${value} ${unit}${value !== 1 ? 's' : ''}`);
-        remaining -= value * ms;
-      }
-    }
+		// Define time units for years, months, weeks, and days.
+		const units = [
+			{ unit: 'year', ms: 1000 * 60 * 60 * 24 * 365 },
+			{ unit: 'month', ms: 1000 * 60 * 60 * 24 * 30 },
+			{ unit: 'week', ms: 1000 * 60 * 60 * 24 * 7 },
+			{ unit: 'day', ms: 1000 * 60 * 60 * 24 },
+		];
 
-    // If no unit was non-zero, return "just now"
-    if (parts.length === 0) {
-      return "just now";
-    }
+		const parts = [];
+		// Iterate over each unit and calculate the non-zero difference.
+		for (const { unit, ms } of units) {
+			const value = Math.floor(remaining / ms);
+			if (value > 0) {
+				parts.push(`${value} ${unit}${value !== 1 ? 's' : ''}`);
+				remaining -= value * ms;
+			}
+		}
 
-    return parts.join(', ') + ' ago';
-  });
+		// If no unit was non-zero, return "just now"
+		if (parts.length === 0) {
+			return "just now";
+		}
 
-  // Get the first `n` elements of a collection.
-  eleventyConfig.addFilter("head", (array, n) => {
-    if (!Array.isArray(array) || array.length === 0) {
-      return [];
-    }
-    if (n < 0) {
-      return array.slice(n);
-    }
+		return parts.join(', ') + ' ago';
+	});
 
-    return array.slice(0, n);
-  });
+	// Get the first `n` elements of a collection.
+	eleventyConfig.addFilter("head", (array, n) => {
+		if (!Array.isArray(array) || array.length === 0) {
+			return [];
+		}
+		if (n < 0) {
+			return array.slice(n);
+		}
 
-  // Return the smallest number argument
-  eleventyConfig.addFilter("min", (...numbers) => {
-    return Math.min.apply(null, numbers);
-  });
+		return array.slice(0, n);
+	});
 
-  // Return all the tags used in a collection
-  eleventyConfig.addFilter("getAllTags", collection => {
-    let tagSet = new Set();
-    for (let item of collection) {
-      (item.data.tags || []).forEach(tag => tagSet.add(tag));
-    }
-    return Array.from(tagSet);
-  });
+	// Return the smallest number argument
+	eleventyConfig.addFilter("min", (...numbers) => {
+		return Math.min.apply(null, numbers);
+	});
 
-  eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
-    return (tags || []).filter(tag => [ "all", "nav", "post", "posts" ].indexOf(tag) === -1);
-  });
+	// Return all the tags used in a collection
+	eleventyConfig.addFilter("getAllTags", collection => {
+		let tagSet = new Set();
+		for (let item of collection) {
+			(item.data.tags || []).forEach(tag => tagSet.add(tag));
+		}
+		return Array.from(tagSet);
+	});
 
-  // Add all the filters in assets/filters.js
-  for (let name in filters) {
-    eleventyConfig.addFilter(name, filters[ name ]);
-  }
+	eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
+		return (tags || []).filter(tag => [ "all", "nav", "post", "posts" ].indexOf(tag) === -1);
+	});
 
-  // COLLECTIONS
+	// Add all the filters in assets/filters.js
+	for (let name in filters) {
+		eleventyConfig.addFilter(name, filters[ name ]);
+	}
+
+	// COLLECTIONS
 
 
-  // COMPUTED PROPERTIES
+	// COMPUTED PROPERTIES
 
-  // MARKDOWN CUSTOMIZATIONS
-  // 1. Markdown Options
-  let options = {
-    html: true,
-    breaks: false,
-    linkify: false,
-  };
+	// MARKDOWN CUSTOMIZATIONS
+	// 1. Markdown Options
+	let options = {
+		html: true,
+		breaks: false,
+		linkify: false,
+	};
 
-  // 2. Use the custom library
-  eleventyConfig.setLibrary("md", markdownIt(options));
+	// 2. Use the custom library
+	eleventyConfig.setLibrary("md", markdownIt(options));
 
-  // 3. Configure Markdown-It plugins
-  eleventyConfig.amendLibrary("md", mdLib => {
-    mdLib.use(markdownItAnchor, {
-      permalink: markdownItAnchor.permalink.ariaHidden({
-        placement: "after",
-        class: "header-anchor",
-        symbol: "#",
-        ariaHidden: false,
-      }),
-      level: [ 1, 2, 3, 4 ],
-      slugify: eleventyConfig.getFilter("slugify")
-    });
-    mdLib.use(markdownItDefList);
-    mdLib.use(markdownItFigures, {
-      figcaption: 'alt',
-      lazy: true,
-      async: true,
-      classes: 'lazy'
-    });
-    mdLib.use(markdownItFootnotes);
-    mdLib.use(admonitions);
-    mdLib.use(markdownItKbd, {
-      presets: [ {
-        name: 'icons'
-      } ]
-    });
-    mdLib.use(markdownItAttrs, {
-      // Default options
-      leftDelimiter: '{',
-      rightDelimiter: '}',
-      // All attributes are allowed
-      allowedAttributes: []
-    });
-    mdLib.use(multiMDTable, {
-      multiline: true,
-      rowspan: true,
-      headerless: false,
-      multibody: true,
-      autolabel: true,
-    });
-  });
+	// 3. Configure Markdown-It plugins
+	eleventyConfig.amendLibrary("md", mdLib => {
+		mdLib.use(markdownItAnchor, {
+			permalink: markdownItAnchor.permalink.ariaHidden({
+				placement: "after",
+				class: "header-anchor",
+				symbol: "#",
+				ariaHidden: false,
+			}),
+			level: [ 1, 2, 3, 4 ],
+			slugify: eleventyConfig.getFilter("slugify")
+		});
+		mdLib.use(markdownItDefList);
+		mdLib.use(markdownItFigures, {
+			figcaption: 'alt',
+			lazy: true,
+			async: true,
+			classes: 'lazy'
+		});
+		mdLib.use(markdownItFootnotes);
+		mdLib.use(admonitions);
+		mdLib.use(markdownItKbd, {
+			presets: [ {
+				name: 'icons'
+			} ]
+		});
+		mdLib.use(markdownItAttrs, {
+			// Default options
+			leftDelimiter: '{',
+			rightDelimiter: '}',
+			// All attributes are allowed
+			allowedAttributes: []
+		});
+		mdLib.use(multiMDTable, {
+			multiline: true,
+			rowspan: true,
+			headerless: false,
+			multibody: true,
+			autolabel: true,
+		});
+	});
 
-  // Features to make your build faster (when you need them)
+	// Features to make your build faster (when you need them)
 
-  // If your passthrough copy gets heavy and cumbersome, add this line
-  // to emulate the file copy on the dev server. Learn more:
-  // https://www.11ty.dev/docs/copy/#emulate-passthrough-copy-during-serve
+	// If your passthrough copy gets heavy and cumbersome, add this line
+	// to emulate the file copy on the dev server. Learn more:
+	// https://www.11ty.dev/docs/copy/#emulate-passthrough-copy-during-serve
 
-  // eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
+	// eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
 
-  return {
-    // Control which files Eleventy will process
-    // e.g.: *.md, *.njk, *.html, *.liquid
-    templateFormats: [
-      "md",
-      "njk",
-      "html",
-      "liquid",
-    ],
+	return {
+		// Control which files Eleventy will process
+		// e.g.: *.md, *.njk, *.html, *.liquid
+		templateFormats: [
+			"md",
+			"njk",
+			"html",
+			"liquid",
+		],
 
-    // Pre-process *.md files with: (default: `liquid`)
-    markdownTemplateEngine: "njk",
+		// Pre-process *.md files with: (default: `liquid`)
+		markdownTemplateEngine: "njk",
 
-    // Pre-process *.html files with: (default: `liquid`)
-    htmlTemplateEngine: "njk",
+		// Pre-process *.html files with: (default: `liquid`)
+		htmlTemplateEngine: "njk",
 
-    // These are all optional:
-    dir: {
-      input: "content",          // default: "."
-      includes: "../_includes",  // default: "_includes"
-      data: "../_data",          // default: "_data"
-      output: "_site"
-    },
+		// These are all optional:
+		dir: {
+			input: "content",          // default: "."
+			includes: "../_includes",  // default: "_includes"
+			data: "../_data",          // default: "_data"
+			output: "_site"
+		},
 
-    // -----------------------------------------------------------------
-    // Optional items:
-    // -----------------------------------------------------------------
+		// -----------------------------------------------------------------
+		// Optional items:
+		// -----------------------------------------------------------------
 
-    // If your site deploys to a subdirectory, change `pathPrefix`.
-    // Read more: https://www.11ty.dev/docs/config/#deploy-to-a-subdirectory-with-a-path-prefix
+		// If your site deploys to a subdirectory, change `pathPrefix`.
+		// Read more: https://www.11ty.dev/docs/config/#deploy-to-a-subdirectory-with-a-path-prefix
 
-    // When paired with the HTML <base> plugin https://www.11ty.dev/docs/plugins/html-base/
-    // it will transform any absolute URLs in your HTML to include this
-    // folder name and does **not** affect where things go in the output folder.
-    pathPrefix: "/",
-  };
+		// When paired with the HTML <base> plugin https://www.11ty.dev/docs/plugins/html-base/
+		// it will transform any absolute URLs in your HTML to include this
+		// folder name and does **not** affect where things go in the output folder.
+		pathPrefix: "/",
+	};
 };
