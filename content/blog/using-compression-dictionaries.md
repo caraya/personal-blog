@@ -251,7 +251,7 @@ I expect this to change in the future as WebKit (Safari) and Firefox implement s
 
 You can see a working example of this setup on the demo site: [https://compression-dictionary-demo.netlify.app/](https://compression-dictionary-demo.netlify.app/).
 
-IN Chrome the difference between the compressed file with the dictionary and the one without is significant. Other browsers may not work at all or may not show the same results.
+In Chrome the difference between the compressed file with the dictionary and the one without is significant. Other browsers may not work at all or may not show the same results.
 
 ## Links and resources
 
