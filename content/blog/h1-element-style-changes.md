@@ -38,6 +38,10 @@ Browsers have started removing the implicit styles for `h1` elements nested insi
 
 Auditing tools like Chrome DevTools and Lighthouse now flag cases of `h1`s without defined `font-size` as bad practice. The Lighthouse deprecation warning to look out for is `H1UserAgentFontSizeInSection`.
 
+## The solution
+
+Since browsers are removing implicit styles for `h1` elements, developers should explicitly define the styles for `h1` elements in their CSS. This ensures that the headings are styled consistently across different browsers and that they meet accessibility standards.
+
 ## Implementation bugs to watch for
 
 * Firefox: [bug 1885509](https://bugzilla.mozilla.org/show_bug.cgi?id=1885509)
