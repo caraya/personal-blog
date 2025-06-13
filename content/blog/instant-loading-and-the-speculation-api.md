@@ -127,7 +127,7 @@ While the Speculation Rules API can significantly enhance performance, it is ess
 
 ## Links and Resources
 
-* <https://calendar.perfplanet.com/2024/speculative-loading-and-the-speculation-rules-api/>
-* <https://wicg.github.io/nav-speculation/speculation-rules.html>
-* <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script/type/speculationrules>
-* <https://caniuse.com/speculation-rules>
+* [Speculative loading and the Speculation Rules API](https://calendar.perfplanet.com/2024/speculative-loading-and-the-speculation-rules-api/)
+* [Speculation Rules API](https://wicg.github.io/nav-speculation/speculation-rules.html)
+* [script[type=speculationrules]](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script/type/speculationrules) &mdash; MDN
+* [Speculation Rules](https://caniuse.com/speculation-rules) &mdash; caniuse.com
