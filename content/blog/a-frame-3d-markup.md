@@ -3,9 +3,11 @@ title: "A-frame: 3D Markup"
 date: "2019-06-19"
 ---
 
-`a-frame` addresses a different problem space in VR and AR. Authoring WebGL is really hard.
+`a-frame` addresses a different problem space in VR and AR: Authoring WebGL is really hard.
 
-We will skeep the raw WebGL version, don't want to scare readers away by talking about shaders and compiling them into Javascript and how to use them. Instead, we'll move straight into the abstractions. I prefer to use [three.js](https://threejs.org), a very powerful abstraction on top of native WebGL implementations... but even as an abstraction the code is still not easy to understand.
+We will skip the raw WebGL version, don't want to scare readers away by talking about shaders and compiling them into Javascript and how to use them. Instead, we'll move straight into the abstractions.
+
+I prefer to use [three.js](https://threejs.org), a very powerful abstraction on top of native WebGL implementations... but even as an abstraction the code is still not easy to understand if you're not familiar with 3D concepts.
 
 The code below assumes you've already [downloaded](https://cdnjs.com/libraries/three.js) and linked the library using `script` tags.
 
@@ -98,11 +100,9 @@ I broke the `a-frame` code in 5 sections:
 
 1. Defines the scene using the [a-scene](https://aframe.io/docs/0.9.0/core/scene.html) element
 2. Creates a cube using the [box](https://aframe.io/docs/0.9.0/primitives/a-box.html) object
-    
-    - The position attribute is defined using a different coordinate system so you'll have to test the values until you get the result you want
+    * The position attribute is defined using a different coordinate system so you'll have to test the values until you get the result you want
 3. The [animation](https://aframe.io/docs/0.9.0/components/animation.html) for the object is nested inside the object it's animating.
-    
-    - Instead of using an RAF loop, we just tell it what the final values will be in the x, y and z axes (the `to` attribute)
+    * Instead of using an RAF loop, we just tell it what the final values will be in the x, y and z axes (the `to` attribute)
 4. Creates a [plane](https://aframe.io/docs/0.9.0/primitives/a-plane.html) and positions it as the bottom of the scene as the "floor" where we place the other objects
 5. Defines the [sky](https://aframe.io/docs/0.9.0/primitives/a-sky.html) for the scene
 
