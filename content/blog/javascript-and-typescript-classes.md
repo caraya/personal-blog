@@ -249,14 +249,114 @@ class Document implements Printable {
 }
 ```
 
+Typescript interfaces are purely a compile-time construct and do not exist in the generated JavaScript code.
+
+Since interfaces are removed, you cannot use instanceof with an interface at runtime. If you need to check the "shape" of an object at runtime (for example, to validate data from an API response), you would need to use other methods, such as:
+
+* **Writing a type guard function**: This is a user-defined function that performs checks on the object's properties at runtime.
+* **Using a validation library**: Libraries like [Zod](https://zod.dev/), [Yup](https://github.com/jquense/yup), or [io-ts](https://github.com/gcanti/io-ts) are designed for this exact purpose, allowing you to define a schema and validate that an object conforms to it at runtime.
+
+For example, for the following interface with required properties `id`, `name`, and `email`, and an optional property `bio`:
+
+```ts
+interface User {
+  id: number;
+  name: string;
+  email: string;
+  bio?: string; // The '?' character makes this property optional
+}
+```
+
+We could write a type guard function like this:
+
+```js
+function isUser(obj) {
+  if (!obj || typeof obj !== 'object') {
+    return false;
+  }
+
+  const hasId = 'id' in obj && typeof obj.id === 'number';
+  const hasName = 'name' in obj && typeof obj.name === 'string';
+  const hasEmail = 'email' in obj && typeof obj.email === 'string';
+
+  const hasValidBio = !('bio' in obj) || typeof obj.bio === 'string';
+
+  return hasId && hasName && hasEmail && hasValidBio;
+}
+```
+
+The `isUser` function does the following:
+
+1. Check if the input is a non-null object
+   1. If it is null or not an object, it returns false
+2. Check for required properties and their types
+3. Check that the optional exists and, if it does, ensure it's the correct type (string)
+4. Return true if all checks pass
+
+We would use the function to validate the object at runtime with various objects:
+
+```ts
+const validUser = {
+  id: 1,
+  name: 'Jane Doe',
+  email: 'jane.doe@example.com'
+};
+
+const validUserWithBio = {
+  id: 2,
+  name: 'John Smith',
+  email: 'john.smith@example.com',
+  bio: 'A software developer from New York.'
+};
+
+const invalidUser_missingKey = {
+  id: 3,
+  name: 'Incomplete Person'
+  // Missing email
+};
+
+const invalidUser_wrongType = {
+  id: '4', // Should be a number
+  name: 'Wrong Type',
+  email: 'wrong@example.com'
+};
+
+// Not even an object
+const notAnObject = null;
+
+console.log(
+  `Is 'validUser' a User?`,
+  isUser(validUser)
+); // true
+
+console.log(
+  `Is 'validUserWithBio' a User?`,
+  isUser(validUserWithBio)
+); // true
+
+console.log(
+  `Is 'invalidUser_missingKey' a User?`, isUser(invalidUser_missingKey)
+); // false
+
+console.log(
+  `Is 'invalidUser_wrongType' a User?`,
+  isUser(invalidUser_wrongType)
+); // false
+
+console.log(
+  `Is 'notAnObject' a User?`,
+  isUser(notAnObject)
+); // false
+```
+
 ### Parameter Properties: Concise Initialization
 
 ```ts
 class Product {
   constructor(
-		public name: string,
-		private price: number
-	) {}
+    public name: string,
+    private price: number
+  ) {}
 
   getInfo() {
     return `Product: ${this.name}, Price: $${this.price}`;
@@ -271,9 +371,9 @@ Typescript offers a shorthand for declaring and initializing class members from 
 
 ## The Future of Classes
 
-The evolution of both JavaScript and Typescript is an ongoing process.
+The evolution of classes both in JavaScript and Typescript is an ongoing process.
 
-There are several class-related proposals in various stages of development, including:
+There are several class related proposals in various stages of development, including:
 
 | Feature | Stage | Description |
 | --- | --- | --- |
@@ -291,9 +391,9 @@ Or in `tsconfig.json`:
 
 ```json
 {
-	"compilerOptions": {
-		"experimentalDecorators": true
-	}
+  "compilerOptions": {
+    "experimentalDecorators": true
+  }
 }
 ```
 
