@@ -45,7 +45,7 @@ static BROWSER_INFO = {
 
 `static _db` and `static _dbPromise`: These are used for caching the caniuse database. `_db` will hold the parsed JSON data once fetched, and `_dbPromise` will hold the Promise of the fetch operation to prevent multiple simultaneous fetches. The underscore prefix `_` is a common convention for "private" or internal properties, though in JavaScript, they are still publicly accessible.
 
-!!! note Underscore (`_`) versus private class fields**
+!!! note Underscore (`_`) versus private class fields
 
 Since the 2022 version of the standard, developers have been able to use private class fields (denoted with a `#` prefix) for true encapsulation. However, the underscore prefix (`_`) remains a widely used convention.
 
@@ -66,14 +66,14 @@ Private Class Fields (#) - True Encapsulation
 
 Key Differences Summarized:
 
-| Feature | Underscore Convention (_) | 	Private Class Fields (#) |
-| --- | --- | --- |
-| Privacy Level | Conventional ("soft private") | Truly private ("hard private") |
-| Accessibility | Accessible from anywhere | Only accessible from within the defining class |
-| Enforcement | Relies on developer discipline | Enforced by JavaScript runtime (throws TypeError) |
-| Encapsulation | None (just a hint) | Strong encapsulation|
-| Syntax | _methodName<br>_propertyName| #methodName<br>#propertyName|
-| Introduced In | Historical convention | ECMAScript 2022 (ES2022) |
+| Feature       | Underscore Convention (_)      | Private Class Fields (#)                          |
+|---------------|--------------------------------|---------------------------------------------------|
+| Privacy Level | Conventional ("soft private")  | Truly private ("hard private")                    |
+| Accessibility | Accessible from anywhere       | Only accessible from within the defining class    |
+| Enforcement   | Relies on developer discipline | Enforced by JavaScript runtime (throws TypeError) |
+| Encapsulation | None (just a hint)             | Strong encapsulation                              |
+| Syntax        | _methodName<br>_propertyName   | #methodName<br>#propertyName                      |
+| Introduced In | Historical convention          | ECMAScript 2022 (ES2022)                          |
 
 Which of the two methods you choose depends on your project's requirements and the level of encapsulation you need. If you want to ensure that certain methods or properties are truly private and not accessible from outside the class, use private class fields with the `#` prefix. If you're following a convention and want to indicate that something is intended for internal use only, the underscore prefix is still widely recognized and used.
 !!!
