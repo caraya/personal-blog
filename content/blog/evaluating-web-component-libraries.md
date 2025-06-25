@@ -171,9 +171,9 @@ Lit, Wired Elements, and Shoelace are different layers of the development proces
 * **Choose Wired Elements when**: The goal is to rapidly create a wireframe, an interactive mockup, or a playful, non-corporate user interface. Its unique sketchy aesthetic is its main feature, serving to de-emphasize visual polish and encourage a focus on core functionality during early-stage reviews. It is a specialized brush for a specific artistic or prototyping purpose and is not intended for mainstream, production-grade applications.
 * **Choose Shoelace / Web Awesome when**: The project involves building a professional, production-grade application where development speed and UI quality are paramount. Shoelace provides a comprehensive, accessible, and highly customizable component library that drastically accelerates development. It is the optimal choice for teams that want the benefits of a robust UI kit without tying themselves to a specific JavaScript framework. The evolution into Web Awesome, with its commercially backed open-core model, adds a layer of long-term stability and professional support, making it an exceptionally safe and powerful choice for enterprise environments.
 
-## Final Conclusion
+## Conclusion
 
-The web component ecosystem has reached a significant level of maturity, moving from a promising but difficult-to-use standard to a practical and powerful option for modern web development. The relationship between these three libraries perfectly illustrates this evolution.
+The web component ecosystem matured a lot since they were first introduced, moving from a promising but difficult-to-use standard to a practical and powerful option for modern web development. The relationship between the three libraries evaluated in this post illustrates this evolution.
 
 Lit provides a solid, performant, and developer-friendly foundation that makes the once-daunting task of authoring web components accessible and efficient. On top of this foundation, libraries like Wired Elements and Shoelace can flourish.
 
