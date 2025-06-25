@@ -8,8 +8,9 @@
     "playwright:debug": "npx playwright test --debug",
     "postcss:build": "npx postcss --verbose assets/index.css -o public/css/index.css",
     "postcss:watch": "npx postcss --verbose -w assets/index.css -o public/css/index.css",
-    "build": "NODE_ENV=production rm -rf **/.DS_Store && npx @11ty/eleventy --incremental",
+    "build": "NODE_ENV=production npm run build:wc && rm -rf **/.DS_Store && npx @11ty/eleventy --incremental",
     "build:dev": "npx @11ty/eleventy --incremental",
+    "build:wc": "npx tsc",
     "workbox": "npx workbox-cli injectManifest ./workbox-config.js",
     "start": "npx @11ty/eleventy --serve --quiet",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
@@ -48,6 +49,7 @@
     "eleventy-plugin-metagen": "^1.8.3",
     "eleventy-plugin-toc": "^1.1.5",
     "html-entities": "^2.4.0",
+    "lit": "^3.3.0",
     "lite-youtube-embed": "^0.3.0",
     "luxon": "^3.3.0",
     "markdown-it": "^13.0.2",
@@ -69,6 +71,7 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.40.1",
-    "@types/node": "^20.10.2"
+    "@types/node": "^20.10.2",
+    "typescript": "^5.8.3"
   }
 }
