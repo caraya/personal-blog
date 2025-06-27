@@ -54,17 +54,6 @@
     <link rel="apple-touch-icon" href="/images/icon-192x192.png"/>
     <!-- Manifest -->
     <link rel="manifest" href="/manifest.json"> {#- Learn more about bundles: https://github.com/11ty/eleventy-plugin-bundle #}
-    <!-- Added for Algolia -->
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css" as="style"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css"/>
-    <script>
-      performance.mark('start load algolia');
-    </script>
-    <script defer src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"></script>
-    <script>
-      performance.mark('end load algolia');
-      performance.measure('load algolia', 'start load algolia', 'end load algolia');
-    </script>
     <!-- Load main stylesheet -->
     <script>
       performance.mark('start load css');
@@ -101,6 +90,7 @@
         performance.mark('end load prism css');
         performance.measure('load prism css', 'start load prism css', 'end load prism css');
       </script>
+			<script type="module" src="./js/site-search-form.js"></script>
     {% endif %}
     {# Only load Mavo if instructed to do so in the post's front matter #}
     {% if mavo %}

@@ -50,9 +50,8 @@ module.exports = function (eleventyConfig) {
     "./node_modules/lite-youtube-embed/src/lite-yt-embed.js": "/js/lite-yt-embed.js",
     "./assets/prism.css": "/css/prism.css",
     "./assets/prism.js": "/js/prism.js",
-    // "./assets/algoliasearchNetlify.css": "/css/algoliasearchNetlify.css",
-    // "./assets/algoliasearchNetlify.js": "/js/algoliasearchNetlify.js",
-    // "./assets/share-url-wc.js": "/js/share-url-wc.js",
+		"./assets/site-search-form.js": "/js/site-search-form.js",
+		"./assets/site-search-page.js": "/js/site-search-page.js",
   });
 
   // Run Eleventy when these files change:

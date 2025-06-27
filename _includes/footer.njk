@@ -5,6 +5,9 @@
 	</section>
 
 	<section class="right">
+		<h4>Search</h4>
+		<site-search-form></site-search-form>
+
 		{% import "_nav.njk" as nav with context %}
 		<h4>Links</h4>
 		{{ nav.render(nav_links, "footer") }}
