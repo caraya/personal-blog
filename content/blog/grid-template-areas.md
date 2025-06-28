@@ -7,7 +7,7 @@ tags:
   - Web Development
 ---
 
-CSS Grid Layout revolutionized how developers build two-dimensional layouts, moving us beyond the hacks and workarounds of the past. Most of the time we see grid used for positioning elements in specifica areas of the grid.
+CSS Grid Layout changed how developers build two-dimensional layouts, moving us beyond float and table layouts. Most of the time we see grid used for positioning elements in specific areas of the grid.
 
 This post covers grid template areas, from its basic mechanics to its applications and limitations.
 
@@ -58,9 +58,10 @@ Example:
 .container {
   display: grid;
   gap: 1em;
-  /*DEFINE track sizes for a predictable, flexible layout */
-  grid-template-columns: 250px 1fr; /* Sidebar is 250px, main takes the rest */
-  grid-template-rows: auto 1fr auto; /* Header/footer fit content, main takes rest of height*/
+	/* Sidebar is 250px, main takes the rest */
+  grid-template-columns: 250px 1fr;
+	/* Header/footer fit content, main takes rest of height*/
+  grid-template-rows: auto 1fr auto;
 
   /*MAP your named items onto the grid you just defined*/
   grid-template-areas:
@@ -70,7 +71,7 @@ Example:
 }
 ```
 
-## When Should You Use Grid Template Areas?
+## When To Use Grid Template Areas?
 
 `grid-template-areas` shines in specific scenarios where clarity and structure are paramount.
 
@@ -79,7 +80,6 @@ Example:
 **Responsive Design And Layout Reordering**: This is its killer feature. You can completely restructure your layout for different screen sizes inside a media query simply by redefining the grid-template-areas map. The HTML markup remains untouched, making your responsive code clean and powerful.
 
 ```css
-/*On mobile, stack everything in a single column */
 @media (max-width: 768px) {
   .container {
     grid-template-columns: 1fr; /* A single column*/
@@ -100,11 +100,11 @@ Example:
 
 `grid-template-areas` is not a one-size-fits-all solution. Understanding its limitations is key to using it effectively.
 
-1. **Only Rectangular Shapes Allowed**: This is the biggest constraint. An area must be a perfect rectangle. You cannot create "L" or "T" shaped areas, which forces you to use line-based placement for more complex shapes
+1. **It Only Works With Rectangular Shapes**: This is the biggest constraint. An area must be a perfect rectangle. You cannot create "L" or "T" shaped areas, which forces you to use line-based placement for more complex shapes
 2. **No Overlapping Elements**: The syntax does not allow grid items to overlap. If you need to stack elements (e.g., a caption over an image), you must use an alternative placement method
-3. **Verbosity and Maintenance on Large Grids**: To be valid, every single cell in your grid must be filled with a name or a `.` token. For a 12 column grid, this means every row definition will be long and tedious to update if you need to add or remove a track.
-4. **Critical Accessibility Risks**: The ease of reordering your layout visually comes with a significant danger. CSS does not change the HTML's DOM order. Keyboard and screen reader users navigate based on the DOM. If your visual order (from grid-template-areas) diverges from your DOM order, you can create a confusing and inaccessible experience. Always ensure your reading and tabbing flow remains logical.
-5. **Not for Dynamic or Auto-Placed Content**: grid-template-areas is designed for layouts where you have a known set of items to place explicitly. It is poorly suited for situations with an unknown number of items, like a photo gallery or a list of search results. In those cases, CSS Grid's auto-placement algorithm (grid-auto-flow) is the superior choice.
+3. **Verbosity on Large Grids**: To be valid, every single cell in your grid must be filled with a name or a `.` token. For larger grids, this means every row definition will be long and tedious to update if you need to add or remove a track.
+4. **Accessibility Risks**: The ease of reordering your layout visually comes with a significant danger. CSS does not change the HTML's DOM order. Keyboard and screen reader users navigate based on the DOM. If your visual order (from `grid-template-areas`) diverges from your DOM order, you can create a confusing and inaccessible experience. Always ensure your reading and tabbing flow remains logical.
+5. **Not for Dynamic or Auto-Placed Content**: `grid-template-areas` is designed for layouts where you have a known set of items to place explicitly. It is poorly suited for situations with an unknown number of items, like a photo gallery or a list of search results. In those cases, CSS Grid's [auto-placement algorithm](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Auto-placement_in_grid_layout) (`grid-auto-flow`) is the superior choice.
 
 ## Conclusion
 
