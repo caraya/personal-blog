@@ -1,15 +1,15 @@
 // netlify/functions/google-search.js
-// 
+//
 // This function handles Google Custom Search API requests.
 // It expects a query parameter 'q' for the search term.
 //
-// Make sure to set the environment variables GOOGLE_API_KEY and GOOGLE_CX in your Netlify settings.
+// Make sure to set the environment variables GOOGLE_API_KEY and GOOGLE_CSE_ID in your Netlify settings.
 // You can use this function in your Netlify site to perform Google searches.
 // The function returns the search results in JSON format.
 //
 // Environment Variables:
 // - GOOGLE_API_KEY: Your Google API key for Custom Search
-// - GOOGLE_CX: Your Custom Search Engine ID (CX)
+// - GOOGLE_CSE_ID: Your Custom Search Engine ID (CX)
 // Register your API keys in the Netlify dashboard under Site settings > Build & deploy > Environment > Environment variables.
 //
 // Requirements
@@ -20,7 +20,7 @@
 exports.handler = async function(event) {
   // --- Environment Variables ---
   const apiKey = process.env.GOOGLE_API_KEY;
-  const cx = process.env.GOOGLE_CX;
+  const cx = process.env.GOOGLE_CSE_ID;
 
   // --- Get Search Query and Start Index ---
   const query = event.queryStringParameters.q;
@@ -43,7 +43,7 @@ exports.handler = async function(event) {
 
   // --- Construct API URL with start parameter ---
   const url = `https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${cx}&q=${encodeURIComponent(query)}&start=${start}`;
-  
+
   // --- DIAGNOSTIC LOGGING (Commented Out) ---
   // console.log(`[google-search function] Fetching URL: ${url}`);
 
