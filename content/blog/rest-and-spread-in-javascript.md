@@ -8,7 +8,7 @@ tags:
   - Spread
 ---
 
-Javascript has two similar syntaxes that use the same representation: Rest and Spread. This post will explore the two syntaxes, their differences, and how to use them in Javascript and Typescript.
+Javascript has two syntaxes that use the same representation: Rest and Spread. This post will explore the two syntaxes, their differences, and how to use them in Javascript and Typescript.
 
 ## The Core Idea: Gathering vs. Expanding
 
@@ -27,7 +27,9 @@ In a function's parameter list, `...` followed by a parameter name will gather a
 
 This array will contain all arguments from the point the rest parameter is declared to the end.
 
+!!! note **Note**
 A function can only have one rest parameter, and it must be the last parameter in the function's signature.
+!!!
 
 Example:
 
