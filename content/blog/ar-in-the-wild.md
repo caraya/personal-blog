@@ -52,9 +52,9 @@ I believe that, while we might not be able to build AGI like the Daemon (yet), w
 
 ### Understanding the technologies
 
+Niantic [Lightship platform](https://lightship.dev/) already provides a set of tools for building augmented reality experiences that can be used to create games and communities in the real world.
 
-
-Niantic [Lightship platform](https://lightship.dev/)
+This is the technology that powers games like Pokémon Go and Ingress so there is proven examples of how it can be used to create communities around games.
 
 ### How it may work
 
