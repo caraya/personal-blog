@@ -1,6 +1,6 @@
 ---
 title: Top-level Await in Modules
-date: 2028-08-04
+date: 2025-08-04
 tags:
   - Javascript
   - Typescript
