@@ -126,4 +126,4 @@ const filters = {
 	},
 }
 
-module.exports = filters;
+exports.default = filters;
