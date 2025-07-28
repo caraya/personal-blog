@@ -1,6 +1,6 @@
 ---
 title: Dynamically loading the Temporal API
-date: 2024-09-01
+date: 2025-09-01
 tags:
   - Javascript
   - API
