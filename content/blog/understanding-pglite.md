@@ -8,7 +8,7 @@ tags:
 youtube: true
 ---
 
-I've always loved the idea of running a database directly in the browser. Until I heard about PGLite, I thought it was just a dream and that the only way to use PostgreSQL was to set up a server in the same box I was running the client code. But PGlite has changed that, allowing you to run a lightweight version of PostgreSQL entirely in the browser or in a JavaScript environment like Node.js.
+I've always loved the idea of running a database directly in the browser. Until I heard about [PGLite](https://pglite.dev/), I thought it was just a dream and that the only way to use PostgreSQL was to set up a server in the same box I was running the client code. But PGlite has changed that, allowing you to run a lightweight version of PostgreSQL entirely in the browser or in a JavaScript environment like Node.js.
 
 In this post we'll explore what PGlite is, when it's a good choice (and when it's not) and how to sync it with an external PostgreSQL database.
 
