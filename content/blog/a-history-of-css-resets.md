@@ -187,6 +187,45 @@ a { color: inherit; text-decoration: inherit; }
 * Cons:
   * Not intended for use outside of its framework; it makes unstyled HTML look completely plain.
 
-Now that browsers have largely stndardized their default styles, the need for heavy-handed resets has diminished. Modern CSS resets like Normalize.css and Sanitize.css focus on preserving useful defaults while fixing inconsistencies, reflecting a more nuanced understanding of web design.
+### Open Props Normalize (Modern Normalization)
 
-You can also roll out your own custom reset or normalization stylesheet where you only target the elements and properties that matter most to your project.
+A modern evolution of the normalization philosophy comes from [Open Props](https://open-props.style/), a supercharged set of CSS variables. Its version of normalize.css is not just about correcting inconsistencies but also about providing a set of sensible, modern, and opinionated defaults. It can be thought of as "Normalize++".
+
+Key Differences from Original Normalize.css:
+
+* **Opinionated Philosophy**: While the original normalize.css aims to be un-opinionated, the Open Props version is intentionally opinionated. It assumes you want modern best practices like box-sizing: border-box out of the box and removes default margins from elements like headings, assuming you will control spacing deliberately.
+* **Zero Specificity**: This is its most powerful feature. The Open Props normalize wraps most of its selectors in the [:where()](https://developer.mozilla.org/en-US/docs/Web/CSS/:where) pseudo-class. This makes the entire stylesheet have zero specificity, meaning you can easily override any of its rules with a simple selector (`h1 { margin-block-start: 2rem; }`) without needing specificity hacks or !important.
+* **Modern Defaults Included**: It goes beyond just normalizing and includes defaults that most developers add anyway:
+  * **box-sizing**: border-box on all elements.
+  * **Responsive media**: (img, video, etc.) by default.
+  * **A modern, system font stack**.
+
+How it Works (Conceptual Example):
+
+```css
+/* Conceptual example based on Open Props Normalize */
+:where(*, *::before, *::after) {
+  box-sizing: border-box;
+}
+
+:where(h1, h2, p) {
+  margin: 0;
+}
+
+:where(img, picture) {
+  max-width: 100%;
+  display: block;
+}
+```
+
+Can it be used outside of Open Props?
+
+Yes, absolutely. Because it uses `:where()` to have zero specificity and provides an excellent set of modern defaults, it works perfectly as a standalone reset for any project, even if you don't use the rest of the Open Props library. It's a fantastic, lightweight starting point for any modern CSS architecture.
+
+## Choosing Your Own Approach
+
+Now that browsers have largely standardized their default styles, the need for heavy-handed resets has diminished. Modern CSS resets like Normalize.css and Sanitize.css focus on preserving useful defaults while fixing inconsistencies, reflecting a more nuanced understanding of web design.
+
+You can also roll out your own custom reset or normalization stylesheet where you only target the elements and properties that matter most to your project. This custom approach allows you be as opinionated as you want, balancing between a full reset and a light normalization.
+
+Which strategy to use depends on your project's needs, your design philosophy, and your workflow. Whether you prefer a clean slate or a normalized baseline, or create a customized reset, understanding the history and evolution of CSS resets can help you make an informed choice.
