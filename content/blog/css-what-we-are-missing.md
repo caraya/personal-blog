@@ -16,7 +16,7 @@ This post explores some of the features I think are missing in CSS and how they 
 
 ## Replacement for Regions
 
-[CSS Regions](https://webkit.org/blog/3078/advanced-layout-made-easy-with-css-regions/) were an experimental feature that allowed content to flow through multiple non-adjacent containers, creating magazine-like layouts. However, they were never widely adopted and have since been removed from browsers that had implemented them.
+[CSS Regions](https://www.w3.org/TR/css-regions-1/) were an experimental feature that allowed content to flow through multiple non-adjacent containers, creating magazine-like layouts. However, they were never widely adopted and have since been removed from browsers that had implemented them.
 
 As this [2013 article](https://webkit.org/blog/3078/advanced-layout-made-easy-with-css-regions/) explains, CSS Regions allowed developers to define "regions" in their layouts where content could flow seamlessly. This was particularly useful for creating complex layouts like multi-column articles or magazine-style designs.
 
