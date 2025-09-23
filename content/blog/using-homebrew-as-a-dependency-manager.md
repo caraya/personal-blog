@@ -21,13 +21,13 @@ The rest of this post assumes you have Homebrew installed so the `brew bundle` c
 
 Homebrew Bundle is a Homebrew extension that allows you to define your dependencies in a `Brewfile`, similar to how you would with a `package.json` for NPM or a `Gemfile` for Ruby.
 
-The advantage of using Homebrew Bundle is that it can manage not only Homebrew packages but also casks (for macOS applications), taps (additional repositories), and even Mac App Store apps. In this post we'll focus on packages and casks.
+The advantage of using [Homebrew Bundle](https://docs.brew.sh/Brew-Bundle-and-Brewfile) is that it can manage not only Homebrew packages but also casks (for macOS applications), taps (additional repositories), and even Mac App Store apps. In this post we'll focus on packages and casks.
 
 #### Create the Brewfile
 
 Rather than dump the entire list of dependencies, we'll use `brew bundle add` to create a Brewfile with only the sofware we need. Because we're using both packages and casks, we'll have to run two commands.
 
-First we install the packages:
+First we add the packages:
 
 ```bash
 brew bundle add docbook docbook-xsl saxon openjdk
@@ -39,7 +39,7 @@ In theory, we could shorten this to:
 brew bundle add docbook-xsl saxon
 ```
 
-And let Homebrew handle the dependencies, but I prefer to be explicit about what the project needs.
+And let Homebrew handle the dependencies, but I prefer to be explicit about what the project needs to have installed.
 
 Next, we install the cask for PrinceXML:
 
