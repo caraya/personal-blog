@@ -68,12 +68,12 @@ If you're coming from WebGL, WGSL will look familiar but has key differences tha
 
 | Feature | GLSL (for WebGL) | WGSL |
 | --- | --- | --- |
-| Syntax | C-like syntax. Can be somewhat terse. | More modern syntax, inspired by languages like Rust and Swift. It is more verbose but also more explicit. |
-| Type System | Loosely typed. Allows for implicit type conversions (`float(1)`). | Strongly and explicitly typed. `vec4<f32>(1.0, 1.0, 1.0, 1.0)` instead of `vec4(1.0)`. No implicit conversions, reducing bugs. |
+| Syntax | C-like syntax. Can be somewhat terse. | Syntax inspired by Rust and Swift. It is more verbose and more explicit. |
+| Type System | Loosely typed. Allows for implicit type conversions (`float(1)`). | Strongly and explicitly typed. `vec4<f32>(1.0, 1.0, 1.0, 1.0)` instead of `vec4(1.0)`. No implicit conversions. |
 | Resource Bindings | Bindings are managed via opaque location integers. `layout(location = 0) uniform mat4 view;` | Explicit resource binding model using attributes that map directly to the API. `@group(0) @binding(0) var<uniform> view: mat4x4<f32>;` |
-| Entry Points | Functions are designated as entry points by convention (void main()). | Entry points for each stage are declared with an attribute: `@vertex`, `@fragment`, or `@compute`. |
-| Built-in Variables | Special global variables like `gl_Position` and `gl_FragColor`. | Standardized, structured built-in variables accessed with an attribute: `@builtin(position)`. |
-| Specification | Based on OpenGL ES, possible variations between browsers. | A single, formal W3C specification ensures consistency. |
+| Entry Points | Functions are designated as entry points by convention (`void main()`). | Entry points for each stage are declared with an attribute: `@vertex`, `@fragment`, or `@compute`. |
+| Built-in Variables | Special global variables like `gl_Position` and `gl_FragColor`. | Structured built-in variables accessed with an attribute: `@builtin(position)`. |
+| Specification | Based on [OpenGL ES](https://www.khronos.org/opengles/), possible variations between browsers. | A single, formal [W3C specification](https://www.w3.org/TR/WGSL/) ensures consistency. |
 
 WGSL's design makes shader code safer, more predictable, and easier to validate, which is a perfect fit for a modern, cross-platform web API.
 
@@ -152,35 +152,30 @@ Explanation:
 
 ## High-Performance Parallelism: WebGPU and Web Workers
 
-One of WebGPU's design goals was to excel at multithreading. In complex applications, performing all CPU-side logic for rendering on the main thread can lead to stuttering and a frozen UI. Web Workers provide a solution by allowing you to run scripts in background threads.
+One WebGPU design goal was to excel at multithreading. In complex applications, performing all CPU-side logic for rendering on the main thread can lead to stuttering and a frozen UI. Web Workers provide a solution by allowing you to run scripts in background threads.
 
 ### The Multi-threaded Rendering Pattern
 
-WebGPU is designed to work seamlessly with Web Workers. The key is that most WebGPU objects are transferable, meaning they can be passed between the main thread and a worker thread with near-zero cost.
+WebGPU works seamlessly with Web Workers. Most WebGPU objects are transferable, meaning they can be passed between the main thread and a worker thread with near-zero cost.
 
-However, there's one critical exception: the canvas context. The object that lets you draw to the screen can only be accessed from the main thread. This leads to a powerful and common pattern:
+However, there's one critical exception: the canvas context; It can only be accessed from the main thread. This leads to a powerful and common pattern:
 
-Main Thread:
-
-1. Initializes WebGPU and gets the GPUDevice.
-2. Gets the GPUCanvasContext from an on-screen &lt;canvas&gt;.
-3. Creates one or more Web Workers.
-4. Transfers a handle to the GPUDevice to the worker(s) using postMessage.
-
-Worker Thread(s):
-
-1. Receives the GPUDevice handle.
-2. Performs all the heavy lifting: creates pipelines, manages buffers and textures, builds bind groups, and, most importantly, encodes all rendering commands into a GPUCommandBuffer.
-3. Transfers the completed GPUCommandBuffer back to the main thread.
-
-Main Thread (again):
-
-1. Receives the command buffer from the worker.
-2. Submits it to the `GPUDevice.queue`.
+1. Main Thread:
+    1. Initializes WebGPU and gets the GPUDevice.
+    2. Gets the GPUCanvasContext from an on-screen &lt;canvas&gt;.
+    3. Creates one or more Web Workers.
+    4. Transfers a handle to the GPUDevice to the worker(s) using postMessage.
+2. Worker Thread(s):
+    1. Receives the GPUDevice handle.
+    2. Performs all the heavy lifting: creates pipelines, manages buffers and textures, builds bind groups, and, most importantly, encodes all rendering commands into a GPUCommandBuffer.
+    3. Transfers the completed GPUCommandBuffer back to the main thread.
+3. Main Thread (again):
+    1. Receives the command buffer from the worker.
+    2. Submits it to the `GPUDevice.queue`.
 
 This architecture keeps the main thread free to handle user input and other UI tasks, resulting in a smooth, responsive application, even when the rendering work is complex.
 
-Code Snippet (Conceptual):
+Conceptual Example:
 
 ```js
 // main.js
@@ -216,7 +211,7 @@ onmessage = (e) => {
 
 ## Unlocking the GPU: An Introduction to Compute Shaders
 
-One of the most powerful features of WebGPU is its first-class support for compute shaders. While graphics pipelines (vertex and fragment shaders) are designed to draw pixels to a screen, compute shaders are for general-purpose computation. They allow you to run highly parallel calculations on the GPU for tasks that have nothing to do with rendering triangles.
+One of the most powerful features of WebGPU is its first-class support for [compute shaders](https://webgpufundamentals.org/webgpu/lessons/webgpu-compute-shaders.html). While graphics pipelines (vertex and fragment shaders) are designed to draw pixels to a screen, compute shaders are for general-purpose computation. They allow you to run highly parallel calculations on the GPU for tasks that have nothing to do with rendering triangles.
 
 ### How Do They Work?
 
