@@ -1,9 +1,10 @@
+import plur from "plur";
+import path from "path";
+
 const fakeTags = new Set(["blog", "all", "postsByYear", "postsByMonth"]);
 
-
 const filters = {
-	async pluralize(num, word) {
-		let plur = (await import("plur")).default;
+	pluralize(num, word) {
 		return num + " " + plur(word, num);
 	},
 
@@ -12,8 +13,8 @@ const filters = {
 	},
 
 	relative(page) {
-		let path = page.url.replace(/[^/]+$/, "");
-		let ret = require("path").relative(path, "/");
+		let pagePath = page.url.replace(/[^/]+$/, "");
+		let ret = path.relative(pagePath, "/");
 
 		return ret || ".";
 	},
@@ -126,4 +127,4 @@ const filters = {
 	},
 }
 
-exports.default = filters;
+export default filters;

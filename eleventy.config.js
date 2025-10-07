@@ -1,48 +1,37 @@
-// External libraries
-// const { DateTime } = require("luxon");
-// Custom filters from https://github.com/LeaVerou/lea.verou.me/blob/main/assets/filters.cjs
-// Looking to trim the fat
-const filters = require("./assets/filters");
+// External libraries (converted to import)
+import filters from './assets/filters.js';
 
 // Custom markdown-it installation to customize it
-const markdownIt = require("markdown-it");
+import markdownIt from "markdown-it";
 // Markdownit plugins
-const markdownItAnchor = require("markdown-it-anchor");
-// added by Carlos
-const markdownItDefList = require('markdown-it-deflist');
-const markdownItFigures = require("markdown-it-image-figures");
-const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
-const emojiReadTime = require("@11tyrocks/eleventy-plugin-emoji-readtime");
-const markdownItFootnotes = require("markdown-it-footnote");
-const admonitions = require("markdown-it-admonition");
-const markdownItKbd = require('markdown-it-kbd-better');
-const markdownItAttrs = require('markdown-it-attrs');
-const multiMDTable = require('markdown-it-multimd-table');
+import markdownItAnchor from "markdown-it-anchor";
+import markdownItDefList from 'markdown-it-deflist';
+import markdownItFigures from "markdown-it-image-figures";
+import pluginMermaid from "@kevingimbel/eleventy-plugin-mermaid";
+import emojiReadTime from "@11tyrocks/eleventy-plugin-emoji-readtime";
+import markdownItFootnotes from "markdown-it-footnote";
+import admonitions from "markdown-it-admonition";
+import markdownItKbd from 'markdown-it-kbd-better';
+import markdownItAttrs from 'markdown-it-attrs';
+import multiMDTable from 'markdown-it-multimd-table';
 
 // 11ty plugins
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-// const pluginBundle = require("@11ty/eleventy-plugin-bundle");
-const pluginNavigation = require("@11ty/eleventy-navigation");
-const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
-
-// const pluginDrafts = require("./eleventy.config.drafts.js");
-// const pluginImages = require("./eleventy.config.images.js");
+import pluginRss from "@11ty/eleventy-plugin-rss";
+import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
+import pluginNavigation from "@11ty/eleventy-navigation";
+import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 
 // Added by Carlos
-const posthtml = require('posthtml');
-const { posthtml: automaticNoopener, parser } = require('eleventy-plugin-automatic-noopener');
+import posthtml from 'posthtml';
+import { posthtml as automaticNoopener, parser } from 'eleventy-plugin-automatic-noopener';
 const NoOpOptions = parser({ noreferrer: true });
-const pluginTOC = require('eleventy-plugin-toc');
-const editOnGithub = require('eleventy-plugin-edit-on-github');
-const metagen = require('eleventy-plugin-metagen');
+import pluginTOC from 'eleventy-plugin-toc';
+import editOnGithub from 'eleventy-plugin-edit-on-github';
+import metagen from 'eleventy-plugin-metagen';
 
-// Upgrade helper
-// const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
-
-module.exports = function (eleventyConfig) {
+// Replace module.exports with export default
+export default function (eleventyConfig) {
   // Copy the contents of the `public` folder to the output folder
-  // For example, `./public/css/` ends up in `_site/css/`
   eleventyConfig.addPassthroughCopy({
     "./public/": "/",
     "./assets/manifest.json": "/manifest.json",
@@ -54,22 +43,14 @@ module.exports = function (eleventyConfig) {
 		"./assets/site-search-page.js": "/js/site-search-page.js",
   });
 
-  // Run Eleventy when these files change:
-  // https://www.11ty.dev/docs/watch-serve/#add-your-own-watch-targets
-
   // Watch content images for the image pipeline.
   eleventyConfig.addWatchTarget("content/**/*.{svg,webp,png,jpeg}");
-
-  // App plugins
-  // eleventyConfig.addPlugin(pluginDrafts);
-  // eleventyConfig.addPlugin(pluginImages);
 
   // Official plugins
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
-  // eleventyConfig.addPlugin(pluginBundle);
 
   // Local additions
   eleventyConfig.addPlugin(pluginMermaid);
@@ -82,15 +63,11 @@ module.exports = function (eleventyConfig) {
     ol: false,
   });
   eleventyConfig.addPlugin(editOnGithub, {
-    // required
     github_edit_repo: 'https://github.com/caraya/personal-blog',
-    // optional: defaults
-    github_edit_class: '',
     github_edit_branch: 'main',
     github_edit_attributes: 'target="_blank"',
   });
   eleventyConfig.addPlugin(metagen);
-	// eleventyConfig.addPlugin(UpgradeHelper);
 
 
 	// Transforms
@@ -107,7 +84,6 @@ module.exports = function (eleventyConfig) {
 	});
 
 	// Filters
-	// Credit: https://11ty.rocks/eleventyjs/content/#excerpt-filter
 	eleventyConfig.addFilter("excerpt", (post) => {
 		const content = post.replace(/(<([^>]+)>)/gi, "");
 		return content.substr(0, content.lastIndexOf(" ", 200)) + "...";
@@ -133,7 +109,6 @@ module.exports = function (eleventyConfig) {
 	);
 
 	eleventyConfig.addFilter('htmlDateString', (dateObj) => {
-		// Using the en-CA locale ensures the date is formatted as YYYY-MM-DD.
 		const formatter = new Intl.DateTimeFormat('en-CA', {
 			timeZone: 'UTC',
 			year: 'numeric',
@@ -143,45 +118,6 @@ module.exports = function (eleventyConfig) {
 		return formatter.format(dateObj);
 	});
 
-	eleventyConfig.addFilter('timeSince', (dateObj, locale = 'en') => {
-		// Calculate the difference in milliseconds between the provided date and now.
-		const diffMs = dateObj.getTime() - Date.now();
-
-		// Only interested in past dates; if the date is in the future, return an empty string.
-		if (diffMs > 0) {
-			return "";
-		}
-
-		// Use the absolute difference since it's a past date.
-		let remaining = Math.abs(diffMs);
-
-		// Define time units for years, months, weeks, and days.
-		const units = [
-			{ unit: 'year', ms: 1000 * 60 * 60 * 24 * 365 },
-			{ unit: 'month', ms: 1000 * 60 * 60 * 24 * 30 },
-			{ unit: 'week', ms: 1000 * 60 * 60 * 24 * 7 },
-			{ unit: 'day', ms: 1000 * 60 * 60 * 24 },
-		];
-
-		const parts = [];
-		// Iterate over each unit and calculate the non-zero difference.
-		for (const { unit, ms } of units) {
-			const value = Math.floor(remaining / ms);
-			if (value > 0) {
-				parts.push(`${value} ${unit}${value !== 1 ? 's' : ''}`);
-				remaining -= value * ms;
-			}
-		}
-
-		// If no unit was non-zero, return "just now"
-		if (parts.length === 0) {
-			return "just now";
-		}
-
-		return parts.join(', ') + ' ago';
-	});
-
-	// Get the first `n` elements of a collection.
 	eleventyConfig.addFilter("head", (array, n) => {
 		if (!Array.isArray(array) || array.length === 0) {
 			return [];
@@ -193,12 +129,10 @@ module.exports = function (eleventyConfig) {
 		return array.slice(0, n);
 	});
 
-	// Return the smallest number argument
 	eleventyConfig.addFilter("min", (...numbers) => {
 		return Math.min.apply(null, numbers);
 	});
 
-	// Return all the tags used in a collection
 	eleventyConfig.addFilter("getAllTags", collection => {
 		let tagSet = new Set();
 		for (let item of collection) {
@@ -216,23 +150,15 @@ module.exports = function (eleventyConfig) {
 		eleventyConfig.addFilter(name, filters[ name ]);
 	}
 
-	// COLLECTIONS
-
-
-	// COMPUTED PROPERTIES
-
 	// MARKDOWN CUSTOMIZATIONS
-	// 1. Markdown Options
 	let options = {
 		html: true,
 		breaks: false,
 		linkify: false,
 	};
 
-	// 2. Use the custom library
 	eleventyConfig.setLibrary("md", markdownIt(options));
 
-	// 3. Configure Markdown-It plugins
 	eleventyConfig.amendLibrary("md", mdLib => {
 		mdLib.use(markdownItAnchor, {
 			permalink: markdownItAnchor.permalink.ariaHidden({
@@ -259,10 +185,8 @@ module.exports = function (eleventyConfig) {
 			} ]
 		});
 		mdLib.use(markdownItAttrs, {
-			// Default options
 			leftDelimiter: '{',
 			rightDelimiter: '}',
-			// All attributes are allowed
 			allowedAttributes: []
 		});
 		mdLib.use(multiMDTable, {
@@ -274,17 +198,7 @@ module.exports = function (eleventyConfig) {
 		});
 	});
 
-	// Features to make your build faster (when you need them)
-
-	// If your passthrough copy gets heavy and cumbersome, add this line
-	// to emulate the file copy on the dev server. Learn more:
-	// https://www.11ty.dev/docs/copy/#emulate-passthrough-copy-during-serve
-
-	// eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
-
 	return {
-		// Control which files Eleventy will process
-		// e.g.: *.md, *.njk, *.html, *.liquid
 		templateFormats: [
 			"md",
 			"njk",
@@ -292,30 +206,15 @@ module.exports = function (eleventyConfig) {
 			"liquid",
 		],
 
-		// Pre-process *.md files with: (default: `liquid`)
 		markdownTemplateEngine: "njk",
-
-		// Pre-process *.html files with: (default: `liquid`)
 		htmlTemplateEngine: "njk",
 
-		// These are all optional:
 		dir: {
-			input: "content",          // default: "."
-			includes: "../_includes",  // default: "_includes"
-			data: "../_data",          // default: "_data"
+			input: "content",
+			includes: "../_includes",
+			data: "../_data",
 			output: "_site"
 		},
-
-		// -----------------------------------------------------------------
-		// Optional items:
-		// -----------------------------------------------------------------
-
-		// If your site deploys to a subdirectory, change `pathPrefix`.
-		// Read more: https://www.11ty.dev/docs/config/#deploy-to-a-subdirectory-with-a-path-prefix
-
-		// When paired with the HTML <base> plugin https://www.11ty.dev/docs/plugins/html-base/
-		// it will transform any absolute URLs in your HTML to include this
-		// folder name and does **not** affect where things go in the output folder.
 		pathPrefix: "/",
 	};
 };
