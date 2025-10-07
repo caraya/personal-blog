@@ -120,8 +120,8 @@ input, button, textarea, select {
 
 /* 5b. Correct the font size and family for preformatted text. */
 pre {
-	font-family: monospace, monospace;
-	font-size: 1em;
+  font-family: monospace, monospace;
+  font-size: 1em;
 }
 
 /* 6. Improve text wrapping and balancing. */
@@ -234,7 +234,7 @@ Prefer unlayered styles for intentional overrides, and reserve !important for ab
 ## Browser Support and Fallbacks
 
 <baseline-status
-	featureId="cascade-layers">
+  featureId="cascade-layers">
 </baseline-status>
 
 CSS Cascade Layers are a safe and reliable choice for any modern project. The feature is Baseline Widely Available (the feature has been supported across all major browsers for over 30 months).
@@ -286,10 +286,10 @@ Styles in 'reset' have the lowest precedence. */
   }
 
   /* 1b. Remove default margin and padding */
-	* {
-		margin: 0;
-		padding: 0;
-	}
+  * {
+    margin: 0;
+    padding: 0;
+  }
 
   /* 1c. Set core HTML & Body defaults */
   html, body {
@@ -316,10 +316,10 @@ Styles in 'reset' have the lowest precedence. */
   }
 
   /* 4. Make images and media easier to work
-	with using logical properties. */
+  with using logical properties. */
   img, picture, video, canvas, svg {
     display: block;
-		max-inline-size: 100%;
+    max-inline-size: 100%;
     block-size: auto;
   }
 
@@ -329,14 +329,14 @@ Styles in 'reset' have the lowest precedence. */
   }
 
   /* 5b. Correct the font size and
-	family for preformatted text. */
+  family for preformatted text. */
   pre {
     font-family: monospace, monospace;
     font-size: 1em;
   }
 
   /* 6. Improve text wrapping and
-	balancing. */
+  balancing. */
   p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
     /* A progressive enhancement for better typography. */
@@ -345,19 +345,19 @@ Styles in 'reset' have the lowest precedence. */
 
   h1, h2, h3, h4, h5, h6 {
     /* Balances text across lines
-		for better readability. */
+    for better readability. */
     text-wrap: balance;
   }
 
   /* 7. Remove list styles on ul, ol
-	elements with a role attribute. */
+  elements with a role attribute. */
   ul[role='list'],
   ol[role='list'] {
     list-style: none;
   }
 
   /* 8. Disable animations for users
-	who prefer reduced motion */
+  who prefer reduced motion */
   @media (prefers-reduced-motion: reduce) {
     html:focus-within {
      scroll-behavior: auto;
@@ -376,22 +376,22 @@ Styles in 'reset' have the lowest precedence. */
 
 @layer base {
   /* un-classed HTML elements
-	(typography, links) */
+  (typography, links) */
 }
 
 @layer layouts {
   /* page structure
-	(.container, .grid) */
+  (.container, .grid) */
 }
 
 @layer components {
   /* self-contained components
-	(.card, .button) */
+  (.card, .button) */
 }
 
 @layer utilities {
   /* high-specificity helper classes
-	(.visually-hidden) */
+  (.visually-hidden) */
 }
 
 /* Styles outside of layers
