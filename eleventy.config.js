@@ -53,21 +53,28 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
   // Local additions
-  eleventyConfig.addPlugin(pluginMermaid);
+	eleventyConfig.addPlugin(pluginMermaid, {
+		// load mermaid from local assets directory
+		mermaid_js_src: 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs',
+	});
+
   eleventyConfig.addPlugin(emojiReadTime, {
     showEmoji: false,
   });
-  eleventyConfig.addPlugin(pluginTOC, {
+
+	eleventyConfig.addPlugin(pluginTOC, {
     tags: [ 'h2', 'h3', 'h4' ],
     ul: true,
     ol: false,
   });
-  eleventyConfig.addPlugin(editOnGithub, {
+
+	eleventyConfig.addPlugin(editOnGithub, {
     github_edit_repo: 'https://github.com/caraya/personal-blog',
     github_edit_branch: 'main',
     github_edit_attributes: 'target="_blank"',
   });
-  eleventyConfig.addPlugin(metagen);
+
+	eleventyConfig.addPlugin(metagen);
 
 
 	// Transforms
