@@ -41,13 +41,13 @@ The Web Speech API also has limited language support, with some languages and di
 
 To address voice quality, I added a voice selector to the UI, allowing users to choose from the available voices on their system.
 
-## Different Strategies And Why They Didn't Work
+## The AI Voice Rabbit Hole
 
 A second mode, more resource-intensive but with the potential for a more consistent and higher-quality voice, would use an AI model running directly in the browser via the [Transformers.js](https://huggingface.co/docs/transformers.js/en/index) library.
 
 The "AI Voice" mode downloads a pre-trained model and runs it locally.
 
-The exploration of the AI voice mode began a series of challenges that are not normal when working with traditional web APIs.
+Building the "AI Voice" mode opened up a series of challenges not typically found when working with standard web APIs.
 
 ### Challenge 1: Finding a Browser-Friendly Model
 
