@@ -228,17 +228,17 @@ Common Commands:
 
 Pros
 
-* No node_modules (with PnP): Plug'n'Play mode gets rid of the node_modules folder entirely. Instead, it generates a single .pnp.cjs file that tells Node.js exactly where to find every package (which are stored in a .yarn/cache folder as zip files).
-* Instantaneous Installs: With PnP, "installs" are near-instant because it's just updating the .pnp.cjs mapping file, not copying thousands of files.
+* **No node_modules (with PnP)**: Plug'n'Play mode gets rid of the node_modules folder entirely. Instead, it generates a single .pnp.cjs file that tells Node.js exactly where to find every package (which are stored in a .yarn/cache folder as zip files).
+* **Instantaneous Installs**: With PnP, "installs" are near-instant because it's just updating the .pnp.cjs mapping file, not copying thousands of files.
 * Strictest Dependency Management: PnP makes "phantom dependencies" impossible. If it's not in package.json, your code cannot access it, period.
-* Faster Script Execution: Project scripts (yarn test, yarn build) start faster because Node.js doesn't need to perform thousands of I/O operations to find files in node_modules.
-* Excellent Monorepo Support: Workspaces are a first-class citizen.
+* **Faster Script Execution**: Project scripts (yarn test, yarn build) start faster because Node.js doesn't need to perform thousands of I/O operations to find files in node_modules.
+* **Excellent Monorepo Support**: Workspaces are a first-class citizen.
 
 Cons
 
-* Major Compatibility Issues: This is the biggest hurdle. Any tool that makes assumptions about the node_modules folder (like older versions of TypeScript, ESLint, or React Native) will break. While many tools now support PnP, it's not universal and requires configuration.
-* Steep Learning Curve: PnP is a completely new paradigm. Debugging it is unfamiliar, and it requires "patching" incompatible dependencies, which Yarn can sometimes do automatically (yarn pnpify).
-* "Node-Modules" Mode: To mitigate compatibility issues, Yarn2 can be run in a node-modules mode, which works similarly to PNPM (using symlinks). However, this disables the primary PnP feature.
+* **Major Compatibility Issues**: This is the biggest hurdle. Any tool that makes assumptions about the node_modules folder (like older versions of TypeScript, ESLint, or React Native) will break. While many tools now support PnP, it's not universal and requires configuration.
+* **Steep Learning Curve**: PnP is a completely new paradigm. Debugging it is unfamiliar, and it requires "patching" incompatible dependencies, which Yarn can sometimes do automatically (yarn pnpify).
+* **"Node-Modules" Mode**: To mitigate compatibility issues, Yarn2 can be run in a node-modules mode, which works similarly to PNPM (using symlinks). However, this disables the primary PnP feature.
 
 ## Comparative Analysis
 
@@ -277,9 +277,8 @@ While this analysis focuses on the "big four," the landscape is always evolving.
 
 **Bun** is not just a package manager; it's an all-in-one JavaScript runtime, bundler, test runner, and package manager. Its package manager component (bun install, bun add) is designed to be an extremely fast, drop-in replacement for NPM/Yarn.
 
-**Pros**: Unbelievable speed (often 20-100x faster installs than NPM/Yarn), aims for full NPM compatibility, and provides a complete, integrated toolset.
-
-**Cons**: It's much newer (1.0 released in late 2023) and less battle-tested than the others. While it aims for compatibility, some edge cases or complex projects may still encounter issues.
+* **Pros**: Unbelievable speed (often 20-100x faster installs than NPM/Yarn), aims for full NPM compatibility, and provides a complete, integrated toolset.
+* **Cons**: It's much newer (1.0 released in late 2023) and less battle-tested than the others. While it aims for compatibility, some edge cases or complex projects may still encounter issues.
 
 ## Conclusion: Which One Should You Use?
 
