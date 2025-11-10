@@ -1,5 +1,5 @@
 ---
-title: Prompts as requirements
+title: AI Prompts as requirements
 date: 2026-01-05
 tags:
   - Prompts
