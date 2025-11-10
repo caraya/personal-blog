@@ -99,23 +99,21 @@ We just scratched the surface of what Bazel can do. Once you figure it out is a 
 
 A Monorepo you can have projects and packages in a variety of languages, and can produce several different types of objects, from web sites and applications to iOS and Android and then use one tool to build everything.
 
-# Links and Resources
+## Links and Resources
 
 - [Bazel](https://bazel.build/)
-    
-    - Concepts
+  - Concepts
     - [Concepts and terminology](https://docs.bazel.build/versions/3.7.0/build-ref.html)
     - [Working with external dependencies](https://docs.bazel.build/versions/3.7.0/external.html)
     - [Configurable build attributes](https://docs.bazel.build/versions/3.7.0/configurable-attributes.html)
     - [Building with platforms](https://docs.bazel.build/versions/master/platforms-intro.html)
     - [Visibility](https://docs.bazel.build/versions/master/visibility.html)
-- [Layering in Bazel for Web](https://dev.to/bazel/layering-in-bazel-for-web-389h)
+    - [Layering in Bazel for Web](https://dev.to/bazel/layering-in-bazel-for-web-389h)
 - Build Rules and related
-    
-    - [Bazel Rules Examples](https://github.com/bazelbuild/examples)
-    - [Building JavaScript Outputs](https://docs.bazel.build/versions/master/build-javascript.html)
-    - [rules\_nodejs](https://bazelbuild.github.io/rules_nodejs/)
-    - [rules\_postcss](https://github.com/bazelbuild/rules_postcss)
-    - [rules\_sass](https://github.com/bazelbuild/rules_sass)
-    - [rules\_go](https://github.com/bazelbuild/rules_go)
-    - [rules\_rust](https://github.com/bazelbuild/rules_rust)
+  - [Bazel Rules Examples](https://github.com/bazelbuild/examples)
+  - [Building JavaScript Outputs](https://docs.bazel.build/versions/master/build-javascript.html)
+  - [rules\_nodejs](https://bazelbuild.github.io/rules_nodejs/)
+  - [rules\_postcss](https://github.com/bazelbuild/rules_postcss)
+  - [rules\_sass](https://github.com/bazelbuild/rules_sass)
+  - [rules\_go](https://github.com/bazelbuild/rules_go)
+  - [rules\_rust](https://github.com/bazelbuild/rules_rust)
