@@ -327,7 +327,7 @@ This example adds multiple headings at the top of the table, cells spanning more
 
 ```markdown
 |             |          Grouping           ||
-First Header  | Second Header | Third Header |
+| First Header | Second Header | Third Header |
  ------------ | :-----------: | -----------: |
 Content       |          *Long Cell*        ||
 Content       |   **Cell**    |         Cell |
@@ -389,7 +389,7 @@ This code:
   Gray 700: #374151,
   Gray 800: #1f2937,
   Gray 850: #1a202c,
-	Gray 900: #111827,
+  Gray 900: #111827,
 "></color-scale>
 ```
 
@@ -406,7 +406,7 @@ Will produce the following result:
   Gray 700: #374151,
   Gray 800: #1f2937,
   Gray 850: #1a202c,
-	Gray 900: #111827
+  Gray 900: #111827
 "></color-scale>
 
 There is no actual API since this is a presentational element but you can check the [color-scale](https://elements.colorjs.io/src/color-scale/) page for more information on what attributes are available.
@@ -421,14 +421,14 @@ This code:
 
 ```html
 <color-swatch value="oklch(70% 0.25 138)" size="large">
-	<input />
+  <input />
 </color-swatch>
 ```
 
 Will render the following result:
 
 <color-swatch value="oklch(70% 0.25 138)" size="large">
-	<input />
+  <input />
 </color-swatch>
 
 #### color-inline
@@ -437,7 +437,7 @@ The [color-swatch](https://elements.colorjs.io/src/color-swatch/) element render
 
 ```html
 <p>This will render the color
-	<color-inline contentEditable>lch(50% 40 30)</color-inline> inline.</p>
+  <color-inline contentEditable>lch(50% 40 30)</color-inline> inline.</p>
 ```
 
 <p>This will render the color <color-inline contentEditable>lch(50% 40 30)</color-inline> inline.</p>
@@ -448,10 +448,38 @@ See the [color-inline reference](https://elements.colorjs.io/src/color-inline/#r
 
 ```html
 <baseline-status
-	featureId="anchor-positioning">
+  featureId="anchor-positioning">
 </baseline-status>
 ```
 
 <baseline-status
-	featureId="anchor-positioning">
+  featureId="anchor-positioning">
 </baseline-status>
+
+## Adding Images
+
+Because I'm using Cloudinary to host my images, there are some special attributes that must be added to the image URLs to get the desired results.
+
+The `src` attribute is broken into multiple lines for clarity but it must be a single line in the actual code.
+
+The full syntax for adding an image is:
+
+```html
+<img src='https://res.cloudinary.com/dfh6ihzvj/
+image/upload/
+c_scale,w_500/
+f_auto,q_auto/
+3484353131_016dd32be7_o' />
+```
+
+Where:
+
+* `https://res.cloudinary.com/dfh6ihzvj/` is the base URL for my Cloudinary account
+* `image/upload/` is the standard path for uploaded images
+* `c_scale,w_500/` is the transformation to scale the image to a width
+* `f_auto,q_auto/` are the transformations to have Cloudinary deliver the image in the optimal format and quality for the browser requesting it
+* `3484353131_016dd32be7_o` is the public ID/Name of the image in Cloudinary
+
+The resulting image will be scaled to 500 pixels wide, with the height adjusted to maintain the original aspect ratio, and delivered in the best format and quality for the requesting browser.
+
+I'm evaluating whether to stay in Cloudinary or move to another image hosting service or self-host the images using my . The main reason is cost as my usage has increased over time.
