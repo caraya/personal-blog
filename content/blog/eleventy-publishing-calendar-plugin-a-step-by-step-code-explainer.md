@@ -1,6 +1,6 @@
 ---
 title: Eleventy Publishing Calendar Plugin -  A Step-by-Step Code Explainer
-date: 2026-03-12
+date: 2026-01-12
 tags:
   - Eleventy
   - Plugin
