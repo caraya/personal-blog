@@ -153,6 +153,12 @@ We chose a Lazy Loading strategy for the 50MB TEI Stylesheets dependency.
 **Why**: Bundling them would triple the installer size.
 **How**: The app checks for ~/.tei-editor/stylesheets on launch. If missing, it offers to download the specific GitHub Release ZIP and extract it. This keeps the core application lightweight (~40MB).
 
+## Notes On The Visual Editor
+
+The visual editor is built using standard HTML5, CSS, and JavaScript running inside a JavaFX WebView. Because it is a visual tool, you can't type new elements or attributes directly into the DOM. Instead we provide a set of UI controls to insert, move or delete elements.
+
+This assumes some familiarity with TEI structure but keeps the complexity of the DOM manipulation manageable. If you need to go deeper, you can always switch to the Raw XML view.
+
 ## Alternatives Considered
 
 ### WebAssembly (Wasm) Port (Browser-Only)
@@ -166,3 +172,22 @@ We considered transpiling the Java code to Wasm (using TeaVM or CheerpJ) to run 
   * Performance: XSLT transformations on large TEI documents are CPU-intensive. Running Saxon-HE in Wasm is significantly slower than running it on the JVM.
 
 **Verdict**: The Desktop (Hybrid) model was chosen because the Export dependencies (FOP/Ant) require a full Java environment to function correctly.
+
+## Future Features
+
+The TEI Visual Editor v1.0 is just the beginning. Planned future features include:
+
+Add the ability to visually view and edit attributes
+: This is currently only possible in Raw XML view but it would present a more intuitive editing experience.
+
+Add more export formats from those supported by the TEI Stylesheets
+: For the 1.0 release we focused on common formats (HTML, PDF, DOCX, EPUB); the stylesheets support additional formats and publication types that could be added later based on user demand.
+
+Evaluate collaborative editing features
+: This is a two step process
+: * First, we need to implement a server-side component to manage document state and user sessions.
+: * The second step explores real-time synchronization protocols (like Operational Transforms or CRDTs) to allow multiple users to edit the same TEI document simultaneously.
+
+Use GitHub Actions To Automate Releases
+: Automate the build, test, and release process using GitHub Actions to ensure consistent and reliable delivery of new versions.
+: This includes generating platform-specific installers (DMG for macOS, EXE for Windows) and publishing them to the GitHub Releases page.
