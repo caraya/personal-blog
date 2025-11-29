@@ -77,11 +77,8 @@ We can validate the structure and content of these documents using XML Schema, D
 
 XML applications rely on several core technologies that enhance their capabilities.
 
-XML Namespaces
-: Namespaces qualify elements and attributes to avoid naming conflicts. This allows you to combine XML vocabularies from different sources into a single document without ambiguity.
-
-XPath
-: XPath is a syntax for selecting nodes or computing values within an XML document. It is the query language used to navigate the tree structure and is heavily utilized by other technologies like XSLT and XQuery.
+- **XML Namespaces**: Namespaces qualify elements and attributes to avoid naming conflicts. This allows you to combine XML vocabularies from different sources into a single document without ambiguity.
+- **XPath**: XPath is a syntax for selecting nodes or computing values within an XML document. It is the query language used to navigate the tree structure and is heavily utilized by other technologies like XSLT and XQuery.
 
 ### Definition Languages
 
@@ -104,6 +101,7 @@ The original method for defining XML structure. It specifies allowed elements an
     available (yes|no) "yes"
   >
 ]>
+```
 
 #### XML Schema (XSD)
 
@@ -113,7 +111,8 @@ Here is the full conversion of the DTD above into XML Schema:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified">
 
   <xs:element name="library">
     <xs:complexType>
@@ -184,8 +183,10 @@ XSLT is a functional language designed to transform XML into other formats (HTML
 - **XSLT 2.0**: A massive leap forward (2007). It introduced strong typing (integers, dates), user-defined functions (xsl:function), regular expressions, and the ability to output multiple files from a single source.
 - **XSLT 3.0**: The modern standard (2017). It adds streaming (processing files larger than memory), higher-order functions, and full JSON support (transforming JSON to XML and vice-versa).
 
-!!! warning  XSLT in Browsers
+!!! warning  **XSLT in Browsers**
 Browsers generally only support XSLT 1.0. For modern XSLT 2.0/3.0 features, you must use server-side processors like Saxon (Java/JS/Node) or process the transformations on the server before displaying the changes.
+
+Browsers are removing built-in XSLT support altogether, so relying on client-side XSLT is not future-proof since browsers only support XSLT 1.0 and even that old support is being taken away.
 !!!
 
 #### XQuery
@@ -193,7 +194,8 @@ Browsers generally only support XSLT 1.0. For modern XSLT 2.0/3.0 features, you 
 XQuery is to XML what SQL is to databases. It is designed to extract, manipulate, and reconstruct XML data.
 
 - **XQuery 1.0**: The base recommendation (2007), providing FLWOR expressions (For, Let, Where, Order by, Return).
-- **XQuery 3.0**: Added "Group By" clauses, "Try/Catch" error handling, and Windowing clauses for complex data analysis. (Note: Version 2.0 was skipped to align version numbers with XSLT and XPath).
+- **XQuery 2.0**: This version was skipped to align version numbers with XSLT and XPath.
+- **XQuery 3.0**: Added "Group By" clauses, "Try/Catch" error handling, and Windowing clauses for complex data analysis.
 - **XQuery 3.1**: The latest version (2017). It introduced Maps and Arrays, allowing XQuery to query and generate JSON just as easily as XML.
 
 The following example uses XQuery 3.0 to group books by genre and calculate statistics:
