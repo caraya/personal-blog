@@ -151,7 +151,8 @@ By pointing the JAR Manifest to Launcher, we trick the JVM into starting up with
 We chose a Lazy Loading strategy for the 50MB TEI Stylesheets dependency.
 
 **Why**: Bundling them would triple the installer size.
-**How**: The app checks for ~/.tei-editor/stylesheets on launch. If missing, it offers to download the specific GitHub Release ZIP and extract it. This keeps the core application lightweight (~40MB).
+
+**How**: The app checks for `~/.tei-editor/stylesheets` on launch. If missing, it offers to download the specific GitHub Release ZIP and extract it. This keeps the core application lightweight (~40MB).
 
 ## Notes On The Visual Editor
 
@@ -185,8 +186,8 @@ Add more export formats from those supported by the TEI Stylesheets
 
 Evaluate collaborative editing features
 : This is a two step process
-: * First, we need to implement a server-side component to manage document state and user sessions.
-: * The second step explores real-time synchronization protocols (like Operational Transforms or CRDTs) to allow multiple users to edit the same TEI document simultaneously.
+: - First, we need to implement a server-side component to manage document state and user sessions.
+: - The second step explores real-time synchronization protocols (like Operational Transforms or CRDTs) to allow multiple users to edit the same TEI document simultaneously.
 
 Use GitHub Actions To Automate Releases
 : Automate the build, test, and release process using GitHub Actions to ensure consistent and reliable delivery of new versions.
