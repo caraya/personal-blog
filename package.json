@@ -40,6 +40,7 @@
     "@11tyrocks/eleventy-plugin-emoji-readtime": "^1.0.1",
     "@csstools/postcss-design-tokens": "^4.0.5",
     "@csstools/postcss-oklab-function": "^4.0.12",
+    "@js-temporal/polyfill": "^0.5.1",
     "@kevingimbel/eleventy-plugin-mermaid": "^3.0.1",
     "cloudinary": "^2.7.0",
     "cssnano": "^7.1.1",
