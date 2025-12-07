@@ -185,7 +185,7 @@ When you simulate a mobile device in Chrome DevTools on a powerful desktop, you 
 
 Synthetic network throttling mimics low bandwidth and high latency, but it does so cleanly.
 
-**The Reality**: Real mobile networks have packet loss and jitter. If you lose a packet during the SSL handshake on a real 4G connection, the connection hangs until the packet is re-transmitted. Synthetic tests rarely simulate this chaotic variance or the "Radio State" wake-up costs mentioned in Section 1.
+**The Reality**: Real mobile networks have packet loss and jitter. If you lose a packet during the SSL handshake on a real 4G connection, the connection hangs until the packet is re-transmitted. Synthetic tests rarely simulate this chaotic variance or the "Radio State" wake-up costs mentioned earlier.
 
 ### The Missing Variables
 
