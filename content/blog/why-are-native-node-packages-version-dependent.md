@@ -96,7 +96,9 @@ The process happens in three distinct phases when you run npm install:
 node-gyp is notorious for installation failures because it relies on external system dependencies that npm cannot control. If any link in this chain is missing or version-mismatched, the build fails.
 
 * **Python Dependency**: node-gyp uses Python scripts for the configuration phase.
-* **The Break**: It might find Python 3 when it expects Python 2.7 (older versions), or it might not find Python at all.
+* **The Break**:
+  * It might find Python 3 when it expects Python 2.7 (older versions), or it might not find Python at all.
+  * If you're using Homebrew on macOS, ensure Python3 is installed and your path set up correctly.
 
 * **C++ Compiler Missing**:
   * **Windows**: It requires "Visual Studio Build Tools." If you only installed VS Code (the editor), you don't have the C++ compiler.
