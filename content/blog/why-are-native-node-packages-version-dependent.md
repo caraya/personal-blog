@@ -7,7 +7,7 @@ tags:
 youtube: true
 ---
 
-When you install a package like [Sharp](https://www.npmjs.com/package/sharp), you aren't just downloading JavaScript files. You are often dealing with "native modules"—packages that include C or C++ code. These modules interact directly with the underlying operating system and hardware, providing performance benefits or functionality that JavaScript alone cannot achieve (like image processing).
+When you install a package like [Sharp](https://www.npmjs.com/package/sharp), you aren't just downloading Javascript files. You are often dealing with "native modules" &mdash; packages that include C or C++ code. These modules interact directly with the underlying operating system and hardware, providing performance benefits or functionality that Javascript alone cannot achieve (like image processing).
 
 However, this power comes with a strict constraint: binary compatibility.
 
@@ -17,9 +17,9 @@ This post will cover why native Node packages are version-dependent, focusing on
 
 The primary reason compiled packages are tied to a specific Node version is the ABI (Application Binary Interface).
 
-**V8 Engine**: Node.js runs on the V8 JavaScript engine. Every major release of Node.js typically ships with a different version of V8.
+**V8 Engine**: Node.js runs on the [V8](https://v8.dev/) engine. Every major release of Node.js typically ships with a different version of V8.
 
-**C++ Bindings**: Native modules write C++ code that talks directly to V8's internal memory structures.
+**C++ Bindings**: Native modules write C++ code that talks directly to the internal memory structures of a specific version of V8.
 
 **ABI Mismatch**: If V8 changes how it organizes objects in memory (which it does often between versions), a compiled binary expecting the old layout will crash or corrupt memory if it tries to access the new layout.
 
