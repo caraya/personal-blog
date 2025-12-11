@@ -205,33 +205,6 @@
           });
       }
     </script>
-    <script type="module">
-    {# <!-- Web Vitals Library --> #}
-    {# <script type="module" src="/js/web-vitals.js"></script> #}
-    {# <!-- Web Vitals Reporting -->
-    <script type="module">
-    // Import the necessary functions from the Web Vitals library.
-    import { onCLS, onINP, onLCP } from '/js/web-vitals.js';
-
-    const sendToAnalytics = ({ name, delta, id }) => {
-      // For CLS, multiply the delta by 1000 to get a more user-friendly integer.
-      const roundedValue = Math.round(name === 'CLS' ? delta * 1000 : delta);
-
-      // Send the event to Google Analytics via gtag.
-      window.gtag('event', 'web_vitals', {
-        event_category: 'Web Vitals',
-        event_label: id,
-        value: roundedValue,
-        metric_name: name,
-        non_interaction: true,
-      });
-    };
-
-    // Register the web vital callbacks.
-    onCLS(sendToAnalytics);
-    onINP(sendToAnalytics);
-    onLCP(sendToAnalytics);
-  </script> #}
 	<script type="module" src="./js/search-form.js"></script>
   </body>
 </html>
