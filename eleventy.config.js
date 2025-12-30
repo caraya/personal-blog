@@ -29,9 +29,8 @@ import pluginTOC from 'eleventy-plugin-toc';
 import editOnGithub from 'eleventy-plugin-edit-on-github';
 import metagen from 'eleventy-plugin-metagen';
 
-// Experimental Calendar plugins
+// Experimental plugins
 import publishingCalendar from './public/js/eleventy-plugin-publishing-calendar.js';
-
 
 // Replace module.exports with export default
 export default function (eleventyConfig) {
@@ -81,7 +80,6 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(metagen);
 
   eleventyConfig.addPlugin(publishingCalendar, {});
-
 
   // Transforms
   eleventyConfig.addTransform('posthtml', function (HTMLString, outputPath) {
