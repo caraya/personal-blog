@@ -30,13 +30,16 @@ import editOnGithub from 'eleventy-plugin-edit-on-github';
 import metagen from 'eleventy-plugin-metagen';
 
 // Experimental plugins
-import publishingCalendar from './public/js/eleventy-plugin-publishing-calendar.js';
+import publishingCalendar from './assets/eleventy-plugin-publishing-calendar.js';
 
 // Replace module.exports with export default
 export default function (eleventyConfig) {
   // Copy the contents of the `public` folder to the output folder
   eleventyConfig.addPassthroughCopy({
     "./public/": "/",
+  });
+
+  eleventyConfig.addPassthroughCopy({
     "./assets/manifest.json": "/manifest.json",
     "./node_modules/lite-youtube-embed/src/lite-yt-embed.css": "/css/lite-yt-embed.css",
     "./node_modules/lite-youtube-embed/src/lite-yt-embed.js": "/js/lite-yt-embed.js",

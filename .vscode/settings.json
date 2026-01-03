@@ -1,0 +1,9 @@
+{
+  "markdown.validate.enabled": false,
+	"markdownlint.run": "onSave",
+	"markdownlint.config": {
+		"MD001": false,
+		"MD041": false
+  },
+  "typescript.tsdk": "node_modules/typescript/lib"
+}
