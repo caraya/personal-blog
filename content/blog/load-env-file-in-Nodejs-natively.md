@@ -63,7 +63,7 @@ The biggest limitation of the native function is the lack of variable expansion 
 
 ### Overwriting Variables
 
-Both tools respect the "Environment Wins" rule by default—if a variable is set in the shell (e.g., **PORT=8000 node app.js**), the `.env` file will not overwrite it.
+Both tools respect the "Environment Wins" rule by default; if a variable is set in the shell (e.g., **PORT=8000 node app.js**), the `.env` file will not overwrite it.
 
 However, while dotenv offers an override option (`override: true`), the native function does not. If you absolutely need to overwrite existing variables, you must manually parse the file using `util.parseEnv`.
 

@@ -126,7 +126,7 @@ Don't look at your global average Core Web Vitals score; averages hide the outli
   * *Device*: Is it low-end Androids? Older iPhones (e.g., iPhone XR)?
   * *Connection*: Is it 4G/LTE users? Regional users (e.g., rural areas)?
   * *Metric*: Focus on **Interaction to Next Paint (INP)**. This metric measures responsiveness and is heavily impacted by the main-thread blocking issues that synthetic tests often miss.
-  * **Goal**: Create a "Wanted Poster" for the bug. Example: "INP is 400ms (Poor) for Android users on 4G networks accessing the Checkout Page."
+* **Goal**: Create a "Wanted Poster" for the bug. Example: "INP is 400ms (Poor) for Android users on 4G networks accessing the Checkout Page."
 
 ### Phase 2: The Physical Reproduction (Device Lab)
 
@@ -135,10 +135,10 @@ Now, take that "Wanted Poster" to your physical device lab. Your goal is to recr
 * **Select the Matching Hardware**: If RUM says the issue is on budget Androids, do not pick up your test Pixel 8 or Galaxy S24. Pick up the **Baseline Device** (e.g., a Samsung Galaxy A15 or Moto G).
   * **Browser Selection**: If your analytics show high usage of Opera Mini or UC Browser, install them. Do not assume Chrome behavior applies to these environments.
 * **Match the Network (The "Faraday" Step)**:
-  * *The "Wild" Test*: Disable Wi-Fi on the device. Force it onto cellular data (4G/LTE). Walk to a spot in your office with fewer bars if necessary to induce signal noise.
-  * *The "Controlled" Test*: If you need consistency for debugging, connect the device to a Wi-Fi proxy (like Charles Proxy on your desktop) and use throttling settings that introduce packet loss (try 2-5%) and jitter, not just simple latency.
-  * *Establish the Baseline*: Load the problematic page on this device. Visually confirm the slowness. Record the load time manually or using the browser's profiler.
-  * *Crucial Check*: Does it feel as slow as the RUM data says? If RUM says 4.5s but your device loads in 2s, your lab network is still too good. Throttle it harder until it matches the RUM data.
+  * **The "Wild" Test**: Disable Wi-Fi on the device. Force it onto cellular data (4G/LTE). Walk to a spot in your office with fewer bars if necessary to induce signal noise.
+  * **The "Controlled" Test**: If you need consistency for debugging, connect the device to a Wi-Fi proxy (like Charles Proxy on your desktop) and use throttling settings that introduce packet loss (try 2-5%) and jitter, not just simple latency.
+  * **Establish the Baseline**: Load the problematic page on this device. Visually confirm the slowness. Record the load time manually or using the browser's profiler.
+  * **Crucial Check**: Does it feel as slow as the RUM data says? If RUM says 4.5s but your device loads in 2s, your lab network is still too good. Throttle it harder until it matches the RUM data.
 
 ### Phase 3: Profiling & Fixing (Development)
 
@@ -203,6 +203,7 @@ You do not need a massive lab with 50 phones. You need representative devices th
 
 The gap between synthetic testing and user reality is not just a statistical error; it is an empathy gap. When we rely solely on high-end developer machines and clean network simulations, we optimize for the "happy path" while ignoring the friction experienced by the majority of the world's users.
 
-A 4x CPU throttle cannot mimic the architectural constraints of a budget ARM processor, just as a consistent latency delay cannot simulate the chaos of packet loss and radio wake-up times. To bridge this gap, developers must move beyond the "green score" of Lighthouse and embrace a culture of physical validation.
+A 4x CPU throttle cannot mimic the architectural constraints of a budget ARM processor, just as a consistent latency delay cannot simulate the chaos of packet
+loss and radio wake-up times. To bridge this gap, developers must move beyond the "green score" of Lighthouse and embrace a culture of physical validation.
 
 By establishing a modest device lab and implementing a rigorous RUM-to-Lab feedback loop, you transform performance from a theoretical exercise into a tangible user benefit. Ultimately, the only performance metric that matters is the one your user feels in their hand, waiting for your page to load on a crowded train. Stop simulating the struggle; experience it, fix it, and build a faster web for everyone.
