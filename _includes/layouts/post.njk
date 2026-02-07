@@ -16,9 +16,6 @@ layout: layouts/base.njk
     {# Conditionally load the table of content if there are headers to render #}
     {% if content | toc %}
       <aside>
-        <p>
-          <strong>In this page</strong>
-        </p>
         {{ content | toc | safe }}
       </aside>
     {% endif %} {# end if content | toc #}
