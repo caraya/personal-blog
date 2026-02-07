@@ -25,12 +25,12 @@ import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 import posthtml from 'posthtml';
 import { posthtml as automaticNoopener, parser } from 'eleventy-plugin-automatic-noopener';
 const NoOpOptions = parser({ noreferrer: true });
-import pluginTOC from 'eleventy-plugin-toc';
 import editOnGithub from 'eleventy-plugin-edit-on-github';
 import metagen from 'eleventy-plugin-metagen';
 
 // Experimental plugins
 import publishingCalendar from './assets/eleventy-plugin-publishing-calendar.js';
+import pluginTOC from '@elrond25/eleventy-plugin-toc';
 
 // Replace module.exports with export default
 export default function (eleventyConfig) {

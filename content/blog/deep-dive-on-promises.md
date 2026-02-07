@@ -405,7 +405,7 @@ Early on I struggled with the difference between raw promises and `Promise.any`.
 
 Raw promises work on a single promise, while `Promise.any` works on multiple promises. The key difference is that `Promise.any` will return the first successful result among multiple candidates, while raw promises will only resolve when the single promise resolves.
 
-| Feature	| Raw Promise (promise.then) |Promise.any([...]) |
+| Feature	| Raw Promise (promise.then) | Promise.any([...]) |
 | :---: | --- | --- |
 | Input	| One promise | Multiple promises |
 | Resolves when | That one promise fulfills | The first of any promises fulfills |
