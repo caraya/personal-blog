@@ -13,7 +13,12 @@ layout: layouts/base.njk
       <li><span class="iconfont readingtime"></span>{{ content | emojiReadTime }}</li>
 		</ul>
     <p>&nbsp;</p>
-    {# Conditionally load the table of content if there are headers to render #}
+
+		{# Conditionally load the table of content if there are headers to render #}
+		{#
+			Removed the title paragraph because that is now handled
+			in the details element in the toc plugin
+		#}
     {% if content | toc %}
       <aside>
         {{ content | toc | safe }}

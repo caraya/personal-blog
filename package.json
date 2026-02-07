@@ -41,7 +41,7 @@
     "@11tyrocks/eleventy-plugin-emoji-readtime": "^1.0.1",
     "@csstools/postcss-design-tokens": "^4.0.5",
     "@csstools/postcss-oklab-function": "^4.0.12",
-    "@elrond25/eleventy-plugin-toc": "^1.0.0",
+    "@elrond25/eleventy-plugin-toc": "^1.0.2",
     "@js-temporal/polyfill": "^0.5.1",
     "@kevingimbel/eleventy-plugin-mermaid": "^3.0.1",
     "cloudinary": "^2.7.0",

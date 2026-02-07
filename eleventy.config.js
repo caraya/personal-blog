@@ -72,6 +72,7 @@ export default function (eleventyConfig) {
     tags: [ 'h2', 'h3', 'h4' ],
     ul: true,
     ol: false,
+		wrapperLabel: 'In this page',
   });
 
   eleventyConfig.addPlugin(editOnGithub, {
