@@ -518,7 +518,7 @@ layer(icons);
 }
 
 @layer header-anchor {
-    a[href].header-anchor,
+  a[href].header-anchor,
   a[href].header-anchor:visited {
     color: transparent;
   }
@@ -534,29 +534,37 @@ layer(icons);
 }
 
 @layer elements {
-  .continue-reading {
-    align-self: flex-end;
-  }
+		.continue-reading {
+			align-self: flex-end;
+		}
 
-  .continue-reading a {
-    padding: 1em;
-    font-size: 90%;
-    text-decoration: none;
-    color: var(--color-black);
-  }
+		.continue-reading a {
+			padding: 1em;
+			font-size: 90%;
+			text-decoration: none;
+			color: var(--color-black);
+		}
 
-  .continue-reading a:focus,
-  .continue-reading a:hover {
-    color: var(--color-white) !important;
-    background-color: var(--accent-color) !important;
-  }
+		.continue-reading a:focus,
+		.continue-reading a:hover {
+			color: var(--color-white) !important;
+			background-color: var(--accent-color) !important;
+		}
 
-  .links-nextprev {
-    list-style: none;
-    border-top: 1px dashed var(--color-gray-20);
-    padding: 1em 0;
-  }
+		.links-nextprev {
+			list-style: none;
+			border-top: 1px dashed var(--color-gray-20);
+			padding: 1em 0;
+		}
 
+		.toc {
+			border: 1px solid var(--color-gray-20);
+			border-radius: 10px;
+			padding: 1em;
+			margin-block-end: 2em;
+		}
+
+	}
   /* Header */
   header {
     display: flex;
@@ -827,9 +835,9 @@ layer(icons);
     --icon: var(--icon-tags);
   }
 
-}
 
-@layer layout {
+
+	@layer layout {
   /* Set the grid container dimensions */
   .grid-container {
     display: grid;

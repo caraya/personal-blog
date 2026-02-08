@@ -1,5 +1,11 @@
-// External libraries (converted to import)
-import filters from './assets/filters.js';
+// 11ty Filters
+import filters from './_11ty/filters.js';
+// Date Formatter filter
+// import { formatDate } from './_11ty/date-formater.js';
+// Experimental plugins
+import publishingCalendar from './_11ty/eleventy-plugin-publishing-calendar.js';
+import pluginTOC from '@elrond25/eleventy-plugin-toc';
+
 
 // Custom markdown-it installation to customize it
 import markdownIt from "markdown-it";
@@ -27,10 +33,6 @@ import { posthtml as automaticNoopener, parser } from 'eleventy-plugin-automatic
 const NoOpOptions = parser({ noreferrer: true });
 import editOnGithub from 'eleventy-plugin-edit-on-github';
 import metagen from 'eleventy-plugin-metagen';
-
-// Experimental plugins
-import publishingCalendar from './assets/eleventy-plugin-publishing-calendar.js';
-import pluginTOC from '@elrond25/eleventy-plugin-toc';
 
 // Replace module.exports with export default
 export default function (eleventyConfig) {
@@ -104,7 +106,7 @@ export default function (eleventyConfig) {
     return content.substr(0, content.lastIndexOf(" ", 200)) + "...";
   });
 
-  eleventyConfig.addFilter('readableDate',
+	  eleventyConfig.addFilter('readableDate',
     (dateObj, options, zone) => {
       const defaultOptions = {
         month: "long",
@@ -124,7 +126,7 @@ export default function (eleventyConfig) {
   );
 
   eleventyConfig.addFilter('htmlDateString', (dateObj) => {
-    const formatter = new Intl.DateTimeFormat('en-CA', {
+    const formatter = new Intl.DateTimeFormat('en-US', {
       timeZone: 'UTC',
       year: 'numeric',
       month: '2-digit',

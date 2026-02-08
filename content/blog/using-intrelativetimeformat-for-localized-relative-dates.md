@@ -20,15 +20,18 @@ This code uses the [Luxon](https://moment.github.io/luxon/) library to format da
 
 The filter is written in the configuration file like this:
 
+{% raw %}
 ```js
 eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
 	return DateTime.fromJSDate(dateObj, { zone: zone || "utc" })
 	.toFormat(format || "LLLL dd yyyy");
 });
 ```
+{% endraw %}
 
 And then used in the template like the example shown below, as part of a list of metadata for a blog post:
 
+{% raw %}
 ```html
 <ul class="post-metadata">
 	<li>
@@ -39,6 +42,7 @@ And then used in the template like the example shown below, as part of a list of
 	</li>
 </ul>
 ```
+{% endraw %}
 
 The first change is to move from using Luxon to using the built-in `Intl.DateTimeFormat` object to format dates.
 

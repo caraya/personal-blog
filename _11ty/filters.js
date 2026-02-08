@@ -38,7 +38,7 @@ const filters = {
 		return new URL(url, base);
 	},
 
-	format_date (date, format = "long") {
+		format_date (date, format = "long") {
 		try {
 			date = new Date(date);
 		}
@@ -52,7 +52,7 @@ const filters = {
 
 		let options = typeof format === "string"? { dateStyle: format } : format;
 
-		return date.toLocaleString("en-GB", options);
+		return date.toLocaleString("en-US", options);
 	},
 
 	format_tag(tag) {
