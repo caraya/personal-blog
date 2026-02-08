@@ -19,7 +19,7 @@ permalink: /{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber }}/{
           {% endif %}
         </a>
       </h3>
-      <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("LLLL dd yyyy") }}</time>
+      <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | formatDate('long') }}</time>
       <p>{{ post.templateContent | excerpt }}
         <div class="continue-reading">
           <a href="{{ post.url }}">Read More...</a>

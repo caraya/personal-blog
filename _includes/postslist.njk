@@ -12,7 +12,7 @@ desc: {{ post }}
           <code>{{ post.url }}</code>
         {% endif %}
       </a>
-      <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("LLLL dd yyyy") }}</time>
+      <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | formatDate('long') }}</time>
       <p>{{ post.templateContent | excerpt }}</p>
         <div class="continue-reading">
           <a href="{{ post.url }}">Read More...</a>

@@ -1,7 +1,7 @@
 // 11ty Filters
 import filters from './_11ty/filters.js';
 // Date Formatter filter
-// import { formatDate } from './_11ty/date-formater.js';
+import { formatDate } from './_11ty/date-formater.js';
 // Experimental plugins
 import publishingCalendar from './_11ty/eleventy-plugin-publishing-calendar.js';
 import pluginTOC from '@elrond25/eleventy-plugin-toc';
@@ -106,33 +106,10 @@ export default function (eleventyConfig) {
     return content.substr(0, content.lastIndexOf(" ", 200)) + "...";
   });
 
-	  eleventyConfig.addFilter('readableDate',
-    (dateObj, options, zone) => {
-      const defaultOptions = {
-        month: "long",
-        day: "2-digit",
-        year: "numeric",
-        timeZone: zone || "UTC"
-      };
-
-      const finalOptions = {
-        ...defaultOptions,
-        ...options,
-        timeZone: zone || options?.timeZone || "UTC"
-      };
-
-      return new Intl.DateTimeFormat("en-US", finalOptions).format(dateObj);
-    }
-  );
+  eleventyConfig.addFilter("formatDate", formatDate);
 
   eleventyConfig.addFilter('htmlDateString', (dateObj) => {
-    const formatter = new Intl.DateTimeFormat('en-US', {
-      timeZone: 'UTC',
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit'
-    });
-    return formatter.format(dateObj);
+    return formatDate(dateObj, "iso");
   });
 
   eleventyConfig.addFilter("head", (array, n) => {
