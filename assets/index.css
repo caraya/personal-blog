@@ -795,7 +795,7 @@ layer(icons);
 
   /* Tags */
   .post-metadata {
-    display: inline-flex;
+    display: flex;
     flex-wrap: wrap;
     gap: 0.5em;
     list-style: none;
@@ -804,11 +804,11 @@ layer(icons);
   }
 
   .post-tags {
-    display: inline-flex;
-    justify-content: center;
+    display: flex;
+    justify-content: flex-start;
     text-transform: titlecase;
     font-size: 0.8rem;
-    margin-block: 3rem 2rem;
+    margin-block: 0.5rem 2rem;
   }
 
   .post-metadata time {

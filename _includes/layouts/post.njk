@@ -13,20 +13,6 @@ layout: layouts/base.njk
 
       <li><span class="iconfont readingtime"></span>{{ content | emojiReadTime }}</li>
 		</ul>
-    <p>&nbsp;</p>
-
-		{# Conditionally load the table of content if there are headers to render #}
-		{#
-			Removed the title paragraph because that is now handled
-			in the details element in the toc plugin
-		#}
-    {% if content | toc %}
-      <aside>
-        {{ content | toc | safe }}
-      </aside>
-    {% endif %} {# end if content | toc #}
-
-    {{ content | safe }}
 
 		{# category/tags for the post #}
 		<ul class="post-metadata post-tags"><span class="iconfont tags"></span>
@@ -40,6 +26,24 @@ layout: layouts/base.njk
 				{%- endif %} {# closes if tags #}
       {%- endfor %}
     </ul>
+
+    <p>&nbsp;</p>
+
+		{#
+			Conditionally load the table of content if there are
+			headers to render
+		#}
+		{#
+			Removed the title paragraph because that is now handled
+			in the details element in the toc plugin
+		#}
+    {% if content | toc %}
+      <aside>
+        {{ content | toc | safe }}
+      </aside>
+    {% endif %} {# end if content | toc #}
+
+    {{ content | safe }}
 
 		<p class="edit-on-github-wrap">{% gh_edit page %}</p>
 
