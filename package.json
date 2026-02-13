@@ -41,7 +41,7 @@
     "@11tyrocks/eleventy-plugin-emoji-readtime": "^1.0.1",
     "@csstools/postcss-design-tokens": "^4.0.5",
     "@csstools/postcss-oklab-function": "^4.0.12",
-    "@elrond25/eleventy-plugin-toc": "^1.0.2",
+    "@elrond25/eleventy-plugin-toc": "^1.0.4",
     "@kevingimbel/eleventy-plugin-mermaid": "^3.0.1",
     "cloudinary": "^2.7.0",
     "cssnano": "^7.1.1",
@@ -68,16 +68,16 @@
     "postcss-cli": "^11.0.1",
     "postcss-preset-env": "^10.4.0",
     "posthtml": "^0.16.6",
-    "prettier": "3.6.2"
+    "prettier": "3.6.2",
+    "@js-temporal/polyfill": "^0.5.1"
   },
   "devDependencies": {
-    "@js-temporal/polyfill": "^0.5.1",
     "@playwright/test": "^1.56.0",
     "@types/node": "^24.7.0",
     "typescript": "^5.9.3"
   },
   "overrides": {
-    "axios": "1.12.2",
+    "axios": "1.13.5",
     "liquidjs": "10.22.0",
     "send": "1.2.0",
     "serve-static": "2.2.0"
