@@ -1,6 +1,6 @@
 ---
 title: Do We Still Need To Know How To Code?
-date: 2026-02-20
+date: 2026-02-27
 tags:
   - Programming
   - Software Development
