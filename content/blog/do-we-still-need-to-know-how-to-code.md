@@ -99,3 +99,4 @@ Without these distinctions, an AI agent is just a demo. With them, it becomes an
 ## Conclusion
 
 AI tools are transforming the role of the programmer from a "writer" to a "supervisor" and "architect." While you may spend less time typing boilerplate code, your foundational knowledge of logic, security, and system design is more important than ever. You don't just need to know how to prompt; you need to know how to build the infrastructure that keeps that prompt in check.
+
