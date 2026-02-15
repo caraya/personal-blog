@@ -251,3 +251,4 @@ Most modern cloud platforms allow you to define these headers in a configuration
 ## **Conclusion**
 
 The era of the "Global Shared Cache" is over. Because modern browsers partition their caches for privacy, you gain no performance advantage by using a public CDN for shared libraries. Instead, host your own assets. Use **Fingerprinting and Immutable headers** for your code bundles to get "instant" loads, and use **no-cache revalidation** for static content assets to maintain flexibility without sacrificing too much speed.
+
