@@ -1,6 +1,6 @@
 ---
 title: "Chalk, and util.styleText: How to color text in the terminal"
-date: 2026-04-22
+date: 2026-04-15
 tags:
   - Node.js
   - Chalk

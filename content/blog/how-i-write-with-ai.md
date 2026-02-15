@@ -1,6 +1,6 @@
 ---
 title: How I Write With AI
-date: 2026-04-13
+date: 2026-03-06
 tags:
   - AI
   - Writing
