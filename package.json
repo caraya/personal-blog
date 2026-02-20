@@ -42,6 +42,7 @@
     "@csstools/postcss-design-tokens": "^4.0.5",
     "@csstools/postcss-oklab-function": "^4.0.12",
     "@elrond25/eleventy-plugin-toc": "^1.0.4",
+    "@js-temporal/polyfill": "^0.5.1",
     "@kevingimbel/eleventy-plugin-mermaid": "^3.0.1",
     "cloudinary": "^2.7.0",
     "cssnano": "^7.1.1",
@@ -68,8 +69,7 @@
     "postcss-cli": "^11.0.1",
     "postcss-preset-env": "^10.4.0",
     "posthtml": "^0.16.6",
-    "prettier": "3.6.2",
-    "@js-temporal/polyfill": "^0.5.1"
+    "prettier": "3.6.2"
   },
   "devDependencies": {
     "@playwright/test": "^1.56.0",
