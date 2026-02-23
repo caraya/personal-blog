@@ -7,6 +7,9 @@ tags:
   - Typescript
 ---
 
+For the capstone of the series, I wanted to do something more complex than a simple counter. I chose to build a TypeScript playground component that allows one or more instances of the component to render interactive TypeScript code examples on the page. This is a common use case for documentation sites, and it demonstrates how to handle more complex client-side logic while still maintaining a static HTML preview.
+
+
 !!!note  **Series Note:** This is the capstone post for our Islands Architecture series.
 
 1. [Theory](/what-is-the-islands-architecture/)
@@ -14,11 +17,6 @@ tags:
 3. [Advanced Patterns](/eleventy-is-land-and-island-architecture/)
 4. **Capstone (This Post)**
 !!!
-
-
-This guide explains how to integrate the static ts-playground.webc component with the dynamic sandpack-loader.js client logic using local NPM dependencies instead of a CDN.
-
-**Key Concept:** Use Import Maps to map NPM package names to local files served by Eleventy.
 
 ## 1 Prerequisites
 
