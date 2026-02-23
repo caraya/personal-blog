@@ -2,9 +2,9 @@
 title: We're all API designers
 date: 2026-03-04
 tags:
-  - API Design
-  - Design
-  - Best Practices
+  * API Design
+  * Design
+  * Best Practices
 youtube: true
 mermaid: true
 ---
@@ -85,17 +85,17 @@ graph TD
     %% Logic Flow
     Start --> Q1
 
-    Q1 -- Yes --> R1
-    Q1 -- No --> Q2
+    Q1 -* Yes --> R1
+    Q1 -* No --> Q2
 
-    Q2 -- Yes --> R2
-    Q2 -- No --> Q3
+    Q2 -* Yes --> R2
+    Q2 -* No --> Q3
 
-    Q3 -- Yes --> R3
-    Q3 -- No --> Q4
+    Q3 -* Yes --> R3
+    Q3 -* No --> Q4
 
-    Q4 -- Yes --> R4
-    Q4 -- No --> R5
+    Q4 -* Yes --> R4
+    Q4 -* No --> R5
 ```
 
 ## Design Principles To Consider
@@ -269,9 +269,9 @@ When you're building an API, it's always tempting to just think about what you n
 
 ## Reading List
 
-- [Bluesky Likes](https://lea.verou.me/blog/2025/bluesky-likes/) &mdash; Lea Verou
-- [Web Platform Design Principles](https://www.w3.org/TR/design-principles/) &mdash; W3C
-- [RFC 8890](https://www.rfc-editor.org/rfc/rfc8890) &mdash; IETF
-- [Alan Kay’s Approach to Accessible Complexity](https://medium.com/@mdelhaous/alan-kays-approach-to-accessible-complexity-4e3b6610cf60)
-- [Extend the Web Forward](https://yehudakatz.com/2013/05/21/extend-the-web-forward/) &mdash; Yehuda Katz
-- [Bedrock](https://infrequently.org/2012/04/bedrock/) &mdash; Alex Russell
+* [Bluesky Likes](https://lea.verou.me/blog/2025/bluesky-likes/) &mdash; Lea Verou
+* [Web Platform Design Principles](https://www.w3.org/TR/design-principles/) &mdash; W3C
+* [RFC 8890](https://www.rfc-editor.org/rfc/rfc8890) &mdash; IETF
+* [Alan Kay’s Approach to Accessible Complexity](https://medium.com/@mdelhaous/alan-kays-approach-to-accessible-complexity-4e3b6610cf60)
+* [Extend the Web Forward](https://yehudakatz.com/2013/05/21/extend-the-web-forward/) &mdash; Yehuda Katz
+* [Bedrock](https://infrequently.org/2012/04/bedrock/) &mdash; Alex Russell
