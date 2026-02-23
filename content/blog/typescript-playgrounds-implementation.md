@@ -7,11 +7,14 @@ tags:
   - Typescript
 ---
 
-> **Series Note:** This is the capstone post for our Islands Architecture series.
-> 1. [Theory](/what-is-the-islands-architecture/)
-> 2. [Implementation Guide](/eleventy-island-guide/)
-> 3. [Advanced Patterns](/eleventy-is-land-and-island-architecture/)
-> 4. **Capstone (This Post)**
+!!!note  **Series Note:** This is the capstone post for our Islands Architecture series.
+
+1. [Theory](/what-is-the-islands-architecture/)
+2. [Implementation Guide](/eleventy-island-guide/)
+3. [Advanced Patterns](/eleventy-is-land-and-island-architecture/)
+4. **Capstone (This Post)**
+!!!
+
 
 This guide explains how to integrate the static ts-playground.webc component with the dynamic sandpack-loader.js client logic using local NPM dependencies instead of a CDN.
 
