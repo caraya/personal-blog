@@ -2,9 +2,9 @@
 title: We're all API designers
 date: 2026-03-04
 tags:
-  * API Design
-  * Design
-  * Best Practices
+  - API Design
+  - Design
+  - Best Practices
 youtube: true
 mermaid: true
 ---
