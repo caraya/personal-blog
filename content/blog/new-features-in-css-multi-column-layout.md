@@ -8,56 +8,52 @@ tags:
   - Future CSS
 ---
 
-One of the biggest drawbacks of using multi column layouts in CSS has been the limited control over how content flows between columns. We could set the number of columns, their width, and the gap between them, but controlling how content breaks and flows was a challenge.
+A significant limitation of CSS multi-column layouts has been the restricted control over content flow between columns. While developers can set the number of columns, their width, and the gaps between them, controlling how content breaks and wraps remains a challenge.
 
-The only way to influence how multi column layouts behaved was by manually setting the height of the parent container which wasn't always practical or optimal since we don't always know if the content will fit withing the specified height we created and columns would overflow the parent container.
+Previously, the primary way to influence multi-column behavior was to set a fixed height on the parent container. This approach is often impractical because content might not fit within a specified height, causing columns to overflow the container.
 
-This post will cover two upcoming features in the CSS Multi-Column Layout Module Level 2 specification that address these limitations: `column-height` and `column-wrap`. These features solve the prolems of content flow and wrapping in multi column layouts.
+This post covers two features in the CSS Multi-Column Layout Module Level 2 specification that address these limitations: column-height and column-wrap. These features provide solutions for managing content flow and wrapping in complex layouts.
 
-!!! warning  **Warning:**
-These features are part of the CSS Multi-Column Layout Module Level 2 specification which is, at the time of writing this post, a working draft. As such, browser support may be limited or non-existent. Always check for compatibility before using these features in production.
+!!! warning Warning:
+These features are part of the CSS Multi-Column Layout Module Level 2 specification, which is currently a working draft. Browser support is limited or non-existent. Verify compatibility before using these features in production.
 !!!
 
-## The Problem with Content Flow in Multi-Column Layouts
+## The Challenge of Content Flow
 
-When you create a multi-column layout using CSS, the content flows from one column to the next based on the height of the container. If the content exceeds the height of the container, it overflows and can lead to awkward breaks in content.
+In current multi-column layouts, content flows from one column to the next based on the container's height. If content exceeds that height, it overflows, often leading to awkward visual breaks.
 
-However, if you don't set a height for the container, the content will flow from one column to the next, but the columns will be as tall as the viewport, if not taller... making it hard to read and hard to navigate through. This is why we break the content with headers, images or other elements that span the full width of the container and break the flow of text.
+If you do not set a height for the container, the columns default to the height of the viewport (or taller), which can hinder readability and navigation. Developers typically work around this by using headers or images that span the full width of the container to manually break the text flow.
 
 ## New Multi-Column Features
 
-CSS Multi-Column Layout Module Level 2 introduces two new properties that give us more control over how content flows in multi-column layouts: `column-height` and `column-wrap`.
+The Level 2 specification introduces two properties to provide more granular control: column-height and column-wrap.
 
-!!! note  **Note:**
-Although the properties appear in the CSS Multi-Column Layout Module Level 2 editor draft, they are not yet implemented in any major browsers.
-
-There is also an ongoing GitHub discussion [Do we need column-wrap as well as column-height](https://github.com/w3c/csswg-drafts/issues/11754) regarding the need for both elements, so the attributes may evolve in incompatible ways before it is finalized.
+!!! note Note:
+Although these properties appear in the editor's draft, major browsers have not yet implemented them. Furthermore, an ongoing GitHub discussion regarding whether both properties are necessary suggests the attributes may change before the specification is finalized.
 !!!
 
 ### Column Height
 
-The [column-height](https://drafts.csswg.org/css-multicol-2/#ch) property allows us to set a specific height for the columns in a multi-column layout. This means that we can now control how tall each column is, regardless of the content inside it.
+The column-height property allows you to set a specific height for the columns themselves. This enables you to control the height of each column independently of the content inside it.
 
-This is different from setting the height of the container because it allows developers to set the height of the columns independently of the container's height
+This differs from setting the container's height because it allows the columns to maintain a consistent height even if the parent container expands to accommodate other elements.
 
 ### Column Wrap
 
-[column-wrap](https://drafts.csswg.org/css-multicol-2/#cwr) allows us to control how content wraps between columns. With this property, we can specify whether content should wrap to the next column when it reaches the end of the current column or if it should continue flowing in the same column until it reaches the bottom of the container.
+The column-wrap property controls how content wraps between columns. With this property, you can specify whether content should wrap to the next column upon reaching the end of the current one, or continue flowing within the same column until it reaches the bottom of the container.
 
-## How to use these features
+## Implementing the New Features
 
-You can now do the following:
+When these features become available, you can manage layouts by following these steps:
 
-- Set the height of the parent container using `height` or `block-size`.
-- set the height of the `.columns` class using `column-height`.
-- Use `column-wrap` to control if columns wrap rather than overflowing.
-- For visual inspection, add a background color or border to the columns.
+* Set the parent container height using `height` or `block-size`.
+* Define the height of individual columns using `column-height`.
+* Apply `column-wrap` to prevent content from overflowing the container.
+* Add background colors or borders to columns for visual debugging.
 
-This is the HTML for the example layout. Note the two divs with the `columns` class that will be styled as multi-column layouts.
+## Example Layout
 
-!!! warning **Warning:**
-Note that this is not yet supported in any major browsers, so you will not see the expected results if you try to run this code today.
-!!!
+The following HTML and CSS demonstrate the intended use of these Level 2 features.
 
 ```html
 <div class="container">
@@ -74,18 +70,20 @@ Note that this is not yet supported in any major browsers, so you will not see t
 ```
 
 ```css
+/* Note: This CSS utilizes features not yet supported by most browsers */
 .container {
   block-size: 800px;
   inline-size: 80vw;
 
+  /* Level 2 features */
   column-width: 250px;
   column-height: 300px;
+  column-wrap: wrap;
 }
 
 .columns {
   margin-block-end: 4rem;
   padding: 2rem;
-
   border: 1px solid black;
 }
 ```
