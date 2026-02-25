@@ -191,9 +191,11 @@
     </div>
     <!-- Current page: {{ page.url | htmlBaseUrl }} -->
     <!-- Configure and load Service Worker -->
-    <script type="module">
+		<!-- Commented Out Until I get around to troubleshooting the worker -->
+    {# <script type="module">
       // Test if service workers are supported
-      if ('serviceWorker' in navigator) { // Attempt to register it
+      if ('serviceWorker' in navigator) {
+				// Attempt to register it
         navigator
           .serviceWorker
           .register('/sw.js')
@@ -204,7 +206,7 @@
             console.log('ServiceWorker registration failed: ', err);
           });
       }
-    </script>
+    </script> #}
 	<script type="module" src="./js/search-form.js"></script>
   </body>
 </html>
