@@ -6,5 +6,5 @@
 		"MD041": false
   },
 	"typescript.tsdk": "node_modules/typescript/lib",
-	"typescript.experimental.useTsgo": true
+	"typescript.experimental.useTsgo": false
 }
