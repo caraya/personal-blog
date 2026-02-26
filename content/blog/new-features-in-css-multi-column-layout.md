@@ -18,6 +18,14 @@ This post covers two features in the CSS Multi-Column Layout Module Level 2 spec
 These features are part of the CSS Multi-Column Layout Module Level 2 specification, which is currently a working draft. Browser support is limited or non-existent. Verify compatibility before using these features in production.
 !!!
 
+## Current Browser Support & Flags
+
+As of February 2026, the implementation status is as follows:
+
+* Chromium (Chrome/Edge): Support for `column-height` is available behind the Experimental Web Platform features flag. You can enable it by navigating to chrome://flags/#enable-experimental-web-platform-features. Support for `column-wrap` is currently in active development and follows the same flag.
+* Firefox: No public signal for implementation has been released yet.
+* Safari: No public signal for implementation has been released yet.
+
 ## The Challenge of Content Flow
 
 In current multi-column layouts, content flows from one column to the next based on the container's height. If content exceeds that height, it overflows, often leading to awkward visual breaks.
@@ -26,7 +34,7 @@ If you do not set a height for the container, the columns default to the height 
 
 ## New Multi-Column Features
 
-The Level 2 specification introduces two properties to provide more granular control: column-height and column-wrap.
+The Level 2 specification introduces two properties to provide more granular control: `column-height` and `column-wrap`.
 
 !!! note Note:
 Although these properties appear in the editor's draft, major browsers have not yet implemented them. Furthermore, an ongoing GitHub discussion regarding whether both properties are necessary suggests the attributes may change before the specification is finalized.
@@ -34,13 +42,13 @@ Although these properties appear in the editor's draft, major browsers have not 
 
 ### Column Height
 
-The column-height property allows you to set a specific height for the columns themselves. This enables you to control the height of each column independently of the content inside it.
+The `column-height` property allows you to set a specific height for the columns themselves. This enables you to control the height of each column independently of the content inside it.
 
 This differs from setting the container's height because it allows the columns to maintain a consistent height even if the parent container expands to accommodate other elements.
 
 ### Column Wrap
 
-The column-wrap property controls how content wraps between columns. With this property, you can specify whether content should wrap to the next column upon reaching the end of the current one, or continue flowing within the same column until it reaches the bottom of the container.
+The `column-wrap` property controls how content wraps between columns. With this property, you can specify whether content should wrap to the next column upon reaching the end of the current one, or continue flowing within the same column until it reaches the bottom of the container.
 
 ## Implementing the New Features
 
