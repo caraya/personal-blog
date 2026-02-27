@@ -97,4 +97,5 @@ export function safeLoadEnvFile(): void {
 
 ## Conclusion
 
-The loadEnvFile() function in Node.js 20.12.0 provides a native way to load environment variables from a .env file, simplifying configuration management in Node.js applications. By understanding the differences from dotenv &mdash; specifically regarding variable expansion and error handling &mdash; you can easily integrate this functionality into your projects and reduce your dependency tree.
+The `loadEnvFile()` function in Node.js 20.12.0 provides a native way to load environment variables from a .env file, simplifying configuration management in Node.js applications. By understanding the differences from dotenv &mdash; specifically regarding variable expansion and error handling &mdash; you can easily integrate this functionality into your projects and reduce your dependency tree.
+
