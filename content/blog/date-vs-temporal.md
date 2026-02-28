@@ -79,7 +79,7 @@ console.log(formatter.format(tokyoBirthday)); // Output: "5/15/1990"
 
 ### The Modern Solution: Temporal
 
-Temporal resolves this underlying data model problem by providing distinct types for specific use cases. If a function requires a calendar date, developers can explicitly require a `Temporal.PlainDate`. Because this object contains no time or time zone data, it remains completely immune to daylight saving time or local time zone shifts. This directly solves the cross-environment presentation problem natively: a PlainDate created as "1990-05-15" consistently outputs exactly "1990-05-15", regardless of whether the code executes on a server in London or a browser in Tokyo.
+Temporal resolves this underlying data model problem by providing distinct types for specific use cases. If a function requires a calendar date, developers can explicitly require a `Temporal.PlainDate`. Because this object contains no time or time zone data, it remains completely immune to daylight saving time or local time zone shifts. This directly solves the cross-environment presentation problem.
 
 TypeScript
 
