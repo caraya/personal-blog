@@ -20,7 +20,7 @@ featureId="temporal">
 
 ## Core Structural Differences
 
-The fundamental difference lies in how these APIs approach data.
+The fundamental difference lies in how these APIs approach data. The legacy Date object relies on a single, monolithic object representing a specific millisecond since the Unix epoch. In contrast, the Temporal API introduces a granular, object-oriented architecture. Temporal provides distinct classes tailored for specific types of date and time data. This allows developers to choose the exact level of precision required—whether that involves a simple calendar date, a specific time of day, or a fully time-zone-aware absolute instant. This architectural shift prevents common bugs associated with unintended time zone conversions and accidental mutations.
 
 ### Immutability vs. Mutability
 
@@ -58,7 +58,48 @@ console.log(nextYear.year);     // 2026 - New instance created
 
 ## Type Safety and Clarity
 
-The Date object represents a single point in time (Unix timestamp). It does not distinguish between "a date without a time" or "a time without a date." Temporal provides specific types for specific use cases.
+The legacy Date object represents a single point in time (a Unix timestamp). It does not distinguish between "a date without a time" or "a time without a date." This ambiguity frequently causes bugs when handling concepts like birthdates, where time zones can inadvertently shift the calendar day.
+
+### The Legacy Workaround: Intl.DateTimeFormat
+
+To prevent date shifts when using the legacy Date object, developers must explicitly format the output using Intl.DateTimeFormat and supply the exact timeZone where the event occurred. While this resolves the presentation issue, it requires constant developer vigilance. If a developer forgets to apply the specific time zone configuration, the date defaults to the user's local system time and may shift.
+
+****TypeScript / JavaScript****
+
+```ts
+const tokyoBirthday = new Date('1990-05-15T00:00:00+09:00'); // Midnight in Tokyo
+
+// Problem: Without an explicit time zone, this might shift to May 14th in New York.
+console.log(tokyoBirthday.toLocaleDateString());
+
+// Workaround: Forcing the Tokyo time zone during formatting.
+const formatter = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Tokyo' });
+console.log(formatter.format(tokyoBirthday)); // Output: "5/15/1990"
+```
+
+### The Modern Solution: Temporal
+
+Temporal resolves this underlying data model problem by providing distinct types for specific use cases. If a function requires a calendar date, developers can explicitly require a `Temporal.PlainDate`. Because this object contains no time or time zone data, it remains completely immune to daylight saving time or local time zone shifts. This directly solves the cross-environment presentation problem natively: a PlainDate created as "1990-05-15" consistently outputs exactly "1990-05-15", regardless of whether the code executes on a server in London or a browser in Tokyo.
+
+TypeScript
+
+```ts
+// Temporal: PlainDate explicitly drops time and time zone information.
+function processBirthdayTemporal(birthday: Temporal.PlainDate) {
+  // PlainDate guarantees the output remains identical regardless of where the code executes.
+  console.log(birthday.toString()); // Output: "1990-05-15"
+}
+```
+
+JavaScript
+
+```js
+// Temporal: PlainDate explicitly drops time and time zone information.
+function processBirthdayTemporal(birthday) {
+  // PlainDate guarantees the output remains identical regardless of where the code executes.
+  console.log(birthday.toString()); // Output: "1990-05-15"
+}
+```
 
 ### Side-by-Side Comparison
 
@@ -66,7 +107,7 @@ Before diving into the specialized types, review how common tasks compare betwee
 
 #### Getting the Current Date/Time
 
-TypeScript / JavaScript
+****TypeScript / JavaScript****
 
 ```ts
 // Legacy
@@ -81,7 +122,7 @@ const nowLocal = Temporal.Now.zonedDateTimeISO(); // Local with TZ
 
 Legacy parsing is inconsistent across browsers. Temporal requires strict ISO 8601 strings.
 
-TypeScript / JavaScript
+****TypeScript / JavaScript****
 
 ```ts
 // Legacy (Risky: interpretation varies by browser)
@@ -95,7 +136,7 @@ const dateTemporal = Temporal.PlainDate.from('2025-01-01');
 
 One of the most confusing aspects of Date is the zero-indexed month.
 
-TypeScript / JavaScript
+****TypeScript / JavaScript****
 
 ```ts
 // Legacy: 0 is January, 11 is December
@@ -113,7 +154,7 @@ One of the biggest advantages of Temporal is its specialized classes. The legacy
 
 Perfect for birthdays or calendar events where the specific hour or time zone does not matter.
 
-TypeScript / JavaScript
+**TypeScript / JavaScript**
 
 ```ts
 const birthday = Temporal.PlainDate.from('1990-05-15');
@@ -124,7 +165,7 @@ console.log(birthday.toString()); // "1990-05-15"
 
 Useful for store hours or alarm settings.
 
-TypeScript / JavaScript
+**TypeScript / JavaScript**
 
 ```ts
 const openingTime = Temporal.PlainTime.from('09:00:00');
@@ -136,7 +177,7 @@ console.log(closingTime.toString()); // "17:00:00"
 
 Date has no way to represent "October 2025" or "July 4th" without assigning a placeholder day or year. Temporal handles these natively.
 
-TypeScript / JavaScript
+**TypeScript / JavaScript**
 
 ```ts
 const payday = Temporal.PlainMonthDay.from({ month: 12, day: 25 });
@@ -155,7 +196,7 @@ Performing math with the Date object usually involves converting everything to m
 
 Temporal introduces the Duration type, which represents a length of time rather than a point in time.
 
-TypeScript / JavaScript
+**TypeScript / JavaScript**
 
 ```ts
 // Adding 3 months and 2 weeks to a date
@@ -170,7 +211,7 @@ console.log(resultDate.toString()); // 2025-04-15
 
 Finding the difference between two dates in Date requires manual math. In Temporal, use the .since() or .until() methods.
 
-TypeScript / JavaScript
+**TypeScript / JavaScript**
 
 ```ts
 const d1 = Temporal.PlainDate.from('2025-01-01');
