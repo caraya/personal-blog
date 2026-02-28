@@ -350,7 +350,7 @@ interface FormattedUser extends ApiUser {
 // This function is fragile. It breaks if the API changes OR if the date format requirements change.
 async function getFormattedUserDataBad(): Promise<FormattedUser[]> {
   // Responsibility 1: Fetching
-  const response = await fetch('[https://api.example.com/users](https://api.example.com/users)');
+  const response = await fetch('https://api.example.com/users');
   const users: ApiUser[] = await response.json();
 
   // Responsibility 2: Formatting AND Responsibility 3: Sorting
@@ -402,7 +402,7 @@ async function getFormattedUserDataGood(): Promise<FormattedUser[]> {
 // This function is fragile. It breaks if the API changes OR if the date format requirements change.
 async function getFormattedUserDataBad() {
   // Responsibility 1: Fetching
-  const response = await fetch('[https://api.example.com/users](https://api.example.com/users)');
+  const response = await fetch('https://api.example.com/users');
   const users = await response.json();
 
   // Responsibility 2: Formatting AND Responsibility 3: Sorting
@@ -419,7 +419,7 @@ async function getFormattedUserDataBad() {
 // Responsibility 1: Fetching
 // Only changes if the API endpoint or auth logic changes
 async function fetchUsers() {
-  const response = await fetch('[https://api.example.com/users](https://api.example.com/users)');
+  const response = await fetch('https://api.example.com/users');
   return response.json();
 }
 
@@ -631,7 +631,7 @@ export async function getLikeCount(): Promise<number> {
 
 JavaScript
 
-```js
+```jsx
 'use server';
 
 import { revalidatePath } from 'next/cache';
@@ -700,7 +700,7 @@ export default function LikeButton({ count }: LikeButtonProps) {
 
 JavaScript
 
-```js
+```jsx
 'use client';
 
 import { useTransition } from 'react';
