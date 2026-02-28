@@ -9,42 +9,32 @@ tags:
   - Bundle Analysis
 ---
 
-
 Webpack and other bundlers often produce large JavaScript bundles that can negatively impact web application performance. While [Webpack Bundle Analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer) offers a visual way to analyze bundle contents and identify optimization opportunities, it is—as the name implies—Webpack-specific.
 
-If you are using other bundlers like Rollup, Vite, or Parcel, you need a different tool. I have been looking for a generic alternative that isn't tied to a specific ecosystem.
+Developers using other bundlers like Rollup, Vite, or Parcel require a different tool. This post covers how to set up [Sonda](https://sonda.dev/), a generic bundle analyzer, and use it to analyze JavaScript bundles within Vite and Rollup projects.
 
-This post covers how to set up [Sonda](https://sonda.dev/), a generic bundle analyzer, and use it to analyze your JavaScript bundles with Vite and Rollup.
+## What is Sonda?
 
-## What Is Sonda?
+Sonda is a generic bundle analyzer that provides a detailed breakdown of a bundle's contents, including module sizes and dependencies. It supports multiple bundlers and integrates directly into the build process to generate reports automatically.
 
-Sonda is a generic bundle analyzer that provides a detailed breakdown of your bundle's contents, including module sizes and dependencies. It supports multiple bundlers and integrates directly into your build process to generate reports automatically.
+## Why bundle analysis matters
 
-## Why It Matters
+A bundle analyzer helps visualize the contents of bundled output files. This is critical for optimizing application performance, managing build size, and identifying inefficiencies. Key benefits include:
 
-A bundle analyzer helps you visualize the contents of your bundled output files. This is critical for optimizing application performance, managing build size, and identifying inefficiencies. Key benefits include:
+* **Identifying large dependencies**: Easily spot which libraries or modules occupy the most space in the final bundle. This helps determine if a large dependency is truly necessary or if a smaller alternative exists.
+* **Optimizing load times**: Smaller bundle sizes lead to faster application load times. Developers can significantly improve the user experience by identifying and removing unnecessary code (dead code elimination) or using techniques like code splitting and tree shaking.
+* **Debugging build issues**: Understand why a build might be larger than expected or why certain modules are being included multiple times (duplication issues).
+* **Visualizing module structure**: Analyzers provide an interactive map (usually a treemap) that breaks down the bundle into its constituent parts, showing the relative size of each file and its dependencies.
 
-Identifying Large Dependencies
-: Easily spot which libraries or modules occupy the most space in your final bundle. This helps you determine if a large dependency is truly necessary or if a smaller alternative could be used.
+## How it works
 
-Optimizing Load Times
-: Smaller bundle sizes lead to faster application load times. You can significantly improve user experience by identifying and removing unnecessary code (dead code elimination) or using techniques like code splitting and tree shaking.
-
-Debugging Build Issues
-: Understand why a build might be larger than expected or why certain modules are being included multiple times (duplication issues).
-
-Visualizing Module Structure
-: Analyzers provide an interactive map (usually a treemap) that breaks down the bundle into its constituent parts, showing the relative size of each file and its dependencies.
-
-## How It Works
-
-The workflow for Sonda depends on the bundler you are using. Below are the configurations for Vite and Rollup.
+The workflow for Sonda depends on the bundler running the project. Below are the configurations for Vite and Rollup.
 
 ### Vite
 
-This installation assumes you have an existing Vite project. If not, follow the [Vite Getting Started Guide](https://vitejs.dev/guide/) to create one.
+This installation assumes an existing Vite project. If starting from scratch, follow the Vite Getting Started Guide to create one.
 
-#### 1. Install Sonda
+#### Install Sonda
 
 Install Sonda as a development dependency:
 
@@ -52,13 +42,32 @@ Install Sonda as a development dependency:
 npm install sonda --save-dev
 ```
 
-#### 2. Configure Vite
+#### Configure Vite
 
-Modify your Vite configuration file to include the Sonda plugin. Sonda requires source maps to be enabled to analyze the bundle effectively.
+Modify the Vite configuration file to include the Sonda plugin. Sonda requires source maps to be enabled to analyze the bundle effectively.
 
-Note: Ensure Sonda is the first plugin in the plugins array for it to work correctly.
+Note: Ensure Sonda is the first plugin in the plugins array to guarantee it hooks into the build pipeline correctly.
 
-```typescript
+**TypeScript (vite.config.ts)**
+
+```ts
+import { defineConfig } from 'vite';
+import Sonda from 'sonda/vite';
+
+export default defineConfig({
+  build: {
+    sourcemap: true
+  },
+  plugins: [
+    Sonda()
+		// add other plugins here
+  ]
+});
+```
+
+**JavaScript (vite.config.js)**
+
+```js
 import { defineConfig } from 'vite';
 import Sonda from 'sonda/vite';
 
@@ -74,9 +83,9 @@ export default defineConfig({
 
 ### Rollup
 
-Even though Vite is my preferred bundler, I still use Rollup for some older projects. Here is how to set up Sonda with Rollup.
+For legacy projects or specific use cases that rely directly on Rollup, follow these setup steps.
 
-#### 1. Install Dependencies
+#### Install dependencies
 
 Install the Sonda package as a development dependency:
 
@@ -84,11 +93,13 @@ Install the Sonda package as a development dependency:
 npm install sonda --save-dev
 ```
 
-#### 2. Configure Rollup
+#### Configure Rollup
 
-Modify your Rollup configuration file. Like Vite, Rollup requires source maps enabled, and Sonda should be the first plugin in the list.
+Modify the Rollup configuration file. Like Vite, Rollup requires source maps to be enabled, and Sonda must be the first plugin in the list.
 
-```typescript
+**TypeScript (rollup.config.ts)**
+
+```ts
 import { defineConfig } from 'rollup';
 import Sonda from 'sonda/rollup';
 
@@ -102,32 +113,50 @@ export default defineConfig({
 });
 ```
 
-### Configuration Options
+**JavaScript (rollup.config.js)**
 
-Once set up, you can customize Sonda's behavior. For example, to prevent the report from opening automatically in the browser after a build, set the open option to false:
+```js
+import { defineConfig } from 'rollup';
+import Sonda from 'sonda/rollup';
 
-```typescript
+export default defineConfig({
+  output: {
+    sourcemap: true
+  },
+  plugins: [
+    Sonda()
+  ]
+});
+```
+
+### Configuration options
+
+Once set up, developers can customize Sonda's behavior by passing an options object. For example, to prevent the report from opening automatically in the browser after a build, set the open option to false.
+
+TypeScript / JavaScript
+
+```ts
 Sonda({
   open: false
 });
 ```
 
-Here is a breakdown of the common configuration options I use most often. For a full list, check the configuration page.
+Here is a breakdown of the most common configuration options. For a comprehensive list, consult the official Sonda documentation.
 
 enabled
 : **Type**: boolean
 : **Default**: true
-: Specifies whether the plugin is active. This allows you to keep the configuration present but disable the plugin execution by setting this to false.
+: Specifies whether the plugin is active. This allows developers to keep the configuration present in the file but disable the plugin's execution by setting this to false.
 
 include
-: **Type**: Array&lt;RegExp> | null
+: **Type**: Array<RegExp> | null
 : **Default**: null
-: A list of RegExp patterns matching output assets to include. By default, all assets are included. Patterns match against relative asset paths. For example, use [ `/\.js$/` ] to include only JavaScript files.
+: A list of RegExp patterns matching output assets to include. By default, all assets are included. Patterns match against relative asset paths. For example, use [ /\.js$/ ] to include only JavaScript files.
 
 exclude
-: **Type**: Array&lt;RegExp> | null
+: **Type**: Array<RegExp> | null
 : **Default**: null
-: A list of RegExp patterns matching output assets to exclude. Note that .map and .d.ts files are always excluded. This option takes precedence over include. For example, use [ `/\.css$/` ] to exclude all CSS files.
+: A list of RegExp patterns matching output assets to exclude. Note that .map and .d.ts files are always excluded by default. This option takes precedence over include. For example, use [ /\.css$/ ] to exclude all CSS files.
 
 gzip
 : **Type**: boolean
@@ -139,10 +168,12 @@ brotli
 : **Default**: false
 : Calculates asset sizes after Brotli compression. Like GZIP, these are estimates and may increase generation time.
 
-The configuration I use most often looks like this:
+A standard, robust configuration looks like this:
 
-```typescript
-sonda({
+TypeScript / JavaScript
+
+```ts
+Sonda({
   open: true,
   filename: "sondaReport[index].html",
   gzip: true,
@@ -150,7 +181,7 @@ sonda({
 });
 ```
 
-With this config, every project build adds a new report file (incremented by index) to the default `.sonda` folder. It will open the report in your default browser automatically after the build completes.
+With this configuration, every project build adds a new report file (incremented by index) to the default .sonda output folder. The build process automatically opens the generated report in the default browser upon completion.
 
 ## Looking At The Output
 
