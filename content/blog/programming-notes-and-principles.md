@@ -604,7 +604,7 @@ The Server Action (The "Backend"): This file runs strictly on the server ('use s
 
 TypeScript
 
-```ts
+```tsx
 'use server';
 
 import { revalidatePath } from 'next/cache';
@@ -660,7 +660,7 @@ The Client Component (The "Interactivity"): This file runs in the browser ('use 
 
 TypeScript
 
-```ts
+```tsx
 'use client';
 
 import { useTransition } from 'react';
