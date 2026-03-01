@@ -112,7 +112,7 @@ For modern, rapidly evolving technologies (like CSS), the W3C uses a "Level" sys
 
 ### W3C vs. WHATWG: Two philosophies
 
-Developers often notice that some standards (like HTML and the DOM) seem to be maintained by both the W3C and the WHATWG (Web Hypertext Application Technology Working Group). While they collaborate closely, they follow different philosophies:
+Developers often notice that some standards (like [HTML](https://html.spec.whatwg.org/) and the [DOM](https://dom.spec.whatwg.org/)) seem to be maintained by both the W3C and the WHATWG (Web Hypertext Application Technology Working Group). While they collaborate closely, they follow different philosophies:
 
 | Feature | W3C<br>(World Wide Web Consortium) | WHATWG<br>(Web Hypertext Application Technology Working Group) |
 | --- | --- | --- |
