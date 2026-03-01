@@ -125,19 +125,16 @@ To test across the "performance spectrum," you should maintain a lab with at lea
 
 A performance budget is not a suggestion; it is a constraint that determines whether your feature is viable for the general public. Target these metrics on the **Galaxy A15** over a **Slow 4G** connection (400ms RTT, 1.6Mbps down).
 
-Reliable Interaction (TTI): < 5 seconds.
+Reliable Interaction (TTI): &lt; 5 seconds.
+: On a baseline device, the "Main Thread" must be free to respond to user input within 5 seconds of the initial request. If hydration or third-party scripts take longer, your site is effectively "frozen."
 
-On a baseline device, the "Main Thread" must be free to respond to user input within 5 seconds of the initial request. If hydration or third-party scripts take longer, your site is effectively "frozen."
-
-Responsiveness (INP): < 200ms.
-
-Every tap, click, or keyboard event must result in a visual frame within 200ms. On budget hardware, long-running JavaScript tasks are the primary cause of INP failure.
+Responsiveness (INP): &lt; 200ms.
+: Every tap, click, or keyboard event must result in a visual frame within 200ms. On budget hardware, long-running JavaScript tasks are the primary cause of INP failure.
 
 JavaScript Payload: ~150KB–200KB (Compressed).
+: This equates to roughly 500KB–800KB of uncompressed JavaScript. Any more than this will reliably push the Galaxy A15's CPU into a "long task" state during parsing and execution, blowing your 5-second TTI budget.
 
-This equates to roughly 500KB–800KB of uncompressed JavaScript. Any more than this will reliably push the Galaxy A15's CPU into a "long task" state during parsing and execution, blowing your 5-second TTI budget.
-
-The Solution: A RUM-to-Lab Workflow
+## The Solution: A RUM-to-Lab Workflow
 
 To build a performance culture that reflects reality, you cannot rely on Lab Data alone. You must connect your Field Data (Real User Monitoring - RUM) to your physical Device Lab in a closed feedback loop.
 
@@ -158,7 +155,7 @@ flowchart TB
 Phase 1: Signal & Segmentation (RUM)
 : Don't look at your global average Core Web Vitals score; averages hide the outliers. Use RUM data (Datadog, Sentry, Cloudflare) to find where users are failing.
 
-Identify the "Cohort of Concern": Isolate the segment dragging your score down.
+: Identify the "Cohort of Concern": Isolate the segment dragging your score down.
 : * Device: Is it budget Androids? Older iPhones?
 : * Metric: Focus on Interaction to Next Paint (INP). This measures responsiveness and is heavily impacted by main-thread blocking that synthetic tests miss.
 
@@ -168,7 +165,7 @@ Phase 2: Physical Reproduction (Device Lab)
 : * Match the Network: Disable Wi-Fi. Force the device onto cellular data (4G/LTE). If your device loads in 2s but RUM says 5s, your lab network is still too good. Throttle it until it matches the RUM data.
 
 Phase 3: Profiling & Fixing (Development)
-: Connect the device to your computer via USB for Remote Debugging (using chrome://inspect for Android or Safari's "Develop" menu for iOS).
+: Connect the device to your computer via USB for Remote Debugging (using `chrome://inspect` for Android or Safari's "Develop" menu for iOS).
 : * Profile on Hardware: Run the Performance profiler on the device. Look for Long Tasks (red blocks > 50ms). A hydration function that takes 10ms on your M3 Macbook might take 150ms on a Galaxy A15.
 
 Phase 4: Validation & Confirmation
