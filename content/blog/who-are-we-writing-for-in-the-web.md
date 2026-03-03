@@ -21,8 +21,8 @@ The foundation of effective web content is a logical, predictable structure. Mac
 
 * **Use Headings Logically**: Your heading structure (`<h1>`, `<h2>`, `<h3>`) is a machine-readable outline of your document. Research shows users scan web pages in an [F-shaped pattern](https://www.nngroup.com/articles/f-shaped-pattern-reading-web-content/) &mdash; reading across the top, then down the left side. Your headings are the primary signposts they use during this scan. A single `<h1>` should be the page title, with subsequent `<h2>` tags for main sections. This allows users to quickly jump to the section they need and helps machines parse the main topics of your content.
 * **Embrace Scannable Formats**: As Jakob Nielsen points out in [How People Read Online: New and Old Findings](https://www.nngroup.com/articles/how-people-read-online/), users rarely read word-for-word online. They scan for keywords, headlines, and phrases. To accommodate this:
- 	* **Keep Paragraphs Short and Focused**: Aim for paragraphs of 1-3 sentences, each dedicated to a single idea. This creates white space, reduces cognitive load for humans, and makes it easier for AI to isolate individual facts.
- 	* **Use Lists for Scannability**: Use bulleted (`<ul>`) or numbered (`<ol>`) lists whenever possible. Humans are drawn to them because they are easy to scan. Machines parse them as explicitly structured data sets, which is why lists are frequently pulled for featured snippets.
+  * **Keep Paragraphs Short and Focused**: Aim for paragraphs of 1-3 sentences, each dedicated to a single idea. This creates white space, reduces cognitive load for humans, and makes it easier for AI to isolate individual facts.
+  * **Use Lists for Scannability**: Use bulleted (`<ul>`) or numbered (`<ol>`) lists whenever possible. Humans are drawn to them because they are easy to scan. Machines parse them as explicitly structured data sets, which is why lists are frequently pulled for featured snippets.
 * **Make URLs Descriptive**: While machines are moving beyond a purely URL-shaped view of the web, the URL is still the address. A clean, readable URL (`your-site.com/baking/sourdough-bread-recipe`) provides immediate context to both humans and machines, unlike a generic one (`your-site.com/p?id=123`).
 
 ### The Inverted Pyramid: Get to the Point
@@ -49,8 +49,8 @@ Your writing style should prioritize clarity, authority, and brevity. The era of
 * **Eliminate Fluff**: Cut introductory phrases, unnecessary adjectives, and corporate jargon. Get straight to the point.
 * **Use Active Voice**: Active voice is more direct and uses fewer words. (e.g., "We launched a new feature" instead of "A new feature was launched by us.")
 * **Write Naturally and Comprehensively**: Search engines understand topics, not just keywords. Your goal is to demonstrate expertise by covering a subject thoroughly.
- 	* **Build Topical Authority with Topic Clusters**: If your main topic is "baking sourdough bread," that's your "pillar page." Then, create "cluster" articles on sub-topics like "how to make a sourdough starter" and link them back to the pillar page. This signals to search engines that you are an authority on the entire subject.
- 	* **Answer the User's Next Question**: Anticipate what a reader will want to know next. By addressing follow-up questions within your content, you create a more valuable, comprehensive resource.
+  * **Build Topical Authority with Topic Clusters**: If your main topic is "baking sourdough bread," that's your "pillar page." Then, create "cluster" articles on sub-topics like "how to make a sourdough starter" and link them back to the pillar page. This signals to search engines that you are an authority on the entire subject.
+  * **Answer the User's Next Question**: Anticipate what a reader will want to know next. By addressing follow-up questions within your content, you create a more valuable, comprehensive resource.
 * **Define and Disambiguate Entities**: When you introduce a person, place, or concept (an "entity"), define it clearly. This helps machines connect your content to the correct entry in their Knowledge Graph. For example, instead of just mentioning "Apple," specify "Apple Inc., the technology company founded by Steve Jobs." You are making a clear, machine-extractable assertion.
 
 ## Technical Markup: The Machine's Language
@@ -59,15 +59,15 @@ This is where you explicitly translate your human-readable content into a machin
 
 * **Semantic HTML**: Use descriptive HTML5 tags for their intended purpose. Wrap your main blog post in `<article>`, use `<nav>` for your menu, and place supplementary information in an `<aside>`. This creates a well-defined structure that algorithms can parse with greater accuracy.
 * **Schema Markup (Structured Data)**: This is the most powerful tool for machine consumption. Schema.org provides a shared vocabulary (usually added via JSON-LD) to explicitly define your content. It's the language that powers rich, interactive results on search pages.
- 	* `FAQPage`: For interactive dropdowns in search results.
- 	* `HowTo`: For guided rich snippets with steps.
- 	* `Recipe`: For recipe carousels with ratings and cook times.
- 	* `Product`: For shopping results with price and availability.
- 	* `Article`: To specify author, date, and publisher.
- 	* `LocalBusiness`: For hours, address, and phone number in map listings.
+  * `FAQPage`: For interactive dropdowns in search results.
+  * `HowTo`: For guided rich snippets with steps.
+  * `Recipe`: For recipe carousels with ratings and cook times.
+  * `Product`: For shopping results with price and availability.
+  * `Article`: To specify author, date, and publisher.
+  * `LocalBusiness`: For hours, address, and phone number in map listings.
 * **Descriptive Alt Text for Images**: Alt text makes your content accessible and provides vital context to search engines. A good alt text is descriptive and concise.
- 	* **Bad Alt Text**: `alt="dog"`
- 	* **Good Alt Text**: `alt="a golden retriever puppy chewing on a red squeaky toy in the grass"`
+  * **Bad Alt Text**: `alt="dog"`
+  * **Good Alt Text**: `alt="a golden retriever puppy chewing on a red squeaky toy in the grass"`
 * **Open Graph & Twitter Cards**: These meta tags control how your content appears when shared on social media. By explicitly setting the title, description, and a featured image, you ensure every share creates a rich, professional-looking preview, which improves click-through rates.
 
 ## The Page vs. The Assertion
