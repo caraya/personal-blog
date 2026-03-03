@@ -254,7 +254,7 @@ const pattern = new URLPattern('/api/:endpoint');
 
 In a React application, import the polyfill at the top of the entry file (e.g., index.tsx or index.jsx) to ensure global availability.
 
-TypeScript (index.tsx)
+**TypeScript (index.tsx)**
 
 ```tsx
 import 'urlpattern-polyfill';
@@ -269,7 +269,7 @@ if (rootElement) {
 }
 ```
 
-JavaScript (index.jsx)
+**JavaScript (index.jsx)**
 
 ```js
 import 'urlpattern-polyfill';
