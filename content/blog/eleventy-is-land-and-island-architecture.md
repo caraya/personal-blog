@@ -168,7 +168,7 @@ In this implementation, we've prioritized a clean UI over a degraded one.
 Using islands directly correlates to better performance scores, specifically targeting the metrics that search engines prioritize.
 
 Total Blocking Time (TBT)
-: In traditional hydration, the main thread is "blocked" while the browser parses and executes a large bundle. By using on:idle or on:visible, we break up these tasks into smaller chunks, allowing the browser to remain responsive to user scrolls and clicks.
+: In traditional hydration, the main thread is "blocked" while the browser parses and executes a large bundle. By using `on:idle` or `on:visible`, we break up these tasks into smaller chunks, allowing the browser to remain responsive to user scrolls and clicks.
 
 Interaction to Next Paint (INP)
 : If a user tries to interact with a page while a massive script is hydrating, the browser will feel sluggish. Islands ensure that interactivity is localized. A script for a relative date won't interfere with the interactivity of a search bar at the top of the page.
@@ -178,10 +178,10 @@ Cumulative Layout Shift (CLS)
 
 ## Integration Checklist
 
-1. **Dependency**: Install the component via npm install @11ty/is-land.
-2. **Asset Management**: Ensure your Eleventy build process (like eleventy-plugin-bundle or a simple pass-through) copies the is-land.js and relative-date.js files to your _site directory.
-3. **Global Styles**: Include the :not([ready]) CSS in your main stylesheet to prevent FOUC.
-4. **Template Wrapping**: Audit your templates for non-critical JS and wrap them in &lt;is-land> tags with appropriate triggers. on:visible is usually the safest and most effective default for metadata.
+1. **Dependency**: Install the component via npm install `@11ty/is-land`.
+2. **Asset Management**: Ensure your Eleventy build process (like `eleventy-plugin-bundle` or a simple pass-through) copies the `is-land.js` and `relative-date.js` files to your `_site` directory.
+3. **Global Styles**: Include the `:not([ready])` CSS in your main stylesheet to prevent FOUC.
+4. **Template Wrapping**: Audit your templates for non-critical JS and wrap them in `<is-land>` tags with appropriate triggers. `on:visible` is usually the safest and most effective default for metadata.
 
 ## Next Steps
 
