@@ -143,7 +143,7 @@ Include this code at the start of your application entry point:
     if (typeof self !== 'undefined') return self;
     if (typeof window !== 'undefined') return window;
     if (typeof global !== 'undefined') return global;
-    return this;
+    return Function('return this')();
   };
 
   var globalObj = getGlobalObject();
@@ -155,6 +155,10 @@ Include this code at the start of your application entry point:
   }
 })();
 ```
+
+The code will first check if `globalThis` is already defined. If not, it attempts to find the global object using the legacy checks. If it successfully finds the global object, it assigns it to `globalThis`. If it cannot find the global object, it throws an error.
+
+We run the code in an immediately invoked function expression (IIFE) to avoid polluting the global scope with temporary variables.
 
 ### TypeScript configuration
 
