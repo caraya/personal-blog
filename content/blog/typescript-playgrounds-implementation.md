@@ -7,20 +7,20 @@ tags:
   - Typescript
 ---
 
-For the capstone of the series, I wanted to do something more complex than a simple counter. I chose to build a TypeScript playground component that allows one or more instances of the component to render interactive TypeScript code examples on the page. This is a common use case for documentation sites, and it demonstrates how to handle more complex client-side logic while still maintaining a static HTML preview.
+As the capstone of this series, this post demonstrates how to build a complex TypeScript playground component. This component allows one or more instances to render interactive TypeScript code examples directly on the page. This is a common use case for documentation sites, and it perfectly demonstrates how to handle complex client-side logic while maintaining a fast, static HTML preview.
 
-
-!!!note  **Series Note:** This is the capstone post for our Islands Architecture series.
+!!!note  Note:
+This is the capstone post for the Islands Architecture series.
 
 1. [Theory](/what-is-the-islands-architecture/)
-2. [Implementation Guide](/eleventy-island-guide/)
-3. [Advanced Patterns](/eleventy-is-land-and-island-architecture/)
-4. **Capstone (This Post)**
+2. [Implementation Guide](/implementation-guide/)
+3. [Advanced Patterns](/advanced-patterns/)
+4. Capstone (**this post**)
 !!!
 
-## 1 Prerequisites
+## Prerequisites
 
-Install the dependencies locally.
+Install the required dependencies locally:
 
 ```bash
 npm install shiki @11ty/is-land
@@ -28,17 +28,17 @@ npm install shiki @11ty/is-land
 npm install @codesandbox/sandpack-client @codesandbox/sandpack-themes
 ```
 
-## Configuration (Copying Files to Output)
+## Configuration (copying files to output)
 
-Because browsers cannot read files directly from your `node_modules` directory, configure Eleventy to copy these required library files to your production output folder.
+Because browsers cannot read files directly from the `node_modules` directory, configure Eleventy to copy these required library files to the production output folder.
 
-Isolate the third-party dependencies in a `/vendor/` directory at the root of your site (as a sibling to `/js/`). This establishes a clear boundary between your custom code and external code, simplifies security auditing and licensing attribution, and allows you to apply aggressive, long-term caching rules to external libraries at the directory level.
+Isolate the third-party dependencies in a `/vendor/` directory at the root of the site (as a sibling to `/js/`). This establishes a clear boundary between custom code and external code, simplifies security auditing and licensing attribution, and allows developers to apply aggressive, long-term caching rules to external libraries at the directory level.
 
-Update your eleventy.config.js to map your custom logic to /js and the third-party NPM packages to /vendor/:
+Update `eleventy.config.js` to map custom logic to `/js` and the third-party npm packages to `/vendor/`:
 
 ```js
 module.exports = function(eleventyConfig) {
-  // 1. Copy your custom client logic to the /js output directory
+  // 1. Copy custom client logic to the /js output directory
   eleventyConfig.addPassthroughCopy({ "src/client": "js" });
 
   // 2. Copy vendor libraries to a dedicated /vendor directory at the root
@@ -49,21 +49,21 @@ module.exports = function(eleventyConfig) {
   });
 
   // Note: If the browser console complains about other missing dependencies
-  // (e.g., 'mitt' or 'dequal'), you must copy those package files here too.
+  // (e.g., 'mitt' or 'dequal'), copy those package files here too.
 
-  // ... rest of your config
+  // ... rest of the config
 };
 ```
 
-## The Server-Side Component (_components/ts-playground.webc)
+## The server-side component (`_components/ts-playground.webc`)
 
-Create the server-side WebC component first. This file renders the static HTML preview, sets up the Import Map, and tells the browser where to find the client-side script.
+Create the server-side WebC component first. This file renders the static HTML preview, sets up the import map, and tells the browser where to find the client-side script.
 
-The Import Map acts as a directory, telling the browser how to resolve bare NPM package names to the /vendor/ files you configured in the previous step.
+The import map acts as a directory, telling the browser how to resolve bare npm package names to the /vendor/ files configured in the previous step.
 
-Create this file at: _components/ts-playground.webc
+Create this file at: `_components/ts-playground.webc`
 
-```html
+```js
 <script webc:type="js" webc:is="template">
   const { getHighlighter } = await import("shiki");
 
@@ -125,7 +125,6 @@ Create this file at: _components/ts-playground.webc
 </script>
 
 <style webc:scoped>
-  /* Same styling as before */
   :host {
     display: block;
     margin: 2rem 0;
@@ -207,14 +206,124 @@ Create this file at: _components/ts-playground.webc
 </style>
 ```
 
-## Client-Side Engine (src/client/sandpack-loader.js)
+## Client-side engine (`src/client/sandpack-loader`)
 
-Use standard package imports in your client engine. The Import Map (configured later) resolves these bare package names to the files you copied into the /vendor/ directory.
+Use standard package imports in the client engine. The import map (configured previously) resolves these bare package names to the files copied into the `/vendor/` directory.
 
-**Create this file at:** src/client/sandpack-loader.js
+Create this file at: `src/client/sandpack-loader.ts` (or `.js` if you prefer plain JavaScript)
+
+```ts
+// The browser resolves these imports via the Import Map
+import { loadSandpackClient, SandpackClient } from "@codesandbox/sandpack-client";
+import { solarizedLight } from "@codesandbox/sandpack-themes";
+
+export class SandpackLoader extends HTMLElement {
+  private client: SandpackClient | null;
+  private container: HTMLDivElement;
+
+  constructor() {
+    super();
+    this.client = null;
+    this.container = document.createElement("div");
+
+    this.container.style.width = "100%";
+    this.container.style.height = "100%";
+    this.container.style.minHeight = "400px";
+    this.container.style.border = "1px solid #e2e8f0";
+    this.container.style.borderRadius = "8px";
+    this.container.style.display = "block";
+  }
+
+  connectedCallback(): void {
+    this.appendChild(this.container);
+    this.initSandpack();
+  }
+
+  disconnectedCallback(): void {
+    if (this.client) {
+      this.client.destroy();
+      this.client = null;
+    }
+  }
+
+  private getSourceCode(): string {
+    const script = this.querySelector('script[type="text/plain"]');
+    if (script && script.textContent) {
+      return script.textContent.trim();
+    }
+    return '// No code provided';
+  }
+
+  // Parse comma-separated dependencies from attribute
+  private getDependencies(): Record<string, string> {
+    const depsString = this.getAttribute("dependencies");
+    if (!depsString) return {};
+
+    // Convert "pkg1,pkg2@version" string into object { "pkg1": "latest", "pkg2": "version" }
+    return depsString.split(',').reduce((acc: Record<string, string>, dep: string) => {
+      const [name, version] = dep.trim().split('@');
+      acc[name] = version || "latest";
+      return acc;
+    }, {});
+  }
+
+  private async initSandpack(): Promise<void> {
+    const code = this.getSourceCode();
+    const themeName = this.getAttribute("theme") || "solarized-light";
+    const externalDeps = this.getDependencies();
+
+    const themeMap: Record<string, any> = {
+      "solarized-light": solarizedLight,
+    };
+
+    const selectedTheme = themeMap[themeName] || solarizedLight;
+
+    this.client = await loadSandpackClient(
+      this.container,
+      {
+        files: {
+          "/index.ts": {
+            code: code,
+            active: true
+          },
+          "/index.html": {
+            code: `<!DOCTYPE html>
+<html>
+  <body>
+    <div id="app"></div>
+    <script src="index.ts"></script>
+  </body>
+</html>`,
+            hidden: true
+          },
+          // Create a package.json to declare dependencies for the playground
+          "/package.json": {
+            code: JSON.stringify({
+              dependencies: externalDeps
+            }),
+            hidden: true
+          }
+        },
+        entry: "/index.ts",
+        template: "vite",
+      },
+      {
+        theme: selectedTheme,
+        showOpenInCodeSandbox: false,
+      }
+    );
+  }
+}
+
+if (!customElements.get("sandpack-loader")) {
+  customElements.define("sandpack-loader", SandpackLoader);
+}
+```
+
+**JavaScript**
 
 ```js
-// The browser resolves these imports via the Import Map created in Step 3
+// The browser resolves these imports via the Import Map
 import { loadSandpackClient } from "@codesandbox/sandpack-client";
 import { solarizedLight } from "@codesandbox/sandpack-themes";
 
@@ -318,11 +427,11 @@ if (!customElements.get("sandpack-loader")) {
 }
 ```
 
-## Usage Example with Dependencies
+## Usage example with dependencies
 
-To explicitly request dependencies for your code example, use the dependencies attribute. Sandpack fetches them automatically inside the iframe.
+To explicitly request dependencies for the code example, use the dependencies attribute. Sandpack fetches them automatically inside the iframe.
 
-To request multiple dependencies, separate them with a comma. You can also specify exact versions using the @ symbol (for example, lodash@4.17.21). If you don't specify a version, Sandpack fetches the latest version.
+To request multiple dependencies, separate them with a comma. Specify exact versions using the @ symbol (for example, lodash@4.17.21). If no version is specified, Sandpack fetches the latest version.
 
 ```html
 <ts-playground dependencies="uuid, lodash@4.17.21">
@@ -338,20 +447,22 @@ console.log(`Reversed array: ${reversed}`);
 </ts-playground>
 ```
 
-## Server Configuration
+## Server configuration
 
-To enable **SharedArrayBuffer** (which Sandpack uses for in-browser transpilation), you must serve your site with Cross-Origin Isolation headers.
+To enable SharedArrayBuffer (which Sandpack uses for in-browser transpilation), the site must be served with cross-origin isolation headers.
 
-### **Required Headers**
+### Required headers
 
+```http
 Cross-Origin-Embedder-Policy: require-corp
 Cross-Origin-Opener-Policy: same-origin
+```http
 
-### **Configuration Examples**
+### Configuration examples
 
-#### **For Netlify (netlify.toml):**
+#### For Netlify (`netlify.toml`)
 
-Create or update your netlify.toml file in the root of your project:
+Create or update the `netlify.toml` file in the root of the project:
 
 ```toml
 [[headers]]
@@ -361,15 +472,15 @@ Create or update your netlify.toml file in the root of your project:
     Cross-Origin-Opener-Policy = "same-origin"
 ```
 
-#### **For Vercel (vercel.json):**
+#### For Vercel (`vercel.json`)
 
-Create or update your vercel.json file in the root of your project:
+Create or update the `vercel.json` file in the root of the project:
 
 ```json
 {
   "headers": [
     {
-      "source": "/(.\*)",
+      "source": "/(.*)",
       "headers": [
         { "key": "Cross-Origin-Embedder-Policy", "value": "require-corp" },
         { "key": "Cross-Origin-Opener-Policy", "value": "same-origin" }
@@ -379,9 +490,9 @@ Create or update your vercel.json file in the root of your project:
 }
 ```
 
-#### **For Local Development (Eleventy Dev Server):**
+#### For local development (Eleventy Dev Server)
 
-Update your eleventy.config.js:
+Update `eleventy.config.js` to set the required headers for the local development server:
 
 ```js
 module.exports = function(eleventyConfig) {
@@ -394,24 +505,34 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-## Test and troubleshoot Cross-Origin Isolation
+### Applying cross-origin isolation selectively
 
-Enabling Cross-Origin Isolation restricts how your site interacts with external resources. This can break third-party integrations. Test these headers systematically before deploying them to production.
+Applying COEP and COOP headers globally across an entire site can inadvertently break third-party embeds (like standard YouTube iframes or external images) on pages that do not need them.
+
+Instead of applying these headers to every route, developers can leverage Eleventy's template generation to conditionally apply them only to specific pages at build time.
+
+To learn how to generate dynamic `_headers` files based on front matter flags and implement robust local testing environments, read the comprehensive guide: [Selectively Applying Security Headers in Eleventy](/security-headers-in-netlify/).
+
+## Test and troubleshoot cross-origin isolation
+
+Enabling cross-origin isolation restricts how the site interacts with external resources. This can break third-party integrations. Test these headers systematically before deploying them to production.
 
 ### Audit common breakage points
 
-Review your site for features that COOP and COEP block by default:
+Review the site for features that COOP and COEP block by default:
 
-* **Third-party media:** Images, videos, or audio hosted on external domains that don't return a Cross-Origin-Resource-Policy: cross-origin header.
-* **External scripts and stylesheets:** Analytics trackers, ad scripts, or external font stylesheets.
-* **Iframes:** Embedded videos or widgets.
-* **OAuth popups:** Authentication flows that open in a popup window.
+* **Third-party media**: Images, videos, or audio hosted on external domains that do not return a Cross-Origin-Resource-Policy: cross-origin header.
+* **External scripts and stylesheets**: Analytics trackers, ad scripts, or external font stylesheets.
+* **Iframes**: Embedded videos or widgets.
+* **OAuth popups**: Authentication flows that open in a popup window.
 
 ### Test locally using DevTools
 
-1. Run your Eleventy site locally with the headers enabled.
-2. Open your browser's Developer Tools and navigate to the **Console** and **Network** tabs.
-3. If COEP blocks a resource, the browser console logs an error, such as net::ERR_BLOCKED_BY_RESPONSE or a warning about a missing Cross-Origin-Resource-Policy header.
+Run the Eleventy site locally with the headers enabled.
+
+Open the browser's Developer Tools and navigate to the Console and Network tabs.
+
+If COEP blocks a resource, the browser console logs an error, such as `net::ERR_BLOCKED_BY_RESPONSE`, or a warning about a missing `Cross-Origin-Resource-Policy` header.
 
 ### Use report-only headers
 
@@ -424,6 +545,6 @@ Cross-Origin-Opener-Policy-Report-Only: same-origin; report-to="default"
 
 ### Fix blocked resources
 
-* **Add the crossorigin attribute:** For tags loading external assets (&lt;script&gt;, &lt;img&gt;, etc.), add the crossorigin attribute.
-* **Update external servers:** If you control the external resource, configure the server to return the Cross-Origin-Resource-Policy: cross-origin header.
-* **Use a credentialless iframe:** For broken external iframes, add the credentialless attribute (&lt;iframe src="..." credentialless&gt;&lt;/iframe&gt;).
+* **Add the crossorigin attribute**: For tags loading external assets (`<script>`, `<img>`, etc.), add the `crossorigin` attribute.
+* **Update external servers**: If the external resource is controlled internally, configure the server to return the `Cross-Origin-Resource-Policy: cross-origin` header.
+* **Use a credentialless iframe**: For broken external iframes, add the `credentialless` attribute (`<iframe src="..." credentialless></iframe>`).
