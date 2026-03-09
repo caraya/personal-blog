@@ -1,5 +1,6 @@
 ---
 title: "Exploring Dublin Core: Metadata, Linked Data, and the Web"
+date: 2026-05-01
 tags:
   - Dublin Core
   - Metadata
