@@ -216,7 +216,9 @@ Example global headers in `netlify.toml`:
 
 Create an Eleventy template named `_headers.liquid` (or `_headers.njk`, depending on your template engine):
 
+
 ```liquid
+{% raw %}
 ---
 permalink: /_headers
 eleventyExcludeFromCollections: true
@@ -229,6 +231,7 @@ eleventyExcludeFromCollections: true
 
   {%- endif -%}
 {%- endfor -%}
+{% endraw %}
 ```
 
 And in content front matter:
