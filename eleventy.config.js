@@ -36,17 +36,25 @@ import metagen from 'eleventy-plugin-metagen';
 
 // Replace module.exports with export default
 export default function (eleventyConfig) {
-  // Copy the contents of the `public` folder to the output folder
+  // 1. Copy the contents of the `public` folder to the output folder
   eleventyConfig.addPassthroughCopy({
     "./public/": "/",
-  });
+  	// 1. Copy your custom client logic to the /js output directory
+		"src/client": "js",
 
-  eleventyConfig.addPassthroughCopy({
+		// 2. Copy vendor libraries to a dedicated /vendor directory at the root
+		// Explicitly copy the Main ESM entry points so the browser can load them
+    "node_modules/@codesandbox/sandpack-client/dist/index.mjs": "vendor/sandpack-client.js",
+    "node_modules/@codesandbox/sandpack-themes/dist/index.mjs": "vendor/sandpack-themes.js",
+		// 3. Manifest
     "./assets/manifest.json": "/manifest.json",
-    "./node_modules/lite-youtube-embed/src/lite-yt-embed.css": "/css/lite-yt-embed.css",
+    // 4. Lite YouTube Embed
+		"./node_modules/lite-youtube-embed/src/lite-yt-embed.css": "/css/lite-yt-embed.css",
     "./node_modules/lite-youtube-embed/src/lite-yt-embed.js": "/js/lite-yt-embed.js",
+		// 5. PrismJS
     "./assets/prism.css": "/css/prism.css",
     "./assets/prism.js": "/js/prism.js",
+		// 6. Site Search Web Components
     "./assets/site-search-form.js": "/js/site-search-form.js",
     "./assets/site-search-page.js": "/js/site-search-page.js",
   });
