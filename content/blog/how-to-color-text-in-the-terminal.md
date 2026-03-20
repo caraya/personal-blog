@@ -81,7 +81,8 @@ The following table compares chalk and util.styleText.
 | Color Downgrading | Converts colors if terminal support is missing. | No: Uses only standard colors, so no conversion logic is needed. |
 | Template Literals | Supports tagged templates. | No: Requires standard string interpolation. |
 | Dependencies | Yes | None |
-| Detailed limitations | When migrating from chalk to the native implementation, consider these functional differences. | No chaining API: Developers cannot chain properties to combine styles. Instead, pass an array of strings as the first argument. |
+
+### Detailed limitations
 
 When migrating from chalk to the native implementation, consider these functional differences.
 

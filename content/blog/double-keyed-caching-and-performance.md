@@ -257,8 +257,9 @@ Most modern cloud platforms allow developers to define these headers in a config
     Cache-Control = "public, max-age=31536000, immutable"
 
 # Ensure all HTML files always revalidate
+# this applies to all html files, regardless of depth
 [[headers]]
-  for = "/*.html"
+  for = "/**/*.html"
   [headers.values]
     Cache-Control = "no-cache"
 
