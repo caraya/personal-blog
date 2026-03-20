@@ -182,10 +182,3 @@ Cumulative Layout Shift (CLS)
 2. **Asset Management**: Ensure your Eleventy build process (like `eleventy-plugin-bundle` or a simple pass-through) copies the `is-land.js` and `relative-date.js` files to your `_site` directory.
 3. **Global Styles**: Include the `:not([ready])` CSS in your main stylesheet to prevent FOUC.
 4. **Template Wrapping**: Audit your templates for non-critical JS and wrap them in `<is-land>` tags with appropriate triggers. `on:visible` is usually the safest and most effective default for metadata.
-
-## Next Steps
-
-Now that you've mastered resilient components, take it to the next level by building a full development environment inside an island:
-
-*   **[Capstone: Typescript Playgrounds Implementation](/typescript-playgrounds-implementation/)**: Learn how to run a complete Node.js-like environment in the browser using Sandpack and Import Maps.
-
