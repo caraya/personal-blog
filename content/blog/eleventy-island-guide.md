@@ -65,7 +65,7 @@ Developers control when an island hydrates by applying specific attributes to th
 
 ## Implementation patterns
 
-### Pattern A: Vanilla JavaScript (the <template> approach)
+### Pattern A: Vanilla JavaScript (the `<template>` approach)
 
 To successfully delay a script's execution, developers must wrap it inside a `<template data-island>` tag. Without this wrapper, the browser executes the script immediately upon page load, defeating the core purpose of the island architecture.
 
