@@ -111,7 +111,7 @@ export default function Counter({ initialCount, label }: CounterProps) {
 
 ### The Orchestration (The "Sea")
 
-The following file renders on the server. The framework sends only the HTML to the browser, intercepting the client:* directives to determine when to load the associated JavaScript. (Note: Directives like client:load are specific to frameworks like Astro).
+The following file renders on the server. The framework sends only the HTML to the browser, intercepting the `client:*` directives to determine when to load the associated JavaScript. (Note: Directives like `client:load` are specific to frameworks like Astro).
 
 JavaScript
 
