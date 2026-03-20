@@ -133,6 +133,7 @@ To optimize performance, utilize a `for...of` loop instead of spreading the `Fon
 async function initFontCheck(): Promise<boolean> {
   try {
     const fonts = await document.fonts.ready;
+		// initialize isRecursiveLoaded to false before the loop
     let isRecursiveLoaded = false;
 
     for (const font of fonts) {
@@ -155,7 +156,7 @@ async function initFontCheck(): Promise<boolean> {
   }
 }
 
-// Calling code can now use the boolean result
+// Calling code can use the boolean result
 initFontCheck().then((isLoaded) => {
   if (isLoaded) {
     console.log('Typography ready!');

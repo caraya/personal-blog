@@ -394,10 +394,11 @@ The browser evaluates the Report-Only policy and reports violations to a specifi
 
 Here is how you configure a report-only policy in your netlify.toml:
 
+```http
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy-Report-Only = "default-src 'self'; report-uri [https://your-analytics-endpoint.com/csp-reports](https://your-analytics-endpoint.com/csp-reports)"
-
+    Content-Security-Policy-Report-Only = "default-src 'self'; report-uri https://your-analytics-endpoint.com/csp-reports"
+```
 
 Once you review the reports and confirm that no required resources trigger violations, safely change the header to Content-Security-Policy to enforce the rules.
