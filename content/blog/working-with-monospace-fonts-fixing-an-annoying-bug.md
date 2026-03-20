@@ -125,24 +125,45 @@ When relying on a custom variable font, browsers typically display a system fall
 
 The `document.fonts.ready` promise resolves when the browser finishes all font loading operations. By awaiting this promise, developers can query the internal FontFaceSet to verify if a specific custom font is available.
 
-To optimize performance, utilize iterator helpers (`fonts.values().some(...)`) instead of spreading the FontFaceSet into an array. Iterator helpers evaluate lazily. The loop short-circuits as soon as it finds a match, completely avoiding the allocation of an unnecessary intermediate array in memory. Furthermore, wrapping this logic in an Immediately Invoked Function Expression (IIFE) ensures it runs immediately without polluting the global namespace.
+The document.fonts.ready promise resolves when the browser finishes all font loading operations. By awaiting this promise, developers can query the internal FontFaceSet to verify if a specific custom font is available.
+
+To optimize performance, utilize a `for...of` loop instead of spreading the `FontFaceSet` into an array. A standard loop evaluates lazily and short-circuits (break) as soon as it finds a match, completely avoiding the allocation of an unnecessary intermediate array in memory. Defining a named function provides clear scope and readability, and stripping any unexpected quotation marks from the font family name ensures cross-browser compatibility. Finally, by returning a boolean, this function allows calling code to await the result and perform additional logic depending on whether the font successfully loaded.
 
 ```ts
-(async (): Promise<void> => {
+async function initFontCheck(): Promise<boolean> {
   try {
     const fonts = await document.fonts.ready;
-    const isRecursiveLoaded = fonts.values().some((font) => font.family === 'Recursive');
+    let isRecursiveLoaded = false;
+
+    for (const font of fonts) {
+      // Strip quotes to handle cross-browser string inconsistencies
+      const familyName = font.family.replace(/['"]/g, '');
+      if (familyName === 'Recursive') {
+        isRecursiveLoaded = true;
+        break;
+      }
+    }
 
     if (isRecursiveLoaded) {
       document.documentElement.classList.add('font-recursive-loaded');
     }
+
+    return isRecursiveLoaded;
   } catch (error) {
     console.error('Font loading failed:', error);
+    return false;
   }
-})();
+}
+
+// Calling code can now use the boolean result
+initFontCheck().then((isLoaded) => {
+  if (isLoaded) {
+    console.log('Typography ready!');
+  }
+});
 ```
 
-Once the script detects the font, it adds a .font-recursive-loaded class to the root `<html>` element. Developers can then use this class in CSS to seamlessly transition the typography, either by swapping CSS custom properties or animating the text visibility:
+Once the script detects the font, it adds a `.font-recursive-loaded` class to the root `<html>` element. Developers can then use this class in CSS to seamlessly transition the typography, either by swapping CSS custom properties or animating the text visibility:
 
 ```css
 /* Hide text initially to prevent FOUT */
