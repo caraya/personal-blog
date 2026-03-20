@@ -92,10 +92,10 @@ The Dublin Core implementation is immediately readable and requires zero special
 BIBFRAME RDF/XML markup:
 
 ```xml
-<rdf:RDF xmlns:rdf="[http://www.w3.org/1999/02/22-rdf-syntax-ns#](http://www.w3.org/1999/02/22-rdf-syntax-ns#)"
-         xmlns:bf="[http://id.loc.gov/ontologies/bibframe/](http://id.loc.gov/ontologies/bibframe/)"
-         xmlns:rdfs="[http://www.w3.org/2000/01/rdf-schema#](http://www.w3.org/2000/01/rdf-schema#)">
-  <bf:Work rdf:about="[http://example.org/work/123](http://example.org/work/123)">
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:bf="http://id.loc.gov/ontologies/bibframe/"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <bf:Work rdf:about="http://example.org/work/123">
     <bf:title>
       <bf:Title>
         <bf:mainTitle>Understanding Migration Patterns</bf:mainTitle>
@@ -104,12 +104,12 @@ BIBFRAME RDF/XML markup:
     <bf:contribution>
       <bf:Contribution>
         <bf:agent>
-          <bf:Agent rdf:about="[http://example.org/agent/jenkins](http://example.org/agent/jenkins)">
+          <bf:Agent rdf:about="http://example.org/agent/jenkins">
             <rdfs:label>Jenkins, Sarah</rdfs:label>
           </bf:Agent>
         </bf:agent>
         <bf:role>
-          <bf:Role rdf:about="[http://id.loc.gov/vocabulary/relators/aut](http://id.loc.gov/vocabulary/relators/aut)"/>
+          <bf:Role rdf:about="http://id.loc.gov/vocabulary/relators/aut"/>
         </bf:role>
       </bf:Contribution>
     </bf:contribution>
@@ -257,7 +257,7 @@ injectDublinCoreMetadata({
   title: "Understanding Migration Patterns",
   creator: "Dr. Sarah Jenkins",
   date: "2026-03-08",
-  url: "[https://example.com/migration-patterns](https://example.com/migration-patterns)"
+  url: "https://example.com/migration-patterns"
 });
 ```
 
@@ -295,7 +295,7 @@ Instead of duplicating the author's name in a hidden `<meta>` tag or a JSON-LD s
 <!-- A standard h-card microformat -->
 <div class="h-card">
   <p class="p-name">Dr. Sarah Jenkins</p>
-  <a class="u-url" href="[https://example.com](https://example.com)">Website</a>
+  <a class="u-url" href="https://example.com">Website</a>
 </div>
 ```
 
@@ -382,7 +382,7 @@ By combining them into a single JSON-LD block, you maximize your discoverability
 
 ## The Great Namespace Shift: `/terms/` vs `/elements/1.1/`
 
-When reviewing the DCMI specifications, you will notice that the original fifteen terms (like title, creator, and date) exist in both the <http://purl.org/dc/elements/1.1/> namespace and the <http://purl.org/dc/terms/> namespace.
+When reviewing the DCMI specifications, you will notice that the original fifteen terms (like title, creator, and date) exist in both the `http://purl.org/dc/elements/1.1/` namespace and the `http://purl.org/dc/terms/` namespace.
 
 To understand why this duplication exists, we have to look at the history of semantic web standards.
 
