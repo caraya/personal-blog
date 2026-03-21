@@ -199,7 +199,7 @@ class YouTubeEmbed extends HTMLElement {
           .btn { transition: background 0.2s; }
         }
       </style>
-      <img src="[https://i.ytimg.com/vi/$](https://i.ytimg.com/vi/$){this.videoId}/hqdefault.jpg" loading="lazy" alt="Video Thumbnail" />
+      <img src="https://i.ytimg.com/vi/${this.videoId}/hqdefault.jpg" loading="lazy" alt="Video Thumbnail" />
       <div class="btn"></div>
     `;
     this.addEventListener('click', this.activate, { once: true });
@@ -215,7 +215,7 @@ class YouTubeEmbed extends HTMLElement {
     const autoplay = this.hasAttribute('autoplay') ? '?autoplay=1' : '';
     this.shadowRoot!.innerHTML = `
       <style>:host{display:block;width:var(--w);height:var(--h);aspect-ratio:var(--r);background:#000}iframe{width:100%;height:100%;border:none}</style>
-      <iframe src="[https://www.youtube.com/embed/$](https://www.youtube.com/embed/$){this.videoId}${autoplay}" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/${this.videoId}${autoplay}" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
     `;
     // Focus Management
     this.shadowRoot!.querySelector('iframe')?.focus();
