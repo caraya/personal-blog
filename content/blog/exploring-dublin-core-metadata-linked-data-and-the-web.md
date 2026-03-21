@@ -200,7 +200,7 @@ function injectDublinCoreMetadata(metadata: DublinCoreMetadata): void {
 
   const jsonLd = {
     "@context": {
-      "dcterms": "[http://purl.org/dc/terms/](http://purl.org/dc/terms/)"
+      "dcterms": "http://purl.org/dc/terms/"
     },
     "@id": metadata.url,
     "dcterms:title": metadata.title,
@@ -218,7 +218,7 @@ injectDublinCoreMetadata({
   title: "Understanding Migration Patterns",
   creator: "Dr. Sarah Jenkins",
   date: "2026-03-08",
-  url: "[https://example.com/migration-patterns](https://example.com/migration-patterns)"
+  url: "https://example.com/migration-patterns"
 });
 ```
 
@@ -239,7 +239,7 @@ function injectDublinCoreMetadata(metadata) {
 
   const jsonLd = {
     "@context": {
-      "dcterms": "[http://purl.org/dc/terms/](http://purl.org/dc/terms/)"
+      "dcterms": "http://purl.org/dc/terms/"
     },
     "@id": metadata.url,
     "dcterms:title": metadata.title,
