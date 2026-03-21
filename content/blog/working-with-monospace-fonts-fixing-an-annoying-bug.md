@@ -90,13 +90,13 @@ When defining a variable font like Recursive, specify the supported axes ranges 
 }
 ```
 
-Developers could further refine the @font-face declaration by defining multiple font faces for different axis combinations, but the above declaration is sufficient to demonstrate the core principles of a robust variable font stack.
+Developers could further refine the @font-face declaration by defining multiple font faces for different axis combinations, but in most cases, it's overkill since we can define the axes we want to modify using the `font-variation-settings` property.
 
 #### Applying the styles to elements
 
-When styling the specific code elements, use the `--font-family-mono` variable, set the desired font variation settings, and explicitly declare font-size: 1em;.
+When styling the specific code elements, use the `--font-family-mono` variable, set the desired font variation settings, and explicitly declare `font-size: 1em`.
 
-Using 1em ensures the code block scales proportionally with its parent container. If that code block sits inside an `<h2>` that is scaled to 2rem (32px), 1em guarantees the code block matches the heading size instead of reverting to the root 16px.
+Using `1em` ensures the code block scales proportionally with its parent container. If that code block sits inside an `<h2>` that is scaled to 2rem (32px), `1em` guarantees the code block matches the heading size instead of reverting to the root 16px.
 
 ```css
 pre,
