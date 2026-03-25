@@ -6,7 +6,6 @@ tags:
   - Webassembly
   - Pyodide
 mermaid: true
-draft: true
 ---
 
 Python has always been the lingua franca of data science. Its rich ecosystem of libraries: [NumPy](https://numpy.org/) for numerical computing, [Pandas](https://pandas.pydata.org/) for data manipulation, [Matplotlib](https://matplotlib.org/) for visualization, and [Scikit-learn](https://scikit-learn.org/) for machine learning—has made it the go-to language for analysts and researchers worldwide. Traditionally, these libraries run on a server or local machine, with users interacting through [Jupyter notebooks](https://jupyter.org/) or command-line interfaces.
@@ -133,72 +132,229 @@ npm install pyodide
 This background script initializes the environment, handles incoming analysis requests, and translates plots to images.
 
 ```ts
-import { loadPyodide, type PyodideInterface } from "pyodide";
+// Pyodide worker that loads the runtime from CDN and reports lifecycle events.
+// Designed to avoid Vite pre-bundling and to make failures observable.
 
-let pyodide: PyodideInterface | null = null;
-
-// Initialize Pyodide and load necessary packages
-async function startPyodide() {
-  self.postMessage({ status: 'loading', message: 'Downloading runtime...' });
-
-  pyodide = await loadPyodide({
-    indexURL: "[https://cdn.jsdelivr.net/pyodide/v0.25.0/full/](https://cdn.jsdelivr.net/pyodide/v0.25.0/full/)"
-  });
-
-  self.postMessage({ status: 'loading', message: 'Loading data science stack...' });
-
-  // Load the standard data science stack
-  await pyodide.loadPackage(["numpy", "pandas", "matplotlib"]);
-
-  // Set up a Python helper function to handle plotting
-  await pyodide.runPythonAsync(`
-    import matplotlib
-    matplotlib.use("Agg") # Use non-interactive backend to prevent GUI errors
-    import matplotlib.pyplot as plt
-    import base64
-    from io import BytesIO
-
-    def get_plot_base64():
-        buf = BytesIO()
-        plt.savefig(buf, format='png', bbox_inches='tight')
-        buf.seek(0)
-        img_str = base64.b64encode(buf.read()).decode('utf-8')
-        plt.clf()
-        plt.close()
-        return img_str
-  `);
-
-  self.postMessage({ status: 'ready' });
+interface PyodideModule {
+  loadPyodide?: (config: { indexURL: string }) => Promise<PyodideInterface>;
+  default?: {
+    loadPyodide?: (config: { indexURL: string }) => Promise<PyodideInterface>;
+  };
 }
 
-self.onmessage = async (event: MessageEvent) => {
-  const { pythonCode, data } = event.data;
+interface PyodideInterface {
+  loadPackage: (packages: string[]) => Promise<void>;
+  runPythonAsync: (code: string) => Promise<unknown>;
+  toPy?: (obj: unknown) => unknown;
+  globals: {
+    set: (key: string, value: unknown) => void;
+    get: (key: string) => unknown;
+  };
+  mountNativeFS: (mountPoint: string, dirHandle: unknown) => Promise<void>;
+  FS: {
+    mkdirTree: (path: string) => void;
+  };
+}
 
-  if (!pyodide) {
-    await startPyodide();
+type WorkerMessage =
+  | { type: 'INIT'; indexURL?: string; packages?: string[] }
+  | { type: 'MOUNT_OPFS'; handle: unknown }
+  | { type: 'SAVE_CSV'; filename: string; b64: string }
+  | { type: 'RUN'; pythonCode: string; inputData?: unknown }
+  | { type: 'PING' }
+
+const PYODIDE_CDN = 'https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.mjs';
+
+let pyodideInstance: PyodideInterface | null = null;
+let packagesLoaded = false;
+
+async function importPyodideModule(): Promise<PyodideModule> {
+  try {
+    self.postMessage({ type: 'lifecycle', stage: 'import-start', url: PYODIDE_CDN });
+    const mod = await import(/* @vite-ignore */ PYODIDE_CDN);
+    self.postMessage({ type: 'lifecycle', stage: 'import-complete' });
+    return mod as PyodideModule;
+  } catch (err) {
+    self.postMessage({ type: 'lifecycle', stage: 'import-failed', error: String(err) });
+    try {
+      self.postMessage({ type: 'lifecycle', stage: 'import-fallback-start' });
+      const resp = await fetch(PYODIDE_CDN, { mode: 'cors' });
+      if (!resp.ok) throw new Error(`fetch failed ${resp.status}`);
+      const text = await resp.text();
+      const blob = new Blob([text], { type: 'application/javascript' });
+      const url = URL.createObjectURL(blob);
+      try {
+        const mod = await import(/* @vite-ignore */ url);
+        self.postMessage({ type: 'lifecycle', stage: 'import-fallback-complete' });
+        return mod as PyodideModule;
+      } finally {
+        URL.revokeObjectURL(url);
+      }
+    } catch (e2) {
+      self.postMessage({ type: 'ERROR', error: 'All import attempts failed: ' + String(e2) });
+      throw e2;
+    }
+  }
+}
+
+async function initPyodide(indexURL = 'https://cdn.jsdelivr.net/pyodide/v0.25.0/full/') {
+  if (pyodideInstance) return pyodideInstance;
+  self.postMessage({ type: 'status', status: 'loading', message: 'Initializing Pyodide module' });
+  const mod = await importPyodideModule();
+  const loadFn = mod?.loadPyodide ?? mod?.default?.loadPyodide;
+  if (!loadFn) {
+    const msg = 'loadPyodide function not found on module';
+    self.postMessage({ type: 'ERROR', error: msg });
+    throw new Error(msg);
   }
 
+  self.postMessage({ type: 'lifecycle', stage: 'loadpyodide-start' });
+  pyodideInstance = await loadFn({ indexURL });
+  self.postMessage({ type: 'lifecycle', stage: 'loadpyodide-complete' });
+  self.postMessage({ type: 'status', status: 'ready' });
+  return pyodideInstance;
+}
+
+async function ensurePackages(pkgs: string[] = ['numpy', 'pandas', 'matplotlib']) {
+  const py = await initPyodide();
+  if (packagesLoaded) return;
+  for (const p of pkgs) {
+    try {
+      self.postMessage({ type: 'lifecycle', stage: 'load-package-start', package: p });
+      await py.loadPackage([p]);
+      self.postMessage({ type: 'lifecycle', stage: 'load-package-complete', package: p });
+    } catch (e) {
+      self.postMessage({ type: 'ERROR', error: `Failed to load package ${p}: ${String(e)}` });
+      throw e;
+    }
+  }
+  packagesLoaded = true;
   try {
-    // Inject data into the Python global scope
-    if (data) {
-      const pyData = pyodide!.toPy(data);
-      pyodide!.globals.set("input_data", pyData);
+    await py.runPythonAsync(`
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+import base64
+from io import BytesIO
+
+def get_plot_base64():
+    buf = BytesIO()
+    plt.savefig(buf, format='png', bbox_inches='tight')
+    buf.seek(0)
+    img = base64.b64encode(buf.read()).decode('utf-8')
+    plt.clf()
+    plt.close()
+    return img
+    `);
+  } catch (e) {
+    self.postMessage({ type: 'lifecycle', stage: 'plot-helper-failed', error: String(e) });
+  }
+}
+
+async function mountOPFS(handle: unknown) {
+  const py = await initPyodide();
+  try {
+    self.postMessage({ type: 'lifecycle', stage: 'mount-opfs-start' });
+    if (typeof py.mountNativeFS === 'function') {
+      try { py.FS.mkdirTree('/mnt/opfs'); } catch { /* ignore */ }
+      await py.mountNativeFS('/mnt/opfs', handle);
+      self.postMessage({ type: 'lifecycle', stage: 'mount-opfs-complete' });
+      self.postMessage({ type: 'opfs', status: 'mounted' });
+    } else {
+      self.postMessage({ type: 'opfs', status: 'unsupported' });
+    }
+  } catch (e) {
+    self.postMessage({ type: 'opfs', status: 'error', error: String(e) });
+    self.postMessage({ type: 'ERROR', error: 'OPFS mount failed: ' + String(e) });
+  }
+}
+
+self.onmessage = async (ev: MessageEvent) => {
+  const msg = ev.data as WorkerMessage & Record<string, unknown>;
+  try {
+    if (msg.type === 'SAVE_CSV') {
+      try {
+        const py = await initPyodide();
+        try { py.FS.mkdirTree('/mnt/opfs'); } catch { /* ignore */ }
+        py.globals.set('___b64_csv', msg.b64);
+        const target = `/mnt/opfs/${msg.filename}`;
+        const pyCode = `import base64\nopen('${target}','wb').write(base64.b64decode(___b64_csv))`;
+        await py.runPythonAsync(pyCode);
+        self.postMessage({ type: 'SAVED', filename: msg.filename, path: target });
+      } catch (e) {
+        self.postMessage({ type: 'ERROR', error: 'SAVE_FAILED: ' + String(e) });
+      }
+      return;
     }
 
-    // Run the analysis script
-    await pyodide!.runPythonAsync(pythonCode);
+    if (msg.type === 'PING') {
+      self.postMessage({ type: 'PONG' });
+      return;
+    }
 
-    // Extract results
-    const results = pyodide!.globals.get("result")?.toJs();
-    const plotImage = pyodide!.globals.get("get_plot_base64")();
+    if (msg.type === 'INIT') {
+      await initPyodide(msg.indexURL);
+      if (msg.packages) await ensurePackages(msg.packages);
+      return;
+    }
 
-    // Send output back to the Main Thread
-    self.postMessage({ status: 'complete', results, plotImage });
+    if (msg.type === 'MOUNT_OPFS') {
+      await mountOPFS(msg.handle);
+      return;
+    }
 
-  } catch (error) {
-    self.postMessage({ status: 'error', error: (error as Error).message });
+    if (msg.type === 'RUN') {
+      try {
+        const py = await initPyodide();
+        await ensurePackages();
+
+        if (msg.inputData !== undefined) {
+          try {
+            const pyData = py.toPy ? py.toPy(msg.inputData) : msg.inputData;
+            py.globals.set('input_data', pyData);
+          } catch (e) {
+            self.postMessage({ type: 'lifecycle', stage: 'data-inject-failed', error: String(e) });
+          }
+        }
+
+        self.postMessage({ type: 'lifecycle', stage: 'execution-start' });
+        await py.runPythonAsync(msg.pythonCode);
+        self.postMessage({ type: 'lifecycle', stage: 'execution-complete' });
+
+        let results = null;
+        try {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const r = py.globals.get('result') as any;
+          if (r && typeof r.toJs === 'function') {
+            results = r.toJs({ dict_converter: Object.fromEntries });
+          } else {
+            results = r;
+          }
+        } catch {
+          // ignore
+        }
+
+        let plotBase64 = null;
+        try {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const f = py.globals.get('get_plot_base64') as any;
+          if (f && typeof f === 'function') {
+            plotBase64 = f();
+          }
+        } catch {
+          // ignore
+        }
+
+        self.postMessage({ type: 'RESULT', results, plotBase64 });
+      } catch (e) {
+        self.postMessage({ type: 'ERROR', error: String(e) });
+      }
+    }
+  } catch (err) {
+    self.postMessage({ type: 'ERROR', error: 'Worker error: ' + String(err) });
   }
 };
+
 ```
 
 ### Step 3: The Main Application (`App.tsx`)
@@ -206,110 +362,227 @@ self.onmessage = async (event: MessageEvent) => {
 The React component manages the worker lifecycle. It handles the asynchronous nature of the worker and provides feedback during the initial load phase.
 
 ```tsx
-import React, { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react'
+import './App.css'
+import requestAndSendOPFS from './opfs'
 
-const worker = new Worker(new URL('./pyodide.worker.ts', import.meta.url));
-
-export default function DataAnalysisApp() {
-  const [status, setStatus] = useState("Initializing...");
-  const [output, setOutput] = useState<string | null>(null);
-  const [plot, setPlot] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
+function App() {
+  const [status, setStatus] = useState('idle')
+  const [output, setOutput] = useState<string | null>(null)
+  const [plotSrc, setPlotSrc] = useState<string | null>(null)
+  const workerRef = useRef<Worker | null>(null)
+  const [csvName, setCsvName] = useState<string | null>(null)
+  const [csvText, setCsvText] = useState<string | null>(null)
+  const [opfsMounted, setOpfsMounted] = useState(false)
+  const [isMounting, setIsMounting] = useState(false)
+  const [isSaving, setIsSaving] = useState(false)
+  const [lifecycleLog, setLifecycleLog] = useState<string[]>([])
 
   useEffect(() => {
-    worker.onmessage = (event: MessageEvent) => {
-      const { status, message, results, plotImage, error } = event.data;
+    const w = new Worker(new URL('./pyodide.worker.ts', import.meta.url), { type: 'module' })
+    workerRef.current = w
 
-      if (status === 'loading') {
-        setStatus(message);
-      } else if (status === 'ready') {
-        setStatus("Ready");
-      } else if (status === 'error') {
-        setStatus(`Error: ${error}`);
-        setIsLoading(false);
-      } else if (status === 'complete') {
-        setIsLoading(false);
-        if (results) setOutput(JSON.stringify(results, null, 2));
-        if (plotImage) setPlot(`data:image/png;base64,${plotImage}`);
+    w.onmessage = (ev: MessageEvent) => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const msg = ev.data as any
+      if (msg.type === 'status') {
+        setStatus(msg.status ?? msg.message ?? 'status')
+      } else if (msg.type === 'opfs') {
+        if (msg.status === 'mounted') {
+          setOpfsMounted(true)
+          setStatus('OPFS mounted')
+        } else if (msg.status === 'unsupported') {
+          setStatus('OPFS unsupported')
+        } else {
+          setStatus('OPFS error: ' + (msg.error ?? String(msg)))
+        }
+      } else if (msg.type === 'lifecycle') {
+        const stage = String(msg.stage)
+        setStatus(stage)
+        setLifecycleLog((l) => [stage, ...l].slice(0, 20))
+        if (stage === 'mount-opfs-start') setIsMounting(true)
+        if (stage === 'mount-opfs-complete') setIsMounting(false)
+      } else if (msg.type === 'RESULT') {
+        setStatus('complete')
+        setOutput(msg.results ? JSON.stringify(msg.results, null, 2) : 'No results')
+        if (msg.plotBase64) setPlotSrc(`data:image/png;base64,${msg.plotBase64}`)
+      } else if (msg.type === 'ERROR') {
+        setStatus('error: ' + (msg.error ?? String(msg)))
+      } else if (msg.type === 'PONG') {
+        setStatus('worker:pong')
+      } else if (msg.type === 'SAVED') {
+        // after saving to OPFS, trigger analysis reading from the saved path
+        const path = msg.path as string
+        const runScript = `
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# read from OPFS path
+df = pd.read_csv('${path}')
+summary = df.describe(include='all').fillna('')
+result = {'columns': df.columns.tolist(), 'summary': summary.to_dict()}
+
+plt.figure(figsize=(4,2))
+if 'value' in df:
+    plt.plot(df['value'], marker='o')
+plt.title('CSV Analysis (from OPFS)')
+plt.grid(True, alpha=0.3)
+`
+        setStatus('running-from-opfs')
+        setIsSaving(false)
+        workerRef.current?.postMessage({ type: 'RUN', pythonCode: runScript })
       }
-    };
+    }
 
-    return () => worker.terminate();
-  }, []);
+    w.onerror = (e) => {
+      console.error('worker error', e)
+      setStatus('worker-error')
+    }
 
-  const runAnalysis = () => {
-    setIsLoading(true);
-    setPlot(null);
+    // initialize worker (lazy loading inside worker)
+    w.postMessage({ type: 'INIT' })
+
+    return () => {
+      w.terminate()
+      workerRef.current = null
+    }
+  }, [])
+
+  const mountOPFS = async () => {
+    const w = workerRef.current
+    if (!w) return setStatus('no-worker')
+    try {
+      await requestAndSendOPFS(w)
+      setStatus('mounting-opfs')
+    } catch (e: unknown) {
+      setStatus('opfs-error: ' + (e instanceof Error ? e.message : String(e)))
+    }
+  }
+
+  const runDemo = () => {
+    const w = workerRef.current
+    if (!w) return setStatus('no-worker')
+    setStatus('running')
+    setOutput(null)
+    setPlotSrc(null)
 
     const script = `
-      import pandas as pd
-      import matplotlib.pyplot as plt
+import pandas as pd
+import matplotlib.pyplot as plt
 
-      # 'input_data' injects from JavaScript
-      df = pd.DataFrame(input_data)
+df = pd.DataFrame(input_data)
+summary = df.describe(include='all')
+result = summary.to_dict()
 
-      # Perform analysis
-      summary = df.describe()
-      result = summary.to_dict()
+plt.figure(figsize=(4,2))
+if 'value' in df:
+    plt.plot(df['value'], marker='o')
+plt.title('Demo')
+plt.grid(True, alpha=0.3)
+`;
 
-      # Generate plot
-      plt.figure(figsize=(5, 3))
-      plt.plot(df['value'], label='Trend', color='purple')
-      plt.title('Data Trend Analysis')
-      plt.grid(True, alpha=0.3)
-      plt.legend()
-    `;
+    const dummy = { id: [1,2,3,4,5], value: [10,25,15,30,45] }
+    w.postMessage({ type: 'RUN', pythonCode: script, inputData: dummy })
+  }
 
-    const dummyData = {
-      id: [1, 2, 3, 4, 5],
-      value: [10, 25, 15, 30, 45],
-      category: ['A', 'B', 'A', 'B', 'C']
-    };
+  const handleFile = async (ev: React.ChangeEvent<HTMLInputElement>) => {
+    const file = ev.target.files?.[0]
+    if (!file) return
+    const text = await file.text()
+    setCsvName(file.name)
+    setCsvText(text)
+    setStatus('file-loaded')
+    // Auto-mount OPFS when a file is uploaded (if available)
+    const w = workerRef.current
+    if (!w) return
+    if (!opfsMounted) {
+      try {
+        await requestAndSendOPFS(w)
+        setStatus('requesting-opfs')
+      } catch (e: unknown) {
+        setStatus('opfs-request-failed: ' + (e instanceof Error ? e.message : String(e)))
+      }
+    }
+  }
 
-    worker.postMessage({
-      pythonCode: script,
-      data: dummyData
-    });
-  };
+  const runCsv = () => {
+    const w = workerRef.current
+    if (!w) return setStatus('no-worker')
+    if (!csvText) return setStatus('no-file')
+    setStatus('running-csv')
+    setOutput(null)
+    setPlotSrc(null)
+
+    // save CSV to OPFS first, then worker will emit SAVED and trigger analysis
+    const name = csvName ?? 'upload.csv'
+    const b64 = btoa(unescape(encodeURIComponent(csvText)))
+    setIsSaving(true)
+    w.postMessage({ type: 'SAVE_CSV', filename: name, b64 })
+  }
+
+  const ping = () => {
+    workerRef.current?.postMessage({ type: 'PING' })
+    setStatus('ping-sent')
+  }
 
   return (
-    <div className="p-6 max-w-4xl mx-auto">
-      <h1 className="text-2xl font-bold mb-4">Pyodide Data Science Dashboard</h1>
-      <div className="mb-4 flex items-center gap-4">
-        <span className={`px-3 py-1 rounded-full text-sm ${
-          status === 'Ready' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'
-        }`}>
-          System: {status}
-        </span>
-        <button
-          onClick={runAnalysis}
-          disabled={status !== 'Ready' || isLoading}
-          className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 disabled:opacity-50 transition-colors"
-        >
-          {isLoading ? 'Processing...' : 'Run Pandas Analysis'}
-        </button>
+    <div style={{ padding: 20, maxWidth: 900, margin: '0 auto' }}>
+      <h1>Pyodide Worker Demo</h1>
+      <div style={{ display: 'flex', gap: 12, marginBottom: 12 }}>
+        <button onClick={mountOPFS}>Mount OPFS</button>
+        <button onClick={runDemo}>Run Demo</button>
+        <button onClick={ping}>Ping</button>
       </div>
-      <div className="flex gap-6 mt-6">
-        <div className="w-1/2">
-          <h3 className="font-semibold mb-2">Analysis Results</h3>
-          <pre className="bg-gray-900 text-gray-100 p-4 rounded text-xs h-80 overflow-auto font-mono">
-            {output || "No results generated yet."}
-          </pre>
-        </div>
-        <div className="w-1/2">
-          <h3 className="font-semibold mb-2">Visualization</h3>
-          {plot ? (
-            <img src={plot} alt="Matplotlib Plot" className="border rounded shadow-sm w-full bg-white" />
-          ) : (
-            <div className="h-80 bg-gray-50 border-2 border-dashed border-gray-200 rounded flex items-center justify-center text-gray-400">
-              Plot will appear here
+
+      <div style={{ display: 'flex', gap: 12, marginBottom: 12, alignItems: 'center' }}>
+        <input type="file" accept="text/csv" onChange={handleFile} />
+        <button onClick={runCsv} disabled={!csvText}>Run CSV</button>
+        <div style={{ fontSize: 12, color: '#666' }}>{csvName ?? 'No file'}</div>
+      </div>
+
+      <div style={{ marginBottom: 12 }}>
+        <strong>Status:</strong> {status}
+      </div>
+
+      <div style={{ marginBottom: 12 }}>
+        {(isMounting || isSaving) && (
+          <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+            <span>⏳</span>
+            <span>{isMounting ? 'Mounting OPFS...' : isSaving ? 'Saving CSV to OPFS...' : ''}</span>
+          </div>
+        )}
+        {lifecycleLog.length > 0 && (
+          <div style={{ marginTop: 8, fontSize: 12, color: '#666' }}>
+            <strong>Recent events:</strong>
+            <div style={{ maxHeight: 120, overflow: 'auto' }}>
+              {lifecycleLog.map((ev, i) => (
+                <div key={i}>{ev}</div>
+              ))}
             </div>
+          </div>
+        )}
+      </div>
+
+      <div style={{ display: 'flex', gap: 16 }}>
+        <div style={{ flex: 1 }}>
+          <h3>Results</h3>
+          <pre style={{ background: '#0b1220', color: '#e6eef8', padding: 12, height: 300, overflow: 'auto' }}>{output ?? 'No results yet'}</pre>
+        </div>
+        <div style={{ width: 360 }}>
+          <h3>Plot</h3>
+          {plotSrc ? (
+            <img src={plotSrc} alt="plot" style={{ width: '100%', border: '1px solid #ddd' }} />
+          ) : (
+            <div style={{ height: 300, border: '1px dashed #ccc', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>No plot</div>
           )}
         </div>
       </div>
     </div>
-  );
+  )
 }
+
+export default App
+
 ```
 
 ## Advanced Features and Optimization
@@ -327,7 +600,6 @@ This API lets users grant your app access to a specific local directory. It work
 * **Capability**: Read and write access to a physical folder on the user's disk.
 * **Permissions**: Requires an explicit user gesture (button click) and permission prompt.
 * **Pyodide Support**: Mounts natively via `pyodide.mountNativeFS`.
-
 
 ```tsx
 // In your React Component (Main Thread)
