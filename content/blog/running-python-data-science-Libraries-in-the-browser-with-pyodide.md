@@ -361,6 +361,7 @@ self.onmessage = async (ev: MessageEvent) => {
 
 The React component manages the worker lifecycle. It handles the asynchronous nature of the worker and provides feedback during the initial load phase.
 
+{% raw %}
 ```tsx
 import { useEffect, useRef, useState } from 'react'
 import './App.css'
@@ -582,8 +583,8 @@ plt.grid(True, alpha=0.3)
 }
 
 export default App
-
 ```
+{% endraw %}
 
 ## Advanced Features and Optimization
 
