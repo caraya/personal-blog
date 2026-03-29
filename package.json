@@ -73,6 +73,7 @@
     "shiki": "^4.0.2"
   },
   "devDependencies": {
+    "@netlify/functions": "^5.1.5",
     "@playwright/test": "^1.56.0",
     "@types/node": "^24.7.0",
     "typescript": "^5.9.3"
