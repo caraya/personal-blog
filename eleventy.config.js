@@ -47,6 +47,7 @@ export default function (eleventyConfig) {
     "./node_modules/lite-youtube-embed/src/lite-yt-embed.js": "/js/lite-yt-embed.js",
     "./assets/prism.css": "/css/prism.css",
     "./assets/prism.js": "/js/prism.js",
+		"./assets/lit-v331-core.min.js": "/vendor/lit-v331-core.min.js",
     "./assets/site-search-form.js": "/js/site-search-form.js",
     "./assets/site-search-page.js": "/js/site-search-page.js",
   });

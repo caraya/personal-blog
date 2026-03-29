@@ -61,27 +61,6 @@ Vite uses Rollup under the hood for production builds. To split `node_modules` a
 
 This function examines the file path (id) of each module. If the module originates from `node_modules`, the function extracts the package name and returns it. Rollup then groups all files from that specific npm package into its own chunk, preventing a single massive vendor file.
 
-**JavaScript (vite.config.js)**
-
-```js
-import { defineConfig } from 'vite';
-
-export default defineConfig({
-  build: {
-    chunkSizeWarningLimit: 600,
-    rollupOptions: {
-      output: {
-        manualChunks(id) {
-          if (id.includes('node_modules')) {
-            return id.toString().split('node_modules/')[1].split('/')[0].toString();
-          }
-        },
-      },
-    },
-  },
-});
-```
-
 **TypeScript (vite.config.ts)**
 
 ```ts
@@ -108,32 +87,6 @@ export default defineConfig({
 Webpack handles vendoring through its `optimization.splitChunks` API. To process everything from `node_modules` while strictly respecting a maximum file size, use the `maxSize` property.
 
 When you set `maxSize` (defined in bytes), Webpack attempts to split the vendors chunk into smaller parts if it exceeds the specified limit. This ensures that no single vendor chunk becomes too large to parse efficiently.
-
-**JavaScript (webpack.config.js)**
-
-```js
-const path = require('node:path');
-
-module.exports = {
-  entry: './src/index.js',
-  output: {
-    filename: '[name].[contenthash].js',
-    path: path.resolve(__dirname, 'dist'),
-  },
-  optimization: {
-    splitChunks: {
-      maxSize: 250000,
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
-          chunks: 'all',
-        },
-      },
-    },
-  },
-};
-```
 
 **TypeScript (webpack.config.ts)**
 
@@ -174,35 +127,6 @@ To mitigate this, group smaller, related packages into logical chunks.
 
 In Vite, enhance the `manualChunks` function to categorize dependencies. Instead of returning the raw package name for every file, check if the package belongs to a specific category (like UI components or utilities) and return a shared chunk name. This bundles related libraries together while grouping the remaining tiny dependencies into a catch-all vendor chunk.
 
-**JavaScript (vite.config.js)**
-
-```js
-import { defineConfig } from 'vite';
-
-export default defineConfig({
-  build: {
-    rollupOptions: {
-      output: {
-        manualChunks(id) {
-          if (id.includes('node_modules')) {
-            // Group React core and ecosystem packages together
-            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router')) {
-              return 'vendor-react';
-            }
-            // Group utility libraries
-            if (id.includes('lodash') || id.includes('date-fns')) {
-              return 'vendor-utils';
-            }
-            // Catch-all for remaining dependencies
-            return 'vendor';
-          }
-        },
-      },
-    },
-  },
-});
-```
-
 **TypeScript (vite.config.ts)**
 
 ```ts
@@ -234,47 +158,6 @@ export default defineConfig({
 Webpack natively prevents overly small chunks using the `minSize` property (which defaults to 20,000 bytes). If a chunk would be smaller than this limit, Webpack merges it back into the main bundle to preserve compression efficiency.
 
 You can combine `minSize` with targeted `cacheGroups` using the `priority` field. This extracts specific heavyweight libraries into their own chunks while letting smaller libraries fall back into a unified vendor chunk.
-
-**JavaScript (webpack.config.js)**
-
-```js
-const path = require('node:path');
-
-module.exports = {
-  entry: './src/index.js',
-  output: {
-    filename: '[name].[contenthash].js',
-    path: path.resolve(__dirname, 'dist'),
-  },
-  optimization: {
-    splitChunks: {
-      // Prevent chunks smaller than ~20 KB
-      minSize: 20000,
-      maxSize: 250000,
-      cacheGroups: {
-        reactVendor: {
-          test: /[\\/]node_modules[\\/](react|react-dom|react-router)[\\/]/,
-          name: 'vendor-react',
-          chunks: 'all',
-          priority: 20, // Higher priority targets evaluate first
-        },
-        utilityVendor: {
-          test: /[\\/]node_modules[\\/](lodash|date-fns)[\\/]/,
-          name: 'vendor-utils',
-          chunks: 'all',
-          priority: 10,
-        },
-        defaultVendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendor',
-          chunks: 'all',
-          priority: -10, // Catch-all for remaining dependencies
-        },
-      },
-    },
-  },
-};
-```
 
 **TypeScript (webpack.config.ts)**
 
@@ -319,8 +202,50 @@ const config: webpack.Configuration = {
 export default config;
 ```
 
+## Configuring Cache Headers
+
+While modern bundlers split and hash files efficiently, the web server (or CDN) must serve these files with the correct HTTP cache headers to realize any performance gains. Use the Cache-Control header to instruct the browser on how long to store each file type.
+
+### Vendor Chunks
+
+Vendor chunks contain stable, third-party code that rarely changes. Because bundlers append a unique content hash to the filename (for example, vendor-react.8f3a2b1c.js), you can cache these files aggressively.
+
+Set the Cache-Control header to a long duration, typically one year, and mark the file as immutable. This tells the browser to never re-validate the file as long as it exists in the local cache.
+
+```http
+Cache-Control: public, max-age=31536000, immutable
+```
+
+### Hashed Content
+
+Application code chunks (like app.9e4b1a2d.js) and imported assets (like hashed images or fonts) follow the exact same caching strategy as vendor chunks. Because the filename guarantees the content is unique, any modification generates a new file. Therefore, cache these files indefinitely.
+
+```http
+Cache-Control: public, max-age=31536000, immutable
+```
+
+### Unhashed Content
+
+Some static assets must maintain a consistent URL without a hash. Examples include favicon.ico, robots.txt, manifest.json, or social sharing images. Because the URL does not change when the content updates, a long cache duration prevents users from receiving the updated asset.
+
+For unhashed content, use a shorter max-age (such as one day) combined with the stale-while-revalidate directive. This allows the browser to serve the stale asset immediately while fetching the fresh version in the background.
+
+```http
+Cache-Control: public, max-age=86400, stale-while-revalidate=86400
+```
+
+### HTML Content
+
+The primary HTML document (index.html) acts as the entry point for the entire application. It contains the references to the specific, hashed JavaScript and CSS files. If the browser caches the HTML file, users will load an outdated version of the application and never discover the newly hashed vendor or app chunks.
+
+Never cache the HTML entry point aggressively. Instead, force the browser to validate the document with the server on every single visit using the no-cache directive. (Note: no-cache means "check with the server before using the cached copy," whereas no-store means "do not cache at all.")
+
+```http
+Cache-Control: no-cache
+```
+
 ## Conclusion
 
 Code splitting and vendoring remain critical strategies for optimizing web performance, even as network protocols have evolved. While HTTP/2 multiplexing eliminated the need to aggressively concatenate files to reduce network requests, bundling is still necessary to maximize compression efficiency and minimize browser parsing overhead.
 
-By moving away from monolithic vendor bundles and adopting granular chunking strategies with tools like Vite and Webpack, you can strike the perfect balance. This modern approach ensures that your application leverages optimal cache invalidation, fast module resolution, and efficient network delivery, ultimately providing a faster, smoother experience for your users.
+By moving away from monolithic vendor bundles and adopting granular chunking strategies with tools like Vite and Webpack, you can strike the perfect balance. Coupling this strategy with strict cache headers ensures that your application leverages optimal cache invalidation, fast module resolution, and efficient network delivery, ultimately providing a faster, smoother experience for your users.

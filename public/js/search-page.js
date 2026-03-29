@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit';
+import { LitElement, html, css } from '/vendor/lit-v331-core.min.js';
 export class SearchPage extends LitElement {
     static { this.styles = css `
     :host {
