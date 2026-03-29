@@ -204,21 +204,23 @@ export default config;
 
 ## Configuring Cache Headers
 
-While modern bundlers split and hash files efficiently, the web server (or CDN) must serve these files with the correct HTTP cache headers to realize any performance gains. Use the Cache-Control header to instruct the browser on how long to store each file type.
+While modern bundlers split and hash files efficiently, the web server (or Content Delivery Network) must serve these files with the correct HTTP cache headers to realize any performance gains. Use the Cache-Control header to instruct the browser and intermediate proxies on how long to store each file type.
 
-### Vendor Chunks
+### Vendor Chunks and Hashed Content
 
-Vendor chunks contain stable, third-party code that rarely changes. Because bundlers append a unique content hash to the filename (for example, vendor-react.8f3a2b1c.js), you can cache these files aggressively.
+Vendor chunks contain stable, third-party code that rarely changes. Application code chunks (like app.9e4b1a2d.js) and imported assets (like hashed images or fonts) follow the exact same caching strategy.
 
-Set the Cache-Control header to a long duration, typically one year, and mark the file as immutable. This tells the browser to never re-validate the file as long as it exists in the local cache.
+Because bundlers append a unique content hash to the filename (for example, `vendor-react.8f3a2b1c.js`), you can cache these files aggressively. Set the Cache-Control header to a long duration, typically one year, and mark the file as immutable. This tells the browser to never re-validate the file as long as it exists in the local cache.
 
 ```http
 Cache-Control: public, max-age=31536000, immutable
 ```
 
-### Hashed Content
+### Manually Versioned Files
 
-Application code chunks (like app.9e4b1a2d.js) and imported assets (like hashed images or fonts) follow the exact same caching strategy as vendor chunks. Because the filename guarantees the content is unique, any modification generates a new file. Therefore, cache these files indefinitely.
+If you include vendor files outside of a bundler's build process, they lack automatic content hashes. However, if you manually append a version number to the filename (for example, `lit-core-v3.2.0.min.js`), you can treat these files exactly like hashed content.
+
+Because the filename changes whenever you update the library and increment the version number, the browser considers it an entirely new file. Therefore, you can safely apply the same aggressive, immutable caching strategy used for dynamically hashed files.
 
 ```http
 Cache-Control: public, max-age=31536000, immutable
@@ -226,26 +228,48 @@ Cache-Control: public, max-age=31536000, immutable
 
 ### Unhashed Content
 
-Some static assets must maintain a consistent URL without a hash. Examples include favicon.ico, robots.txt, manifest.json, or social sharing images. Because the URL does not change when the content updates, a long cache duration prevents users from receiving the updated asset.
+Some static assets must maintain a consistent URL without a hash. Examples include `favicon.ico`, `robots.txt`, `manifest.json`, or social sharing images. Because the URL does not change when the content updates, a long cache duration prevents users from receiving the updated asset.
 
-For unhashed content, use a shorter max-age (such as one day) combined with the stale-while-revalidate directive. This allows the browser to serve the stale asset immediately while fetching the fresh version in the background.
+For unhashed content, use a shorter max-age (such as one day) combined with the `stale-while-revalidate` directive. This allows the browser to serve the stale asset immediately while fetching the fresh version in the background.
 
 ```http
 Cache-Control: public, max-age=86400, stale-while-revalidate=86400
 ```
 
+### ETags and Validation
+
+When the `max-age` of an unhashed file expires, the browser must check the server for a new version. To optimize this process, servers use [Entity Tags (ETags)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag) or Last-Modified headers.
+
+If the server provides an ETag (a unique identifier based on the file's content), the browser sends an [If-None-Match](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/If-None-Match) request upon expiration. If the file hasn't changed, the server responds with a lightweight 304 Not Modified status instead of downloading the entire file again, saving significant bandwidth.
+
+### CDN and Edge Caching (s-maxage)
+
+The standard `max-age` directive dictates how the user's browser caches files. However, most modern web applications sit behind a Content Delivery Network (CDN) like Cloudflare, Fastly, or AWS CloudFront.
+
+Use the `s-maxage` (shared max-age) directive to tell the CDN how long to cache the file at the edge node, independent of the browser's caching behavior. For example, the following header instructs the browser to cache the file for 1 hour, but allows the CDN to cache it for 24 hours:
+
+```http
+Cache-Control: public, max-age=3600, s-maxage=86400
+```
+
 ### HTML Content
 
-The primary HTML document (index.html) acts as the entry point for the entire application. It contains the references to the specific, hashed JavaScript and CSS files. If the browser caches the HTML file, users will load an outdated version of the application and never discover the newly hashed vendor or app chunks.
+The primary HTML document (`index.html`) acts as the entry point for the entire application. It contains the references to the specific, hashed JavaScript and CSS files. If the browser caches the HTML file, users will load an outdated version of the application and never discover the newly hashed vendor or app chunks.
 
-Never cache the HTML entry point aggressively. Instead, force the browser to validate the document with the server on every single visit using the no-cache directive. (Note: no-cache means "check with the server before using the cached copy," whereas no-store means "do not cache at all.")
+Never cache the HTML entry point aggressively. Instead, force the browser to validate the document with the server on every single visit using the `no-cache` directive. (Note: `no-cache` means "check with the server before using the cached copy," whereas `no-store` means "do not cache at all.")
 
 ```http
 Cache-Control: no-cache
 ```
 
+### Service Workers and the Cache API
+
+HTTP headers rely entirely on the network layer. Modern frontend applications often use Service Workers to intercept network requests and serve cached files programmatically via the Cache API.
+
+This approach forms the foundation of Progressive Web Apps (PWAs). A Service Worker can pre-cache the hashed vendor and application chunks in the background. During subsequent visits, the Service Worker intercepts the request and serves the files directly from the local cache API. This process makes subsequent navigations practically instantaneous and allows the application to function offline, completely bypassing the standard HTTP cache logic.
+
 ## Conclusion
 
 Code splitting and vendoring remain critical strategies for optimizing web performance, even as network protocols have evolved. While HTTP/2 multiplexing eliminated the need to aggressively concatenate files to reduce network requests, bundling is still necessary to maximize compression efficiency and minimize browser parsing overhead.
 
-By moving away from monolithic vendor bundles and adopting granular chunking strategies with tools like Vite and Webpack, you can strike the perfect balance. Coupling this strategy with strict cache headers ensures that your application leverages optimal cache invalidation, fast module resolution, and efficient network delivery, ultimately providing a faster, smoother experience for your users.
+By moving away from monolithic vendor bundles and adopting granular chunking strategies with tools like Vite and Webpack, you strike the perfect balance. Coupling this build-time strategy with strict HTTP cache headers, CDN edge caching, and Service Workers ensures that your application leverages optimal cache invalidation, fast module resolution, and efficient network delivery. Ultimately, this comprehensive approach provides a faster, smoother experience for your users.
