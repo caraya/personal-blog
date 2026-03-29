@@ -1,7 +1,6 @@
-import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
-
-class SearchForm extends LitElement {
-  static styles = css`
+import { LitElement, html, css } from 'lit';
+export class SearchForm extends LitElement {
+    static { this.styles = css `
     :host {
       display: block;
     }
@@ -26,44 +25,30 @@ class SearchForm extends LitElement {
     button:hover {
       background-color: #357ae8;
     }
-  `;
-
-  // --- Properties ---
-  // 'searchPageUrl' is the URL of your search results page.
-  static properties = {
-    searchPageUrl: { type: String, attribute: 'search-page-url' },
-  };
-
-  constructor() {
-    super();
-    this.searchPageUrl = '/search.html'; // Default search page URL
-  }
-
-  // --- Event Handler ---
-  // This function is called when the form is submitted.
-  _handleSearch(event) {
-    event.preventDefault();
-    const form = event.target;
-    const input = form.querySelector('input');
-    const query = input.value.trim();
-
-    if (query) {
-      // --- Redirect to Search Page ---
-      // We append the search query to the URL.
-      window.location.href = `${this.searchPageUrl}?q=${encodeURIComponent(query)}`;
+  `; }
+    static { this.properties = {
+        searchPageUrl: { type: String, attribute: 'search-page-url' },
+    }; }
+    constructor() {
+        super();
+        this.searchPageUrl = '/search.html';
     }
-  }
-
-  // --- Render Method ---
-  render() {
-    return html`
-      <form @submit=${this._handleSearch}>
+    _handleSearch(event) {
+        event.preventDefault();
+        const form = event.target;
+        const input = form.querySelector('input');
+        const query = input?.value.trim();
+        if (query) {
+            window.location.href = `${this.searchPageUrl}?q=${encodeURIComponent(query)}`;
+        }
+    }
+    render() {
+        return html `
+      <form @submit=${this._handleSearch.bind(this)}>
         <input type="search" placeholder="Search this site..." />
         <button type="submit">Search</button>
       </form>
     `;
-  }
+    }
 }
-
-// --- Define Custom Element ---
 customElements.define('search-form', SearchForm);

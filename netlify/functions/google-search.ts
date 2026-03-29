@@ -2,8 +2,9 @@ import { Handler, HandlerEvent, HandlerContext } from "@netlify/functions";
 
 export const handler: Handler = async (event: HandlerEvent, context: HandlerContext) => {
   // --- Environment Variables ---
-  const apiKey = process.env.GOOGLE_API_KEY;
-  const cx = process.env.GOOGLE_CX;
+	const apiKey = process.env.GOOGLE_API_KEY;
+  // Change this line from GOOGLE_CX to GOOGLE_CSE_ID
+  const cx = process.env.GOOGLE_CSE_ID;
 
   // --- Get Search Query and Start Index ---
   const query = event.queryStringParameters?.q;

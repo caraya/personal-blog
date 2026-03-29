@@ -1,6 +1,7 @@
 # The directory where our serverless functions are located.
 [functions]
 	directory = "netlify/functions"
+	node_bundler = "esbuild"
 [[headers]]
   for = "/*"
     [headers.values]
