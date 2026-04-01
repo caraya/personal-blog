@@ -4,6 +4,10 @@ permalink: search.html
 eleventyExcludeFromCollections: true
 ---
 
-<script type="module" src="./js/search-page.js"></script>
+<h1 data-pagefind-meta="title">Search</h1>
 
-<search-page></search-page>
+<div class="search-page">
+  <search-results></search-results>
+</div>
+
+<script type="module" src="/js/search-results.js"></script>

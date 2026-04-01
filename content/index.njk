@@ -7,6 +7,7 @@ pagination:
 permalink: /{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber }}/{% endif %}
 ---
 
+<h1 class="visually-hidden" data-pagefind-meta="title">Home</h1>
 <div class="postlist">
   {%- for post in pagination.items -%}
     <article class="postlist-item">

@@ -2,7 +2,7 @@
 layout: layouts/base.njk
 ---
   <article>
-    <h1>{{ title }}</h1>
+    <h1 data-pagefind-meta="title">{{ title }}</h1>
     <ul class="post-metadata">
 			<li><time class="iconfont published" datetime="{{ page.date | htmlDateString }}">{{ page.date | formatDate('long') }}</time></li>
 

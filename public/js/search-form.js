@@ -1,15 +1,13 @@
 import { LitElement, html, css } from '/vendor/lit-v331-core.min.js';
-export class SearchForm extends LitElement {
+
+export class PagefindSearchForm extends LitElement {
     static { this.styles = css `
-    :host {
-      display: block;
-    }
     form {
       display: flex;
       gap: 8px;
     }
     input {
-      flex-grow: 1;
+      flex: 1;
       padding: 8px;
       border: 1px solid #ccc;
       border-radius: 4px;
@@ -17,38 +15,31 @@ export class SearchForm extends LitElement {
     button {
       padding: 8px 16px;
       border: none;
-      background-color: #4285f4;
-      color: white;
+      background: #4285f4;
+      color: #fff;
       border-radius: 4px;
       cursor: pointer;
     }
     button:hover {
-      background-color: #357ae8;
+      background: #357ae8;
     }
   `; }
-    static { this.properties = {
-        searchPageUrl: { type: String, attribute: 'search-page-url' },
-    }; }
-    constructor() {
-        super();
-        this.searchPageUrl = '/search.html';
-    }
-    _handleSearch(event) {
-        event.preventDefault();
-        const form = event.target;
-        const input = form.querySelector('input');
-        const query = input?.value.trim();
-        if (query) {
-            window.location.href = `${this.searchPageUrl}?q=${encodeURIComponent(query)}`;
-        }
-    }
     render() {
         return html `
-      <form @submit=${this._handleSearch.bind(this)}>
-        <input type="search" placeholder="Search this site..." />
+      <form @submit=${this._onSubmit}>
+        <input type="search" name="q" placeholder="Search this site..." />
         <button type="submit">Search</button>
       </form>
     `;
     }
+    _onSubmit(e) {
+      e.preventDefault();
+      const input = this.renderRoot.querySelector('input[name="q"]');
+      const query = input?.value.trim();
+      if (query) {
+        // Redirect to /search.html?q=QUERY (absolute path)
+        window.location.href = `/search.html?q=${encodeURIComponent(query)}`;
+      }
+    }
 }
-customElements.define('search-form', SearchForm);
+customElements.define('search-form', PagefindSearchForm);
