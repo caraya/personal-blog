@@ -7,7 +7,7 @@
       img="/images/Thumbnail_Trinity_College_Dublin_Ireland.webp",
       img_alt="Trinity College Library, Dublin",
       twitter_card_type="summary",
-      twitter_handle="@elrond25"
+      twitter_handle="elrond25"
     -%}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -136,7 +136,7 @@
           {{ nav.render(nav_links, "nav-top-menu-container") }}
         </ul>
       </nav>
-      <main id="skip" data-pagefind-body>
+      <main id="skip" {% if "/page-" in page.url %}data-pagefind-ignore{% else %}data-pagefind-body{% endif %}>
         {{ content | safe }}
       </main>
       <footer>
