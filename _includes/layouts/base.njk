@@ -136,7 +136,7 @@
           {{ nav.render(nav_links, "nav-top-menu-container") }}
         </ul>
       </nav>
-      <main id="skip" {% if "/page-" in page.url %}data-pagefind-ignore{% else %}data-pagefind-body{% endif %}>
+      <main id="skip" data-pagefind-body>
         {{ content | safe }}
       </main>
       <footer>
