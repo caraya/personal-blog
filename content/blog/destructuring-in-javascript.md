@@ -1,8 +1,8 @@
 ---
-title: Destructuring in Javascript
+title: Destructuring in JavaScript
 date: 2024-10-14
 tags:
- - Javascript
+  - Javascript
 ---
 
 Destructuring is an alternative way to assign properties from an objecct or array. The traditional way to assign items to an array is using bracker `[]` notation.
