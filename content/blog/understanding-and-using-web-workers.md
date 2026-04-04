@@ -166,22 +166,22 @@ Web Workers cannot access the DOM so you cannot interact with the window and doc
 
 All is not gloom, you can use many other APIs like:
 
-- XHR or Fetch API
-- BroadcastChannel API
-- FileReader API
-- IndexedDB
-- Notifications API
-- Promises
-- Service Workers
-- Channel Messaging API
-- Cache API
-- Console API (console.log() and friends)
-- JavaScript Timers (setTimeout, setInterval…)
-- CustomEvents API: addEventListener() and removeEventListener()
-- current URL, which you can access through the location property in read-only mode
-- WebSockets
-- WebGL
-- SVG Animations
+* XHR or Fetch API
+* BroadcastChannel API
+* FileReader API
+* IndexedDB
+* Notifications API
+* Promises
+* Service Workers
+* Channel Messaging API
+* Cache API
+* Console API (console.log() and friends)
+* JavaScript Timers (setTimeout, setInterval…)
+* CustomEvents API: addEventListener() and removeEventListener()
+* current URL, which you can access through the location property in read-only mode
+* WebSockets
+* WebGL
+* SVG Animations
 
 ## So: When Do We Use Web Workers
 
