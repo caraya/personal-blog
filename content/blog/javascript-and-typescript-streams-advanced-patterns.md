@@ -11,7 +11,7 @@ tags:
   - Advanced
 ---
 
-This is a follow up to [JavaScript and TypeScript Streams (2026 Edition)](/javascript-and-typescript-streams-2026-edition/)  and covers advanced material removed from the previous Streams post.
+This is a follow-up to [JavaScript and TypeScript Streams (2026 Edition)](/javascript-and-typescript-streams-2026-edition/) and covers advanced material removed from the previous Streams post.
 
 This post focuses on the moments when "normal" streaming code is technically correct but still fails under scale, latency, or reliability pressure.
 
@@ -19,18 +19,18 @@ If your current workload is modest, you can safely skip most of this. If you run
 
 ## Important Note on Scope
 
-This is a selective toolbox, not a checklist. Use the sections that match the failure mode you are currently seeing:
+This is a selective toolbox, not a checklist. Use the sections that match the failure modes you are currently seeing:
 
 * Memory churn from allocations under heavy throughput
 * Hidden queue growth when backpressure signals are ignored
 * Multi-branch buffering surprises with `tee()`
 * Interrupted transfers that require protocol-aware resume
 * Incorrect file indexing due to UTF-8 byte/character mismatch
-* Version-risk tradeoffs with experimental iterable APIs
+* Version-risk trade-offs with experimental iterable APIs
 
-Each section is structured the same way: the problem signal, the mitigation pattern, and the tradeoffs you accept by using it.
+Each section is structured the same way: the problem signal, the mitigation pattern, and the trade-offs you accept by using it.
 
-## BYOB and Memory Allocation Tradeoffs
+## BYOB and Memory Allocation Trade-offs
 
 By default, each incoming chunk is delivered in a newly allocated buffer. When a stream processes a large number of chunks per second, the runtime must constantly allocate and later clean up those short-lived buffers. That extra allocation-and-cleanup cycle increases garbage collection (GC) work and can introduce latency spikes.
 
