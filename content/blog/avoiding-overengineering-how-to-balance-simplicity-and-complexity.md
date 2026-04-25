@@ -99,7 +99,7 @@ It's a paradox because the simplicity of static sites is also their main drawbac
 
 Content authoring is the first pain point. Static site generators typically require you to write content in Markdown or another markup language, which can be a barrier for non-technical users. Even for technical users, it can be time-consuming to write and format content in Markdown, especially if you want to include images, videos, or other media.
 
-
+Tools like [TinaCMS](https://tina.io/) and [Netlify CMS](https://www.netlifycms.org/) can help by providing a user-friendly interface for editing content, but they also add complexity and maintenance overhead, partially defeating the purpose of using a static site generator in the first place.
 
 There’s also the issue of still requiring dynamic components for certain features, like comments, search, and analytics. These features can be added to a static site using third-party services. They can also be implemented to work with a static site, like [Pagefind](https://pagefind.app/) for search or [Staticman](https://new.staticman.net/) for comments, but they add complexity and can be difficult to integrate.
 
