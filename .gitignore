@@ -157,3 +157,4 @@ vite.config.ts.timestamp-*
 # Print fonts and resources
 print_assets
 pdf-image-cache
+pdf-exports

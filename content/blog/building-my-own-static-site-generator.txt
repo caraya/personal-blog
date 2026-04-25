@@ -105,7 +105,7 @@ The top template contains basic front matter and the two tags necessary for Nunj
 
 The bottom template contains the closing tag for Nunjucks to work.
 
-{% raw %}
+{{% raw %}}
 ```js
 gulp.task('assembleTemplate', function(done, layout = 'base') {
   // string literal for the head of the regular HTML document
@@ -125,7 +125,7 @@ description: Default Description
 
   const fragmentSourceDir = 'src/html-source/';
 ```
-{% endraw %}
+{{% endraw %}}
 
 We read the directory containing the HTML fragments we processed with the `markdown` task.
 

@@ -1,6 +1,6 @@
 ---
 title: "Designing Predictable Web Component APIs"
-date: 2026-05-15
+date: 2026-06-24
 tags:
   - Javascript
   - Design
