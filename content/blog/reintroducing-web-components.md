@@ -155,6 +155,72 @@ You are not required to use Shadow DOM. If you omit `attachShadow`, your compone
 
 **When to use**: Use Light DOM when your component needs to integrate deeply with a global design system or framework (like Tailwind or Bootstrap).
 
+### The Component Lifecycle
+
+Understanding the component lifecycle prevents errors related to timing and document context. The most critical distinction is between the `constructor` and the `connectedCallback`.
+
+The `constructor` runs when the browser creates the JavaScript object in memory. The `connectedCallback` runs only when the browser actually inserts the element into the Document Object Model (DOM).
+
+| Feature | constructor | connectedCallback |
+| --- | --- | --- |
+| Execution Time | Object instantiation (in memory). | Element insertion (in the DOM). |
+| Execution Frequency | Exactly once per instance. | Every time the element adds to the DOM. |
+| Role | Attach Shadow DOM, define internal structure. | Fetch data, read attributes, attach global events. |
+| Attribute Access | No (throws errors or returns null). | Yes. |
+
+### Lifecycle Example
+
+This example demonstrates the correct placement of setup logic, data fetching, and cleanup.
+
+```ts
+class LifecycleElement extends HTMLElement {
+  private abortController: AbortController | null = null;
+
+  constructor() {
+    super();
+    // Safe: Attaching the shadow DOM and initial structural HTML
+    const shadow = this.attachShadow({ mode: 'open' });
+    shadow.innerHTML = `<p>Loading...</p>`;
+
+    // UNSAFE: this.getAttribute('data-id') would return null here.
+  }
+
+  connectedCallback(): void {
+    // Safe: Reading attributes now that the element exists in the DOM
+    const dataId = this.getAttribute('data-id') || 'default';
+
+    // Safe: Starting network requests
+    this.fetchData(dataId);
+  }
+
+  disconnectedCallback(): void {
+    // Always clean up processes started in connectedCallback
+    if (this.abortController) {
+      this.abortController.abort();
+    }
+  }
+
+  private async fetchData(id: string): Promise<void> {
+    this.abortController = new AbortController();
+    try {
+      const response = await fetch(`https://api.example.com/data/${id}`, {
+        signal: this.abortController.signal
+      });
+      const data = await response.json();
+      this.shadowRoot!.innerHTML = `<p>Data: ${data.name}</p>`;
+    } catch (error) {
+      if (error instanceof Error && error.name === 'AbortError') {
+        console.log('Fetch aborted');
+      } else {
+        console.error('Fetch failed', error);
+      }
+    }
+  }
+}
+
+customElements.define('lifecycle-element', LifecycleElement);
+```
+
 ## Tier 2: Advanced Patterns (Professional)
 
 ### Customized Built-in Elements
@@ -314,10 +380,10 @@ Caveat: `delegatesFocus` behavior varies by platform and host element; you may s
 
 **Accessibility testing suggestions**
 
-- **VoiceOver (macOS):** Test keyboard and rotor navigation, verify announcements for host `aria-*` attributes.
-- **NVDA (Windows):** Validate label/role announcement and keyboard focus behavior in common browsers.
-- **Keyboard-only:** Tab order, focus ring visibility, and activation with Enter/Space.
-- **Automated tools:** Run Axe or Lighthouse for quick checks, then follow up with manual AT testing.
+* **VoiceOver (macOS):** Test keyboard and rotor navigation, verify announcements for host `aria-*` attributes.
+* **NVDA (Windows):** Validate label/role announcement and keyboard focus behavior in common browsers.
+* **Keyboard-only:** Tab order, focus ring visibility, and activation with Enter/Space.
+* **Automated tools:** Run Axe or Lighthouse for quick checks, then follow up with manual AT testing.
 
 ## Browser Compatibility
 
