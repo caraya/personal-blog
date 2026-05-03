@@ -61,7 +61,10 @@
       performance.mark('end load css');
       performance.measure('load css', 'start load css', 'end load css');
     </script>
-
+		<!-- Load web vitals scripts -->
+		<link rel="modulepreload" href="/js/web-vitals.js">
+		<script type="module" src="/js/web-vitals.js"></script>
+		<script type="module" src="/js/vitals.js"></script>
     {# Only load Prism if configured to do so #}
     {% if prism %}
       <script>
@@ -155,25 +158,25 @@
         <div class="right-footer">
           <h4>Search</h4>
             <div id="search">
-							<search-form></search-form>
-						</div>
-					{% if page.url != '/search.html' and page.url != '/search/' %}
-					<div class="search-results">
-						<search-results></search-results>
-					</div>
+              <search-form></search-form>
+            </div>
+          {% if page.url != '/search.html' and page.url != '/search/' %}
+          <div class="search-results">
+            <search-results></search-results>
+          </div>
 
-					<div class="search-pagination">
-						<search-pagination></search-pagination>
-					</div>
+          <div class="search-pagination">
+            <search-pagination></search-pagination>
+          </div>
 
-					<div class="search-status">
-						<search-status></search-status>
-					</div>
+          <div class="search-status">
+            <search-status></search-status>
+          </div>
 
-					<div class="search-error">
-						<search-error></search-error>
-						</div>
-					{% endif %}
+          <div class="search-error">
+            <search-error></search-error>
+            </div>
+          {% endif %}
 
           <nav id="nav">
             <h4>Links</h4>
@@ -188,11 +191,11 @@
     </div>
     <!-- Current page: {{ page.url | htmlBaseUrl }} -->
     <!-- Configure and load Service Worker -->
-		<!-- Commented Out Until I get around to troubleshooting the worker -->
+    <!-- Commented Out Until I get around to troubleshooting the worker -->
     {# <script type="module">
       // Test if service workers are supported
       if ('serviceWorker' in navigator) {
-				// Attempt to register it
+        // Attempt to register it
         navigator
           .serviceWorker
           .register('/sw.js')
@@ -204,15 +207,15 @@
           });
       }
     </script> #}
-	<script type="module" src="/js/search-form.js"></script>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-QPLBTH27E6"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
+  <script type="module" src="/js/search-form.js"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QPLBTH27E6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-		gtag('config', 'G-QPLBTH27E6');
-	</script>
+    gtag('config', 'G-QPLBTH27E6');
+  </script>
   </body>
 </html>
