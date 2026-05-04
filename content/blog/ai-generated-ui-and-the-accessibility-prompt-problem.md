@@ -15,7 +15,7 @@ I agree with the critique, but I think it doesn't go far enough in addressing th
 
 This post will explore the challenges of AI-generated UIs and offer some suggestions for how to produce better designs that are more inclusive and accessible. It uses a three-layer model: prompt specificity, AI tool constraints, and reusable skills.
 
-## The Problem
+## The problem
 
 When you craft prompts for AI to generate user interfaces, you often just tell it what you want, for example:
 
@@ -23,13 +23,13 @@ When you craft prompts for AI to generate user interfaces, you often just tell i
 
 This prompt is focused on the functionality of the application, but it doesn't provide any guidance on how to structure the React components, what ARIA attributes to use, how to ensure keyboard accessibility, and how to evaluate the accessibility of the final product.
 
-### Lack Of Specificity
+### Lack of specificity in prompts
 
 The core issue is that many prompts describe features but skip non-functional requirements. If you don't ask for landmarks, accessible names, focus behavior, and validation messaging, the model will usually optimize for speed and visual output instead of inclusive interaction.
 
 Another common gap is the lack of explicit verification criteria. Without clear checks (for example, WCAG success criteria, keyboard-only flows, and screen reader smoke tests), inaccessible patterns can slip through even when the interface looks correct.
 
-## AI Defaults Are Not Accessible
+## AI defaults are not accessible
 
 AI models are trained on vast amounts of data, and they learn to generate content based on patterns in that data. If the training data contains a lot of examples of inaccessible UIs, the AI may learn to generate similar designs, perpetuating the issue.
 
@@ -37,7 +37,7 @@ Another issue is that AI models may not have a deep understanding of accessibili
 
 The final aspect is that the training data may not be recent enough to include the latest accessibility best practices, which can lead to outdated and inaccessible designs.
 
-## Be Specific With Your Prompts
+## Be specific with your prompts
 
 The first layer to fix is the prompt itself. If the model is producing inaccessible output, the fastest place to improve the result is in the instructions you give it.
 
@@ -49,7 +49,7 @@ You could go even further and specify the accessibility evaluation criteria that
 
 > Build a React application that does color conversions using the colorjs.io library, and ensure that it has proper semantic structure, includes ARIA attributes for interactive elements, supports keyboard navigation, and passes the WCAG 2.2 AA accessibility guidelines as described in <https://www.w3.org/TR/WCAG22/> and with a checklist available at <https://www.a11yproject.com/checklist/>.
 
-### Framework-Specific Constraints
+### Framework-specific constraints
 
 Once the general accessibility requirements are clear, the next layer is framework-specific implementation guidance.
 
@@ -58,6 +58,8 @@ In addition to being specific about accessibility requirements, you can also be 
 Here's what that looks like when you move from general prompt guidance to a concrete prompt instruction: tell the model to use libraries like `react-helmet-async`, `react-aria`, or `headlessui`, and to prefer semantic HTML elements with ARIA attributes only where they are needed.
 
 That kind of instruction should lead to implementation details like the following React example using `Helmet` and `react-aria`:
+
+Wrap the root element in `HelmetProvider` to enable document head management across the app.
 
 ```jsx
 // main.jsx — HelmetProvider belongs at the app root,
@@ -75,6 +77,8 @@ createRoot(document.getElementById("root")).render(
 	</StrictMode>
 );
 ```
+
+Use `Helmet` in the component to set a descriptive title and meta description for accessibility and SEO. Use `useButton` from `react-aria` to create an accessible button that supports keyboard navigation and screen readers. Use semantic HTML first, then add ARIA only where needed.
 
 ```jsx
 // ColorConverter.jsx
@@ -138,7 +142,7 @@ export default function ColorConverter() {
 
 When these implementation details start repeating across prompts, move them into shared AI tool instructions so the baseline stays consistent.
 
-## AI Tool Constraints
+## AI tool constraints
 
 If you find yourself repeating those same instructions across many requests, the next layer is to move them out of individual prompts and into project-level constraints.
 
@@ -157,11 +161,11 @@ Different AI tools store these constraints in different places:
 An example of a framework constraint for accessibility could look like this:
 
 ```markdown
-# Component Generation Rules
+# Component generation rules
 
 You are generating a React component. Follow these rules strictly.
 
-## HTML Semantics
+## HTML semantics
 - Use `<button>` for actions. Never `<div onClick>` or
 `<span onClick>`.
 - Use `<a href="...">` for navigation.
@@ -192,7 +196,7 @@ not skip levels.
 - Use `aria-describedby` for help text and error
 	messages.
 
-## Keyboard Interaction
+## Keyboard interaction
 - All interactive elements must be keyboard accessible.
 - Use focus-visible styles. Never remove outlines
 	without replacement.
@@ -209,7 +213,7 @@ not skip levels.
 - Simple color transitions on hover/focus are acceptable
   without motion guards.
 
-## Library Preferences
+## Library preferences
 - For complex patterns (tabs, combobox, dialog, listbox, menu),
   use Headless UI, Radix UI, or React Aria instead of
 	building from scratch.
@@ -222,7 +226,117 @@ These constraints are imperative. They tell the LLM exactly what to do, how to d
 
 The example constraints are focused on basics with React, but you can create similar constraints for other frameworks or libraries you're using.
 
-## Converting The Prompt Into A Skill
+### What to do when the model ignores your constraints
+
+You have three strategies for when the model ignores your constraints:
+
+1. **Targeted follow-up**: Don’t regenerate from scratch. Prompt with a specific correction: “The Account toggle is a `div` with `onClick`. Replace it with a `button` and add `aria-expanded` and `aria-controls`.”
+2. **Audit prompt**: After generation: “Audit this component for WCAG 2.1 AA violations and fix all issues. Check the code using the constraints we defined.” Models review code more reliably than they generate correct code from scratch.
+3. **Manual checklist**: Before committing, are there interactive elements `<button>` or `<a>`? Do toggles have `aria-expanded`? Can you Tab to and activate every control? Do landmarks and headings exist? Do icons have `aria-hidden`? Two minutes.
+
+## Static analysis tools
+
+Use static analysis to catch accessibility issues before runtime.
+
+A practical default is [ESLint](https://eslint.org/) with [eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y), which works well in JavaScript and TypeScript UI projects.
+
+Concrete example (static analysis layer):
+
+```json
+{
+	"scripts": {
+		"lint:a11y": "eslint \"src/**/*.{js,jsx,ts,tsx}\""
+	}
+}
+```
+
+Basic ESLint 9+ flat configuration:
+
+```js
+// eslint.config.js
+import js from "@eslint/js";
+import jsxA11y from "eslint-plugin-jsx-a11y";
+import globals from "globals";
+
+export default [
+	js.configs.recommended,
+	{
+		files: ["**/*.{js,jsx,ts,tsx}"],
+		plugins: {
+			"jsx-a11y": jsxA11y
+		},
+		languageOptions: {
+			ecmaVersion: "latest",
+			sourceType: "module",
+			parserOptions: {
+				ecmaFeatures: {
+					jsx: true
+				}
+			},
+			globals: {
+				...globals.browser
+			}
+		},
+		rules: {
+			...jsxA11y.configs.recommended.rules,
+			"jsx-a11y/alt-text": "error",
+			"jsx-a11y/label-has-associated-control": "error",
+			"jsx-a11y/no-static-element-interactions": "warn"
+		}
+	}
+];
+```
+
+Install the required packages: `npm i -D eslint @eslint/js eslint-plugin-jsx-a11y globals`.
+
+Run `npm run lint:a11y` in CI and fail the build on unresolved accessibility lint errors.
+
+## Runtime testing
+
+[Playwright](https://playwright.dev/) with [@axe-core/playwright](https://www.npmjs.com/package/@axe-core/playwright) is a good framework-agnostic option for end-to-end accessibility checks.
+
+**How this pairing works**: Playwright drives a real browser and navigates through your UI states, then axe-core runs in the page context and audits the rendered DOM against accessibility rules (for example WCAG A/AA-related checks). In practice, this gives you automated checks on the UI your users actually interact with, not just static source code.
+
+Concrete example (runtime testing layer):
+
+```ts
+import { test, expect } from "@playwright/test";
+import AxeBuilder from "@axe-core/playwright";
+
+test("homepage has no serious accessibility violations", async ({ page }) => {
+	await page.goto("/");
+
+	const results = await new AxeBuilder({ page })
+		.withTags(["wcag2a", "wcag2aa"])
+		.analyze();
+
+	const seriousOrWorse = results.violations.filter((v) =>
+		["serious", "critical"].includes(v.impact ?? "")
+	);
+
+	expect(seriousOrWorse).toEqual([]);
+});
+```
+
+This threshold focuses CI on high-impact barriers first, while moderate issues are still tracked and triaged in regular accessibility review.
+
+For component-level tests, you can run [axe-core](https://github.com/dequelabs/axe-core) with [vitest-axe](https://www.npmjs.com/package/vitest-axe); if you're using React, pair it with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/).
+
+You can extend this workflow further by adding scripted checks for keyboard-only navigation, focus movement after dialogs open and close, form error messaging, skip links, and critical user journeys (sign in, checkout, publish, etc.).
+
+### What axe-core doesn't test
+
+axe-core is necessary, but not sufficient. It does not fully validate:
+
+* Whether interaction patterns are intuitive or match user expectations
+* Screen reader announcement quality and task clarity in real assistive technology
+* End-to-end keyboard usability across complex workflows
+* Content quality (link text clarity, instructional wording, error recovery clarity)
+* Some visual and cognitive concerns that require human judgment
+
+***Manual testing is still required***: run keyboard-only flows, perform at least one screen reader smoke test, validate focus order and visible focus indicators, and verify that users can complete critical tasks without ambiguity.
+
+## From one-off prompts to reusable skills
 
 Once you have prompt rules for individual requests and constraints for project-wide behavior, the next layer is packaging that guidance into something you can reuse across workflows.
 
@@ -237,7 +351,7 @@ Rather than just writing a one-off prompt, you can create a skill that encapsula
 
 The two skills above are examples of reusable skills that you can invoke from any prompt, giving you a consistent set of accessibility guidelines to follow when generating UIs with AI.
 
-## Conclusion: Use AI As A Tool, Not A Replacement
+## Conclusion: use AI as a tool, not a replacement
 
 AI is a tool that can assist in generating user interfaces, but it is not a replacement for human designers and developers. While AI can help to generate designs quickly, it is unlikely to produce designs that are truly inclusive and accessible without explicit guidance. You should be explicit about what you ask AI to do, and you should always review the generated designs to ensure that they meet the accessibility standards you want to enforce.
 
