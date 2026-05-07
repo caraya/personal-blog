@@ -1,6 +1,6 @@
 ---
 title: "Avoiding Overengineering: How to Balance Simplicity and Complexity"
-date: 2026-06-22
+date: 2026-07-06
 tags:
   - Web Development
   - Complexity

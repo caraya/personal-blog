@@ -1,6 +1,6 @@
 ---
 title: The Browser Knows What It's Doing, Trust it.
-date: 2024-06-30
+date: 2024-07-04
 draft: true
 youtube: true
 ---
@@ -8,4 +8,3 @@ youtube: true
 <lite-youtube videoid="5uhIiI9Ld5M"></lite-youtube>
 
 I came to this presentation out of curiosity regarding the people who made [The Ideal Viewport Doesn't Exist](https://viewports.fyi/). It has made me think a lot about the CSS I write
-
