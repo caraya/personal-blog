@@ -1,7 +1,11 @@
 ---
 title: "Designing Without Breakpoints: Is It Possible?"
 date: 2026-07-08
-draft: true
+tags:
+  - Design
+  - CSS
+  - Responsive Design
+  - Container Queries
 ---
 
 Responsive web design has always meant breakpoints. You pick a handful of viewport widths—375px, 768px, 1024px, 1280px—and write media queries to reshape your layout at each one. For most of the history of responsive design, that was the entire toolkit.
