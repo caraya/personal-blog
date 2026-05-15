@@ -223,6 +223,8 @@ The following prototype serves as a foundational orchestration agent, designed t
 
 Rather than pack every little possible detail into a single prompt—which would lead to degraded reasoning and loss of context—we created a set of auxiliary skills that the agent can call upon as needed. This modular approach keeps the core agent focused and high-performing.
 
+In this prototype, ADDIE and SAM function as orchestration logic rather than as rigid scripts. ADDIE gives the agent a way to keep Analysis, Design, Development, Implementation support, and Evaluation aligned across a project, while SAM gives it a rhythm for iterative drafting, review, and revision. In other words, the agent does not replace instructional design frameworks; it uses them to decide which skill to invoke next, how to preserve alignment across outputs, and how to move from first draft to improved version without losing the larger pedagogical intent.
+
 ```markdown
 ---
 name: senior-instructional-designer-orchestrator
