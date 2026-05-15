@@ -198,7 +198,7 @@ If the last decade taught us anything, it is that adoption follows disciplined p
 * Karandish, David. "[7 Benefits of AI in Education](https://thejournal.com/articles/2021/06/23/7-benefits-of-ai-in-education.aspx)". THE Journal, June 23, 2021.
 * Khandelwal, Mudit. "[AI Based Adaptive Learning](https://www.linkedin.com/pulse/ai-based-adaptive-learning-mudit-khandelwal/)". Pulse (blog), LinkedIn, May 30, 2022.
 * Koval, Mari. "[Use Cases of Artificial Intelligence in E-Learning](https://www.analyticsvidhya.com/blog/2023/03/use-cases-of-artificial-intelligence-in-e-learning/)". Analytics Vidhya (blog), March 1, 2023.
-* Luo, H., Tang, Y., & Sun, D. "[Assessing the Impact of AI-Driven Adaptive Learning on Student Engagement and Performance](https://link.springer.com/article/10.1007/s10639-023-12157-w)". Education and Information Technologies, 2023.
+* Luo, H., Tang, Y., & Sun, D. "[Assessing the Impact of AI-Driven Adaptive Learning on Student Engagement and Performance](https://dl.acm.org/doi/abs/10.1007/s10639-025-13646-x)". Education and Information Technologies, 2023.
 * Margaret, Amelia. "[The Impact of Artificial Intelligence on eLearning](https://elearningindustry.com/the-impact-of-artificial-intelligence-on-elearning)". eLearning Industry, February 4, 2023.
 * McKenzie, Lindsay. "[Edtech Companies Jump on the Generative AI Bandwagon](https://edscoop.com/edtech-companies-generative-ai/)". EdScoop, July 31, 2023.
 * Media Justice. "[Greenlining Institute: Algorithmic Bias Explained – Q&A with Vinhcent Le](https://mediajustice.org/news/greenlining-institute-algorithmic-bias-explained-qa-with-vinhcent-le/)". Media Justice, Accessed May 2026
@@ -210,11 +210,11 @@ If the last decade taught us anything, it is that adoption follows disciplined p
 * Rogers, Julie, and Jonker, Alexandra. "[What is data bias?](https://www.ibm.com/think/topics/data-bias)". IBM, Accessed May 2026.
 * Rouhiainen, Lasse. "[How AI and Data Could Personalize Higher Education](https://hbr.org/2019/10/how-ai-and-data-could-personalize-higher-education)". Harvard Business Review, October 14, 2019.
 * Shaw, Steven D. and Nave, Gideon. "[Thinking—Fast, Slow, and Artificial: How AI is Reshaping Human Reasoning and the Rise of Cognitive Surrender](https://doi.org/10.31234/osf.io/yk25n_v1)". The Wharton School Research Paper, January 11, 2026.
-* Shift eLearning. "[How Artificial Intelligence Is Transforming the eLearning Industry](https://www.shiftelearning.com/blog/artificial-intelligence-elearning)". eLearning Blog. Accessed March 2023.
+* Shift eLearning. "[How Artificial Intelligence Is Transforming the eLearning Industry](https://web.archive.org/web/20240620184818/https://www.shiftelearning.com/blog/artificial-intelligence-elearning)". eLearning Blog. Accessed March 2023.
 * Slade, Tim. "[AI and Instructional Design: What We Got Wrong in 2025 (and What Needs to Change in 2026)](https://www.youtube.com/watch?v=IjOpEIHy0Mc)". YouTube video, 2026.
 * Stanford Human-Centered Artificial Intelligence Institute. "[The 2026 AI Index Report](https://hai.stanford.edu/ai-index/2026-ai-index-report)". Stanford, CA, Accessed May 2026.
 * Types Digital. "[Teaching With AI: A Revolution in Education or a Recipe for Cheating?](https://medium.com/@types24digital/teaching-with-ai-a-revolution-in-education-or-a-recipe-for-cheating-216c327c1763)". Types Digital (blog), Medium, Accessed May 2026.
-* Wong, Carissa. "[What Is an AI Intelligent Tutoring System and Why You Should Use It](https://articles.noodlefactory.ai/what-is-an-ai-intelligent-tutoring-system-and-why-you-should-use-it)". Intelligent Tutoring System (blog), Noodle Factory. Accessed March 2023.
+* Wong, Carissa. "[What Is an AI Intelligent Tutoring System and Why You Should Use It](https://web.archive.org/web/20250307203523/https://www.noodlefactory.ai/blog/what-is-an-ai-intelligent-tutoring-system-and-why-you-should-use-it)". Intelligent Tutoring System (blog), Noodle Factory. Accessed May 2026.
 * Wynants, S., Childers, G., De La Torre Roman, Y. , Budar-Turner, D., & Vasquez, P. "[ETHICAL Principles AI Framework for Higher Education](https://genai.calstate.edu/communities/faculty/ethical-and-responsible-use-ai/ethical-principles-ai-framework-higher-education)". CSU AI Commons, Accessed May 2026.
 
 ## Appendix: An Instructional Design Agent Prototype
