@@ -5,7 +5,6 @@ tags:
   - Code
   - Design
   - Software Engineering
-youtube: true
 ---
 
 When we build interfaces or components, we must decide how to organize our code. Do we group files by type (e.g., all CSS in one folder, all JavaScript in another) or by feature (e.g., all files related to a specific component together), or do we bundle everything into a single module? This decision can impact the maintainability and scalability of our codebase.
@@ -13,8 +12,6 @@ When we build interfaces or components, we must decide how to organize our code.
 As I've researched this topic, I've come across several resources that discuss different approaches to organizing code and related concepts.
 
 This post explores how to build components by analyzing different approaches to code organization and the concepts of coupling, cohesion, and cognitive load, along with how they apply to component packaging.
-
-<lite-youtube videoid="O_IMsEg91g8"></lite-youtube>
 
 ## Presenting The Issue
 
