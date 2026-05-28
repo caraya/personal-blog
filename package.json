@@ -12,7 +12,7 @@
     "build": "NODE_ENV=production rm -rf **/.DS_Store && npx @11ty/eleventy --incremental && pagefind --site _site",
     "build:search": "npx pagefind --site _site",
     "build:dev": "npx @11ty/eleventy --incremental && pagefind --site _site",
-    "workbox": "npx workbox-cli injectManifest ./workbox-config.js",
+    "workbox": "npx workbox-cli injectManifest ./workbox-config.cjs",
     "start": "npx @11ty/eleventy --serve --quiet",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
     "debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",

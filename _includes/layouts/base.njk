@@ -192,7 +192,7 @@
     <!-- Current page: {{ page.url | htmlBaseUrl }} -->
     <!-- Configure and load Service Worker -->
     <!-- Commented Out Until I get around to troubleshooting the worker -->
-    {# <script type="module">
+    <script type="module">
       // Test if service workers are supported
       if ('serviceWorker' in navigator) {
         // Attempt to register it
@@ -206,7 +206,7 @@
             console.log('ServiceWorker registration failed: ', err);
           });
       }
-    </script> #}
+    </script>
   <script type="module" src="/js/search-form.js"></script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QPLBTH27E6"></script>
