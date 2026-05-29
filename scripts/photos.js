@@ -32,6 +32,7 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const PROJECT_ROOT = path.resolve(__dirname, '..');
 
 // Configure Cloudinary using environment variables
 cloudinary.config({
@@ -41,12 +42,13 @@ cloudinary.config({
   secure: true
 });
 
-const IMG_DIR = './public/images';
+const IMG_DIR = path.join(PROJECT_ROOT, 'public', 'images');
 const DEFAULT_CONCURRENCY = 4;
 const DEFAULT_CACHE_NAME = 'photos.json';
 
 export default async function getPhotos() {
   let photos = [];
+  const processedPhotos = [];
   const web_options = {
     transformation: [
       { width: 500, crop: 'scale' },
@@ -120,7 +122,7 @@ export default async function getPhotos() {
     }
 
     // Determine which files need Cloudinary checks/uploads
-    const toProcess = [];
+    const items = [];
     for (const imageFile of imageFiles) {
       const file = path.join(IMG_DIR, imageFile);
       const publicId = path.parse(imageFile).name;
@@ -128,12 +130,14 @@ export default async function getPhotos() {
       try { mtime = fs.statSync(file).mtimeMs; } catch (e) { mtime = 0; }
 
       const cached = localCache[publicId];
-      if (cached && typeof cached.mtime === 'number' && cached.mtime === mtime) {
-        photos.push({ id: cached.id, web: cached.web, mtime: cached.mtime });
-        continue;
-      }
-
-      toProcess.push({ imageFile, publicId, file, mtime });
+      items.push({
+        imageFile,
+        publicId,
+        file,
+        mtime,
+        cacheHit: !!(cached && typeof cached.mtime === 'number' && cached.mtime === mtime),
+        cached
+      });
     }
 
     // Helper to run async tasks with limited concurrency
@@ -154,11 +158,11 @@ export default async function getPhotos() {
       return results;
     }
 
-    if (toProcess.length === 0) {
+    if (items.length === 0) {
       log('All images matched local cache, no uploads needed');
     } else {
       // If many files changed, fetch Cloudinary resources in bulk to avoid many resource calls
-      let useBulkFetch = toProcess.length > 20;
+      let useBulkFetch = items.length > 20;
       let existingIds = null;
       if (useBulkFetch) {
         existingIds = new Set();
@@ -173,8 +177,8 @@ export default async function getPhotos() {
         }
       }
 
-      const results = await runWithConcurrency(toProcess, concurrency, async (item) => {
-        const { imageFile, publicId, file, mtime } = item;
+      await runWithConcurrency(items, concurrency, async (item) => {
+        const { imageFile, publicId, file, mtime, cacheHit, cached } = item;
 
         // If using bulk fetch, consult existingIds, otherwise call resource per-item
         let exists = false;
@@ -186,15 +190,22 @@ export default async function getPhotos() {
         }
 
         if (exists) {
-          log(`File ${imageFile} already exists in Cloudinary as ${publicId}`);
-          const entry = { id: publicId, web: getWeb(publicId), mtime };
+          if (cacheHit) {
+            log(`File ${imageFile} matched local cache and exists in Cloudinary as ${publicId}`);
+          } else {
+            log(`File ${imageFile} already exists in Cloudinary as ${publicId}`);
+          }
+          const entry = { id: publicId, web: getWeb(publicId), mtime: cached?.mtime || mtime };
           // update local cache
           localCache[publicId] = entry;
+          processedPhotos.push(entry);
           return entry;
         }
         if (dryRun) {
           log(`[dry-run] Would upload ${imageFile} as ${publicId}`);
-          return { id: publicId, web: getWeb(publicId), mtime };
+          const entry = { id: publicId, web: getWeb(publicId), mtime };
+          processedPhotos.push(entry);
+          return entry;
         }
 
         try {
@@ -202,6 +213,7 @@ export default async function getPhotos() {
           log(`Uploaded ${uploadResult.public_id}`);
           const entry = { id: uploadResult.public_id, web: getWeb(uploadResult.public_id), mtime };
           localCache[uploadResult.public_id] = entry;
+          processedPhotos.push(entry);
           return entry;
         } catch (uploadError) {
           errLog(`Error uploading file ${file}: ${uploadError.message}`);
@@ -209,7 +221,7 @@ export default async function getPhotos() {
         }
       });
 
-      results.forEach(r => { if (r) photos.push(r); });
+      photos = processedPhotos;
     }
 
     // Write updated cache (include mtime for future fast checks), unless dry-run
