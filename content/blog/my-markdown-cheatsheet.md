@@ -66,9 +66,9 @@ Read | Write
 
 Will insert the `.special` class into the table. Inspect the code to see the result.
 
-column1 | column2
---- | --- |
-Read | Write
+| column1 | column2 |
+| --- | --- |
+| Read | Write |
 
 {.special}
 
@@ -269,6 +269,98 @@ And the resulting HTML will look like this:
 You never know who'll get to read it :)
 !!!
 
+## New style of admonitions
+
+There are times when I want a different type of admonitions.  Instead of modifying the Markdown plugin, I decided to create a web component based on  Lea Verou's admonition design on her website (<https://lea.verou.me/>).
+
+The admonition takes these attributes: `type`, `no-icon`, and `title`.
+
+
+The `custom-admonition` component supports the following types of admonitions:
+
+* admonition (plain color, no icon, no title)
+* note
+* warning
+* info
+* tip
+* danger
+* todo
+
+If the `no-icon` attribute is present, the admonition will not display an icon.
+
+If the `title` attribute is present, the admonition will display the title instead of the default title for the type of admonition.
+
+```html
+<custom-admonition plain>
+	<p>This is a plain admonition without an icon</p>
+</custom-admonition>
+
+<custom-admonition type="warning" title="Do your research">
+	<p>You never know who'll get to read it :)</p>
+	<p>Warning admonition with a custom title and an icon</p>
+</custom-admonition>
+
+<custom-admonition type="note" no-icon>
+	<p>This is a note admonition with an icon and default title</p>
+</custom-admonition>
+
+<custom-admonition type="warning">
+	<p>This is a warning admonition with an icon and default title</p>
+</custom-admonition>
+
+<custom-admonition type="info">
+	<p>This is an info admonition with an icon and default title</p>
+</custom-admonition>
+
+<custom-admonition type="tip">
+	<p>This is a tip admonition with an icon and default title</p>
+</custom-admonition>
+
+<custom-admonition type="danger">
+	<p>This is a danger admonition with an icon and default title</p>
+</custom-admonition>
+
+<custom-admonition type="todo">
+	<p>This is a todo admonition with an icon and default title</p>
+</custom-admonition>
+```
+
+It produces the following result:
+
+<custom-admonition plain>
+	<p>This is a plain admonition without an icon</p>
+</custom-admonition>
+
+<custom-admonition type="warning" title="Do your research">
+	<p>You never know who'll get to read it :)</p>
+	<p>Warning admonition with a custom title and an icon</p>
+</custom-admonition>
+
+<custom-admonition type="note" no-icon>
+	<p>This is a note admonition with an icon and default title</p>
+</custom-admonition>
+
+<custom-admonition type="warning">
+	<p>This is a warning admonition with an icon and default title</p>
+</custom-admonition>
+
+<custom-admonition type="info">
+	<p>This is an info admonition with an icon and default title</p>
+</custom-admonition>
+
+<custom-admonition type="tip">
+	<p>This is a tip admonition with an icon and default title</p>
+</custom-admonition>
+
+<custom-admonition type="danger">
+	<p>This is a danger admonition with an icon and default title</p>
+</custom-admonition>
+
+<custom-admonition type="todo">
+	<p>This is a todo admonition with an icon and default title</p>
+</custom-admonition>
+
+
 ## lite-youtube and lite-vimeo
 
 `lite-youtube` and `lite-vimeo` are not Markdown and require Javascript to run, but they will improve the performance of pages.
@@ -340,10 +432,10 @@ And more      | With an escaped '\|'         ||
 And the resulting table, with all the table formatting done in CSS, looks like this:
 
 |             |          Grouping           ||
-First Header  | Second Header | Third Header |
- ------------ | :-----------: | -----------: |
-Content       |          *Long Cell*        ||
-Content       |   **Cell**    |         Cell |
+| First Header  | Second Header | Third Header |
+| ------------ | :-----------: | -----------: |
+| Content       |          *Long Cell*        ||
+| Content       |   **Cell**    |         Cell |
 
 New section   |     More      |         Data |
 And more      | With an escaped '\|'         ||
@@ -464,13 +556,15 @@ The `src` attribute is broken into multiple lines for clarity but it must be a s
 
 The full syntax for adding an image is:
 
-```html
-<img src='https://res.cloudinary.com/dfh6ihzvj/
+```markdown
+![alt text](https://res.cloudinary.com/dfh6ihzvj/
 image/upload/
 c_scale,w_500/
 f_auto,q_auto/
-3484353131_016dd32be7_o' />
+<image-name-from-cloudinary>)
 ```
+
+You can obtain the id for the image from `scripts/photos.json` or from the Cloudinary dashboard. The image name is the public ID of the image in Cloudinary, which is the name you see in the Cloudinary dashboard when you upload an image.
 
 Where:
 
@@ -482,4 +576,4 @@ Where:
 
 The resulting image will be scaled to 500 pixels wide, with the height adjusted to maintain the original aspect ratio, and delivered in the best format and quality for the requesting browser.
 
-I'm evaluating whether to stay in Cloudinary or move to another image hosting service or self-host the images using my . The main reason is cost as my usage has increased over time.
+I'm evaluating whether to stay in Cloudinary or move to another image hosting service or self-host the images I use in my site. The main reason is cost as my usage has increased over time.

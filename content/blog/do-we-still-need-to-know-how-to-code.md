@@ -1,101 +1,166 @@
 ---
-title: Do We Still Need To Know How To Code?
-date: 2026-02-27
+title: "Do we still need to know how to code?"
 tags:
-  - Programming
-  - Software Development
   - AI
+  - Programming
+date: 2026-08-07
+mermaid: true
 ---
 
-I am seeing an increasing number of discussions suggesting that Artificial Intelligence (AI) will soon make coding skills obsolete. With the rapid advancement of tools like GitHub Copilot and Gemini, some argue that traditional programming is no longer necessary. This post explores whether coding skills remain relevant or if we are moving toward a future of purely natural-language development.
+A growing claim says that AI tools will make coding skills obsolete. As tools such as GitHub Copilot, Gemini, and agentic systems improve, some people conclude that traditional programming knowledge is becoming optional.
+
+I am less worried about AI replacing programmers than I am about confusing code generation with software engineering. The key question is not whether AI can produce code. The question is whether we still need humans who can reason about correctness, safety, and architecture in an AI-heavy workflow.
+
+This post explores whether coding skills remain relevant or if we are moving toward a future of purely natural-language development.
 
 ## Stating the Problem
 
-The core of the current debate often centers on a recurring question in developer communities like [Quora](https://www.quora.com/Will-the-rise-of-AI-make-understanding-programming-languages-obsolete-similar-to-how-we-no-longer-need-to-understand-machine-code/):
+The debate often centers on a recurring question:
 
 > Will the rise of AI make understanding programming languages obsolete, similar to how we no longer need to understand machine code?
 
-To address this, we must break down the relationship between abstraction and oversight:
+To answer that, we need to separate abstraction from accountability:
 
-* **Abstraction Levels**: Just as we moved from Assembly to Python, AI acts as a new layer of abstraction. However, abstraction does not eliminate the need for logic; it simply changes the syntax.
-* **The Oversight Requirement**: While AI generates code snippets, human developers must still provide the "reasoning" to ensure the code meets specific requirements and integrates into a larger system without security flaws.
+1. Abstraction levels: We have always added abstractions, from assembly to high-level languages. AI is another layer. But there is a key difference. Compilers transform formal input into formal output under strict rules. Prompting starts with ambiguous natural language and asks a probabilistic model to produce precise artifacts. That abstraction is powerful, but it is also leaky.
+2. The oversight requirement: Because prompting is lossy, generated code still needs a verifier. AI can draft implementation quickly, but developers must validate requirements, integration behavior, security, and failure modes. The role shifts from typing syntax to supervising system quality.
 
 ## How AI Works in Programming (Good Prompts Matter)
 
-Effective AI-assisted programming depends entirely on the specificity of the prompt. A vague prompt yields a vague (and often broken) result.
+AI-assisted programming quality depends heavily on prompt specificity. Vague prompts usually produce vague, unstable results.
 
-* **Vague Prompt**: "Create an application that converts two colors in any format supported by the color.js library and output the result."
-* **The Issue**: This lacks a target language, a platform (Web vs. CLI), a UI framework, and error-handling requirements.
+**Vague prompt**: "Create an application that converts two colors in any format supported by the color.js library and output the result."
 
-By contrast, a refined, "engineering-focused" prompt provides the AI with a deterministic path:
+**Issue**: This prompt does not specify language, runtime target (web or CLI), framework, or error-handling expectations. The model must guess, which increases the chance of unusable output.
 
-> Create a web application using React and TypeScript with Vite as the build tool. Use the color.js library to convert colors between supported color spaces. Include input fields for color entry, a dropdown for output format selection, and a visual swatch of the converted result.
+A more focused prompt sets clearer constraints:
+
+> Create a web application using React and TypeScript with Vite as the build tool. Use the color.js library to convert colors between supported color spaces. Include input fields for color entry, a dropdown for output format selection, and a visual swatch of the converted result along with the string that represents the converted color.
+
+This works better because terms such as React, TypeScript, and Vite reduce ambiguity and anchor the model to a narrower implementation pattern. Better constraints do not guarantee correctness, but they reduce avoidable drift.
 
 ## Why Programming Knowledge Is Still Important
 
-Even the most detailed prompt can produce "hallucinations", plausible-sounding but incorrect code.
+Even with detailed prompts, models can produce plausible but incorrect code.
 
 ### Correctness Is Not Guaranteed
 
-AI tools do not guarantee functional correctness. They may invent a library method that doesn't exist, introduce subtle logical loops that look correct at first glance or use an older, unsupported, library method. [Google Cloud defines AI hallucinations](https://cloud.google.com/discover/what-are-ai-hallucinations) as confident but false responses generated by LLMs.
+AI tools do not guarantee functional correctness. They can invent methods, misuse APIs, or introduce subtle logic bugs that look reasonable.
 
-In programming, this manifests as:
+In practice, this appears as:
 
-* **Incorrect Predictions**: Using a deprecated API or a non-existent parameter.
-* **False Positives / Negatives**: Identifying a secure code block as a threat or a valid logic flow as a bug.
-* **Security Vulnerabilities**: Writing "functional" code that lacks proper sanitization or authentication.
+* Incorrect predictions: using deprecated or nonexistent APIs. For example, a model might suggest `color.toHex()` when the library expects `color.toString({ format: "hex" })`.
+* Misclassification in review suggestions: flagging valid logic as suspicious or missing real defects.
+* Security regressions: generating code that works functionally but skips essential controls, such as parameterized queries, authorization checks, or input validation.
+
+Models learn patterns from public code, which includes both good and bad practices. Without informed review, weak patterns can pass into production.
 
 ### Testing and Debugging
 
-A common misconception is that if an AI writes the code, the AI should also write the tests. However, this creates a "closed-loop" failure: if the AI misunderstood your requirements when writing the code, it will likely bake that same misunderstanding into the tests it generates.
+A common misconception is: if AI writes the code, AI should also write all the tests. That can fail when the same misunderstanding is copied into both implementation and tests.
 
 #### Debugging the Tests Themselves
 
-AI-generated tests are code, which means they are subject to the same hallucinations and logic errors as the application itself. You must be able to audit a test to ensure it actually tests the right thing. Common issues include:
+AI-generated tests are still code, so they can contain the same flaws as the app. You must review whether each test verifies a real requirement.
 
-* **Tautological Tests**: The AI writes a test that passes simply because it asserts `true === true` or mirrors the exact logic of a flawed function, creating a false sense of security.
-* **Brittle Mocking**: AI often over-mocks dependencies, meaning the test passes in isolation but the application fails when connected to a real database or API.
+Common failure modes:
+
+* Tautological tests: tests that pass because they mirror flawed implementation logic instead of checking an external expectation.
+* Brittle mocking: excessive mocking that produces green unit tests while real interfaces fail in integration.
 
 #### The "Golden Test" Strategy
 
-To build a resilient system, you should adopt a hybrid approach and manually write Core Logic Tests (or "Golden Tests").
+A practical approach is hybrid:
 
-* **Protect the Business Logic**: Write hand-coded tests for your "happy path" and critical edge cases before you prompt the AI for code. If the AI-generated code fails your manual tests, you know the code is wrong.
-* **Validation through Contrast**: Use your hand-written tests as a source of truth. If an AI generates a new feature, your existing suite acts as a deterministic barrier, catching any regressions the AI might have introduced.
+* Let AI generate routine tests for straightforward utilities.
+* Write high-value tests manually for core business behavior and critical edge cases.
+* Treat these human-authored tests as acceptance constraints for AI-generated implementation.
+
+Here is a hand-written golden test suite for a color converter. The goal is to define invariants before generation:
+
+```ts
+import { convertColor } from './colorConverter';
+
+describe('Color Conversion Invariants', () => {
+  it('converts RGB white to hex', () => {
+    const input = { r: 255, g: 255, b: 255 };
+    const expected = '#ffffff';
+    const result = convertColor(input, 'hex');
+    expect(result).toBe(expected);
+  });
+
+  it('rejects malformed RGB input', () => {
+    const badInput = { r: 300, g: -10, b: 255 };
+
+    expect(() => {
+      convertColor(badInput, 'hex');
+    }).toThrow('Invalid color coordinates');
+  });
+});
+```
+
+Use tests as constraints, not just as after-the-fact checks. Supplying the test file as context to your coding assistant often improves first-pass output quality, but you still need review and debugging.
 
 #### The Debugging Loop
 
-When a bug inevitably appears, the "prompt-to-fix" cycle is only effective if you can provide the AI with technical context. Without programming knowledge, you cannot interpret a stack trace or a memory leak. Knowing how to code allows you to isolate the bug using breakpoints or logs and communicate with precision. Instead of telling the AI "it doesn't work," you can explain exactly which hook is missing a dependency.
+When bugs appear, AI is most effective when you provide concrete runtime context. Without programming knowledge, it is hard to interpret stack traces and profiler output.
 
-### Managing Non-Determinism: The Infrastructure of Intelligence
+If a React component enters an infinite render loop, "My page is frozen, fix it" usually yields guesswork. A better workflow is to isolate the fault first, then prompt with specific evidence: the relevant effect, its dependency behavior, the observed state transitions, and expected behavior. Specific context turns broad guesses into targeted fixes.
 
-LLMs are non-deterministic, meaning they can produce different outputs for the same input. While "vibes-based" development works for a hobby project, professional software requires the AI to be wrapped in a deterministic shell. This is where specialized platforms provide the operational logic required to turn a creative "brain" into a reliable "system."
+## Managing Non-Determinism: The Infrastructure of Intelligence
 
-#### Why Guardrails Are Mandatory
+LLMs are probabilistic systems. The same prompt can produce different outputs across runs, especially across model versions, providers, or infrastructure conditions. For prototypes, this variability may be acceptable. For production software, it must be bounded by deterministic controls.
 
-In a professional environment, "pretty good" is a liability. If you are building a billing system or a medical diagnostic tool, you cannot allow the AI to improvise the process. These platforms provide three critical guardrails:
+### The Temperature = 0 Myth
 
-* **Predictability (Constraint Engines)**: Tools like [AgentMap](https://github.com/alokranjan-agp/AgentMap) and [DSPy](https://dspy.ai/) act as the "lanes" on a highway. They force the AI to choose from pre-defined, valid paths. By converting open-ended prompts into structured logic, they ensure that if a user asks for a "refund," the system triggers the refund script every single time, rather than sometimes deciding to offer a "credit" instead.
-* **Resilience (Durable Execution)**: AI calls are prone to failure—rate limits, network timeouts, or garbled JSON responses. [Temporal](https://temporal.io/solutions/ai) provides "durable execution" by recording every step of a workflow. If a server crashes or an API times out, the system "remembers" exactly where it was and resumes. This prevents the AI from repeating expensive work or, worse, losing its place in a high-stakes transaction.
-* **Connectivity (The Nervous System)**: An LLM is a brain in a jar. It cannot naturally "talk" to your internal SQL database or send a Slack message. Platforms like [n8n](https://n8n.io/) and [Augment Code](https://www.augmentcode.com/) provide the plumbing—the hard-coded nodes and semantic maps—that allow the AI to interact with the real world securely. They ensure the AI acts only through approved interfaces, preventing it from "hallucinating" access to systems it shouldn't touch.
+Temperature set to 0 can increase repeatability, but it does not guarantee full determinism in all serving environments.
 
-### Infrastructure vs. Orchestration: The LangChain Ecosystem
+Contributors to variance can include:
 
-Building production-grade AI requires developers to understand the LangChain ecosystem. You must distinguish between AI Orchestration (LangChain, LangGraph) and System Infrastructure (Temporal, n8n).
+1. Numeric sensitivity in large parallel computations: tiny floating-point differences can occasionally affect close token rankings.
+2. Dynamic routing in some model architectures: request batching and routing decisions can alter execution paths.
+3. Serving-layer variability: infrastructure changes, model revisions, and deployment differences can change outputs over time.
 
-* **LangChain and LangGraph (Orchestration)**: These "AI-First" tools manage the "thinking" process. They govern how an agent breaks down a prompt, searches a vector database, and reasons through a loop. LangGraph, in particular, handles complex multi-turn conversations and agentic state transitions.
-* **LangSmith (Observability)**: This diagnostic tool traces and debugs your AI chains. It reveals where a prompt failed or where an LLM's logic diverged.
+The exact mechanisms depend on the provider, but the engineering consequence is consistent: application-level guardrails are still required.
 
-#### Why Specialized Tools Still Matter
+### Why Guardrails Are Mandatory
 
-While LangGraph manages the "state" of a conversation, it cannot replace durable infrastructure like Temporal.
+In production systems, "usually correct" is not enough. Billing, healthcare, and compliance-sensitive workflows require predictable behavior.
 
-1. **Persistence of Execution**: LangGraph manages the logic of the next step, but Temporal ensures the survival of that step. If the server loses power, LangGraph checkpoints might help you resume the chat, but Temporal ensures the system finishes high-stakes business transactions—like charging a credit card—exactly once.
-2. **Connectivity Scale**: n8n provides hundreds of robust, hard-coded connectors for business apps. These connectors often outperform the general-purpose "tools" found in the LangChain ecosystem.
-3. **Production Guardrails**: In production code, developers often embed LangChain inside an activity managed by Temporal or as a node within an n8n workflow. This architecture separates probabilistic reasoning (LangChain) from deterministic execution (Infrastructure).
+Three practical guardrail categories (these are examples, not a required stack):
 
-Without these distinctions, an AI agent is just a demo. With them, it becomes an enterprise-grade software product.
+1. Predictability (constraint engines): tools such as [AgentMap](https://github.com/alokranjan-agp/AgentMap) and [DSPy](https://dspy.ai/) can enforce structured decision paths instead of unconstrained free-form responses.
+2. Resilience (durable execution): systems such as [Temporal](https://temporal.io/) persist workflow state so retries and restarts do not corrupt long-running processes.
+3. Connectivity (controlled integrations): platforms such as [n8n](https://n8n.io/) provide governed connectors and explicit interfaces so models act through approved boundaries.
+
+## Infrastructure vs. Orchestration: The LangChain Ecosystem
+
+Production AI systems benefit from distinguishing orchestration from infrastructure.
+
+* LangChain and LangGraph (orchestration): these tools coordinate reasoning steps, tool calls, and conversational state.
+* LangSmith (observability): this tooling helps inspect traces, diagnose prompt failures, and analyze chain behavior.
+
+### Why Specialized Tools Still Matter
+
+Orchestration alone does not replace execution infrastructure.
+
+1. Execution guarantees: orchestration frameworks manage decision flow; workflow engines manage retries, persistence, and idempotent execution patterns.
+2. Integration depth: connector ecosystems can provide robust operational adapters for enterprise systems.
+3. Separation of concerns: combining probabilistic reasoning with deterministic execution layers reduces operational risk.
+
+### A Real-World Architecture Scenario: Automated Invoicing Agent
+
+Consider a system that reviews invoices and processes payments:
+
+```mermaid
+graph TD
+    User([User Action]) --> Temporal[Temporal Workflow<br/><i>System Infrastructure / Durable</i><br/>Persists multi-step execution]
+    Temporal -->|Starts Billing Activity| LangGraph[LangGraph Agent<br/><i>AI Orchestration / Reasoning</i><br/>Extracts fields and handles clarification]
+    LangGraph -->|Looks up historical patterns| VectorDB[(Vector Database<br/><i>Semantic Memory</i><br/>Stores prior invoice embeddings)]
+    VectorDB -->|Retrieved context| Gateway[Stripe API / Bank Gateway<br/><i>Deterministic Execution</i><br/>Executes payment transaction]
+```
+
+In this model, LangGraph handles ambiguous reasoning tasks, such as parsing inconsistent invoice layouts and requesting clarification. Deterministic application logic validates fields, while deterministic systems handle transaction execution, retries, and recovery semantics. That separation is often what turns a useful demo into a production-capable system.
 
 ## Conclusion
 
-AI tools are transforming the role of the programmer from a "writer" to a "supervisor" and "architect." While you may spend less time typing boilerplate code, your foundational knowledge of logic, security, and system design is more important than ever. You don't just need to know how to prompt; you need to know how to build the infrastructure that keeps that prompt in check.
+AI is changing programming, but it is not removing the need for programming knowledge. The role is shifting from manual code entry toward specification, verification, and architecture. Prompting helps you move faster. Engineering discipline keeps the system correct, secure, and reliable.

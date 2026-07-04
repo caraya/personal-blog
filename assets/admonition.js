@@ -4,16 +4,29 @@
  */
 export class Admonition extends HTMLElement {
     _container = null;
+    _srLabel = null;
+    _contentSlot = null;
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
         if (this.shadowRoot) {
             this.shadowRoot.innerHTML = this.renderStyles() + this.renderTemplate();
             this._container = this.shadowRoot.querySelector('.admonition');
+            this._srLabel = this.shadowRoot.querySelector('.sr-only-label');
+            this._contentSlot = this.shadowRoot.querySelector('slot');
+            this._contentSlot?.addEventListener('slotchange', () => {
+                this.syncAccessibilityState();
+            });
         }
     }
     static get observedAttributes() {
         return ['type', 'no-icon', 'plain', 'title'];
+    }
+    connectedCallback() {
+        if (!this.hasAttribute('tabindex')) {
+            this.setAttribute('tabindex', '0');
+        }
+        this.syncAccessibilityState();
     }
     /**
      * Synchronizes attributes to the internal container and CSS variables.
@@ -35,12 +48,61 @@ export class Admonition extends HTMLElement {
                 this.style.removeProperty('--label');
             }
         }
+        this.syncAccessibilityState();
         // `--color` is handled purely via CSS (authors can set `--color` in
         // the element's `style`); do not treat it as an observed attribute.
+    }
+    getTypeLabel() {
+        const type = this.getAttribute('type');
+        const explicitTitle = this.getAttribute('title');
+        if (explicitTitle)
+            return explicitTitle;
+        switch (type) {
+            case 'warning':
+            return 'Watch Out!';
+            case 'info':
+                return 'FYI';
+            case 'tip':
+            case 'note':
+                return 'Tip';
+            case 'danger':
+                return 'Danger';
+            case 'todo':
+                return 'TODO';
+            default:
+                return 'Note';
+        }
+    }
+    getTypeRole() {
+        return this.getAttribute('type') === 'danger' ? 'alert' : 'note';
+    }
+    getSlottedText() {
+      if (!this._contentSlot)
+        return this.textContent?.replace(/\s+/g, ' ').trim() || '';
+      const assignedNodes = this._contentSlot.assignedNodes({ flatten: true });
+      return assignedNodes
+        .map((node) => node.textContent || '')
+        .join(' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+    }
+    syncAccessibilityState() {
+        if (!this._container)
+            return;
+        const label = this.getTypeLabel();
+      const contentText = this.getSlottedText();
+        this.setAttribute('role', this.getTypeRole());
+      this.setAttribute('aria-label', contentText ? `${label}. ${contentText}` : label);
+      this.removeAttribute('aria-labelledby');
+      this.removeAttribute('aria-describedby');
+        if (this._srLabel) {
+            this._srLabel.textContent = label;
+        }
     }
     renderTemplate() {
         return `
       <div class="admonition">
+        <span class="sr-only-label"></span>
         <slot></slot>
       </div>
     `;
@@ -62,6 +124,24 @@ export class Admonition extends HTMLElement {
           --color-light: color-mix(in lab, var(--color, var(--color-accent)), white 92%);
           
           display: block;
+        }
+
+        :host(:focus-visible) {
+          outline: 3px solid var(--color, var(--color-accent));
+          outline-offset: 0.2rem;
+          border-radius: 0.3rem;
+        }
+
+        .sr-only-label {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          white-space: nowrap;
+          border: 0;
         }
 
         .admonition {
@@ -125,7 +205,7 @@ export class Admonition extends HTMLElement {
         }
 
         /* Type Variants */
-        :host([type="warning"]) { --color: var(--color-orange); --label: "Here Be Dragons"; --icon: "⚠️"; --color-light: color-mix(in lab, var(--color), white 92%); }
+        :host([type="warning"]) { --color: var(--color-orange); --label: "Watch Out!"; --icon: "⚠️"; --color-light: color-mix(in lab, var(--color), white 92%); }
         :host([type="info"]) { --color: var(--color-blue); --label: "FYI"; --icon: "ℹ️"; --color-light: color-mix(in lab, var(--color), white 92%); }
         :host([type="tip"]), :host([type="note"]) { --color: var(--color-green); --label: "Tip"; --icon: "💡"; --color-light: color-mix(in lab, var(--color), white 92%); }
         :host([type="danger"]) { --color: var(--color-red); --label: "Danger"; --icon: "🛑"; --color-light: color-mix(in lab, var(--color), white 92%); }
