@@ -4,7 +4,10 @@
 	node_bundler = "esbuild"
 [[headers]]
   for = "/*"
-    [headers.values]
-		X-Content-Type-Options = "nosniff"
-    Access-Control-Allow-Origin = "*"
-    accept-ch = "sec-ch-viewport-width, sec-ch-width, sec-ch-dpr"
+	[headers.values]
+	X-Content-Type-Options = "nosniff"
+	Access-Control-Allow-Origin = "*"
+[[headers]]
+  for = "/*"
+	[headers.values]
+	accept-ch = "sec-ch-viewport-width, sec-ch-width, sec-ch-dpr"
