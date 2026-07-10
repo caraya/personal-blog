@@ -3,11 +3,13 @@
 	directory = "netlify/functions"
 	node_bundler = "esbuild"
 [[headers]]
+	# What the headers are for
   for = "/*"
+	# Headers to set
 	[headers.values]
+	# CORS
 	X-Content-Type-Options = "nosniff"
 	Access-Control-Allow-Origin = "*"
-[[headers]]
-  for = "/*"
-	[headers.values]
-	accept-ch = "sec-ch-viewport-width, sec-ch-width, sec-ch-dpr"
+	# Client Hints
+	Accept-CH = "Sec-CH-Width"
+	Permissions-Policy = 'ch-width=(self "https://images.cloudfour.com")'
